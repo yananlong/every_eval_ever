@@ -8,8 +8,16 @@ from typing import Iterable, Sequence
 from every_eval_ever.eval_types import EvaluationLog
 from every_eval_ever.helpers import SCHEMA_VERSION
 
-from .modeling import (BuiltLog, _eval_library, _indexes, _model_info, _result, _source_metadata)
+from .modeling import (
+    BuiltLog,
+    _eval_library,
+    _indexes,
+    _model_info,
+    _result,
+    _source_metadata,
+)
 from .source_schema import ResultCell, SnapshotBundle
+
 
 def build_logs(
     bundles: Sequence[SnapshotBundle],
@@ -123,4 +131,3 @@ def validate_built_logs(built: Sequence[BuiltLog]) -> None:
             if rid is None or rid in result_ids:
                 raise ValueError(f'missing or duplicate evaluation_result_id: {rid}')
             result_ids.add(rid)
-
