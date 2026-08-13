@@ -9,6 +9,7 @@ from pydantic import Field, field_validator, model_validator
 
 from .source_base import StrictModel, _validate_id, _validate_relative_path
 
+
 class CatalogEntry(StrictModel):
     study_id: str
     snapshot_id: str
