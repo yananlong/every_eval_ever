@@ -1,0 +1,22 @@
+{
+  "block_id": "B3",
+  "collection_count": 8,
+  "collections": [
+    "dti-lm-bindingdb",
+    "dti-lm-drugbank",
+    "exddi-ddinter",
+    "exddi-drugbank",
+    "llmddi-drugbank",
+    "textddi-drugbank",
+    "textddi-twosides",
+    "zeroddi-drugbank"
+  ],
+  "duplicate_logical_id_count": 0,
+  "evidence_class": "exploratory",
+  "log_count": 99,
+  "result_count": 548,
+  "schema_failure_count": 0,
+  "scientific_gate_status": "pass",
+  "semantic_diff_count": 0,
+  "technical_status": "pass"
+}

@@ -1,0 +1,30 @@
+schema_version: 1
+study_id: textddi
+snapshot_id: textddi-emnlp-2023
+title: Learning to Describe for Predicting Zero-shot Drug-Drug Interactions
+paper_url: https://aclanthology.org/2023.emnlp-main.918/
+paper_version: EMNLP 2023 proceedings
+publication_date: '2023-12-06'
+retrieved_timestamp: '1786041600'
+source_organization: Zhu et al. (paper authors)
+repository_url: https://github.com/zhufq00/DDIs-Prediction
+repository_commit: 28d973809f0efd9a59820f8e995f04371eabe658
+source_document_sha256: null
+conditions:
+- condition_id: zero-shot
+  display_name: Chronological unseen-drug
+  details: {}
+- condition_id: vanilla
+  display_name: Vanilla known-drug
+  details: {}
+source_tables:
+- table_id: Table 2
+  page: 6
+  expected_results: 72
+- table_id: Table 5
+  page: 12
+  expected_results: 48
+expected_results: 120
+expected_logs: 40
+repository_role: Supplementary implementation context only; the cited paper table is the score
+  source.

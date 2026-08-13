@@ -1,0 +1,15 @@
+datasets:
+- dataset_id: drugbank
+  collection_slug: llmddi-drugbank
+  display_name: LLMDDI DrugBank 5.1.12
+  source_type: other
+  source_urls:
+  - https://arxiv.org/abs/2502.06890
+  - https://go.drugbank.com/releases/5-1-12
+  dataset_version: 5.1.12
+  task_type: ddi_binary_classification
+  details:
+    split_unit: drug_pair
+    split_method: random_stratified
+    drug_entity_disjoint: not_enforced
+    class_balance: '1:1'

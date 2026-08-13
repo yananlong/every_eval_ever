@@ -1,0 +1,63 @@
+schema_version: 1
+verification_status: single_reviewer_primary_source_check
+independent_review_complete: false
+independent_reviewer: null
+independent_review_date: null
+independent_review_notes: null
+anchors:
+- snapshot_id: llmddi-arxiv-2502.06890-v1
+  dataset_id: drugbank
+  method_id: gpt-4o
+  condition_id: zero-shot
+  protocol_id: random-pair-stratified
+  metric_id: f1
+  expected_score: 0.6178
+  source_locator: Table 3, page 10
+- snapshot_id: textddi-emnlp-2023
+  dataset_id: drugbank
+  method_id: textddi
+  condition_id: zero-shot
+  protocol_id: chronological-unseen-drug
+  metric_id: f1-macro
+  expected_score: 52.5
+  source_locator: Table 2, page 6
+- snapshot_id: textddi-emnlp-2023
+  dataset_id: twosides
+  method_id: textddi
+  condition_id: vanilla
+  protocol_id: vanilla-known-drug
+  metric_id: pr-auc
+  expected_score: 94.1
+  source_locator: Table 5, page 12
+- snapshot_id: zeroddi-ijcai-2024
+  dataset_id: drugbank
+  method_id: zeroddi
+  condition_id: default
+  protocol_id: unseen-relation-czsl
+  metric_id: zeroddi.unseen-accuracy-average
+  expected_score: 17.57
+  source_locator: Table 1, page 5
+- snapshot_id: zeroddi-ijcai-2024
+  dataset_id: drugbank
+  method_id: zeroddi
+  condition_id: default
+  protocol_id: unseen-relation-gzsl
+  metric_id: zeroddi.harmonic-accuracy-average
+  expected_score: 26.48
+  source_locator: Table 1, page 5
+- snapshot_id: exddi-arxiv-2409.05592-v2
+  dataset_id: ddinter
+  method_id: exddi-mts
+  condition_id: default
+  protocol_id: two-unseen-drugs
+  metric_id: rouge-l
+  expected_score: 0.3294
+  source_locator: Table A2, page 10
+- snapshot_id: dti-lm-bioinformatics-2024
+  dataset_id: bindingdb
+  method_id: dti-lm
+  condition_id: unbalanced
+  protocol_id: cold-protein
+  metric_id: auprc
+  expected_score: 0.463
+  source_locator: Table 4

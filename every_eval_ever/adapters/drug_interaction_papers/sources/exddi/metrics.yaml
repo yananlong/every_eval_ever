@@ -1,0 +1,35 @@
+metrics:
+- metric_id: bleu
+  display_name: BLEU
+  metric_kind: bleu
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}
+- metric_id: rouge-1
+  display_name: ROUGE-1
+  metric_kind: rouge
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters:
+    n: 1
+- metric_id: rouge-2
+  display_name: ROUGE-2
+  metric_kind: rouge
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters:
+    n: 2
+- metric_id: rouge-l
+  display_name: ROUGE-L
+  metric_kind: rouge_l
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}

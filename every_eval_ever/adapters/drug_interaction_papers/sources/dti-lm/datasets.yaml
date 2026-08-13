@@ -1,0 +1,30 @@
+datasets:
+- dataset_id: drugbank
+  collection_slug: dti-lm-drugbank
+  display_name: DTI-LM DrugBank
+  source_type: other
+  source_urls:
+  - https://academic.oup.com/bioinformatics/article/40/9/btae533/7747660
+  dataset_version: not_reported
+  task_type: dti_binary_classification
+  details:
+    proteins: '2203'
+    drugs: '1603'
+    interactions: '6041'
+- dataset_id: bindingdb
+  collection_slug: dti-lm-bindingdb
+  display_name: DTI-LM BindingDB
+  source_type: url
+  source_urls:
+  - https://academic.oup.com/bioinformatics/article/40/9/btae533/7747660
+  - https://www.bindingdb.org/
+  dataset_version: 2023 source snapshot in released code
+  task_type: dti_binary_classification
+  details:
+    label: Kd
+    positive_threshold_nm: <30
+    negative_threshold_nm: '>100'
+    excluded_interval_nm: '[30,100]'
+    proteins: '879'
+    drugs: '9144'
+    interactions: '4040'

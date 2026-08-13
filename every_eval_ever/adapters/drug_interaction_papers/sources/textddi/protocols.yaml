@@ -1,0 +1,18 @@
+protocols:
+- protocol_id: chronological-unseen-drug
+  display_name: Chronological Unseen Drug
+  task_type: ddi_event_classification
+  novelty:
+    drug_entity_overlap: prohibited_for_designated_new_drugs
+    relation_class_overlap: allowed
+  candidate_label_space: seen_relation_inventory
+  notes: Drugs partitioned chronologically; designated new drugs are unseen in training.
+- protocol_id: vanilla-known-drug
+  display_name: Vanilla Known Drug
+  task_type: ddi_event_classification
+  novelty:
+    drug_entity_overlap: allowed_by_design
+    relation_class_overlap: allowed
+  candidate_label_space: seen_relation_inventory
+  notes: Paper calls this vanilla prediction between two known drugs; do not infer
+    stronger per-seed overlap guarantees.

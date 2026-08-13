@@ -1,0 +1,116 @@
+{
+  "anchor_count": 7,
+  "anchors": [
+    {
+      "key": "llmddi-arxiv-2502.06890-v1/drugbank/gpt-4o/zero-shot/random-pair-stratified/f1",
+      "score": 0.6178,
+      "source_locator": "Table 3, page 10"
+    },
+    {
+      "key": "textddi-emnlp-2023/drugbank/textddi/zero-shot/chronological-unseen-drug/f1-macro",
+      "score": 52.5,
+      "source_locator": "Table 2, page 6"
+    },
+    {
+      "key": "textddi-emnlp-2023/twosides/textddi/vanilla/vanilla-known-drug/pr-auc",
+      "score": 94.1,
+      "source_locator": "Table 5, page 12"
+    },
+    {
+      "key": "zeroddi-ijcai-2024/drugbank/zeroddi/default/unseen-relation-czsl/zeroddi.unseen-accuracy-average",
+      "score": 17.57,
+      "source_locator": "Table 1, page 5"
+    },
+    {
+      "key": "zeroddi-ijcai-2024/drugbank/zeroddi/default/unseen-relation-gzsl/zeroddi.harmonic-accuracy-average",
+      "score": 26.48,
+      "source_locator": "Table 1, page 5"
+    },
+    {
+      "key": "exddi-arxiv-2409.05592-v2/ddinter/exddi-mts/default/two-unseen-drugs/rouge-l",
+      "score": 0.3294,
+      "source_locator": "Table A2, page 10"
+    },
+    {
+      "key": "dti-lm-bioinformatics-2024/bindingdb/dti-lm/unbalanced/cold-protein/auprc",
+      "score": 0.463,
+      "source_locator": "Table 4"
+    }
+  ],
+  "assurance_note": "Bundle hashes and schema checks establish internal integrity only. They do not independently verify table transcription.",
+  "block_id": "B1",
+  "evidence_class": "exploratory",
+  "independent_review_complete": false,
+  "log_count": 99,
+  "result_count": 548,
+  "retrieved_timestamp": "1786041600",
+  "scientific_gate_reason": "Independent primary-source cell review remains pending.",
+  "scientific_gate_status": "blocked",
+  "snapshot_count": 5,
+  "snapshots": [
+    {
+      "bundle_sha256": "29f82be4b1dee803b2f94d646d9d9c5451ba12b279de35eaf535e8fca09bdc1f",
+      "expected_logs": 23,
+      "expected_results": 92,
+      "log_count": 23,
+      "paper_version": "arXiv:2502.06890v1",
+      "result_count": 92,
+      "snapshot_id": "llmddi-arxiv-2502.06890-v1",
+      "source_document_sha256_status": "not_recorded",
+      "study_id": "llmddi",
+      "version_warning": "This is an arXiv-only snapshot. It must not be represented as the 2026 journal version."
+    },
+    {
+      "bundle_sha256": "0cb3f644bafda163f6b6aae86853c1865ba56f5b26d21965e618e605f869dbe9",
+      "expected_logs": 40,
+      "expected_results": 120,
+      "log_count": 40,
+      "paper_version": "EMNLP 2023 proceedings",
+      "result_count": 120,
+      "snapshot_id": "textddi-emnlp-2023",
+      "source_document_sha256_status": "not_recorded",
+      "study_id": "textddi",
+      "version_warning": null
+    },
+    {
+      "bundle_sha256": "ede5b67691ff7b817803ab3603495a08078652fc513e17d4c3a50cee3f37a8ff",
+      "expected_logs": 10,
+      "expected_results": 120,
+      "log_count": 10,
+      "paper_version": "IJCAI 2024 / arXiv v2",
+      "result_count": 120,
+      "snapshot_id": "zeroddi-ijcai-2024",
+      "source_document_sha256_status": "not_recorded",
+      "study_id": "zeroddi",
+      "version_warning": null
+    },
+    {
+      "bundle_sha256": "24c850ff2d3ca648deed83b25ea1556d76bc71e09bf28a7d7b72ef59f1cd2796",
+      "expected_logs": 10,
+      "expected_results": 120,
+      "log_count": 10,
+      "paper_version": "arXiv:2409.05592v2 / AAAI 2026",
+      "result_count": 120,
+      "snapshot_id": "exddi-arxiv-2409.05592-v2",
+      "source_document_sha256_status": "not_recorded",
+      "study_id": "exddi",
+      "version_warning": null
+    },
+    {
+      "bundle_sha256": "c5ef241e687fa67748c3349148d8fa1218c5c8b7c0786d5281bcd0a2fbb1889b",
+      "expected_logs": 16,
+      "expected_results": 96,
+      "log_count": 16,
+      "paper_version": "Bioinformatics 40(9), 2024",
+      "result_count": 96,
+      "snapshot_id": "dti-lm-bioinformatics-2024",
+      "source_document_sha256_status": "not_recorded",
+      "study_id": "dti-lm",
+      "version_warning": null
+    }
+  ],
+  "status": "pass",
+  "technical_status": "pass",
+  "unpinned_repository_count": 0,
+  "verification_status": "single_reviewer_primary_source_check"
+}

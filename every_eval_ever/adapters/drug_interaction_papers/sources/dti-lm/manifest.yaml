@@ -1,0 +1,32 @@
+schema_version: 1
+study_id: dti-lm
+snapshot_id: dti-lm-bioinformatics-2024
+title: 'DTI-LM: language model powered drug-target interaction prediction'
+paper_url: https://academic.oup.com/bioinformatics/article/40/9/btae533/7747660
+paper_version: Bioinformatics 40(9), 2024
+publication_date: '2024-09-02'
+retrieved_timestamp: '1786041600'
+source_organization: Ahmed et al. (paper authors)
+repository_url: https://github.com/compbiolabucf/DTI-LM
+repository_commit: ed71e811fab94a6eb844e2b1faa0d8edfe12b63b
+source_document_sha256: null
+conditions:
+- condition_id: balanced
+  display_name: Balanced 1:1
+  details:
+    positive_negative_ratio: '1:1'
+- condition_id: unbalanced
+  display_name: Unbalanced 1:10
+  details:
+    positive_negative_ratio: 1:10 or all available negatives
+source_tables:
+- table_id: Table 3
+  page: article table
+  expected_results: 48
+- table_id: Table 4
+  page: article table
+  expected_results: 48
+expected_results: 96
+expected_logs: 16
+repository_role: Supplementary implementation context only; the cited paper table is the score
+  source.

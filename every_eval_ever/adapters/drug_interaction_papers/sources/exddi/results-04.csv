@@ -1,0 +1,25 @@
+dataset_id,method_id,condition_id,protocol_id,metric_id,score,reported_value,reported_std,source_table,source_page,source_row,source_column,result_origin,notes
+ddinter,exddi-mt,default,pair-unseen-drugs-overlap-allowed,bleu,0.9383,0.9383,0.0015,Table A2,10,ExDDI-MT,pair-unseen-drugs-overlap-allowed/bleu,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,pair-unseen-drugs-overlap-allowed,rouge-1,0.9477,0.9477,0.0006,Table A2,10,ExDDI-MT,pair-unseen-drugs-overlap-allowed/rouge-1,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,pair-unseen-drugs-overlap-allowed,rouge-2,0.9352,0.9352,0.0008,Table A2,10,ExDDI-MT,pair-unseen-drugs-overlap-allowed/rouge-2,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,pair-unseen-drugs-overlap-allowed,rouge-l,0.9428,0.9428,0.0007,Table A2,10,ExDDI-MT,pair-unseen-drugs-overlap-allowed/rouge-l,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,one-unseen-drug,bleu,0.5161,0.5161,0.0139,Table A2,10,ExDDI-MT,one-unseen-drug/bleu,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,one-unseen-drug,rouge-1,0.6041,0.6041,0.0089,Table A2,10,ExDDI-MT,one-unseen-drug/rouge-1,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,one-unseen-drug,rouge-2,0.516,0.5160,0.0096,Table A2,10,ExDDI-MT,one-unseen-drug/rouge-2,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,one-unseen-drug,rouge-l,0.5791,0.5791,0.0096,Table A2,10,ExDDI-MT,one-unseen-drug/rouge-l,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,two-unseen-drugs,bleu,0.2309,0.2309,0.0104,Table A2,10,ExDDI-MT,two-unseen-drugs/bleu,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,two-unseen-drugs,rouge-1,0.3787,0.3787,0.0090,Table A2,10,ExDDI-MT,two-unseen-drugs/rouge-1,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,two-unseen-drugs,rouge-2,0.2365,0.2365,0.0088,Table A2,10,ExDDI-MT,two-unseen-drugs/rouge-2,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mt,default,two-unseen-drugs,rouge-l,0.3304,0.3304,0.0099,Table A2,10,ExDDI-MT,two-unseen-drugs/rouge-l,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,pair-unseen-drugs-overlap-allowed,bleu,0.9384,0.9384,0.0013,Table A2,10,ExDDI-MTS,pair-unseen-drugs-overlap-allowed/bleu,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,pair-unseen-drugs-overlap-allowed,rouge-1,0.9474,0.9474,0.0007,Table A2,10,ExDDI-MTS,pair-unseen-drugs-overlap-allowed/rouge-1,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,pair-unseen-drugs-overlap-allowed,rouge-2,0.935,0.9350,0.0009,Table A2,10,ExDDI-MTS,pair-unseen-drugs-overlap-allowed/rouge-2,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,pair-unseen-drugs-overlap-allowed,rouge-l,0.9425,0.9425,0.0008,Table A2,10,ExDDI-MTS,pair-unseen-drugs-overlap-allowed/rouge-l,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,one-unseen-drug,bleu,0.5172,0.5172,0.0137,Table A2,10,ExDDI-MTS,one-unseen-drug/bleu,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,one-unseen-drug,rouge-1,0.6035,0.6035,0.0089,Table A2,10,ExDDI-MTS,one-unseen-drug/rouge-1,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,one-unseen-drug,rouge-2,0.5151,0.5151,0.0096,Table A2,10,ExDDI-MTS,one-unseen-drug/rouge-2,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,one-unseen-drug,rouge-l,0.5783,0.5783,0.0096,Table A2,10,ExDDI-MTS,one-unseen-drug/rouge-l,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,two-unseen-drugs,bleu,0.2309,0.2309,0.0104,Table A2,10,ExDDI-MTS,two-unseen-drugs/bleu,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,two-unseen-drugs,rouge-1,0.3778,0.3778,0.0102,Table A2,10,ExDDI-MTS,two-unseen-drugs/rouge-1,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,two-unseen-drugs,rouge-2,0.2353,0.2353,0.0099,Table A2,10,ExDDI-MTS,two-unseen-drugs/rouge-2,paper_run,mean over 5 folds except ExDDI-IC single run
+ddinter,exddi-mts,default,two-unseen-drugs,rouge-l,0.3294,0.3294,0.0110,Table A2,10,ExDDI-MTS,two-unseen-drugs/rouge-l,paper_run,mean over 5 folds except ExDDI-IC single run

@@ -1,0 +1,25 @@
+schema_version: 1
+study_id: exddi
+snapshot_id: exddi-arxiv-2409.05592-v2
+title: 'ExDDI: Explaining Drug-Drug Interaction Predictions with Natural Language'
+paper_url: https://arxiv.org/abs/2409.05592
+paper_version: arXiv:2409.05592v2 / AAAI 2026
+publication_date: '2024-09-09'
+retrieved_timestamp: '1786041600'
+source_organization: Sun et al. (paper authors)
+repository_url: https://github.com/ZhaoyueSun/ExDDI
+repository_commit: 4275ce5d57f160fb1de9c6a5a416c390b918c68c
+source_document_sha256: null
+conditions:
+- condition_id: default
+  display_name: Published explanation evaluation
+  details:
+    folds: '5'
+source_tables:
+- table_id: Table A2
+  page: 10
+  expected_results: 120
+expected_results: 120
+expected_logs: 10
+repository_role: Supplementary implementation context only; the cited paper table is the score
+  source.

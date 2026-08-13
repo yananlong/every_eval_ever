@@ -73,6 +73,15 @@ DEVELOPER_PATTERNS = {
     'nova': 'amazon',
     'grok': 'xai',
     'kimi': 'moonshotai',
+    # Papers with Code DrugBank research methods. These exact names have no HF
+    # identity in the PwC rows, so use paper-linked source namespaces rather than
+    # routing them to an invented "unknown" developer. CADGL and SSI-DDI use the
+    # official code owner; MHCADDI has no original code repo identified, so its
+    # first-author paper group is kept source-scoped instead of attributing the
+    # later AstraZeneca/ChemicalX reimplementation to the original method.
+    'ours (cadgl)': 'azminewasi',
+    'ssi-ddi': 'kanz76',
+    'mhca-ddi': 'deac-et-al',
 }
 
 

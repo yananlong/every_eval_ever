@@ -1,0 +1,17 @@
+protocols:
+- protocol_id: unseen-relation-czsl
+  display_name: Unseen Relation Czsl
+  task_type: ddi_event_zero_shot_classification
+  novelty:
+    relation_class_overlap: prohibited
+    drug_entity_overlap: allowed_or_uncontrolled
+  candidate_label_space: unseen_only
+  notes: ''
+- protocol_id: unseen-relation-gzsl
+  display_name: Unseen Relation Gzsl
+  task_type: ddi_event_zero_shot_classification
+  novelty:
+    relation_class_overlap: mixed_seen_and_unseen
+    drug_entity_overlap: allowed_or_uncontrolled
+  candidate_label_space: seen_and_unseen
+  notes: ''
