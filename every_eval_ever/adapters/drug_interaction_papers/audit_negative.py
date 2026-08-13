@@ -8,7 +8,10 @@ import yaml
 
 from . import adapter
 from .audit_common import (
-    _base_report, _copy_sources, _expect_failure, _refresh_bundle_digest,
+    _base_report,
+    _copy_sources,
+    _expect_failure,
+    _refresh_bundle_digest,
 )
 
 
