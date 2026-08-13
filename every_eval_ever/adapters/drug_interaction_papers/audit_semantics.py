@@ -5,6 +5,7 @@ from pathlib import Path
 from . import adapter
 from .audit_common import _base_report, _scan_forbidden
 
+
 def block_b2(source_root: Path) -> dict[str, object]:
     bundles = adapter.load_snapshots(source_root)
     protocol_ids = {
