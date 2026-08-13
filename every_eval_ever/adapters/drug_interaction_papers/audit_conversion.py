@@ -5,12 +5,13 @@ from pathlib import Path
 
 from . import adapter
 from .audit_common import _base_report, _read_output
+from .conversion import validate_built_logs
 
 
 def block_b3(source_root: Path) -> dict[str, object]:
     bundles = adapter.load_snapshots(source_root)
     built = adapter.build_logs(bundles)
-    adapter.validate_built_logs(built)
+    validate_built_logs(built)
     with tempfile.TemporaryDirectory() as temp:
         root = Path(temp)
         first = root / 'first'
