@@ -13,6 +13,7 @@ from every_eval_ever.helpers import EvaluationLogOutput, save_evaluation_logs
 from .conversion import semantic_records, validate_built_logs
 from .modeling import BuiltLog
 
+
 def _read_staged_logs(root: Path) -> dict[str, dict[str, object]]:
     records: dict[str, dict[str, object]] = {}
     for path in sorted(root.rglob('*.json')):
