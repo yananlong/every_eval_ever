@@ -122,14 +122,29 @@ empty: a paper enters it only after a primary paper or official result artifact
 establishes the split semantics. Candidate papers and guessed mappings do not
 belong in the runtime manifest.
 
-Each overlay entry anchors a stable PwC `evaluations.id` to its expected
-`paper_id`, `dataset_id`, `task_id`, and raw `model_name`, then records the
-primary-paper `collection_slug`, normalized protocol identity, required
-overlap/split axes, candidate label space, and a source URL plus table/section
-locator. Matching is fail-closed: a missing row, changed anchor, missing selected
-metric, overlapping metric selector, empty semantic field, or source token such
-as bare `S1`/`CS2` used as a normalized protocol raises rather than silently
-reverting to the generic identity.
+Each non-empty entry is a **snapshot-bound review record**, not a rule that is
+silently carried forward to future PwC dumps. It must include:
+
+- the exact valid `YYYYMMDD` dump date it was reviewed against;
+- stable PwC row anchors (`evaluations.id`, `paper_id`, `dataset_id`, `task_id`,
+  and raw `model_name`);
+- an explicit metric-name list, so later-added metrics are never implicitly
+  qualified;
+- a SHA-256 fingerprint of the complete raw PwC `metrics` object for that row;
+- normalized protocol semantics and all required novelty axes; and
+- an absolute HTTP(S) evidence URL plus a table/section locator and verification
+  note.
+
+Application is fail-closed. A non-empty overlay is rejected when the current dump
+version is malformed or differs from the reviewed dump, when the source metrics
+payload fingerprint changes, when an anchor or selected metric drifts, when metric
+selectors overlap, or when an opaque source token such as bare `S1`/`CS2` is used
+as a normalized protocol id. A newer dump therefore requires explicit re-review;
+calendar ordering is not treated as evidence that an older qualification remains
+valid.
+
+The packaged empty manifest is a literal no-op and intentionally bypasses these
+source checks, because no scientific qualification is being applied.
 
 Qualification changes only the semantic benchmark identity and attaches audited
 protocol metadata. It does not replace the PwC score or score provenance:
@@ -138,6 +153,7 @@ protocol metadata. It does not replace the PwC score or score provenance:
 - raw and canonicalized score values are unchanged;
 - `source_metadata` remains Papers with Code;
 - primary-source protocol evidence is added separately to result details;
+- the reviewed metrics fingerprint is retained in result details; and
 - a PwC source score cell is emitted at most once.
 
 The qualified `evaluation_name` exactly follows the existing primary-paper
@@ -153,11 +169,14 @@ encoded into a second naming convention. This lets a PwC-reported score and a
 primary-paper-transcribed score refer to the same semantic evaluation while
 retaining distinct source provenance and source cell identities.
 
-`tests/test_paperswithcode_protocol_overlay.py` covers the current contract:
-empty overlays preserve generic output, unseen-drug protocols remain distinct,
-score-cell ids and values remain stable, PwC remains the score source, anchor
-drift fails closed, metric overlays cannot overlap, and opaque source split
-tokens cannot masquerade as reviewed protocol semantics.
+`tests/test_paperswithcode_protocol_overlay.py` uses deliberately synthetic
+method/paper identities for qualification mechanics. It covers the literal empty
+no-op, exact dump pinning, valid calendar dates, metrics-payload fingerprinting,
+explicit metric scope, evidence URL validation, wrapper integration, provenance
+and score-cell identity preservation, missing/drifted anchors, disjoint versus
+overlapping metric qualification, and opaque split-token rejection. The real
+CADGL / SSI-DDI / MHCA-DDI names remain only in the generic PwC regression fixture
+and are not evidence that those rows have been protocol-qualified.
 
 The next data step is intentionally narrow: review post-2024 DrugBank DDI papers
 with explicit one-unseen-drug/new-old or two-unseen-drugs/new-new splits first,
