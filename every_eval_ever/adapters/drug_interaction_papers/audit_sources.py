@@ -6,6 +6,7 @@ from . import adapter
 from .audit_common import _base_report
 from .source_schema import load_anchor_ledger, load_catalog, validate_anchors
 
+
 def block_b1(source_root: Path) -> dict[str, object]:
     bundles = adapter.load_snapshots(source_root)
     catalog = load_catalog(source_root)
