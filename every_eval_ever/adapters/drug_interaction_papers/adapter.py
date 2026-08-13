@@ -12,15 +12,16 @@ from .conversion import build_logs
 from .publication import export_logs
 from .source_schema import (
     Catalog,
-    SnapshotBundle,
     load_catalog as _load_catalog,
     load_enabled_snapshots,
     load_snapshot as _load_snapshot,
+    SnapshotBundle,
 )
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
 DEFAULT_SOURCE_ROOT = PACKAGE_ROOT / 'sources'
 DEFAULT_OUTPUT_ROOT = Path('data')
+
 
 def load_catalog(source_root: Path | None = None) -> Catalog:
     return _load_catalog(source_root or DEFAULT_SOURCE_ROOT)
@@ -39,6 +40,8 @@ def load_snapshot(
 
 def load_snapshots(source_root: Path | None = None) -> list[SnapshotBundle]:
     return load_enabled_snapshots(source_root or DEFAULT_SOURCE_ROOT)
+
+
 def audit_sources(bundles: Sequence[SnapshotBundle]) -> dict[str, object]:
     snapshots = []
     for bundle in bundles:
@@ -76,6 +79,8 @@ def audit_sources(bundles: Sequence[SnapshotBundle]) -> dict[str, object]:
             'They do not independently verify table transcription.'
         ),
     }
+
+
 def write_audit(report: dict[str, object], path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
