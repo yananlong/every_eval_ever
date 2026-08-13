@@ -13,6 +13,7 @@ from .source_base import StrictModel, _validate_id
 from .source_catalog import CatalogEntry
 from .source_entities import Dataset, Manifest, Method, Metric, Protocol
 
+
 class ResultCell(StrictModel):
     dataset_id: str
     method_id: str
