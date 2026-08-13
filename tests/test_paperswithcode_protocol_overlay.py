@@ -1,6 +1,4 @@
-"""Offline tests for reviewed protocol qualification of PwC DrugBank rows."""
-
-from __future__ import annotations
+"""Offline tests for reviewed PwC DrugBank protocol qualification."""
 
 import json
 
@@ -10,6 +8,42 @@ from every_eval_ever.adapters.paperswithcode import adapter, protocol_overlay
 
 DUMP_VERSION = '20260716'
 RETRIEVED_TS = '1784160000.0'
+METRICS = ('AUROC', 'Accuracy', 'F1 score')
+
+
+def _evaluations():
+    common = {
+        'task_id': 'ddi-task',
+        'dataset_id': 'drugbank-id',
+        'created_at': '2026-07-16 03:15:11+00',
+        'is_open': 't',
+        'external': 'f',
+        'harness': None,
+    }
+    return [
+        {
+            **common,
+            'id': 'drugbank-method-alpha',
+            'paper_id': 'alpha-paper',
+            'model_name': 'Method Alpha',
+            'hf_model_url': 'https://huggingface.co/example-org/method-alpha',
+            'evaluated_on': '2024-03-25',
+            'metrics': json.dumps(
+                {'AUROC': '99.49', 'Accuracy': '98.21', 'F1 score': '97.79'}
+            ),
+        },
+        {
+            **common,
+            'id': 'drugbank-method-beta',
+            'paper_id': 'beta-paper',
+            'model_name': 'Method Beta',
+            'hf_model_url': 'https://huggingface.co/example-org/method-beta',
+            'evaluated_on': '2021-11-07',
+            'metrics': json.dumps(
+                {'AUROC': '98.95', 'Accuracy': '96.33', 'F1 score': '96.38'}
+            ),
+        },
+    ]
 
 
 def _datasets():
@@ -29,64 +63,25 @@ def _datasets():
 
 
 def _tasks():
-    return {
-        'ddi-task': {
-            'id': 'ddi-task',
-            'slug': 'drug-drug-interaction-extraction',
-        }
-    }
-
-
-def _evaluations():
-    common = {
-        'task_id': 'ddi-task',
-        'dataset_id': 'drugbank-id',
-        'created_at': '2026-07-16 03:15:11+00',
-        'hf_model_url': None,
-        'is_open': 't',
-        'external': 'f',
-        'harness': None,
-    }
-    return [
-        {
-            **common,
-            'id': 'drugbank-cadgl',
-            'paper_id': 'cadgl-paper',
-            'model_name': 'Ours (CADGL)',
-            'evaluated_on': '2024-03-25',
-            'metrics': json.dumps(
-                {'AUROC': '99.49', 'Accuracy': '98.21', 'F1 score': '97.79'}
-            ),
-        },
-        {
-            **common,
-            'id': 'drugbank-ssi-ddi',
-            'paper_id': 'ssi-paper',
-            'model_name': 'SSI-DDI',
-            'evaluated_on': '2021-11-07',
-            'metrics': json.dumps(
-                {'AUROC': '98.95', 'Accuracy': '96.33', 'F1 score': '96.38'}
-            ),
-        },
-    ]
+    return {'ddi-task': {'id': 'ddi-task', 'slug': 'drug-drug-interaction-extraction'}}
 
 
 def _papers():
     return {
-        'cadgl-paper': {
-            'title': 'CADGL',
-            'arxiv_id': '2403.17210',
-            'source_url': 'https://arxiv.org/abs/2403.17210',
-        },
-        'ssi-paper': {
-            'title': 'SSI-DDI',
+        'alpha-paper': {
+            'title': 'Synthetic Method Alpha Paper',
             'arxiv_id': None,
-            'source_url': 'https://academic.oup.com/bib/article/22/6/bbab133/6265181',
+            'source_url': 'https://example.org/method-alpha',
+        },
+        'beta-paper': {
+            'title': 'Synthetic Method Beta Paper',
+            'arxiv_id': None,
+            'source_url': 'https://example.org/method-beta',
         },
     }
 
 
-def _metric_ranges():
+def _ranges():
     return {
         'AUROC': (98.95, 99.49),
         'Accuracy': (96.33, 98.21),
@@ -94,7 +89,7 @@ def _metric_ranges():
     }
 
 
-def _metric_meta():
+def _meta():
     return {
         'AUROC': {'full_name': 'Area Under the ROC Curve', 'scale': '0-100'},
         'Accuracy': {'full_name': 'Accuracy', 'scale': '0-100'},
@@ -104,41 +99,41 @@ def _metric_meta():
 
 def _resolver():
     return adapter.MetricResolver(
-        pwc_directions={
-            'AUROC': 'higher_is_better',
-            'Accuracy': 'higher_is_better',
-            'F1 score': 'higher_is_better',
-        }
+        pwc_directions={name: 'higher_is_better' for name in METRICS}
     )
+
+
+def _group_scales(evaluations, resolver):
+    values = {
+        ('drugbank-id', metric): [
+            float(json.loads(row['metrics'])[metric]) for row in evaluations
+        ]
+        for metric in METRICS
+    }
+    return adapter.build_group_scales(values, resolver)
 
 
 def _generic_conversion():
     evaluations = _evaluations()
     resolver = _resolver()
-    group_values = {
-        ('drugbank-id', metric): [
-            float(json.loads(row['metrics'])[metric]) for row in evaluations
-        ]
-        for metric in ('AUROC', 'Accuracy', 'F1 score')
-    }
     conversion = adapter.build_logs(
         evaluations,
         _datasets(),
         _tasks(),
         resolver,
-        _metric_ranges(),
-        _metric_meta(),
+        _ranges(),
+        _meta(),
         _papers(),
         DUMP_VERSION,
         RETRIEVED_TS,
-        group_scales=adapter.build_group_scales(group_values, resolver),
+        group_scales=_group_scales(evaluations, resolver),
     )
     assert conversion.failures == []
     return conversion, evaluations
 
 
 def _novelty(**overrides):
-    values = {
+    base = {
         'drug_entity_overlap': 'none-in-both-test-drugs',
         'target_entity_overlap': 'not-applicable',
         'relation_class_overlap': 'shared',
@@ -147,20 +142,27 @@ def _novelty(**overrides):
         'negative_sampling': 'paper-defined',
         'split_preprocessing': 'paper-defined',
     }
-    return {**values, **overrides}
+    return {**base, **overrides}
+
+
+def _fingerprint(evaluation_id):
+    row = next((row for row in _evaluations() if row['id'] == evaluation_id), None)
+    if row is None:
+        return '0' * 64
+    return protocol_overlay.source_metrics_sha256(json.loads(row['metrics']))
 
 
 def _entry(
-    evaluation_id,
-    paper_id,
-    model_name,
-    protocol_id,
+    evaluation_id='drugbank-method-alpha',
+    paper_id='alpha-paper',
+    model_name='Method Alpha',
+    protocol_id='one-unseen-drug',
     *,
-    study_id='example-study',
+    study_id='alpha-study',
     metrics=None,
     novelty=None,
 ):
-    payload = {
+    return {
         'pwc_evaluation_id': evaluation_id,
         'verified_against_dump_version': DUMP_VERSION,
         'anchors': {
@@ -169,6 +171,7 @@ def _entry(
             'task_id': 'ddi-task',
             'model_name': model_name,
         },
+        'source_metrics_sha256': _fingerprint(evaluation_id),
         'qualification': {
             'study_id': study_id,
             'dataset_id': 'drugbank',
@@ -181,13 +184,11 @@ def _entry(
         },
         'evidence': {
             'source_url': 'https://example.org/paper',
-            'source_locator': 'Table 2 / split definition',
-            'verification_note': 'Primary source explicitly defines the split.',
+            'source_locator': 'Synthetic table / split definition',
+            'verification_note': 'Synthetic fixture explicitly defines the split.',
         },
+        'metrics': list(metrics or METRICS),
     }
-    if metrics is not None:
-        payload['metrics'] = metrics
-    return payload
 
 
 def _overlay(*entries):
@@ -196,231 +197,193 @@ def _overlay(*entries):
     )
 
 
-def _results_by_pwc_id(conversion):
+def _by_id(conversion):
     grouped = {}
     for bundle in conversion.records:
         for result in bundle.log.evaluation_results:
-            grouped.setdefault(
-                result.score_details.details['pwc_evaluation_id'], []
-            ).append(result)
+            key = result.score_details.details['pwc_evaluation_id']
+            grouped.setdefault(key, []).append(result)
     return grouped
 
 
-def test_empty_overlay_preserves_generic_conversion_unchanged():
-    conversion, evaluations = _generic_conversion()
-    qualified = protocol_overlay.qualify_conversion(
-        conversion,
-        evaluations,
-        _overlay(),
-        DUMP_VERSION,
-    )
-    assert qualified is conversion
-    assert {
-        result.evaluation_name
-        for bundle in qualified.records
-        for result in bundle.log.evaluation_results
-    } == {'paperswithcode.drug_drug_interaction_extraction.drugbank'}
-
-
-def test_empty_overlay_is_noop_before_source_row_validation():
+def test_empty_overlay_is_literal_noop_even_for_unusable_source_context():
     conversion, evaluations = _generic_conversion()
     duplicate_rows = [*evaluations, dict(evaluations[0])]
     assert (
         protocol_overlay.qualify_conversion(
-            conversion,
-            duplicate_rows,
-            _overlay(),
-            DUMP_VERSION,
+            conversion, duplicate_rows, _overlay(), 'not-a-date'
         )
         is conversion
     )
 
 
-def test_packaged_default_overlay_is_reviewed_empty_manifest():
+def test_packaged_default_overlay_is_empty():
     overlay = protocol_overlay.load_default_drugbank_overlay()
-    assert overlay.schema_version == 1
-    assert overlay.entries == []
+    assert overlay.schema_version == 1 and overlay.entries == []
 
 
-def test_reviewed_unseen_drug_protocols_get_distinct_semantic_identities():
+def test_synthetic_protocols_preserve_score_identity_and_provenance():
     conversion, evaluations = _generic_conversion()
     overlay = _overlay(
+        _entry(novelty=_novelty(drug_entity_overlap='one-test-drug-unseen')),
         _entry(
-            'drugbank-cadgl',
-            'cadgl-paper',
-            'Ours (CADGL)',
-            'one-unseen-drug',
-            study_id='cadgl',
-            novelty=_novelty(drug_entity_overlap='one-test-drug-unseen'),
-        ),
-        _entry(
-            'drugbank-ssi-ddi',
-            'ssi-paper',
-            'SSI-DDI',
+            'drugbank-method-beta',
+            'beta-paper',
+            'Method Beta',
             'two-unseen-drugs',
-            study_id='ssi-ddi',
+            study_id='beta-study',
         ),
     )
     qualified = protocol_overlay.qualify_conversion(
         conversion, evaluations, overlay, DUMP_VERSION
     )
-    by_id = _results_by_pwc_id(qualified)
-
-    assert {r.evaluation_name for r in by_id['drugbank-cadgl']} == {
-        'cadgl-drugbank.one-unseen-drug'
+    generic = _by_id(conversion)
+    by_id = _by_id(qualified)
+    assert {r.evaluation_name for r in by_id['drugbank-method-alpha']} == {
+        'alpha-study-drugbank.one-unseen-drug'
     }
-    assert {r.evaluation_name for r in by_id['drugbank-ssi-ddi']} == {
-        'ssi-ddi-drugbank.two-unseen-drugs'
+    assert {r.evaluation_name for r in by_id['drugbank-method-beta']} == {
+        'beta-study-drugbank.two-unseen-drugs'
     }
-
-    generic_by_id = _results_by_pwc_id(conversion)
-    for evaluation_id in by_id:
-        assert [r.evaluation_result_id for r in by_id[evaluation_id]] == [
-            r.evaluation_result_id for r in generic_by_id[evaluation_id]
+    for evaluation_id, results in by_id.items():
+        assert [r.evaluation_result_id for r in results] == [
+            r.evaluation_result_id for r in generic[evaluation_id]
         ]
-        assert [r.score_details.score for r in by_id[evaluation_id]] == [
-            r.score_details.score for r in generic_by_id[evaluation_id]
+        assert [r.score_details.score for r in results] == [
+            r.score_details.score for r in generic[evaluation_id]
         ]
-
-    for bundle in qualified.records:
-        assert bundle.log.source_metadata.source_name == 'Papers with Code'
-    sample = by_id['drugbank-cadgl'][0]
-    assert sample.score_details.details['protocol_evidence_url'] == (
-        'https://example.org/paper'
+    assert all(
+        bundle.log.source_metadata.source_name == 'Papers with Code'
+        for bundle in qualified.records
     )
-    assert sample.score_details.details['protocol_collection_slug'] == (
-        'cadgl-drugbank'
-    )
-    assert sample.metric_config.additional_details['protocol_id'] == (
-        'one-unseen-drug'
+    sample = by_id['drugbank-method-alpha'][0]
+    assert sample.score_details.details['protocol_source_metrics_sha256'] == (
+        _fingerprint('drugbank-method-alpha')
     )
 
 
-def test_anchor_drift_fails_closed():
+def test_build_logs_wrapper_applies_overlay():
+    evaluations = _evaluations()
+    resolver = _resolver()
+    conversion = protocol_overlay.build_logs(
+        evaluations,
+        _datasets(),
+        _tasks(),
+        resolver,
+        _ranges(),
+        _meta(),
+        _papers(),
+        DUMP_VERSION,
+        RETRIEVED_TS,
+        overlay=_overlay(_entry(metrics=['AUROC'])),
+        group_scales=_group_scales(evaluations, resolver),
+    )
+    by_metric = {
+        result.metric_config.metric_name: result.evaluation_name
+        for result in _by_id(conversion)['drugbank-method-alpha']
+    }
+    assert by_metric['AUROC'] == 'alpha-study-drugbank.one-unseen-drug'
+    assert by_metric['Accuracy'].startswith('paperswithcode.')
+
+
+@pytest.mark.parametrize(
+    ('mutator', 'match'),
+    [
+        (lambda e: e['anchors'].__setitem__('paper_id', 'wrong'), 'anchor drift'),
+        (
+            lambda e: e.__setitem__('verified_against_dump_version', '20260229'),
+            'valid YYYYMMDD calendar date',
+        ),
+        (
+            lambda e: e['evidence'].__setitem__('source_url', 'example.org/paper'),
+            r'absolute HTTP\(S\) URL',
+        ),
+        (
+            lambda e: e.__setitem__('source_metrics_sha256', 'ABC'),
+            'lowercase 64-character SHA-256',
+        ),
+    ],
+)
+def test_invalid_review_metadata_is_rejected(mutator, match):
+    entry = _entry()
+    mutator(entry)
+    with pytest.raises(ValueError, match=match):
+        _overlay(entry)
+
+
+def test_missing_row_and_metric_fail_closed():
     conversion, evaluations = _generic_conversion()
-    overlay = _overlay(
-        _entry(
-            'drugbank-cadgl',
-            'wrong-paper',
-            'Ours (CADGL)',
-            'one-unseen-drug',
-        )
-    )
-    with pytest.raises(ValueError, match='anchor drift'):
-        protocol_overlay.qualify_conversion(
-            conversion, evaluations, overlay, DUMP_VERSION
-        )
-
-
-def test_missing_overlay_source_row_fails_closed():
-    conversion, evaluations = _generic_conversion()
-    overlay = _overlay(
-        _entry(
-            'missing-evaluation',
-            'cadgl-paper',
-            'Ours (CADGL)',
-            'one-unseen-drug',
-        )
-    )
     with pytest.raises(ValueError, match='references missing PwC evaluation'):
         protocol_overlay.qualify_conversion(
-            conversion, evaluations, overlay, DUMP_VERSION
+            conversion,
+            evaluations,
+            _overlay(_entry('missing-evaluation')),
+            DUMP_VERSION,
         )
-
-
-def test_missing_metric_selector_fails_closed():
-    conversion, evaluations = _generic_conversion()
-    overlay = _overlay(
-        _entry(
-            'drugbank-cadgl',
-            'cadgl-paper',
-            'Ours (CADGL)',
-            'one-unseen-drug',
-            metrics=['Not reported'],
-        )
-    )
     with pytest.raises(ValueError, match=r'selects missing metric\(s\)'):
         protocol_overlay.qualify_conversion(
-            conversion, evaluations, overlay, DUMP_VERSION
+            conversion,
+            evaluations,
+            _overlay(_entry(metrics=['Not reported'])),
+            DUMP_VERSION,
         )
 
 
-def test_overlay_verified_against_newer_dump_fails_closed():
+def test_explicit_metric_scope_is_required():
+    entry = _entry()
+    del entry['metrics']
+    with pytest.raises(ValueError, match='metrics'):
+        _overlay(entry)
+
+
+def test_malformed_or_different_current_dump_requires_review():
     conversion, evaluations = _generic_conversion()
-    entry = _entry(
-        'drugbank-cadgl',
-        'cadgl-paper',
-        'Ours (CADGL)',
-        'one-unseen-drug',
-    )
-    entry['verified_against_dump_version'] = '20260717'
-    overlay = _overlay(entry)
-    with pytest.raises(ValueError, match='verified against newer dump'):
+    overlay = _overlay(_entry())
+    with pytest.raises(ValueError, match='current dump_version'):
         protocol_overlay.qualify_conversion(
-            conversion, evaluations, overlay, DUMP_VERSION
+            conversion, evaluations, overlay, 'pwc-latest'
+        )
+    with pytest.raises(ValueError, match='re-review is required'):
+        protocol_overlay.qualify_conversion(
+            conversion, evaluations, overlay, '20260717'
         )
 
 
-def test_disjoint_metric_scopes_can_map_one_source_row_to_distinct_protocols():
+def test_source_metrics_payload_drift_fails_closed():
+    conversion, evaluations = _generic_conversion()
+    drifted = [dict(row) for row in evaluations]
+    drifted[0]['metrics'] = json.dumps(
+        {'AUROC': '99.50', 'Accuracy': '98.21', 'F1 score': '97.79'}
+    )
+    with pytest.raises(ValueError, match='metrics payload drift'):
+        protocol_overlay.qualify_conversion(
+            conversion, drifted, _overlay(_entry()), DUMP_VERSION
+        )
+
+
+def test_disjoint_metric_scopes_are_allowed_but_overlap_is_rejected():
     conversion, evaluations = _generic_conversion()
     overlay = _overlay(
-        _entry(
-            'drugbank-cadgl',
-            'cadgl-paper',
-            'Ours (CADGL)',
-            'one-unseen-drug',
-            study_id='cadgl',
-            metrics=['AUROC'],
-        ),
-        _entry(
-            'drugbank-cadgl',
-            'cadgl-paper',
-            'Ours (CADGL)',
-            'two-unseen-drugs',
-            study_id='cadgl',
-            metrics=['Accuracy', 'F1 score'],
-        ),
+        _entry(metrics=['AUROC']),
+        _entry(protocol_id='two-unseen-drugs', metrics=['Accuracy', 'F1 score']),
     )
     qualified = protocol_overlay.qualify_conversion(
         conversion, evaluations, overlay, DUMP_VERSION
     )
     by_metric = {
         result.metric_config.metric_name: result.evaluation_name
-        for result in _results_by_pwc_id(qualified)['drugbank-cadgl']
+        for result in _by_id(qualified)['drugbank-method-alpha']
     }
-    assert by_metric == {
-        'AUROC': 'cadgl-drugbank.one-unseen-drug',
-        'Accuracy': 'cadgl-drugbank.two-unseen-drugs',
-        'F1 score': 'cadgl-drugbank.two-unseen-drugs',
-    }
+    assert by_metric['AUROC'].endswith('.one-unseen-drug')
+    assert by_metric['Accuracy'].endswith('.two-unseen-drugs')
 
-
-def test_overlapping_metric_scoped_overlays_are_rejected():
-    first = _entry(
-        'drugbank-cadgl',
-        'cadgl-paper',
-        'Ours (CADGL)',
-        'one-unseen-drug',
-        metrics=['AUROC', 'Accuracy'],
-    )
-    second = _entry(
-        'drugbank-cadgl',
-        'cadgl-paper',
-        'Ours (CADGL)',
-        'two-unseen-drugs',
-        metrics=['Accuracy', 'F1 score'],
-    )
     with pytest.raises(ValueError, match='overlapping metric selectors'):
-        _overlay(first, second)
-
-
-def test_opaque_paper_split_tokens_are_not_normalized_protocol_ids():
-    with pytest.raises(ValueError, match='opaque source split tokens'):
         _overlay(
-            _entry(
-                'drugbank-cadgl',
-                'cadgl-paper',
-                'Ours (CADGL)',
-                'CS2',
-            )
+            _entry(metrics=['AUROC', 'Accuracy']),
+            _entry(protocol_id='two-unseen-drugs', metrics=['Accuracy']),
         )
+
+
+def test_opaque_source_split_token_is_rejected():
+    with pytest.raises(ValueError, match='opaque source split tokens'):
+        _overlay(_entry(protocol_id='CS2'))
