@@ -8,11 +8,14 @@ missing split semantics.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlparse
 
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -26,6 +29,7 @@ DEFAULT_DRUGBANK_OVERLAY_PATH = (
 )
 _ID_RE = re.compile(r'^[a-z0-9][a-z0-9.-]*$')
 _OPAQUE_PROTOCOL_RE = re.compile(r'^(?:s|cs)\d+$', re.IGNORECASE)
+_SHA256_RE = re.compile(r'^[0-9a-f]{64}$')
 _REQUIRED_NOVELTY_AXES = {
     'drug_entity_overlap',
     'target_entity_overlap',
@@ -121,7 +125,18 @@ class ProtocolEvidence(_StrictModel):
     source_locator: str
     verification_note: str
 
-    @field_validator('source_url', 'source_locator', 'verification_note')
+    @field_validator('source_url')
+    @classmethod
+    def validate_source_url(cls, value: str):
+        value = value.strip()
+        parsed = urlparse(value)
+        if parsed.scheme not in {'http', 'https'} or not parsed.netloc:
+            raise ValueError(
+                'protocol evidence source_url must be an absolute HTTP(S) URL'
+            )
+        return value
+
+    @field_validator('source_locator', 'verification_note')
     @classmethod
     def require_nonempty_evidence(cls, value: str):
         if not value.strip():
@@ -133,26 +148,30 @@ class ProtocolOverlayEntry(_StrictModel):
     pwc_evaluation_id: str | int
     verified_against_dump_version: str
     anchors: OverlayAnchors
+    source_metrics_sha256: str
     qualification: ProtocolQualification
     evidence: ProtocolEvidence
-    metrics: list[str] | None = None
+    metrics: list[str]
 
     @field_validator('verified_against_dump_version')
     @classmethod
     def validate_dump_version(cls, value: str):
-        if not re.fullmatch(r'\d{8}', value):
+        return _validated_dump_version(value, 'verified_against_dump_version')
+
+    @field_validator('source_metrics_sha256')
+    @classmethod
+    def validate_source_metrics_sha256(cls, value: str):
+        if not _SHA256_RE.fullmatch(value):
             raise ValueError(
-                'verified_against_dump_version must be an 8-digit YYYYMMDD value'
+                'source_metrics_sha256 must be a lowercase 64-character SHA-256'
             )
         return value
 
     @field_validator('metrics')
     @classmethod
-    def validate_metrics(cls, value: list[str] | None):
-        if value is None:
-            return value
+    def validate_metrics(cls, value: list[str]):
         if not value:
-            raise ValueError('metrics must be omitted or contain at least one name')
+            raise ValueError('metrics must contain at least one source metric name')
         if any(not name or not name.strip() for name in value):
             raise ValueError('metric selectors must be non-empty source names')
         if len(value) != len(set(value)):
@@ -172,21 +191,31 @@ class ProtocolOverlay(_StrictModel):
         for evaluation_id, entries in grouped.items():
             if len(entries) < 2:
                 continue
-            if any(entry.metrics is None for entry in entries):
-                raise ValueError(
-                    f'PwC evaluation {evaluation_id} has an all-metric overlay '
-                    'that overlaps another overlay entry'
-                )
             seen: set[str] = set()
             for entry in entries:
-                overlap = seen.intersection(entry.metrics or [])
+                overlap = seen.intersection(entry.metrics)
                 if overlap:
                     raise ValueError(
                         f'PwC evaluation {evaluation_id} has overlapping metric '
                         f'selectors: {sorted(overlap)}'
                     )
-                seen.update(entry.metrics or [])
+                seen.update(entry.metrics)
         return self
+
+
+def _validated_dump_version(value: Any, field_name: str) -> str:
+    text = str(value)
+    if not re.fullmatch(r'\d{8}', text):
+        raise ValueError(f'{field_name} must be a valid YYYYMMDD calendar date')
+    try:
+        parsed = datetime.strptime(text, '%Y%m%d')
+    except ValueError as exc:
+        raise ValueError(
+            f'{field_name} must be a valid YYYYMMDD calendar date'
+        ) from exc
+    if parsed.strftime('%Y%m%d') != text:
+        raise ValueError(f'{field_name} must be a valid YYYYMMDD calendar date')
+    return text
 
 
 def load_protocol_overlay(path: str | Path) -> ProtocolOverlay:
@@ -230,7 +259,23 @@ def _source_metrics(row: dict[str, Any]) -> dict[str, Any]:
         raise ValueError(
             f'PwC evaluation {row.get("id")} metrics must decode to an object'
         )
+    if any(not isinstance(name, str) for name in metrics):
+        raise ValueError(
+            f'PwC evaluation {row.get("id")} metric names must be strings'
+        )
     return metrics
+
+
+def source_metrics_sha256(metrics: dict[str, Any]) -> str:
+    """Fingerprint one complete raw PwC metrics object deterministically."""
+    payload = json.dumps(
+        metrics,
+        sort_keys=True,
+        separators=(',', ':'),
+        ensure_ascii=False,
+        allow_nan=False,
+    )
+    return hashlib.sha256(payload.encode('utf-8')).hexdigest()
 
 
 def build_qualification_index(
@@ -239,6 +284,9 @@ def build_qualification_index(
     dump_version: str,
 ) -> dict[tuple[str, str], ProtocolOverlayEntry]:
     """Validate overlay anchors and map each qualified source score cell once."""
+    current_dump_version = _validated_dump_version(
+        dump_version, 'current dump_version'
+    )
     rows: dict[str, dict[str, Any]] = {}
     for row in evaluations:
         evaluation_id = str(row.get('id'))
@@ -254,11 +302,11 @@ def build_qualification_index(
             raise ValueError(
                 f'protocol overlay references missing PwC evaluation {evaluation_id}'
             )
-        if dump_version < entry.verified_against_dump_version:
+        if current_dump_version != entry.verified_against_dump_version:
             raise ValueError(
-                f'protocol overlay for PwC evaluation {evaluation_id} was verified '
-                f'against newer dump {entry.verified_against_dump_version}, not '
-                f'current dump {dump_version}'
+                f'protocol overlay for PwC evaluation {evaluation_id} is pinned '
+                f'to dump {entry.verified_against_dump_version}, not current dump '
+                f'{current_dump_version}; re-review is required'
             )
 
         anchors = entry.anchors
@@ -271,7 +319,15 @@ def build_qualification_index(
             )
 
         source_metrics = _source_metrics(row)
-        metric_names = entry.metrics or list(source_metrics)
+        actual_metrics_sha256 = source_metrics_sha256(source_metrics)
+        if actual_metrics_sha256 != entry.source_metrics_sha256:
+            raise ValueError(
+                f'protocol overlay metrics payload drift for PwC evaluation '
+                f'{evaluation_id}: expected {entry.source_metrics_sha256}, got '
+                f'{actual_metrics_sha256}'
+            )
+
+        metric_names = entry.metrics
         missing = sorted(set(metric_names) - set(source_metrics))
         if missing:
             raise ValueError(
@@ -325,6 +381,7 @@ def _qualified_result(
         'protocol_verified_against_dump_version': (
             entry.verified_against_dump_version
         ),
+        'protocol_source_metrics_sha256': entry.source_metrics_sha256,
         'protocol_applied_to_dump_version': dump_version,
         'pwc_paper_id': _normalized_anchor(entry.anchors.paper_id),
         'pwc_dataset_id': _normalized_anchor(entry.anchors.dataset_id),
