@@ -6,6 +6,7 @@ from pathlib import Path
 from . import adapter
 from .audit_common import _base_report, _read_output
 
+
 def block_b3(source_root: Path) -> dict[str, object]:
     bundles = adapter.load_snapshots(source_root)
     built = adapter.build_logs(bundles)
