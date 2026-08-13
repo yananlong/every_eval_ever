@@ -18,7 +18,13 @@ from typing import Any, Iterable
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    Field,
+    field_validator,
+    model_validator,
+)
 
 from every_eval_ever.helpers import SourceConversionResult
 
