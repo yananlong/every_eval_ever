@@ -6,12 +6,29 @@ import json
 from dataclasses import dataclass
 
 from every_eval_ever.eval_types import (
-    EvalLibrary, EvaluationLog, EvaluationResult, EvaluatorRelationship,
-    GenerationConfig, MetricConfig, ModelInfo, ScoreDetails, ScoreType,
-    SourceDataPrivate, SourceDataUrl, SourceMetadata, SourceType,
+    EvalLibrary,
+    EvaluationLog,
+    EvaluationResult,
+    EvaluatorRelationship,
+    GenerationConfig,
+    MetricConfig,
+    ModelInfo,
+    ScoreDetails,
+    ScoreType,
+    SourceDataPrivate,
+    SourceDataUrl,
+    SourceMetadata,
+    SourceType,
 )
 
-from .source_schema import Dataset, Method, Metric, Protocol, ResultCell, SnapshotBundle
+from .source_schema import (
+    Dataset,
+    Method,
+    Metric,
+    Protocol,
+    ResultCell,
+    SnapshotBundle,
+)
 
 EVAL_LIBRARY_NAME = 'paper-reported-results'
 
