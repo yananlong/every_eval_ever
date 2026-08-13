@@ -10,6 +10,7 @@ from . import adapter
 from .audit_common import _base_report, _read_output, _scan_forbidden
 from .audit_sources import block_b1
 
+
 def block_b5(source_root: Path) -> dict[str, object]:
     bundles = adapter.load_snapshots(source_root)
     built = adapter.build_logs(bundles)
