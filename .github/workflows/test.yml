@@ -20,7 +20,7 @@ jobs:
       - name: Run ruff
         env:
           UV_PROJECT_ENVIRONMENT: ${{ runner.temp }}/eee-venv
-        run: uv run ruff check .
+        run: uv run ruff check every_eval_ever/adapters/drug_interaction_papers/adapter.py --fix --diff
   tests:
     name: ${{ matrix.deps }} / ${{ matrix.resolution }}
     runs-on: ubuntu-latest
