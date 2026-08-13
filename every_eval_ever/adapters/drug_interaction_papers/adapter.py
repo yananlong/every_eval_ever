@@ -8,12 +8,14 @@ import sys
 from pathlib import Path
 from typing import Sequence
 
-from .conversion import build_logs, semantic_records, validate_built_logs
-from .modeling import BuiltLog
+from .conversion import build_logs
 from .publication import export_logs
 from .source_schema import (
-    Catalog, SnapshotBundle, load_catalog as _load_catalog,
-    load_enabled_snapshots, load_snapshot as _load_snapshot,
+    Catalog,
+    SnapshotBundle,
+    load_catalog as _load_catalog,
+    load_enabled_snapshots,
+    load_snapshot as _load_snapshot,
 )
 
 PACKAGE_ROOT = Path(__file__).resolve().parent
