@@ -9,6 +9,7 @@ from pydantic import Field, field_validator, model_validator
 
 from .source_base import StrictModel, _validate_id
 
+
 class Condition(StrictModel):
     condition_id: str
     display_name: str
