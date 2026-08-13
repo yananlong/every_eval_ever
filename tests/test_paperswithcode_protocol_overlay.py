@@ -286,10 +286,20 @@ def test_build_logs_wrapper_applies_overlay():
     assert by_metric['Accuracy'].startswith('paperswithcode.')
 
 
+def test_anchor_drift_is_rejected_when_overlay_is_applied():
+    conversion, evaluations = _generic_conversion()
+    with pytest.raises(ValueError, match='anchor drift'):
+        protocol_overlay.qualify_conversion(
+            conversion,
+            evaluations,
+            _overlay(_entry(paper_id='wrong')),
+            DUMP_VERSION,
+        )
+
+
 @pytest.mark.parametrize(
     ('mutator', 'match'),
     [
-        (lambda e: e['anchors'].__setitem__('paper_id', 'wrong'), 'anchor drift'),
         (
             lambda e: e.__setitem__('verified_against_dump_version', '20260229'),
             'valid YYYYMMDD calendar date',
