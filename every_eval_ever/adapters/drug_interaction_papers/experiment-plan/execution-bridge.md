@@ -12,7 +12,7 @@
 - Declared input snapshot paths: every_eval_ever/adapters/drug_interaction_papers/sources; every_eval_ever/adapters/drug_interaction_papers/experiment-plan/source-verification-ledger.md
 - Declared evaluator snapshot paths: every_eval_ever/adapters/drug_interaction_papers/source_schema.py
 - Expected implementation entrypoint: every_eval_ever.adapters.drug_interaction_papers.adapter
-- Expected command or notebook: `python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B1 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B1-source-audit.json`
+- Expected command or notebook: `uv run python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B1 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B1-source-audit.json`
 - Output artifacts to produce: every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B1-source-audit.json
 - Auditor-facing checks: Verify the artifact exists, records all outcome categories, matches the frozen gate criteria, and is not treated as proof beyond its declared evidence class.
 - Intended lineage relation: baseline for the valid run; negative_control or technical_retry only where declared in `run-blocks.json`.
@@ -32,7 +32,7 @@
 - Declared input snapshot paths: every_eval_ever/adapters/drug_interaction_papers/sources; every_eval_ever/adapters/drug_interaction_papers/adapter.py
 - Declared evaluator snapshot paths: tests/test_drug_interaction_papers_adapter.py
 - Expected implementation entrypoint: every_eval_ever.adapters.drug_interaction_papers.audit
-- Expected command or notebook: `python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B2 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B2-semantic-audit.json`
+- Expected command or notebook: `uv run python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B2 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B2-semantic-audit.json`
 - Output artifacts to produce: every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B2-semantic-audit.json
 - Auditor-facing checks: Verify the artifact exists, records all outcome categories, matches the frozen gate criteria, and is not treated as proof beyond its declared evidence class.
 - Intended lineage relation: baseline for the valid run; negative_control or technical_retry only where declared in `run-blocks.json`.
@@ -52,7 +52,7 @@
 - Declared input snapshot paths: every_eval_ever/adapters/drug_interaction_papers/sources; every_eval_ever/adapters/drug_interaction_papers/adapter.py
 - Declared evaluator snapshot paths: every_eval_ever/eval_types.py; every_eval_ever/cli.py
 - Expected implementation entrypoint: every_eval_ever.adapters.drug_interaction_papers.adapter
-- Expected command or notebook: `python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B3 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B3-conversion-audit.json`
+- Expected command or notebook: `uv run python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B3 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B3-conversion-audit.json`
 - Output artifacts to produce: every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B3-conversion-audit.json
 - Auditor-facing checks: Verify the artifact exists, records all outcome categories, matches the frozen gate criteria, and is not treated as proof beyond its declared evidence class.
 - Intended lineage relation: baseline for the valid run; negative_control or technical_retry only where declared in `run-blocks.json`.
@@ -72,7 +72,7 @@
 - Declared input snapshot paths: every_eval_ever/adapters/drug_interaction_papers/sources; every_eval_ever/adapters/drug_interaction_papers/adapter.py
 - Declared evaluator snapshot paths: tests/test_drug_interaction_papers_adapter.py
 - Expected implementation entrypoint: every_eval_ever.adapters.drug_interaction_papers.audit
-- Expected command or notebook: `python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B4 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B4-negative-control-audit.json`
+- Expected command or notebook: `uv run python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B4 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B4-negative-control-audit.json`
 - Output artifacts to produce: every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B4-negative-control-audit.json
 - Auditor-facing checks: Verify the artifact exists, records all outcome categories, matches the frozen gate criteria, and is not treated as proof beyond its declared evidence class.
 - Intended lineage relation: baseline for the valid run; negative_control or technical_retry only where declared in `run-blocks.json`.
@@ -92,7 +92,7 @@
 - Declared input snapshot paths: every_eval_ever/adapters/drug_interaction_papers/sources; every_eval_ever/adapters/drug_interaction_papers/adapter.py
 - Declared evaluator snapshot paths: every_eval_ever/adapters/drug_interaction_papers/adapter.py; tests/test_drug_interaction_papers_adapter.py
 - Expected implementation entrypoint: every_eval_ever.adapters.drug_interaction_papers.adapter
-- Expected command or notebook: `python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B5 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B5-release-audit.json`
+- Expected command or notebook: `uv run python -m every_eval_ever.adapters.drug_interaction_papers.audit --block B5 --output every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B5-release-audit.json`
 - Output artifacts to produce: every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B5-release-audit.json
 - Auditor-facing checks: Verify the artifact exists, records all outcome categories, matches the frozen gate criteria, and is not treated as proof beyond its declared evidence class.
 - Intended lineage relation: baseline for the valid run; negative_control or technical_retry only where declared in `run-blocks.json`.
