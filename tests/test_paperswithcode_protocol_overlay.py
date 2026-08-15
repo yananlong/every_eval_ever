@@ -1,6 +1,7 @@
 """Offline tests for reviewed PwC DrugBank protocol qualification."""
 
 import json
+from dataclasses import replace
 
 import pytest
 
@@ -390,6 +391,35 @@ def test_source_metrics_payload_drift_fails_closed():
     with pytest.raises(ValueError, match='metrics payload drift'):
         protocol_overlay.qualify_conversion(
             conversion, drifted, _overlay(_entry()), DUMP_VERSION
+        )
+
+
+def test_missing_qualified_cell_after_generic_conversion_fails_closed():
+    conversion, evaluations = _generic_conversion()
+    stripped_records = []
+    for bundle in conversion.records:
+        results = [
+            result
+            for result in bundle.log.evaluation_results
+            if not (
+                result.score_details.details.get('pwc_evaluation_id')
+                == 'drugbank-method-alpha'
+                and result.metric_config.metric_name == 'AUROC'
+            )
+        ]
+        stripped_records.append(
+            replace(
+                bundle,
+                log=bundle.log.model_copy(update={'evaluation_results': results}),
+            )
+        )
+    stripped = replace(conversion, records=stripped_records)
+    with pytest.raises(ValueError, match='did not survive generic conversion'):
+        protocol_overlay.qualify_conversion(
+            stripped,
+            evaluations,
+            _overlay(_entry(metrics=['AUROC'])),
+            DUMP_VERSION,
         )
 
 
