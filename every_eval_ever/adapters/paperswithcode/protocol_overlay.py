@@ -57,6 +57,13 @@ class OverlayAnchors(_StrictModel):
     task_id: str | int
     model_name: str
 
+    @field_validator('paper_id', 'dataset_id', 'task_id', 'model_name')
+    @classmethod
+    def require_nonempty_anchor(cls, value):
+        if isinstance(value, str) and not value.strip():
+            raise ValueError('protocol overlay anchors must be non-empty')
+        return value
+
 
 class ProtocolQualification(_StrictModel):
     study_id: str
@@ -159,6 +166,13 @@ class ProtocolOverlayEntry(_StrictModel):
     evidence: ProtocolEvidence
     metrics: list[str]
 
+    @field_validator('pwc_evaluation_id')
+    @classmethod
+    def require_nonempty_evaluation_id(cls, value):
+        if isinstance(value, str) and not value.strip():
+            raise ValueError('PwC evaluation id must be non-empty')
+        return value
+
     @field_validator('verified_against_dump_version')
     @classmethod
     def validate_dump_version(cls, value: str):
@@ -183,6 +197,15 @@ class ProtocolOverlayEntry(_StrictModel):
         if len(value) != len(set(value)):
             raise ValueError('metric selectors must be unique within an entry')
         return value
+
+    @model_validator(mode='after')
+    def require_drugbank_qualification(self):
+        if self.qualification.dataset_id != 'drugbank':
+            raise ValueError(
+                'DrugBank protocol overlay entries must target normalized '
+                'dataset_id drugbank'
+            )
+        return self
 
 
 class ProtocolOverlay(_StrictModel):
