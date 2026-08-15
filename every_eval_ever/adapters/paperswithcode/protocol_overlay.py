@@ -18,13 +18,7 @@ from typing import Any, Iterable
 from urllib.parse import urlparse
 
 import yaml
-from pydantic import (
-    BaseModel,
-    ConfigDict,
-    Field,
-    field_validator,
-    model_validator,
-)
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from every_eval_ever.helpers import SourceConversionResult
 
@@ -77,11 +71,7 @@ class ProtocolQualification(_StrictModel):
     novelty: dict[str, str]
 
     @field_validator(
-        'study_id',
-        'dataset_id',
-        'task_id',
-        'collection_slug',
-        'condition_id',
+        'study_id', 'dataset_id', 'task_id', 'collection_slug', 'condition_id'
     )
     @classmethod
     def validate_id(cls, value: str | None):
@@ -129,7 +119,6 @@ class ProtocolQualification(_StrictModel):
         return self
 
     def evaluation_name(self) -> str:
-        """Match the existing primary-paper adapter's semantic namespace."""
         return f'{self.collection_slug}.{self.protocol_id}'
 
 
@@ -260,12 +249,7 @@ def _normalized_anchor(value: Any) -> str | None:
     return None if value is None else str(value)
 
 
-def _assert_anchor(
-    evaluation_id: str,
-    field_name: str,
-    expected: Any,
-    actual: Any,
-) -> None:
+def _assert_anchor(evaluation_id: str, field_name: str, expected: Any, actual: Any) -> None:
     if _normalized_anchor(expected) != _normalized_anchor(actual):
         raise ValueError(
             f'protocol overlay anchor drift for PwC evaluation {evaluation_id}: '
@@ -296,7 +280,6 @@ def _source_metrics(row: dict[str, Any]) -> dict[str, Any]:
 
 
 def source_metrics_sha256(metrics: dict[str, Any]) -> str:
-    """Fingerprint one complete raw PwC metrics object deterministically."""
     payload = json.dumps(
         metrics,
         sort_keys=True,
@@ -307,18 +290,22 @@ def source_metrics_sha256(metrics: dict[str, Any]) -> str:
     return hashlib.sha256(payload.encode('utf-8')).hexdigest()
 
 
+def _source_evaluation_id(row: dict[str, Any]) -> str:
+    value = row.get('id')
+    if value is None or (isinstance(value, str) and not value.strip()):
+        raise ValueError('PwC source evaluation id must be non-empty')
+    return str(value)
+
+
 def build_qualification_index(
     overlay: ProtocolOverlay,
     evaluations: Iterable[dict[str, Any]],
     dump_version: str,
 ) -> dict[tuple[str, str], ProtocolOverlayEntry]:
-    """Validate overlay anchors and map each qualified source score cell once."""
-    current_dump_version = _validated_dump_version(
-        dump_version, 'current dump_version'
-    )
+    current_dump_version = _validated_dump_version(dump_version, 'current dump_version')
     rows: dict[str, dict[str, Any]] = {}
     for row in evaluations:
-        evaluation_id = str(row.get('id'))
+        evaluation_id = _source_evaluation_id(row)
         if evaluation_id in rows:
             raise ValueError(f'duplicate PwC evaluation id in source: {evaluation_id}')
         rows[evaluation_id] = row
@@ -337,7 +324,6 @@ def build_qualification_index(
                 f'to dump {entry.verified_against_dump_version}, not current dump '
                 f'{current_dump_version}; re-review is required'
             )
-
         anchors = entry.anchors
         for field_name in ('paper_id', 'dataset_id', 'task_id', 'model_name'):
             _assert_anchor(
@@ -346,7 +332,6 @@ def build_qualification_index(
                 getattr(anchors, field_name),
                 row.get(field_name),
             )
-
         source_metrics = _source_metrics(row)
         actual_metrics_sha256 = source_metrics_sha256(source_metrics)
         if actual_metrics_sha256 != entry.source_metrics_sha256:
@@ -355,29 +340,21 @@ def build_qualification_index(
                 f'{evaluation_id}: expected {entry.source_metrics_sha256}, got '
                 f'{actual_metrics_sha256}'
             )
-
-        metric_names = entry.metrics
-        missing = sorted(set(metric_names) - set(source_metrics))
+        missing = sorted(set(entry.metrics) - set(source_metrics))
         if missing:
             raise ValueError(
                 f'protocol overlay for PwC evaluation {evaluation_id} selects '
                 f'missing metric(s): {missing}'
             )
-        for metric_name in metric_names:
+        for metric_name in entry.metrics:
             key = (evaluation_id, metric_name)
             if key in index:
-                raise ValueError(
-                    f'PwC source score cell is qualified more than once: {key}'
-                )
+                raise ValueError(f'PwC source score cell is qualified more than once: {key}')
             index[key] = entry
     return index
 
 
-def _qualified_result(
-    result,
-    entry: ProtocolOverlayEntry,
-    dump_version: str,
-):
+def _qualified_result(result, entry: ProtocolOverlayEntry, dump_version: str):
     qualification = entry.qualification
     metric_details = dict(result.metric_config.additional_details or {})
     metric_details.update(
@@ -387,10 +364,7 @@ def _qualified_result(
             'protocol_task_type': qualification.task_type,
         }
     )
-    metric_config = result.metric_config.model_copy(
-        update={'additional_details': metric_details}
-    )
-
+    metric_config = result.metric_config.model_copy(update={'additional_details': metric_details})
     score_details = dict(result.score_details.details or {})
     additions = {
         'protocol_study_id': qualification.study_id,
@@ -401,24 +375,18 @@ def _qualified_result(
         'protocol_condition_id': qualification.condition_id,
         'protocol_task_type': qualification.task_type,
         'protocol_candidate_label_space': qualification.candidate_label_space,
-        'protocol_novelty': json.dumps(
-            qualification.novelty, sort_keys=True, separators=(',', ':')
-        ),
+        'protocol_novelty': json.dumps(qualification.novelty, sort_keys=True, separators=(',', ':')),
         'protocol_evidence_url': entry.evidence.source_url,
         'protocol_evidence_locator': entry.evidence.source_locator,
         'protocol_verification_note': entry.evidence.verification_note,
-        'protocol_verified_against_dump_version': (
-            entry.verified_against_dump_version
-        ),
+        'protocol_verified_against_dump_version': entry.verified_against_dump_version,
         'protocol_source_metrics_sha256': entry.source_metrics_sha256,
         'protocol_applied_to_dump_version': dump_version,
         'pwc_paper_id': _normalized_anchor(entry.anchors.paper_id),
         'pwc_dataset_id': _normalized_anchor(entry.anchors.dataset_id),
         'pwc_task_id': _normalized_anchor(entry.anchors.task_id),
     }
-    score_details.update(
-        {key: value for key, value in additions.items() if value is not None}
-    )
+    score_details.update({key: value for key, value in additions.items() if value is not None})
     score = result.score_details.model_copy(update={'details': score_details})
     return result.model_copy(
         update={
@@ -435,15 +403,12 @@ def qualify_conversion(
     overlay: ProtocolOverlay,
     dump_version: str,
 ) -> SourceConversionResult[generic.LogBundle]:
-    """Apply reviewed semantics without changing PwC score-cell identities."""
     if not overlay.entries:
         return conversion
-
     rows = list(evaluations)
     index = build_qualification_index(overlay, rows, dump_version)
     if not index:
         return conversion
-
     seen: set[tuple[str, str]] = set()
     bundles: list[generic.LogBundle] = []
     for bundle in conversion.records:
@@ -461,16 +426,8 @@ def qualify_conversion(
                 raise ValueError(f'PwC source score cell emitted twice: {key}')
             seen.add(key)
             results.append(_qualified_result(result, entry, dump_version))
-
         log = bundle.log.model_copy(update={'evaluation_results': results})
-        bundles.append(
-            generic.LogBundle(
-                log=log,
-                developer=bundle.developer,
-                model=bundle.model,
-            )
-        )
-
+        bundles.append(generic.LogBundle(log=log, developer=bundle.developer, model=bundle.model))
     missing = sorted(set(index) - seen)
     if missing:
         raise ValueError(
@@ -502,7 +459,6 @@ def build_logs(
     dump_file: str | None = None,
     group_scales: dict[tuple[Any, str], generic.GroupScale] | None = None,
 ) -> SourceConversionResult[generic.LogBundle]:
-    """Build generic PwC logs, then qualify only reviewed source score cells."""
     rows = list(evaluations)
     conversion = generic.build_logs(
         rows,
