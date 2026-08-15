@@ -333,6 +333,16 @@ def test_invalid_review_metadata_is_rejected(mutator, match):
         _overlay(entry)
 
 
+def test_missing_source_evaluation_id_fails_closed():
+    conversion, evaluations = _generic_conversion()
+    broken = [dict(row) for row in evaluations]
+    broken[0]['id'] = None
+    with pytest.raises(ValueError, match='PwC source evaluation id must be non-empty'):
+        protocol_overlay.qualify_conversion(
+            conversion, broken, _overlay(_entry()), DUMP_VERSION
+        )
+
+
 def test_missing_row_and_metric_fail_closed():
     conversion, evaluations = _generic_conversion()
     with pytest.raises(ValueError, match='references missing PwC evaluation'):
