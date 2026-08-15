@@ -312,6 +312,18 @@ def test_anchor_drift_is_rejected_when_overlay_is_applied():
             lambda e: e.__setitem__('source_metrics_sha256', 'ABC'),
             'lowercase 64-character SHA-256',
         ),
+        (
+            lambda e: e.__setitem__('pwc_evaluation_id', '   '),
+            'PwC evaluation id must be non-empty',
+        ),
+        (
+            lambda e: e['anchors'].__setitem__('model_name', '   '),
+            'protocol overlay anchors must be non-empty',
+        ),
+        (
+            lambda e: e['qualification'].__setitem__('dataset_id', 'other-dataset'),
+            'must target normalized dataset_id drugbank',
+        ),
     ],
 )
 def test_invalid_review_metadata_is_rejected(mutator, match):
