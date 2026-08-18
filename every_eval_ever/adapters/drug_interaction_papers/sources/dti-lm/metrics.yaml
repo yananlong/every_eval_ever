@@ -1,0 +1,17 @@
+metrics:
+- metric_id: auroc
+  display_name: AUROC
+  metric_kind: auroc
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}
+- metric_id: auprc
+  display_name: AUPRC
+  metric_kind: auprc
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}

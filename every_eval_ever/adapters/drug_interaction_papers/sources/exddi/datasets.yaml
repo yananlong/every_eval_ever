@@ -1,0 +1,26 @@
+datasets:
+- dataset_id: drugbank
+  collection_slug: exddi-drugbank
+  display_name: ExDDI paired corpus with DrugBank explanations
+  source_type: other
+  source_urls:
+  - https://arxiv.org/abs/2409.05592
+  dataset_version: DrugBank 5.1.10 paired/intersected corpus
+  task_type: ddi_explanation_generation
+  details:
+    pairing: intersection of DDInter and DrugBank positive and negative samples
+    negative_sampling: equal negatives to positives
+    explanation_source: DrugBank
+- dataset_id: ddinter
+  collection_slug: exddi-ddinter
+  display_name: ExDDI paired corpus with DDInter explanations
+  source_type: url
+  source_urls:
+  - https://arxiv.org/abs/2409.05592
+  - http://ddinter.scbdd.com/
+  dataset_version: paired/intersected corpus
+  task_type: ddi_explanation_generation
+  details:
+    pairing: intersection of DDInter and DrugBank positive and negative samples
+    negative_sampling: equal negatives to positives
+    explanation_source: DDInter

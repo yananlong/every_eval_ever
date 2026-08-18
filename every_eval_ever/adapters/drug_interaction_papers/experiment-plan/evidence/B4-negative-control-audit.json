@@ -1,0 +1,57 @@
+{
+  "accepted_negative_controls": 0,
+  "block_id": "B4",
+  "evidence_class": "exploratory",
+  "negative_control_count": 9,
+  "outcomes": [
+    {
+      "case": "bundle_digest_mismatch",
+      "error": "textddi-emnlp-2023: bundle digest mismatch; expected 0cb3f644bafda163f6b6aae86853c1865ba56f5b26d21965e618e605f869dbe9, got b4167194cb36f30051adb7e18f6eaf0076fc11813ac2aaadf4d61299e4e90fa0",
+      "status": "rejected"
+    },
+    {
+      "case": "duplicate_logical_cell",
+      "error": "1 validation error for SnapshotBundle\n  Value error, table counts differ: actual={'Table 1': 121} expected={'Table 1': 120} [type=value_error, input_value={'entry': CatalogEntry(st...icate/sources/zeroddi')}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "status": "rejected"
+    },
+    {
+      "case": "malformed_numeric_score",
+      "error": "<TMP>/malformed/sources/dti-lm/results-01.csv:2: 1 validation error for ResultCell\nscore\n  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/float_parsing",
+      "status": "rejected"
+    },
+    {
+      "case": "unknown_method_foreign_key",
+      "error": "1 validation error for SnapshotBundle\n  Value error, unknown method_id 'missing-method' [type=value_error, input_value={'entry': CatalogEntry(st...ethod/sources/textddi')}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "status": "rejected"
+    },
+    {
+      "case": "catalog_path_traversal",
+      "error": "1 validation error for Catalog\nsnapshots.0.manifest\n  Value error, manifest must be a safe relative path [type=value_error, input_value='../../outside.yaml', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/value_error",
+      "status": "rejected"
+    },
+    {
+      "case": "unknown_filter",
+      "error": "unknown study filter(s): ['not-a-study']",
+      "status": "rejected"
+    },
+    {
+      "case": "empty_filter_intersection",
+      "error": "selection produced no evaluation logs",
+      "status": "rejected"
+    },
+    {
+      "case": "nonempty_destination_without_replace",
+      "error": "<TMP>/occupied/zeroddi-drugbank is non-empty; pass --replace to replace adapter-owned output",
+      "status": "rejected"
+    },
+    {
+      "case": "install_failure_rollback",
+      "error": "injected install failure",
+      "status": "rejected"
+    }
+  ],
+  "partial_publications": 0,
+  "prior_output_mutations": 0,
+  "scientific_gate_status": "pass",
+  "technical_status": "pass"
+}

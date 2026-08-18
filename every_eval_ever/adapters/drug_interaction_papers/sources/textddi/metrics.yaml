@@ -1,0 +1,42 @@
+metrics:
+- metric_id: f1-macro
+  display_name: Macro F1
+  metric_kind: f1
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    average: macro
+- metric_id: accuracy
+  display_name: Accuracy
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}
+- metric_id: cohen-kappa
+  display_name: Cohen Kappa
+  metric_kind: kappa
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}
+- metric_id: pr-auc
+  display_name: PR-AUC
+  metric_kind: auprc
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}
+- metric_id: roc-auc
+  display_name: ROC-AUC
+  metric_kind: auroc
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}

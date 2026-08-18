@@ -405,8 +405,54 @@ ADAPTERS: tuple[AdapterSpec, ...] = (
         timeout_minutes=30,
         notes='Pinned to SOURCE_COMMIT; only changes when the pin is bumped.',
     ),
-    # Registered but not schedulable. Each needs a local input file because it
-    # has no live fetch path; automation would have nothing to hand it.
+    # Registered but not schedulable. These adapters either require a local
+    # input or retain a reviewed release/automation gate that cron cannot
+    # satisfy yet.
+    AdapterSpec(
+        key='drug_interaction_papers',
+        module='every_eval_ever.adapters.drug_interaction_papers.adapter',
+        collections=(
+            'llmddi-drugbank',
+            'textddi-drugbank',
+            'textddi-twosides',
+            'zeroddi-drugbank',
+            'exddi-drugbank',
+            'exddi-ddinter',
+            'dti-lm-drugbank',
+            'dti-lm-bindingdb',
+        ),
+        output_scope='data_root',
+        runnable=False,
+        unrunnable_reason=(
+            'the frozen primary-paper transcription remains self-reviewed; '
+            'scientific/release gates G1 and G5 require materially independent '
+            'verification before scheduled publication'
+        ),
+        captures_raw=False,
+        notes=(
+            'Offline converter over packaged aggregate source bundles. Its '
+            'technical audit blocks are runnable manually, but do not replace '
+            'the independent source-cell review gate.'
+        ),
+    ),
+    AdapterSpec(
+        key='paperswithcode',
+        module='every_eval_ever.adapters.paperswithcode.adapter',
+        collections=('paperswithcode',),
+        extra_args=('--all',),
+        timeout_minutes=120,
+        runnable=False,
+        unrunnable_reason=(
+            'scheduled all-dataset conversion is not approved: dump pinning, '
+            'raw-capture integration, and unresolved-metric policy need an '
+            'automation design before cron may publish it'
+        ),
+        with_packages=('pgdumplib>=4.0.0',),
+        notes=(
+            'Manual --dump runs are supported. The DrugBank protocol overlay '
+            'is intentionally empty until reviewed PwC row mappings exist.'
+        ),
+    ),
     AdapterSpec(
         key='bfcl',
         module='every_eval_ever.adapters.bfcl.adapter',

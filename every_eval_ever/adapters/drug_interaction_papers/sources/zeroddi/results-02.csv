@@ -1,0 +1,33 @@
+dataset_id,method_id,condition_id,protocol_id,metric_id,score,reported_value,reported_std,source_table,source_page,source_row,source_column,result_origin,notes
+drugbank,zslhinge2,default,unseen-relation-gzsl,zeroddi.harmonic-accuracy-average,16.87,16.87,,Table 1,5,ZSLHinge2,harmonic-accuracy-average,paper_run,reported in percent
+drugbank,zslhinge2,default,unseen-relation-gzsl,zeroddi.harmonic-accuracy-at-1,15.86,15.86,,Table 1,5,ZSLHinge2,harmonic-accuracy-at-1,paper_run,reported in percent
+drugbank,zslhinge2,default,unseen-relation-gzsl,zeroddi.unseen-conditional-accuracy-ratio,11.08,11.08,,Table 1,5,ZSLHinge2,Pu,paper_run,reported in percent; Pu = unseen top-1 accuracy / unseen binary accuracy
+drugbank,zslhinge2,default,unseen-relation-gzsl,zeroddi.seen-conditional-accuracy-ratio,95.48,95.48,,Table 1,5,ZSLHinge2,Ps,paper_run,reported in percent; Ps = seen top-1 accuracy / seen binary accuracy
+drugbank,zslce1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-average,11.35,11.35,,Table 1,5,ZSLCE1,unseen-accuracy-average,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-1,11.32,11.32,,Table 1,5,ZSLCE1,unseen-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-3,30.21,30.21,,Table 1,5,ZSLCE1,unseen-accuracy-at-3,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-5,44.72,44.72,,Table 1,5,ZSLCE1,unseen-accuracy-at-5,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.unseen-accuracy-average,7.55,7.55,,Table 1,5,ZSLCE1,unseen-accuracy-average,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.unseen-accuracy-at-1,8.9,8.90,,Table 1,5,ZSLCE1,unseen-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.seen-accuracy-average,54.57,54.57,,Table 1,5,ZSLCE1,seen-accuracy-average,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.seen-accuracy-at-1,61.75,61.75,,Table 1,5,ZSLCE1,seen-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.harmonic-accuracy-average,12.97,12.97,,Table 1,5,ZSLCE1,harmonic-accuracy-average,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.harmonic-accuracy-at-1,15.14,15.14,,Table 1,5,ZSLCE1,harmonic-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.unseen-conditional-accuracy-ratio,13.65,13.65,,Table 1,5,ZSLCE1,Pu,paper_run,reported in percent; Pu = unseen top-1 accuracy / unseen binary accuracy
+drugbank,zslce1,default,unseen-relation-gzsl,zeroddi.seen-conditional-accuracy-ratio,75.19,75.19,,Table 1,5,ZSLCE1,Ps,paper_run,reported in percent; Ps = seen top-1 accuracy / seen binary accuracy
+drugbank,zslce2,default,unseen-relation-czsl,zeroddi.unseen-accuracy-average,15.08,15.08,,Table 1,5,ZSLCE2,unseen-accuracy-average,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-1,16.86,16.86,,Table 1,5,ZSLCE2,unseen-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-3,39.04,39.04,,Table 1,5,ZSLCE2,unseen-accuracy-at-3,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-5,53.34,53.34,,Table 1,5,ZSLCE2,unseen-accuracy-at-5,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.unseen-accuracy-average,12.73,12.73,,Table 1,5,ZSLCE2,unseen-accuracy-average,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.unseen-accuracy-at-1,14.84,14.84,,Table 1,5,ZSLCE2,unseen-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.seen-accuracy-average,76.2,76.20,,Table 1,5,ZSLCE2,seen-accuracy-average,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.seen-accuracy-at-1,71.03,71.03,,Table 1,5,ZSLCE2,seen-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.harmonic-accuracy-average,21.78,21.78,,Table 1,5,ZSLCE2,harmonic-accuracy-average,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.harmonic-accuracy-at-1,24.27,24.27,,Table 1,5,ZSLCE2,harmonic-accuracy-at-1,paper_run,reported in percent
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.unseen-conditional-accuracy-ratio,17.76,17.76,,Table 1,5,ZSLCE2,Pu,paper_run,reported in percent; Pu = unseen top-1 accuracy / unseen binary accuracy
+drugbank,zslce2,default,unseen-relation-gzsl,zeroddi.seen-conditional-accuracy-ratio,97.01,97.01,,Table 1,5,ZSLCE2,Ps,paper_run,reported in percent; Ps = seen top-1 accuracy / seen binary accuracy
+drugbank,zsltriplet1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-average,15.09,15.09,,Table 1,5,ZSLTriplet1,unseen-accuracy-average,paper_run,reported in percent
+drugbank,zsltriplet1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-1,14.77,14.77,,Table 1,5,ZSLTriplet1,unseen-accuracy-at-1,paper_run,reported in percent
+drugbank,zsltriplet1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-3,40.51,40.51,,Table 1,5,ZSLTriplet1,unseen-accuracy-at-3,paper_run,reported in percent
+drugbank,zsltriplet1,default,unseen-relation-czsl,zeroddi.unseen-accuracy-at-5,59.84,59.84,,Table 1,5,ZSLTriplet1,unseen-accuracy-at-5,paper_run,reported in percent

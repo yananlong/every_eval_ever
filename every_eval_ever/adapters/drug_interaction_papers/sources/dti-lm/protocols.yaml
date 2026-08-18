@@ -1,0 +1,25 @@
+protocols:
+- protocol_id: warm
+  display_name: Warm
+  task_type: dti_binary_classification
+  novelty:
+    drug_entity_overlap: allowed
+    protein_entity_overlap: allowed
+  candidate_label_space: reported_label_space
+  notes: ''
+- protocol_id: cold-drug
+  display_name: Cold Drug
+  task_type: dti_binary_classification
+  novelty:
+    drug_entity_overlap: prohibited
+    protein_entity_overlap: allowed
+  candidate_label_space: reported_label_space
+  notes: ''
+- protocol_id: cold-protein
+  display_name: Cold Protein
+  task_type: dti_binary_classification
+  novelty:
+    drug_entity_overlap: allowed
+    protein_entity_overlap: prohibited
+  candidate_label_space: reported_label_space
+  notes: ''

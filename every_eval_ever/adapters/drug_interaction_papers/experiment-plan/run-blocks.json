@@ -1,0 +1,468 @@
+[
+  {
+    "block_id": "B1",
+    "paper_role": "main",
+    "claim_ids": [
+      "C1"
+    ],
+    "decision_gate_id": "G1",
+    "anti_claims_ruled_out": [
+      "Structural validity alone proves scientific correctness."
+    ],
+    "why_this_block_exists": "Verify the frozen source universe before conversion.",
+    "dataset_split_task": "Five papers, eight collections, selected aggregate tables.",
+    "systems_compared": [
+      "source bundles",
+      "primary-table anchors"
+    ],
+    "fixed_factors": [
+      "Frozen source and current EEE schema."
+    ],
+    "variable_factors": [
+      "The tested source, mapping, replay, failure, or release condition."
+    ],
+    "metrics": [
+      "row count",
+      "key uniqueness",
+      "anchor mismatches"
+    ],
+    "setup_details": "Run the offline adapter audit at the pinned source snapshot.",
+    "seeds": 1,
+    "success_criterion": "All counts, keys, digests, and anchors pass.",
+    "minimum_effect_size": "Zero unexplained or release-blocking findings.",
+    "failure_interpretation": "Block conversion and correct or defer the affected snapshot.",
+    "expected_output_artifact": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B1-source-audit.json",
+    "compute_budget": "CPU-only; seconds to minutes; no network.",
+    "dependencies": [],
+    "priority": "must-run",
+    "evidence_class": "exploratory",
+    "selection_rule": "Use the complete predeclared source/table or failure-control universe.",
+    "non_vacuity_check": "At least one predefined mutation changes the audit outcome.",
+    "complete_outcome_accounting": "Retain passes, failures, skips, nulls, retries, timeouts, and publication errors.",
+    "hidden_information_controls": "Audits use frozen inputs and do not infer expected scores from generated output.",
+    "independence_requirements": [
+      "A separate reviewer must verify primary-source cells before release."
+    ],
+    "predecessor_failures": [
+      "Carry unresolved source-version and provenance defects forward."
+    ],
+    "execution": {
+      "mode": "command",
+      "entrypoint": {
+        "argv": [
+          "python",
+          "-m",
+          "every_eval_ever.adapters.drug_interaction_papers.audit",
+          "--block",
+          "B1",
+          "--output",
+          "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B1-source-audit.json"
+        ],
+        "cwd": "."
+      },
+      "declared_inputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/sources",
+          "role": "source-bundles",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "declared_evaluator_artifacts": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/audit.py",
+          "role": "block-auditor",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "required_outputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B1-source-audit.json",
+          "kind": "audit"
+        }
+      ]
+    },
+    "lineage_policy": {
+      "allowed_relations": [
+        "baseline",
+        "replication",
+        "negative_control",
+        "technical_retry"
+      ]
+    }
+  },
+  {
+    "block_id": "B2",
+    "paper_role": "main",
+    "claim_ids": [
+      "C1"
+    ],
+    "decision_gate_id": "G2",
+    "anti_claims_ruled_out": [
+      "Structural validity alone proves scientific correctness."
+    ],
+    "why_this_block_exists": "Prevent schema-valid but scientifically misleading mappings.",
+    "dataset_split_task": "Protocol, metric, model-identity, provenance, and licensing semantics.",
+    "systems_compared": [
+      "paper-native declarations",
+      "EEE mappings"
+    ],
+    "fixed_factors": [
+      "Frozen source and current EEE schema."
+    ],
+    "variable_factors": [
+      "The tested source, mapping, replay, failure, or release condition."
+    ],
+    "metrics": [
+      "semantic violations",
+      "ambiguous identities",
+      "leakage findings"
+    ],
+    "setup_details": "Run the offline adapter audit at the pinned source snapshot.",
+    "seeds": 1,
+    "success_criterion": "Zero semantic, identity, provenance, or leakage violations.",
+    "minimum_effect_size": "Zero unexplained or release-blocking findings.",
+    "failure_interpretation": "Patch the mapping or narrow scope.",
+    "expected_output_artifact": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B2-semantic-audit.json",
+    "compute_budget": "CPU-only; seconds to minutes; no network.",
+    "dependencies": [
+      "B1"
+    ],
+    "priority": "must-run",
+    "evidence_class": "exploratory",
+    "selection_rule": "Use the complete predeclared source/table or failure-control universe.",
+    "non_vacuity_check": "At least one predefined mutation changes the audit outcome.",
+    "complete_outcome_accounting": "Retain passes, failures, skips, nulls, retries, timeouts, and publication errors.",
+    "hidden_information_controls": "Audits use frozen inputs and do not infer expected scores from generated output.",
+    "independence_requirements": [
+      "A separate reviewer must verify primary-source cells before release."
+    ],
+    "predecessor_failures": [
+      "Carry unresolved source-version and provenance defects forward."
+    ],
+    "execution": {
+      "mode": "command",
+      "entrypoint": {
+        "argv": [
+          "python",
+          "-m",
+          "every_eval_ever.adapters.drug_interaction_papers.audit",
+          "--block",
+          "B2",
+          "--output",
+          "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B2-semantic-audit.json"
+        ],
+        "cwd": "."
+      },
+      "declared_inputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/sources",
+          "role": "semantic-catalog",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "declared_evaluator_artifacts": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/audit.py",
+          "role": "block-auditor",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "required_outputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B2-semantic-audit.json",
+          "kind": "audit"
+        }
+      ]
+    },
+    "lineage_policy": {
+      "allowed_relations": [
+        "baseline",
+        "replication",
+        "negative_control",
+        "technical_retry"
+      ]
+    }
+  },
+  {
+    "block_id": "B3",
+    "paper_role": "main",
+    "claim_ids": [
+      "C1",
+      "C2"
+    ],
+    "decision_gate_id": "G3",
+    "anti_claims_ruled_out": [
+      "Structural validity alone proves scientific correctness."
+    ],
+    "why_this_block_exists": "Show complete conversion and semantic replay.",
+    "dataset_split_task": "All 99 logs and 548 metric cells.",
+    "systems_compared": [
+      "first export",
+      "second export"
+    ],
+    "fixed_factors": [
+      "Frozen source and current EEE schema."
+    ],
+    "variable_factors": [
+      "The tested source, mapping, replay, failure, or release condition."
+    ],
+    "metrics": [
+      "schema failures",
+      "logical duplicates",
+      "semantic diffs"
+    ],
+    "setup_details": "Run the offline adapter audit at the pinned source snapshot.",
+    "seeds": 1,
+    "success_criterion": "99 logs, 548 results, zero schema failures or semantic diffs.",
+    "minimum_effect_size": "Zero unexplained or release-blocking findings.",
+    "failure_interpretation": "Fix conversion or publication logic.",
+    "expected_output_artifact": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B3-conversion-audit.json",
+    "compute_budget": "CPU-only; seconds to minutes; no network.",
+    "dependencies": [
+      "B1",
+      "B2"
+    ],
+    "priority": "must-run",
+    "evidence_class": "exploratory",
+    "selection_rule": "Use the complete predeclared source/table or failure-control universe.",
+    "non_vacuity_check": "At least one predefined mutation changes the audit outcome.",
+    "complete_outcome_accounting": "Retain passes, failures, skips, nulls, retries, timeouts, and publication errors.",
+    "hidden_information_controls": "Audits use frozen inputs and do not infer expected scores from generated output.",
+    "independence_requirements": [
+      "A separate reviewer must verify primary-source cells before release."
+    ],
+    "predecessor_failures": [
+      "Carry unresolved source-version and provenance defects forward."
+    ],
+    "execution": {
+      "mode": "command",
+      "entrypoint": {
+        "argv": [
+          "python",
+          "-m",
+          "every_eval_ever.adapters.drug_interaction_papers.audit",
+          "--block",
+          "B3",
+          "--output",
+          "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B3-conversion-audit.json"
+        ],
+        "cwd": "."
+      },
+      "declared_inputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/sources",
+          "role": "source-bundles",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "declared_evaluator_artifacts": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/audit.py",
+          "role": "block-auditor",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "required_outputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B3-conversion-audit.json",
+          "kind": "audit"
+        }
+      ]
+    },
+    "lineage_policy": {
+      "allowed_relations": [
+        "baseline",
+        "replication",
+        "negative_control",
+        "technical_retry"
+      ]
+    }
+  },
+  {
+    "block_id": "B4",
+    "paper_role": "main",
+    "claim_ids": [
+      "C2"
+    ],
+    "decision_gate_id": "G4",
+    "anti_claims_ruled_out": [
+      "Structural validity alone proves scientific correctness."
+    ],
+    "why_this_block_exists": "Demonstrate fail-closed behavior and rollback.",
+    "dataset_split_task": "Nine predefined malformed-source and publication-failure controls.",
+    "systems_compared": [
+      "valid baseline",
+      "mutated controls"
+    ],
+    "fixed_factors": [
+      "Frozen source and current EEE schema."
+    ],
+    "variable_factors": [
+      "The tested source, mapping, replay, failure, or release condition."
+    ],
+    "metrics": [
+      "rejected controls",
+      "partial publications",
+      "prior-output mutations"
+    ],
+    "setup_details": "Run the offline adapter audit at the pinned source snapshot.",
+    "seeds": 1,
+    "success_criterion": "All controls rejected; no partial or prior-output mutation.",
+    "minimum_effect_size": "Zero unexplained or release-blocking findings.",
+    "failure_interpretation": "Do not publish until atomicity is fixed.",
+    "expected_output_artifact": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B4-negative-control-audit.json",
+    "compute_budget": "CPU-only; seconds to minutes; no network.",
+    "dependencies": [
+      "B3"
+    ],
+    "priority": "must-run",
+    "evidence_class": "exploratory",
+    "selection_rule": "Use the complete predeclared source/table or failure-control universe.",
+    "non_vacuity_check": "At least one predefined mutation changes the audit outcome.",
+    "complete_outcome_accounting": "Retain passes, failures, skips, nulls, retries, timeouts, and publication errors.",
+    "hidden_information_controls": "Audits use frozen inputs and do not infer expected scores from generated output.",
+    "independence_requirements": [
+      "A separate reviewer must verify primary-source cells before release."
+    ],
+    "predecessor_failures": [
+      "Carry unresolved source-version and provenance defects forward."
+    ],
+    "execution": {
+      "mode": "command",
+      "entrypoint": {
+        "argv": [
+          "python",
+          "-m",
+          "every_eval_ever.adapters.drug_interaction_papers.audit",
+          "--block",
+          "B4",
+          "--output",
+          "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B4-negative-control-audit.json"
+        ],
+        "cwd": "."
+      },
+      "declared_inputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/sources",
+          "role": "valid-baseline",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "declared_evaluator_artifacts": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/audit.py",
+          "role": "block-auditor",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "required_outputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B4-negative-control-audit.json",
+          "kind": "audit"
+        }
+      ]
+    },
+    "lineage_policy": {
+      "allowed_relations": [
+        "baseline",
+        "replication",
+        "negative_control",
+        "technical_retry"
+      ]
+    }
+  },
+  {
+    "block_id": "B5",
+    "paper_role": "appendix",
+    "claim_ids": [
+      "C2"
+    ],
+    "decision_gate_id": "G5",
+    "anti_claims_ruled_out": [
+      "Structural validity alone proves scientific correctness."
+    ],
+    "why_this_block_exists": "Assess datastore readiness without mutating the datastore.",
+    "dataset_split_task": "Dry-run all eight collection directories.",
+    "systems_compared": [
+      "generated output",
+      "release rules"
+    ],
+    "fixed_factors": [
+      "Frozen source and current EEE schema."
+    ],
+    "variable_factors": [
+      "The tested source, mapping, replay, failure, or release condition."
+    ],
+    "metrics": [
+      "path violations",
+      "logical collisions",
+      "leakage findings"
+    ],
+    "setup_details": "Run the offline adapter audit at the pinned source snapshot.",
+    "seeds": 1,
+    "success_criterion": "Zero release findings and independent source review complete.",
+    "minimum_effect_size": "Zero unexplained or release-blocking findings.",
+    "failure_interpretation": "Block the datastore PR and regenerate after fixes.",
+    "expected_output_artifact": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B5-release-audit.json",
+    "compute_budget": "CPU-only; seconds to minutes; no network.",
+    "dependencies": [
+      "B3",
+      "B4"
+    ],
+    "priority": "must-run",
+    "evidence_class": "exploratory",
+    "selection_rule": "Use the complete predeclared source/table or failure-control universe.",
+    "non_vacuity_check": "At least one predefined mutation changes the audit outcome.",
+    "complete_outcome_accounting": "Retain passes, failures, skips, nulls, retries, timeouts, and publication errors.",
+    "hidden_information_controls": "Audits use frozen inputs and do not infer expected scores from generated output.",
+    "independence_requirements": [
+      "A separate reviewer must verify primary-source cells before release."
+    ],
+    "predecessor_failures": [
+      "Carry unresolved source-version and provenance defects forward."
+    ],
+    "execution": {
+      "mode": "command",
+      "entrypoint": {
+        "argv": [
+          "python",
+          "-m",
+          "every_eval_ever.adapters.drug_interaction_papers.audit",
+          "--block",
+          "B5",
+          "--output",
+          "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B5-release-audit.json"
+        ],
+        "cwd": "."
+      },
+      "declared_inputs": [
+        {
+          "path": "/tmp/eee-drug-interaction-papers",
+          "role": "generated-output",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "declared_evaluator_artifacts": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/audit.py",
+          "role": "block-auditor",
+          "snapshot": "digest-at-start"
+        }
+      ],
+      "required_outputs": [
+        {
+          "path": "every_eval_ever/adapters/drug_interaction_papers/experiment-plan/evidence/B5-release-audit.json",
+          "kind": "audit"
+        }
+      ]
+    },
+    "lineage_policy": {
+      "allowed_relations": [
+        "baseline",
+        "replication",
+        "negative_control",
+        "technical_retry"
+      ]
+    }
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "claim_id": "C1",
+    "priority": "primary",
+    "claim": "The drug_interaction_papers adapter can transform every declared paper-table result cell into exactly one schema-valid EEE EvaluationResult while preserving source version, row/column provenance, metric scale, model identity confidence, dataset variant, and generalization protocol without mixing incompatible paper versions or evaluation contracts.",
+    "why_it_matters": "The datastore would otherwise contain plausible-looking but scientifically non-comparable records, defeating the purpose of the adapter.",
+    "minimum_convincing_evidence": "Frozen source bundles with exact counts and anchor cells; reciprocal foreign-key validation; complete conversion with no omissions or duplicates; EEE schema validation; an independent adversarial semantic audit of protocol, metric, and identity mappings.",
+    "anti_claim": "A schema-valid conversion is sufficient even if rows are silently omitted, scores are rescaled heuristically, model releases are guessed, or transductive and inductive protocols are conflated.",
+    "falsifier": "Any verified source cell maps to the wrong score, metric, method, dataset, protocol, source snapshot, or provenance locator; any selected cell is omitted or duplicated; or any source version is mixed within one snapshot.",
+    "decision_if_unproven": "drop",
+    "linked_blocks": [
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "current_evidence_class": "exploratory",
+    "evidence_class": "exploratory",
+    "decision_rule": "C1 passes only if B1, B2, and B3 all pass their gates with zero unexplained source-count deltas, zero anchor-cell mismatches, zero unresolved identities, zero schema failures, and zero duplicate logical result IDs. A single verified semantic mismatch fails C1 until corrected and rerun.",
+    "loss_contract": "Count and retain false acceptances, false rejections, omissions, duplicate results, wrong method or dataset attribution, wrong protocol attribution, wrong metric scale or bounds, mixed source versions, unresolved identities, malformed uncertainty, silent exclusions, and source/evaluator failures. No category may be omitted from the audit merely because conversion continued.",
+    "falsification_test": "Deliberately mutate one anchor score, one protocol foreign key, one source snapshot ID, and one metric scale in isolated negative-control copies; the source audit and conversion must reject each mutation before publication.",
+    "selection_history": [
+      "The five studies were selected from an earlier DrugBank/Papers With Code investigation before implementation outcomes were available.",
+      "TWOSIDES, DDInter, and BindingDB were added because the source papers report the same model families across explicit known/unseen or warm/cold conditions; they were not selected based on favorable scores.",
+      "Directly comparable baseline rows are retained to avoid outcome-shaped extraction of only language-model methods."
+    ],
+    "predecessor_failures": [
+      "The original narrative design estimated 548 result cells and 99 logs before source bundles existed; those numbers are planning estimates, not acceptance truth.",
+      "The original design mapped source_data at the log level, but current EEE schema places source_data on each EvaluationResult.",
+      "LLMDDI preprint and final-journal values differ; mixed-version extraction is prohibited.",
+      "ZeroDDI Pu/Ps were initially mislabeled as binary-classification proportions rather than conditional multiclass-accuracy ratios.",
+      "ZeroDDI1/2 were initially treated as external baselines rather than first-party ablations.",
+      "The first implementation location followed the superseded utils/ layout instead of every_eval_ever/adapters/."
+    ],
+    "requested_evidence_class": "confirmatory",
+    "independence_statement": "Implementation, source transcription, and adversarial review were performed in one agent session. Machine evidence is valid as self-audit only; independent primary-source verification and advancement authority remain pending."
+  },
+  {
+    "claim_id": "C2",
+    "priority": "supporting",
+    "claim": "The adapter can generate datastore-ready aggregate records deterministically and fail closed without partial writes, silent skips, raw DrugBank redistribution, or dependence on the Papers With Code adapter or entity registry.",
+    "why_it_matters": "A correct mapping is not operationally safe if reruns accumulate duplicates, corrupted inputs partially replace valid output, or licensed source content leaks into the repository.",
+    "minimum_convincing_evidence": "Atomic staging and replace tests, deterministic logical IDs and semantic JSON across reruns, explicit failure reports, a licensed-content leakage scan, filtered-export tests, and a collision audit against adapter-owned output paths.",
+    "anti_claim": "Printing warnings and producing some valid files is adequate even when other rows fail, prior output is partially replaced, UUID filenames accumulate, or source records leak into generated JSON.",
+    "falsifier": "Any malformed input produces a successful partial export; a failed replacement changes prior output; two identical runs differ semantically; unknown filters silently return success; or raw DrugBank record content appears in committed bundles or generated logs.",
+    "decision_if_unproven": "defer",
+    "linked_blocks": [
+      "B3",
+      "B4",
+      "B5"
+    ],
+    "current_evidence_class": "exploratory",
+    "evidence_class": "exploratory",
+    "decision_rule": "C2 passes only if B3, B4, and B5 pass with byte-equivalent semantic records after path/UUID normalization, zero partial writes in every injected failure case, zero leakage-scan findings, and zero duplicate logical evaluations in the release dry run.",
+    "loss_contract": "Account for successful records, conversion errors, validation errors, exclusions, empty selections, retries, stale files, write failures, re-read failures, interrupted replacement, duplicate IDs, path collisions, source-hash failures, and leakage findings. Every selected source row must end in exactly one of success, declared exclusion, or explicit failure.",
+    "falsification_test": "Inject malformed numeric values, duplicate logical keys, unknown method IDs, hash mismatches, non-empty destination directories, and a simulated write failure; assert nonzero exit, preserved prior output, and complete failure accounting.",
+    "selection_history": [
+      "Operational controls were specified before the converter was implemented.",
+      "Failure cases are chosen from known EEE adapter review defects: silent partial conversion, model misattribution, pagination/coverage loss, unstable IDs, and incorrect provenance."
+    ],
+    "predecessor_failures": [
+      "The existing EEE save helper uses UUIDv4 filenames, so deterministic identity must be established at evaluation_id and semantic-content level rather than pathname level.",
+      "The original design described source hashes as immutable-source proof; hashes only detect byte changes and do not prove correct transcription or independence.",
+      "Publication dates were initially used as retrieved_timestamp values; they were replaced by the actual frozen extraction timestamp."
+    ],
+    "requested_evidence_class": "confirmatory",
+    "independence_statement": "Implementation, source transcription, and adversarial review were performed in one agent session. Machine evidence is valid as self-audit only; independent primary-source verification and advancement authority remain pending."
+  }
+]

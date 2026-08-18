@@ -1,0 +1,90 @@
+metrics:
+- metric_id: zeroddi.harmonic-accuracy-at-1
+  display_name: Harmonic Accuracy At 1
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    k: 1
+- metric_id: zeroddi.harmonic-accuracy-average
+  display_name: Harmonic Accuracy Average
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}
+- metric_id: zeroddi.seen-accuracy-at-1
+  display_name: Seen Accuracy At 1
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    k: 1
+- metric_id: zeroddi.seen-accuracy-average
+  display_name: Seen Accuracy Average
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}
+- metric_id: zeroddi.seen-conditional-accuracy-ratio
+  display_name: Seen Conditional Accuracy Ratio (Ps)
+  metric_kind: conditional_accuracy_ratio
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    numerator: seen top-1 accuracy
+    denominator: seen binary accuracy
+- metric_id: zeroddi.unseen-accuracy-at-1
+  display_name: Unseen Accuracy At 1
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    k: 1
+- metric_id: zeroddi.unseen-accuracy-at-3
+  display_name: Unseen Accuracy At 3
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    k: 3
+- metric_id: zeroddi.unseen-accuracy-at-5
+  display_name: Unseen Accuracy At 5
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    k: 5
+- metric_id: zeroddi.unseen-accuracy-average
+  display_name: Unseen Accuracy Average
+  metric_kind: accuracy
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters: {}
+- metric_id: zeroddi.unseen-conditional-accuracy-ratio
+  display_name: Unseen Conditional Accuracy Ratio (Pu)
+  metric_kind: conditional_accuracy_ratio
+  metric_unit: percent
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 100.0
+  parameters:
+    numerator: unseen top-1 accuracy
+    denominator: unseen binary accuracy

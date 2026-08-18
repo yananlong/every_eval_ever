@@ -1,0 +1,26 @@
+schema_version: 1
+study_id: zeroddi
+snapshot_id: zeroddi-ijcai-2024
+title: 'ZeroDDI: A Zero-Shot Drug-Drug Interaction Event Prediction Method with Semantic Enhanced
+  Learning and Dual-Modal Uniform Alignment'
+paper_url: https://arxiv.org/abs/2407.00891
+paper_version: IJCAI 2024 / arXiv v2
+publication_date: '2024-07-31'
+retrieved_timestamp: '1786041600'
+source_organization: Wang et al. (paper authors)
+repository_url: https://github.com/wzy-Sarah/ZeroDDI
+repository_commit: 14a1b5fa6957496630773f62987a25a24e2c6b94
+source_document_sha256: null
+conditions:
+- condition_id: default
+  display_name: Published evaluation
+  details:
+    folds: '3'
+source_tables:
+- table_id: Table 1
+  page: 5
+  expected_results: 120
+expected_results: 120
+expected_logs: 10
+repository_role: Supplementary implementation context only; the cited paper table is the score
+  source.

@@ -1,0 +1,32 @@
+schema_version: 1
+snapshots:
+- study_id: llmddi
+  snapshot_id: llmddi-arxiv-2502.06890-v1
+  enabled: true
+  manifest: llmddi/manifest.yaml
+  bundle_sha256: 29f82be4b1dee803b2f94d646d9d9c5451ba12b279de35eaf535e8fca09bdc1f
+- study_id: textddi
+  snapshot_id: textddi-emnlp-2023
+  enabled: true
+  manifest: textddi/manifest.yaml
+  bundle_sha256: 0cb3f644bafda163f6b6aae86853c1865ba56f5b26d21965e618e605f869dbe9
+- study_id: zeroddi
+  snapshot_id: zeroddi-ijcai-2024
+  enabled: true
+  manifest: zeroddi/manifest.yaml
+  bundle_sha256: ede5b67691ff7b817803ab3603495a08078652fc513e17d4c3a50cee3f37a8ff
+- study_id: exddi
+  snapshot_id: exddi-arxiv-2409.05592-v2
+  enabled: true
+  manifest: exddi/manifest.yaml
+  bundle_sha256: 24c850ff2d3ca648deed83b25ea1556d76bc71e09bf28a7d7b72ef59f1cd2796
+- study_id: dti-lm
+  snapshot_id: dti-lm-bioinformatics-2024
+  enabled: true
+  manifest: dti-lm/manifest.yaml
+  bundle_sha256: c5ef241e687fa67748c3349148d8fa1218c5c8b7c0786d5281bcd0a2fbb1889b
+totals:
+  expected_results: 548
+  expected_logs: 99
+anchors_file: anchors.yaml
+anchors_sha256: 1fd28f1db9687e212c75166c8110d4bc50997643dfd50ae661d54301d7ab6390
