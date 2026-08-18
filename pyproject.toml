@@ -62,6 +62,9 @@ every_eval_ever = [
     "adapters/**/*.md",
     "adapters/**/*.sh",
     "adapters/**/registry_snapshot.json",
+    "adapters/drug_interaction_papers/**/*.yaml",
+    "adapters/drug_interaction_papers/**/*.csv",
+    "adapters/drug_interaction_papers/**/*.json",
     "cron/*.md",
     "tools/*.md",
 ]

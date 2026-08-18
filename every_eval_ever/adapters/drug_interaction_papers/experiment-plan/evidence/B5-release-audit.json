@@ -1,0 +1,22 @@
+{
+  "block_id": "B5",
+  "collection_counts": {
+    "dti-lm-bindingdb": 8,
+    "dti-lm-drugbank": 8,
+    "exddi-ddinter": 5,
+    "exddi-drugbank": 5,
+    "llmddi-drugbank": 23,
+    "textddi-drugbank": 20,
+    "textddi-twosides": 20,
+    "zeroddi-drugbank": 10
+  },
+  "duplicate_logical_id_count": 0,
+  "evidence_class": "exploratory",
+  "leakage_findings": [],
+  "log_count": 99,
+  "path_violation_count": 0,
+  "scientific_gate_reason": "Independent source review remains pending.",
+  "scientific_gate_status": "blocked",
+  "semantic_output_sha256": "2dcc49ba553a88dee0b46b475297048cc81da5ac3890fd1f591486e0f4ff4a3d",
+  "technical_status": "pass"
+}

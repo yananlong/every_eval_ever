@@ -1,0 +1,12 @@
+datasets:
+- dataset_id: drugbank
+  collection_slug: zeroddi-drugbank
+  display_name: ZeroDDI DrugBank 5.1.9
+  source_type: other
+  source_urls:
+  - https://arxiv.org/abs/2407.00891
+  dataset_version: 5.1.9
+  task_type: ddi_event_zero_shot_classification
+  details:
+    folds: '3'
+    novelty_axis: relation_class

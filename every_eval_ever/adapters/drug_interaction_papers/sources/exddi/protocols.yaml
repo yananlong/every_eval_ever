@@ -1,0 +1,26 @@
+protocols:
+- protocol_id: pair-unseen-drugs-overlap-allowed
+  display_name: Pair Unseen Drugs Overlap Allowed
+  task_type: ddi_explanation_generation
+  novelty:
+    drug_entity_overlap: allowed
+    pair_overlap: prohibited
+  candidate_label_space: reported_label_space
+  notes: 'Paper transductive setting: constituent drugs may recur while held-out pairs
+    are evaluated.'
+- protocol_id: one-unseen-drug
+  display_name: One Unseen Drug
+  task_type: ddi_explanation_generation
+  novelty:
+    unseen_drug_count: '1'
+    paper_alias: S2
+  candidate_label_space: reported_label_space
+  notes: ''
+- protocol_id: two-unseen-drugs
+  display_name: Two Unseen Drugs
+  task_type: ddi_explanation_generation
+  novelty:
+    unseen_drug_count: '2'
+    paper_alias: S1
+  candidate_label_space: reported_label_space
+  notes: ''

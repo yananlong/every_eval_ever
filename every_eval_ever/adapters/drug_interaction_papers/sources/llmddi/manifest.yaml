@@ -1,0 +1,32 @@
+schema_version: 1
+study_id: llmddi
+snapshot_id: llmddi-arxiv-2502.06890-v1
+title: 'LLMs for Drug-Drug Interaction Prediction: A Comprehensive Comparison'
+paper_url: https://arxiv.org/abs/2502.06890
+paper_version: arXiv:2502.06890v1
+publication_date: '2025-02-09'
+retrieved_timestamp: '1786041600'
+source_organization: De Vito et al. (paper authors)
+repository_url: https://github.com/gadevito/LLMDDI
+repository_commit: 804bcfba481d86c6640c0240820c34508cdec3cb
+source_document_sha256: null
+conditions:
+- condition_id: zero-shot
+  display_name: Zero-shot
+  details: {}
+- condition_id: fine-tuned
+  display_name: Fine-tuned
+  details: {}
+source_tables:
+- table_id: Table 3
+  page: 10
+  expected_results: 72
+- table_id: Table 4
+  page: 10
+  expected_results: 20
+expected_results: 92
+expected_logs: 23
+version_warning: This is an arXiv-only snapshot. It must not be represented as the 2026 journal
+  version.
+repository_role: Supplementary implementation context only; the cited paper table is the score
+  source.

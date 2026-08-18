@@ -1,0 +1,199 @@
+methods:
+- method_id: claude-3-5-sonnet
+  display_name: Claude 3.5 Sonnet
+  model_id: llmddi-source/claude-3-5-sonnet
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Claude 3.5 Sonnet
+- method_id: gemini-1-5
+  display_name: Gemini 1.5
+  model_id: llmddi-source/gemini-1-5
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Gemini 1.5
+- method_id: gpt-4o
+  display_name: GPT-4o
+  model_id: llmddi-source/gpt-4o
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: GPT-4o
+- method_id: deepseek-qwen-1-5b
+  display_name: Deepseek Qwen 1.5B
+  model_id: llmddi-source/deepseek-qwen-1-5b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Deepseek Qwen 1.5B
+- method_id: llama-3-2-3b
+  display_name: LLaMA 3.2 3B
+  model_id: llmddi-source/llama-3-2-3b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: LLaMA 3.2 3B
+- method_id: qwen-2-5-3b
+  display_name: Qwen 2.5 3B
+  model_id: llmddi-source/qwen-2-5-3b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Qwen 2.5 3B
+- method_id: phi-3-5-2-7b
+  display_name: Phi 3.5 2.7B
+  model_id: llmddi-source/phi-3-5-2-7b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Phi 3.5 2.7B
+- method_id: granite-3-1-8b
+  display_name: Granite 3.1 8B
+  model_id: llmddi-source/granite-3-1-8b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Granite 3.1 8B
+- method_id: llama-3-1-8b
+  display_name: LLaMA 3.1 8B
+  model_id: llmddi-source/llama-3-1-8b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: LLaMA 3.1 8B
+- method_id: gemma-2-9b
+  display_name: Gemma 2 9B
+  model_id: llmddi-source/gemma-2-9b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Gemma 2 9B
+- method_id: falcon-3-10b
+  display_name: Falcon 3 10B
+  model_id: llmddi-source/falcon-3-10b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Falcon 3 10B
+- method_id: mistral-nemo-12b
+  display_name: Mistral Nemo 12B
+  model_id: llmddi-source/mistral-nemo-12b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Mistral Nemo 12B
+- method_id: qwen-2-5-14b
+  display_name: Qwen 2.5 14B
+  model_id: llmddi-source/qwen-2-5-14b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Qwen 2.5 14B
+- method_id: gemma-2-27b
+  display_name: Gemma 2 27B
+  model_id: llmddi-source/gemma-2-27b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Gemma 2 27B
+- method_id: aya-expanse-32b
+  display_name: Aya Expanse 32B
+  model_id: llmddi-source/aya-expanse-32b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Aya Expanse 32B
+- method_id: qwen-2-5-32b
+  display_name: Qwen 2.5 32B
+  model_id: llmddi-source/qwen-2-5-32b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Qwen 2.5 32B
+- method_id: llama-3-3-70b
+  display_name: LLaMA 3.3 70B
+  model_id: llmddi-source/llama-3-3-70b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: LLaMA 3.3 70B
+- method_id: qwen-2-72b
+  display_name: Qwen 2 72B
+  model_id: llmddi-source/qwen-2-72b
+  developer: llmddi-source
+  method_category: generative_llm
+  evaluator_relationship: third_party
+  identity_status: source_scoped
+  is_paper_method: false
+  default_result_origin: paper_run
+  details:
+    paper_label: Qwen 2 72B

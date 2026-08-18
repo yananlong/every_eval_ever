@@ -1,0 +1,30 @@
+{
+  "ambiguous_identity_count": 0,
+  "block_id": "B2",
+  "dataset_task_map": {
+    "dti-lm/bindingdb": "dti_binary_classification",
+    "dti-lm/drugbank": "dti_binary_classification",
+    "exddi/ddinter": "ddi_explanation_generation",
+    "exddi/drugbank": "ddi_explanation_generation",
+    "llmddi/drugbank": "ddi_binary_classification",
+    "textddi/drugbank": "ddi_event_multiclass_classification",
+    "textddi/twosides": "ddi_event_multilabel_classification",
+    "zeroddi/drugbank": "ddi_event_zero_shot_classification"
+  },
+  "evidence_class": "exploratory",
+  "leakage_findings": [],
+  "negative_control_contract": [
+    "TextDDI task types differ",
+    "ZeroDDI candidate spaces differ",
+    "ExDDI S1/S2 aliases preserved",
+    "DTI-LM cold axes differ",
+    "LLMDDI entity novelty remains uncontrolled",
+    "ZeroDDI Pu/Ps remain conditional accuracy ratios",
+    "ZeroDDI1/2 remain first-party ablations",
+    "ExDDI GPT-3.5 release remains source-scoped"
+  ],
+  "protocol_count": 11,
+  "scientific_gate_status": "pass",
+  "semantic_invariant_violations": 0,
+  "technical_status": "pass"
+}

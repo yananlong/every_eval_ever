@@ -1,0 +1,33 @@
+metrics:
+- metric_id: accuracy
+  display_name: Accuracy
+  metric_kind: accuracy
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}
+- metric_id: precision
+  display_name: Precision
+  metric_kind: precision
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}
+- metric_id: recall
+  display_name: Sensitivity / Recall
+  metric_kind: recall
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}
+- metric_id: f1
+  display_name: F1
+  metric_kind: f1
+  metric_unit: proportion
+  lower_is_better: false
+  min_score: 0.0
+  max_score: 1.0
+  parameters: {}

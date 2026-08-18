@@ -1,0 +1,33 @@
+dataset_id,method_id,condition_id,protocol_id,metric_id,score,reported_value,reported_std,source_table,source_page,source_row,source_column,result_origin,notes
+drugbank,claude-3-5-sonnet,zero-shot,random-pair-stratified,accuracy,0.7358,0.7358,,Table 3,10,Claude 3.5 Sonnet,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,claude-3-5-sonnet,zero-shot,random-pair-stratified,precision,0.8859,0.8859,,Table 3,10,Claude 3.5 Sonnet,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,claude-3-5-sonnet,zero-shot,random-pair-stratified,recall,0.5413,0.5413,,Table 3,10,Claude 3.5 Sonnet,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,claude-3-5-sonnet,zero-shot,random-pair-stratified,f1,0.672,0.6720,,Table 3,10,Claude 3.5 Sonnet,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gemini-1-5,zero-shot,random-pair-stratified,accuracy,0.722,0.7220,,Table 3,10,Gemini 1.5,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gemini-1-5,zero-shot,random-pair-stratified,precision,0.7995,0.7995,,Table 3,10,Gemini 1.5,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gemini-1-5,zero-shot,random-pair-stratified,recall,0.5927,0.5927,,Table 3,10,Gemini 1.5,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gemini-1-5,zero-shot,random-pair-stratified,f1,0.6807,0.6807,,Table 3,10,Gemini 1.5,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gpt-4o,zero-shot,random-pair-stratified,accuracy,0.6459,0.6459,,Table 3,10,GPT-4o,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gpt-4o,zero-shot,random-pair-stratified,precision,0.671,0.6710,,Table 3,10,GPT-4o,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gpt-4o,zero-shot,random-pair-stratified,recall,0.5725,0.5725,,Table 3,10,GPT-4o,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,gpt-4o,zero-shot,random-pair-stratified,f1,0.6178,0.6178,,Table 3,10,GPT-4o,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,deepseek-qwen-1-5b,zero-shot,random-pair-stratified,accuracy,0.4807,0.4807,,Table 3,10,Deepseek Qwen 1.5B,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,deepseek-qwen-1-5b,zero-shot,random-pair-stratified,precision,0.4677,0.4677,,Table 3,10,Deepseek Qwen 1.5B,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,deepseek-qwen-1-5b,zero-shot,random-pair-stratified,recall,0.2789,0.2789,,Table 3,10,Deepseek Qwen 1.5B,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,deepseek-qwen-1-5b,zero-shot,random-pair-stratified,f1,0.3494,0.3494,,Table 3,10,Deepseek Qwen 1.5B,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,llama-3-2-3b,zero-shot,random-pair-stratified,accuracy,0.5009,0.5009,,Table 3,10,LLaMA 3.2 3B,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,llama-3-2-3b,zero-shot,random-pair-stratified,precision,0.5005,0.5005,,Table 3,10,LLaMA 3.2 3B,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,llama-3-2-3b,zero-shot,random-pair-stratified,recall,0.9982,0.9982,,Table 3,10,LLaMA 3.2 3B,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,llama-3-2-3b,zero-shot,random-pair-stratified,f1,0.6667,0.6667,,Table 3,10,LLaMA 3.2 3B,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,qwen-2-5-3b,zero-shot,random-pair-stratified,accuracy,0.5037,0.5037,,Table 3,10,Qwen 2.5 3B,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,qwen-2-5-3b,zero-shot,random-pair-stratified,precision,0.5019,0.5019,,Table 3,10,Qwen 2.5 3B,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,qwen-2-5-3b,zero-shot,random-pair-stratified,recall,0.9761,0.9761,,Table 3,10,Qwen 2.5 3B,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,qwen-2-5-3b,zero-shot,random-pair-stratified,f1,0.6629,0.6629,,Table 3,10,Qwen 2.5 3B,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,phi-3-5-2-7b,zero-shot,random-pair-stratified,accuracy,0.5358,0.5358,,Table 3,10,Phi 3.5 2.7B,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,phi-3-5-2-7b,zero-shot,random-pair-stratified,precision,0.5221,0.5221,,Table 3,10,Phi 3.5 2.7B,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,phi-3-5-2-7b,zero-shot,random-pair-stratified,recall,0.844,0.8440,,Table 3,10,Phi 3.5 2.7B,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,phi-3-5-2-7b,zero-shot,random-pair-stratified,f1,0.6452,0.6452,,Table 3,10,Phi 3.5 2.7B,f1,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,granite-3-1-8b,zero-shot,random-pair-stratified,accuracy,0.4734,0.4734,,Table 3,10,Granite 3.1 8B,accuracy,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,granite-3-1-8b,zero-shot,random-pair-stratified,precision,0.3535,0.3535,,Table 3,10,Granite 3.1 8B,precision,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,granite-3-1-8b,zero-shot,random-pair-stratified,recall,0.0642,0.0642,,Table 3,10,Granite 3.1 8B,recall,paper_run,arXiv snapshot; do not mix with final journal values
+drugbank,granite-3-1-8b,zero-shot,random-pair-stratified,f1,0.1087,0.1087,,Table 3,10,Granite 3.1 8B,f1,paper_run,arXiv snapshot; do not mix with final journal values

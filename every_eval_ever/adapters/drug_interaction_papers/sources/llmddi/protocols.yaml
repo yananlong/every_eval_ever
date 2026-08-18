@@ -1,0 +1,9 @@
+protocols:
+- protocol_id: random-pair-stratified
+  display_name: Random Pair Stratified
+  task_type: ddi_binary_classification
+  novelty:
+    drug_entity_overlap: uncontrolled
+    relation_class_overlap: not_applicable
+  candidate_label_space: reported_label_space
+  notes: Random pair sampling; do not label as drug-disjoint or definitively transductive.

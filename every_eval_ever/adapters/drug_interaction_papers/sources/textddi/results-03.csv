@@ -1,0 +1,33 @@
+dataset_id,method_id,condition_id,protocol_id,metric_id,score,reported_value,reported_std,source_table,source_page,source_row,source_column,result_origin,notes
+twosides,without-information-selector,zero-shot,chronological-unseen-drug,roc-auc,85.6,85.6,0.4,Table 2,6,w/o information selector,roc-auc,paper_run,mean and standard deviation across five random seeds
+twosides,without-information-selector,zero-shot,chronological-unseen-drug,accuracy,78.3,78.3,0.5,Table 2,6,w/o information selector,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,textddi,zero-shot,chronological-unseen-drug,f1-macro,52.5,52.5,0.7,Table 2,6,TextDDI,f1-macro,paper_run,mean and standard deviation across five random seeds
+drugbank,textddi,zero-shot,chronological-unseen-drug,accuracy,67.3,67.3,0.4,Table 2,6,TextDDI,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,textddi,zero-shot,chronological-unseen-drug,cohen-kappa,60.5,60.5,0.4,Table 2,6,TextDDI,cohen-kappa,paper_run,mean and standard deviation across five random seeds
+twosides,textddi,zero-shot,chronological-unseen-drug,pr-auc,88.2,88.2,0.2,Table 2,6,TextDDI,pr-auc,paper_run,mean and standard deviation across five random seeds
+twosides,textddi,zero-shot,chronological-unseen-drug,roc-auc,88.4,88.4,0.3,Table 2,6,TextDDI,roc-auc,paper_run,mean and standard deviation across five random seeds
+twosides,textddi,zero-shot,chronological-unseen-drug,accuracy,80.3,80.3,0.6,Table 2,6,TextDDI,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,mlp,vanilla,vanilla-known-drug,f1-macro,61.1,61.1,0.4,Table 5,12,MLP,f1-macro,paper_run,mean and standard deviation across five random seeds
+drugbank,mlp,vanilla,vanilla-known-drug,accuracy,82.1,82.1,0.3,Table 5,12,MLP,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,mlp,vanilla,vanilla-known-drug,cohen-kappa,80.5,80.5,0.2,Table 5,12,MLP,cohen-kappa,paper_run,mean and standard deviation across five random seeds
+twosides,mlp,vanilla,vanilla-known-drug,pr-auc,82.6,82.6,0.3,Table 5,12,MLP,pr-auc,paper_run,mean and standard deviation across five random seeds
+twosides,mlp,vanilla,vanilla-known-drug,roc-auc,81.2,81.2,0.1,Table 5,12,MLP,roc-auc,paper_run,mean and standard deviation across five random seeds
+twosides,mlp,vanilla,vanilla-known-drug,accuracy,73.5,73.5,0.3,Table 5,12,MLP,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,mste,vanilla,vanilla-known-drug,f1-macro,83.0,83.0,1.3,Table 5,12,MSTE,f1-macro,paper_run,mean and standard deviation across five random seeds
+drugbank,mste,vanilla,vanilla-known-drug,accuracy,85.4,85.4,0.7,Table 5,12,MSTE,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,mste,vanilla,vanilla-known-drug,cohen-kappa,82.8,82.8,0.8,Table 5,12,MSTE,cohen-kappa,paper_run,mean and standard deviation across five random seeds
+twosides,mste,vanilla,vanilla-known-drug,pr-auc,90.2,90.2,0.1,Table 5,12,MSTE,pr-auc,paper_run,mean and standard deviation across five random seeds
+twosides,mste,vanilla,vanilla-known-drug,roc-auc,91.3,91.3,0.1,Table 5,12,MSTE,roc-auc,paper_run,mean and standard deviation across five random seeds
+twosides,mste,vanilla,vanilla-known-drug,accuracy,84.1,84.1,0.1,Table 5,12,MSTE,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,kg-ddi,vanilla,vanilla-known-drug,f1-macro,52.2,52.2,1.1,Table 5,12,KG-DDI,f1-macro,paper_run,mean and standard deviation across five random seeds
+drugbank,kg-ddi,vanilla,vanilla-known-drug,accuracy,61.5,61.5,2.8,Table 5,12,KG-DDI,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,kg-ddi,vanilla,vanilla-known-drug,cohen-kappa,55.9,55.9,2.8,Table 5,12,KG-DDI,cohen-kappa,paper_run,mean and standard deviation across five random seeds
+twosides,kg-ddi,vanilla,vanilla-known-drug,pr-auc,88.2,88.2,0.1,Table 5,12,KG-DDI,pr-auc,paper_run,mean and standard deviation across five random seeds
+twosides,kg-ddi,vanilla,vanilla-known-drug,roc-auc,90.7,90.7,0.1,Table 5,12,KG-DDI,roc-auc,paper_run,mean and standard deviation across five random seeds
+twosides,kg-ddi,vanilla,vanilla-known-drug,accuracy,83.5,83.5,0.1,Table 5,12,KG-DDI,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,compgcn,vanilla,vanilla-known-drug,f1-macro,74.3,74.3,1.2,Table 5,12,CompGCN,f1-macro,paper_run,mean and standard deviation across five random seeds
+drugbank,compgcn,vanilla,vanilla-known-drug,accuracy,78.8,78.8,0.8,Table 5,12,CompGCN,accuracy,paper_run,mean and standard deviation across five random seeds
+drugbank,compgcn,vanilla,vanilla-known-drug,cohen-kappa,75.0,75.0,1.1,Table 5,12,CompGCN,cohen-kappa,paper_run,mean and standard deviation across five random seeds
+twosides,compgcn,vanilla,vanilla-known-drug,pr-auc,90.6,90.6,0.3,Table 5,12,CompGCN,pr-auc,paper_run,mean and standard deviation across five random seeds
+twosides,compgcn,vanilla,vanilla-known-drug,roc-auc,92.3,92.3,0.3,Table 5,12,CompGCN,roc-auc,paper_run,mean and standard deviation across five random seeds
+twosides,compgcn,vanilla,vanilla-known-drug,accuracy,84.8,84.8,0.3,Table 5,12,CompGCN,accuracy,paper_run,mean and standard deviation across five random seeds

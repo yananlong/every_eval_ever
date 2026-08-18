@@ -1,0 +1,24 @@
+datasets:
+- dataset_id: drugbank
+  collection_slug: textddi-drugbank
+  display_name: TextDDI DrugBank
+  source_type: other
+  source_urls:
+  - https://aclanthology.org/2023.emnlp-main.918/
+  dataset_version: not_reported
+  task_type: ddi_event_multiclass_classification
+  details:
+    label_count: '86'
+    split_ordering: chronological for zero-shot; Yu et al. 2021 partition for vanilla
+- dataset_id: twosides
+  collection_slug: textddi-twosides
+  display_name: TextDDI TWOSIDES
+  source_type: url
+  source_urls:
+  - https://aclanthology.org/2023.emnlp-main.918/
+  - https://tatonettilab.org/resources/nsides/
+  dataset_version: paper_snapshot
+  task_type: ddi_event_multilabel_classification
+  details:
+    label_count: '200'
+    negative_sampling: one negative drug pair per paper metric section
