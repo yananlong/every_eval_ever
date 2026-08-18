@@ -34,8 +34,12 @@ An adapter that automation runs must therefore:
   `save_failure_report` + a non-zero exit, which is what lets a partial refresh be
   told apart from a crash.
 
-`bfcl`, `cocoabench` and `sciarena` are registered as `runnable=False`: they need a
-local input file and have no live fetch path.
+`bfcl`, `cocoabench` and `sciarena` are registered as `runnable=False` because
+they need a local input file and have no live fetch path. `drug_interaction_papers`
+and `paperswithcode` are also registered as `runnable=False`, but for different
+reasons: the former retains an independent source-verification gate, while the
+latter still needs an approved dump-pinning, raw-capture, and unresolved-metric
+automation design.
 
 ## Raw source snapshots
 
@@ -72,6 +76,61 @@ re-hosting bytes that are already durably stored.
 | `mmlu_pro` | TIGER-Lab leaderboard CSV | Converts the MMLU-Pro leaderboard (`TIGER-Lab/mmlu_pro_leaderboard_submission`) into `data/mmlu-pro/`. Emits per-model overall + 14 per-subject accuracies. |
 | `lexam` | LEXam project website | Converts the LEXam legal-reasoning leaderboard (open-question judge scores + 4-choice MCQ accuracy) into `data/lexam/`. |
 | `vectara_hallucination_leaderboard` | HuggingFace (`vectara/results`) | Converts the Vectara Hallucination Leaderboard result files, pinned to a source commit, into `data/vectara-hallucination-leaderboard/`. Emits 4 aggregate metrics plus per-category and per-text-complexity breakdowns (40 scores per model). |
+| `drug_interaction_papers` | Primary-paper aggregate tables | Converts frozen LLMDDI, TextDDI, ZeroDDI, ExDDI, and DTI-LM result tables into eight protocol-qualified study/dataset collections without redistributing DrugBank records. |
+| `paperswithcode` | Papers with Code PostgreSQL dumps | Converts aggregate PwC evaluation rows, with registry-backed metric semantics and an optional fail-closed DrugBank protocol-qualification overlay. |
+
+### Drug-interaction paper results
+
+The offline `drug_interaction_papers` adapter converts 548 frozen result cells
+from five primary-paper snapshots into 99 aggregate logs across eight
+study/dataset collections. It preserves paper-native protocol distinctions such
+as chronological unseen drugs, one- and two-unseen-drug induction, unseen-relation
+CZSL/GZSL, and DTI warm/cold-drug/cold-protein evaluation rather than collapsing
+everything under a generic DrugBank label.
+
+```bash
+uv run python -m every_eval_ever.adapters.drug_interaction_papers.adapter \
+  --audit-only \
+  --audit-output /tmp/drug-interaction-source-audit.json
+
+uv run python -m every_eval_ever.adapters.drug_interaction_papers.adapter \
+  --output-dir /tmp/eee-drug-interaction-data
+```
+
+The checked-in bundles contain aggregate paper tables only: no drug identifiers,
+descriptions, SMILES strings, protein sequences, or instance-level DrugBank
+records. Hashes, anchors, negative controls, exact counts, schema checks, and
+atomic publication tests establish internal integrity, but not independent
+transcription verification. The catalog therefore keeps this adapter
+`runnable=False`, and the experiment plan keeps release gates G1/G5 blocked until
+a materially separate reviewer verifies the source cells. See
+[`drug_interaction_papers/README.md`](drug_interaction_papers/README.md).
+
+### Papers with Code
+
+The `paperswithcode` adapter reads a local PostgreSQL custom-format dump or
+fetches the latest dump from `huggingface/paperswithcode-backups`, then converts
+one aggregate result per PwC evaluation-row metric. Install the optional dump
+reader through the project extra:
+
+```bash
+uv sync --extra paperswithcode
+uv run python -m every_eval_ever.adapters.paperswithcode.adapter \
+  --dump /path/to/paperswithcode.dump \
+  --dataset-slug drugbank \
+  --output-dir /tmp/eee-pwc
+```
+
+A generic `drugbank` selection means only that PwC attached the row to the
+DrugBank dataset slug. It does not establish transductive, inductive, relation-OOD,
+or DTI cold-start semantics. The optional qualification layer is separate from
+the generic converter and applies only reviewed, exact-dump overlay entries with
+stable row anchors, explicit metric selectors, a complete metrics-payload
+SHA-256, and primary-source evidence. The packaged production overlay is empty,
+so no real PwC row is reclassified by default. See
+[`paperswithcode/DRUGBANK_PROTOCOL_SCOPE.md`](paperswithcode/DRUGBANK_PROTOCOL_SCOPE.md)
+and
+[`paperswithcode/METRIC_MAINTENANCE.md`](paperswithcode/METRIC_MAINTENANCE.md).
 
 ### Mercor Evaluation Exports
 
@@ -144,7 +203,8 @@ single `create_commit`.
 ## Notes
 
 - These are one-off scripts, not integrated into the main CLI.
-- They require network access to fetch live leaderboard data.
+- Live-source adapters require network access; `drug_interaction_papers` is
+  offline and `paperswithcode` can replay a local dump.
 - Some adapters (e.g. `rewardbench`, `helm`) may take several minutes to complete due to the number of models.
 - Run `uv run python -m every_eval_ever.adapters.<name>.adapter --help` for adapter-specific options.
 - Generated adapter outputs under `data/<source>/` and saved raw payloads are
