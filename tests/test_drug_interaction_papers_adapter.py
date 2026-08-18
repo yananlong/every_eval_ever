@@ -245,9 +245,9 @@ def test_package_data_includes_frozen_sources_and_plan():
     root = Path(__file__).resolve().parents[1]
     pyproject = (root / 'pyproject.toml').read_text(encoding='utf-8')
     for pattern in (
-        'adapters/**/*.yaml',
-        'adapters/**/*.csv',
-        'adapters/**/*.json',
+        'adapters/drug_interaction_papers/**/*.yaml',
+        'adapters/drug_interaction_papers/**/*.csv',
+        'adapters/drug_interaction_papers/**/*.json',
         'adapters/**/*.md',
     ):
         assert pattern in pyproject
