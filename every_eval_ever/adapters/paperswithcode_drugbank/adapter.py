@@ -61,8 +61,10 @@ from every_eval_ever.eval_types import (
 from every_eval_ever.helpers import (
     SCHEMA_VERSION,
     EvaluationLogOutput,
+    require_finite_number,
     save_evaluation_logs,
 )
+from every_eval_ever.helpers.io import datastore_path_components
 
 SOURCE_NAME = 'Papers with Code DrugBank'
 SOURCE_ORGANIZATION = 'Papers with Code'
@@ -567,7 +569,13 @@ def _metrics_object(row: dict[str, Any]) -> dict[str, Any]:
     return metrics
 
 
-def parse_metric_value(raw: Any) -> tuple[float, str | None, bool]:
+def parse_metric_value(raw: Any) -> tuple[float, float | None, bool]:
+    """Split one reported cell into (value, reported dispersion, percent marker).
+
+    The dispersion comes back as a number on the *source* scale, so the caller
+    has to apply the same scale factor it applies to the value. Returning it as
+    a string is what let an unscaled figure sit beside a rescaled score.
+    """
     if raw is None or isinstance(raw, bool):
         raise ValueError('metric value must be a finite number')
     if isinstance(raw, (int, float)):
@@ -578,11 +586,12 @@ def parse_metric_value(raw: Any) -> tuple[float, str | None, bool]:
     text = str(raw).strip()
     if not text:
         raise ValueError('metric value is empty')
-    uncertainty = None
+    uncertainty_text = None
     for separator in ('±', '+/-', '+-'):
         if separator in text:
-            text, _, uncertainty = text.partition(separator)
-            text, uncertainty = text.strip(), uncertainty.strip() or None
+            text, _, uncertainty_text = text.partition(separator)
+            text = text.strip()
+            uncertainty_text = uncertainty_text.strip() or None
             break
     has_percent_marker = text.endswith('%')
     text = text.removesuffix('%').strip()
@@ -596,6 +605,16 @@ def parse_metric_value(raw: Any) -> tuple[float, str | None, bool]:
         raise ValueError(f'metric value is not numeric: {raw!r}') from exc
     if not math.isfinite(value):
         raise ValueError('metric value must be finite')
+    uncertainty = None
+    if uncertainty_text is not None:
+        uncertainty = require_finite_number(
+            uncertainty_text.removesuffix('%').strip(),
+            f'reported uncertainty in {raw!r}',
+        )
+        if uncertainty < 0:
+            raise ValueError(
+                f'reported uncertainty must not be negative: {raw!r}'
+            )
     return value, uncertainty, has_percent_marker
 
 
@@ -686,6 +705,11 @@ def _build_result(
             'has a percent marker but the reviewed source_scale is not percent'
         )
     score = source_value * metric.scale_factor
+    # A dispersion is a spread in the score's units, so it takes the same factor.
+    # Left unscaled it read as wider than the metric's whole range.
+    canonical_uncertainty = (
+        None if uncertainty is None else uncertainty * metric.scale_factor
+    )
     if not metric.min_score <= score <= metric.max_score:
         raise ValueError(
             f'PwC evaluation {entry.pwc_evaluation_id} metric {metric.source_name!r} '
@@ -721,7 +745,9 @@ def _build_result(
             'protocol_evidence_locator': entry.evidence.source_locator,
             'protocol_review_note': entry.evidence.review_note,
             'raw_value': raw_value,
-            'reported_uncertainty': uncertainty,
+            # On the canonical scale, like `score`. The source's own spelling of
+            # both figures is preserved in `raw_value`.
+            'reported_uncertainty': canonical_uncertainty,
             'reviewed_source_scale': metric.source_scale,
             'applied_scale_factor': metric.scale_factor,
         }
@@ -901,12 +927,17 @@ def validate_output_dir(output_dir: Path) -> None:
 def export(logs: Iterable[EvaluationLog], output_dir: Path) -> list[Path]:
     outputs: list[EvaluationLogOutput] = []
     for log in logs:
-        model_developer, model_name = log.model_info.id.split('/', 1)
+        # datastore_path_components owns this split: it takes the developer from
+        # the id's prefix, flattens deeper namespaces and rejects an unusable
+        # component, where splitting by hand raised on a flat id.
+        _, developer, model_name = datastore_path_components(
+            COLLECTION_NAME, log.model_info.id, log.model_info.developer
+        )
         outputs.append(
             EvaluationLogOutput(
                 eval_log=log,
                 base_dir=output_dir,
-                developer=model_developer,
+                developer=developer,
                 model_name=model_name,
             )
         )

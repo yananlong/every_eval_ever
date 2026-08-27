@@ -650,6 +650,62 @@ def test_explicit_percent_scale_converts_without_distribution_inference() -> (
     )
 
 
+def test_reported_uncertainty_lands_on_the_same_scale_as_the_score() -> None:
+    """A dispersion is a spread in the score's units, so it takes the factor too.
+
+    Left unscaled, a percent-scale cell published `score=0.912` beside
+    `reported_uncertainty=1.4` — a spread wider than the metric's whole range.
+    """
+    metrics = {'AUROC': '99.49 ± 0.31'}
+    logs = adapter.build_logs(
+        _source_rows(metrics), _datasets(), _overlay(metrics), OVERLAY_SHA
+    )
+
+    details = logs[0].evaluation_results[0].score_details.details
+    assert logs[0].evaluation_results[0].score_details.score == pytest.approx(
+        0.9949
+    )
+    assert details['reported_uncertainty'] == '0.0031'
+    # The source's own spelling of both figures survives verbatim.
+    assert details['raw_value'] == '99.49 ± 0.31'
+
+
+def test_an_identity_scale_uncertainty_is_carried_through_unchanged() -> None:
+    metrics = {'AUROC': '0.9949 +/- 0.0031'}
+    logs = adapter.build_logs(
+        _source_rows(metrics),
+        _datasets(),
+        _overlay(metrics, source_scale='identity'),
+        OVERLAY_SHA,
+    )
+
+    details = logs[0].evaluation_results[0].score_details.details
+    assert details['reported_uncertainty'] == '0.0031'
+
+
+def test_a_cell_with_no_uncertainty_records_none() -> None:
+    metrics = {'AUROC': '99.49'}
+    logs = adapter.build_logs(
+        _source_rows(metrics), _datasets(), _overlay(metrics), OVERLAY_SHA
+    )
+
+    details = logs[0].evaluation_results[0].score_details.details
+    assert 'reported_uncertainty' not in details
+
+
+@pytest.mark.parametrize(
+    'raw_value', ['99.49 ± abc', '99.49 ± -0.3', '99.49 ± inf']
+)
+def test_an_unusable_uncertainty_fails_rather_than_reaching_a_record(
+    raw_value: str,
+) -> None:
+    metrics = {'AUROC': raw_value}
+    with pytest.raises(ValueError):
+        adapter.build_logs(
+            _source_rows(metrics), _datasets(), _overlay(metrics), OVERLAY_SHA
+        )
+
+
 def test_wrong_explicit_scale_fails_closed_instead_of_guessing() -> None:
     metrics = {'AUROC': '99.49'}
     with pytest.raises(ValueError, match='outside reviewed canonical range'):
