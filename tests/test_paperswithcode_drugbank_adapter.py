@@ -665,8 +665,12 @@ def test_reported_uncertainty_lands_on_the_same_scale_as_the_score() -> None:
     assert logs[0].evaluation_results[0].score_details.score == pytest.approx(
         0.9949
     )
-    assert details['reported_uncertainty'] == '0.0031'
-    # The source's own spelling of both figures survives verbatim.
+    # Two keys, like adapters/paperswithcode: what the source printed, and the
+    # same number on the scale `score` is on.
+    assert details['reported_uncertainty'] == '0.31'
+    assert float(details['reported_uncertainty_canonical']) == pytest.approx(
+        0.0031
+    )
     assert details['raw_value'] == '99.49 ± 0.31'
 
 
@@ -681,6 +685,8 @@ def test_an_identity_scale_uncertainty_is_carried_through_unchanged() -> None:
 
     details = logs[0].evaluation_results[0].score_details.details
     assert details['reported_uncertainty'] == '0.0031'
+    # Nothing was rescaled, so repeating the figure would only invite drift.
+    assert 'reported_uncertainty_canonical' not in details
 
 
 def test_a_cell_with_no_uncertainty_records_none() -> None:

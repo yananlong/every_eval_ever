@@ -745,9 +745,15 @@ def _build_result(
             'protocol_evidence_locator': entry.evidence.source_locator,
             'protocol_review_note': entry.evidence.review_note,
             'raw_value': raw_value,
-            # On the canonical scale, like `score`. The source's own spelling of
-            # both figures is preserved in `raw_value`.
-            'reported_uncertainty': canonical_uncertainty,
+            # Two keys, matching adapters/paperswithcode: the figure the source
+            # printed, and the same number on the scale `score` is on. A spread
+            # is in the score's units, so a rescale has to reach it too.
+            'reported_uncertainty': uncertainty,
+            'reported_uncertainty_canonical': (
+                canonical_uncertainty
+                if metric.scale_factor != 1.0
+                else None
+            ),
             'reviewed_source_scale': metric.source_scale,
             'applied_scale_factor': metric.scale_factor,
         }
