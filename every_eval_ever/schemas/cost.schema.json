@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://everyevalever.org/schemas/cost.schema.json",
+  "title": "Evaluation Cost and Resource Accounting",
+  "description": "Reusable schema for monetary cost and resource usage at run, metric, instance, actor, or tool-call scope.",
+  "type": "object",
+  "required": ["currency", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "ISO 4217 currency code used by monetary amounts, e.g. USD."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["observed", "reconstructed", "estimated", "normalized"],
+      "description": "Whether monetary values were billed directly, reconstructed from usage, estimated, or normalized to a counterfactual price schedule."
+    },
+    "total": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "description": "Total monetary cost for this accounting scope."
+    },
+    "components": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/cost_component"},
+      "description": "Additive cost components. Keep agent inference, judges, simulators, tools, and compute separate."
+    },
+    "usage": {
+      "$ref": "#/$defs/resource_usage"
+    },
+    "pricing": {
+      "$ref": "#/$defs/pricing_provenance"
+    },
+    "additional_details": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean", "null"]
+      }
+    }
+  },
+  "$defs": {
+    "cost_component": {
+      "type": "object",
+      "required": ["category", "amount"],
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "agent_model",
+            "subagent",
+            "judge_model",
+            "user_simulator",
+            "tool",
+            "sandbox_compute",
+            "storage",
+            "network",
+            "human_labor",
+            "other"
+          ]
+        },
+        "component_id": {
+          "type": ["string", "null"],
+          "description": "Stable model, actor, tool, provider, or infrastructure identifier when available."
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "usage": {
+          "$ref": "#/$defs/resource_usage"
+        },
+        "pricing": {
+          "$ref": "#/$defs/pricing_provenance"
+        },
+        "additional_details": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "null"]
+          }
+        }
+      }
+    },
+    "resource_usage": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "input_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "output_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "reasoning_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "cache_write_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "cache_read_tokens": {"type": ["integer", "null"], "minimum": 0},
+        "requests": {"type": ["integer", "null"], "minimum": 0},
+        "tool_calls": {"type": ["integer", "null"], "minimum": 0},
+        "turns": {"type": ["integer", "null"], "minimum": 0},
+        "steps": {"type": ["integer", "null"], "minimum": 0},
+        "retries": {"type": ["integer", "null"], "minimum": 0},
+        "wall_time_ms": {"type": ["number", "null"], "minimum": 0},
+        "active_time_ms": {"type": ["number", "null"], "minimum": 0},
+        "cpu_seconds": {"type": ["number", "null"], "minimum": 0},
+        "gpu_seconds": {"type": ["number", "null"], "minimum": 0},
+        "memory_gb_seconds": {"type": ["number", "null"], "minimum": 0},
+        "network_bytes": {"type": ["integer", "null"], "minimum": 0},
+        "storage_bytes": {"type": ["integer", "null"], "minimum": 0}
+      }
+    },
+    "pricing_provenance": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "source_url": {"type": ["string", "null"]},
+        "effective_at": {"type": ["string", "null"], "description": "Timestamp or date at which the price schedule applies."},
+        "provider": {"type": ["string", "null"]},
+        "region": {"type": ["string", "null"]},
+        "pricing_tier": {"type": ["string", "null"]},
+        "discount_or_batch_policy": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    }
+  }
+}
