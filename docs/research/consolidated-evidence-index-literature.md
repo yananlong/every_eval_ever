@@ -1,0 +1,59 @@
+# Literature evidence map for the consolidated evidence index
+
+This review accompanies the [Eval Card proposal](consolidated-evidence-index.md). The search and reading cutoff is 7 October 2026. The current checkpoint contains 21 fully read sources, with three further source reviews being completed. Each included record identifies the version actually read, its methodology, printed numerical results, relevant figures inspected as images, and limits on transfer to Every Eval Ever (EEE). Sources found through searches or reference lists remain candidates until their full texts have received that treatment.
+
+The review is a critical evidence map assembled to test the proposal's design assumptions and novelty. It is not an exhaustive systematic review, and the source count measures the selected reading corpus rather than literature coverage. The starting PR contained a proposal without a bibliography. Discovery therefore expanded from the proposal's claims, followed backward references and selected forward searches, and checked current publication versions against primary records. The lane ledgers preserve exact queries, inclusion decisions, access failures and candidate-only records. No withheld recall test or database-wide citation export was performed.
+
+## Reviewed corpus
+
+The source IDs below remain stable across revisions. Published versions take precedence where available. An author manuscript or conference-marked preprint is identified explicitly when the final hosted PDF could not be retrieved, and duplicate preprints are not counted as independent sources. Links in the reading ledgers provide primary publication records and full texts.
+
+| ID | Source | Publication and version used | Reading ledger |
+|---|---|---|---|
+| CO01 | Saisana, Saltelli & Tarantola, *Uncertainty and sensitivity analysis techniques as tools for the quality assessment of composite indicators* | JRSS A, 2005; author-hosted article | [Composite methods](literature/composite-methods.md#co01--saisana-saltelli-and-tarantola-2005) |
+| CO02 | Steegen et al., *Increasing Transparency Through a Multiverse Analysis* | Perspectives on Psychological Science, 2016; article and supplement | [Composite methods](literature/composite-methods.md#co02--steegen-tuerlinckx-gelman-and-vanpaemel-2016) |
+| CO03 | Simonsohn, Simmons & Nelson, *Specification curve analysis* | Nature Human Behaviour, 2020; article, supplement and correction check | [Composite methods](literature/composite-methods.md#co03--simonsohn-simmons-and-nelson-2020) |
+| CO04 | Paruolo, Saisana & Saltelli, *Ratings and rankings: voodoo or science?* | JRSS A, 2013; accessed author manuscript | [Composite methods](literature/composite-methods.md#co04--paruolo-saisana-and-saltelli-2013) |
+| AI01 | Maia Polo et al., *tinyBenchmarks: evaluating LLMs with fewer examples* | ICML 2024; proceedings PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
+| AI02 | Ruan, Maddison & Hashimoto, *Observational Scaling Laws and the Predictability of Language Model Performance* | NeurIPS 2024; proceedings PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
+| AI03 | Maimon et al., *From Benchmarks to Skills: A Low-Rank Framework for LLM Evaluation* | TACL 2026; accepted PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
+| AI04 | Zhang et al., *SparseEval: Efficient LLM Evaluation via Sparse Annotation* | ICLR 2026; accepted PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
+| BV01 | Yauney, Warraich & Swayamdipta, *How Reliable is Language Model Micro-Benchmarking?* | ICLR 2026; proceedings PDF and appendices | [Benchmark validity](literature/benchmark-validity.md) |
+| BV02 | Hua et al., *Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs* | EMNLP 2025; proceedings PDF | [Benchmark validity](literature/benchmark-validity.md) |
+| BV03 | Alaa et al., *Position: Medical Large Language Model Benchmarks Should Prioritize Construct Validity* | ICML 2025; position paper with illustrative experiments | [Benchmark validity](literature/benchmark-validity.md) |
+| BV04 | Singh et al., *The Leaderboard Illusion* | NeurIPS 2025; final proceedings PDF supersedes earlier preprint numbers | [Benchmark validity](literature/benchmark-validity.md) |
+| ES01 | Higgins et al., *Measuring inconsistency in meta-analyses* | BMJ 2003; published article | [Evidence synthesis](literature/evidence-synthesis.md) |
+| ES02 | IntHout et al., *Plea for routinely presenting prediction intervals in meta-analysis* | BMJ Open 2016; article and appendix; supplementary table W1 unavailable | [Evidence synthesis](literature/evidence-synthesis.md) |
+| ES03 | Tipton & Pustejovsky, *Small-Sample Adjustments for Tests of Moderators and Model Fit Using Robust Variance Estimation in Meta-Regression* | JEBS 2015; full author manuscript and appendices | [Evidence synthesis](literature/evidence-synthesis.md) |
+| ES04 | Sterne et al., *Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls* | BMJ 2009; complete primary XML and abbreviated print article cross-checked | [Evidence synthesis](literature/evidence-synthesis.md) |
+| SL01 | Livingston, *Equating Test Scores (without IRT)* | ETS instructional book, second edition, 2014 | [Scale linking](literature/scale-linking.md) |
+| SL02 | von Davier & Han, *Population Invariance and Linear Equating for the Non-Equivalent Groups Design* | ETS research report, 2004 | [Scale linking](literature/scale-linking.md) |
+| SL03 | Habba et al., *Growing Pains: Extensible and Efficient LLM Benchmarking via Fixed Parameter Calibration* | COLM 2026 status verified; conference-marked arXiv v3 read | [Scale linking](literature/scale-linking.md) |
+| SL04 | White et al., *LiveBench: A Challenging, Contamination-Limited LLM Benchmark* | ICLR 2025; accepted title and proceedings PDF | [Scale linking](literature/scale-linking.md) |
+| SL05 | Ho et al., *A Rosetta Stone for AI Benchmarks* | arXiv v1, November 2025; no accepted venue verified | [Scale linking](literature/scale-linking.md) |
+
+The separate reviews of Nature's *General scales unlock AI evaluation with explanatory and predictive power*, HELM and the thesis *Quantifying construct validity in large language model evaluations* are in progress at this checkpoint. They are deliberately excluded from the completed count until their final ledgers are integrated.
+
+## What changes the proposal
+
+The literature supports a useful separation between capability summaries, evidence about those summaries and sensitivity to analytical choices. The individual components already have substantial precedents. The prospective contribution is an archive-specific integration whose provenance model, uncertainty targets and user value must be demonstrated on EEE data. The literature does not establish EEE's missingness mechanism, reporter independence, calibratable error distribution or temporal linkability.
+
+| Proposal decision | Evidence and exact bounded result | Required design response |
+|---|---|---|
+| Latent profiles and sparse prediction | AI03 reports an eight-factor mean–Arena correlation of .73 for 13 models, while the simple task average reaches about .86. AI01's 100-item MMLU illustration has mean error .019 and Spearman .92. | Retain transparent means and available latent/IRT methods as baselines. A factor profile may aid interpretation without improving its scalar average. Item-response methods require item responses. |
+| Reliability of nearby ranks | BV01 reports that 51% of pairs in its 32-model, instruction-tuned 8B population differ by at most five MMLU-Pro points, with ten- and 25-example subsets having MDAD at least five points. | Test conditional pairwise agreement at relevant score gaps. The 51% is a gap prevalence, not an observed misranking rate, and the paper's MDAD threshold is not an EEE cutoff. |
+| Specification sensitivity | CO01's Singapore–Netherlands ordering is supported in roughly 65% of simulated constructions; CO03 obtains joint P=.850 despite 37 significant hurricane specifications among 1,728. | Declare a nonredundant construction set and its weights. Specification shares and ranges describe that set; inference requires its own valid sampling or null model. |
+| Interval target | ES02 reports null-crossing prediction intervals for 347/479 significant heterogeneous meta-analyses, with the selected denominator explicit. | Separate uncertainty in a mean, variation in a future latent setup mean and prediction of an observed report. These clinical results illustrate the distinction without calibrating EEE intervals. |
+| Provenance and missingness | ES03 assumes independent clusters; ES04 explains why observed data alone cannot distinguish MAR from MNAR. BV04 documents selection and comparison-graph mechanisms. | Count organizations separately from assessed provenance clusters. Require identifiable source/setup contrasts and explicit assumptions about omitted reports. |
+| Effective weighting | CO04 shows that nominal weights and association-based influence differ with variance, covariance and normalization. | Pin reference populations, compare matched support and audit effective influence before claiming equal family importance. |
+| Temporal links | SL03 fixes item parameters with response data; SL05 fits aggregate model–benchmark scores for 179 models and 38 benchmarks. SL04 reports adjacent-update rank correlations above .997 despite changing score levels. | Distinguish item calibration, aggregate linking and strong equating claims. Validate subgroup invariance, drift and absolute levels separately from rank stability. |
+
+AI04 also requires a specific qualification: its accepted linear non-increase proposition is contradicted by a reviewer-generated counterexample recorded in the ledger and independently recalculated during integration. This is a critique of the stated linear proposition, not a refutation of the empirical MLP predictor. Several other sources contain prose–table inconsistencies, version changes or setting-specific failures. Their ledgers retain the discrepancies and attach reported numbers to exact versions and locators rather than silently repairing the sources.
+
+## Evidence assurance and remaining limits
+
+Full-text reading includes methods, results and the relevant appendices, while actual local image inspection checks axes, conditioning, error bars and discrepancies that text extraction can hide. Printed table cells and labeled values supply exact numbers. Readings from unlabeled curves are explicitly approximate, and schematic figures supply conceptual evidence rather than measured results. ES04 has no plots in the complete primary XML. Supplement and final-version access limits remain visible in the source registers, and no unavailable-material-only finding enters the synthesis.
+
+All source results concern the authors' own populations and protocols. Proposed EEE consequences are design inferences, and every numerical prototype in the accompanying proposal remains illustrative. Shared data, authorship, methods and derivative datasets also prevent treating the 21 sources as 21 independent replications of one hypothesis.
+
+Priority follow-up candidates include *Fluid Language Model Benchmarking*, *Active Evaluation Acquisition for Efficient LLM Benchmarking*, a full primary review of ranking under biased missingness, dedicated contamination-detection experiments, and later specification-analysis work. These are recorded as screened or inaccessible candidates in the lane ledgers. No methodological or numerical finding is asserted from a title or abstract alone. A broader review would need a frozen database search, corpus-wide citation expansion and explicit recall testing before claiming comprehensive coverage.

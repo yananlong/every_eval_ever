@@ -2,6 +2,8 @@
 
 > Status: exploratory research/design proposal. This document intentionally preserves minute detail for critique and pruning. It does **not** modify the EEE schema, adapters, validators, datastore semantics, or Eval Cards production behavior.
 
+The [literature review and reading ledger](consolidated-evidence-index-literature.md), updated on 2026-10-07, grounds the proposal in source-level methodology, numerical results and visually inspected figures. The Performance / Evidence / Robustness decomposition remains the leading product hypothesis, with estimator choice, evidence calibration and temporal comparability subject to the research gates below.
+
 ## Motivation
 
 Eval Cards currently expose many heterogeneous benchmark results per model. This is valuable for transparency, but it leaves a recurring interpretation problem: users can inspect dozens or hundreds of scores without an obvious higher-level answer to questions such as:
@@ -12,9 +14,7 @@ Eval Cards currently expose many heterogeneous benchmark results per model. This
 - How sensitive is the apparent conclusion to reasonable choices about benchmark inclusion, normalization, and aggregation?
 - How should a displayed summary evolve as benchmarks saturate and new benchmarks appear, without silently erasing historical comparability?
 
-A conventional leaderboard average is not an adequate answer because EEE is not naturally a rectangular model x benchmark matrix. It is better understood as a sparse, hierarchical, provenance-rich archive of performance claims with heterogeneous metric semantics, sources, configurations, benchmark families, repeated measurements, and missingness.
-
-The proposal here is therefore not "invent one universal leaderboard score." It is to investigate whether Eval Cards can expose a **higher-dimensional consolidated evaluation field** whose central capability estimate is accompanied by explicit evidence and robustness information.
+EEE is a sparse, hierarchical archive of reported performance claims whose metric semantics, evaluation configurations, benchmark families and provenance vary across observations, so a useful summary must explain both the capability represented by the aggregate and the evidence supporting that representation. The proposed **higher-dimensional consolidated evaluation field** therefore accompanies a central capability estimate with direct coverage, repeated-report disagreement and sensitivity to defensible construction choices, preserving access to the benchmark-level results that make the summary interpretable.
 
 ## Product constraint
 
@@ -37,11 +37,11 @@ A UI sketch could eventually resemble:
 
 ```text
 Reasoning Index 74.2
-95% interval 71.8-76.9
+95% confidence interval for the declared mean: 71.8-76.9
 Evidence: strong
-9 benchmark families | 4 independent reporters
+9 benchmark families | 4 reporting organizations
 Cross-source disagreement: moderate
-Aggregate stable under 88% of admissible specifications
+Within 2 reference-scale points of the baseline in 88% of weighted specifications
 ```
 
 The underlying field should retain all primitive quantities used to render labels such as "strong" or "moderate."
@@ -50,7 +50,7 @@ The underlying field should retain all primitive quantities used to render label
 
 **Capability and evidential support must be different variables.**
 
-A weakly documented report of a high score is weak evidence for a high score; it is not necessarily evidence of lower capability.
+A weakly documented high score provides limited support for a capability conclusion, with the reported value retained and the documentation gap represented in the evidence layer.
 
 Likewise:
 
@@ -125,6 +125,10 @@ Where:
 
 This is only a conceptual starting point. The actual estimator should be selected only after EDA establishes whether the repeated-observation graph is sufficiently connected.
 
+The estimator must first define the performance target: a fixed portfolio under a declared evaluation protocol, a mean across specified report conditions, or another explicitly bounded quantity. Source and setup effects require location constraints, an identifiable design and sufficient crossed observations, with graph connectivity serving as an initial diagnostic. A source that evaluates a distinctive subset of models or uses a distinctive setup can remain confounded with model selection or protocol effects even in a connected graph, and a fitted source effect consequently describes a conditional deviation rather than organizational accuracy or trustworthiness.
+
+Uncertainty about the pooled mean and uncertainty when predicting another report have different targets, because a new report can add between-run or between-setup variation and its own measurement error. The [evidence-synthesis reading ledger](literature/evidence-synthesis.md) supports this distinction, while transferring random-effects methods to EEE requires defensible sampling variances, comparable outcomes and a dependency model. Version 0 should expose observed dispersion and support counts when those requirements cannot be established, with any inferential interval labelled by its target and assumptions.
+
 #### Critical identifiability threat
 
 The above model can fail if most model-benchmark-metric cells have only one observation, or if reporter overlap is too sparse.
@@ -138,17 +142,19 @@ A valid fallback may be:
 - explicit number of distinct reporting organizations;
 - explicit direct benchmark-family coverage;
 - explicit disagreement statistic where comparable repetitions exist;
-- uncertainty reflecting low support.
+- a low-support label or withheld inferential interval when the evidence cannot identify the requested uncertainty target.
 
 #### Validation target
 
-The evidence layer must be predictive rather than decorative.
+Learned evidence labels and source-aware adjustments must earn their interpretation through prediction and calibration, while descriptive support fields remain auditable properties of the observed archive.
 
 A core test:
 
 > Among model-benchmark cells with multiple reports, does evidence-aware synthesis improve prediction of a held-out reporter or later-arriving report relative to mean, median, first-report, or source-naive baselines?
 
 If not, the complex evidence model should be simplified or rejected.
+
+Successful prediction of later published reports supports the specified observed reporting population. Claims about unreported cells or the whole capability portfolio require explicit selection assumptions or additional evidence.
 
 ---
 
@@ -187,8 +193,8 @@ SACI_mc = [
     central_estimate,
     lower_specification_quantile,
     upper_specification_quantile,
-    top_k_probability,
-    rank_interval,
+    top_k_specification_share,
+    specification_rank_range,
     specification_stability
 ]
 ```
@@ -200,6 +206,8 @@ This distinguishes:
 3. **aggregation ambiguity**: reasonable index-construction choices yield different conclusions.
 
 These should not be collapsed into one undifferentiated error bar.
+
+A specification share is the weighted fraction of the declared construction set that supports a stated outcome, such as top-k membership within a fixed model cohort. Calling that share a probability requires a separate probability model over specifications or sampling outcomes, so the default display should identify the construction set, its weights, the comparison cohort and the treatment of ties. Likewise, specification quantiles describe construction sensitivity, whereas confidence, credible and prediction intervals require their own inferential definitions. The composite-index and multiverse literature provides direct precedents for this separation ([CO01–CO03](literature/composite-methods.md)).
 
 #### Admissible specification space
 
@@ -214,9 +222,9 @@ Reasonable axes may include:
 - robust location versus mean location for repeated reports;
 - strict versus moderate benchmark inclusion thresholds;
 - alternative defensible normalizations for metrics with known semantics;
-- source-level bootstrap;
-- benchmark-family bootstrap;
 - omission of one major family at a time.
+
+Source-level and benchmark-family resampling belong in a separately declared sampling analysis, whose target population and dependency structure determine the resampling unit. Crossed source/family dependence, copied reports and small cluster counts can invalidate a simple bootstrap, while repeated computation on the observed archive alone cannot establish nominal coverage. Every construction should retain its exclusion decisions, failed fits and effective support, preventing a numerical summary from silently conditioning on successful specifications.
 
 Unreasonable specifications should not be included merely to inflate a robustness analysis.
 
@@ -228,7 +236,7 @@ A core test:
 
 > Does a model-capability summary labelled "high stability" move less when genuinely new evaluation evidence arrives than a summary labelled "low stability"?
 
-If not, the robustness field is miscalibrated.
+This is a predictive hypothesis about future updates, separate from the descriptive value of exposing present construction sensitivity. A failed backtest should remove the future-movement interpretation, while retaining the sensitivity view when the view helps users assess materially different conclusions. Multiverse and specification-curve methods motivate that disclosure without promising stability under future evidence ([CO02–CO03](literature/composite-methods.md)).
 
 ---
 
@@ -274,7 +282,7 @@ Example UI:
 ```text
 Reasoning 67
 Current-scale support: 62% direct / 38% linked
-Linkage uncertainty: +/- 4.7
+95% interval for the linked mean: 62.3-71.7 reference-scale points
 ```
 
 #### Major threat: construct drift
@@ -327,7 +335,9 @@ Performance = (
 ```text
 Evidence = (
     direct_coverage,
-    independent_reporters,
+    reporting_organizations,
+    provenance_clusters,
+    dependency_assessment,
     repeated_support,
     heterogeneity,
     capability_coverage
@@ -354,6 +364,8 @@ This is illustrative only and must not be treated as a schema proposal yet.
   "performance": {
     "estimate": 74.2,
     "interval": {
+      "target": "mean under the declared portfolio and evaluation protocol",
+      "kind": "confidence",
       "level": 0.95,
       "lower": 71.8,
       "upper": 76.9
@@ -367,7 +379,9 @@ This is illustrative only and must not be treated as a schema proposal yet.
   "evidence": {
     "direct_benchmark_count": 14,
     "benchmark_family_count": 9,
-    "independent_reporter_count": 4,
+    "reporting_organization_count": 4,
+    "provenance_cluster_count": null,
+    "dependency_assessment": "unassessed",
     "repeated_cell_count": 6,
     "direct_coverage": 0.79,
     "capability_coverage": 0.71,
@@ -382,8 +396,8 @@ This is illustrative only and must not be treated as a schema proposal yet.
   },
   "robustness": {
     "specification_stability": 0.88,
-    "rank_interval": [5, 11],
-    "top_10_probability": 0.91,
+    "specification_rank_range": [5, 11],
+    "top_10_specification_share": 0.91,
     "leave_family_out_max_delta": 4.6
   },
   "linkage": {
@@ -403,6 +417,8 @@ This is illustrative only and must not be treated as a schema proposal yet.
 
 Again, this is a research object sketch, not a request to modify the EEE schema.
 
+All numerical examples in this document are illustrative, with no fitted EEE estimate behind the example scores, interval endpoints or labels. The prototype contract separates organization counts from assessed provenance clusters and labels the rank range and top-k share as descriptive specification outputs. A later inferential contract may add explicitly typed confidence, credible or prediction intervals after validation, while preserving the specification distribution separately.
+
 ## Benchmark inclusion protocol
 
 "Which benchmarks belong in the index?" should be treated primarily as an eligibility and measurement problem, not as a novelty claim.
@@ -421,6 +437,8 @@ A benchmark should enter a capability aggregate only if it passes explicit check
 10. **capability taxonomy assignment**: benchmark-family membership is explicit and reviewable.
 
 Eligibility and weight should remain separate.
+
+Eligibility should connect the declared capability to the evaluated content, population, response format and scorer. Reproducibility across comparable reports supports that measurement, while external criterion checks address its relevance to the intended use. The [benchmark-validity ledger](literature/benchmark-validity.md) documents why stable scoring and broad rank correlation alone cannot establish construct validity.
 
 A benchmark can be eligible but receive limited effective contribution because it is redundant, highly saturated, or weakly connected.
 
@@ -448,6 +466,8 @@ Possible transformations to compare experimentally include:
 6. latent-variable transformation where identifiability is sufficient.
 
 No single normalization should be selected before stress-testing rank and scale sensitivity.
+
+Every empirical normalization also requires a pinned comparison population and reference distribution, because adding models can change percentiles, z-scores and empirical bounds even when an existing model's reported scores remain constant. Weighting and redundancy diagnostics should use the same declared population and matched support, with a separate audit of effective influence because equal coefficients can produce unequal aggregate emphasis when indicator variances and correlations differ ([CO04](literature/composite-methods.md)).
 
 Out-of-range values must be treated as a data/semantics diagnostic, not silently clipped.
 
@@ -490,11 +510,13 @@ Where:
 
 This factorization is exploratory. It may be rejected if it becomes too arbitrary or statistically unstable.
 
+For a capability estimate tied to a fixed portfolio, the target benchmark-family weights should be common across models, with evidence support displayed alongside the estimate. Model-specific evidence weighting changes which benchmarks determine each model's score and can therefore change the measured target, even when the weights are described as precision adjustments. Such weighting requires an explicit estimator model and a sensitivity comparison against common target weights, while missing-score renormalization must identify the resulting observed-portfolio target and restrict comparisons when models have materially different coverage.
+
 ## Missingness
 
-EEE missingness is unlikely to be missing completely at random.
+EEE's reporting process plausibly creates selected coverage, with the mechanism to be investigated against a pinned snapshot.
 
-Models are selectively evaluated based on:
+Potential drivers of which model–benchmark cells become observable include:
 
 - age;
 - visibility;
@@ -514,6 +536,10 @@ Therefore:
 - published aggregates should preferably condition on observed support or propagate explicit prediction uncertainty.
 
 A missingness model may itself become useful for sensitivity analysis.
+
+The eligible cell population must distinguish inapplicable evaluations and structural absence from genuinely absent or potentially undisclosed scores before any reporting-propensity analysis is fitted.
+
+An observed reporting-propensity model can characterize associations between coverage and recorded metadata, while dependence on an unobserved score remains an assumption requiring sensitivity analysis. A directly observed subset can still be selectively favorable, so directness and unbiasedness must be assessed separately, with matched-portfolio comparisons and explicit reporting-selection scenarios preceding any claim that an observed-subset aggregate represents the whole capability portfolio.
 
 ## Evidence dimensions
 
@@ -540,6 +566,8 @@ Potential dependence sources:
 
 A simple count of URLs is not an independence measure.
 
+Distinct organizations should initially be counted as organizations, and provenance should group copied results and shared runs into identifiable evidence clusters. Dependence from common prompts, harnesses, model endpoints or benchmark items can remain across those clusters, so any effective-independent-support quantity requires a documented covariance or resampling model. Where dependence cannot be estimated, the card should report provenance diversity and unresolved dependency rather than label the organization count independent evidence.
+
 ### Replication
 
 How many model-benchmark-metric cells contain repeated observations?
@@ -551,6 +579,8 @@ Repeated support can increase confidence only if repetitions are sufficiently in
 How much do comparable observations disagree?
 
 Heterogeneity should be displayed rather than averaged away.
+
+Start with descriptive disagreement in interpretable score units within comparable cells, and estimate model-based heterogeneity only when outcome comparability, variances and dependence permit it. Sparse repeats may leave a disagreement label unavailable even when a fitted variance is zero.
 
 Potential measures:
 
@@ -592,8 +622,8 @@ Candidate perturbations:
 - leave one benchmark out;
 - leave one benchmark family out;
 - leave one reporting source out;
-- bootstrap benchmark families;
-- bootstrap sources;
+- resample benchmark families where a declared sampling analysis justifies the cluster structure;
+- resample provenance clusters where a declared sampling analysis justifies the dependency model;
 - alternate family weighting;
 - alternate metric normalization;
 - include / exclude high-saturation benchmarks;
@@ -606,29 +636,23 @@ Potential outputs:
 
 - median score across specifications;
 - 5th/95th percentile score;
-- rank interval;
-- top-k probability;
-- pairwise win probability;
+- specification rank range;
+- top-k specification share;
+- pairwise specification share;
 - maximum leave-family-out shift;
-- probability of rank reversal against nearby competitors.
+- share of specifications reversing a comparison against nearby competitors.
+
+Score quantiles should be calculated only across constructions with a common score meaning or an explicitly justified mapping, because different normalizations can change the unit and target. For differently scaled specifications, compare ranks or pairwise orderings within a fixed cohort and retain the underlying scores separately. A score tolerance, tie rule and comparison target must accompany any claim of specification stability, and statistical resampling results should remain distinguishable from these construction summaries.
 
 ## Dynamic linking extension
 
 If later pursued, temporal linking should explicitly represent indirectness.
 
-Potential representation:
+A linked estimate should be expressed on one declared reference scale, with direct and linked support retained as provenance attributes and linking uncertainty propagated into that scale. The direct and linked fractions describe the declared support accounting, with an additive score decomposition used only when an explicit estimator defines components and weights that reconstruct the estimate.
 
-```text
-current_estimate =
-    direct_component
-  + linked_component
-```
+Longer link chains require uncertainty propagation and drift diagnostics, with multiple paths providing useful consistency checks when their shared calibration errors are accounted for. Path count alone cannot establish independent information, and bridge models require pinned model identities, evaluation protocols and coverage of the relevant ability range. The [scale-linking reading ledger](literature/scale-linking.md) distinguishes shared-model linking, psychometric equating and item-level anchor calibration, whose data requirements differ materially.
 
-with separate uncertainty.
-
-Link chains should be penalized for distance or uncertainty accumulation.
-
-Prefer multiple independent links over a single fragile chain when data support them.
+When a bridge fails the declared subgroup, range or temporal checks, retain the version-specific direct scores and withhold the affected linked comparison.
 
 Possible diagnostic graph:
 
@@ -687,6 +711,8 @@ Analyze:
 - degree distribution;
 - source concentration;
 - overlap sufficient for source-effect estimation.
+
+Include evaluation-setup identities and provenance clusters in these diagnostics. For every proposed source or setup contrast, inspect design rank and overlap under the chosen reference constraints, then test leverage and sensitivity to influential bridge sources.
 
 Primary question: can source effects be separated from source selection?
 
@@ -852,6 +878,10 @@ Can the index predict held-out:
 
 Do uncertainty intervals achieve nominal coverage?
 
+Observed-report holdouts directly assess intervals for observed reports under the specified reporting process, using splits that hold out entire provenance clusters, model families or time windows as appropriate. Coverage of a mean parameter or latent outcome requires a defensible reference target, such as controlled simulations with known parameters or independently supported repeated measurements that account for reference uncertainty. Report interval width and the validation population alongside coverage. Close-model comparisons should also be checked for practical and statistical separation, because high whole-cohort rank correlation can coexist with unreliable local orderings.
+
+Normalization reference distributions, eligibility thresholds, latent dimensionality, imputation, anchor selection and estimator tuning must be fitted or selected using training information. Ability profiles require out-of-family tests before a fitted low-dimensional structure is transferred to newly arriving models.
+
 ### Robustness
 
 How much do scores / ranks change under defensible perturbations?
@@ -899,11 +929,12 @@ The project should be simplified or stopped if any of the following hold.
 - support dimensions collapse to raw benchmark count;
 - results are highly sensitive to arbitrary evidence-weight choices.
 
-### Kill robustness layer if
+### Simplify the robustness display if
 
-- "stability" does not predict future movement under new evidence;
 - admissible specification definitions cannot be made outcome-independent;
 - robustness summaries are less interpretable than direct sensitivity plots.
+
+Remove a predictive stability label if H4 fails, preserving a descriptive sensitivity view when the current conclusions depend materially on construction choices. The choice between a compact robustness label and a direct sensitivity plot should follow user interpretation tests and decision value.
 
 ### Kill dynamic linking if
 
@@ -935,7 +966,9 @@ The project should **not** claim novelty for:
 
 Those areas have substantial existing literature.
 
-The narrowest currently defensible positioning is:
+The reviewed [AI aggregation sources](literature/ai-aggregation.md) already provide latent capability profiles and task-subset recovery. In *From Benchmarks to Skills*, the factor-score mean correlates .73 with Arena for 13 overlapping models, while a simple task average reaches about .86, so a more structured representation does not automatically yield a better scalar summary. The [scale-linking sources](literature/scale-linking.md) also provide close comparators: *A Rosetta Stone for AI Benchmarks* estimates a shared latent scale from aggregate scores on overlapping models, whereas *Growing Pains* extends an item-response scale through fixed item parameters and new anchor responses. EEE must distinguish the aggregate-score inputs currently available from the response-level data required by item calibration.
+
+The current integration target is:
 
 > A provenance-aware, evidence-calibrated composite evaluation field for a heterogeneous live AI evaluation repository, separating model capability estimates from evidential support and aggregation robustness.
 
@@ -943,7 +976,7 @@ A stronger temporal extension is:
 
 > Dynamic scale linking across evolving benchmark portfolios with explicit direct-versus-linked support and propagated linkage uncertainty.
 
-The temporal claim should remain secondary until linkability EDA supports it.
+The temporal claim should remain secondary until linkability EDA supports it. Existing work already covers latent skill profiles, sparse benchmark-score prediction and extensible benchmark calibration, and aggregate shared-model scale estimation is particularly close to DLCI, so the three provisional method names organize design alternatives without establishing novelty. The [literature synthesis](consolidated-evidence-index-literature.md) maps those overlaps and confines any prospective contribution to demonstrated provenance-aware inference and useful uncertainty disclosure on EEE's actual observation structure.
 
 ## Main research hypotheses
 
@@ -985,7 +1018,7 @@ For each capability:
 6. output central aggregate;
 7. output direct evidence counts / coverage;
 8. output observed heterogeneity;
-9. bootstrap families / sources for robustness.
+9. evaluate a declared construction set for sensitivity, adding cluster resampling only where the sampling target and dependency structure justify inference.
 
 This version is likely implementable fastest and is the required baseline for all more complex models.
 
@@ -1015,7 +1048,7 @@ Add:
 - link uncertainty;
 - direct-versus-linked support.
 
-Each version should beat the previous version empirically before being retained.
+Each estimator extension should justify its complexity against the simpler version on the declared prediction and calibration targets, while descriptive evidence and sensitivity fields should also be evaluated for auditability and user decision value.
 
 ## Proposed staged research plan
 
@@ -1044,7 +1077,7 @@ Deliverables:
 
 - per-capability aggregate;
 - evidence primitive fields;
-- family/source bootstrap;
+- construction sensitivity and, where justified, separately labelled cluster-resampling inference;
 - validation suite;
 - card rendering mock.
 
@@ -1070,12 +1103,12 @@ Formalize admissible specification set.
 Deliverables:
 
 - specification stability;
-- rank intervals;
-- top-k probabilities;
+- specification rank ranges within a fixed comparison cohort;
+- top-k specification shares, with inferential probabilities added only under a validated probability model;
 - leave-family-out sensitivities;
 - future-update backtest.
 
-Decision: does robustness field convey additional predictive information?
+Decision: retain a descriptive sensitivity view when it helps users assess construction-dependent conclusions, and add a predictive stability label only if the future-update backtest supports it.
 
 ### Stage E: temporal linking
 
@@ -1111,9 +1144,9 @@ Example:
 ```text
 Reasoning 74.2 [71.8, 76.9]
 9 benchmark families
-4 independent reporters
+4 reporting organizations
 Moderate cross-source disagreement
-88% specification stability
+88% of weighted specifications within 2 reference-scale points of baseline
 ```
 
 ### Full evidence view
@@ -1139,15 +1172,15 @@ Preferred provisional names:
 
 - **Consolidated Evidence Index (CEI)**
 - **Evidence-Calibrated Capability Index (ECCI)**
-- **Stability-Aware Capability Index (SACI)**
-- **Dynamic Linked Capability Index (DLCI)**
+- **Stability-Aware Composite Index (SACI)**
+- **Dynamically Linked Capability Index (DLCI)**
 
 Current recommendation:
 
 - user-facing umbrella: **Consolidated Evaluation Index**;
 - research method: **Evidence-Calibrated Capability Index**;
 - robustness companion: **Stability-Aware Composite Index**;
-- later temporal extension: **Dynamic Linked Capability Index**.
+- later temporal extension: **Dynamically Linked Capability Index**.
 
 Avoid:
 
@@ -1219,6 +1252,6 @@ Current research assessment:
 - Evidence-Calibrated Capability Index: strongest overall candidate.
 - Stability-Aware Composite Index: strongest robustness companion.
 - Dynamic Linked Capability Index: high-upside, high-risk temporal extension.
-- Formal novelty confidence: moderate, not final.
-- Evidence status: exploratory and outcome-informed.
-- Required next step: pinned-snapshot EDA plus deeper novelty review focused on provenance-aware aggregation, uncertainty decomposition, and longitudinal benchmark-scale linking.
+- Novelty status: an integration hypothesis narrowed by direct prior art, with no first-of-kind claim established.
+- Evidence status: literature-grounded design constraints alongside exploratory EEE hypotheses, with a source-level methodology, numerical and figure-reading ledger dated 2026-10-07.
+- Required next step: pinned-snapshot EDA and closest-work comparisons focused on provenance-aware aggregation, interval targets, local ranking reliability, selected coverage and aggregate-versus-item-level scale linking.
