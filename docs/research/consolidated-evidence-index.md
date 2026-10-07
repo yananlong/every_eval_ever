@@ -123,7 +123,7 @@ Where:
 - `gamma_setup(r),b` captures identifiable evaluation-setup effects;
 - `epsilon_mbr` captures residual variation.
 
-This is only a conceptual starting point. The actual estimator should be selected only after EDA establishes whether the repeated-observation graph is sufficiently connected.
+This is only a conceptual starting point. The actual estimator should be selected after EDA establishes the observation grain, target and identifiable contrasts.
 
 The estimator must first define the performance target: a fixed portfolio under a declared evaluation protocol, a mean across specified report conditions, or another explicitly bounded quantity. Source and setup effects require location constraints, an identifiable design and sufficient crossed observations, with graph connectivity serving as an initial diagnostic. A source that evaluates a distinctive subset of models or uses a distinctive setup can remain confounded with model selection or protocol effects even in a connected graph, and a fitted source effect consequently describes a conditional deviation rather than organizational accuracy or trustworthiness.
 
@@ -387,6 +387,8 @@ This is illustrative only and must not be treated as a schema proposal yet.
     "capability_coverage": 0.71,
     "heterogeneity": {
       "value": 0.18,
+      "statistic": "TODO: select a comparable-cell dispersion statistic",
+      "label_thresholds_version": "TODO",
       "interpretation": "moderate"
     },
     "documentation_support": {
@@ -395,7 +397,14 @@ This is illustrative only and must not be treated as a schema proposal yet.
     }
   },
   "robustness": {
+    "construction_set_version": "TODO",
+    "construction_weighting": "TODO: declare normalized specification weights",
+    "comparison_cohort_version": "TODO",
     "specification_stability": 0.88,
+    "stability_criterion": {
+      "reference": "declared baseline on the common reference scale",
+      "absolute_score_tolerance": 2.0
+    },
     "specification_rank_range": [5, 11],
     "top_10_specification_share": 0.91,
     "leave_family_out_max_delta": 4.6
@@ -967,6 +976,10 @@ The project should **not** claim novelty for:
 Those areas have substantial existing literature.
 
 The reviewed [AI aggregation sources](literature/ai-aggregation.md) already provide latent capability profiles and task-subset recovery. In *From Benchmarks to Skills*, the factor-score mean correlates .73 with Arena for 13 overlapping models, while a simple task average reaches about .86, so a more structured representation does not automatically yield a better scalar summary. The [scale-linking sources](literature/scale-linking.md) also provide close comparators: *A Rosetta Stone for AI Benchmarks* estimates a shared latent scale from aggregate scores on overlapping models, whereas *Growing Pains* extends an item-response scale through fixed item parameters and new anchor responses. EEE must distinguish the aggregate-score inputs currently available from the response-level data required by item calibration.
+
+The published [general-scales study](literature/general-scales.md) adds explicit demand annotations, individual-model ability profiles and prediction across held-out benchmarks. Its demand-based random forest achieves weighted AUROC/ECE .747/.038 on that benchmark-held-out split, while fitted ability curves extend beyond observed demand levels through a heavily weighted artificial anchor. The supplement also acknowledges battery dependence in dominant slicing. These results motivate interpretable capability scales while leaving population transport, calibrated scale spacing and stability under future battery changes to separate tests.
+
+The [HELM and construct-validity readings](literature/helm-and-construct.md) further constrain interpretation. HELM's OPT HellaSwag accuracies of 79.1%, 54.8% and 30.2% come from different adaptation protocols that also vary zero-shot/five-shot prompting, so the contrast supports protocol-aware comparison rather than an isolated answer-layout effect. Kearns's exploratory thesis reports lower transformed-score test MSE for a structured factor model than its PCA comparator, but the difference is nonsignificant under its reported test. A capability label should consequently state the measurement and validation supporting its interpretation, with descriptive factor structure kept distinct from construct validity.
 
 The current integration target is:
 
