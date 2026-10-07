@@ -38,7 +38,7 @@ A UI sketch could eventually resemble:
 ```text
 Reasoning Index 74.2
 95% confidence interval for the declared mean: 71.8-76.9
-Evidence: strong
+Evidence: support assessment pending
 9 benchmark families | 4 reporting organizations
 Cross-source disagreement: moderate
 Within 2 reference-scale points of the baseline in 88% of weighted specifications
@@ -448,6 +448,8 @@ A benchmark should enter a capability aggregate only if it passes explicit check
 Eligibility and weight should remain separate.
 
 Eligibility should connect the declared capability to the evaluated content, population, response format and scorer. Reproducibility across comparable reports supports that measurement, while external criterion checks address its relevance to the intended use. The [benchmark-validity ledger](literature/benchmark-validity.md) documents why stable scoring and broad rank correlation alone cannot establish construct validity.
+
+The [construct-landscape review](literature/construct-landscape.md) organizes this claim chain as phenomenon, task, metric and interpretation. Its coding reliability varies sharply across fields, so construct rationale should remain separate from reporting provenance and should not immediately become a precise validity weight. Any new EEE classification protocol needs explicit definitions, independent double coding and a documented adjudication procedure before its labels support quantitative decisions.
 
 A benchmark can be eligible but receive limited effective contribution because it is redundant, highly saturated, or weakly connected.
 
@@ -975,11 +977,13 @@ The project should **not** claim novelty for:
 
 Those areas have substantial existing literature.
 
-The reviewed [AI aggregation sources](literature/ai-aggregation.md) already provide latent capability profiles and task-subset recovery. In *From Benchmarks to Skills*, the factor-score mean correlates .73 with Arena for 13 overlapping models, while a simple task average reaches about .86, so a more structured representation does not automatically yield a better scalar summary. The [scale-linking sources](literature/scale-linking.md) also provide close comparators: *A Rosetta Stone for AI Benchmarks* estimates a shared latent scale from aggregate scores on overlapping models, whereas *Growing Pains* extends an item-response scale through fixed item parameters and new anchor responses. EEE must distinguish the aggregate-score inputs currently available from the response-level data required by item calibration.
+The reviewed [AI aggregation sources](literature/ai-aggregation.md) already provide latent capability profiles and task-subset recovery. In *From Benchmarks to Skills*, the factor-score mean correlates .73 with Arena for 13 overlapping models, while a simple task average reaches about .86, so a more structured representation does not automatically yield a better scalar summary. The [scale-linking sources](literature/scale-linking.md) also provide close comparators: *A Rosetta Stone for AI Benchmarks* estimates a shared latent scale from aggregate scores on overlapping models, whereas *Growing Pains* extends an item-response scale through fixed item parameters and new anchor responses. The proposed analysis must distinguish aggregate-score inputs from the response-level data required by item calibration. Compatible instance-level records could support a separate experiment, with item identity, shared protocols and calibration overlap checked explicitly.
 
 The published [general-scales study](literature/general-scales.md) adds explicit demand annotations, individual-model ability profiles and prediction across held-out benchmarks. Its demand-based random forest achieves weighted AUROC/ECE .747/.038 on that benchmark-held-out split, while fitted ability curves extend beyond observed demand levels through a heavily weighted artificial anchor. The supplement also acknowledges battery dependence in dominant slicing. These results motivate interpretable capability scales while leaving population transport, calibrated scale spacing and stability under future battery changes to separate tests.
 
 The [HELM and construct-validity readings](literature/helm-and-construct.md) further constrain interpretation. HELM's OPT HellaSwag accuracies of 79.1%, 54.8% and 30.2% come from different adaptation protocols that also vary zero-shot/five-shot prompting, so the contrast supports protocol-aware comparison rather than an isolated answer-layout effect. Kearns's exploratory thesis reports lower transformed-score test MSE for a structured factor model than its PCA comparator, but the difference is nonsignificant under its reported test. A capability label should consequently state the measurement and validation supporting its interpretation, with descriptive factor structure kept distinct from construct validity.
+
+The [adaptive-benchmarking readings](literature/adaptive-benchmarking.md) distinguish two further targets. *Fluid Language Model Benchmarking* changes the administered question subset while reporting benchmark-specific IRT ability; *Active Evaluation Acquisition* reconstructs a fixed dataset-balanced score from acquired and predicted outcomes. Neither target is the future-report target proposed for ECCI. Fluid's attempted single scale across six benchmarks obscured one model's declining TruthfulQA accuracy, reinforcing the need to inspect domain-specific failures before accepting a universal factor summary.
 
 The current integration target is:
 
@@ -1147,7 +1151,7 @@ Example:
 
 ```text
 Reasoning 74.2
-Evidence: strong | Robustness: high
+Evidence: support assessment pending | Robustness: descriptive
 ```
 
 ### Expanded summary
@@ -1155,7 +1159,8 @@ Evidence: strong | Robustness: high
 Example:
 
 ```text
-Reasoning 74.2 [71.8, 76.9]
+Reasoning 74.2
+95% confidence interval for the declared mean: [71.8, 76.9]
 9 benchmark families
 4 reporting organizations
 Moderate cross-source disagreement
