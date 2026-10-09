@@ -16,8 +16,8 @@ The source IDs below remain stable across revisions. Published versions take pre
 | CO04 | Paruolo, Saisana & Saltelli, *Ratings and rankings: voodoo or science?* | JRSS A, 2013; accessed author manuscript | [Composite methods](literature/composite-methods.md#co04--paruolo-saisana-and-saltelli-2013) |
 | AI01 | Maia Polo et al., *tinyBenchmarks: evaluating LLMs with fewer examples* | ICML 2024; proceedings PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
 | AI02 | Ruan, Maddison & Hashimoto, *Observational Scaling Laws and the Predictability of Language Model Performance* | NeurIPS 2024; proceedings PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
-| AI03 | Maimon et al., *From Benchmarks to Skills: A Low-Rank Framework for LLM Evaluation* | TACL 2026; accepted PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
-| AI04 | Zhang et al., *SparseEval: Efficient LLM Evaluation via Sparse Annotation* | ICLR 2026; accepted PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
+| AI03 | Maimon et al., *From Benchmarks to Skills: Low-Rank Factors for LLM Evaluation* | TACL 2026; accepted PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
+| AI04 | Zhang et al., *SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization* | ICLR 2026; accepted PDF and appendices | [AI aggregation](literature/ai-aggregation.md) |
 | BV01 | Yauney, Warraich & Swayamdipta, *How Reliable is Language Model Micro-Benchmarking?* | ICLR 2026; proceedings PDF and appendices | [Benchmark validity](literature/benchmark-validity.md) |
 | BV02 | Hua et al., *Flaw or Artifact? Rethinking Prompt Sensitivity in Evaluating LLMs* | EMNLP 2025; proceedings PDF | [Benchmark validity](literature/benchmark-validity.md) |
 | BV03 | Alaa et al., *Position: Medical Large Language Model Benchmarks Should Prioritize Construct Validity* | ICML 2025; position paper with illustrative experiments | [Benchmark validity](literature/benchmark-validity.md) |

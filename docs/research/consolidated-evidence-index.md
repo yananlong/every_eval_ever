@@ -863,14 +863,16 @@ Minimum baselines:
 3. median of normalized benchmark scores;
 4. rank aggregation;
 5. best-supported-only aggregation;
-6. no consolidation: raw Eval Cards presentation.
+6. first-report (earliest available report per cell);
+7. source-naive pooling of repeated reports;
+8. no consolidation: raw Eval Cards presentation.
 
 Optional diagnostics:
 
-7. PCA / factor scores;
-8. IRT / latent trait model on coherent subsets;
-9. Bradley-Terry / pairwise model on co-observed models;
-10. matrix completion used only as sensitivity analysis.
+9. PCA / factor scores;
+10. IRT / latent trait model on coherent subsets;
+11. Bradley-Terry / pairwise model on co-observed models;
+12. matrix completion used only as sensitivity analysis.
 
 ## Candidate evaluation criteria
 
@@ -977,7 +979,7 @@ The project should **not** claim novelty for:
 
 Those areas have substantial existing literature.
 
-The reviewed [AI aggregation sources](literature/ai-aggregation.md) already provide latent capability profiles and task-subset recovery. In *From Benchmarks to Skills*, the factor-score mean correlates .73 with Arena for 13 overlapping models, while a simple task average reaches about .86, so a more structured representation does not automatically yield a better scalar summary. The [scale-linking sources](literature/scale-linking.md) also provide close comparators: *A Rosetta Stone for AI Benchmarks* estimates a shared latent scale from aggregate scores on overlapping models, whereas *Growing Pains* extends an item-response scale through fixed item parameters and new anchor responses. The proposed analysis must distinguish aggregate-score inputs from the response-level data required by item calibration. Compatible instance-level records could support a separate experiment, with item identity, shared protocols and calibration overlap checked explicitly.
+The reviewed [AI aggregation sources](literature/ai-aggregation.md) already provide latent capability profiles and task-subset recovery. In *From Benchmarks to Skills*, the factor-score mean has Spearman correlation .73 with Arena for 13 overlapping models, while a simple task average reaches about .86, so a more structured representation does not automatically yield a better scalar summary. The [scale-linking sources](literature/scale-linking.md) also provide close comparators: *A Rosetta Stone for AI Benchmarks* estimates a shared latent scale from aggregate scores on overlapping models, whereas *Growing Pains* extends an item-response scale through fixed item parameters and new anchor responses. The proposed analysis must distinguish aggregate-score inputs from the response-level data required by item calibration. Compatible instance-level records could support a separate experiment, with item identity, shared protocols and calibration overlap checked explicitly.
 
 The published [general-scales study](literature/general-scales.md) adds explicit demand annotations, individual-model ability profiles and prediction across held-out benchmarks. Its demand-based random forest achieves weighted AUROC/ECE .747/.038 on that benchmark-held-out split, while fitted ability curves extend beyond observed demand levels through a heavily weighted artificial anchor. The supplement also acknowledges battery dependence in dominant slicing. These results motivate interpretable capability scales while leaving population transport, calibrated scale spacing and stability under future battery changes to separate tests.
 
@@ -1195,7 +1197,7 @@ Preferred provisional names:
 
 Current recommendation:
 
-- user-facing umbrella: **Consolidated Evaluation Index**;
+- user-facing umbrella: **Consolidated Evidence Index**;
 - research method: **Evidence-Calibrated Capability Index**;
 - robustness companion: **Stability-Aware Composite Index**;
 - later temporal extension: **Dynamically Linked Capability Index**.
@@ -1269,7 +1271,7 @@ Current research assessment:
 
 - Evidence-Calibrated Capability Index: strongest overall candidate.
 - Stability-Aware Composite Index: strongest robustness companion.
-- Dynamic Linked Capability Index: high-upside, high-risk temporal extension.
+- Dynamically Linked Capability Index: high-upside, high-risk temporal extension.
 - Novelty status: an integration hypothesis narrowed by direct prior art, with no first-of-kind claim established.
 - Evidence status: literature-grounded design constraints alongside exploratory EEE hypotheses, with a source-level methodology, numerical and figure-reading ledger dated 2026-10-07.
 - Required next step: pinned-snapshot EDA and closest-work comparisons focused on provenance-aware aggregation, interval targets, local ranking reliability, selected coverage and aggregate-versus-item-level scale linking.
