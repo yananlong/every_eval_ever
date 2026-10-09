@@ -82,7 +82,7 @@ The appendix supplies genuine exceptions to blanket superiority. Figure E.13's d
 
 **Constraint on the proposal.** This is direct prior art for a latent capability vector and held-out model-performance prediction, and it motivates evaluating dimensionality, normalization, imputation and training-population choices inside SACI. It also shows why low-dimensional fit or an impressive explained-variance percentage cannot justify a universal transferable score: prediction is target- and split-dependent, and several appendix settings reverse the claimed baseline ordering. Its use of heterogeneous reported scores does not estimate reporter biases or repeated-report correlation, so ECCI's source-aware layer remains an empirical question rather than a consequence of observational scaling.
 
-## AI03 — From Benchmarks to Skills: A Low-Rank Framework for LLM Evaluation
+## AI03 — From Benchmarks to Skills: Low-Rank Factors for LLM Evaluation
 
 **Publication/version.** Aviya Maimon, Amir David Nisan Cohen, Gal Vishne, Shauli Ravfogel and Reut Tsarfaty, TACL 2026, volume 14:1660–1684. [Canonical ACL Anthology](https://aclanthology.org/2026.tacl-1.75/); [accepted 25-page PDF](https://aclanthology.org/2026.tacl-1.75.pdf); [DOI](https://doi.org/10.1162/TACL.a.745). PDF front matter records submission July 2025, revision January 2026 and publication July 2026. Some secondary indexes list different pagination; this ledger uses the accepted PDF and primary record. Read all pp. 1–25, including factor assumptions, new-task/model procedures and Appendices A–H. Local `lowrank.pdf` SHA256: `73987894ac5516815c03bc4469b1d41c1672a0caf4845f32e2cdc864b2409ea0`.
 
@@ -98,7 +98,7 @@ Section 5.2 compares 13 overlapping models with Arena rankings: the mean of the 
 
 **Constraint on the proposal.** This is particularly close prior art for capability vectors, redundant evaluations, identifying minimally sufficient tasks and recovering missing profiles, so those elements cannot carry ECCI novelty by themselves. Its own Arena comparison requires the proposal to retain simple aggregation as a serious baseline rather than treating latent-factor sophistication as automatic improvement. A useful ECCI extension would test whether a provenance-aware model improves prediction and calibration on genuinely new reporters after controlling for setup, while SACI would expose factor number, rotation, normalization, task weighting and coverage restrictions as explicit analytical choices.
 
-## AI04 — SparseEval: Efficient LLM Evaluation via Sparse Annotation
+## AI04 — SparseEval: Efficient Evaluation of Large Language Models by Sparse Optimization
 
 **Publication/version.** Taolin Zhang, Hang Guo, Wang Lu, Tao Dai, Shu-Tao Xia and Jindong Wang, ICLR 2026. [Canonical proceedings](https://proceedings.iclr.cc/paper_files/paper/2026/hash/b059de4629cccb411ef92d0d4157e87e-Abstract-Conference.html); [accepted 15-page PDF](https://proceedings.iclr.cc/paper_files/paper/2026/file/b059de4629cccb411ef92d0d4157e87e-Paper-Conference.pdf); [arXiv 2602.07909](https://arxiv.org/abs/2602.07909). Read pp. 1–15, including definitions, Proposition 2 and Appendix C proof, all tables and implementation details. Local `sparse.pdf` SHA256: `4d24ec07a6ed2b35187c9ce5e6f8233dbdc18b1d2163ac09ac184234f08cf3e8`.
 
