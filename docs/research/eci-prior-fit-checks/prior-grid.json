@@ -1,0 +1,115 @@
+{
+  "frozen_at": "2026-11-13, before any refit or power-scaling screen (revised the same day by pre-run review; see the Revision log in experiment-plan.md)",
+  "parameterisation": "hyperpriors are LogNormal(mu, sigma) of the underlying normal, as in eci.bayesian.BayesianPriors; 'ln 0.5' means mu = log(0.5)",
+  "baseline": {
+    "tau_alpha": [
+      "ln 0.5",
+      0.5
+    ],
+    "sigma_median": [
+      "ln 0.1",
+      0.5
+    ],
+    "tau_sigma": [
+      "ln 0.5",
+      0.5
+    ],
+    "sigma": "LogNormal(ln sigma_median, tau_sigma) truncated to (0, 0.5), per benchmark",
+    "log_slope": "ZeroSumNormal(sigma = tau_alpha * sqrt(K / (K - 1))), K = 57",
+    "capability": "Uniform(-50, 50)",
+    "difficulty": "flat on the sum-to-zero subspace, each coordinate bounded to [-50, 50]"
+  },
+  "defensible": {
+    "P1": {
+      "tau_alpha": [
+        "ln 0.25",
+        0.5
+      ]
+    },
+    "P2": {
+      "tau_alpha": [
+        "ln 1.0",
+        0.5
+      ]
+    },
+    "P3": {
+      "sigma_median": [
+        "ln 0.05",
+        0.5
+      ]
+    },
+    "P4": {
+      "sigma_median": [
+        "ln 0.2",
+        0.5
+      ]
+    },
+    "P5": {
+      "tau_sigma": [
+        "ln 0.25",
+        0.5
+      ]
+    },
+    "P6": {
+      "tau_sigma": [
+        "ln 1.0",
+        0.5
+      ]
+    },
+    "P7": {
+      "tau_alpha": [
+        "ln 0.5",
+        1.0
+      ],
+      "sigma_median": [
+        "ln 0.1",
+        1.0
+      ],
+      "tau_sigma": [
+        "ln 0.5",
+        1.0
+      ]
+    },
+    "P8": {
+      "capability": "Normal(0, 3)",
+      "difficulty": "ZeroSumNormal(sigma=3)"
+    },
+    "P9": {
+      "capability": "Normal(mu_c, s_c); mu_c ~ Normal(0, 5); s_c ~ HalfNormal(3)"
+    },
+    "P10": {
+      "sigma": "independent LogNormal(ln 0.1, 0.75) truncated to (0, 0.5); sigma_median and tau_sigma removed"
+    }
+  },
+  "stress_reported_not_scored": {
+    "X1": {
+      "tau_alpha": [
+        "ln 0.1",
+        0.5
+      ]
+    },
+    "X2": {
+      "sigma_median": [
+        "ln 0.02",
+        0.5
+      ]
+    }
+  },
+  "positive_control_B1": {
+    "PC": {
+      "tau_alpha": [
+        "ln 0.05",
+        0.1
+      ]
+    }
+  },
+  "s5_followup_refits": "Only if S5 flags a hyperprior LogNormal(mu, s): refit with LogNormal(mu + s^2 (1 - a) / a, s / sqrt(a)) for a = 0.8 and a = 1.25, which is that prior raised to the power a. For s = 0.5: mu + 0.0625 with sigma 0.559, and mu - 0.05 with sigma 0.447.",
+  "sampler": {
+    "chains": 4,
+    "target_accept": 0.95,
+    "draws_per_chain": 4000,
+    "seed": 12345,
+    "noise_floor_seed": 22345
+  },
+  "note": "P8 and P9 scales are on the raw (pre-anchor) scale, where the geometric-mean slope is 1 and difficulties sum to 0. Guard fixed before any fit: let s0 be the SD across the 256 models of the posterior-mean raw capability in B0 seed 12345. If s0 > 3, P8 uses Normal(0, 2 x s0) for capability and ZeroSumNormal(2 x s0) for difficulty. The published draws give s0 = 2.62, so the guard is not expected to trigger."
+}
