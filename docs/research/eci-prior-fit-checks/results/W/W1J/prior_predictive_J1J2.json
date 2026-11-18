@@ -1,0 +1,121 @@
+{
+ "n_datasets": 1000,
+ "n_cells": 2879,
+ "grid_points": 8001,
+ "seed": "numpy SeedSequence(20261113).spawn(4): stream 0 Epoch and 1 PR (as W1), 2 J1, 3 J2; direct simulation, no NUTS",
+ "epoch": {
+  "clip_bound_share": {
+   "mean": 0.8878103508162557,
+   "p05": 0.8402222994095172,
+   "p95": 0.9256686349426885
+  },
+  "mid_range_share": {
+   "mean": 0.049389371309482455,
+   "p05": 0.03403959708232025,
+   "p95": 0.07467870788468219
+  },
+  "mu_in_01_09_share": {
+   "mean": 0.05299791594303578,
+   "p05": 0.038902396665508855,
+   "p95": 0.07780479333101771
+  },
+  "abs_logit_gt_6p9_share": {
+   "mean": 0.8433733935394234,
+   "p05": 0.7860194511983327,
+   "p95": 0.8721778395276137
+  },
+  "n_datasets_mid_ge_015": 3
+ },
+ "reference": {
+  "clip_bound_share": {
+   "mean": 0.26076345953456065,
+   "p05": 0.04640500173671414,
+   "p95": 0.5270927405349078
+  },
+  "mid_range_share": {
+   "mean": 0.4532077110107676,
+   "p05": 0.21010767627648488,
+   "p95": 0.712434873219868
+  },
+  "mu_in_01_09_share": {
+   "mean": 0.4940055574852379,
+   "p05": 0.2323723515109413,
+   "p95": 0.7787773532476554
+  },
+  "abs_logit_gt_6p9_share": {
+   "mean": 0.13415456755817992,
+   "p05": 0.003438693990969088,
+   "p95": 0.35534907954150746
+  },
+  "n_datasets_mid_ge_015": 986
+ },
+ "regenerated_W1_matches_stored": true,
+ "J1": {
+  "clip_bound_share": {
+   "mean": 0.877894060437652,
+   "p05": 0.8217783952761376,
+   "p95": 0.922542549496353
+  },
+  "mid_range_share": {
+   "mean": 0.05721500521014241,
+   "p05": 0.03749565821465787,
+   "p95": 0.086158388329281
+  },
+  "mu_in_01_09_share": {
+   "mean": 0.06087287252518236,
+   "p05": 0.04411253907606808,
+   "p95": 0.08891976380687738
+  },
+  "abs_logit_gt_6p9_share": {
+   "mean": 0.833398402222994,
+   "p05": 0.7759638763459534,
+   "p95": 0.8662730114623133
+  },
+  "n_datasets_mid_ge_015": 3,
+  "capability_draws": {
+   "mean_sd": 28.613490382438467,
+   "mean_abs": 24.87940291249938,
+   "mean_share_abs_gt_25": 0.4967734375
+  }
+ },
+ "J1_criterion_descriptive": {
+  "mean_mid_ge_040": false,
+  "datasets_mid_ge_015_at_least_950": false,
+  "mean_bound_le_035": false
+ },
+ "J1_would_pass_PR_criterion": false,
+ "J2": {
+  "clip_bound_share": {
+   "mean": 0.8279513720041681,
+   "p05": 0.7700416811392844,
+   "p95": 0.8749565821465787
+  },
+  "mid_range_share": {
+   "mean": 0.09168600208405697,
+   "p05": 0.06945119833275443,
+   "p95": 0.11776658562000693
+  },
+  "mu_in_01_09_share": {
+   "mean": 0.0994706495310872,
+   "p05": 0.0823202500868357,
+   "p95": 0.1261028134769017
+  },
+  "abs_logit_gt_6p9_share": {
+   "mean": 0.7800427231677666,
+   "p05": 0.7203716568252865,
+   "p95": 0.8145189301840917
+  },
+  "n_datasets_mid_ge_015": 22,
+  "capability_draws": {
+   "mean_sd": 27.571683342195126,
+   "mean_abs": 24.09022288905574,
+   "mean_share_abs_gt_25": 0.47955078125
+  }
+ },
+ "J2_criterion_descriptive": {
+  "mean_mid_ge_040": false,
+  "datasets_mid_ge_015_at_least_950": false,
+  "mean_bound_le_035": false
+ },
+ "J2_would_pass_PR_criterion": false
+}

@@ -1,0 +1,225 @@
+{
+ "quadrature": {
+  "nodes": 304,
+  "rule": "composite Gauss-Legendre: unit panels with 8 nodes on [-16, 16], 4 panels of width 8.5 with 6 nodes on each side",
+  "valid_for": "difficulties within about +-16 (the W2 posterior means span -9.5 to 3.9, the largest draw 20.5) and slopes up to about 6"
+ },
+ "J1": {
+  "a_potential_removed_equals_F0": {
+   "n_points": 50,
+   "logp_exactly_equal": true,
+   "grad_exactly_equal": true
+  },
+  "b_potential_vs_numpy_quad": {
+   "n_points": 20,
+   "max_rel_err": 2.162777432802604e-12,
+   "tol": 1e-06,
+   "passed": true,
+   "Z_m_vs_scipy_quad": {
+    "n": 120,
+    "max_rel_err": 3.606188172421416e-11,
+    "tol": 1e-06,
+    "passed": true
+   }
+  },
+  "c_gradient_finite_difference": {
+   "n_directional": 18,
+   "step": 0.001,
+   "stencil": "4-point central",
+   "max_rel_err": 8.948054049870012e-09,
+   "tol": 1e-06,
+   "passed": true
+  },
+  "d_normalisation": {
+   "n_models": 8,
+   "integrals": [
+    0.999999999991818,
+    1.0000000000000988,
+    0.9999999999690133,
+    0.9999999999966336,
+    1.000000000000095,
+    0.9999999999999983,
+    1.0000000000001232,
+    0.9999999999999512
+   ],
+   "max_abs_dev_from_1": 3.0986657684195507e-11,
+   "tol": 1e-06,
+   "passed": true
+  },
+  "e_slope_pressure": {
+   "profile": [
+    {
+     "tau_alpha": 0.1,
+     "potential": -1130.3524707318663,
+     "per_model": -4.415439338796353,
+     "quadrature_vs_quad_on_12_models_abs_diff": 3.806124482252926e-08
+    },
+    {
+     "tau_alpha": 0.25,
+     "potential": -1133.3122593867556,
+     "per_model": -4.427001013229514,
+     "quadrature_vs_quad_on_12_models_abs_diff": 2.259216813627063e-08
+    },
+    {
+     "tau_alpha": 0.5,
+     "potential": -1142.166825429112,
+     "per_model": -4.461589161832468,
+     "quadrature_vs_quad_on_12_models_abs_diff": 2.1559010576766013e-08
+    },
+    {
+     "tau_alpha": 1,
+     "potential": -1160.6903489607766,
+     "per_model": -4.533946675628034,
+     "quadrature_vs_quad_on_12_models_abs_diff": 6.4449992009940615e-09
+    },
+    {
+     "tau_alpha": 2,
+     "potential": -1176.4371117383475,
+     "per_model": -4.59545746772792,
+     "quadrature_vs_quad_on_12_models_abs_diff": NaN
+    },
+    {
+     "tau_alpha": 4,
+     "potential": -1179.0602117810026,
+     "per_model": -4.6057039522695415,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    },
+    {
+     "tau_alpha": 8,
+     "potential": -1178.9688328270431,
+     "per_model": -4.605347003230637,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    },
+    {
+     "tau_alpha": 16,
+     "potential": -1178.9309942654263,
+     "per_model": -4.6051991963493215,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    },
+    {
+     "tau_alpha": 32,
+     "potential": -1178.925210199528,
+     "per_model": -4.605176602341906,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    }
+   ],
+   "range_over_tau": 48.7077410491363,
+   "per_model_range": 0.19026461347318868,
+   "reading": "no upward trend in tau_alpha (the original J rose by about 15,000): the potential is the log of a normalised density in c_m, so it is bounded above in the slope scale; at fixed (c, d) it flattens (J1) or falls (J2). Beyond tau_alpha of about 2 the slopes exceed the quadrature rule's range (about 6), so those values are indicative"
+  },
+  "f_cost_seconds_per_logp_plus_grad": {
+   "F0": 0.0003288522750153788,
+   "variant": 0.013525566675002664,
+   "ratio": 41.129612603014955
+  }
+ },
+ "J2": {
+  "a_potential_removed_equals_F0": {
+   "n_points": 50,
+   "logp_exactly_equal": true,
+   "grad_exactly_equal": true
+  },
+  "b_potential_vs_numpy_quad": {
+   "n_points": 20,
+   "max_rel_err": 1.693111074123504e-12,
+   "tol": 1e-06,
+   "passed": true,
+   "Z_m_vs_scipy_quad": {
+    "n": 120,
+    "max_rel_err": 1.3702629011821415e-10,
+    "tol": 1e-06,
+    "passed": true
+   }
+  },
+  "c_gradient_finite_difference": {
+   "n_directional": 18,
+   "step": 0.001,
+   "stencil": "4-point central",
+   "max_rel_err": 9.22334909541126e-11,
+   "tol": 1e-06,
+   "passed": true
+  },
+  "d_normalisation": {
+   "n_models": 8,
+   "integrals": [
+    1.000000000003384,
+    1.000000000001944,
+    1.0000000000021454,
+    1.0000000000014027,
+    1.0000000000024556,
+    1.0000000000012692,
+    1.0000000000092588,
+    1.000000000001862
+   ],
+   "max_abs_dev_from_1": 9.258815936163955e-12,
+   "tol": 1e-06,
+   "passed": true
+  },
+  "e_slope_pressure": {
+   "profile": [
+    {
+     "tau_alpha": 0.1,
+     "potential": -877.5550375156943,
+     "per_model": -3.4279493652956807,
+     "quadrature_vs_quad_on_12_models_abs_diff": 6.453346657053771e-08
+    },
+    {
+     "tau_alpha": 0.25,
+     "potential": -880.7760039780477,
+     "per_model": -3.440531265539249,
+     "quadrature_vs_quad_on_12_models_abs_diff": 1.6288602466829616e-08
+    },
+    {
+     "tau_alpha": 0.5,
+     "potential": -888.1471820548338,
+     "per_model": -3.4693249299016946,
+     "quadrature_vs_quad_on_12_models_abs_diff": 8.456034095161158e-09
+    },
+    {
+     "tau_alpha": 1,
+     "potential": -909.0861461886991,
+     "per_model": -3.551117758549606,
+     "quadrature_vs_quad_on_12_models_abs_diff": 1.9712477694611152e-07
+    },
+    {
+     "tau_alpha": 2,
+     "potential": -957.7984067844382,
+     "per_model": -3.7414000265017116,
+     "quadrature_vs_quad_on_12_models_abs_diff": 0.013973997124431037
+    },
+    {
+     "tau_alpha": 4,
+     "potential": -1036.2252326473504,
+     "per_model": -4.047754815028712,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    },
+    {
+     "tau_alpha": 8,
+     "potential": -1183.7345048953832,
+     "per_model": -4.623962909747591,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    },
+    {
+     "tau_alpha": 16,
+     "potential": -1164.6013074413177,
+     "per_model": -4.549223857192647,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    },
+    {
+     "tau_alpha": 32,
+     "potential": -1244.395902160148,
+     "per_model": -4.860921492813078,
+     "quadrature_vs_quad_on_12_models_abs_diff": null
+    }
+   ],
+   "range_over_tau": 366.84086464445363,
+   "per_model_range": 1.432972127517397,
+   "reading": "no upward trend in tau_alpha (the original J rose by about 15,000): the potential is the log of a normalised density in c_m, so it is bounded above in the slope scale; at fixed (c, d) it flattens (J1) or falls (J2). Beyond tau_alpha of about 2 the slopes exceed the quadrature rule's range (about 6), so those values are indicative"
+  },
+  "f_cost_seconds_per_logp_plus_grad": {
+   "F0": 0.000341994149994207,
+   "variant": 0.003170565625009658,
+   "ratio": 9.270818302194245
+  }
+ }
+}

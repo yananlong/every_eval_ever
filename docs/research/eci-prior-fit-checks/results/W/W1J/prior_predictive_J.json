@@ -1,0 +1,10 @@
+{
+ "status": "not computed: the prior J as defined is not normalisable, so it has no prior predictive distribution",
+ "n_datasets_requested": 1000,
+ "n_datasets_obtained": 0,
+ "evidence": "propriety.json (profile of the log density in tau_alpha, and where PyMC NUTS on the J prior ends) and checks.json (verification of the potential)",
+ "epoch": {"clip_bound_share_mean": 0.888, "mid_range_share_mean": 0.049, "n_datasets_mid_ge_015": 3},
+ "reference_PR": {"clip_bound_share_mean": 0.261, "mid_range_share_mean": 0.453, "n_datasets_mid_ge_015": 986},
+ "J": null,
+ "PR_criterion_applied_to_J": "not applicable (no datasets)"
+}
