@@ -1,0 +1,91 @@
+{
+ "profile_tau_alpha": [
+  {
+   "tau_alpha": 0.1,
+   "log_hyperprior": -3.1037870476111493,
+   "potential": 421.8215251683551,
+   "sum_over_models_of_log_rms_slope": 3.5497792165552653,
+   "log_density_in_tau_given_w": 418.71773812074395
+  },
+  {
+   "tau_alpha": 0.25,
+   "log_hyperprior": 0.19959698063876047,
+   "potential": 436.67528632431413,
+   "sum_over_models_of_log_rms_slope": 20.15737427627727,
+   "log_density_in_tau_given_w": 436.8748833049529
+  },
+  {
+   "tau_alpha": 0.5,
+   "log_hyperprior": 0.46735582791521796,
+   "potential": 487.2223341416412,
+   "sum_over_models_of_log_rms_slope": 75.170800717531,
+   "log_density_in_tau_given_w": 487.68968996955647
+  },
+  {
+   "tau_alpha": 1,
+   "log_hyperprior": -1.18669738048113,
+   "potential": 661.3078073394861,
+   "sum_over_models_of_log_rms_slope": 255.25737729609895,
+   "log_density_in_tau_given_w": 660.1211099590049
+  },
+  {
+   "tau_alpha": 2,
+   "log_hyperprior": -4.762562644550284,
+   "potential": 1104.9299179924878,
+   "sum_over_models_of_log_rms_slope": 697.8443648343767,
+   "log_density_in_tau_given_w": 1100.1673553479375
+  },
+  {
+   "tau_alpha": 4,
+   "log_hyperprior": -10.260239964292241,
+   "potential": 2038.6939313236544,
+   "sum_over_models_of_log_rms_slope": 1627.7226349202358,
+   "log_density_in_tau_given_w": 2028.4336913593622
+  },
+  {
+   "tau_alpha": 8,
+   "log_hyperprior": -17.679729339707006,
+   "potential": 3930.6796051047804,
+   "sum_over_models_of_log_rms_slope": 3516.1772164453805,
+   "log_density_in_tau_given_w": 3912.9998757650733
+  },
+  {
+   "tau_alpha": 16,
+   "log_hyperprior": -27.021030770794578,
+   "potential": 7725.3500133033485,
+   "sum_over_models_of_log_rms_slope": 7309.484599736481,
+   "log_density_in_tau_given_w": 7698.328982532554
+  },
+  {
+   "tau_alpha": 32,
+   "log_hyperprior": -38.28414425755495,
+   "potential": 15317.977269660289,
+   "sum_over_models_of_log_rms_slope": 14901.61229528654,
+   "log_density_in_tau_given_w": 15279.693125402733
+  }
+ ],
+ "reading": "At fixed w and (c, d, kappa), log density in tau_alpha is the hyperprior plus the potential. The potential grows about linearly in tau_alpha (g tends to 1 when eta saturates, so sum_m 1/2 log I_m tends to sum_m log of the root-mean-square slope on model m's benchmarks, while sum_b log a_b = 0 by the zero-sum constraint) and the LogNormal hyperprior only falls like (ln tau)^2: the joint prior is not normalisable in tau_alpha.",
+ "nuts_J_prior_only": [
+  {
+   "seed": 20261118,
+   "status": "Bad initial energy: SamplerWarning(kind=<WarningType.BAD_ENERGY: 8>, m",
+   "tau_alpha": 2.6064356280378913,
+   "max_abs_log_slope_unconstrained": 357.88720563314286,
+   "logp_total": Infinity,
+   "jeffreys_potential": Infinity
+  },
+  {
+   "seed": 20261120,
+   "status": "Bad initial energy: SamplerWarning(kind=<WarningType.BAD_ENERGY: 8>, m",
+   "tau_alpha": 5.376289046959244,
+   "max_abs_log_slope_unconstrained": 357.4410366967271,
+   "logp_total": Infinity,
+   "jeffreys_potential": Infinity
+  }
+ ],
+ "nuts_epoch_prior_only_without_potential": {
+  "draws": 200,
+  "divergences": 200,
+  "note": "Epoch's hard box on the difficulties already makes every NUTS iteration diverge on the prior alone"
+ }
+}

@@ -113,6 +113,21 @@
     "status": "exploratory. Fitted once in W5 (our reimplementation, only if the equivalence check EQ passed), scored with S1-S4 against P0 and reported, and reused as candidate F6 in W6. It never enters the C1 decision rule.",
     "plausibility_criterion": "Pre-declared in W1 on 1,000 datasets simulated on the 2,879 observed (model, benchmark) cells with numpy default_rng(20261113): mean share of scores in [0.1, 0.9] >= 0.40; at least 95% of datasets with that share >= 0.15; mean share at the clip bounds (<= 0.001 or >= 0.999) <= 0.35. If PR fails, it is dropped from W5 and W6 and the failure is reported; it is not retuned."
   },
+  "jeffreys_priors_exploratory": {
+    "common": {
+      "unchanged": "Epoch's model: tau_alpha, sigma_median, tau_sigma, log_slope and sigma as in the baseline; capability Uniform(-50, 50); difficulty flat on the sum-to-zero subspace with each coordinate bounded to [-50, 50] (no Jeffreys term on difficulty)",
+      "added": "one potential, sum over models m of [1/2 log I_m(c_m) - log Z_m], with I_m(c) = sum over the cells observed for model m of a_b^2 g(a_b (c - d_b), kappa_b) and Z_m = integral over [-50, 50] of sqrt(I_m(c)) dc, so that c_m has the proper density sqrt(I_m(c)) / Z_m on [-50, 50] given the slopes, difficulties and noise; Z_m by a fixed-node composite Gauss-Legendre rule; g is evaluated from the unclipped eta and ignores the clipping of y in the likelihood",
+      "reference": "Warm (1989), Psychometrika 54, 427-450: under a Jeffreys ability prior the posterior mode is the weighted likelihood estimate"
+    },
+    "J1": {
+      "g": "[mu (1 - mu)]^2 kappa^2 [psi1(mu kappa) + psi1((1 - mu) kappa)], mu = sigmoid(eta), psi1 the trigamma function (Beta information about eta)"
+    },
+    "J2": {
+      "g": "mu (1 - mu), mu = sigmoid(eta) (Bernoulli information, the textbook item-response form; Jeffreys only heuristically for the Beta likelihood)"
+    },
+    "status": "exploratory, added after the freeze at the user's request (Revision Log R26). Each of J1 and J2 is fitted once in W5 at the PR settings with our reimplementation (runs/lib/jeffreys_norm.py), scored with S1-S4 against P0 and reported beside PR. They never enter the C1 decision rule, a gate or any confirmatory verdict, and the entries P1-P10, X1, X2 and PR above are unchanged. They replace a first, unnormalised form J that was rejected because its joint prior is not normalisable in the slope scale (results/W/W1J/summary_J_first_form.md).",
+    "W1_check": "the W1 quantities for J1 and J2 by direct simulation (1,000 datasets; hyperparameters, slopes, noise and difficulties as in W1's Epoch arm, each capability by inverse CDF from its normalised density on an 8,001-point grid); descriptive for J1 and J2, which go to W5 whatever the outcome"
+  },
   "s5_targeted_refits_exploratory": "For each hyperprior that S5 flags (the S5 pass rule applied to its own psens): refit with the power a = 0.5 and a = 2, using LogNormal(mu + s^2 (1 - a) / a, s / sqrt(a)); at most 6 such fits in total. Scored with S1-S4, reported, never part of the C1 verdict.",
   "s5_followup_refits": "Only if S5 flags a hyperprior LogNormal(mu, s): refit with LogNormal(mu + s^2 (1 - a) / a, s / sqrt(a)) for a = 0.8 and a = 1.25, which is that prior raised to the power a. For s = 0.5: mu + 0.0625 with sigma 0.559, and mu - 0.05 with sigma 0.447.",
   "sampler": {

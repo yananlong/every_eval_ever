@@ -20,7 +20,7 @@
       "W2b: fit_bayesian_eci(prepare_benchmark_data(zip)), seed 12345 (data-provenance check, reported, not gated)",
       "EQ: our reimplementation F0 against Epoch's fit, seeds 12345 and 22345",
       "W3: the default ECI fit on each G-null and misfit replicate; the positive-control prior against the W2 fits",
-      "W5: the baseline P0, its second-seed copy P0b, P1-P10, the stress priors X1 and X2, and the exploratory reference prior PR",
+      "W5: the baseline P0, its second-seed copy P0b, P1-P10, the stress priors X1 and X2, and the exploratory reference prior PR; added post-freeze (R26), the exploratory normalised Jeffreys priors J1 and J2, each fitted once like PR",
       "W6: F0 (base, Epoch's priors), F1 two-dimensional capability, F2 developer-by-benchmark offset, F3 upper asymptote below 1, F4 time drift, F5 per-model noise scale, F6 (base under PR), and at most one combined model F7"
     ],
     "fixed_factors": [
@@ -40,7 +40,7 @@
       "candidate model F0-F7 (W6)"
     ],
     "metrics": [
-      "W1: share of prior-simulated scores at the clip bounds and in [0.1, 0.9], per dataset, for Epoch's priors and PR; the PR criterion (mean mid-range share >= 0.40, at least 95% of datasets >= 0.15, mean bound share <= 0.35)",
+      "W1: share of prior-simulated scores at the clip bounds and in [0.1, 0.9], per dataset, for Epoch's priors and PR; the PR criterion (mean mid-range share >= 0.40, at least 95% of datasets >= 0.15, mean bound share <= 0.35). Added post-freeze (R26): the same quantities for the normalised Jeffreys priors J1 and J2, by direct simulation, descriptive only",
       "W2: per model d_m = ECI_ours - ECI_published and d_m / W_m,published (seed 12345); Spearman over 256 models; interval-width ratio; max abs difference of edi and slope (reported); divergences, r_hat, bulk and tail ESS, BFMI, stage and attempts; seed-to-seed SD; W2b S1-S4 against W2a; EQ density difference, per-model difference, Spearman, width ratio and elpd_loo difference",
       "W3: recovery coverage overall and by stratum; SBC normalised ranks of ECI and EDI, per-parameter chi-square tests and pooled 50% and 90% coverage by stratum (M13); null reference values of T1-T7 from the converged G-null replicates (target 199); power of each targeted check; S1-S4 of the positive-control prior per seed; non-converged counts",
       "W4: Epoch's suite as shipped (W4a); T1-T7 unadjusted, max-T adjusted and raw p (W4b); held-out 90% coverage overall and per benchmark with a model-cluster bootstrap interval (W4c); relative ECI shift per model after removing the localised set F (W4d)",
@@ -53,7 +53,7 @@
     "minimum_effect_size": "0.5 ECI points, or 0.07 of the published width where larger (G0); power 0.8 at family-wise alpha 0.01 (G1); adjusted p < 0.01, coverage outside [0.85, 0.95], binomial p < 0.01 / 44 (G3); a quarter of a model's baseline interval width, 1.1 to 1.9 ECI points for the 20 frontier models (G2); elpd difference above 4 (G7).",
     "failure_interpretation": "W2: production settings or data differ from the public ones; find the difference or rebaseline openly. W3: poor recovery means the published intervals are miscalibrated even when the model is true; a check without power cannot support C2. W4: W4d measures how far a localised misfit moves the scores. W5: a sparse-only failure narrows C1, a frontier or all-models failure falsifies it. W6: an adopted expansion is a finding about model structure and is reported beside, never instead of, the verdicts on Epoch's model.",
     "expected_output_artifact": "runs/W/workflow.json",
-    "compute_budget": "W1 about 5 minutes (no fits). W2 6 fits (4 Epoch, 2 of ours), about 30 minutes. W3 302 fits, about 10 hours (about 40 CPU-hours), restartable. W4 about 30 minutes. W5 up to 23 fits (14 grid, PR, up to 2 C1 follow-ups, up to 6 exploratory targeted refits), about 1 to 2 hours. W6 about 3 to 10 hours typical and up to about 24 hours in the worst case, plus up to 8 hours if the combination F7 is fitted (M14); exploratory and stoppable. Without W6 the plan is about 13.5 hours; with W6 about 17 to 24 hours typical (worst case about 46 hours). Under 2 GB RAM per fit; about 3.5 GB disk.",
+    "compute_budget": "W1 about 5 minutes (no fits). W2 6 fits (4 Epoch, 2 of ours), about 30 minutes. W3 302 fits, about 10 hours (about 40 CPU-hours), restartable. W4 about 30 minutes. W5 up to 23 fits (14 grid, PR, up to 2 C1 follow-ups, up to 6 exploratory targeted refits), about 1 to 2 hours; the post-freeze exploratory fits of J1 and J2 (R26) are two more fits of PR's size, outside this count. W6 about 3 to 10 hours typical and up to about 24 hours in the worst case, plus up to 8 hours if the combination F7 is fitted (M14); exploratory and stoppable. Without W6 the plan is about 13.5 hours; with W6 about 17 to 24 hours typical (worst case about 46 hours). Under 2 GB RAM per fit; about 3.5 GB disk.",
     "dependencies": [],
     "priority": "must-run",
     "current_evidence_class": "exploratory",
