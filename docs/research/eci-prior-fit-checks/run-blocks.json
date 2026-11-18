@@ -42,18 +42,18 @@
     "metrics": [
       "W1: share of prior-simulated scores at the clip bounds and in [0.1, 0.9], per dataset, for Epoch's priors and PR; the PR criterion (mean mid-range share >= 0.40, at least 95% of datasets >= 0.15, mean bound share <= 0.35). Added post-freeze (R26): the same quantities for the normalised Jeffreys priors J1 and J2, by direct simulation, descriptive only",
       "W2: per model d_m = ECI_ours - ECI_published and d_m / W_m,published (seed 12345); Spearman over 256 models; interval-width ratio; max abs difference of edi and slope (reported); divergences, r_hat, bulk and tail ESS, BFMI, stage and attempts; seed-to-seed SD; W2b S1-S4 against W2a; EQ density difference, per-model difference, Spearman, width ratio and elpd_loo difference",
-      "W3: recovery coverage overall and by stratum; SBC normalised ranks of ECI and EDI, per-parameter chi-square tests and pooled 50% and 90% coverage by stratum (M13); null reference values of T1-T7 from the converged G-null replicates (target 199); power of each targeted check; S1-S4 of the positive-control prior per seed; non-converged counts",
-      "W4: Epoch's suite as shipped (W4a); T1-T7 unadjusted, max-T adjusted and raw p (W4b); held-out 90% coverage overall and per benchmark with a model-cluster bootstrap interval (W4c); relative ECI shift per model after removing the localised set F (W4d)",
+      "W3: recovery coverage overall and by stratum; SBC normalised ranks of ECI and EDI, per-parameter chi-square tests and pooled 50% and 90% coverage by stratum (M13); null reference values of T1-T7 from the converged G-null replicates (target 199); power of each targeted check; S1-S4 of the positive-control prior per seed; non-converged counts. Added (R29), reported only: ECDF-difference gamma tests and chi-square tests of ranks, thinned to ESS, for the parameter classes, the joint and per-benchmark log-likelihood and mean-residual quantities (runs/w3_modrak.py, M13); optional posterior SBC on y_obs and y_sim (runs/w5_posterior_sbc.py, after W5)",
+      "W4: Epoch's suite as shipped (W4a); T1-T7 unadjusted, max-T adjusted and raw p (W4b); held-out 90% coverage overall and per benchmark with a model-cluster bootstrap interval (W4c); relative ECI shift per model after removing the localised set F (W4d). Added (R29), reported beside the unchanged C2 rule: density overlays, clip-mass and mid-range-share checks, per-benchmark statistic histograms, effect sizes against the replicated datasets and the G-null refits, and randomised LOO-PIT with ECDF-difference bands (runs/w4_graphics.py, M5); the same checks and graphics for every prior arm's fit before its posterior SBC",
       "W5: S1 Spearman, S2 share shifting by more than a quarter of the interval width, S3 interval-width ratio, S4 top-10 set and adjacent-pair probabilities, per stratum; S5 psens of the hyperpriors (decisive) and of each hyperprior separately (reported); noise floor; P(model in top 10); raw-scale S2 and S3 and posterior mass beyond abs 49 (reported)",
       "W6: PSIS-LOO elpd and SE of the difference to F0, Pareto-k shares, K-fold elpd where triggered, computational diagnostics and reduced-SBC coverage of each preferred expansion, the adequate set, and S1-S4 and interval-width change of ECI under each adequate model relative to F0"
     ],
-    "setup_details": "Stage order and dependencies are in the stage table of experiment-plan.md and the stage hand-offs of execution-bridge.md; one wrapper, runs/w_run.py, runs a stage or all of them and stops at a failed gate. W1 simulates and sets nothing. W2 fits with evaluate=True, adds the summed hyperprior log density (group log_prior) and the per-draw ECI to each trace, and fits our F0 for EQ. W3 freezes the check code, runs the positive control first, then G-null, then the misfit generators; replicate seed = first 4 bytes of sha256('<generator>:<index>'); the SBC ranks and the T values come from the same refits. W4 reads the W2 trace and the W3 reference values. W5 runs the S5 screen on the W2 seed-12345 draws first, then P0 and P0b and the noise floor, then every grid entry including PR, then the targeted refits. W6 starts only after the C1 and C2 verdicts are recorded and their files digested in runs/freeze.json.",
+    "setup_details": "Stage order and dependencies are in the stage table of experiment-plan.md and the stage hand-offs of execution-bridge.md; one wrapper, runs/w_run.py, runs a stage or all of them and stops at a failed gate. W1 simulates and sets nothing. W2 fits with evaluate=True, adds the summed hyperprior log density (group log_prior) and the per-draw ECI to each trace, and fits our F0 for EQ. W3 freezes the check code, runs the positive control first, then G-null, then the misfit generators; replicate seed = first 4 bytes of sha256('<generator>:<index>'); the SBC ranks and the T values come from the same refits; runs/w3_modrak.py reads the finished replicates (read only) and is rerun when W3 finishes. W4 reads the W2 trace and the W3 reference values; runs/w4_graphics.py is run on the W2 fit and on each prior arm's fit, and the optional posterior SBC (runs/w5_posterior_sbc.py) follows each arm's checks. W5 runs the S5 screen on the W2 seed-12345 draws first, then P0 and P0b and the noise floor, then every grid entry including PR, then the targeted refits. W6 starts only after the C1 and C2 verdicts are recorded and their files digested in runs/freeze.json.",
     "seeds": 3,
     "success_criterion": "W2 (G0): seed 12345 abs(d_m) <= max(0.5, 0.07 x W_m,published) for every non-anchor model, Spearman >= 0.999, median width ratio in [0.95, 1.05] and at least 95% of the 254 ratios in [0.85, 1.15]; all three seeds zero divergences, r_hat <= 1.01, bulk ESS >= 400. W3 (G1): recovery coverage over all non-anchor models in [0.85, 0.95]; at least 150 converged null replicates; T2 power >= 0.8 on G-2D and T5 power >= 0.8 on G-offset (16 of 20); the positive-control prior fails at least one of S1-S4 in the frontier or all-models stratum on all three seeds. W4 (G3): C2 decision rule. W5 (G2): C1 decision rule. W1 has no gate. W6 (G7, exploratory): equivalence check EQ passed; an expansion is preferred only if its elpd difference to F0 exceeds 4 and 2.5 standard errors, and adopted only if its computational checks and reduced SBC pass.",
     "minimum_effect_size": "0.5 ECI points, or 0.07 of the published width where larger (G0); power 0.8 at family-wise alpha 0.01 (G1); adjusted p < 0.01, coverage outside [0.85, 0.95], binomial p < 0.01 / 44 (G3); a quarter of a model's baseline interval width, 1.1 to 1.9 ECI points for the 20 frontier models (G2); elpd difference above 4 (G7).",
     "failure_interpretation": "W2: production settings or data differ from the public ones; find the difference or rebaseline openly. W3: poor recovery means the published intervals are miscalibrated even when the model is true; a check without power cannot support C2. W4: W4d measures how far a localised misfit moves the scores. W5: a sparse-only failure narrows C1, a frontier or all-models failure falsifies it. W6: an adopted expansion is a finding about model structure and is reported beside, never instead of, the verdicts on Epoch's model.",
     "expected_output_artifact": "runs/W/workflow.json",
-    "compute_budget": "W1 about 5 minutes (no fits). W2 6 fits (4 Epoch, 2 of ours), about 30 minutes. W3 302 fits, about 10 hours (about 40 CPU-hours), restartable. W4 about 30 minutes. W5 up to 23 fits (14 grid, PR, up to 2 C1 follow-ups, up to 6 exploratory targeted refits), about 1 to 2 hours; the post-freeze exploratory fits of J1 and J2 (R26) are two more fits of PR's size, outside this count. W6 about 3 to 10 hours typical and up to about 24 hours in the worst case, plus up to 8 hours if the combination F7 is fitted (M14); exploratory and stoppable. Without W6 the plan is about 13.5 hours; with W6 about 17 to 24 hours typical (worst case about 46 hours). Under 2 GB RAM per fit; about 3.5 GB disk.",
+    "compute_budget": "W1 about 5 minutes (no fits). W2 6 fits (4 Epoch, 2 of ours), about 30 minutes. W3 302 fits, about 10 hours (about 40 CPU-hours), restartable. W4 about 30 minutes. W5 up to 23 fits (14 grid, PR, up to 2 C1 follow-ups, up to 6 exploratory targeted refits), about 1 to 2 hours; the post-freeze exploratory fits of J1 and J2 (R26) are two more fits of PR's size, outside this count. W6 about 3 to 10 hours typical and up to about 24 hours in the worst case, plus up to 8 hours if the combination F7 is fitted (M14); exploratory and stoppable. Without W6 the plan is about 13.5 hours; with W6 about 17 to 24 hours typical (worst case about 46 hours). The optional posterior SBC (M13) is 100 fits of about 5 minutes each, about 8 hours wall-clock (about 33 CPU-hours), per prior arm, run after W5 and stoppable; the Modrak rank tests and the W4 graphics add under 5 minutes and no fits. Under 2 GB RAM per fit; about 3.5 GB disk.",
     "dependencies": [],
     "priority": "must-run",
     "current_evidence_class": "exploratory",
@@ -215,6 +215,16 @@
           "snapshot": "digest-at-start"
         },
         {
+          "path": "runs/lib/sbc_modrak.py",
+          "role": "ECDF-difference gamma test, thinning to ESS and test quantities for the additional SBC report (M13, R29); validated on toy models, reports only",
+          "snapshot": "digest-at-start"
+        },
+        {
+          "path": "runs/lib/ppc_graphics.py",
+          "role": "graphical posterior predictive checks, effect sizes and randomised LOO-PIT (M5, R29); reports only",
+          "snapshot": "digest-at-start"
+        },
+        {
           "path": "runs/lib/compare.py",
           "role": "PSIS-LOO, K-fold elpd, the W6 preference rule and the multiverse summary (M14); frozen before any W6 fit",
           "snapshot": "digest-at-start"
@@ -252,11 +262,27 @@
           "kind": "metrics"
         },
         {
+          "path": "runs/W/W3M/modrak.json",
+          "kind": "metrics"
+        },
+        {
+          "path": "runs/W/W3M/ecdf_null.png",
+          "kind": "figure"
+        },
+        {
           "path": "runs/W/W4/ppc.json",
           "kind": "metrics"
         },
         {
           "path": "runs/W/W4/evaluation_report.pdf",
+          "kind": "figure"
+        },
+        {
+          "path": "runs/W/W4G/ppc_graphics.json",
+          "kind": "metrics"
+        },
+        {
+          "path": "runs/W/W4G/fig_loo_pit.png",
           "kind": "figure"
         },
         {
