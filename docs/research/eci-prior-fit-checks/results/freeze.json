@@ -1,0 +1,18 @@
+{
+ "created_for": "W run",
+ "inputs": {
+  "zip": "9d728f9f8635069812530a157aef7a6cec935fffc93f33d3031bad5c6888b1d5",
+  "entries": "98e5f48af77952d478013cf578ca00ecd17e5e41f7a647bbc80e8e37b2b120fe"
+ },
+ "vendor_tree_sha256": "781b5f9364e673c769a8cdb7e9c285b04477ca5da484226e872ab339a3e05c5e",
+ "eci_commit": "e04929ab751531e558b1a61e86f436487c710ef8",
+ "vendor_vs_ext": "identical file by file excluding .git and bytecode caches (diff -r)",
+ "frozen": {
+  "strata.json": "712e1cf82b127ac9a652a066ec4ef061edaa25bef2116f9b72072fcd7dc58fdc",
+  "prior-grid.json": "35c4f83e7a49cfc375fdf9a1a1ada3b7bb84f338f2ab1ccc0a78af3f8786c1bb",
+  "sens_metrics.py": "5f858a6362c506d49632c7d62c9c27b60d9577e03b6653052e36cdecf2d1a4e0",
+  "models.py": "c176e0b3fea6edab475a50f96fed4fbf9433fbf70adf8a60033d1bb24d360291",
+  "ppc_checks.py": "6aa4bdd3152f8aff4b8d69001bc1541e1a4134b86446a98eb0a46cf1574a863d",
+  "sbc.py": "2f76d6cda04a2201cfd86fdd946f5668351ce4af35c36aaa72fa31d2f549d013"
+ }
+}
