@@ -1,0 +1,63 @@
+{
+ "n_datasets": 1000,
+ "n_cells": 2879,
+ "seed": "numpy SeedSequence(20261113).spawn(2): stream 0 Epoch, stream 1 PR",
+ "epoch": {
+  "clip_bound_share": {
+   "mean": 0.8878103508162557,
+   "p05": 0.8402222994095172,
+   "p95": 0.9256686349426885
+  },
+  "mid_range_share": {
+   "mean": 0.049389371309482455,
+   "p05": 0.03403959708232025,
+   "p95": 0.07467870788468219
+  },
+  "mu_in_01_09_share": {
+   "mean": 0.05299791594303578,
+   "p05": 0.038902396665508855,
+   "p95": 0.07780479333101771
+  },
+  "abs_logit_gt_6p9_share": {
+   "mean": 0.8433733935394234,
+   "p05": 0.7860194511983327,
+   "p95": 0.8721778395276137
+  },
+  "n_datasets_mid_ge_015": 3
+ },
+ "reference": {
+  "clip_bound_share": {
+   "mean": 0.26076345953456065,
+   "p05": 0.04640500173671414,
+   "p95": 0.5270927405349078
+  },
+  "mid_range_share": {
+   "mean": 0.4532077110107676,
+   "p05": 0.21010767627648488,
+   "p95": 0.712434873219868
+  },
+  "mu_in_01_09_share": {
+   "mean": 0.4940055574852379,
+   "p05": 0.2323723515109413,
+   "p95": 0.7787773532476554
+  },
+  "abs_logit_gt_6p9_share": {
+   "mean": 0.13415456755817992,
+   "p05": 0.003438693990969088,
+   "p95": 0.35534907954150746
+  },
+  "n_datasets_mid_ge_015": 986
+ },
+ "PR_criterion": {
+  "mean_mid_ge_040": true,
+  "datasets_mid_ge_015_at_least_950": true,
+  "mean_bound_le_035": true
+ },
+ "PR_passes": true,
+ "epoch_reproduces_review_figures": true,
+ "epoch_criterion": {
+  "mean_mid_ge_040": false,
+  "datasets_mid_ge_015_at_least_950": false,
+  "mean_bound_le_035": false
+ }
+}
