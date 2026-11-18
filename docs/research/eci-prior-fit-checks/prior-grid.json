@@ -1,5 +1,5 @@
 {
-  "frozen_at": "2026-11-13, before any refit or power-scaling screen (revised the same day by pre-run review; see the Revision log in experiment-plan.md)",
+  "frozen_at": "2026-11-13, before any refit or power-scaling screen (revised the same day by pre-run review; restructured into block W on 2026-11-18, which added only the exploratory entry PR and the S5-targeted refits; see the Revision Log in experiment-plan.md)",
   "parameterisation": "hyperpriors are LogNormal(mu, sigma) of the underlying normal, as in eci.bayesian.BayesianPriors; 'ln 0.5' means mu = log(0.5)",
   "baseline": {
     "tau_alpha": [
@@ -95,7 +95,7 @@
       ]
     }
   },
-  "positive_control_B1": {
+  "positive_control_W3": {
     "PC": {
       "tau_alpha": [
         "ln 0.05",
@@ -103,6 +103,17 @@
       ]
     }
   },
+  "reference_prior_W1_exploratory": {
+    "PR": {
+      "capability": "Normal(mu_c, s); mu_c ~ Normal(0, 2)",
+      "difficulty": "ZeroSumNormal(sigma = s * sqrt(K / (K - 1))), K = 57, so its marginal SD is s",
+      "s": "LogNormal(ln 2, 0.5), one scale shared by capability and difficulty",
+      "unchanged": "tau_alpha, sigma_median, tau_sigma, log_slope and sigma are as in the baseline"
+    },
+    "status": "exploratory. Fitted once in W5 (our reimplementation, only if the equivalence check EQ passed), scored with S1-S4 against P0 and reported, and reused as candidate F6 in W6. It never enters the C1 decision rule.",
+    "plausibility_criterion": "Pre-declared in W1 on 1,000 datasets simulated on the 2,879 observed (model, benchmark) cells with numpy default_rng(20261113): mean share of scores in [0.1, 0.9] >= 0.40; at least 95% of datasets with that share >= 0.15; mean share at the clip bounds (<= 0.001 or >= 0.999) <= 0.35. If PR fails, it is dropped from W5 and W6 and the failure is reported; it is not retuned."
+  },
+  "s5_targeted_refits_exploratory": "For each hyperprior that S5 flags (the S5 pass rule applied to its own psens): refit with the power a = 0.5 and a = 2, using LogNormal(mu + s^2 (1 - a) / a, s / sqrt(a)); at most 6 such fits in total. Scored with S1-S4, reported, never part of the C1 verdict.",
   "s5_followup_refits": "Only if S5 flags a hyperprior LogNormal(mu, s): refit with LogNormal(mu + s^2 (1 - a) / a, s / sqrt(a)) for a = 0.8 and a = 1.25, which is that prior raised to the power a. For s = 0.5: mu + 0.0625 with sigma 0.559, and mu - 0.05 with sigma 0.447.",
   "sampler": {
     "chains": 4,
@@ -111,5 +122,5 @@
     "seed": 12345,
     "noise_floor_seed": 22345
   },
-  "note": "P8 and P9 scales are on the raw (pre-anchor) scale, where the geometric-mean slope is 1 and difficulties sum to 0. Guard fixed before any fit: let s0 be the SD across the 256 models of the posterior-mean raw capability in B0 seed 12345. If s0 > 3, P8 uses Normal(0, 2 x s0) for capability and ZeroSumNormal(2 x s0) for difficulty. The published draws give s0 = 2.62, so the guard is not expected to trigger."
+  "note": "P8 and P9 scales are on the raw (pre-anchor) scale, where the geometric-mean slope is 1 and difficulties sum to 0. Guard fixed before any fit: let s0 be the SD across the 256 models of the posterior-mean raw capability in W2 seed 12345. If s0 > 3, P8 uses Normal(0, 2 x s0) for capability and ZeroSumNormal(2 x s0) for difficulty. The published draws give s0 = 2.62, so the guard is not expected to trigger."
 }
