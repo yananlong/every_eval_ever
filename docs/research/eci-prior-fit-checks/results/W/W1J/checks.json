@@ -1,0 +1,188 @@
+{
+ "a_potential_removed_equals_F0": {
+  "n_points": 50,
+  "logp_exactly_equal": true,
+  "grad_exactly_equal": true,
+  "same_value_vars": true
+ },
+ "a_prior_only_equals_F0_minus_loglik": {
+  "n_points": 10,
+  "max_abs_err": 8.152483133017085e-10,
+  "observed_RVs": []
+ },
+ "b_potential_tail_points": {
+  "n_points": 20,
+  "reference": "algebraic form with scipy psi1",
+  "max_rel_err": 2.1755375329907384e-16,
+  "max_abs_eta": 294.98957012141557,
+  "passed": true
+ },
+ "b_potential_vs_numpy": {
+  "n_points": 20,
+  "max_rel_err": 3.6911715689076187e-16,
+  "max_abs_eta_over_points": 99.92021779215128,
+  "tol": 1e-08,
+  "passed": true
+ },
+ "b_g_monte_carlo": {
+  "draws": 1000000,
+  "rows": [
+   {
+    "mu": 0.5,
+    "kappa": 4.0,
+    "g_formula": 1.2898681336964533,
+    "g_pytensor": 1.2898681336964537,
+    "g_monte_carlo": 1.292492206863973,
+    "mc_mean_score": 0.0015034464158185416,
+    "rel_err_pytensor_vs_formula": 3.4429039546655773e-16,
+    "rel_err_mc": 0.0020343732037164256
+   },
+   {
+    "mu": 0.2,
+    "kappa": 10.0,
+    "g_formula": 1.9918619687481816,
+    "g_pytensor": 1.991861968748181,
+    "g_monte_carlo": 1.9887531046961946,
+    "mc_mean_score": 0.001466613094579206,
+    "rel_err_pytensor_vs_formula": 2.2295179928012673e-16,
+    "rel_err_mc": 0.0015607828759041853
+   },
+   {
+    "mu": 0.05,
+    "kappa": 25.0,
+    "g_formula": 1.7490637281823884,
+    "g_pytensor": 1.74906372818239,
+    "g_monte_carlo": 1.747331385666776,
+    "mc_mean_score": 0.0012525552108336219,
+    "rel_err_pytensor_vs_formula": 8.886538605945746e-16,
+    "rel_err_mc": 0.0009904399066194226
+   },
+   {
+    "mu": 0.9,
+    "kappa": 10.0,
+    "g_formula": 1.4275813260492283,
+    "g_pytensor": 1.4275813260492307,
+    "g_monte_carlo": 1.4267994874666883,
+    "mc_mean_score": -0.000816205488234014,
+    "rel_err_pytensor_vs_formula": 1.7109292546819979e-15,
+    "rel_err_mc": 0.0005476665800215396
+   },
+   {
+    "mu": 0.5,
+    "kappa": 100.0,
+    "g_formula": 25.25166653337141,
+    "g_pytensor": 25.251666533371395,
+    "g_monte_carlo": 25.30030558676477,
+    "mc_mean_score": 0.00489623984135731,
+    "rel_err_pytensor_vs_formula": 5.627689838380216e-16,
+    "rel_err_mc": 0.0019261720143929194
+   },
+   {
+    "mu": 0.3,
+    "kappa": 5.0,
+    "g_formula": 1.3948388522010182,
+    "g_pytensor": 1.3948388522010193,
+    "g_monte_carlo": 1.3968762883989811,
+    "mc_mean_score": -0.0014298947839974513,
+    "rel_err_pytensor_vs_formula": 7.95950745760526e-16,
+    "rel_err_mc": 0.0014606964774087757
+   }
+  ],
+  "max_rel_err_mc": 0.0020343732037164256
+ },
+ "b_trigamma_vs_scipy": {
+  "n": 4014,
+  "max_rel_err": 1.6740759217492387e-14,
+  "tol": 1e-10,
+  "passed": true
+ },
+ "b_extreme_eta": {
+  "eta": [
+   -700.0,
+   -300.0,
+   -50.0,
+   -20.0,
+   20.0,
+   50.0,
+   300.0,
+   700.0
+  ],
+  "g_at_kappa20": [
+   1.0,
+   1.0,
+   1.0,
+   0.9999999958776955,
+   0.9999999958776955,
+   1.0,
+   1.0,
+   1.0
+  ],
+  "all_finite": true
+ },
+ "c_gradient_finite_difference": {
+  "n_directional": 18,
+  "step": 1e-05,
+  "max_rel_err": 1.4375522282507095e-08,
+  "tol": 1e-06,
+  "passed": true
+ },
+ "d_tail_behaviour": {
+  "model": "the model with the most observed cells",
+  "n_cells": 29,
+  "c_grid": [
+   -50.0,
+   -40.0,
+   -30.0,
+   -20.0,
+   -15.0,
+   -10.0,
+   -7.0,
+   -5.0,
+   -3.0,
+   -2.0,
+   -1.0,
+   0.0,
+   1.0,
+   2.0,
+   3.0,
+   5.0,
+   7.0,
+   10.0,
+   15.0,
+   20.0,
+   30.0,
+   40.0,
+   50.0
+  ],
+  "half_log_I_m": [
+   1.8797674695481097,
+   1.8797674661634685,
+   1.8797673208554089,
+   1.8797613655010785,
+   1.8797627270373087,
+   1.881072591867126,
+   1.8901418682408846,
+   1.9149245362125176,
+   2.010633941714784,
+   2.14873250838259,
+   2.423396409535301,
+   2.690468491083031,
+   2.664478651144472,
+   2.36879388438436,
+   2.074507779022992,
+   1.9048838298453032,
+   1.8851291981686555,
+   1.8801649650049892,
+   1.8797452049497845,
+   1.8797628703955283,
+   1.8797673639245434,
+   1.8797674670570501,
+   1.8797674695676188
+  ],
+  "limit_half_log_sum_a2": 1.8797674696335234,
+  "slope_over_c_20_to_50": 6.361319381222229e-07,
+  "slope_over_c_minus50_to_minus20": -2.0346823437211725e-07,
+  "max_abs_gap_to_plateau_at_abs_c_ge_30": 1.487781144948741e-07,
+  "reading": "half log I_m does not decay: g tends to 1 as |eta| grows (Beta shape below 1), so I_m tends to the sum of squared slopes and the density sqrt(I_m) is bounded below in the tails; it is proper only because the c box [-50, 50] is kept"
+ }
+}

@@ -1,0 +1,181 @@
+{
+ "structure": {
+  "identical_description": true,
+  "epoch": {
+   "tau_alpha": {
+    "shape": [],
+    "dist": "LogNormalRV",
+    "transform": "LogTransform",
+    "value": "tau_alpha_log__"
+   },
+   "sigma_median": {
+    "shape": [],
+    "dist": "LogNormalRV",
+    "transform": "LogTransform",
+    "value": "sigma_median_log__"
+   },
+   "tau_sigma": {
+    "shape": [],
+    "dist": "LogNormalRV",
+    "transform": "LogTransform",
+    "value": "tau_sigma_log__"
+   },
+   "sigma": {
+    "shape": [
+     57
+    ],
+    "dist": "TruncatedRV",
+    "transform": "Interval",
+    "value": "sigma_interval__"
+   },
+   "capability": {
+    "shape": [
+     256
+    ],
+    "dist": "UniformRV",
+    "transform": "Interval",
+    "value": "capability_interval__"
+   },
+   "difficulty": {
+    "shape": [
+     57
+    ],
+    "dist": "FlatRV",
+    "transform": "ZeroSumTransform",
+    "value": "difficulty_zerosum__"
+   },
+   "log_slope": {
+    "shape": [
+     57
+    ],
+    "dist": "ZeroSumNormalRV",
+    "transform": "ZeroSumTransform",
+    "value": "log_slope_zerosum__"
+   },
+   "observed": [
+    "obs"
+   ],
+   "potentials": [
+    "difficulty_bound"
+   ],
+   "deterministics": [
+    "kappa",
+    "slope"
+   ],
+   "coords": {
+    "model": 256,
+    "benchmark": 57
+   }
+  },
+  "ours": {
+   "tau_alpha": {
+    "shape": [],
+    "dist": "LogNormalRV",
+    "transform": "LogTransform",
+    "value": "tau_alpha_log__"
+   },
+   "sigma_median": {
+    "shape": [],
+    "dist": "LogNormalRV",
+    "transform": "LogTransform",
+    "value": "sigma_median_log__"
+   },
+   "tau_sigma": {
+    "shape": [],
+    "dist": "LogNormalRV",
+    "transform": "LogTransform",
+    "value": "tau_sigma_log__"
+   },
+   "sigma": {
+    "shape": [
+     57
+    ],
+    "dist": "TruncatedRV",
+    "transform": "Interval",
+    "value": "sigma_interval__"
+   },
+   "capability": {
+    "shape": [
+     256
+    ],
+    "dist": "UniformRV",
+    "transform": "Interval",
+    "value": "capability_interval__"
+   },
+   "difficulty": {
+    "shape": [
+     57
+    ],
+    "dist": "FlatRV",
+    "transform": "ZeroSumTransform",
+    "value": "difficulty_zerosum__"
+   },
+   "log_slope": {
+    "shape": [
+     57
+    ],
+    "dist": "ZeroSumNormalRV",
+    "transform": "ZeroSumTransform",
+    "value": "log_slope_zerosum__"
+   },
+   "observed": [
+    "obs"
+   ],
+   "potentials": [
+    "difficulty_bound"
+   ],
+   "deterministics": [
+    "kappa",
+    "slope"
+   ],
+   "coords": {
+    "model": 256,
+    "benchmark": 57
+   }
+  },
+  "observed_equal": true,
+  "constants": {
+   "MU_EPS": [
+    1e-06,
+    1e-06
+   ],
+   "MAX_SIGMA": [
+    0.5,
+    0.5
+   ],
+   "CD_BOUND": [
+    50.0,
+    50.0
+   ]
+  },
+  "free_vars_equal": true
+ },
+ "points": {
+  "n": 300,
+  "max_rel_logp": 0.0,
+  "max_abs_logp": 0.0,
+  "max_rel_dlogp": 0.0,
+  "per_term_max_rel": {
+   "tau_alpha": 0.0,
+   "sigma_median": 0.0,
+   "tau_sigma": 0.0,
+   "sigma": 0.0,
+   "capability": 0.0,
+   "difficulty": 0.0,
+   "log_slope": 0.0,
+   "obs": 0.0,
+   "potential_residual": 0.0
+  },
+  "logp_example": -91034.86792954053,
+  "grad_len": 428,
+  "requirement": {
+   "logp": 1e-08,
+   "grad": 1e-06
+  },
+  "passed": true,
+  "potential_outside_box": [
+   -Infinity,
+   -Infinity
+  ]
+ }
+}

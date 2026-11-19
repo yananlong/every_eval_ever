@@ -1,0 +1,294 @@
+{
+ "G0": {
+  "max_abs_d": 0.41965642143131276,
+  "n_exceed_tolerance": 0,
+  "max_abs_d_over_W": 0.018607242668501136,
+  "spearman": 0.999992668515528,
+  "median_width_ratio": 0.9955106758075773,
+  "share_ratio_in_085_115": 1.0,
+  "seed12345_pass": true,
+  "worst_models": [
+   [
+    "Qwen2.5-Coder-0.5B",
+    0.41965642143131276,
+    34.660000000000004
+   ],
+   [
+    "StarCoder 2 7B",
+    0.4037490221714819,
+    31.870000000000005
+   ],
+   [
+    "RedPajama-INCITE-7B-Base",
+    0.3967950355363712,
+    37.46
+   ],
+   [
+    "Dolly 2.0-12b",
+    0.38944147758552816,
+    38.64
+   ],
+   [
+    "open_llama_7b",
+    0.3576160409916298,
+    34.07
+   ]
+  ],
+  "per_seed_converged": {
+   "12345": true,
+   "22345": true,
+   "32345": true
+  },
+  "per_seed_diag": {
+   "12345": {
+    "divergences": 0,
+    "max_rhat": 1.004266795446103,
+    "min_ess": 1076.0617098740372,
+    "stage": "pilot",
+    "attempts": 1,
+    "min_tail_ess": 1307.066558322593,
+    "min_bfmi": "n/a: TypeError"
+   },
+   "22345": {
+    "divergences": 0,
+    "max_rhat": 1.0031512315204223,
+    "min_ess": 1227.7691379072278,
+    "stage": "pilot",
+    "attempts": 1,
+    "min_tail_ess": 1537.497042392838,
+    "min_bfmi": "n/a: TypeError"
+   },
+   "32345": {
+    "divergences": 0,
+    "max_rhat": 1.0051823574823613,
+    "min_ess": 1286.6051537554254,
+    "stage": "pilot",
+    "attempts": 1,
+    "min_tail_ess": 1316.5204384965127,
+    "min_bfmi": "n/a: TypeError"
+   }
+  },
+  "all_seeds_converged": true,
+  "seed_to_seed_sd_max": 0.24785718044058547,
+  "max_abs_diff_edi": 0.7669766481674785,
+  "max_abs_diff_slope_scaled": 0.0012903600600381593,
+  "top10_adjacent_pairs": [
+   {
+    "i": "Claude Fable 5.2",
+    "j": "Gemini 4 Carbon",
+    "published": 0.996,
+    "ours": 0.9975
+   },
+   {
+    "i": "Gemini 4 Carbon",
+    "j": "GPT-6 Astra",
+    "published": 0.748,
+    "ours": 0.7295
+   },
+   {
+    "i": "GPT-6 Astra",
+    "j": "Claude Opus 5.5",
+    "published": 0.702,
+    "ours": 0.713
+   },
+   {
+    "i": "Claude Opus 5.5",
+    "j": "GPT-6.1 Sol",
+    "published": 0.52,
+    "ours": 0.5125
+   },
+   {
+    "i": "GPT-6.1 Sol",
+    "j": "GPT-6.1 Terra",
+    "published": 0.784,
+    "ours": 0.76475
+   },
+   {
+    "i": "GPT-6.1 Terra",
+    "j": "Claude Fable 5.1",
+    "published": 0.744,
+    "ours": 0.73975
+   },
+   {
+    "i": "Claude Fable 5.1",
+    "j": "Claude Sonnet 5.5",
+    "published": 0.676,
+    "ours": 0.6825
+   },
+   {
+    "i": "Claude Sonnet 5.5",
+    "j": "Gemini 4 Argon",
+    "published": 0.532,
+    "ours": 0.532
+   },
+   {
+    "i": "Gemini 4 Argon",
+    "j": "Claude Opus 5",
+    "published": 0.98,
+    "ours": 0.97575
+   }
+  ],
+  "published_bootstrap_shape": [
+   256,
+   500
+  ]
+ },
+ "G0_pass_reproduction": true,
+ "W2b": {
+  "n_rows_loader": 2879,
+  "n_rows_published": 2879,
+  "keys_equal": true,
+  "differing_rows": [
+   [
+    "Claude Fable 5",
+    "GPQA diamond",
+    "0.8452581369248036",
+    "0.9566147586980923"
+   ],
+   [
+    "Claude Fable 5.2",
+    "GPQA diamond",
+    "0.9566147586980924",
+    "0.9864267676767678"
+   ],
+   [
+    "Claude Opus 5.5",
+    "GPQA diamond",
+    "0.9110199214365882",
+    "0.9592452300785634"
+   ]
+  ],
+  "converged": true,
+  "S1_S4_vs_W2a": {
+   "S4": {
+    "top10_same": true,
+    "max_pair_change": 0.02300000000000002,
+    "pass_": true
+   },
+   "all": {
+    "n": 254,
+    "S1": 0.9999792572671089,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 12,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 12,
+    "S3_pass": true,
+    "max_rel_shift": 0.06880914514844695,
+    "median_width_ratio": 0.9945754059355184
+   },
+   "frontier": {
+    "n": 20,
+    "S1": 1.0,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 1,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 1,
+    "S3_pass": true,
+    "max_rel_shift": 0.05476014443195651,
+    "median_width_ratio": 1.0000608043260433
+   },
+   "sparse": {
+    "n": 72,
+    "S1": 0.9997749051385942,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 3,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 3,
+    "S3_pass": true,
+    "max_rel_shift": 0.06638290564238555,
+    "median_width_ratio": 0.9965273986090722
+   },
+   "dense": {
+    "n": 182,
+    "S1": 0.9999788098861513,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 9,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 9,
+    "S3_pass": true,
+    "max_rel_shift": 0.06880914514844695,
+    "median_width_ratio": 0.9943840575815082
+   }
+  }
+ },
+ "EQ": {
+  "density": {
+   "max_abs_diff": 0.0,
+   "max_rel_diff": 0.0,
+   "logp_range": [
+    3230.796288630178,
+    3290.3315896113877
+   ],
+   "requirement_abs": 1e-06,
+   "passed": true
+  },
+  "fits": {
+   "12345": {
+    "converged": true,
+    "last_attempt": {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 1000,
+     "divergences": 0,
+     "max_rhat": 1.004266795446103,
+     "min_ess": 1076.0617098740372
+    },
+    "started_from": "pilot",
+    "wall_seconds": 129.9,
+    "max_abs_dECI": 0.0,
+    "max_dECI_over_tolerance": 0.0,
+    "n_exceed": 0,
+    "spearman": 0.9999999999999998,
+    "median_width_ratio": 1.0,
+    "share_ratio_in_085_115": 1.0,
+    "elpd_loo_epoch": 3449.96301212812,
+    "elpd_loo_F0": 3449.96301212812,
+    "elpd_diff": 0.0,
+    "se_epoch": 56.73549367480924,
+    "se_F0": 56.73549367480924,
+    "p_loo_epoch": 442.64976251017475,
+    "p_loo_F0": 442.64976251017475,
+    "identical_draws": true,
+    "pass": true
+   },
+   "22345": {
+    "converged": true,
+    "last_attempt": {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 1000,
+     "divergences": 0,
+     "max_rhat": 1.0031512315204223,
+     "min_ess": 1227.7691379072278
+    },
+    "started_from": "pilot",
+    "wall_seconds": 166.6,
+    "max_abs_dECI": 0.0,
+    "max_dECI_over_tolerance": 0.0,
+    "n_exceed": 0,
+    "spearman": 0.9999999999999998,
+    "median_width_ratio": 1.0,
+    "share_ratio_in_085_115": 1.0,
+    "elpd_loo_epoch": 3450.452034026556,
+    "elpd_loo_F0": 3450.452034026556,
+    "elpd_diff": 0.0,
+    "se_epoch": 56.64552415352447,
+    "se_F0": 56.64552415352447,
+    "p_loo_epoch": 442.07907713077196,
+    "p_loo_F0": 442.07907713077196,
+    "identical_draws": true,
+    "pass": true
+   }
+  },
+  "passed": true
+ },
+ "settings": "see settings_provenance.md"
+}

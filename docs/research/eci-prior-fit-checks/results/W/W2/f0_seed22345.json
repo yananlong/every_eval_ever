@@ -1,0 +1,44 @@
+{
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "code_sha256": "53da48100597713f4249319917e92b45172424ac3d9eefc01b4e1e42a1e97af2",
+ "args": {
+  "seed": 22345,
+  "draws": null,
+  "evaluate": false,
+  "spec": [
+   [],
+   "epoch"
+  ],
+  "priors": null,
+  "chains": 4,
+  "target_accept": 0.95,
+  "clip": 0.001
+ },
+ "name": "f0_seed22345",
+ "started_from": "pilot",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0031512315204223,
+   "min_ess": 1227.7691379072278
+  }
+ ],
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0031512315204223,
+  "min_ess": 1227.7691379072278
+ },
+ "warnings": [
+  "Cannot cache compiled function \"numba_funcified_fgraph\" as it uses dynamic globals (such as ctypes pointers and large global arrays)"
+ ],
+ "wall_seconds": 166.6,
+ "min_tail_ess": 1537.497042392838,
+ "min_bfmi": "n/a: TypeError"
+}
