@@ -34,5 +34,12 @@ cd "$WORK/v11"
 # committed input check, then the input that is not in git
 if [ -f ext/epoch_zip/benchmark_data.zip ] && [ "$(sha256sum ext/epoch_zip/benchmark_data.zip | cut -d' ' -f1)" = "$ZIP_SHA" ]; then echo "benchmark_data.zip ok"; else
   echo "MISSING: ext/epoch_zip/benchmark_data.zip with sha256 $ZIP_SHA (should come from inputs/ in this pack)"; fi
-[ -f runs/W/W2/seed12345.nc ] && echo "W2 seed12345.nc present: compare its sha256 with results/W/EXCLUDED_FILES.tsv" || echo "MISSING: runs/W/W2/seed12345.nc (copy it from the original machine; see HANDOFF.md)"
+W2_SHA=88ab45bbb8118f5ef7b0efb904e496268d69a22be470be73521416b290604162
+if [ ! -f runs/W/W2/seed12345.nc ]; then
+  T=$(mktemp -d); git -C "$REPO" fetch -q origin claude/busy-wright-khj0ky
+  git -C "$REPO" archive FETCH_HEAD eci-handoff/W2 | tar -x -C "$T"
+  (cd "$T/eci-handoff/W2" && sha256sum -c --quiet <(head -n -1 SHA256SUMS) && cat seed12345.nc.part-* > seed12345.nc)
+  mv "$T/eci-handoff/W2/seed12345.nc" runs/W/W2/seed12345.nc; rm -rf "$T"
+fi
+[ "$(sha256sum runs/W/W2/seed12345.nc | cut -d' ' -f1)" = "$W2_SHA" ] && echo "W2 seed12345.nc ok" || { echo "W2 seed12345.nc sha256 MISMATCH"; exit 1; }
 echo "work root: $WORK/v11"

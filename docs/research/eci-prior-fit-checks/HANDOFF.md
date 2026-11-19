@@ -45,7 +45,7 @@ Skip logic (read from `w3_calibrate.py`, function `run_rep_capped`): a replicate
 ### Inputs
 
 1. `ext/epoch_zip/benchmark_data.zip`, sha256 `9d728f9f8635069812530a157aef7a6cec935fffc93f33d3031bad5c6888b1d5` (2.3 MB, downloaded from `https://epoch.ai/data/benchmark_data.zip` on 2026-11-13). **Now committed** at `inputs/benchmark_data.zip`; `setup_workdir.sh` copies it into place and checks the hash. Do not re-download: the live file may have changed.
-2. `runs/W/W2/seed12345.nc` (211 MB), plus the `seed22345` and `seed32345` files and the F0 files if W4 to W6 need them (list and hashes in `results/W/EXCLUDED_FILES.tsv`). W2 is complete, but its posterior files are too large for git. Refitting W2 with `runs/w2_fit.py` would give different draws; see (f).
+2. `runs/W/W2/seed12345.nc` (210,605,531 bytes, sha256 `88ab45bbb8118f5ef7b0efb904e496268d69a22be470be73521416b290604162`). **On GitHub in five parts** on branch `claude/busy-wright-khj0ky` (commit `0829e6e`), under `eci-handoff/W2/`, with `SHA256SUMS`. `setup_workdir.sh` fetches, verifies and reassembles it. By hand: `git fetch origin claude/busy-wright-khj0ky && git archive FETCH_HEAD eci-handoff | tar -x`, then follow `eci-handoff/README.md`. Do not refit W2 with `runs/w2_fit.py`: different draws would invalidate every finished null; see (f). The `seed22345`/`seed32345` and F0 files are not transferred; W3 does not read them (list and hashes in `results/W/EXCLUDED_FILES.tsv`).
 
 The `ext/eee` entries file (58 MB, manifest in `freeze.json`) is not read by the W-stage scripts.
 
