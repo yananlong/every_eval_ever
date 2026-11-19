@@ -42,9 +42,9 @@ Skip logic (read from `w3_calibrate.py`, function `run_rep_capped`): a replicate
 - Epoch's code: `https://github.com/epoch-research/eci-public.git`, commit `e04929ab751531e558b1a61e86f436487c710ef8` ("Merge pull request #16 from epoch-research/flat-priors", 2026-11-03). `ext/eci-public` is a clone at that commit; `runs/vendor/eci-public` is a copy without `.git` (identical file by file apart from bytecode caches; `vendor_tree_sha256` 781b5f93... in `results/freeze.json`). `setup_workdir.sh` does both. Epoch's code is not copied into this repository and must never be edited.
 - Work root layout (built by `setup_workdir.sh`, untracked): `eci_work/v11/{runs,plan_src,ext}` and `eci_work/wt-pr14`, a symlink to the repository root. Every script uses paths relative to `eci_work/v11` (for example `runs/W/W3`), so run them from there. The symlink exists because the frozen `lib/freeze.py` locates the plan at `RUNS.parent.parent / "wt-pr14/docs/research/eci-prior-fit-checks"`.
 
-### Inputs outside git
+### Inputs
 
-1. `ext/epoch_zip/benchmark_data.zip`, sha256 `9d728f9f8635069812530a157aef7a6cec935fffc93f33d3031bad5c6888b1d5` (2.3 MB, from `https://epoch.ai/data/benchmark_data.zip` as of 2026-11-13). The live download may since have changed; if the hash differs, copy the original from the first machine. It is not committed (Epoch's data).
+1. `ext/epoch_zip/benchmark_data.zip`, sha256 `9d728f9f8635069812530a157aef7a6cec935fffc93f33d3031bad5c6888b1d5` (2.3 MB, downloaded from `https://epoch.ai/data/benchmark_data.zip` on 2026-11-13). **Now committed** at `inputs/benchmark_data.zip`; `setup_workdir.sh` copies it into place and checks the hash. Do not re-download: the live file may have changed.
 2. `runs/W/W2/seed12345.nc` (211 MB), plus the `seed22345` and `seed32345` files and the F0 files if W4 to W6 need them (list and hashes in `results/W/EXCLUDED_FILES.tsv`). W2 is complete, but its posterior files are too large for git. Refitting W2 with `runs/w2_fit.py` would give different draws; see (f).
 
 The `ext/eee` entries file (58 MB, manifest in `freeze.json`) is not read by the W-stage scripts.
