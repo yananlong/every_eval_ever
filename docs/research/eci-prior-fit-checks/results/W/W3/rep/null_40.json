@@ -1,0 +1,38 @@
+{
+ "gen": "null",
+ "r": 40,
+ "seed": 123472325,
+ "position": 804,
+ "converged": false,
+ "timeout": true,
+ "cap_seconds": 3600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "started_from": null,
+ "runs_completed_before_cap": [
+  {
+   "tune": "1_000",
+   "draws": "1_000",
+   "seconds": 844
+  },
+  {
+   "tune": "500",
+   "draws": "1_000",
+   "seconds": 856
+  }
+ ],
+ "n_runs_completed": 2,
+ "last_attempt": {
+  "divergences": null,
+  "max_rhat": null,
+  "min_ess": null,
+  "draws": null
+ },
+ "wall_seconds": 3600,
+ "truth_summary": {
+  "tau_alpha": 0.6871057614509183,
+  "sigma_median": 0.09318995868210816,
+  "tau_sigma": 0.3484431930133706,
+  "slope_min": 0.15058934094594378,
+  "slope_max": 3.0423264575606686
+ }
+}
