@@ -1,0 +1,270 @@
+{
+ "name": "f0_seed12345",
+ "features": [],
+ "data": "orig",
+ "convergence": {
+  "chains": 4,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.004266795446103,
+  "min_ess_bulk": 1076.0617098740372,
+  "min_ess_tail": 1307.066558322593,
+  "max_rhat_by_var": {
+   "capability": 1.003679913658267,
+   "difficulty": 1.002972402448882,
+   "slope": 1.004266795446103,
+   "sigma": 1.003040588387907,
+   "tau_alpha": 1.0011884947388157,
+   "sigma_median": 1.0014681387556283,
+   "tau_sigma": 1.0026382985201479
+  },
+  "min_ess_bulk_by_var": {
+   "capability": 1389.8996160897211,
+   "difficulty": 1076.0617098740372,
+   "slope": 1137.2328044649205,
+   "sigma": 3547.055068689404,
+   "tau_alpha": 2598.612544781205,
+   "sigma_median": 5154.323302375168,
+   "tau_sigma": 5825.419754603571
+  },
+  "hyper_summary": {
+   "tau_alpha": {
+    "mean": 0.7131262338,
+    "sd": 0.0777895787,
+    "eti90_lb": 0.5937335418,
+    "eti90_ub": 0.850804558,
+    "ess_bulk": 2598.6125447812,
+    "ess_tail": 2597.3870190529,
+    "r_hat": 1.0011884947,
+    "mcse_mean": 0.0015549392,
+    "mcse_sd": 0.0012931854
+   },
+   "sigma_median": {
+    "mean": 0.0897832419,
+    "sd": 0.0051489421,
+    "eti90_lb": 0.0813506194,
+    "eti90_ub": 0.0983160407,
+    "ess_bulk": 5154.3233023752,
+    "ess_tail": 3011.3043769643,
+    "r_hat": 1.0014681388,
+    "mcse_mean": 7.17232e-05,
+    "mcse_sd": 8.40119e-05
+   },
+   "tau_sigma": {
+    "mean": 0.4033534104,
+    "sd": 0.0451869293,
+    "eti90_lb": 0.334543487,
+    "eti90_ub": 0.4812802219,
+    "ess_bulk": 5825.4197546036,
+    "ess_tail": 3272.7653157254,
+    "r_hat": 1.0026382985,
+    "mcse_mean": 0.0006102568,
+    "mcse_sd": 0.0007698816
+   }
+  }
+ },
+ "T": {
+  "T1": 4.5026533228120025,
+  "T2": 3.402286539658297,
+  "T3": 0.08059489004779744,
+  "T4": 0.021979145331661627,
+  "T5": 4.454663378400413,
+  "T6": 11.560617255675826,
+  "T7": 3.6439432057219556
+ },
+ "approx_vs_F0_replicates": {
+  "R": 187,
+  "T1": {
+   "observed": 4.5026533228120025,
+   "p_unadjusted": 0.005319148936170213,
+   "p_adjusted": 0.005319148936170213,
+   "z_obs": 5.743478985937599
+  },
+  "T2": {
+   "observed": 3.402286539658297,
+   "p_unadjusted": 0.005319148936170213,
+   "p_adjusted": 0.005319148936170213,
+   "z_obs": 10.621161855662995
+  },
+  "T3": {
+   "observed": 0.08059489004779744,
+   "p_unadjusted": 0.26063829787234044,
+   "p_adjusted": 0.8138297872340425,
+   "z_obs": 0.7476434827897013
+  },
+  "T4": {
+   "observed": 0.021979145331661627,
+   "p_unadjusted": 0.9893617021276596,
+   "p_adjusted": 1.0,
+   "z_obs": -3.0473690783324736
+  },
+  "T5": {
+   "observed": 4.454663378400413,
+   "p_unadjusted": 0.005319148936170213,
+   "p_adjusted": 0.005319148936170213,
+   "z_obs": 4.091020622353892
+  },
+  "T6": {
+   "observed": 11.560617255675826,
+   "p_unadjusted": 0.005319148936170213,
+   "p_adjusted": 0.21808510638297873,
+   "z_obs": 1.6641062267871058
+  },
+  "T7": {
+   "observed": 3.6439432057219556,
+   "p_unadjusted": 0.22340425531914893,
+   "p_adjusted": 0.8936170212765957,
+   "z_obs": 0.5221128956460103
+  }
+ },
+ "raw_p": {
+  "T1": 0.945,
+  "T2": 0.0,
+  "T3": 0.0,
+  "T4": 0.59,
+  "T5": 0.05,
+  "T6": 0.0,
+  "T7": 0.58
+ },
+ "T2_extras": {
+  "max_abs_r": 0.8570909004377775,
+  "share_abs_r_gt_0_3": 0.34831460674157305
+ },
+ "T1_top": [
+  {
+   "item": "OTIS Mock AIME 2024-2025",
+   "value": 26.300410564465654
+  },
+  {
+   "item": "ARC-AGI-2",
+   "value": 13.643633648291244
+  },
+  {
+   "item": "DTBench",
+   "value": 11.781707349314873
+  },
+  {
+   "item": "WeirdML",
+   "value": 9.145562827022049
+  },
+  {
+   "item": "GPQA diamond",
+   "value": 7.958450379585685
+  },
+  {
+   "item": "ProofBench",
+   "value": 7.785329482132435
+  }
+ ],
+ "T2_top": [
+  {
+   "item": "FrontierMath-Tiers-1-3-v2-Private | FrontierMath-Tier-4-v2-Private",
+   "value": 80.57051519263217
+  },
+  {
+   "item": "OTIS Mock AIME 2024-2025 | LMCA",
+   "value": 45.11749327500237
+  },
+  {
+   "item": "ARC-AGI-2 | ARC-AGI",
+   "value": 44.18356648007163
+  },
+  {
+   "item": "HellaSwag | TriviaQA",
+   "value": 36.1732604798085
+  },
+  {
+   "item": "HellaSwag | PIQA",
+   "value": 32.27980048102148
+  },
+  {
+   "item": "MATH level 5 | OTIS Mock AIME 2024-2025",
+   "value": 30.40295477561716
+  }
+ ],
+ "T2_top_r": [
+  {
+   "item": "HellaSwag | TriviaQA",
+   "value": 0.8570909004377775
+  },
+  {
+   "item": "FrontierMath-Tiers-1-3-v2-Private | FrontierMath-Tier-4-v2-Private",
+   "value": 0.7934201665246305
+  },
+  {
+   "item": "HellaSwag | PIQA",
+   "value": 0.7908543299324079
+  },
+  {
+   "item": "LAMBADA | PIQA",
+   "value": 0.7560940173882684
+  },
+  {
+   "item": "GSM8K | Winogrande",
+   "value": -0.7288050431663088
+  },
+  {
+   "item": "Mystery Game Puzzles | PostTrainBench",
+   "value": -0.7272790276307198
+  }
+ ],
+ "T5_top": [
+  {
+   "item": "Anthropic | GPQA diamond",
+   "value": -4.454663378400413
+  },
+  {
+   "item": "OpenAI | FrontierMath-Tiers-1-3-v2-Private",
+   "value": 3.9195774515908393
+  },
+  {
+   "item": "Alibaba | OTIS Mock AIME 2024-2025",
+   "value": 3.789451022500888
+  },
+  {
+   "item": "OpenAI | FrontierMath-Tier-4-v2-Private",
+   "value": 3.5889891229262982
+  },
+  {
+   "item": "OpenAI | Chess Puzzles",
+   "value": 3.452259986580742
+  },
+  {
+   "item": "OpenAI | MirrorCode",
+   "value": -3.4095966244166314
+  }
+ ],
+ "loo": {
+  "elpd": 3449.96301212812,
+  "se_elpd": 56.73549367480924,
+  "p": 442.64976251017475,
+  "k_share": 0.01736714136853074,
+  "n_k_gt_0_7": 50,
+  "delta_vs_F0": 0.0,
+  "se": 0.0,
+  "kfold_trigger": false,
+  "az_compare": {
+   "F0": {
+    "rank": 0,
+    "elpd": 3400.0,
+    "elpd_diff": 0.0,
+    "dse": 0.0,
+    "weight": 0.5
+   },
+   "f0_seed12345": {
+    "rank": 1,
+    "elpd": 3400.0,
+    "elpd_diff": 0.0,
+    "dse": 0.0,
+    "weight": 0.5
+   }
+  }
+ },
+ "loo_pit": {
+  "n": 2879,
+  "share_lt_0_05": 0.0562695380340396,
+  "share_gt_0_95": 0.0493226814866273,
+  "share_central_50": 0.5067731851337269,
+  "ks_distance": 0.028527257933548378
+ }
+}

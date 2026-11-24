@@ -1,0 +1,58 @@
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_l, z2, xi2, tau_delta, zeta, tau_g, w_skew]
+Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 822 seconds.
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_l, z2, xi2, tau_delta, zeta, tau_g, w_skew]
+Sampling 4 chains for 500 tune and 1_000 draw iterations (2_000 + 4_000 draws total) took 6241 seconds.
+Initializing NUTS using jitter+adapt_diag...
+Traceback (most recent call last):
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/w7_fit.py", line 20, in <module>
+    spec = models.Spec(tuple(f for f in a.features.split(",") if f))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/lib/fit.py", line 91, in fit
+    eci_df, edi_df, d = eb.fit_bayesian_eci(df, random_seed=seed, draws=draws, evaluate=False, progressbar=False)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/w7_fit.py", line 16, in <lambda>
+    import eci.bayesian as eb
+                              
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/vendor/eci-public/src/eci/bayesian.py", line 573, in fit_bayesian_eci
+    trace, started_from, attempts = _sample(
+                                    ^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/vendor/eci-public/src/eci/bayesian.py", line 466, in _sample
+    trace, _ = _ladder(cold_run, draws_range(_COLD_DRAWS),
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/vendor/eci-public/src/eci/bayesian.py", line 389, in _ladder
+    trace = run(draws, rung)
+            ^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/vendor/eci-public/src/eci/bayesian.py", line 463, in cold_run
+    return pm.sample(draws=n_draws, tune=cold_tune, target_accept=target_accept,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/sampling/mcmc.py", line 1037, in sample
+    initial_points, step = init_nuts(
+                           ^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/sampling/mcmc.py", line 1865, in init_nuts
+    logp_dlogp_func = model.logp_dlogp_function(ravel_inputs=True, **compile_kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/model/core.py", line 524, in logp_dlogp_function
+    fn = self._logp_dlogp_function(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/model/core.py", line 549, in _logp_dlogp_function
+    return ValueGradFunction(
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/model/core.py", line 268, in __init__
+    self._pytensor_function = compile(inputs, outputs, givens=givens, **kwargs)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/pytensorf.py", line 1007, in compile
+    pytensor_function = pytensor.function(
+                        ^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/compile/maker.py", line 261, in function
+    return m.create()
+           ^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/compile/maker.py", line 689, in create
+    _fn, _i, _o = self.linker.make_thunk(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/basic.py", line 242, in make_thunk
+    return self.make_all(
+           ^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/
