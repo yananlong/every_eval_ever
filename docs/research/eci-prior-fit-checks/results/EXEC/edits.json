@@ -1,0 +1,22 @@
+[
+ {
+  "old_str": "<a href=\"#summary\">1 Summary</a>",
+  "new_str": "<a href=\"#exec\">Executive summary</a><a href=\"#summary\">1 Summary</a>"
+ },
+ {
+  "old_str": "<p class=\"dek\">Under Epoch's own model, the intervals are calibrated and each score is predicted about as well as claimed. Even so, the real data reject the model's single-factor structure on three residual checks. The misfit does not localise to a few benchmarks, so under the pre-registered rules the Model-adequacy claim (C2) is falsified. How far the misfit moves ECI scores has not been measured. Under alternative priors the frontier and the top 10 hold while the weakest models move by up to about 29 points, so the Prior-robustness claim (C1) is falsified as well.</p>",
+  "new_str": "<p class=\"dek\">Under Epoch's own model the intervals are calibrated and single scores are predicted as claimed, yet the real data reject its single-factor structure and the misfit does not localise to a few benchmarks, so the Model-adequacy claim (C2) is falsified. Under alternative priors the frontier and the top 10 hold while the weakest models move by up to about 29 points, so the Prior-robustness claim (C1) is falsified as well. How far the misfit moves ECI scores has not been measured.</p>"
+ },
+ {
+  "old_str": "Each is computed from the standardised residuals \\(z\\) of the fit to the same dataset, so each is a function of both the data and the fit, which is the usual form of a discrepancy measure.",
+  "new_str": "T1 to T5 and T7 are computed from the standardised residuals \\(z\\) of the fit to the same dataset, and T6 compares the counts of scores at 0 and 1 with the Beta tail mass, so each is a function of both the data and the fit, which is the usual form of a discrepancy measure."
+ },
+ {
+  "old_str": "<p>Every check starts from one standardised residual per score, <em>z</em> = (observed score",
+  "new_str": "<p>T1 to T5 and T7 start from one standardised residual per score, <em>z</em> = (observed score"
+ },
+ {
+  "old_str": " Each check slices the residuals a different way and asks whether a pattern is left over.",
+  "new_str": " T6 is the exception: it compares the counts of scores at 0 and 1 with the Beta tail mass. Each check slices the residuals a different way and asks whether a pattern is left over."
+ }
+]

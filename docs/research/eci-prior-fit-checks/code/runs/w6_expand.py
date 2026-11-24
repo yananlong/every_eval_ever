@@ -34,6 +34,7 @@ def side_of(name, folder=OUT): return json.loads((folder / f"{name}.json").read_
 def fit_candidate(name, features, prior, extra=()):
     nc = OUT / f"{name}.nc"
     if nc.exists(): return side_of(name), "reused"
+    if (OUT / f"{name}.timeout").exists(): return dict(converged=False, error="timeout"), "timeout (earlier run, see deviations 12)"
     args = ["--name", name, "--features", features, "--prior", prior] + list(extra)
     ok, msg = call(args, TIMEOUT.get(name))
     if not ok: return dict(converged=False, error=msg), msg

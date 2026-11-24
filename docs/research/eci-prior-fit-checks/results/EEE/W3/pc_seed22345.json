@@ -1,0 +1,78 @@
+{
+ "seed": 22345,
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0049956987446351,
+  "min_ess": 4152.040658614839
+ },
+ "wall_seconds": 226.7,
+ "scores": {
+  "S4": {
+   "top10_same": true,
+   "max_pair_change": 0.06099999999999994,
+   "pass_": true
+  },
+  "all": {
+   "n": 254,
+   "S1": 0.9998040169375142,
+   "S1_pass": true,
+   "S2_count": 55,
+   "S2_limit": 12,
+   "S2_pass": false,
+   "S3_count": 57,
+   "S3_limit": 12,
+   "S3_pass": false,
+   "max_rel_shift": 0.7621126183989269,
+   "median_width_ratio": 1.0095527234142012
+  },
+  "frontier": {
+   "n": 20,
+   "S1": 0.9984962406015038,
+   "S1_pass": true,
+   "S2_count": 0,
+   "S2_limit": 1,
+   "S2_pass": true,
+   "S3_count": 0,
+   "S3_limit": 1,
+   "S3_pass": true,
+   "max_rel_shift": 0.22906667444215748,
+   "median_width_ratio": 1.035811646876809
+  },
+  "sparse": {
+   "n": 72,
+   "S1": 0.998424335970159,
+   "S1_pass": true,
+   "S2_count": 28,
+   "S2_limit": 3,
+   "S2_pass": false,
+   "S3_count": 32,
+   "S3_limit": 3,
+   "S3_pass": false,
+   "max_rel_shift": 0.7621126183989269,
+   "median_width_ratio": 0.9280553305062436
+  },
+  "dense": {
+   "n": 182,
+   "S1": 0.9998478164550866,
+   "S1_pass": true,
+   "S2_count": 27,
+   "S2_limit": 9,
+   "S2_pass": false,
+   "S3_count": 25,
+   "S3_limit": 9,
+   "S3_pass": false,
+   "max_rel_shift": 0.7621114137232547,
+   "median_width_ratio": 1.0274432713929182
+  }
+ },
+ "fails_in": {
+  "all": true,
+  "frontier": false,
+  "S4": false
+ },
+ "fails_S1_S4_in_frontier_or_all": true
+}

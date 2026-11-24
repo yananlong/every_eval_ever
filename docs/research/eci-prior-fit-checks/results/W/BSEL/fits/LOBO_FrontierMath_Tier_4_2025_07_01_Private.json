@@ -1,0 +1,25 @@
+{
+ "id": "LOBO_FrontierMath_Tier_4_2025_07_01_Private",
+ "kind": "lobo",
+ "drop": [
+  "FrontierMath-Tier-4-2025-07-01-Private"
+ ],
+ "dropped_models": [],
+ "cap_s": 7200,
+ "started": "2026-11-21T07:07:45Z",
+ "attempts": [
+  {
+   "k": 0,
+   "draws": 4000,
+   "target_accept": 0.95,
+   "timeout": true,
+   "wall": 7200.1,
+   "converged": false
+  }
+ ],
+ "resolved": false,
+ "converged": false,
+ "timeout": true,
+ "used_attempt": null,
+ "finished": true
+}

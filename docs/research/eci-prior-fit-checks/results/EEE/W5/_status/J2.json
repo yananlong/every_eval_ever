@@ -1,0 +1,9 @@
+{
+ "name": "J2",
+ "cap_s": 7200,
+ "started": "2026-11-21T08:48:07Z",
+ "timeout": true,
+ "rc": -9,
+ "wall": 7200.1,
+ "resolved": false
+}

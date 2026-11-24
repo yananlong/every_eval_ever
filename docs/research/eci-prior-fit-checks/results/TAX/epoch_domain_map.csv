@@ -1,0 +1,58 @@
+benchmark,doc_name,tags,n_tags,tag_basis,match_note,primary_tag
+ANLI,Adversarial NLI,Language understanding,1,doc,renamed (abbreviation),Language understanding
+APEX-Agents,APEX-Agents,Agent,1,doc,exact,Agent
+ARC AI2,ARC AI2,Science;World knowledge,2,doc,exact,Science
+ARC-AGI,ARC-AGI-1,Conceptual reasoning,1,doc,renamed (doc adds version -1),Conceptual reasoning
+ARC-AGI-2,ARC-AGI-2,Conceptual reasoning,1,doc,exact,Conceptual reasoning
+Aider polyglot,Aider Polyglot,Software engineering,1,doc,case,Software engineering
+BBH,BBH,Conceptual reasoning,1,doc,exact,Conceptual reasoning
+Balrog,BALROG,Games;Long context,2,doc,case,Long context
+CL-bench,CL-bench,Long context,1,doc,exact,Long context
+CL-bench Life,CL-bench Life,Long context,1,doc,exact,Long context
+CadEval,CadEval,Multimodal,1,doc,exact,Multimodal
+Chess Puzzles,Chess Puzzles,Games,1,doc,exact,Games
+Cybench,Cybench,Software engineering,1,doc,exact,Software engineering
+DTBench,DTBench,Conceptual reasoning,1,doc,exact,Conceptual reasoning
+DeepResearch Bench,,,0,untagged,not in doc; in_eci in our snapshot; guess: retired from the ECI list after our snapshot or omitted,Untagged
+EBR-bench,,,0,untagged,"not in doc; Epoch-run, in_eci in our snapshot (released 2026-07-01); guess: retired after our snapshot or omitted",Untagged
+ExploitBench,ExploitBench v0.1,Agent;Software engineering,2,doc,doc pins v0.1; our snapshot has no version label,Software engineering
+Fiction.LiveBench,Fiction.liveBench,Long context;Writing & creativity,2,doc,case,Writing & creativity
+FrontierCode,FrontierCode,Agent;Software engineering,2,doc,exact,Software engineering
+FrontierMath-2025-02-28-Private,,Agent;Mathematics,2,inherited,"v1 Tiers 1-3, superseded_by FrontierMath-Tiers-1-3-v2-Private in Epoch's metadata; doc lists only v2; tags inherited from FrontierMath Tiers 1-3 (v2)",Mathematics
+FrontierMath-Tier-4-2025-07-01-Private,,Agent;Mathematics,2,inherited,"v1 Tier 4, superseded_by FrontierMath-Tier-4-v2-Private in Epoch's metadata; doc lists only v2; tags inherited from FrontierMath Tier 4 (v2)",Mathematics
+FrontierMath-Tier-4-v2-Private,FrontierMath Tier 4 (v2),Agent;Mathematics,2,doc,renamed (doc drops -Private),Mathematics
+FrontierMath-Tiers-1-3-v2-Private,FrontierMath Tiers 1-3 (v2),Agent;Mathematics,2,doc,renamed (doc drops -Private),Mathematics
+FrontierSWE,FrontierSWE (v2),Agent;Software engineering,2,doc,doc pins v2; our snapshot has no version label (released 2026-09-02 in metadata),Software engineering
+Furniture Assembly,Furniture Assembly Benchmark,Agent;Conceptual reasoning;Multimodal,3,doc,renamed,Multimodal
+GDPval,GDPval,Agent,1,doc,exact,Agent
+GPQA diamond,GPQA Diamond,Science,1,doc,case,Science
+GSM8K,GSM8K,Mathematics,1,doc,exact,Mathematics
+GSO-Bench,GSO,Software engineering,1,doc,renamed,Software engineering
+GeoBench,,,0,untagged,not in doc; in_eci in our snapshot; guess: retired from the ECI list after our snapshot (benchmark from 2025-03) or omitted,Untagged
+HellaSwag,HellaSwag,Language understanding,1,doc,exact,Language understanding
+LAMBADA,LAMBADA,Language understanding,1,doc,exact,Language understanding
+LMCA,,,0,untagged,"not in doc; in_eci in our 2026-11-13 snapshot (released 2026-08-12, conceptualreasoning.ai, same creator as DTBench); guess: dropped from the ECI list after our snapshot or omitted in the doc",Untagged
+MATH level 5,MATH Level 5,Mathematics,1,doc,case,Mathematics
+METR Time Horizons,,,0,untagged,not in doc; in_eci in our snapshot; guess: retired from the ECI list after our snapshot or omitted,Untagged
+MMLU,MMLU,World knowledge,1,doc,exact,World knowledge
+MirrorCode,MirrorCode,Agent;Software engineering,2,doc,exact,Software engineering
+Mystery Game Puzzles,Mystery Game Puzzles,Games,1,doc,exact,Games
+OSWorld,OS World,Agent;Computer use,2,doc,renamed (spacing),Computer use
+OSWorld 2.0,OSWorld 2.0,Agent;Computer use,2,doc,exact,Computer use
+OTIS Mock AIME 2024-2025,OTIS Mock AIME 2024-2025,Mathematics,1,doc,exact,Mathematics
+OpenBookQA,OpenBookQA,Science;World knowledge,2,doc,exact,Science
+PIQA,PIQA,Language understanding,1,doc,exact,Language understanding
+PostTrainBench,PostTrainBench v1.1,Agent;Software engineering,2,doc,doc pins v1.1; our snapshot has no version label,Software engineering
+ProofBench,ProofBench,Agent;Mathematics,2,doc,exact,Mathematics
+Remote Labor Index,Remote Labor Index,Agent,1,doc,exact,Agent
+SimpleBench,SimpleBench,Conceptual reasoning,1,doc,exact,Conceptual reasoning
+SimpleQA Verified,SimpleQA Verified,World knowledge,1,doc,exact,World knowledge
+SpireClimb,SpireClimb,Agent;Games;Multimodal,3,doc,exact,Multimodal
+Surface Evolver Bench,Surface Evolver Bench,Agent;Science;Software engineering,3,doc,exact,Science
+Terminal Bench,Terminal-Bench 2.0,Software engineering,1,doc,"renamed; Epoch's rows cite the tbench.ai 2.0 leaderboard, metadata release date 2025-05-19 is v1's",Software engineering
+The Agent Company,The Agent Company,Agent,1,doc,exact,Agent
+TriviaQA,TriviaQA,World knowledge,1,doc,exact,World knowledge
+VPCT,VPCT,Multimodal;Science,2,doc,exact,Multimodal
+WeirdML,WeirdML (v2),Software engineering,1,doc,renamed (doc adds v2),Software engineering
+WeirdML v3,WeirdML (v3),Agent;Software engineering,2,doc,renamed,Software engineering
+Winogrande,WinoGrande,Language understanding,1,doc,case,Language understanding

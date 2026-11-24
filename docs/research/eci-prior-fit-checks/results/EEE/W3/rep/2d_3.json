@@ -1,0 +1,101 @@
+{
+ "gen": "2d",
+ "r": 3,
+ "seed": 2229814014,
+ "position": 600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "second_dim_benchmarks": [
+   0,
+   2,
+   4,
+   5,
+   8,
+   9,
+   13,
+   14,
+   15,
+   16,
+   19,
+   26,
+   28,
+   29,
+   30,
+   31,
+   32,
+   36,
+   37,
+   42,
+   44,
+   46,
+   47,
+   48,
+   50,
+   51,
+   52,
+   56
+  ]
+ },
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 4000,
+  "divergences": 4,
+  "max_rhat": 1.0234965935366118,
+  "min_ess": 147.76797168791697
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 2,
+   "max_rhat": 1.005053244295402,
+   "min_ess": 525.4547386385676
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 4,
+   "max_rhat": 1.0234965935366118,
+   "min_ess": 147.76797168791697
+  }
+ ],
+ "started_from": "cold",
+ "warnings": [
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 2 divergences, max r_hat 1.005, min bulk ESS 525 at 1000 draws); falling back to a cold fit.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96802) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "4 divergent transitions; the posterior may be biased. Consider raising target_accept.",
+  "max r_hat = 1.023 > 1.01; chains have not mixed. Consider more tuning or draws."
+ ],
+ "wall_seconds": 871.8,
+ "T": {
+  "T1": 3.4460743832613305,
+  "T2": 9.465033522472224,
+  "T3": 0.044731363832597223,
+  "T4": 0.06643054024488036,
+  "T5": 2.40327430318533,
+  "T6": 48.75370872391298,
+  "T7": 2.9521486180099026
+ },
+ "maxima": {
+  "Qb": 11.09676245923929,
+  "q": 344.6471101956675,
+  "t": 2.40327430318533,
+  "cb": 21.026000373290607
+ }
+}

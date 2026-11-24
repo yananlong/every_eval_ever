@@ -1,0 +1,14 @@
+domain,benchmarks_dropped,cells_dropped,models_dropped,dropped_below100,dropped_frontier20,anchor_dropped,models_left,new_vs_bsel
+Agent,20,637,12,0,2,,244,True
+Computer use,2,17,0,0,0,,256,False
+Conceptual reasoning,6,504,23,0,1,,233,True
+Games,4,207,1,0,0,,255,True
+Language understanding,5,182,29,21,0,,227,True
+Long context,4,109,2,0,0,,254,True
+Mathematics,8,590,34,11,0,,222,True
+Multimodal,4,88,1,0,0,,255,True
+Science,5,321,35,17,0,,221,True
+Software engineering,12,419,8,0,0,,248,True
+World knowledge,5,307,39,21,0,,217,True
+Writing & creativity,1,50,2,0,0,,254,False
+Untagged,5,258,11,0,0,,245,True

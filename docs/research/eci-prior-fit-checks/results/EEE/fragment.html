@@ -1,0 +1,238 @@
+<section id="eee">
+  <h2>N. Mirror on EEE data: the verdicts repeat, and the low end of the scale moves</h2>
+  <p>Every Eval Ever (EEE) stores published evaluation results from many sources in one schema. This section rebuilds Epoch's fit input from EEE for the same 2,879 (model, benchmark) cells and runs the whole pipeline of sections 9 to 15 on it with the same scripts, seeds, caps and rules. Everything here holds under Epoch's model.</p>
+  <p>EEE covers 688 of the 2,879 cells, and 366 of them differ from Epoch's value. The other cells keep Epoch's score, so this is a partial mirror: about one cell in eight changes. On that matrix every registered verdict comes out as it did on Epoch's data. C2 is falsified, C1 is falsified, intervals are calibrated when the model is true, and held-out coverage is on target. Two things differ. The Lab-by-benchmark check (T5) no longer rejects at 0.01 family-wise, and the ECI scores of the weakest models rise by up to 13.5 points although none of their own scores changed.</p>
+
+  <div class="sub-sec" id="eee-data"><h3 class="ssh">N.1 Data, crosswalk and audit</h3>
+  <p>The data are the latest EEE flat manifest, core hash 959f0e11, created 2026-11-20 with 127,491 aggregate records in 129 collections, read from the Hugging Face dataset evaleval/EEE_datastore at revision 5bce4753. The plan had pinned manifest dd7efcff of 2026-11-13. The latest one adds 4,630 records and removes none. All 127,491 files matched their manifest hashes.</p>
+  <p>The crosswalk follows the plan's method M9. A hand-made benchmark map keeps an EEE result only when benchmark, version, split and metric match Epoch's column, which leaves 101 entries for 33 of the 57 ECI benchmarks. A model map ties 1,356 EEE model ids to 220 of the 256 fitted model groups. Scores are put on Epoch's scale with each benchmark's random baseline and ceiling. Each pair is classed as independent when the EEE source ran the benchmark itself, same-upstream when it copies the measurement Epoch used, and upstream-unknown otherwise. For the 312 same-upstream pairs the median absolute difference from Epoch's value is 0.0000 against a limit of 0.02.</p>
+  <p>The registered audit draws 50 pairs and allows at most 2 errors. The first sample failed with 8 errors, all in the source class, because the benchmark's home page had been read as the reference of the score. After the fix a second sample had 0 errors. A later check of the two anchors then found an error the sample had missed: the undated id claude-3.5-sonnet had been matched to the June 2024 model and carried an October 2024 score into the low anchor. Undated ids that fit two dated groups are now left unmapped, the maps were rebuilt, and a third sample had 0 errors in 50 (95% upper bound 5.8%). The plan allows one re-audit, so the third sample is a deviation, and the audit is a self-check by the analyst who built the maps.</p>
+  <p>In the fit input a cell with an EEE score takes it, with independent sources preferred, then same-upstream, then upstream-unknown, and the highest score across sources within the class, as in Epoch's best-of rule.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Source class of the EEE score</th><th class="n">Cells</th><th class="n">Share of 2,879</th><th class="n">Cells that differ from Epoch's value by more than 0.0015</th></tr></thead>
+      <tbody>
+        <tr><td>Independent (the source ran the benchmark itself)</td><td class="n">280</td><td class="n">9.7%</td><td class="n">267</td></tr>
+        <tr><td>Same-upstream (copied from the measurement Epoch used)</td><td class="n">210</td><td class="n">7.3%</td><td class="n">20</td></tr>
+        <tr><td>Upstream-unknown (aggregated, provenance not tied to Epoch's source)</td><td class="n">198</td><td class="n">6.9%</td><td class="n">79</td></tr>
+        <tr><td>No EEE score, Epoch's value kept</td><td class="n">2,191</td><td class="n">76.1%</td><td class="n">0</td></tr>
+        <tr><td>All cells</td><td class="n">2,879</td><td class="n">100%</td><td class="n">366</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Source: runs/EEE/input/coverage.json, runs/EEE/crosswalk/pairs.csv, audit_result.json.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Benchmark</th><th class="n">Cells</th><th class="n">With EEE score</th><th class="n">Independent</th><th class="n">Same-upstream</th><th class="n">Upstream-unknown</th><th class="n">Changed</th><th class="n">Mean absolute difference</th></tr></thead>
+      <tbody>
+        <tr><td>GPQA diamond</td><td class="n">176</td><td class="n">149</td><td class="n">149</td><td class="n">0</td><td class="n">0</td><td class="n">145</td><td class="n">0.031</td></tr>
+        <tr><td>ARC-AGI-2</td><td class="n">90</td><td class="n">86</td><td class="n">0</td><td class="n">0</td><td class="n">86</td><td class="n">1</td><td class="n">0.000</td></tr>
+        <tr><td>ARC-AGI</td><td class="n">91</td><td class="n">85</td><td class="n">0</td><td class="n">68</td><td class="n">17</td><td class="n">3</td><td class="n">0.001</td></tr>
+        <tr><td>ProofBench</td><td class="n">71</td><td class="n">54</td><td class="n">0</td><td class="n">54</td><td class="n">0</td><td class="n">1</td><td class="n">0.000</td></tr>
+        <tr><td>FrontierCode</td><td class="n">42</td><td class="n">39</td><td class="n">0</td><td class="n">39</td><td class="n">0</td><td class="n">0</td><td class="n">0.000</td></tr>
+        <tr><td>Terminal Bench</td><td class="n">32</td><td class="n">31</td><td class="n">25</td><td class="n">5</td><td class="n">1</td><td class="n">25</td><td class="n">0.063</td></tr>
+        <tr><td>MMLU</td><td class="n">92</td><td class="n">29</td><td class="n">11</td><td class="n">2</td><td class="n">16</td><td class="n">25</td><td class="n">0.014</td></tr>
+        <tr><td>Aider polyglot</td><td class="n">44</td><td class="n">21</td><td class="n">0</td><td class="n">6</td><td class="n">15</td><td class="n">17</td><td class="n">0.012</td></tr>
+        <tr><td>BBH</td><td class="n">39</td><td class="n">20</td><td class="n">20</td><td class="n">0</td><td class="n">0</td><td class="n">20</td><td class="n">0.057</td></tr>
+        <tr><td>SimpleQA Verified</td><td class="n">88</td><td class="n">19</td><td class="n">18</td><td class="n">1</td><td class="n">0</td><td class="n">17</td><td class="n">0.006</td></tr>
+        <tr><td>APEX-Agents</td><td class="n">58</td><td class="n">16</td><td class="n">0</td><td class="n">0</td><td class="n">16</td><td class="n">16</td><td class="n">0.031</td></tr>
+        <tr><td>MATH level 5</td><td class="n">75</td><td class="n">15</td><td class="n">15</td><td class="n">0</td><td class="n">0</td><td class="n">14</td><td class="n">0.007</td></tr>
+        <tr><td>PIQA</td><td class="n">41</td><td class="n">12</td><td class="n">4</td><td class="n">4</td><td class="n">4</td><td class="n">8</td><td class="n">0.010</td></tr>
+        <tr><td>OpenBookQA</td><td class="n">31</td><td class="n">12</td><td class="n">11</td><td class="n">1</td><td class="n">0</td><td class="n">12</td><td class="n">0.050</td></tr>
+        <tr><td>Winogrande</td><td class="n">61</td><td class="n">10</td><td class="n">5</td><td class="n">4</td><td class="n">1</td><td class="n">7</td><td class="n">0.015</td></tr>
+        <tr><td>FrontierSWE</td><td class="n">23</td><td class="n">9</td><td class="n">0</td><td class="n">2</td><td class="n">7</td><td class="n">1</td><td class="n">0.000</td></tr>
+        <tr><td>HellaSwag</td><td class="n">51</td><td class="n">8</td><td class="n">3</td><td class="n">4</td><td class="n">1</td><td class="n">5</td><td class="n">0.009</td></tr>
+        <tr><td>FrontierMath-Tier-4-v2-Private</td><td class="n">72</td><td class="n">8</td><td class="n">5</td><td class="n">3</td><td class="n">0</td><td class="n">3</td><td class="n">0.001</td></tr>
+        <tr><td>OSWorld 2.0</td><td class="n">9</td><td class="n">8</td><td class="n">0</td><td class="n">0</td><td class="n">8</td><td class="n">3</td><td class="n">0.083</td></tr>
+        <tr><td>ARC AI2</td><td class="n">64</td><td class="n">8</td><td class="n">3</td><td class="n">1</td><td class="n">4</td><td class="n">8</td><td class="n">0.019</td></tr>
+        <tr><td>FrontierMath-2025-02-28-Private</td><td class="n">34</td><td class="n">8</td><td class="n">1</td><td class="n">7</td><td class="n">0</td><td class="n">3</td><td class="n">0.006</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Benchmarks with at least 8 cells carrying an EEE score. Source: runs/EEE/input/coverage_by_benchmark.csv.</p>
+  <p>Coverage is uneven. GPQA diamond holds 149 of the 280 independent cells, and Terminal Bench, BBH, SimpleQA Verified, MATH level 5 and OpenBookQA most of the rest. ARC-AGI, ARC-AGI-2, ProofBench and FrontierCode are covered almost fully, but by copies of the leaderboards Epoch itself cites, so they change almost nothing. Twenty-four benchmarks have no EEE counterpart at all, among them OTIS Mock AIME, DTBench, LMCA and WeirdML. Both anchors keep all their cells. Claude 3.5 Sonnet has 2 of 12 from EEE and GPT-5 has 6 of 28.</p>
+  <p>An EEE-only matrix was not fitted. Only 48 models would meet Epoch's inclusion rule and Claude 3.5 Sonnet is not among them, which fails the plan's size condition of 15 benchmarks and 100 models.</p>
+  </div>
+
+  <div class="sub-sec" id="eee-eci"><h3 class="ssh">N.2 ECI on the two matrices</h3>
+  <p>The first table compares the Reproduction fit (W2) on the two matrices. Rankings agree closely and every pair of 90% intervals intersects. At the frontier the two fits are within 0.3 points of each other, close to the seed-to-seed noise of 0.25 to 0.29 points. The top 10 is the same set, with ranks 4 and 5 exchanged between two models that were 0.03 points apart.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Stratum</th><th class="n">Models</th><th class="n">Spearman</th><th class="n">Mean shift</th><th class="n">Median absolute shift</th><th class="n">Largest shift</th><th class="n">Moved by more than 0.25 W</th><th class="n">90% intervals intersect</th><th class="n">Median width ratio</th></tr></thead>
+      <tbody>
+        <tr><td>All non-anchor models</td><td class="n">254</td><td class="n">0.9994</td><td class="n">+1.01</td><td class="n">0.32</td><td class="n">13.5</td><td class="n">28</td><td class="n">100%</td><td class="n">1.01</td></tr>
+        <tr><td>Frontier</td><td class="n">20</td><td class="n">0.9985</td><td class="n">+0.08</td><td class="n">0.10</td><td class="n">0.3</td><td class="n">0</td><td class="n">100%</td><td class="n">1.04</td></tr>
+        <tr><td>Sparse (6 or fewer scores)</td><td class="n">72</td><td class="n">0.9976</td><td class="n">+2.31</td><td class="n">1.43</td><td class="n">13.5</td><td class="n">15</td><td class="n">100%</td><td class="n">0.95</td></tr>
+        <tr><td>Dense</td><td class="n">182</td><td class="n">0.9995</td><td class="n">+0.50</td><td class="n">0.21</td><td class="n">7.5</td><td class="n">13</td><td class="n">100%</td><td class="n">1.02</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">EEE-data fit against Epoch-data fit, Reproduction fit (W2), seed 12345. W is the 90% interval width in the Epoch-data fit. Source: runs/EEE/eci_compare.json.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Model</th><th class="n">Rank, Epoch data</th><th class="n">Rank, EEE data</th><th class="n">ECI, Epoch data</th><th class="n">ECI, EEE data</th><th class="n">Shift</th></tr></thead>
+      <tbody>
+        <tr><td>Claude Fable 5.2</td><td class="n">1</td><td class="n">1</td><td class="n">173.3</td><td class="n">173.5</td><td class="n">+0.19</td></tr>
+        <tr><td>Gemini 4 Carbon</td><td class="n">2</td><td class="n">2</td><td class="n">169.7</td><td class="n">169.7</td><td class="n">+0.04</td></tr>
+        <tr><td>GPT-6 Astra</td><td class="n">3</td><td class="n">3</td><td class="n">168.9</td><td class="n">169.1</td><td class="n">+0.14</td></tr>
+        <tr><td>Claude Opus 5.5</td><td class="n">4</td><td class="n">5</td><td class="n">168.5</td><td class="n">168.6</td><td class="n">+0.11</td></tr>
+        <tr><td>GPT-6.1 Sol</td><td class="n">5</td><td class="n">4</td><td class="n">168.4</td><td class="n">168.6</td><td class="n">+0.19</td></tr>
+        <tr><td>GPT-6.1 Terra</td><td class="n">6</td><td class="n">6</td><td class="n">167.6</td><td class="n">167.8</td><td class="n">+0.16</td></tr>
+        <tr><td>Claude Fable 5.1</td><td class="n">7</td><td class="n">7</td><td class="n">166.9</td><td class="n">167.1</td><td class="n">+0.13</td></tr>
+        <tr><td>Claude Sonnet 5.5</td><td class="n">8</td><td class="n">8</td><td class="n">166.5</td><td class="n">166.6</td><td class="n">+0.09</td></tr>
+        <tr><td>Gemini 4 Argon</td><td class="n">9</td><td class="n">9</td><td class="n">166.4</td><td class="n">166.5</td><td class="n">+0.05</td></tr>
+        <tr><td>Claude Opus 5</td><td class="n">10</td><td class="n">10</td><td class="n">164.6</td><td class="n">164.9</td><td class="n">+0.28</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">The ten highest-ranked models of either fit.</p>
+  <p>Below ECI 100 the picture changes. The 19 models under 80 rise by 8.0 points on average and the 23 between 80 and 100 by 3.5, and 28 models in all move by more than a quarter of their interval width, where the prior-sensitivity limit for the same count is 12. The largest shifts belong to 2023 models that have no EEE score of their own.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>ECI in the Epoch-data fit</th><th class="n">Models</th><th class="n">Mean shift</th><th class="n">Largest absolute shift</th></tr></thead>
+      <tbody>
+        <tr><td>below 80</td><td class="n">19</td><td class="n">+7.96</td><td class="n">13.5</td></tr>
+        <tr><td>80 to 100</td><td class="n">23</td><td class="n">+3.46</td><td class="n">6.4</td></tr>
+        <tr><td>100 to 120</td><td class="n">30</td><td class="n">-0.11</td><td class="n">5.5</td></tr>
+        <tr><td>120 to 140</td><td class="n">58</td><td class="n">+0.10</td><td class="n">3.1</td></tr>
+        <tr><td>140 to 160</td><td class="n">104</td><td class="n">+0.21</td><td class="n">2.4</td></tr>
+        <tr><td>160 and above</td><td class="n">20</td><td class="n">+0.08</td><td class="n">0.3</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Benchmark</th><th class="n">EDI, Epoch data</th><th class="n">EDI, EEE data</th><th class="n">Shift</th><th class="n">Cells</th><th class="n">Cells changed</th></tr></thead>
+      <tbody>
+        <tr><td>TriviaQA</td><td class="n">48.9</td><td class="n">69.1</td><td class="n">+20.2</td><td class="n">32</td><td class="n">5</td></tr>
+        <tr><td>LAMBADA</td><td class="n">42.9</td><td class="n">55.6</td><td class="n">+12.7</td><td class="n">20</td><td class="n">2</td></tr>
+        <tr><td>PIQA</td><td class="n">60.7</td><td class="n">73.1</td><td class="n">+12.4</td><td class="n">41</td><td class="n">8</td></tr>
+        <tr><td>HellaSwag</td><td class="n">62.1</td><td class="n">72.6</td><td class="n">+10.5</td><td class="n">51</td><td class="n">5</td></tr>
+        <tr><td>OSWorld 2.0</td><td class="n">169.8</td><td class="n">163.7</td><td class="n">-6.1</td><td class="n">9</td><td class="n">3</td></tr>
+        <tr><td>VPCT</td><td class="n">153.2</td><td class="n">158.8</td><td class="n">+5.6</td><td class="n">26</td><td class="n">3</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Benchmarks with the largest change in difficulty (EDI). Source: runs/EEE/edi_compare.csv.</p>
+  <p>The shift comes through the benchmarks. A handful of changed cells on TriviaQA, LAMBADA, PIQA and HellaSwag raise the estimated difficulty of those benchmarks by 10 to 20 points, and every weak model scored only on them moves with it. This indicates that the low end of the scale is tied to the rest by few scores, the same region that the capability prior moves in section 15.</p>
+  </div>
+
+  <div class="sub-sec" id="eee-verdicts"><h3 class="ssh">N.3 The checks, side by side</h3>
+  <p>The table gives each question of section 1.3 with its result on the two matrices. The four tables after it list every headline number of sections 9 to 15 side by side, extracted from both sets of outputs by the same code.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Question</th><th>Epoch data</th><th>EEE data</th></tr></thead>
+      <tbody>
+        <tr><td>Are intervals calibrated when the model is true? (W3)</td><td><span class="pill pass">0.882 all, 0.903 frontier</span></td><td><span class="pill pass">0.875 all, 0.868 frontier</span></td></tr>
+        <tr><td>Can the checks detect planted misfit? (W3)</td><td><span class="pill fail">T3 19 of 19, T2 7 of 7 on 7 fits</span></td><td><span class="pill fail">T3 19 of 19, T2 9 of 9 on 9 fits</span></td></tr>
+        <tr><td>Do the real data look like the model-true replicates? (W4)</td><td><span class="pill fail">T1, T2, T5 reject</span></td><td><span class="pill fail">T1, T2 reject</span></td></tr>
+        <tr><td>Are single scores predicted well? (W4)</td><td><span class="pill pass">Held-out 0.898, LOO 0.895</span></td><td><span class="pill pass">Held-out 0.900, LOO 0.900</span></td></tr>
+        <tr><td>Is the model adequate for the data? (C2)</td><td><span class="pill fail">Falsified, F has 16 benchmarks</span></td><td><span class="pill fail">Falsified, F has 17 benchmarks</span></td></tr>
+        <tr><td>Is ECI robust to its priors? (C1)</td><td><span class="pill fail">Falsified by P8 and P9</span></td><td><span class="pill fail">Falsified by P8 and P9</span></td></tr>
+      </tbody>
+    </table></div>
+    <div class="fig"><h3 id="eee-w3">Reproduction fit and Simulation study (W2, W3)</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Quantity</th><th class="n">Epoch data</th><th class="n">EEE data</th></tr></thead>
+      <tbody>
+        <tr><td>Seeds converged (of 3)</td><td class="n">3</td><td class="n">3</td></tr>
+        <tr><td>Divergences, seed 12345</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>Max R-hat, seed 12345</td><td class="n">1.0043</td><td class="n">1.0054</td></tr>
+        <tr><td>Min bulk ESS / min tail ESS</td><td class="n">1,076 / 1,307</td><td class="n">1,680 / 2,032</td></tr>
+        <tr><td>elpd LOO (SE), p_loo</td><td class="n">3,450 (57), 443</td><td class="n">3,386 (57), 450</td></tr>
+        <tr><td>Largest seed-to-seed SD of a posterior-mean ECI</td><td class="n">0.25</td><td class="n">0.29</td></tr>
+        <tr><td>G-null replicates converged</td><td class="n">187 of 199</td><td class="n">192 of 199</td></tr>
+        <tr><td>G-null timeouts at the 60-minute cap</td><td class="n">3</td><td class="n">5</td></tr>
+        <tr><td>90% interval coverage of ECI, all models (90% CI)</td><td class="n">0.882 (0.871 to 0.893)</td><td class="n">0.875 (0.865 to 0.886)</td></tr>
+        <tr><td>90% interval coverage of ECI, frontier</td><td class="n">0.903</td><td class="n">0.868</td></tr>
+        <tr><td>90% coverage, sparse / dense models</td><td class="n">0.872 / 0.886</td><td class="n">0.874 / 0.876</td></tr>
+        <tr><td>50% interval coverage of ECI, all models</td><td class="n">0.480</td><td class="n">0.470</td></tr>
+        <tr><td>Noise-level check (T3) on G-disp: rejections of converged fits</td><td class="n">19 of 19</td><td class="n">19 of 19</td></tr>
+        <tr><td>Residual-correlation check (T2) on G-2D: rejections of converged fits</td><td class="n">7 of 7</td><td class="n">9 of 9</td></tr>
+        <tr><td>Lab-by-benchmark check (T5) on G-offset: rejections of converged fits</td><td class="n">0 of 18</td><td class="n">1 of 20</td></tr>
+        <tr><td>Time-drift check (T4) on G-drift: rejections of converged fits</td><td class="n">0 of 16</td><td class="n">0 of 15</td></tr>
+        <tr><td>Curve-shape check (T1) on G-shape: rejections of converged fits</td><td class="n">2 of 14</td><td class="n">3 of 18</td></tr>
+        <tr><td>G-2D replicates with a usable fit (of 20)</td><td class="n">7</td><td class="n">9</td></tr>
+        <tr><td>G-2D replicates that crashed in anchoring</td><td class="n">3</td><td class="n">5</td></tr>
+        <tr><td>Converged of 20: G-offset / G-shape / G-disp / G-drift</td><td class="n">18 / 14 / 19 / 16</td><td class="n">20 / 18 / 19 / 15</td></tr>
+        <tr><td>Seeds on which the control fails S1 to S4 in the all-models or frontier stratum (of 3)</td><td class="n">3</td><td class="n">3</td></tr>
+        <tr><td>Seed 12345: S2 count / S3 count in all models (limit 12), frontier fails</td><td class="n">57 / 60, no</td><td class="n">56 / 56, no</td></tr>
+        <tr><td>Parameters flagged at the Bonferroni level (of 311)</td><td class="n">33</td><td class="n">22</td></tr>
+        <tr><td>Interpretation unqualified (all G1 conditions met)</td><td class="n">no</td><td class="n">no</td></tr>
+        <tr><td>ECI (254 models): gamma-flagged, central 90% share</td><td class="n">0, 0.88</td><td class="n">0, 0.88</td></tr>
+        <tr><td>EDI (57 benchmarks): gamma-flagged, central 90% share</td><td class="n">20, 0.87</td><td class="n">15, 0.86</td></tr>
+        <tr><td>Slope (57): gamma-flagged, central 90% share</td><td class="n">46, 0.75</td><td class="n">41, 0.76</td></tr>
+        <tr><td>Sigma (57): gamma-flagged, central 90% share</td><td class="n">30, 0.87</td><td class="n">30, 0.87</td></tr>
+        <tr><td>Replicates used</td><td class="n">180</td><td class="n">192</td></tr>
+        <tr><td>Joint log-likelihood: gamma p, mean rank</td><td class="n">0.0001, 0.39</td><td class="n">0.0000, 0.38</td></tr>
+        <tr><td>Pearson dispersion: gamma p, mean rank</td><td class="n">0.00005, 0.20</td><td class="n">0.00005, 0.17</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+  <p>The Simulation study repeats closely. Truths are drawn from the EEE-data posterior, so the 192 converged model-true replicates are a new reference and not a copy of the 187. Coverage of the 90% intervals is 0.875 over all models, inside the registered band of 0.85 to 0.95. Frontier coverage is 0.868 against 0.903, the largest gap in this block. Power has the same pattern: T3 detects every planted case, T2 detects all 9 it can be scored on while 11 of 20 G-2D fits are unusable, and T5, T4 and T1 mostly miss. Five G-2D replicates crash in the anchoring step against three before, each one a replicate in which the planted second capability reverses the anchors. G1 again leaves the interpretation qualified.</p>
+    <div class="fig"><h3 id="eee-w4">Posterior predictive checks and localisation (W4, W4d)</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Quantity</th><th class="n">Epoch data</th><th class="n">EEE data</th></tr></thead>
+      <tbody>
+        <tr><td>Converged model-true replicates in the reference</td><td class="n">187</td><td class="n">192</td></tr>
+        <tr><td>Curve-shape (T1): observed, max-T adjusted p</td><td class="n">4.503, 0.0053</td><td class="n">4.471, 0.0052</td></tr>
+        <tr><td>Residual-correlation (T2): observed, max-T adjusted p</td><td class="n">3.402, 0.0053</td><td class="n">3.210, 0.0052</td></tr>
+        <tr><td>Noise-level (T3): observed, max-T adjusted p</td><td class="n">0.081, 0.8138</td><td class="n">0.090, 0.0933</td></tr>
+        <tr><td>Time-drift (T4): observed, max-T adjusted p</td><td class="n">0.022, 1.0000</td><td class="n">0.021, 1.0000</td></tr>
+        <tr><td>Lab-by-benchmark (T5): observed, max-T adjusted p</td><td class="n">4.455, 0.0053</td><td class="n">3.861, 0.0155</td></tr>
+        <tr><td>Floor-and-ceiling (T6): observed, max-T adjusted p</td><td class="n">11.561, 0.2181</td><td class="n">13.356, 0.2021</td></tr>
+        <tr><td>Per-model fit (T7): observed, max-T adjusted p</td><td class="n">3.644, 0.8936</td><td class="n">3.032, 0.9896</td></tr>
+        <tr><td>Checks rejected at 0.01 family-wise</td><td class="n">T1, T2, T5</td><td class="n">T1, T2</td></tr>
+        <tr><td>T2: SDs above the mean of the model-true replicates</td><td class="n">29.9</td><td class="n">26.7</td></tr>
+        <tr><td>Held-out 90% coverage (rows)</td><td class="n">0.898 (2,704)</td><td class="n">0.900 (2,704)</td></tr>
+        <tr><td>LOO 90% coverage</td><td class="n">0.895</td><td class="n">0.900</td></tr>
+        <tr><td>Benchmarks flagged (of tested)</td><td class="n">0 of 44</td><td class="n">0 of 44</td></tr>
+        <tr><td>Benchmark pairs with q &gt, 3.84 (share), median q</td><td class="n">0.26, 1.25</td><td class="n">0.24, 1.25</td></tr>
+        <tr><td>Developer-by-benchmark cells with |t| &gt, 2 (share)</td><td class="n">0.16</td><td class="n">0.17</td></tr>
+        <tr><td>Benchmarks in the localisation set F (limit 10)</td><td class="n">16</td><td class="n">17</td></tr>
+        <tr><td>Rows deleted with F (of 2,879)</td><td class="n">1,398</td><td class="n">1,412</td></tr>
+        <tr><td>T1 after deleting F: unadjusted p</td><td class="n">0.0055</td><td class="n">0.0052</td></tr>
+        <tr><td>T2 after deleting F: unadjusted p</td><td class="n">0.0055</td><td class="n">0.0052</td></tr>
+        <tr><td>T5 after deleting F: unadjusted p</td><td class="n">0.0110</td><td class="n">0.0052</td></tr>
+        <tr><td>Model-adequacy claim (C2)</td><td class="n">falsified</td><td class="n">falsified</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+  <p>T1 and T2 reject at 0.01 family-wise on the EEE matrix, each beyond all 192 model-true replicates. T5 does not: its observed value falls from 4.45 to 3.86 and its adjusted p is 0.016. The largest cell on Epoch's data, Anthropic on GPQA diamond with t = -4.45, is gone, and GPQA diamond is the benchmark where EEE replaces most cells with scores from other evaluators. The OpenAI offsets on the FrontierMath tiers remain the largest cells. This suggests that part of the Lab-by-benchmark signal on Epoch's data belongs to Epoch's own GPQA runs. T3 moves toward rejection (adjusted p 0.09 against 0.81) without reaching it.</p>
+  <p>Localisation gives 17 benchmarks, above the limit of 10, with 15 in common with the 16 found before. Deleting them leaves T1 and T2 beyond every model-true replicate. Under the registered rule C2 is falsified on this matrix as well. Held-out coverage is 0.900 and no benchmark is flagged.</p>
+    <div class="fig"><h3 id="eee-wa">Anchors (WA and extension)</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Quantity</th><th class="n">Epoch data</th><th class="n">EEE data</th></tr></thead>
+      <tbody>
+        <tr><td>Largest change in a posterior-mean gap over the alternative anchor pairs (points)</td><td class="n">1.27</td><td class="n">1.00</td></tr>
+        <tr><td>Median per-model interval-width ratio, range over pairs</td><td class="n">0.93 to 1.33</td><td class="n">0.93 to 1.36</td></tr>
+        <tr><td>Uncertainty of gaps between frontier models, median ratio, range over pairs</td><td class="n">0.96 to 1.03</td><td class="n">0.97 to 1.05</td></tr>
+        <tr><td>Common change of unit, range over pairs</td><td class="n">1.001 to 1.010</td><td class="n">1.001 to 1.009</td></tr>
+        <tr><td>Per-model interval-width ratio, min to max over the pre-declared pairs</td><td class="n">0.46 to 2.02</td><td class="n">0.44 to 1.98</td></tr>
+        <tr><td>Largest shift of a posterior-mean ECI over the pre-declared pairs (points), models moved by more than 0.25 W</td><td class="n">0.88, 0</td><td class="n">0.86, 0</td></tr>
+        <tr><td>Within-draw rankings and P(i&gt;j) changed by re-anchoring (largest change)</td><td class="n">0.000</td><td class="n">0.000</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+  <p>The anchor results carry over. Re-anchoring leaves every within-draw ranking unchanged, moves no posterior-mean gap by more than 1.00 point, and changes single-model interval widths by a factor of 0.44 to 1.98. The pre-declared rule picks seven pairs on the EEE fit, five of them the same as before.</p>
+    <div class="fig"><h3 id="eee-w5">Prior sensitivity (W5)</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Quantity</th><th class="n">Epoch data</th><th class="n">EEE data</th></tr></thead>
+      <tbody>
+        <tr><td>Verdict label, unresolved priors</td><td class="n">Sensitive, P3</td><td class="n">Sensitive, none</td></tr>
+        <tr><td>Priors failing S1 to S4 (strata)</td><td class="n">P8 (all, sparse), P9 (all, sparse)</td><td class="n">P8 (all, sparse), P9 (all, sparse)</td></tr>
+        <tr><td>P8: models moved by more than 0.25 W, all models (limit 12), frontier (limit 1)</td><td class="n">59, 0</td><td class="n">58, 0</td></tr>
+        <tr><td>P8: interval-width ratio outside 0.8 to 1.25, all models (limit 12)</td><td class="n">57</td><td class="n">51</td></tr>
+        <tr><td>P8: mean shift of models below ECI 100 (count), largest shift, largest frontier shift (points)</td><td class="n">+14.0 (42), 23.4, 1.1</td><td class="n">+9.9 (36), 14.3, 1.2</td></tr>
+        <tr><td>P9: models moved by more than 0.25 W, all models (limit 12), frontier (limit 1)</td><td class="n">61, 0</td><td class="n">61, 0</td></tr>
+        <tr><td>P9: interval-width ratio outside 0.8 to 1.25, all models (limit 12)</td><td class="n">59</td><td class="n">57</td></tr>
+        <tr><td>P9: mean shift of models below ECI 100 (count), largest shift, largest frontier shift (points)</td><td class="n">+17.2 (42), 28.8, 1.7</td><td class="n">+13.0 (36), 19.0, 1.9</td></tr>
+        <tr><td>Smallest rank correlation with the baseline over P1 to P10</td><td class="n">0.9998</td><td class="n">0.9998</td></tr>
+        <tr><td>Top 10 unchanged under every resolved prior P1 to P10</td><td class="n">yes</td><td class="n">yes</td></tr>
+        <tr><td>Hyperprior and noise priors (P1, P2, P4 to P7, P10) with any S2 or S3 count above 0</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>S5 power-scaling screen flags</td><td class="n">0</td><td class="n">0</td></tr>
+        <tr><td>Reference prior PR: S2 / S3 counts, all models</td><td class="n">62 / 60</td><td class="n">64 / 58</td></tr>
+        <tr><td>Jeffreys prior J2: S2 / S3 counts, all models</td><td class="n">40 / 21</td><td class="n">unresolved (2 h cap)</td></tr>
+        <tr><td>Prior arms on which T1, T2 and T5 all reject (of arms checked)</td><td class="n">19 of 19</td><td class="n">0 of 16</td></tr>
+        <tr><td>Prior arms on which T1 and T2 both reject (of arms checked)</td><td class="n">19 of 19</td><td class="n">16 of 16</td></tr>
+        <tr><td>T5 max-T adjusted p across the prior arms, range</td><td class="n">0.0053 to 0.0053</td><td class="n">0.0104 to 0.0207</td></tr>
+      </tbody>
+    </table></div>
+    </div>
+  <p>Prior sensitivity gives the same verdict. P8 and P9 move 58 and 61 of 254 models by more than a quarter of their interval width, against a limit of 12, and no frontier model. C1 is falsified. The hyperprior and noise priors move nothing and the top 10 holds under every prior. The shifts under P8 and P9 are smaller in points (largest 19.0 against 28.8) because the weakest models already sit higher on the EEE matrix.</p>
+  <p>The sampler behaved differently. Every prior from P1 to P10 resolved on its first attempt in about six minutes, including P3, which stayed unresolved on Epoch's data after two attempts of two hours, and P9 and P10, which had needed a third attempt. The Jeffreys prior J2 went the other way and hit the two-hour cap, so it is unresolved here. Posterior SBC was not run and J1 was not fitted, as before.</p>
+    <p class="src">Source: runs/EEE/headline.json and side_by_side.json, built from runs/W/ (Epoch data) and runs/EEE/ (EEE data) by the same extraction code.</p>
+  </div>
+
+  <div class="sub-sec" id="eee-limits"><h3 class="ssh">N.4 What this mirror can and cannot show</h3>
+  <p>The mirror answers a narrow question: whether the findings of this page depend on Epoch's own collection of scores for the cells where a second collection exists. For the 366 changed cells they do not, apart from T5. It cannot speak for the 2,191 cells without an EEE score, and 210 of the covered cells are copies of Epoch's sources. A full test of data dependence would need independent scores on the benchmarks Epoch runs itself, which EEE holds for GPQA diamond and for little else.</p>
+  <p>Three choices could be made differently: the highest score across sources within a class, the use of upstream-unknown scores, and the exclusion of undated model ids. None was varied here. Deviations are listed in runs/deviations_local.md and runs/EEE/SUMMARY.md.</p>
+  </div>
+</section>

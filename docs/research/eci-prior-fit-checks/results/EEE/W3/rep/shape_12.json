@@ -1,0 +1,77 @@
+{
+ "gen": "shape",
+ "r": 12,
+ "seed": 3071696434,
+ "position": 2400,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "asymptote_benchmarks": [
+   1,
+   11,
+   12,
+   16,
+   19,
+   20,
+   21,
+   23,
+   24,
+   25,
+   29,
+   38,
+   40,
+   43,
+   48,
+   51,
+   52,
+   54,
+   55
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0034690932389383,
+  "min_ess": 1579.429949778177
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0034690932389383,
+   "min_ess": 1579.429949778177
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97493) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 323.7,
+ "T": {
+  "T1": 2.7069985978610074,
+  "T2": 1.1924750299760256,
+  "T3": 0.06613922626301484,
+  "T4": 0.023501600413093474,
+  "T5": 2.347920597653401,
+  "T6": 2.5873462435894123,
+  "T7": 2.67313679610454
+ },
+ "maxima": {
+  "Qb": 20.93230550753209,
+  "q": 14.049206923696822,
+  "t": 2.347920597653401,
+  "cb": 2.07835322300406
+ }
+}

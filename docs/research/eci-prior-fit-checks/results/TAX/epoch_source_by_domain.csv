@@ -1,0 +1,14 @@
+domain,Benchmark creator,Benchmark creator (assumed: file has no per-row source),Epoch AI,Model developer,Other third party,unknown (blank source)
+Agent,215,112,309,1,0,0
+Computer use,16,0,0,1,0,0
+Conceptual reasoning,294,90,39,39,25,17
+Games,29,0,178,0,0,0
+Language understanding,0,0,0,182,0,0
+Long context,79,30,0,0,0,0
+Mathematics,71,0,466,51,2,0
+Multimodal,40,0,48,0,0,0
+Science,50,0,176,95,0,0
+Software engineering,349,26,39,5,0,0
+World knowledge,0,0,88,185,34,0
+Writing & creativity,50,0,0,0,0,0
+Untagged,224,0,31,0,0,3

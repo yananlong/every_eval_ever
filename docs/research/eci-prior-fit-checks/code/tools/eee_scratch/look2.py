@@ -1,0 +1,10 @@
+import zipfile, io, pandas as pd
+pd.set_option('display.width',300); pd.set_option('display.max_columns',40); pd.set_option('display.max_rows',400); pd.set_option('display.max_colwidth',70)
+z=zipfile.ZipFile('ext/epoch_zip/benchmark_data.zip')
+rd=lambda n: pd.read_csv(io.BytesIO(z.read(n)))
+bm=rd('benchmark_metadata.csv'); print(bm.to_string())
+mm=rd('model_metadata.csv'); print(mm.shape); print(mm.head(8).to_string()); print(mm.columns.tolist())
+fi=rd('epoch_capabilities_index/processed_data_for_eci.csv')
+print(fi.groupby('benchmark').source.agg(lambda s: s.value_counts(dropna=False).head(4).to_dict()).to_string())
+g=rd('gpqa_diamond.csv'); print(g.head(3).T)
+a=rd('arc_agi_external.csv'); print(a.head(3).T)

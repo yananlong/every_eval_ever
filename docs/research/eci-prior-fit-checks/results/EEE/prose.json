@@ -1,0 +1,97 @@
+{
+ "title": "the verdicts repeat, and the low end of the scale moves",
+ "intro": [
+  "Every Eval Ever (EEE) stores published evaluation results from many sources in one schema. This section rebuilds Epoch's fit input from EEE for the same 2,879 (model, benchmark) cells and runs the whole pipeline of sections 9 to 15 on it with the same scripts, seeds, caps and rules. Everything here holds under Epoch's model.",
+  "EEE covers 688 of the 2,879 cells, and 366 of them differ from Epoch's value. The other cells keep Epoch's score, so this is a partial mirror: about one cell in eight changes. On that matrix every registered verdict comes out as it did on Epoch's data. C2 is falsified, C1 is falsified, intervals are calibrated when the model is true, and held-out coverage is on target. Two things differ. The Lab-by-benchmark check (T5) no longer rejects at 0.01 family-wise, and the ECI scores of the weakest models rise by up to 13.5 points although none of their own scores changed."
+ ],
+ "data": [
+  "The data are the latest EEE flat manifest, core hash 959f0e11, created 2026-11-20 with 127,491 aggregate records in 129 collections, read from the Hugging Face dataset evaleval/EEE_datastore at revision 5bce4753. The plan had pinned manifest dd7efcff of 2026-11-13. The latest one adds 4,630 records and removes none. All 127,491 files matched their manifest hashes.",
+  "The crosswalk follows the plan's method M9. A hand-made benchmark map keeps an EEE result only when benchmark, version, split and metric match Epoch's column, which leaves 101 entries for 33 of the 57 ECI benchmarks. A model map ties 1,356 EEE model ids to 220 of the 256 fitted model groups. Scores are put on Epoch's scale with each benchmark's random baseline and ceiling. Each pair is classed as independent when the EEE source ran the benchmark itself, same-upstream when it copies the measurement Epoch used, and upstream-unknown otherwise. For the 312 same-upstream pairs the median absolute difference from Epoch's value is 0.0000 against a limit of 0.02.",
+  "The registered audit draws 50 pairs and allows at most 2 errors. The first sample failed with 8 errors, all in the source class, because the benchmark's home page had been read as the reference of the score. After the fix a second sample had 0 errors. A later check of the two anchors then found an error the sample had missed: the undated id claude-3.5-sonnet had been matched to the June 2024 model and carried an October 2024 score into the low anchor. Undated ids that fit two dated groups are now left unmapped, the maps were rebuilt, and a third sample had 0 errors in 50 (95% upper bound 5.8%). The plan allows one re-audit, so the third sample is a deviation, and the audit is a self-check by the analyst who built the maps.",
+  "In the fit input a cell with an EEE score takes it, with independent sources preferred, then same-upstream, then upstream-unknown, and the highest score across sources within the class, as in Epoch's best-of rule."
+ ],
+ "data2": [
+  "Coverage is uneven. GPQA diamond holds 149 of the 280 independent cells, and Terminal Bench, BBH, SimpleQA Verified, MATH level 5 and OpenBookQA most of the rest. ARC-AGI, ARC-AGI-2, ProofBench and FrontierCode are covered almost fully, but by copies of the leaderboards Epoch itself cites, so they change almost nothing. Twenty-four benchmarks have no EEE counterpart at all, among them OTIS Mock AIME, DTBench, LMCA and WeirdML. Both anchors keep all their cells. Claude 3.5 Sonnet has 2 of 12 from EEE and GPT-5 has 6 of 28.",
+  "An EEE-only matrix was not fitted. Only 48 models would meet Epoch's inclusion rule and Claude 3.5 Sonnet is not among them, which fails the plan's size condition of 15 benchmarks and 100 models."
+ ],
+ "eci": [
+  "The first table compares the Reproduction fit (W2) on the two matrices. Rankings agree closely and every pair of 90% intervals intersects. At the frontier the two fits are within 0.3 points of each other, close to the seed-to-seed noise of 0.25 to 0.29 points. The top 10 is the same set, with ranks 4 and 5 exchanged between two models that were 0.03 points apart."
+ ],
+ "eci2": [
+  "Below ECI 100 the picture changes. The 19 models under 80 rise by 8.0 points on average and the 23 between 80 and 100 by 3.5, and 28 models in all move by more than a quarter of their interval width, where the prior-sensitivity limit for the same count is 12. The largest shifts belong to 2023 models that have no EEE score of their own."
+ ],
+ "eci3": [
+  "The shift comes through the benchmarks. A handful of changed cells on TriviaQA, LAMBADA, PIQA and HellaSwag raise the estimated difficulty of those benchmarks by 10 to 20 points, and every weak model scored only on them moves with it. This indicates that the low end of the scale is tied to the rest by few scores, the same region that the capability prior moves in section 15."
+ ],
+ "checks": [
+  "The table gives each question of section 1.3 with its result on the two matrices. The four tables after it list every headline number of sections 9 to 15 side by side, extracted from both sets of outputs by the same code."
+ ],
+ "verdicts": [
+  [
+   "Are intervals calibrated when the model is true? (W3)",
+   "0.882 all, 0.903 frontier",
+   true,
+   "0.875 all, 0.868 frontier",
+   true
+  ],
+  [
+   "Can the checks detect planted misfit? (W3)",
+   "T3 19 of 19, T2 7 of 7 on 7 fits",
+   false,
+   "T3 19 of 19, T2 9 of 9 on 9 fits",
+   false
+  ],
+  [
+   "Do the real data look like the model-true replicates? (W4)",
+   "T1, T2, T5 reject",
+   false,
+   "T1, T2 reject",
+   false
+  ],
+  [
+   "Are single scores predicted well? (W4)",
+   "Held-out 0.898, LOO 0.895",
+   true,
+   "Held-out 0.900, LOO 0.900",
+   true
+  ],
+  [
+   "Is the model adequate for the data? (C2)",
+   "Falsified, F has 16 benchmarks",
+   false,
+   "Falsified, F has 17 benchmarks",
+   false
+  ],
+  [
+   "Is ECI robust to its priors? (C1)",
+   "Falsified by P8 and P9",
+   false,
+   "Falsified by P8 and P9",
+   false
+  ]
+ ],
+ "w3": [
+  "The Simulation study repeats closely. Truths are drawn from the EEE-data posterior, so the 192 converged model-true replicates are a new reference and not a copy of the 187. Coverage of the 90% intervals is 0.875 over all models, inside the registered band of 0.85 to 0.95. Frontier coverage is 0.868 against 0.903, the largest gap in this block. Power has the same pattern: T3 detects every planted case, T2 detects all 9 it can be scored on while 11 of 20 G-2D fits are unusable, and T5, T4 and T1 mostly miss. Five G-2D replicates crash in the anchoring step against three before, each one a replicate in which the planted second capability reverses the anchors. G1 again leaves the interpretation qualified."
+ ],
+ "w4": [
+  "T1 and T2 reject at 0.01 family-wise on the EEE matrix, each beyond all 192 model-true replicates. T5 does not: its observed value falls from 4.45 to 3.86 and its adjusted p is 0.016. The largest cell on Epoch's data, Anthropic on GPQA diamond with t = -4.45, is gone, and GPQA diamond is the benchmark where EEE replaces most cells with scores from other evaluators. The OpenAI offsets on the FrontierMath tiers remain the largest cells. This suggests that part of the Lab-by-benchmark signal on Epoch's data belongs to Epoch's own GPQA runs. T3 moves toward rejection (adjusted p 0.09 against 0.81) without reaching it.",
+  "Localisation gives 17 benchmarks, above the limit of 10, with 15 in common with the 16 found before. Deleting them leaves T1 and T2 beyond every model-true replicate. Under the registered rule C2 is falsified on this matrix as well. Held-out coverage is 0.900 and no benchmark is flagged."
+ ],
+ "wa": [
+  "The anchor results carry over. Re-anchoring leaves every within-draw ranking unchanged, moves no posterior-mean gap by more than 1.00 point, and changes single-model interval widths by a factor of 0.44 to 1.98. The pre-declared rule picks seven pairs on the EEE fit, five of them the same as before."
+ ],
+ "w5": [
+  "Prior sensitivity gives the same verdict. P8 and P9 move 58 and 61 of 254 models by more than a quarter of their interval width, against a limit of 12, and no frontier model. C1 is falsified. The hyperprior and noise priors move nothing and the top 10 holds under every prior. The shifts under P8 and P9 are smaller in points (largest 19.0 against 28.8) because the weakest models already sit higher on the EEE matrix.",
+  "The sampler behaved differently. Every prior from P1 to P10 resolved on its first attempt in about six minutes, including P3, which stayed unresolved on Epoch's data after two attempts of two hours, and P9 and P10, which had needed a third attempt. The Jeffreys prior J2 went the other way and hit the two-hour cap, so it is unresolved here. Posterior SBC was not run and J1 was not fitted, as before."
+ ],
+ "limits": [
+  "The mirror answers a narrow question: whether the findings of this page depend on Epoch's own collection of scores for the cells where a second collection exists. For the 366 changed cells they do not, apart from T5. It cannot speak for the 2,191 cells without an EEE score, and 210 of the covered cells are copies of Epoch's sources. A full test of data dependence would need independent scores on the benchmarks Epoch runs itself, which EEE holds for GPQA diamond and for little else.",
+  "Three choices could be made differently: the highest score across sources within a class, the use of upstream-unknown scores, and the exclusion of undated model ids. None was varied here. Deviations are listed in runs/deviations_local.md and runs/EEE/SUMMARY.md."
+ ],
+ "md_intro": "Results hold under Epoch's model. Epoch-data column: runs/W/. EEE-data column: runs/EEE/, the same scripts, seeds, caps and rules run on Epoch's 2,879 cells with EEE scores substituted where a matched EEE score exists (688 cells, 366 changed). Generated 2026-11-21.",
+ "md_audit": "- EEE manifest 959f0e11 (2026-11-20T08:30Z, 127,491 records, 129 collections), Hugging Face revision 5bce4753a80399062c1a2988715a6ad7e33528b9. All sha256 verified. Against the pinned dd7efcff: +4,630 records, none removed.\n- Maps (CSV, runs/EEE/crosswalk/): benchmark_map.csv (101 included entries, 33 benchmarks), model_map.csv (1,356 ids mapped to 220 fitted groups; 99 ambiguous-model), source_class.csv, collection_screen.csv (129 collections), pairs.csv (1,256 pairs: 520 independent, 312 same-upstream, 424 upstream-unknown).\n- Same-upstream control: median absolute difference 0.0000 (limit 0.02).\n- Audit (rule: at most 2 errors in 50): first sample, seed 20261113, 8 errors, fail (source class; benchmark home URL read as the score reference). Second sample, seed 20261114, 0 errors (2 under stricter readings). A post-audit check found a model-map error in the low anchor (undated claude-3.5-sonnet matched to the June 2024 group); fixed, rebuilt. Third sample, seed 20261115, 0 errors, pass, 95% upper bound 5.8%. The third sample is outside the registered path (one re-audit). Files: audit_sample_first_20261113.csv, audit_facts_20261114.txt, audit_sample.csv, audit_result.json.",
+ "md_coverage": "- 688 of 2,879 cells have an EEE score (23.9%): 280 independent, 210 same-upstream, 198 upstream-unknown. 366 cells differ from Epoch's value by more than 0.0015, 241 by more than 0.02, 135 by more than 0.05, 71 by more than 0.10.\n- 201 of 256 models and 33 of 57 benchmarks have at least one EEE cell (55 models none, 94 one or two, 70 three to five, 37 six or more). By benchmark and by model: input/coverage_by_benchmark.csv, input/coverage_by_model.csv.\n- Primary variant: EEE score where available, class priority independent, same-upstream, upstream-unknown, highest across sources within the class. Other cells keep Epoch's value. Same-upstream scores are used (they equal Epoch's in 92% of pairs).\n- Anchors: Claude 3.5 Sonnet 2 of 12 cells from EEE (GPQA diamond 0.403 to 0.431, MMLU 0.820 to 0.872). GPT-5 6 of 28 (changed: GPQA diamond 0.850 to 0.852, Terminal Bench 0.496 to 0.371).\n- EEE-only matrix: 48 models meet Epoch's inclusion rule, Claude 3.5 Sonnet not among them. Not fitted (B5 size condition fails).",
+ "md_eci": "Top 10: same set, ranks 4 and 5 exchanged (Claude Opus 5.5, GPT-6.1 Sol). Largest frontier shift 0.28 points. Mean shift by ECI band: below 80 +8.0 (19 models), 80 to 100 +3.5 (23), 100 to 120 -0.1, 120 to 140 +0.1, 140 to 160 +0.2, 160 and above +0.1. Largest shift +13.5 (Cerebras-GPT-13B, no changed cell). EDI shifts: TriviaQA +20.2, LAMBADA +12.7, PIQA +12.4, HellaSwag +10.5. G5 as registered (Spearman at least 0.9, at least 80% of intervals intersecting) is met: 0.9994 and 100%, read on the substitution matrix. Files: eci_compare.json, eci_compare.csv, edi_compare.csv.",
+ "md_reading": "- Same on both matrices: W2 converges cleanly; 90% coverage in the 0.85 to 0.95 band; power pattern (T3 yes, T2 conditional on convergence, T5, T4, T1 low); positive control fails on 3 seeds; T1 and T2 reject at 0.01 family-wise; held-out and LOO coverage near 0.90, no benchmark flagged; F above 10 and T1, T2 not localised, so C2 is falsified; P8 and P9 fail S2 and S3 in the all-models stratum, so C1 is falsified; anchors move widths and leave rankings.\n- Different: T5 does not reject on EEE data (adjusted p 0.016; Anthropic on GPQA diamond no longer extreme). Frontier coverage 0.868 against 0.903. Weak models rise by up to 13.5 points through re-estimated benchmark difficulties. elpd LOO falls from 3,450 to 3,386. P3, P9, P10 resolve at the first attempt; J2 times out.\n- Limits: 2,191 cells unchanged by construction; 210 covered cells are copies of Epoch's sources; one benchmark (GPQA diamond) carries over half of the independent cells.",
+ "md_deviations": "- Wall-clock (UTC, 2026-11-21): crosswalk and audits 06:05 to 07:45; W2 07:45 to 07:51 (6 fits in parallel); W3 07:51 to 10:14 (27 fits in parallel, 2 h 23 min); W5 arms 08:24 to 11:19 on spare cores (J2 at the 2 h cap); idle 11:19 to 20:37 (agent interrupted); W3M, W4, W4d, anchors, W5 aggregation 20:37 to 21:05. Peak memory 62 GB.\n- Deviations: latest manifest instead of dd7efcff; third audit sample; pair defined with source class; FrontierMath refinement of rule 5; metric identity for FrontierCode, FrontierSWE and OSWorld 2.0 decided against Epoch's values, PostTrainBench excluded; substitution matrix instead of the plan's EEE-only B5; scripts run unchanged from a mirror work root (runs/EEE/_mirror); W1 output copied; 1 thread per chain process (W4 on Epoch data used 8); W3M on 192 W3 fits with no refits; anchor extension uses the EEE fit's own pre-declared pairs and its five crashed G-2D replicates; C2 verdict file assembled by tools/eee_w4d_verdict.py with the G3 rule; A3 and A4 not run. A first W2 and partial W3 on an input with the model-map error were stopped and moved to runs/EEE/_superseded_v1. Full text: runs/deviations_local.md."
+}

@@ -1,0 +1,18 @@
+domain,vals_ai,epoch,artificial_analysis,llm_stats,eci_benchmarks,eci_cells,eee_benchmarks,eci_models_on_non_eci_benchmarks
+Software & Computing,yes,yes,yes,yes,13,442,72,182
+Mathematics,yes,yes,no,yes,8,590,40,160
+Natural Sciences,yes,yes,yes,no,6,365,25,108
+Health & Medicine,yes,no,yes,yes,0,0,23,147
+"Law, Government & Policy",yes,no,sub-theme only (legal practice),yes,0,0,9,154
+"Business, Finance & Professional Work",yes,sub-theme only (professional work),yes,yes,4,99,16,153
+"Computers, Web & Apps",sub-theme only (web search),yes,no,yes,3,41,35,110
+Everyday Life & Physical World,sub-theme only (robotics),sub-theme only (physical & social),no,no,5,287,38,80
+Puzzles & Games,yes,yes,no,no,6,388,7,84
+"Languages, Cultures & Humanities",no,no,no,no,1,150,14,70
+"Media, Arts & Online Content",no,sub-theme only (creative writing),no,yes,1,50,15,59
+General / multi-subject,no,no,yes,no,5,377,82,201
+Axis 2: Safety / harms,sub-area (SAFE-Teen mental health),no,no,no,0,0,29,81
+Axis 2: Truthfulness & hallucination,no,no (SimpleQA Verified under World knowledge),yes (AA-Omniscience),yes,1,88,9,77
+Axis 2: Long context,no,yes,yes,yes,4,109,18,179
+Axis 2: Instruction following,no,no,yes (IFBench),no,0,0,6,160
+Axis 5: Multilingual,archived (MGSM),no,yes (Multilingual Index),no,0,0,43,91

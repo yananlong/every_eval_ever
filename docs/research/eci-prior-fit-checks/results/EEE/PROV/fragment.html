@@ -1,0 +1,78 @@
+<section id="prov">
+  <h2>N. Provenance resampling on EEE: how much ECI moves with the source of each score</h2>
+  <p>Section N.1 of the EEE mirror replaced Epoch's score by one EEE rule in each covered cell. This exploratory section asks a different question: if the score in each covered cell is drawn from a different evaluation source, how far does ECI move? Epoch's 688 covered cells, the 2,879-cell design and Epoch's priors stay as they are, and only the score in a covered cell changes. Everything holds under Epoch's model, and the design goes beyond the registered plan.</p>
+  <p>The answer depends on where a model sits. At the frontier the provenance SD of the posterior-mean ECI is at most 0.38 points when every source is eligible (0.13 for independent sources, 0.11 for own-run sources), which is 0.05 of a 90% interval width at most and 1.5 times the 0.25 seed SD for the widest case. The top 10 is the same set in every refit. The largest spread is in weak 2023 models, up to 4.27 points (Cerebras-GPT-13B), which have 0 multi-source cells of their own, so it comes from re-estimated benchmark difficulties.</p>
+  <div class="sub-sec" id="prov-design"><h3 class="ssh">N.1 Design</h3>
+  <p>Each refit gives every one of the 688 covered cells (cells with at least one EEE source in the crosswalk, 3rd audit sample accepted as recorded in runs/EEE/PROGRESS.md) a score drawn uniformly and independently from a pool. In variant R the pool is Epoch's value plus the score of each EEE source (per source the highest score in the cell). In variant I the pool holds independent sources only, and in variant O own-run sources only. Cells with no source in the pool keep Epoch's value, and a cell with one source takes it, so only cells with two or more sources vary between replicates. Each replicate has its own recorded RNG seed. Every refit uses fit seed 12345, Epoch's unmodified fit and priors, 4,000 draws per chain, and the retry rules of the benchmark-selection refits.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Variant</th><th class="n">Refits</th><th class="n">Cells with a pool</th><th class="n">Cells with a real choice</th><th class="n">Cells differing from Epoch (mean, more than 0.0015)</th><th class="n">Converged</th><th class="n">Max R-hat</th><th class="n">Min ESS</th><th class="n">Divergences (max)</th></tr></thead>
+      <tbody>
+        <tr><td>R (all sources)</td><td class="n">50</td><td class="n">688</td><td class="n">688</td><td class="n">216</td><td class="n">50 of 50</td><td class="n">1.0017</td><td class="n">4917</td><td class="n">0</td></tr>
+        <tr><td>I (independent)</td><td class="n">20</td><td class="n">280</td><td class="n">120</td><td class="n">265</td><td class="n">20 of 20</td><td class="n">1.0014</td><td class="n">5354</td><td class="n">0</td></tr>
+        <tr><td>O (own-run)</td><td class="n">20</td><td class="n">295</td><td class="n">99</td><td class="n">236</td><td class="n">20 of 20</td><td class="n">1.0015</td><td class="n">4460</td><td class="n">0</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Source: runs/EEE/PROV/design.json, summary.json. Epoch's inclusion rule, applied by the data loader and not inside the fit, would drop no model in any refit.</p>
+  </div>
+  <div class="sub-sec" id="prov-spread"><h3 class="ssh">N.2 Spread of ECI across replicates</h3>
+  <p>The table gives, for each variant, the largest per-model SD of the posterior-mean ECI across replicates and the SD of the most affected model, relative to its posterior 90% width and to the 0.25 seed SD of W2. The refits share one seed, so part of each SD is sampler noise of up to about that size; the three-seed SD on EEE data is below 0.3 for every model.</p>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Variant, stratum</th><th class="n">Largest SD (model)</th><th class="n">Its 90% width</th><th class="n">SD over width</th><th class="n">SD over 0.25</th><th class="n">Largest SD over width, any model</th><th class="n">Median SD</th><th class="n">Largest range</th></tr></thead>
+      <tbody>
+        <tr><td>R, All non-anchor</td><td class="n">4.27 (Cerebras-GPT-13B)</td><td class="n">38.0</td><td class="n">0.112</td><td class="n">17.1</td><td class="n">0.339</td><td class="n">0.30</td><td class="n">19.89</td></tr>
+        <tr><td>R, Frontier 20</td><td class="n">0.38 (Claude Fable 5.2)</td><td class="n">7.7</td><td class="n">0.050</td><td class="n">1.5</td><td class="n">0.067</td><td class="n">0.29</td><td class="n">1.54</td></tr>
+        <tr><td>I, All non-anchor</td><td class="n">2.03 (Gemma 2 9B)</td><td class="n">9.8</td><td class="n">0.208</td><td class="n">8.1</td><td class="n">0.212</td><td class="n">0.11</td><td class="n">4.35</td></tr>
+        <tr><td>I, Frontier 20</td><td class="n">0.13 (Claude Fable 5.2)</td><td class="n">7.7</td><td class="n">0.017</td><td class="n">0.5</td><td class="n">0.017</td><td class="n">0.09</td><td class="n">0.46</td></tr>
+        <tr><td>O, All non-anchor</td><td class="n">1.41 (Yi 6B)</td><td class="n">20.3</td><td class="n">0.069</td><td class="n">5.6</td><td class="n">0.139</td><td class="n">0.08</td><td class="n">3.60</td></tr>
+        <tr><td>O, Frontier 20</td><td class="n">0.11 (Claude Fable 5.2)</td><td class="n">7.8</td><td class="n">0.014</td><td class="n">0.4</td><td class="n">0.014</td><td class="n">0.07</td><td class="n">0.38</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Source: runs/EEE/PROV/summary.json (variants.*.spread), chart_data.json.</p>
+  <p>In variant R, 145 of 254 models have a provenance SD above 0.25 and 41 above a tenth of their interval width, while 3 are above a quarter (o1-preview has the highest ratio, 0.34). No frontier model has an SD above a tenth of its width in any variant. Independent-only and own-run-only pools move far fewer cells (254 models, about 120 and 99 varying cells), and their spreads are correspondingly smaller.</p>
+  </div>
+  <div class="sub-sec" id="prov-top"><h3 class="ssh">N.3 Top 10 and the frontier</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Variant</th><th class="n">Top-10 set differs from P0</th><th class="n">Top-10 set differs from deterministic EEE fit</th><th class="n">Largest SD of an adjacent frontier gap</th><th class="n">Median SD of adjacent gaps</th><th class="n">Adjacent frontier pairs that ever swap</th><th class="n">SD of the rank 1 minus rank 20 stretch</th></tr></thead>
+      <tbody>
+        <tr><td>R</td><td class="n">0 of 50</td><td class="n">0 of 50</td><td class="n">0.23</td><td class="n">0.045</td><td class="n">3</td><td class="n">0.20</td></tr>
+        <tr><td>I</td><td class="n">0 of 20</td><td class="n">0 of 20</td><td class="n">0.03</td><td class="n">0.012</td><td class="n">1</td><td class="n">0.08</td></tr>
+        <tr><td>O</td><td class="n">0 of 20</td><td class="n">0 of 20</td><td class="n">0.03</td><td class="n">0.015</td><td class="n">1</td><td class="n">0.06</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Source: runs/EEE/PROV/summary.json (variants.*.top10, frontier_gaps); rank frequencies in chart_data.json (rank_freq).</p>
+  <p>The top-10 set never changes. The order does change between adjacent models whose posterior means are close: in variant R the neighbouring pairs that swap are 3 of 19, the most often by 54% of replicates.</p>
+  </div>
+  <div class="sub-sec" id="prov-p0"><h3 class="ssh">N.4 Counts against the Epoch-data fit</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Fit</th><th class="n">Refits</th><th class="n">Spearman, all</th><th class="n">Models moving more than 0.25 W (limit 12)</th><th class="n">Width ratios outside 0.8 to 1.25 (limit 12)</th><th class="n">Refits above the S2 limit</th><th class="n">Refits failing any of S1 to S3 at the frontier</th></tr></thead>
+      <tbody>
+        <tr><td>Deterministic EEE fit (reference)</td><td class="n">1</td><td class="n">0.9994</td><td class="n">31</td><td class="n">2</td><td class="n">-</td><td class="n">-</td></tr>
+        <tr><td>Variant R</td><td class="n">50</td><td class="n">0.9994 to 0.9997</td><td class="n">6 to 32</td><td class="n">0 to 3</td><td class="n">16 of 50</td><td class="n">0 of 50</td></tr>
+        <tr><td>Variant I</td><td class="n">20</td><td class="n">0.9993 to 0.9995</td><td class="n">11 to 15</td><td class="n">0 to 0</td><td class="n">14 of 20</td><td class="n">0 of 20</td></tr>
+        <tr><td>Variant O</td><td class="n">20</td><td class="n">0.9994 to 0.9995</td><td class="n">12 to 16</td><td class="n">0 to 0</td><td class="n">17 of 20</td><td class="n">0 of 20</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Source: runs/EEE/PROV/summary.json (variants.*.vs_p0). Limits follow the benchmark-selection refits.</p>
+  <p>No refit moves a frontier model by more than a quarter of its interval width, none fails the top-10 condition, and the Spearman correlation stays above 0.9993. The count of models moving more than a quarter of their width exceeds the limit of 12 in 16 of 50 R refits, 14 of 20 I refits and 17 of 20 O refits (the deterministic EEE fit has 31), and the models involved are weak ones whose benchmarks were re-estimated.</p>
+  </div>
+  <div class="sub-sec" id="prov-t5"><h3 class="ssh">N.5 Residual checks</h3>
+    <div class="tblwrap"><table>
+      <thead><tr><th>Fit</th><th class="n">T5 observed</th><th class="n">T5 max-T adjusted p (EEE-data replicates)</th><th class="n">At 0.01 (EEE-data replicates)</th><th class="n">At 0.01 (Epoch-data replicates)</th></tr></thead>
+      <tbody>
+        <tr><td>Epoch data (W4)</td><td class="n">4.455</td><td class="n">0.0053</td><td class="n">reject</td><td class="n">-</td></tr>
+        <tr><td>Deterministic EEE fit (W4)</td><td class="n">3.861</td><td class="n">0.0155</td><td class="n">no rejection</td><td class="n">-</td></tr>
+        <tr><td>Variant R refits</td><td class="n">3.851 to 4.868</td><td class="n">0.0104 median (0.0052 to 0.0155)</td><td class="n">8 of 50 reject</td><td class="n">9 of 50 reject</td></tr>
+        <tr><td>Variant I refits</td><td class="n">3.907 to 4.413</td><td class="n">0.0104 median (0.0052 to 0.0104)</td><td class="n">1 of 20 reject</td><td class="n">1 of 20 reject</td></tr>
+        <tr><td>Variant O refits</td><td class="n">3.936 to 4.321</td><td class="n">0.0104 median (0.0104 to 0.0104)</td><td class="n">0 of 20 reject</td><td class="n">0 of 20 reject</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Source: runs/EEE/PROV/summary.json (variants.*.T), tcheck.json. Statistics computed per refit on its own data and posterior; replicate sets from the W3 fits.</p>
+  <p>The Lab-by-benchmark check (T5) sits on the edge of the 0.01 level. Its observed statistic ranges from 3.851 to 4.868 across refits, between the EEE-data fit and the Epoch-data fit and above both at times. The adjusted p moves in steps of about 0.005, and the typical refit gives 0.0104, just above the level. In variant R, 8 of 50 refits reject; in variants I and O, 1 and 0. This indicates that T5's non-rejection on the EEE input was a near call that depends on which sources are drawn. T1 and T2 reject in every refit and T3, T4, T6 and T7 in none. The full cost of per-refit replicate sets, about 200 fits each, was not paid.</p>
+  </div>
+  <div class="sub-sec" id="prov-drivers"><h3 class="ssh">N.6 What drives the spread</h3>
+  <p>A model's spread is not related to how many of its own cells have several sources (Spearman -0.12 in R); it is related to how much the difficulties of its benchmarks are re-estimated (0.69). Benchmarks with the largest difficulty SD across replicates: TriviaQA (0.500, 5 multi-source cells), LAMBADA (0.292, 2 multi-source cells), PIQA (0.226, 8 multi-source cells), OSWorld 2.0 (0.217, 3 multi-source cells), VPCT (0.194, 3 multi-source cells), HellaSwag (0.186, 5 multi-source cells). Models with no multi-source cell have a median SD of 1.04, those with some 0.28. The same pattern as in the EEE mirror: old benchmarks near the low end of the scale are re-estimated, and weak models that sit on them move with them.</p>
+  </div>
+  <div class="sub-sec" id="prov-limits"><h3 class="ssh">N.7 Limits</h3>
+  <p>Replicates are draws from the crosswalk as it stands, with the cell set fixed to Epoch's. The crosswalk was built on EEE manifest 959f0e11; a newer revision would add about 2 cells and was not rebuilt. Uniform draws weight Epoch's value more where a same-upstream source copies it. Sampler noise is inside every SD because the fit seed is shared. These results suggest where source choice matters, and say nothing about the 2,191 cells without an EEE source or the 24 benchmarks with none.</p>
+  </div>
+</section>

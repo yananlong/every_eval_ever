@@ -1,0 +1,63 @@
+{
+ "gen": "offset",
+ "r": 8,
+ "seed": 2420074107,
+ "position": 1600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "developer": "Anthropic",
+  "benchmarks": [
+   26,
+   10,
+   11
+  ],
+  "n_cells": 36
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0039045038895604,
+  "min_ess": 2036.2555356024588
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0039045038895604,
+   "min_ess": 2036.2555356024588
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97205) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 310.8,
+ "T": {
+  "T1": 2.0128508220303227,
+  "T2": 1.2106830227947831,
+  "T3": 0.06945601454368565,
+  "T4": 0.03669855139790127,
+  "T5": 4.02750482934216,
+  "T6": 4.1196420081861325,
+  "T7": 2.124936423635544
+ },
+ "maxima": {
+  "Qb": 7.180211645302805,
+  "q": 18.01263902845752,
+  "t": 4.02750482934216,
+  "cb": 2.5783143988014214
+ }
+}

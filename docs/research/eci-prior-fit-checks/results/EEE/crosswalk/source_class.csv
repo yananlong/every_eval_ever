@@ -1,0 +1,14 @@
+source_org,kind,epoch_source_pattern,n_rows
+Artificial Analysis,own-run,artificial ?analysis,17815
+Vals.ai,own-run,vals\.ai,1182
+Hugging Face,own-run,open llm leaderboard|huggingface,68
+Kensho,own-run,kensho,36
+crfm,own-run,crfm|helm,11
+"Writer, Inc.",own-run,writer,32
+Arcadia Impact,own-run,arcadia|inspect evals,10
+ARC Prize Foundation,leaderboard,arcprize|arc prize,825
+Terminal-Bench,leaderboard,tbench|terminal-bench,353
+Mercor,leaderboard,mercor,3
+Papers with Code,aggregator,paperswithcode|papers with code,2098
+LLM Stats,aggregator,llm-stats|llm stats|llmstats,748
+BenchPress,aggregator,benchpress,947

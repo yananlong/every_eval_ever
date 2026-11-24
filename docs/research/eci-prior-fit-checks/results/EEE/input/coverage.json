@@ -1,0 +1,51 @@
+{
+ "cells": 2879,
+ "cells_with_eee": 688,
+ "by_class": {
+  "none": 2191,
+  "independent": 280,
+  "same-upstream": 210,
+  "upstream-unknown": 198
+ },
+ "changed_gt_0015": 366,
+ "changed_gt_0_02": 241,
+ "changed_gt_0_05": 135,
+ "changed_gt_0_10": 71,
+ "median_absdiff_changed": 0.031786335578002256,
+ "mean_signed_diff_covered": -0.0026723832730147765,
+ "models_with_eee": 201,
+ "models": 256,
+ "benchmarks_with_eee": 33,
+ "benchmarks": 57,
+ "anchors": {
+  "Claude 3.5 Sonnet": {
+   "cells": 12,
+   "eee_cells": 2,
+   "changed": 2
+  },
+  "GPT-5": {
+   "cells": 28,
+   "eee_cells": 6,
+   "changed": 2
+  }
+ },
+ "zip_sha256": "0752b97b50f75bcbe8639f0a432424afe4faefa5a9bfd889ea6714c4195904c8",
+ "fit_input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "models_by_eee_cells": {
+  "0": 55,
+  "1-2": 94,
+  "3-5": 70,
+  "6+": 37
+ },
+ "eee_only": {
+  "cells": 688,
+  "models_meeting_inclusion": 48,
+  "benchmarks_in_those": 31,
+  "cells_in_those": 322,
+  "anchors_in": {
+   "Claude 3.5 Sonnet": false,
+   "GPT-5": true
+  },
+  "size_condition_15_benchmarks_100_models": false
+ }
+}

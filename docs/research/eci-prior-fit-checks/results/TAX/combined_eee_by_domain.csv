@@ -1,0 +1,16 @@
+domain,eee_benchmarks,eee_rows,eee_models,eee_sources,eee_collections,eci_models_any,eee_benchmarks_not_in_eci,eee_rows_not_in_eci,eci_models_on_non_eci_benchmarks,eci_models_ge3_non_eci_benchmarks,non_eci_benchmarks_ge20_eci_models
+Software & Computing,72,139358,1853,17,27,182,64,90961,182,145,15
+Mathematics,40,84680,6049,13,16,201,26,14667,160,63,9
+Natural Sciences,25,70375,6234,14,16,216,23,7825,108,40,4
+Health & Medicine,23,8901,720,9,9,147,17,7761,147,50,4
+"Law, Government & Policy",9,86945,350,6,6,154,9,86945,154,76,7
+"Business, Finance & Professional Work",16,70005,1057,10,11,154,14,68898,153,93,10
+"Computers, Web & Apps",35,16029,759,9,11,115,33,14010,110,47,7
+Everyday Life & Physical World,38,9507,654,7,9,91,37,6407,80,16,2
+Puzzles & Games,7,14106,5149,10,14,141,7,8100,84,0,1
+"Languages, Cultures & Humanities",14,10899,379,7,7,73,12,10772,70,17,1
+"Media, Arts & Online Content",15,6917,593,7,8,59,15,6917,59,10,2
+General / multi-subject,82,279613,8055,23,29,216,70,197520,201,166,16
+No specific subject (Axis 2 only),137,191506,7187,18,26,202,135,190778,201,127,22
+Unclassified (insufficient information),0,0,0,0,0,0,0,0,0,0,0
+(uncoded tail),1437,54221,2384,24,46,129,1404,52878,129,93,0

@@ -1,0 +1,43 @@
+{
+ "gen": "drift",
+ "r": 3,
+ "seed": 3236158764,
+ "position": 600,
+ "converged": false,
+ "timeout": true,
+ "cap_seconds": 3600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "started_from": null,
+ "runs_completed_before_cap": [
+  {
+   "tune": "1_000",
+   "draws": "1_000",
+   "seconds": 379
+  },
+  {
+   "tune": "500",
+   "draws": "1_000",
+   "seconds": 1510
+  },
+  {
+   "tune": "1_000",
+   "draws": "4_000",
+   "seconds": 829
+  }
+ ],
+ "n_runs_completed": 3,
+ "last_attempt": {
+  "divergences": null,
+  "max_rhat": null,
+  "min_ess": null,
+  "draws": null
+ },
+ "wall_seconds": 3600,
+ "truth_summary": {
+  "tau_alpha": 0.6012407369721746,
+  "sigma_median": 0.09818451113901634,
+  "tau_sigma": 0.3678521177383836,
+  "slope_min": 0.18812647303350852,
+  "slope_max": 3.2922503668259537
+ }
+}

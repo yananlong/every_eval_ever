@@ -1,0 +1,86 @@
+{
+ "gen": "2d",
+ "r": 2,
+ "seed": 2549259418,
+ "position": 400,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "second_dim_benchmarks": [
+   0,
+   1,
+   3,
+   5,
+   6,
+   7,
+   8,
+   10,
+   11,
+   12,
+   13,
+   15,
+   18,
+   19,
+   20,
+   23,
+   24,
+   27,
+   28,
+   33,
+   34,
+   35,
+   38,
+   42,
+   44,
+   46,
+   47,
+   52
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0042455934829266,
+  "min_ess": 1605.382028298228
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0042455934829266,
+   "min_ess": 1605.382028298228
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2688) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 425.5,
+ "T": {
+  "T1": 4.112765816598887,
+  "T2": 7.490296681354604,
+  "T3": 0.06317470705120373,
+  "T4": 0.09777350611104928,
+  "T5": 2.7088188566527847,
+  "T6": 28.18097870071696,
+  "T7": 5.386618485072891
+ },
+ "maxima": {
+  "Qb": 16.145961222070497,
+  "q": 246.12045042090068,
+  "t": 2.7088188566527847,
+  "cb": 14.819740453129043
+ }
+}

@@ -1,0 +1,31 @@
+{
+ "first": {
+  "seed": 20261113,
+  "n": 50,
+  "errors": 8,
+  "passed": false,
+  "cp95_upper": 0.2702200775264126,
+  "cause": "the benchmark's home or dataset URL was read as the reference of the score, so aggregator rows were classed same-upstream; all 8 errors are on item iv (source class)"
+ },
+ "second": {
+  "seed": 20261114,
+  "n": 50,
+  "errors": 0,
+  "passed": true,
+  "cp95_upper": 0.05815507911697225,
+  "errors_under_stricter_readings": 2,
+  "cp95_upper_if_2": 0.12061415542204412,
+  "note": "passed as judged at the time; 1 pair (FrontierMath refinement) would be an error under the literal rule 5 and 1 pair (undated deepseek-r1) under the stricter model rule adopted afterwards; facts in audit_facts_20261114.txt"
+ },
+ "post_audit_fix": "after the second audit a consistency check of the anchors showed that an undated EEE id (claude-3.5-sonnet) had been matched to the earlier of two dated Epoch groups; undated ids that fit two dated groups and rolling aliases are now ambiguous-model unless the name carries the date; maps rebuilt and a third sample audited",
+ "third": {
+  "seed": 20261115,
+  "n": 50,
+  "errors": 0,
+  "passed": true,
+  "cp95_upper": 0.05815507911697225
+ },
+ "rule": "at most 2 errors in 50; on failure fix the cause, rebuild, audit a fresh sample with seed 20261114; a second failure stops",
+ "development_check": "between the two audits a non-registered sample (seed 999) was inspected to confirm the fix; it is not an audit",
+ "final_passed": true
+}

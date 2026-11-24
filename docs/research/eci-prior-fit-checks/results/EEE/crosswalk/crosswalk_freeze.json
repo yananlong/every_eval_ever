@@ -1,0 +1,17 @@
+{
+ "maps_sha256": {
+  "benchmark_map.csv": "a4a127bf573b87646a041590fe597973128be1d92b3200806593dee8408aa899",
+  "model_map.csv": "c0f49bc08977921f9f3e5e3015611140f8f12bd1277489ce6f6919c36eceda99",
+  "source_class.csv": "d2bac76555affcbd70e87c3ca4820f9ca153de90bdb334280dfc57877f23601f"
+ },
+ "n_pairs": 1256,
+ "audit_pool": 832,
+ "audit_seed": 20261115,
+ "hand_inputs": {
+  "eee_bmap_rules.py": "3794767211ba8b39bacfd40620abd76c22218d729bef9f4783b31dceada83a75",
+  "eee_aliases.json": "64565da78ec3f7c7a13a49838a50eda6178f4508beb72d66fcb60f450f758d0d",
+  "eee_model_overrides.csv": "0e510eb773636c6a85a5e58e36db94c0ddf06c71f0c55cc03311f78bec1076aa",
+  "eee_crosswalk.py": "df83e34378e60f9961176c36b90f85ee29908ce62c47d03671b27c57a4b48ff2",
+  "eee_xwalk_lib.py": "7ada35dc97300a716e74df33079a5038fc09ad9ddd4506c9d49c4b5220679dba"
+ }
+}

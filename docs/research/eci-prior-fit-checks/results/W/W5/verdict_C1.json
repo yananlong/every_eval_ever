@@ -1,0 +1,23 @@
+{
+ "verdict": "Sensitive",
+ "failures_by_prior": {
+  "P8": [
+   "all",
+   "sparse"
+  ],
+  "P9": [
+   "all",
+   "sparse"
+  ]
+ },
+ "unresolved": [
+  "P3"
+ ],
+ "sensitive_priors": [
+  "P8",
+  "P9"
+ ],
+ "S5_passes": true,
+ "S5_followup_passes": null,
+ "s2_limit_in_use": 0.25
+}

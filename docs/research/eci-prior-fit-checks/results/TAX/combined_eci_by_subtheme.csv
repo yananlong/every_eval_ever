@@ -1,0 +1,68 @@
+domain,sub_theme,doc_benchmark_count,eci_benchmarks_primary,eci_cells_primary,eci_benchmarks_incl_secondary,eci_cells_incl_secondary,eci_benchmarks
+Software & Computing,General programming tasks,31.0,5,172,7,209,"Aider polyglot, CadEval, FrontierCode, METR Time Horizons, MirrorCode, Surface Evolver Bench, The Agent Company"
+Software & Computing,Repository-level software engineering,28.0,2,51,2,51,"FrontierSWE, GSO-Bench"
+Software & Computing,Cybersecurity,18.0,2,26,2,26,"Cybench, ExploitBench"
+Software & Computing,App & web development,17.0,0,0,0,0,
+Software & Computing,Competitive programming & algorithms,16.0,0,0,0,0,
+Software & Computing,"Terminal, systems & IT operations",9.0,1,32,1,32,Terminal Bench
+Software & Computing,"Data science, databases & tabular data",6.0,0,0,0,0,
+Software & Computing,AI/ML research & engineering,3.0,3,161,4,194,"METR Time Horizons, PostTrainBench, WeirdML, WeirdML v3"
+Mathematics,Competition & olympiad math,25.0,2,244,2,244,"MATH level 5, OTIS Mock AIME 2024-2025"
+Mathematics,School & word-problem math,10.0,1,53,1,53,GSM8K
+Mathematics,Visual & diagrammatic math,10.0,0,0,0,0,
+Mathematics,University & research mathematics,4.0,5,293,5,293,"FrontierMath-2025-02-28-Private, FrontierMath-Tier-4-2025-07-01-Private, FrontierMath-Tier-4-v2-Private, FrontierMath-Tiers-1-3-v2-Private, ProofBench"
+Natural Sciences,Expert & graduate-level science questions,11.0,1,176,1,176,GPQA diamond
+Natural Sciences,Scientific literature & figures,9.0,0,0,0,0,
+Natural Sciences,School science,7.0,2,95,2,95,"ARC AI2, OpenBookQA"
+Natural Sciences,Life sciences & lab research,7.0,0,0,0,0,
+Natural Sciences,"Physical sciences, chemistry & materials",5.0,2,50,2,50,"Surface Evolver Bench, VPCT"
+Natural Sciences,"Earth, weather & geospatial",2.0,1,44,1,44,GeoBench
+Health & Medicine,Medical knowledge & licensing exams,9.0,0,0,0,0,
+Health & Medicine,Medical imaging,6.0,0,0,0,0,
+Health & Medicine,Clinical practice & health conversations,6.0,0,0,0,0,
+"Law, Government & Policy",Legal education & exams,5.0,0,0,0,0,
+"Law, Government & Policy","Legal practice, tax & regulation",4.0,0,0,1,58,APEX-Agents
+"Law, Government & Policy",Government & public policy,2.0,0,0,0,0,
+"Business, Finance & Professional Work",Professional & occupational knowledge work,11.0,4,99,4,99,"APEX-Agents, GDPval, Remote Labor Index, The Agent Company"
+"Business, Finance & Professional Work",Finance & financial analysis,10.0,0,0,0,0,
+"Business, Finance & Professional Work",Customer service & business operations,5.0,0,0,0,0,
+"Business, Finance & Professional Work",Business & enterprise documents,5.0,0,0,0,0,
+"Computers, Web & Apps",Web search & deep research,19.0,1,24,1,24,DeepResearch Bench
+"Computers, Web & Apps","APIs, function calling & tool ecosystems",14.0,0,0,0,0,
+"Computers, Web & Apps",Mobile apps,8.0,0,0,0,0,
+"Computers, Web & Apps",Desktop & OS computer use,5.0,2,17,2,17,"OSWorld, OSWorld 2.0"
+"Computers, Web & Apps",GUI screens & grounding,5.0,0,0,0,0,
+"Computers, Web & Apps",Websites & web navigation,4.0,0,0,0,0,
+Everyday Life & Physical World,Everyday scenes & activities,22.0,0,0,1,44,GeoBench
+Everyday Life & Physical World,Everyday physical & social situations,11.0,4,248,6,286,"CL-bench Life, HellaSwag, PIQA, SimpleBench, VPCT, Winogrande"
+Everyday Life & Physical World,"Homes, robotics & embodied environments",10.0,1,39,1,39,Furniture Assembly
+Everyday Life & Physical World,Driving & transportation,7.0,0,0,0,0,
+Everyday Life & Physical World,"Shopping, travel & consumer tasks",6.0,0,0,0,0,
+Puzzles & Games,Abstract puzzles & logic,18.0,3,263,4,413,"ARC-AGI, ARC-AGI-2, DTBench, Mystery Game Puzzles"
+Puzzles & Games,"Games, sports & recreation",5.0,3,125,3,125,"Balrog, Chess Puzzles, SpireClimb"
+"Languages, Cultures & Humanities","Regional, cultural & non-English knowledge",14.0,0,0,0,0,
+"Languages, Cultures & Humanities",Translation & multilingual text,14.0,0,0,0,0,
+"Languages, Cultures & Humanities","Emotions, minds & social interaction",7.0,0,0,0,0,
+"Languages, Cultures & Humanities",Linguistics,4.0,0,0,1,61,Winogrande
+"Languages, Cultures & Humanities","Humanities, social sciences & ethics",2.0,1,150,1,150,DTBench
+"Media, Arts & Online Content",Encyclopedic & reference text,13.0,0,0,0,0,
+"Media, Arts & Online Content","Fiction, film & TV",10.0,1,50,2,70,"Fiction.LiveBench, LAMBADA"
+"Media, Arts & Online Content",Image & video creation/editing,10.0,0,0,0,0,
+"Media, Arts & Online Content",News & journalism,8.0,0,0,0,0,
+"Media, Arts & Online Content",Music & sound,8.0,0,0,0,0,
+"Media, Arts & Online Content",Creative writing,4.0,0,0,0,0,
+"Media, Arts & Online Content",Social media & online discussion,3.0,0,0,0,0,
+General / multi-subject,Multi-subject academic exams,30.0,1,92,1,92,MMLU
+General / multi-subject,General visual & audio-visual understanding,30.0,0,0,0,0,
+General / multi-subject,Open-ended chat & instruction requests,28.0,0,0,0,0,
+General / multi-subject,General world knowledge & trivia,19.0,2,120,2,120,"SimpleQA Verified, TriviaQA"
+General / multi-subject,Aggregate indices & mixed suites,15.0,1,39,1,39,BBH
+No specific subject (Axis 2 only),Synthetic long-context retrieval,39.0,0,0,0,0,
+No specific subject (Axis 2 only),"Documents, charts & text in images",18.0,0,0,0,0,
+No specific subject (Axis 2 only),Generic language & retrieval tasks,16.0,4,59,4,59,"ANLI, CL-bench, CL-bench Life, LAMBADA"
+No specific subject (Axis 2 only),Generic visual perception,8.0,0,0,0,0,
+No specific subject (Axis 2 only),Instruction-following with synthetic constraints,7.0,0,0,0,0,
+No specific subject (Axis 2 only),Generic speech & audio processing,4.0,0,0,0,0,
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",,0,0,0,0,
+Unclassified (insufficient information),Unclassified,,1,31,1,31,EBR-bench
+General / multi-subject,(no sub-theme),,1,126,1,126,LMCA

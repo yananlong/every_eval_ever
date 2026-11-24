@@ -1,0 +1,2672 @@
+{
+ "rng_seed": 20261121,
+ "random_k": 11,
+ "benchmarks": [
+  "ANLI",
+  "APEX-Agents",
+  "ARC AI2",
+  "ARC-AGI",
+  "ARC-AGI-2",
+  "Aider polyglot",
+  "BBH",
+  "Balrog",
+  "CL-bench",
+  "CL-bench Life",
+  "CadEval",
+  "Chess Puzzles",
+  "Cybench",
+  "DTBench",
+  "DeepResearch Bench",
+  "EBR-bench",
+  "ExploitBench",
+  "Fiction.LiveBench",
+  "FrontierCode",
+  "FrontierMath-2025-02-28-Private",
+  "FrontierMath-Tier-4-2025-07-01-Private",
+  "FrontierMath-Tier-4-v2-Private",
+  "FrontierMath-Tiers-1-3-v2-Private",
+  "FrontierSWE",
+  "Furniture Assembly",
+  "GDPval",
+  "GPQA diamond",
+  "GSM8K",
+  "GSO-Bench",
+  "GeoBench",
+  "HellaSwag",
+  "LAMBADA",
+  "LMCA",
+  "MATH level 5",
+  "METR Time Horizons",
+  "MMLU",
+  "MirrorCode",
+  "Mystery Game Puzzles",
+  "OSWorld",
+  "OSWorld 2.0",
+  "OTIS Mock AIME 2024-2025",
+  "OpenBookQA",
+  "PIQA",
+  "PostTrainBench",
+  "ProofBench",
+  "Remote Labor Index",
+  "SimpleBench",
+  "SimpleQA Verified",
+  "SpireClimb",
+  "Surface Evolver Bench",
+  "Terminal Bench",
+  "The Agent Company",
+  "TriviaQA",
+  "VPCT",
+  "WeirdML",
+  "WeirdML v3",
+  "Winogrande"
+ ],
+ "F": [
+  "ARC-AGI",
+  "ARC-AGI-2",
+  "DTBench",
+  "FrontierMath-Tier-4-v2-Private",
+  "FrontierMath-Tiers-1-3-v2-Private",
+  "Furniture Assembly",
+  "GPQA diamond",
+  "GSM8K",
+  "HellaSwag",
+  "LMCA",
+  "MATH level 5",
+  "Mystery Game Puzzles",
+  "OTIS Mock AIME 2024-2025",
+  "PIQA",
+  "TriviaQA",
+  "Winogrande"
+ ],
+ "clusters": {
+  "C_FM": [
+   "FrontierMath-Tiers-1-3-v2-Private",
+   "FrontierMath-Tier-4-v2-Private",
+   "FrontierMath-2025-02-28-Private",
+   "FrontierMath-Tier-4-2025-07-01-Private"
+  ],
+  "C_ARC": [
+   "ARC-AGI",
+   "ARC-AGI-2"
+  ],
+  "C_OTIS_LMCA": [
+   "OTIS Mock AIME 2024-2025",
+   "LMCA"
+  ],
+  "C_OLD": [
+   "HellaSwag",
+   "PIQA",
+   "Winogrande",
+   "TriviaQA",
+   "GSM8K"
+  ]
+ },
+ "fits": [
+  {
+   "id": "A4_DTBench",
+   "kind": "A4_lobo",
+   "drop": [
+    "DTBench"
+   ],
+   "n_rows": 2664,
+   "n_models": 241,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "DeepSeek-V4-Flash",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemma 2 27B",
+    "Grok 4 Fast",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mixtral 8x22B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_GPQA_diamond",
+   "kind": "A4_lobo",
+   "drop": [
+    "GPQA diamond"
+   ],
+   "n_rows": 2653,
+   "n_models": 244,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "GPT-4 (Mar 2023)",
+    "Gemma 2 27B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Medium 3",
+    "Mixtral 8x22B",
+    "QwQ-32B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_MATH_level_5",
+   "kind": "A4_lobo",
+   "drop": [
+    "MATH level 5"
+   ],
+   "n_rows": 2768,
+   "n_models": 249,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "GPT-3.5 Turbo (Jan 2024)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Medium 3",
+    "Mixtral 8x22B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_METR_Time_Horizons",
+   "kind": "A4_lobo",
+   "drop": [
+    "METR Time Horizons"
+   ],
+   "n_rows": 2840,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "GPT-4 (Mar 2023)"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_OTIS_Mock_AIME_2024_2025",
+   "kind": "A4_lobo",
+   "drop": [
+    "OTIS Mock AIME 2024-2025"
+   ],
+   "n_rows": 2690,
+   "n_models": 250,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Mistral Medium 3",
+    "QwQ-32B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_SimpleBench",
+   "kind": "A4_lobo",
+   "drop": [
+    "SimpleBench"
+   ],
+   "n_rows": 2781,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "DeepSeek-V4-Flash"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_VPCT",
+   "kind": "A4_lobo",
+   "drop": [
+    "VPCT"
+   ],
+   "n_rows": 2850,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Gemini 2.5 Flash (Sep 2025)"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "A4_WeirdML",
+   "kind": "A4_lobo",
+   "drop": [
+    "WeirdML"
+   ],
+   "n_rows": 2744,
+   "n_models": 251,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "DeepSeek-V4-Flash",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Grok 4 Fast",
+    "Mistral Medium 3.5"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_ANLI",
+   "kind": "lobo",
+   "drop": [
+    "ANLI"
+   ],
+   "n_rows": 2870,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_APEX_Agents",
+   "kind": "lobo",
+   "drop": [
+    "APEX-Agents"
+   ],
+   "n_rows": 2818,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Beam 1.0"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_ARC_AI2",
+   "kind": "lobo",
+   "drop": [
+    "ARC AI2"
+   ],
+   "n_rows": 2768,
+   "n_models": 242,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "PaLM 2-L",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_ARC_AGI",
+   "kind": "lobo",
+   "drop": [
+    "ARC-AGI"
+   ],
+   "n_rows": 2780,
+   "n_models": 254,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Beam 1.0",
+    "Grok 4 Fast"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_ARC_AGI_2",
+   "kind": "lobo",
+   "drop": [
+    "ARC-AGI-2"
+   ],
+   "n_rows": 2786,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Beam 1.0"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Aider_polyglot",
+   "kind": "lobo",
+   "drop": [
+    "Aider polyglot"
+   ],
+   "n_rows": 2832,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "QwQ-32B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_BBH",
+   "kind": "lobo",
+   "drop": [
+    "BBH"
+   ],
+   "n_rows": 2837,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "GPT-3.5 Turbo (Jun 2023)"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Balrog",
+   "kind": "lobo",
+   "drop": [
+    "Balrog"
+   ],
+   "n_rows": 2850,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_CL_bench",
+   "kind": "lobo",
+   "drop": [
+    "CL-bench"
+   ],
+   "n_rows": 2861,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_CL_bench_Life",
+   "kind": "lobo",
+   "drop": [
+    "CL-bench Life"
+   ],
+   "n_rows": 2867,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_CadEval",
+   "kind": "lobo",
+   "drop": [
+    "CadEval"
+   ],
+   "n_rows": 2865,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Chess_Puzzles",
+   "kind": "lobo",
+   "drop": [
+    "Chess Puzzles"
+   ],
+   "n_rows": 2786,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Mistral Large 4"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Cybench",
+   "kind": "lobo",
+   "drop": [
+    "Cybench"
+   ],
+   "n_rows": 2855,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Grok 4 Fast"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_DeepResearch_Bench",
+   "kind": "lobo",
+   "drop": [
+    "DeepResearch Bench"
+   ],
+   "n_rows": 2855,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_EBR_bench",
+   "kind": "lobo",
+   "drop": [
+    "EBR-bench"
+   ],
+   "n_rows": 2842,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Mistral Large 4"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_ExploitBench",
+   "kind": "lobo",
+   "drop": [
+    "ExploitBench"
+   ],
+   "n_rows": 2872,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Fiction_LiveBench",
+   "kind": "lobo",
+   "drop": [
+    "Fiction.LiveBench"
+   ],
+   "n_rows": 2823,
+   "n_models": 254,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "QwQ-32B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_FrontierCode",
+   "kind": "lobo",
+   "drop": [
+    "FrontierCode"
+   ],
+   "n_rows": 2837,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_FrontierMath_2025_02_28_Private",
+   "kind": "lobo",
+   "drop": [
+    "FrontierMath-2025-02-28-Private"
+   ],
+   "n_rows": 2845,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_FrontierMath_Tier_4_2025_07_01_Private",
+   "kind": "lobo",
+   "drop": [
+    "FrontierMath-Tier-4-2025-07-01-Private"
+   ],
+   "n_rows": 2853,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_FrontierMath_Tier_4_v2_Private",
+   "kind": "lobo",
+   "drop": [
+    "FrontierMath-Tier-4-v2-Private"
+   ],
+   "n_rows": 2807,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_FrontierMath_Tiers_1_3_v2_Private",
+   "kind": "lobo",
+   "drop": [
+    "FrontierMath-Tiers-1-3-v2-Private"
+   ],
+   "n_rows": 2784,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Qwen3.6 27B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_FrontierSWE",
+   "kind": "lobo",
+   "drop": [
+    "FrontierSWE"
+   ],
+   "n_rows": 2856,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Furniture_Assembly",
+   "kind": "lobo",
+   "drop": [
+    "Furniture Assembly"
+   ],
+   "n_rows": 2840,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_GDPval",
+   "kind": "lobo",
+   "drop": [
+    "GDPval"
+   ],
+   "n_rows": 2868,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_GSM8K",
+   "kind": "lobo",
+   "drop": [
+    "GSM8K"
+   ],
+   "n_rows": 2778,
+   "n_models": 242,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "Gemma 2 9B",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-3B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_GSO_Bench",
+   "kind": "lobo",
+   "drop": [
+    "GSO-Bench"
+   ],
+   "n_rows": 2851,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_GeoBench",
+   "kind": "lobo",
+   "drop": [
+    "GeoBench"
+   ],
+   "n_rows": 2835,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_HellaSwag",
+   "kind": "lobo",
+   "drop": [
+    "HellaSwag"
+   ],
+   "n_rows": 2803,
+   "n_models": 249,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Falcon 2 11B",
+    "PaLM 2-L",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_LAMBADA",
+   "kind": "lobo",
+   "drop": [
+    "LAMBADA"
+   ],
+   "n_rows": 2854,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Qwen-1_8B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_LMCA",
+   "kind": "lobo",
+   "drop": [
+    "LMCA"
+   ],
+   "n_rows": 2716,
+   "n_models": 247,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "DeepSeek-V4-Flash",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Mistral Medium 3.5",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_MMLU",
+   "kind": "lobo",
+   "drop": [
+    "MMLU"
+   ],
+   "n_rows": 2707,
+   "n_models": 236,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mixtral 8x22B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_MirrorCode",
+   "kind": "lobo",
+   "drop": [
+    "MirrorCode"
+   ],
+   "n_rows": 2840,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Mystery_Game_Puzzles",
+   "kind": "lobo",
+   "drop": [
+    "Mystery Game Puzzles"
+   ],
+   "n_rows": 2791,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Mistral Large 4"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_OSWorld",
+   "kind": "lobo",
+   "drop": [
+    "OSWorld"
+   ],
+   "n_rows": 2871,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_OSWorld_2_0",
+   "kind": "lobo",
+   "drop": [
+    "OSWorld 2.0"
+   ],
+   "n_rows": 2870,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_OpenBookQA",
+   "kind": "lobo",
+   "drop": [
+    "OpenBookQA"
+   ],
+   "n_rows": 2843,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Cerebras-GPT-13B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_PIQA",
+   "kind": "lobo",
+   "drop": [
+    "PIQA"
+   ],
+   "n_rows": 2823,
+   "n_models": 253,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Gemma 2 9B",
+    "Qwen-1_8B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_PostTrainBench",
+   "kind": "lobo",
+   "drop": [
+    "PostTrainBench"
+   ],
+   "n_rows": 2860,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_ProofBench",
+   "kind": "lobo",
+   "drop": [
+    "ProofBench"
+   ],
+   "n_rows": 2805,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Beam 1.0"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Remote_Labor_Index",
+   "kind": "lobo",
+   "drop": [
+    "Remote Labor Index"
+   ],
+   "n_rows": 2862,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_SimpleQA_Verified",
+   "kind": "lobo",
+   "drop": [
+    "SimpleQA Verified"
+   ],
+   "n_rows": 2785,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Mistral Large 4"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_SpireClimb",
+   "kind": "lobo",
+   "drop": [
+    "SpireClimb"
+   ],
+   "n_rows": 2870,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Surface_Evolver_Bench",
+   "kind": "lobo",
+   "drop": [
+    "Surface Evolver Bench"
+   ],
+   "n_rows": 2850,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Mistral Medium 3.5"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Terminal_Bench",
+   "kind": "lobo",
+   "drop": [
+    "Terminal Bench"
+   ],
+   "n_rows": 2844,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Gemini 2.5 Flash (Sep 2025)"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_The_Agent_Company",
+   "kind": "lobo",
+   "drop": [
+    "The Agent Company"
+   ],
+   "n_rows": 2863,
+   "n_models": 255,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Gemini 2.5 Flash (Sep 2025)"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_TriviaQA",
+   "kind": "lobo",
+   "drop": [
+    "TriviaQA"
+   ],
+   "n_rows": 2840,
+   "n_models": 254,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Claude Instant",
+    "PaLM 2-L"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_WeirdML_v3",
+   "kind": "lobo",
+   "drop": [
+    "WeirdML v3"
+   ],
+   "n_rows": 2853,
+   "n_models": 256,
+   "n_benchmarks": 56,
+   "dropped_models": [],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "LOBO_Winogrande",
+   "kind": "lobo",
+   "drop": [
+    "Winogrande"
+   ],
+   "n_rows": 2767,
+   "n_models": 241,
+   "n_benchmarks": 56,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "PaLM 2-L",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "C_FM",
+   "kind": "cluster",
+   "drop": [
+    "FrontierMath-Tiers-1-3-v2-Private",
+    "FrontierMath-Tier-4-v2-Private",
+    "FrontierMath-2025-02-28-Private",
+    "FrontierMath-Tier-4-2025-07-01-Private"
+   ],
+   "n_rows": 2645,
+   "n_models": 253,
+   "n_benchmarks": 53,
+   "dropped_models": [
+    "GPT-5.2 Pro",
+    "Muse Spark",
+    "Qwen3.6 27B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "C_ARC",
+   "kind": "cluster",
+   "drop": [
+    "ARC-AGI",
+    "ARC-AGI-2"
+   ],
+   "n_rows": 2692,
+   "n_models": 254,
+   "n_benchmarks": 55,
+   "dropped_models": [
+    "Beam 1.0",
+    "Grok 4 Fast"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "C_OTIS_LMCA",
+   "kind": "cluster",
+   "drop": [
+    "OTIS Mock AIME 2024-2025",
+    "LMCA"
+   ],
+   "n_rows": 2533,
+   "n_models": 241,
+   "n_benchmarks": 55,
+   "dropped_models": [
+    "DeepSeek-V4-Flash",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemma 4 26B A4B",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "QwQ-32B",
+    "Qwen3-14B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3-8B",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "gpt-oss-20b"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "C_OLD",
+   "kind": "cluster",
+   "drop": [
+    "HellaSwag",
+    "PIQA",
+    "Winogrande",
+    "TriviaQA",
+    "GSM8K"
+   ],
+   "n_rows": 2548,
+   "n_models": 219,
+   "n_benchmarks": 52,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V2 (MoE-236B, May 2024)",
+    "Dolly 2.0-12b",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemma 2 9B",
+    "Gemma 2B",
+    "INTELLECT-1",
+    "Mistral NeMo",
+    "Nemotron-4 15B",
+    "PaLM 2-L",
+    "PaLM 2-M",
+    "PaLM 2-S",
+    "Phi-1.5",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "RedPajama-INCITE-7B-Base",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "XGen-7B",
+    "Yi 6B",
+    "Yi-9B",
+    "internlm-20b",
+    "open_llama_7b",
+    "vicuna-13b-v1.1"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "C_F16",
+   "kind": "cluster",
+   "drop": [
+    "ARC-AGI",
+    "ARC-AGI-2",
+    "DTBench",
+    "FrontierMath-Tier-4-v2-Private",
+    "FrontierMath-Tiers-1-3-v2-Private",
+    "Furniture Assembly",
+    "GPQA diamond",
+    "GSM8K",
+    "HellaSwag",
+    "LMCA",
+    "MATH level 5",
+    "Mystery Game Puzzles",
+    "OTIS Mock AIME 2024-2025",
+    "PIQA",
+    "TriviaQA",
+    "Winogrande"
+   ],
+   "n_rows": 1234,
+   "n_models": 153,
+   "n_benchmarks": 41,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude 2",
+    "Claude 3 Haiku",
+    "Claude 3 Sonnet",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V2 (MoE-236B, May 2024)",
+    "DeepSeek-V3.1",
+    "DeepSeek-V4-Flash",
+    "Dolly 2.0-12b",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4 Turbo (Nov 2023)",
+    "GPT-4.1 nano",
+    "GPT-4o (May 2024)",
+    "GPT-5 Pro",
+    "GPT-5.2 Pro",
+    "GPT-5.4 Nano",
+    "GPT-5.5 Pro",
+    "Gemini 1.5 Flash (May 2024)",
+    "Gemini 1.5 Pro (May 2024)",
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash (Jun 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemini 3.1 Flash-Lite",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Gemma 2B",
+    "Gemma 3 27B",
+    "Gemma 4 26B A4B",
+    "Gemma 4 31B IT",
+    "Grok 4 Fast",
+    "Grok-2 (Dec 2024)",
+    "INTELLECT-1",
+    "Inkling-Small",
+    "Llama 3-70B",
+    "Llama 3.1-405B",
+    "Llama 3.1-70B",
+    "Llama 3.1-8B",
+    "Llama 3.2 90B",
+    "Llama 4 Scout",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mistral NeMo",
+    "Mixtral 8x22B",
+    "Muse Spark",
+    "Muse Spark Open",
+    "Nemotron-4 15B",
+    "PaLM 2-L",
+    "PaLM 2-M",
+    "PaLM 2-S",
+    "Phi-1.5",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen 3.5 Flash (hosted 35B-A3B)",
+    "Qwen 3.6 35B-A3B",
+    "Qwen 3.6 Flash",
+    "Qwen 3.6 Max (Preview)",
+    "Qwen-1_8B",
+    "Qwen2-72B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "Qwen3-14B",
+    "Qwen3-235B-A22B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B",
+    "Qwen3-32B",
+    "Qwen3-8B",
+    "Qwen3-Max",
+    "Qwen3.5 397B-A17B",
+    "Qwen3.5-9B",
+    "Qwen3.7-Plus",
+    "RedPajama-INCITE-7B-Base",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "XGen-7B",
+    "Yi 6B",
+    "Yi-9B",
+    "gpt-oss-20b",
+    "internlm-20b",
+    "o1-mini",
+    "o3-pro",
+    "open_llama_7b",
+    "vicuna-13b-v1.1",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.6 27B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R01",
+   "kind": "random",
+   "drop": [
+    "ANLI",
+    "Fiction.LiveBench",
+    "HellaSwag",
+    "OSWorld",
+    "OSWorld 2.0",
+    "OTIS Mock AIME 2024-2025",
+    "SimpleQA Verified",
+    "SpireClimb",
+    "Terminal Bench",
+    "The Agent Company",
+    "WeirdML v3"
+   ],
+   "n_rows": 2348,
+   "n_models": 236,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Falcon 2 11B",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Kimi K2 (Jul 2025)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "PaLM 2-L",
+    "QwQ-32B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "Qwen3-14B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3-8B",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R02",
+   "kind": "random",
+   "drop": [
+    "Aider polyglot",
+    "CL-bench",
+    "Chess Puzzles",
+    "Cybench",
+    "FrontierSWE",
+    "OSWorld",
+    "OpenBookQA",
+    "ProofBench",
+    "TriviaQA",
+    "WeirdML",
+    "Winogrande"
+   ],
+   "n_rows": 2252,
+   "n_models": 223,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V4-Flash",
+    "Dolly 2.0-12b",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Grok 4 Fast",
+    "Kimi K2 (Jul 2025)",
+    "Llama 3-8B",
+    "Mistral Large 4",
+    "Mistral Medium 3.5",
+    "PaLM 2-L",
+    "PaLM 2-M",
+    "PaLM 2-S",
+    "Phi-1.5",
+    "QwQ-32B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "RedPajama-INCITE-7B-Base",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B",
+    "o3-pro",
+    "open_llama_7b"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R03",
+   "kind": "random",
+   "drop": [
+    "ANLI",
+    "CL-bench",
+    "Cybench",
+    "DeepResearch Bench",
+    "FrontierMath-Tier-4-2025-07-01-Private",
+    "GSM8K",
+    "GSO-Bench",
+    "METR Time Horizons",
+    "OSWorld 2.0",
+    "PostTrainBench",
+    "Winogrande"
+   ],
+   "n_rows": 2511,
+   "n_models": 233,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemma 2 9B",
+    "Grok 4 Fast",
+    "PaLM 2-L",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R04",
+   "kind": "random",
+   "drop": [
+    "Balrog",
+    "CL-bench Life",
+    "DTBench",
+    "Fiction.LiveBench",
+    "FrontierCode",
+    "FrontierMath-Tiers-1-3-v2-Private",
+    "OSWorld",
+    "OSWorld 2.0",
+    "OTIS Mock AIME 2024-2025",
+    "Surface Evolver Bench",
+    "The Agent Company"
+   ],
+   "n_rows": 2165,
+   "n_models": 223,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "DeepSeek-V3.1",
+    "DeepSeek-V4-Flash",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-4.1 nano",
+    "Gemini 2.5 Flash (Jun 2025)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemma 2 27B",
+    "Gemma 4 26B A4B",
+    "Grok 4 Fast",
+    "Grok-2 (Dec 2024)",
+    "Llama 4 Scout",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mistral NeMo",
+    "Mixtral 8x22B",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen2.5-Max",
+    "Qwen3-14B",
+    "Qwen3-30B-A3B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3-32B",
+    "Qwen3-8B",
+    "Qwen3.5 397B-A17B",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "Qwen3.7-Plus",
+    "gpt-oss-20b"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R05",
+   "kind": "random",
+   "drop": [
+    "Balrog",
+    "CL-bench",
+    "DTBench",
+    "EBR-bench",
+    "FrontierCode",
+    "FrontierSWE",
+    "GSO-Bench",
+    "LMCA",
+    "MATH level 5",
+    "MMLU",
+    "Terminal Bench"
+   ],
+   "n_rows": 2039,
+   "n_models": 199,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Claude 2",
+    "Claude 3 Haiku",
+    "Claude 3 Sonnet",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V3.1",
+    "DeepSeek-V4-Flash",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4 Turbo (Nov 2023)",
+    "GPT-4o (May 2024)",
+    "Gemini 1.5 Flash (May 2024)",
+    "Gemini 1.5 Pro (May 2024)",
+    "Gemini 2.5 Flash (Jun 2025)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Gemma 4 26B A4B",
+    "Grok 4 Fast",
+    "Grok-2 (Dec 2024)",
+    "Llama 3-70B",
+    "Llama 3.1-70B",
+    "Llama 3.1-8B",
+    "Llama 3.2 90B",
+    "Llama 3.3 70B",
+    "Llama 4 Scout",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mistral NeMo",
+    "Mixtral 8x22B",
+    "Phi-4",
+    "Qwen2-72B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "Qwen3-14B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3-8B",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "Qwen3.7-Plus",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B",
+    "gpt-oss-20b",
+    "o3-pro"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R06",
+   "kind": "random",
+   "drop": [
+    "CL-bench Life",
+    "EBR-bench",
+    "FrontierCode",
+    "Furniture Assembly",
+    "GDPval",
+    "GSM8K",
+    "LAMBADA",
+    "LMCA",
+    "MirrorCode",
+    "PIQA",
+    "WeirdML"
+   ],
+   "n_rows": 2220,
+   "n_models": 220,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V3.1",
+    "DeepSeek-V4-Flash",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemma 2 9B",
+    "Gemma 4 26B A4B",
+    "Grok 4 Fast",
+    "Mistral Large 4",
+    "Mistral Medium 3.5",
+    "Mistral NeMo",
+    "Qwen-14B",
+    "Qwen-1_8B",
+    "Qwen-7B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-3B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "Qwen3.7-Plus",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "gpt-oss-20b",
+    "internlm-20b",
+    "o3-pro"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R07",
+   "kind": "random",
+   "drop": [
+    "ARC AI2",
+    "Aider polyglot",
+    "Balrog",
+    "Chess Puzzles",
+    "GDPval",
+    "GPQA diamond",
+    "GeoBench",
+    "SimpleQA Verified",
+    "Surface Evolver Bench",
+    "Terminal Bench",
+    "Winogrande"
+   ],
+   "n_rows": 2042,
+   "n_models": 204,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Dolly 2.0-12b",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4o (Aug 2024)",
+    "Gemini 2.0 Flash Thinking (Jan 2025)",
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash (Jun 2025)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Pro (May 2025)",
+    "Gemma 2 27B",
+    "Kimi K2 (Jul 2025)",
+    "Llama 3-70B",
+    "Llama 3.2 90B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mixtral 8x22B",
+    "Muse Spark 1.1",
+    "PaLM 2-L",
+    "PaLM 2-M",
+    "PaLM 2-S",
+    "Phi-1.5",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "RedPajama-INCITE-7B-Base",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B",
+    "open_llama_7b"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R08",
+   "kind": "random",
+   "drop": [
+    "APEX-Agents",
+    "Balrog",
+    "EBR-bench",
+    "Fiction.LiveBench",
+    "GSM8K",
+    "LAMBADA",
+    "MATH level 5",
+    "PIQA",
+    "ProofBench",
+    "VPCT",
+    "WeirdML"
+   ],
+   "n_rows": 2138,
+   "n_models": 211,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V3.1",
+    "DeepSeek-V4-Flash",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4.1 nano",
+    "Gemini 1.5 Flash (May 2024)",
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Grok 4 Fast",
+    "Grok-2 (Dec 2024)",
+    "Kimi K2 (Jul 2025)",
+    "Llama 3.1-8B",
+    "Llama 3.2 90B",
+    "Llama 4 Scout",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mistral NeMo",
+    "Mixtral 8x22B",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen-14B",
+    "Qwen-1_8B",
+    "Qwen-7B",
+    "Qwen2-72B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "internlm-20b"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R09",
+   "kind": "random",
+   "drop": [
+    "Aider polyglot",
+    "CL-bench Life",
+    "Furniture Assembly",
+    "GDPval",
+    "LAMBADA",
+    "METR Time Horizons",
+    "OTIS Mock AIME 2024-2025",
+    "ProofBench",
+    "Terminal Bench",
+    "TriviaQA",
+    "Winogrande"
+   ],
+   "n_rows": 2257,
+   "n_models": 226,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Kimi K2 (Jul 2025)",
+    "Mistral Medium 3",
+    "Muse Spark",
+    "PaLM 2-L",
+    "PaLM 2-M",
+    "PaLM 2-S",
+    "QwQ-32B",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R10",
+   "kind": "random",
+   "drop": [
+    "APEX-Agents",
+    "ARC-AGI",
+    "ARC-AGI-2",
+    "Chess Puzzles",
+    "FrontierCode",
+    "FrontierMath-2025-02-28-Private",
+    "LAMBADA",
+    "MATH level 5",
+    "METR Time Horizons",
+    "Surface Evolver Bench",
+    "Terminal Bench"
+   ],
+   "n_rows": 2211,
+   "n_models": 238,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-4 (Mar 2023)",
+    "GPT-5.2 Pro",
+    "GPT-5.5 Pro",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Grok 4 Fast",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mixtral 8x22B",
+    "Muse Spark 1.1",
+    "Qwen-1_8B",
+    "Qwen2-72B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R11",
+   "kind": "random",
+   "drop": [
+    "ARC-AGI",
+    "ARC-AGI-2",
+    "CL-bench",
+    "DeepResearch Bench",
+    "EBR-bench",
+    "FrontierMath-Tier-4-v2-Private",
+    "Mystery Game Puzzles",
+    "OSWorld",
+    "OSWorld 2.0",
+    "OpenBookQA",
+    "SimpleQA Verified"
+   ],
+   "n_rows": 2302,
+   "n_models": 248,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "GPT-5.2 Pro",
+    "GPT-5.5 Pro",
+    "Grok 4 Fast",
+    "Inkling-Small",
+    "Mistral Large 4",
+    "Muse Spark Open"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R12",
+   "kind": "random",
+   "drop": [
+    "ARC-AGI-2",
+    "CadEval",
+    "Furniture Assembly",
+    "GSM8K",
+    "MMLU",
+    "Mystery Game Puzzles",
+    "OTIS Mock AIME 2024-2025",
+    "ProofBench",
+    "SimpleQA Verified",
+    "Terminal Bench",
+    "Winogrande"
+   ],
+   "n_rows": 1968,
+   "n_models": 212,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4o (Aug 2024)",
+    "Gemini 1.5 Flash (May 2024)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "INTELLECT-1",
+    "Llama 3-70B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mixtral 8x22B",
+    "Muse Spark",
+    "PaLM 2-L",
+    "Phi-1.5",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi 6B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R13",
+   "kind": "random",
+   "drop": [
+    "ARC-AGI",
+    "Aider polyglot",
+    "Balrog",
+    "ExploitBench",
+    "GPQA diamond",
+    "GSO-Bench",
+    "GeoBench",
+    "Mystery Game Puzzles",
+    "OSWorld 2.0",
+    "OpenBookQA",
+    "SimpleQA Verified"
+   ],
+   "n_rows": 2146,
+   "n_models": 230,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "GPT-4 (Mar 2023)",
+    "GPT-4o (Aug 2024)",
+    "Gemini 2.0 Flash Thinking (Jan 2025)",
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash (Apr 2025)",
+    "Gemini 2.5 Flash (May 2025)",
+    "Gemini 2.5 Pro (May 2025)",
+    "Gemma 2 27B",
+    "Grok 4 Fast",
+    "Llama 3.2 90B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mixtral 8x22B",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen2.5-Max",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "o3-pro"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R14",
+   "kind": "random",
+   "drop": [
+    "ANLI",
+    "ARC AI2",
+    "ARC-AGI-2",
+    "CL-bench",
+    "CadEval",
+    "FrontierMath-Tier-4-2025-07-01-Private",
+    "GSO-Bench",
+    "GeoBench",
+    "MATH level 5",
+    "PostTrainBench",
+    "Surface Evolver Bench"
+   ],
+   "n_rows": 2370,
+   "n_models": 231,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "Gemini 2.0 Pro",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Llama 3.2 90B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mixtral 8x22B",
+    "PaLM 2-L",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R15",
+   "kind": "random",
+   "drop": [
+    "Fiction.LiveBench",
+    "FrontierCode",
+    "FrontierMath-2025-02-28-Private",
+    "FrontierMath-Tier-4-2025-07-01-Private",
+    "FrontierMath-Tier-4-v2-Private",
+    "FrontierSWE",
+    "GeoBench",
+    "MirrorCode",
+    "Mystery Game Puzzles",
+    "Remote Labor Index",
+    "WeirdML v3"
+   ],
+   "n_rows": 2400,
+   "n_models": 250,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Mistral Large 4",
+    "Muse Spark",
+    "QwQ-32B",
+    "Qwen3.8 Max (0902)"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R16",
+   "kind": "random",
+   "drop": [
+    "ANLI",
+    "FrontierMath-2025-02-28-Private",
+    "FrontierSWE",
+    "GPQA diamond",
+    "GSM8K",
+    "MATH level 5",
+    "METR Time Horizons",
+    "OSWorld",
+    "OpenBookQA",
+    "Terminal Bench",
+    "WeirdML v3"
+   ],
+   "n_rows": 2221,
+   "n_models": 212,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Cerebras-GPT-13B",
+    "Claude 2",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4 Turbo (Apr 2024)",
+    "GPT-4 Turbo (Nov 2023)",
+    "Gemini 1.5 Flash (May 2024)",
+    "Gemini 1.5 Pro (May 2024)",
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Grok-2 (Dec 2024)",
+    "Llama 3-70B",
+    "Llama 3.2 90B",
+    "Llama 4 Scout",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Medium 3",
+    "Mistral NeMo",
+    "Mixtral 8x22B",
+    "Muse Spark",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen-1_8B",
+    "Qwen2-72B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R17",
+   "kind": "random",
+   "drop": [
+    "ARC-AGI",
+    "DTBench",
+    "ExploitBench",
+    "Fiction.LiveBench",
+    "GPQA diamond",
+    "GeoBench",
+    "METR Time Horizons",
+    "MMLU",
+    "Mystery Game Puzzles",
+    "Terminal Bench",
+    "Winogrande"
+   ],
+   "n_rows": 1816,
+   "n_models": 180,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude 2",
+    "Claude 3 Haiku",
+    "Claude 3 Sonnet",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "DeepSeek-V3.1",
+    "DeepSeek-V4-Flash",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4 Turbo (Apr 2024)",
+    "GPT-4 Turbo (Nov 2023)",
+    "GPT-4.1 nano",
+    "GPT-4o (May 2024)",
+    "Gemini 1.5 Flash (May 2024)",
+    "Gemini 1.5 Pro (May 2024)",
+    "Gemini 2.0 Flash Thinking (Jan 2025)",
+    "Gemini 2.0 Pro",
+    "Gemini 2.5 Flash (Apr 2025)",
+    "Gemini 2.5 Flash (Jun 2025)",
+    "Gemini 2.5 Flash (May 2025)",
+    "Gemini 2.5 Flash (Sep 2025)",
+    "Gemini 2.5 Flash-Lite (Jun 2025)",
+    "Gemini 2.5 Pro (May 2025)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Gemma 3 27B",
+    "Gemma 4 26B A4B",
+    "Grok 4 Fast",
+    "Grok-2 (Dec 2024)",
+    "Kimi K2 (Jul 2025)",
+    "Llama 3-70B",
+    "Llama 3.1-70B",
+    "Llama 3.2 90B",
+    "Llama 4 Scout",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3",
+    "Mistral Medium 3.5",
+    "Mixtral 8x22B",
+    "PaLM 2-L",
+    "Phi-1.5",
+    "Phi-4",
+    "QwQ-32B",
+    "Qwen2-72B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "Qwen2.5-Max",
+    "Qwen3-14B",
+    "Qwen3-235B-A22B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B",
+    "Qwen3-30B-A3B-Instruct (Jul 2025)",
+    "Qwen3-30B-A3B-Thinking (Jul 2025)",
+    "Qwen3-32B",
+    "Qwen3-8B",
+    "Qwen3.5-35B-A3B",
+    "Qwen3.5-9B",
+    "Qwen3.6 27B",
+    "Qwen3.7-Plus",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B",
+    "gpt-oss-20b",
+    "o3-pro"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R18",
+   "kind": "random",
+   "drop": [
+    "ARC-AGI-2",
+    "Aider polyglot",
+    "BBH",
+    "Balrog",
+    "CL-bench",
+    "Cybench",
+    "GSM8K",
+    "GSO-Bench",
+    "PIQA",
+    "Remote Labor Index",
+    "Winogrande"
+   ],
+   "n_rows": 2327,
+   "n_models": 219,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Dolly 2.0-12b",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemma 2 9B",
+    "Grok 4 Fast",
+    "INTELLECT-1",
+    "Llama 3.1-8B",
+    "Mistral NeMo",
+    "Nemotron-4 15B",
+    "PaLM 2-L",
+    "QwQ-32B",
+    "Qwen-14B",
+    "Qwen-1_8B",
+    "Qwen-7B",
+    "Qwen2.5-Coder (1.5B)",
+    "Qwen2.5-Coder (7B)",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-14B",
+    "Qwen2.5-Coder-32B",
+    "Qwen2.5-Coder-3B",
+    "RedPajama-INCITE-7B-Base",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi 6B",
+    "Yi-9B",
+    "internlm-20b",
+    "open_llama_7b",
+    "vicuna-13b-v1.1"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R19",
+   "kind": "random",
+   "drop": [
+    "ANLI",
+    "CL-bench Life",
+    "Furniture Assembly",
+    "GSO-Bench",
+    "MMLU",
+    "Mystery Game Puzzles",
+    "OSWorld",
+    "PIQA",
+    "ProofBench",
+    "Surface Evolver Bench",
+    "WeirdML v3"
+   ],
+   "n_rows": 2349,
+   "n_models": 231,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Mar 2023)",
+    "Gemma 2 27B",
+    "Gemma 2 9B",
+    "Mistral Large",
+    "Mistral Large 2 (Jul 2024)",
+    "Mistral Large 4",
+    "Mistral Medium 3.5",
+    "Mixtral 8x22B",
+    "Qwen-1_8B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-32B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "Yi-9B"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  },
+  {
+   "id": "R20",
+   "kind": "random",
+   "drop": [
+    "ANLI",
+    "ARC-AGI",
+    "ARC-AGI-2",
+    "BBH",
+    "DeepResearch Bench",
+    "GSM8K",
+    "LAMBADA",
+    "OSWorld",
+    "OSWorld 2.0",
+    "OpenBookQA",
+    "PostTrainBench"
+   ],
+   "n_rows": 2418,
+   "n_models": 235,
+   "n_benchmarks": 46,
+   "dropped_models": [
+    "Baichuan 2-7B",
+    "Beam 1.0",
+    "Cerebras-GPT-13B",
+    "Claude Instant",
+    "CodeQwen1.5-7B",
+    "DeepSeek Coder 33B",
+    "DeepSeek Coder 6.7B",
+    "DeepSeek-Coder-V2-Lite-Base",
+    "Falcon 2 11B",
+    "GPT-3.5 Turbo (Jun 2023)",
+    "Gemma 2 9B",
+    "Grok 4 Fast",
+    "Qwen-14B",
+    "Qwen-1_8B",
+    "Qwen-7B",
+    "Qwen2.5-Coder-0.5B",
+    "Qwen2.5-Coder-3B",
+    "StarCoder 2 15B",
+    "StarCoder 2 3B",
+    "StarCoder 2 7B",
+    "internlm-20b"
+   ],
+   "anchors_present": [
+    "Claude 3.5 Sonnet",
+    "GPT-5"
+   ],
+   "unanchored": false
+  }
+ ]
+}

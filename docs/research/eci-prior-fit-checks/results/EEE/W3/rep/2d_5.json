@@ -1,0 +1,86 @@
+{
+ "gen": "2d",
+ "r": 5,
+ "seed": 1990389718,
+ "position": 1000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "second_dim_benchmarks": [
+   0,
+   2,
+   4,
+   5,
+   6,
+   7,
+   8,
+   12,
+   14,
+   15,
+   16,
+   17,
+   21,
+   24,
+   25,
+   28,
+   29,
+   30,
+   31,
+   35,
+   41,
+   43,
+   45,
+   46,
+   47,
+   49,
+   50,
+   52
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0050723870210339,
+  "min_ess": 1655.3268561366608
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0050723870210339,
+   "min_ess": 1655.3268561366608
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96837) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 264.6,
+ "T": {
+  "T1": 3.9682870955330958,
+  "T2": 4.414996121420886,
+  "T3": 0.11503357341240115,
+  "T4": 0.12782584608149433,
+  "T5": 2.8361653465559695,
+  "T6": 24.894734391936204,
+  "T7": 2.502311786946291
+ },
+ "maxima": {
+  "Qb": 12.6413612616921,
+  "q": 158.78613822842019,
+  "t": 2.8361653465559695,
+  "cb": 10.927297108612768
+ }
+}

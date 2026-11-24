@@ -1,0 +1,55 @@
+{
+ "gen": "disp",
+ "r": 6,
+ "seed": 3050875936,
+ "position": 1200,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {},
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0049914059980316,
+  "min_ess": 1408.7932702422638
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0049914059980316,
+   "min_ess": 1408.7932702422638
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4294) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 360.5,
+ "T": {
+  "T1": 2.6402879371575176,
+  "T2": 1.095692070161828,
+  "T3": 0.24796049557001898,
+  "T4": 0.006111881791085474,
+  "T5": 2.7123224481258235,
+  "T6": 211.8997360138423,
+  "T7": 14.142222705266796
+ },
+ "maxima": {
+  "Qb": 19.833632693104978,
+  "q": 15.954467954298147,
+  "t": 2.7123224481258235,
+  "cb": 28.980455509352183
+ }
+}

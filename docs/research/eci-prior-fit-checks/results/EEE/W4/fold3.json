@@ -1,0 +1,49 @@
+{
+ "input_sha256": "d69cfc9b6b5083f31a3393c5f8440ba95f3e6c93eb3f47a4720772fa30fcd21e",
+ "code_sha256": "53da48100597713f4249319917e92b45172424ac3d9eefc01b4e1e42a1e97af2",
+ "args": {
+  "seed": 12348,
+  "draws": null,
+  "evaluate": false,
+  "spec": null,
+  "priors": null,
+  "chains": 4,
+  "target_accept": 0.95,
+  "clip": 0.001
+ },
+ "name": "fold3",
+ "started_from": "pilot",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0044379692535752,
+   "min_ess": 1010.8663055248704
+  }
+ ],
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0044379692535752,
+  "min_ess": 1010.8663055248704
+ },
+ "warnings": [
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "Cannot cache compiled function \"numba_funcified_fgraph\" as it uses dynamic globals (such as ctypes pointers and large global arrays)",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98418) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 310.8,
+ "min_tail_ess": 1358.0884931282717,
+ "min_bfmi": "n/a: TypeError"
+}

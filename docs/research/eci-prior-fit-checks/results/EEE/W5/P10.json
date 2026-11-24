@@ -1,0 +1,43 @@
+{
+ "name": "P10",
+ "cap_s": 7200,
+ "started": "2026-11-21T08:23:44Z",
+ "attempts": [
+  {
+   "draws": 4000,
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0013650504375313,
+    "min_ess": 6800.816840142041
+   },
+   "started_from": "pilot",
+   "wall": 371.7,
+   "warnings": [
+    "This process (pid=95953) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=95953) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=95953) is multi-threaded, use of fork() may lead to deadlocks in the child."
+   ],
+   "ladder": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0013650504375313,
+     "min_ess": 6800.816840142041
+    }
+   ],
+   "seed": 12345,
+   "kw": "{\"s0\": 2.5325083759394027, \"variant\": \"P10\"}",
+   "n_draws_total": 16000
+  }
+ ],
+ "resolved": true,
+ "converged": true,
+ "timeout": false,
+ "n_draws_total": 16000
+}

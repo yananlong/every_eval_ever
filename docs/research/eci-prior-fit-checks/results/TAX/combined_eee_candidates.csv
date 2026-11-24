@@ -1,0 +1,101 @@
+domain,sub_theme,family,eci_models,rows,sources,collections
+"Business, Finance & Professional Work",Customer service & business operations,tau-bench,110,40266,Artificial Analysis|BenchPress|Exgentic|LLM Stats|Papers with Code|Princeton SAgE Team|Sierra,8
+"Business, Finance & Professional Work",Finance & financial analysis,CorpFin,86,1478,BenchPress|Vals.ai,2
+"Business, Finance & Professional Work",Finance & financial analysis,Finance Agent,82,12940,BenchPress|LLM Stats|Papers with Code|Vals.ai,4
+"Business, Finance & Professional Work",Finance & financial analysis,MortgageTax,73,1656,Vals.ai,1
+"Business, Finance & Professional Work",Finance & financial analysis,Excel Modeling Benchmark,52,8890,Vals.ai,1
+"Business, Finance & Professional Work",Customer service & business operations,Vending-Bench,49,312,BenchPress|LLM Stats|Papers with Code,3
+"Business, Finance & Professional Work",Professional & occupational knowledge work,AutomationBench,37,911,BenchPress|LLM Stats|Papers with Code,3
+"Business, Finance & Professional Work",Professional & occupational knowledge work,jobbench,24,418,BenchPress|LLM Stats|Papers with Code,3
+"Business, Finance & Professional Work",Professional & occupational knowledge work,agentslastexam,21,666,BenchPress|LLM Stats|Papers with Code,3
+"Business, Finance & Professional Work",Business & enterprise documents,OfficeQA,20,438,BenchPress|LLM Stats|Papers with Code,3
+"Computers, Web & Apps",Web search & deep research,BrowseComp,49,2076,BenchPress|Exgentic|LLM Stats|Papers with Code,5
+"Computers, Web & Apps","APIs, function calling & tool ecosystems",Toolathlon,46,991,BenchPress|LLM Stats|Papers with Code,3
+"Computers, Web & Apps","APIs, function calling & tool ecosystems",MCP Atlas,37,912,BenchPress|LLM Stats|Papers with Code,3
+"Computers, Web & Apps",Desktop & OS computer use,coarena,26,138,Papers with Code,1
+"Computers, Web & Apps",Web search & deep research,deepsearchqa,24,415,BenchPress|LLM Stats|Papers with Code,3
+"Computers, Web & Apps","APIs, function calling & tool ecosystems",BFCL,23,5136,BenchPress|LLM Stats|Papers with Code|Swiss AI Initiative|UC Berkeley Gorilla,5
+"Computers, Web & Apps","APIs, function calling & tool ecosystems",claweval,20,556,BenchPress|LLM Stats|Papers with Code,3
+Everyday Life & Physical World,"Homes, robotics & embodied environments",Blueprint-Bench,31,160,BenchPress|LLM Stats|Papers with Code,3
+Everyday Life & Physical World,Everyday physical & social situations,commonsenseqa,22,350,Arcadia Impact|Kensho|LLM Stats|Papers with Code|Swiss AI Initiative,5
+General / multi-subject,Multi-subject academic exams,Humanity's Last Exam,161,53240,Artificial Analysis|BenchPress|LLM Stats|Papers with Code|Scale|UK AI Security Institute,5
+General / multi-subject,Aggregate indices & mixed suites,AA indices,156,85475,Artificial Analysis|BenchPress|Papers with Code,3
+General / multi-subject,Multi-subject academic exams,MMMU,96,3817,BenchPress|LLM Stats|Papers with Code|Vals.ai,4
+General / multi-subject,Aggregate indices & mixed suites,Vals Index,77,8156,BenchPress|LLM Stats|Papers with Code|Vals.ai,4
+General / multi-subject,Aggregate indices & mixed suites,livebench,60,20566,BenchPress|LLM Stats|LiveBench|Papers with Code,4
+General / multi-subject,Open-ended chat & instruction requests,Chatbot Arena,55,1627,BenchPress|LMArena (formerly LMSYS)|LMSYS,3
+General / multi-subject,General world knowledge & trivia,naturalquestions,46,393,LLM Stats|Papers with Code|crfm,4
+General / multi-subject,Aggregate indices & mixed suites,helmlite,45,91,crfm,1
+General / multi-subject,General world knowledge & trivia,TruthfulQA,44,4331,BenchPress|Human-Centered Eval|Kensho|LLM Stats|Papers with Code|Swiss AI Initiative|aiXamine|crfm,8
+General / multi-subject,Open-ended chat & instruction requests,wildbench,37,737,BenchPress|Human-Centered Eval|LLM Stats|crfm,4
+General / multi-subject,General visual & audio-visual understanding,Video-MME,29,1778,BenchPress|LLM Stats|Papers with Code,3
+General / multi-subject,Open-ended chat & instruction requests,arenahardauto,29,214,BenchPress|Swiss AI Initiative,2
+General / multi-subject,Multi-subject academic exams,videommmu,27,834,BenchPress|LLM Stats|Papers with Code,3
+General / multi-subject,Open-ended chat & instruction requests,multichallenge,27,271,BenchPress|LLM Stats|Papers with Code,3
+General / multi-subject,Aggregate indices & mixed suites,BBH,24,2188,Arcadia Impact|Kensho|Swiss AI Initiative,3
+General / multi-subject,General world knowledge & trivia,boolq,23,676,Human-Centered Eval|Kensho|LLM Stats|Papers with Code|crfm,5
+Health & Medicine,Medical knowledge & licensing exams,medqa,95,1868,Kensho|Open Life Science AI|Papers with Code|Vals.ai|crfm,5
+Health & Medicine,Clinical practice & health conversations,medscribe,71,1438,Vals.ai,1
+Health & Medicine,Clinical practice & health conversations,MedCode,69,1508,Vals.ai,1
+Health & Medicine,Clinical practice & health conversations,HealthBench,35,1464,BenchPress|LLM Stats|Papers with Code|UK AI Security Institute,4
+"Languages, Cultures & Humanities",Translation & multilingual text,WMT,52,713,BenchPress|LLM Stats|Papers with Code|WMT Conference|crfm,5
+"Law, Government & Policy","Legal practice, tax & regulation",LegalBench,133,11083,Vals.ai|crfm,2
+"Law, Government & Policy","Legal practice, tax & regulation",TaxEval,95,3291,Vals.ai,1
+"Law, Government & Policy","Legal practice, tax & regulation",Harvey LAB,58,51160,BenchPress|LLM Stats|Papers with Code|Vals.ai,4
+"Law, Government & Policy","Legal practice, tax & regulation",Legal Research Bench,53,16668,BenchPress|Vals.ai,2
+"Law, Government & Policy","Legal practice, tax & regulation",Tax Agent Bench,49,3892,Vals.ai,1
+"Law, Government & Policy","Legal practice, tax & regulation",CaseLaw,44,158,Vals.ai,1
+"Law, Government & Policy",Government & public policy,Public Benefits Bench,34,497,Vals.ai,1
+Mathematics,University & research mathematics,sage,67,4652,Vals.ai,1
+Mathematics,Competition & olympiad math,MATH,62,1719,BenchPress|Kensho|LLM Stats|Papers with Code|crfm,5
+Mathematics,Competition & olympiad math,HMMT,49,1582,BenchPress|LLM Stats|Papers with Code,3
+Mathematics,Competition & olympiad math,omnimath,42,1202,BenchPress|Human-Centered Eval|LLM Stats|Papers with Code|crfm,5
+Mathematics,University & research mathematics,riemannbench,35,100,BenchPress|LLM Stats|Papers with Code,3
+Mathematics,Visual & diagrammatic math,MathVista,33,1566,Arcadia Impact|BenchPress|LLM Stats|Papers with Code,4
+Mathematics,Competition & olympiad math,imoanswerbench,30,572,BenchPress|LLM Stats,2
+Mathematics,School & word-problem math,mathmc,30,360,"Writer, Inc.",1
+Mathematics,Visual & diagrammatic math,mathvision,28,1099,BenchPress|LLM Stats|Papers with Code,3
+"Media, Arts & Online Content","Fiction, film & TV",NarrativeQA,45,158,crfm,2
+"Media, Arts & Online Content",Encyclopedic & reference text,drop,30,542,BenchPress|Kensho|LLM Stats|Papers with Code|Swiss AI Initiative,5
+Natural Sciences,Scientific literature & figures,CharXiv,56,1462,BenchPress|LLM Stats|Papers with Code,3
+Natural Sciences,Expert & graduate-level science questions,critpt,40,542,BenchPress|LLM Stats|Papers with Code,3
+Natural Sciences,Expert & graduate-level science questions,FrontierScience,20,512,BenchPress|LLM Stats|Papers with Code,3
+Natural Sciences,Life sciences & lab research,biomysterybench,20,570,LLM Stats|Vals.ai,2
+No specific subject (Axis 2 only),Synthetic long-context retrieval,AA-LCR,128,43732,Artificial Analysis|BenchPress|LLM Stats,3
+No specific subject (Axis 2 only),Instruction-following with synthetic constraints,IFEval,117,6941,Arcadia Impact|BenchPress|Hugging Face|Human-Centered Eval|Kensho|LLM Stats|Papers with Code|Swiss AI Initiative|crfm,9
+No specific subject (Axis 2 only),Instruction-following with synthetic constraints,IFBench,103,36850,Artificial Analysis|BenchPress|LLM Stats|Papers with Code,4
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",Anthropic red-team prompts,56,589,Human-Centered Eval|aiXamine|crfm,3
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",simplesafetytests,56,1147,Human-Centered Eval|aiXamine|crfm,3
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",xstest,56,2670,Human-Centered Eval|LLM Stats|aiXamine|crfm,4
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",harmbench,55,1071,Human-Centered Eval|Swiss AI Initiative|crfm,3
+No specific subject (Axis 2 only),Synthetic long-context retrieval,MRCR,43,966,Anthropic|BenchPress|Context Arena (independent project by Dillon Uzar)|LLM Stats|OpenAI|Papers with Code,4
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",bbq,38,3115,Human-Centered Eval|Swiss AI Initiative|aiXamine|crfm,4
+No specific subject (Axis 2 only),Synthetic long-context retrieval,GraphWalks,34,1261,BenchPress|LLM Stats,2
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",rewardbench2,27,1652,"Allen Institute for AI|Papers with Code|Writer, Inc.",3
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",vectarahallucinationleaderboardprivateevaluationcorpus,27,4200,Vectara,1
+No specific subject (Axis 2 only),"Documents, charts & text in images",OmniDocBench,26,997,BenchPress|LLM Stats|Papers with Code,3
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",judgebench,26,220,"Writer, Inc.",1
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",factsgrounding,25,219,BenchPress|Google DeepMind|LLM Stats|Papers with Code,4
+No specific subject (Axis 2 only),Generic visual perception,babyvision,24,644,BenchPress|LLM Stats|Papers with Code,3
+No specific subject (Axis 2 only),Instruction-following with synthetic constraints,collie,24,212,BenchPress|LLM Stats,2
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",orbench,24,1543,Human-Centered Eval|Swiss AI Initiative|aiXamine,3
+No specific subject (Axis 2 only),"Documents, charts & text in images",ChartQA,23,972,BenchPress|LLM Stats|Papers with Code,3
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",bullshitbench,23,75,BenchPress,1
+No specific subject (Axis 2 only),"Safety, harms & trust (subject-free)",helmairbench,22,32538,crfm,1
+No specific subject (Axis 2 only),Instruction-following with synthetic constraints,Multi-IF,21,653,BenchPress|LLM Stats|Papers with Code|Swiss AI Initiative,4
+Puzzles & Games,Abstract puzzles & logic,musr,52,4669,Hugging Face|Kensho|LLM Stats,3
+Software & Computing,General programming tasks,SciCode,152,24431,Artificial Analysis|BenchPress|LLM Stats|Papers with Code|Princeton SAgE Team,5
+Software & Computing,Competitive programming & algorithms,LiveCodeBench,145,33363,Artificial Analysis|BenchPress|LLM Stats|Papers with Code|Vals.ai,5
+Software & Computing,Repository-level software engineering,SWE-bench family,112,8703,Arcadia Impact|BenchPress|ByteDance-Seed|Exgentic|LLM Stats|Papers with Code|Princeton SAgE Team|SWE-bench|UK AI Security Institute|Vals.ai,11
+Software & Computing,App & web development,Vibe Code Bench,70,1607,BenchPress|LLM Stats|Vals.ai,3
+Software & Computing,Competitive programming & algorithms,ioi,61,1526,Vals.ai,1
+Software & Computing,Repository-level software engineering,codemigration,55,3504,Vals.ai,1
+Software & Computing,Repository-level software engineering,programbench,51,3627,BenchPress|LLM Stats|Papers with Code|Vals.ai,4
+Software & Computing,General programming tasks,humaneval,45,1343,BenchPress|LLM Stats|Papers with Code,3
+Software & Computing,Repository-level software engineering,DeepSWE,43,1443,BenchPress|LLM Stats|Papers with Code,3
+Software & Computing,Cybersecurity,CyberBench,40,750,Vals.ai,1
+Software & Computing,General programming tasks,skillsbench,34,1361,BenchPress|LLM Stats|Papers with Code|Vals.ai,4
+Software & Computing,Cybersecurity,cybergym,33,718,BenchPress|LLM Stats|Papers with Code,3
+Software & Computing,Competitive programming & algorithms,Codeforces,28,438,BenchPress|LLM Stats,2
+Software & Computing,Repository-level software engineering,NL2Repo,26,876,BenchPress|LLM Stats|Papers with Code,3
+Software & Computing,Repository-level software engineering,swemarathon,26,289,LLM Stats|Papers with Code,2

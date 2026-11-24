@@ -1,0 +1,13 @@
+axis2_property,eci_benchmarks,eci_cells,eee_benchmarks,eee_rows,eci_models_any,eee_benchmarks_not_in_eci,eci_models_ge3_non_eci_benchmarks,non_eci_benchmarks_ge20_eci_models
+"Safety: harmful requests, jailbreaks & over-refusal",0,0,29,53820,81,29,63,6
+"Truthfulness, misconceptions & hallucination",1,88,9,10435,77,9,22,4
+"Bias, stereotypes & toxicity",0,0,6,5494,38,6,14,1
+Privacy & personal information,0,0,2,1234,14,2,0,0
+Evaluating AI systems,0,0,4,2912,31,4,1,2
+Hazardous & dual-use knowledge,2,26,12,2806,69,10,21,2
+Long context,4,109,18,48525,179,17,53,5
+Instruction following,0,0,6,44734,160,6,33,4
+Knowledge,8,547,134,174887,215,113,82,8
+Reasoning,31,2058,121,226353,219,104,168,28
+Robustness & adversarial perturbation,1,9,2,10164,14,2,0,0
+Task skill (no Axis 2 property),22,637,173,407477,200,162,173,42

@@ -1,0 +1,48 @@
+{
+ "input_sha256": "3886155f75baac9070e46a8258cb523df1050af85b410cf53716026a6e03d080",
+ "code_sha256": "53da48100597713f4249319917e92b45172424ac3d9eefc01b4e1e42a1e97af2",
+ "args": {
+  "seed": 12349,
+  "draws": null,
+  "evaluate": false,
+  "spec": null,
+  "priors": null,
+  "chains": 4,
+  "target_accept": 0.95,
+  "clip": 0.001
+ },
+ "name": "fold4",
+ "started_from": "pilot",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.004104352329802,
+   "min_ess": 1359.4030768144237
+  }
+ ],
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.004104352329802,
+  "min_ess": 1359.4030768144237
+ },
+ "warnings": [
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98588) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 227.9,
+ "min_tail_ess": 1582.6055513013218,
+ "min_bfmi": "n/a: TypeError"
+}

@@ -1,0 +1,43 @@
+{
+ "name": "P7",
+ "cap_s": 7200,
+ "started": "2026-11-20T15:53:14Z",
+ "attempts": [
+  {
+   "draws": 4000,
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0009226710595618,
+    "min_ess": 5591.262490533271
+   },
+   "started_from": "pilot",
+   "wall": 382.3,
+   "warnings": [
+    "This process (pid=90792) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=90792) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=90792) is multi-threaded, use of fork() may lead to deadlocks in the child."
+   ],
+   "ladder": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0009226710595618,
+     "min_ess": 5591.262490533271
+    }
+   ],
+   "seed": 12345,
+   "kw": "{\"epoch_priors\": {\"sigma_median\": [-2.3025850929940455, 1.0], \"tau_alpha\": [-0.6931471805599453, 1.0], \"tau_sigma\": [-0.6931471805599453, 1.0]}}",
+   "n_draws_total": 16000
+  }
+ ],
+ "resolved": true,
+ "converged": true,
+ "timeout": false,
+ "n_draws_total": 16000
+}

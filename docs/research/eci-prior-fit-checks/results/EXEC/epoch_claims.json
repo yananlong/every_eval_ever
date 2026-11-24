@@ -1,0 +1,148 @@
+[
+ {
+  "id": 1,
+  "page_url": "https://epoch.ai/eci",
+  "verified": true,
+  "verbatim": "Similar to an IQ test, ECI is designed to capture a broad, underlying capability useful across many tasks, rather than performance on specific skills.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=designed%20to%20capture%20a%20broad",
+  "note": "Exact match; sentence opens \"Similar to an IQ test,\". [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 2,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "We assume that a model’s performance on every benchmark depends on a single capability dimension.",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=depends%20on%20a%20single%20capability%20dimension",
+  "note": "Exact match (curly apostrophe in model’s). [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 3,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "PIT KS statisticLower (0) is better0.0418 | Mean PITCloser to 0.5 is better0.5087 | PPP, varianceCloser to 0.5 is better0.565 | PPP, IQRCloser to 0.5 is better0.078",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=PIT%20KS%20statistic",
+  "note": "All four values are in a table (\"Our results\") under \"We also check the PIT (probability integral transform) and PPP (posterior predictive p-values).\" Ideal for each: KS lower is better; mean PIT/PPP closer to 0.5. IQR PPP 0.078 is far from 0.5 per the page own criterion and the page text gives no comment on it; do not describe all checks as passing. Fragment given as the row; may not text-fragment-match across table cells, so also see fragment_alt. [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z",
+  "fragment_alt": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=PPP%2C%20IQR [occurrences: 1]"
+ },
+ {
+  "id": 4,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "Both fits’ intervals contain close to 90% of out-of-sample scores (89.6% for the Bayesian fit, 88.6% for the frequentist).",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=89.6%25%20for%20the%20Bayesian%20fit",
+  "note": "Page says \"out-of-sample\"; table column is \"Bayesian leave-one-out\" (PSIS-LOO approximation, 90% coverage, all scores = 89.6%). Leave-one-out is approximated, not exact refits (exact refits on an earlier model version within ~1 pt). Coverage for scores <=0.05 is 80.5%. [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 5,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "We chose fixed hyperparameters via grid search; the results are not sensitive to them.",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=chose%20fixed%20hyperparameters%20via%20grid%20search",
+  "note": "Exact match. [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 6,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "Because we estimate all models’ capabilities in one joint posterior, we can now compare models by giving the probability that one model is more capable than another.",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=compare%20models%20by%20giving%20the%20probability",
+  "note": "Quote exact. Next sentence: \"Figure 15 shows the five models closest behind GPT-6 Astra, which has a 72% probability of being more capable than Claude Opus 5.5, but a 99% probability of being more capable than Claude Fable 5.1.\" Also: 90% interval for the gap runs from −0.9 to +2.1. [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 7,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "For models at ECI 125 and above, which include every frontier model, ECIs move by about one point on average and always stay inside their previous intervals.",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=ECIs%20move%20by%20about%20one%20point%20on%20average",
+  "note": "Exact. Supporting table: 176 models, mean change -0.1, mean absolute 0.9; RMSE 1.1. Page also says \"Every model’s new ECI lies inside its previous 90% confidence interval\". Frontier (above 130) moves <0.3 on average in the prior-sensitivity section. [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 8,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": true,
+  "verbatim": "The data alone cannot distinguish the two priors, as both fit the observed scores almost equally well.",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=data%20alone%20cannot%20distinguish%20the%20two%20priors",
+  "note": "Prior sentence: \"Under uniform priors, models between ECI 100 and 130 sit about 4 points lower, and models below 100 about 20 points lower (Figure 17).\" Page says \"cannot distinguish the two priors, as both fit ... almost equally well\"; quote in claim is a truncation. [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 9,
+  "page_url": "https://epoch.ai/eci",
+  "verified": true,
+  "verbatim": "The ECI scale is linear; in theory, a 10 point jump should be equally “impressive” when moving from 100 to 110 as it is going from 140 to 150.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=The%20ECI%20scale%20is%20linear",
+  "note": "Hedged: \"in theory\", and \"impressive\" in curly quotes. Same paragraph adds: \"just because ECI is linear doesn’t mean that other things we care about are linear in ECI units.\" Also \"Absolute ECI values are meaningless by themselves\". Not literally \"equal point gaps mean the same anywhere\". [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 10,
+  "page_url": "https://epoch.ai/eci",
+  "verified": true,
+  "verbatim": "Similar principles hold when looking at trends in ECI; absolute slope values are meaningless, but relative changes in slope indicate faster or slower progress.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=relative%20changes%20in%20slope%20indicate%20faster%20or%20slower%20progress",
+  "note": "Exact; preceded by \"absolute slope values are meaningless, but\". [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 11,
+  "page_url": "https://epoch.ai/eci",
+  "verified": "partial",
+  "verbatim": "Isn’t it a problem if model developers release only their best scores? | It is true that evaluations from model developer reports might be cherry-picked in order to make the model look better. ... We mitigate against this by running models on our own internal evaluations, and by collecting evaluations from independently-run leaderboards. Since these sources are reported regardless of outcome, they reduce the impact of cherry-picking.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=mitigate%20against%20this%20by%20running%20models",
+  "note": "Two separate FAQ items. (a) Best-scores/cherry-picking: mitigation = own internal evaluations AND independently-run leaderboards (not only Epoch own runs). (b) Separate FAQ \"Isn’t it a problem if model developers optimize for benchmark scores?\": \"model developers can optimize for high performance on certain benchmarks, so that we overestimate the capabilities of some models\" - no mitigation stated there (\"inherits its limitations\"). Page says \"release only their best scores\", not \"publish\". [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 12,
+  "page_url": "https://epoch.ai/eci",
+  "verified": true,
+  "verbatim": "As future models and benchmarks are incorporated, these calibration points may be revisited.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=these%20calibration%20points%20may%20be%20revisited",
+  "note": "/eci exact. Methodology page (see fragment_alt/methodology_quote): \"These two anchor models therefore have no uncertainty, and every other model’s interval describes its position relative to them.\" Bayesian post also: \"The anchors themselves have no uncertainty.\" [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z",
+  "fragment_alt": "https://epoch.ai/data/eci-documentation/methodology#:~:text=These%20two%20anchor%20models%20therefore%20have%20no%20uncertainty [occurrences: 1]"
+ },
+ {
+  "id": 13,
+  "page_url": "https://epoch.ai/eci",
+  "verified": true,
+  "verbatim": "As new models and new benchmark evaluations are obtained, values may shift slightly even for models whose data have not changed.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=values%20may%20shift%20slightly%20even%20for%20models",
+  "note": "Preceded by \"The model used to produce ECI scores is fit jointly across all data.\" [substring occurrences in page text: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 14,
+  "page_url": "https://epoch.ai/eci",
+  "verified": "partial",
+  "verbatim": "How do you decide which benchmarks to use? | As a general principle, Epoch aims to collect benchmarks that are diverse, economically valuable, unsaturated, and widely used.",
+  "fragment_url": "https://epoch.ai/eci#:~:text=Epoch%20aims%20to%20collect%20benchmarks%20that%20are%20diverse",
+  "note": "Not on the methodology page or the Bayesian post as a sensitivity analysis. Search hits: methodology page has only an \"Included benchmarks\" nav link/section, no selection or leave-one-benchmark discussion; Bayesian post has no \"benchmark selection\", \"which benchmarks\", or \"leave-one-benchmark\"; \"sensitiv\" in Bayesian post only for the clipping range (\"The ECI results are not sensitive to the exact range used here.\"), hyperparameters (claim 5) and priors (claim 8). WinoGrande slope-fixing is explained as \"a benchmark which was selected due to its good coverage of the original benchmarks in the ECI when it was launched\". The only selection discussion is the /eci FAQ (criteria) and the Domain-specific ECI section: \"The Domain-specific ECIs show how LLMs’ ECI scores are influenced by the selection of benchmarks used to calculate them.\" (a descriptive product, not a robustness test; it keeps benchmark difficulty and slopes from the general fit). [substring occurrences: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 15,
+  "page_url": "https://epoch.ai/data-insights/interpreting-eci",
+  "verified": true,
+  "verbatim": "Currently, the ECI uses 1123 distinct evaluations, covering 147 models and 39 underlying benchmarks.",
+  "fragment_url": "https://epoch.ai/data-insights/interpreting-eci#:~:text=1123%20distinct%20evaluations%2C%20covering%20147%20models",
+  "note": "Yes, unchanged on the live page: written \"1123\" (no comma). Page dated Nov. 6, 2025 (Data Insight, by Jaeho Lee and Luke Emberson); live page fetched with an Accessed 22 Nov 2026 citation line, so it was not updated. The text contains no mention of the Bayesian model, and it describes the bootstrap version: \"We calculate 90% confidence intervals by bootstrap resampling from our observed scores, fitting a new model for each resample...\". Current counts per Bayesian post (data accessed Oct 26, 2026): \"2,810 scores, 252 models, and 59 benchmarks\". [substring occurrences: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ },
+ {
+  "id": 16,
+  "page_url": "https://epoch.ai/publications/eci-bayesian-methodology",
+  "verified": false,
+  "verbatim": "We assume that a model’s performance on every benchmark depends on a single capability dimension.",
+  "fragment_url": "https://epoch.ai/publications/eci-bayesian-methodology#:~:text=depends%20on%20a%20single%20capability%20dimension",
+  "note": "Not tested on any of the four pages: unidimensionality is only assumed (searched residual, dimension, two-dim, multidim, unidim). Posterior predictive checks, PIT, coverage and leave-one-out are calibration checks of the one-dimension model, not a dimensionality test; no residual-correlation or 2D comparison. Anchor-identity sensitivity: not tested; anchors (Claude 3.5 Sonnet=130, GPT-5=150) are fixed, gap fixed at 20 ECI points, and the post only explains that anchors have no uncertainty and make all others relative to them (\"Because both fits fix the gap between these two anchors at 20 ECI points, the Bayesian scale stretches relative to the frequentist one.\"). No re-anchoring experiment. [substring occurrences: 1]",
+  "fetched_at": "2026-11-22T13:38:13Z"
+ }
+]

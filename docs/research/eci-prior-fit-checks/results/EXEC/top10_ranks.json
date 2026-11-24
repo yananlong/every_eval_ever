@@ -1,0 +1,166 @@
+{
+ "source": "runs/W/W2/seed12345 posterior (Epoch data, Epoch priors), via lib.anchors.load_seed",
+ "n_models": 256,
+ "n_draws": 4000,
+ "top12": [
+  {
+   "rank": 1,
+   "model": "Claude Fable 5.2",
+   "eci_mean": 173.3329042000611,
+   "rank_90": [
+    1,
+    1
+   ],
+   "p_rank_equal": 0.9975,
+   "p_ahead_of_next": 0.9975,
+   "gap_to_next": 3.635278103180525,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 2,
+   "model": "Gemini 4 Carbon",
+   "eci_mean": 169.69762609688058,
+   "rank_90": [
+    2,
+    5
+   ],
+   "p_rank_equal": 0.6465,
+   "p_ahead_of_next": 0.7295,
+   "gap_to_next": 0.763551342813372,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 3,
+   "model": "GPT-6 Astra",
+   "eci_mean": 168.9340747540672,
+   "rank_90": [
+    2,
+    5
+   ],
+   "p_rank_equal": 0.39725,
+   "p_ahead_of_next": 0.713,
+   "gap_to_next": 0.4726762277012142,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 4,
+   "model": "Claude Opus 5.5",
+   "eci_mean": 168.461398526366,
+   "rank_90": [
+    2,
+    6
+   ],
+   "p_rank_equal": 0.3165,
+   "p_ahead_of_next": 0.5125,
+   "gap_to_next": 0.035966284577853,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 5,
+   "model": "GPT-6.1 Sol",
+   "eci_mean": 168.42543224178814,
+   "rank_90": [
+    2,
+    7
+   ],
+   "p_rank_equal": 0.2785,
+   "p_ahead_of_next": 0.76475,
+   "gap_to_next": 0.8168300333908292,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 6,
+   "model": "GPT-6.1 Terra",
+   "eci_mean": 167.60860220839731,
+   "rank_90": [
+    3,
+    9
+   ],
+   "p_rank_equal": 0.34275,
+   "p_ahead_of_next": 0.73975,
+   "gap_to_next": 0.6788775687722932,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 7,
+   "model": "Claude Fable 5.1",
+   "eci_mean": 166.92972463962502,
+   "rank_90": [
+    6,
+    9
+   ],
+   "p_rank_equal": 0.38825,
+   "p_ahead_of_next": 0.6825,
+   "gap_to_next": 0.43530027028461404,
+   "p_top10": 1.0
+  },
+  {
+   "rank": 8,
+   "model": "Claude Sonnet 5.5",
+   "eci_mean": 166.4944243693404,
+   "rank_90": [
+    6,
+    9
+   ],
+   "p_rank_equal": 0.29275,
+   "p_ahead_of_next": 0.532,
+   "gap_to_next": 0.08701982503632166,
+   "p_top10": 0.99825
+  },
+  {
+   "rank": 9,
+   "model": "Gemini 4 Argon",
+   "eci_mean": 166.4074045443041,
+   "rank_90": [
+    6,
+    9
+   ],
+   "p_rank_equal": 0.41175,
+   "p_ahead_of_next": 0.97575,
+   "gap_to_next": 1.77988982276716,
+   "p_top10": 0.999
+  },
+  {
+   "rank": 10,
+   "model": "Claude Opus 5",
+   "eci_mean": 164.62751472153693,
+   "rank_90": [
+    10,
+    12
+   ],
+   "p_rank_equal": 0.60725,
+   "p_ahead_of_next": 0.75875,
+   "gap_to_next": 0.5581639269371692,
+   "p_top10": 0.64975
+  },
+  {
+   "rank": 11,
+   "model": "Claude Fable 5",
+   "eci_mean": 164.06935079459976,
+   "rank_90": [
+    10,
+    13
+   ],
+   "p_rank_equal": 0.419,
+   "p_ahead_of_next": 0.66475,
+   "gap_to_next": 0.37490764419271727,
+   "p_top10": 0.19725
+  },
+  {
+   "rank": 12,
+   "model": "GPT-6 Sol",
+   "eci_mean": 163.69444315040704,
+   "rank_90": [
+    10,
+    14
+   ],
+   "p_rank_equal": 0.38075,
+   "p_ahead_of_next": 0.8075,
+   "gap_to_next": 0.7765135452474965,
+   "p_top10": 0.09825
+  }
+ ],
+ "spread_rank2_to_9": 3.2902215525764973,
+ "p_exact_top10_order": 0.0075,
+ "p_same_top10_set": 0.64725
+}

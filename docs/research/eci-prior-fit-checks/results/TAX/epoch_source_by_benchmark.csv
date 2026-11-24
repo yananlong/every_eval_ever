@@ -1,0 +1,58 @@
+benchmark,origin_majority,origin_counts,primary_tag,tags,epoch_run_file
+ANLI,Model developer,Model developer=9,Language understanding,Language understanding,False
+APEX-Agents,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=58,Agent,Agent,False
+ARC AI2,Model developer,Model developer=64,Science,Science;World knowledge,False
+ARC-AGI,Benchmark creator,Benchmark creator=74; unknown (blank source)=17,Conceptual reasoning,Conceptual reasoning,False
+ARC-AGI-2,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=90,Conceptual reasoning,Conceptual reasoning,False
+Aider polyglot,Benchmark creator,Benchmark creator=44,Software engineering,Software engineering,False
+BBH,Model developer,Model developer=39,Conceptual reasoning,Conceptual reasoning,False
+Balrog,Benchmark creator,Benchmark creator=29,Long context,Games;Long context,False
+CL-bench,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=18,Long context,Long context,False
+CL-bench Life,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=12,Long context,Long context,False
+CadEval,Benchmark creator,Benchmark creator=14,Multimodal,Multimodal,False
+Chess Puzzles,Epoch AI,Epoch AI=87,Games,Games,True
+Cybench,Benchmark creator,Benchmark creator=14; Model developer=5,Software engineering,Software engineering,False
+DTBench,Benchmark creator,Benchmark creator=150,Conceptual reasoning,Conceptual reasoning,False
+DeepResearch Bench,Benchmark creator,Benchmark creator=24,Untagged,,False
+EBR-bench,Epoch AI,Epoch AI=31,Untagged,,True
+ExploitBench,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=7,Software engineering,Agent;Software engineering,False
+Fiction.LiveBench,Benchmark creator,Benchmark creator=50,Writing & creativity,Long context;Writing & creativity,False
+FrontierCode,Benchmark creator,Benchmark creator=42,Software engineering,Agent;Software engineering,False
+FrontierMath-2025-02-28-Private,Epoch AI,Epoch AI=34,Mathematics,Agent;Mathematics,True
+FrontierMath-Tier-4-2025-07-01-Private,Epoch AI,Epoch AI=26,Mathematics,Agent;Mathematics,True
+FrontierMath-Tier-4-v2-Private,Epoch AI,Epoch AI=72,Mathematics,Agent;Mathematics,True
+FrontierMath-Tiers-1-3-v2-Private,Epoch AI,Epoch AI=90,Mathematics,Agent;Mathematics,True
+FrontierSWE,Benchmark creator,Benchmark creator=23,Software engineering,Agent;Software engineering,False
+Furniture Assembly,Epoch AI,Epoch AI=39,Multimodal,Agent;Conceptual reasoning;Multimodal,True
+GDPval,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=11,Agent,Agent,False
+GPQA diamond,Epoch AI,Epoch AI=176,Science,Science,True
+GSM8K,Model developer,Model developer=51; Other third party=2,Mathematics,Mathematics,False
+GSO-Bench,Benchmark creator,Benchmark creator=28,Software engineering,Software engineering,False
+GeoBench,Benchmark creator,Benchmark creator=44,Untagged,,False
+HellaSwag,Model developer,Model developer=51,Language understanding,Language understanding,False
+LAMBADA,Model developer,Model developer=20,Language understanding,Language understanding,False
+LMCA,Benchmark creator,Benchmark creator=126,Untagged,,False
+MATH level 5,Epoch AI,Epoch AI=75,Mathematics,Mathematics,True
+METR Time Horizons,Benchmark creator,Benchmark creator=30; unknown (blank source)=3,Untagged,,False
+MMLU,Model developer,Model developer=59; Other third party=33,World knowledge,World knowledge,False
+MirrorCode,Epoch AI,Epoch AI=39,Software engineering,Agent;Software engineering,True
+Mystery Game Puzzles,Epoch AI,Epoch AI=82,Games,Games,True
+OSWorld,Benchmark creator,Benchmark creator=7; Model developer=1,Computer use,Agent;Computer use,False
+OSWorld 2.0,Benchmark creator,Benchmark creator=9,Computer use,Agent;Computer use,False
+OTIS Mock AIME 2024-2025,Epoch AI,Epoch AI=169,Mathematics,Mathematics,True
+OpenBookQA,Model developer,Model developer=31,Science,Science;World knowledge,False
+PIQA,Model developer,Model developer=41,Language understanding,Language understanding,False
+PostTrainBench,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=19,Software engineering,Agent;Software engineering,False
+ProofBench,Benchmark creator,Benchmark creator=71,Mathematics,Agent;Mathematics,False
+Remote Labor Index,Benchmark creator (assumed: file has no per-row source),Benchmark creator (assumed: file has no per-row source)=17,Agent,Agent,False
+SimpleBench,Benchmark creator,Benchmark creator=70; Other third party=25,Conceptual reasoning,Conceptual reasoning,False
+SimpleQA Verified,Epoch AI,Epoch AI=88,World knowledge,World knowledge,True
+SpireClimb,Epoch AI,Epoch AI=9,Multimodal,Agent;Games;Multimodal,True
+Surface Evolver Bench,Benchmark creator,Benchmark creator=24,Science,Agent;Science;Software engineering,False
+Terminal Bench,Benchmark creator,Benchmark creator=32,Software engineering,Software engineering,False
+The Agent Company,Benchmark creator,Benchmark creator=13,Agent,Agent,False
+TriviaQA,Model developer,Model developer=31; Other third party=1,World knowledge,World knowledge,False
+VPCT,Benchmark creator,Benchmark creator=26,Multimodal,Multimodal;Science,False
+WeirdML,Benchmark creator,Benchmark creator=116,Software engineering,Software engineering,False
+WeirdML v3,Benchmark creator,Benchmark creator=26,Software engineering,Agent;Software engineering,False
+Winogrande,Model developer,Model developer=61,Language understanding,Language understanding,False

@@ -1,0 +1,86 @@
+{
+ "gen": "2d",
+ "r": 8,
+ "seed": 797780670,
+ "position": 1600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "second_dim_benchmarks": [
+   0,
+   2,
+   3,
+   8,
+   11,
+   14,
+   15,
+   16,
+   24,
+   25,
+   26,
+   29,
+   33,
+   35,
+   36,
+   37,
+   39,
+   40,
+   41,
+   42,
+   43,
+   44,
+   46,
+   50,
+   51,
+   52,
+   54,
+   56
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.004930699842834,
+  "min_ess": 583.3638247809046
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.004930699842834,
+   "min_ess": 583.3638247809046
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=96861) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 255.5,
+ "T": {
+  "T1": 6.156522430980512,
+  "T2": 8.532624097565774,
+  "T3": 0.03544823123187042,
+  "T4": 0.1821941892478615,
+  "T5": 4.6371740512574755,
+  "T6": 43.00881907921943,
+  "T7": 24.141389089049984
+ },
+ "maxima": {
+  "Qb": 19.995329285614282,
+  "q": 325.30830361657974,
+  "t": 4.6371740512574755,
+  "cb": 14.435784300256081
+ }
+}

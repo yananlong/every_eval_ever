@@ -1,0 +1,23 @@
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope]
+Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 435 seconds.
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope]
+Sampling 4 chains for 500 tune and 1_000 draw iterations (2_000 + 4_000 draws total) took 128 seconds.
+Traceback (most recent call last):
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/w3_calibrate.py", line 204, in <module>
+    run_rep(a.one[0], int(a.one[1]), df, el, pat, pooled, names, low, high); sys.exit(0)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/w3_calibrate.py", line 69, in run_rep
+    d, warns, wall = fit_any.run(df_r, want["seed"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/lib/fit_any.py", line 23, in run
+    eci_df, edi_df, d = eb.fit_bayesian_eci(df, random_seed=seed, draws=draws, evaluate=False, progressbar=False, target_accept=target_accept, **kw)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/vendor/eci-public/src/eci/bayesian.py", line 603, in fit_bayesian_eci
+    a, b = _anchor_transform(
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/vendor/eci-public/src/eci/bayesian.py", line 316, in _anchor_transform
+    raise ValueError(
+ValueError: 3970 of 4000 posterior draws place the high anchor at or below the low anchor, defining no scale

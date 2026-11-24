@@ -1,0 +1,50 @@
+{
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "code_sha256": "53da48100597713f4249319917e92b45172424ac3d9eefc01b4e1e42a1e97af2",
+ "args": {
+  "seed": 32345,
+  "draws": null,
+  "evaluate": true,
+  "spec": null,
+  "priors": null,
+  "chains": 4,
+  "target_accept": 0.95,
+  "clip": 0.001
+ },
+ "name": "seed32345",
+ "started_from": "pilot",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.004494489197808,
+   "min_ess": 1618.9753626610106
+  }
+ ],
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.004494489197808,
+  "min_ess": 1618.9753626610106
+ },
+ "warnings": [
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=94026) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The effect of Potentials on other parameters is ignored during posterior predictive sampling. This is likely to lead to invalid or biased predictive samples.",
+  "Estimated shape parameter of Pareto distribution is greater than 0.70 for one or more samples. You should consider using a more robust model, this is because importance sampling is less likely to work well if the marginal posterior and LOO posterior are very different. This is more likely to happen "
+ ],
+ "wall_seconds": 268.0,
+ "min_tail_ess": 1896.9519851176547,
+ "min_bfmi": "n/a: TypeError"
+}
