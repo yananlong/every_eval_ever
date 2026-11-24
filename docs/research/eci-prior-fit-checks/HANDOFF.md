@@ -74,12 +74,7 @@ The `ext/eee` entries file (58 MB, manifest in `freeze.json`) is not read by the
 - Frozen files are never altered: `code/runs/lib/{sbc,ppc_checks,sens_metrics,models,compare,freeze}.py`, plus `strata.json` and the grid digest in `results/freeze.json`. They were copied byte for byte (hashes in `results/freeze.json`). New code goes in new files (as `w3_resume.py` does).
 - Path assumptions in frozen files that were left as they are: `lib/freeze.py` uses `RUNS.parent.parent / "wt-pr14/..."` (hence the symlink); `lib/sens_metrics.py` defaults `strata_from` to the cwd-relative `runs/strata.json`. No file in the pack contains an absolute path.
 - Do not run PyMC or NUTS fits on a machine concurrently with another fit unless it has the cores and memory (each fit uses 4 chains). Sort fits sequentially.
-- Commit message footer, exactly:
-  ```
-  Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-  Claude-Session: https://claude.ai/code/session_017UHtiu2WjP8oNhFMv1nPXE
-  ```
-  Name no models anywhere else in commits or files.
+- Commits are authored as Yanan Long <yanan.long439@gmail.com> and carry no AI attribution lines (no `Co-Authored-By`, no session trailer).
 - Never commit `.nc`, `.pkl`, `.npz`, `.venv`, logs over 1 MB, or any file over about 5 MB.
 
 ## What is in the pack, and what is excluded
