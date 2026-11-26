@@ -1,0 +1,23 @@
+Paper: You Don't Need to Run Every Eval (Zeng and Papailiopoulos; arXiv 2606.24020)
+Forum id: TO4Jk7wG05
+Venue id: ICLR.cc/2027/Conference/Submission (ICLR 2027 Conference Submission)
+Forum URL: https://openreview.net/forum?id=TO4Jk7wG05
+Other OpenReview hits for the exact title: none. A withdrawn ICLR 2027 entry (Hz41GJbEEq) has a different title and was not used.
+Retrieval time: 2026-11-25, UTC (reviews fetched at 2026-11-25T16:35:03Z for the forum notes request).
+
+Requests (all with the generic UA lit-review-fetch/1.0 unless noted; gaps of at least 3 s between OpenReview requests):
+1. GET https://api2.openreview.net/notes/search?term=You%20Don%27t%20Need%20to%20Run%20Every%20Eval&source=forum&limit=10 -> HTTP 200 (venue, id and title metadata).
+2. GET https://api2.openreview.net/notes?forum=TO4Jk7wG05&limit=1000 -> HTTP 403 ChallengeRequiredError (reqId 2026-11-25-13135404).
+
+Browser route (owner-approved for this paper's public forum; the earlier PKPS approval was not reused):
+- Install: install.sh --check (missing: agent-browser, Chrome for Testing; apt packages already present). Node 22.23.5 from https://registry.npmjs.org/node-linux-x64/-/node-linux-x64-22.23.5.tgz and npm 10.9.2 from https://registry.npmjs.org/npm/-/npm-10.9.2.tgz (wrapper under /dev/shm/orfetch/node/bin). Then install.sh --install with HOME=/dev/shm/orfetch/home (not edited). agent-browser 0.43.0 and Chrome for Testing 158.0.8127.36 installed under /dev/shm/orfetch.
+- Root disk: 3.132 GiB free before and after the installs (3.36 GB decimal), above the 3.2 GB threshold.
+- Chrome and Xvfb: launch_chrome.sh start (Xvfb :77, Chrome CDP 127.0.0.1:9222, scratch /dev/shm/orfetch/scratch). init.js copied from the skill.
+- ~16:33 open https://openreview.net/forum?id=TO4Jk7wG05 -> redirected to /challenge (Turnstile checkbox, no puzzle).
+- 16:34:08 Turnstile attempt 1 of 6 (stepped mouse move, down, up). Passed on attempt 1. Cookie openreview.clearanceToken present (value not recorded).
+- 2026-11-25T16:35:03Z GET https://api2.openreview.net/notes?forum=TO4Jk7wG05&limit=1000 with Cookie openreview.clearanceToken, Referer https://openreview.net/forum?id=TO4Jk7wG05, and the browser's user agent (length 101) -> HTTP 200, 41833 bytes. Saved as forum_notes.json (raw).
+
+Result: 12 notes = 1 submission, 3 official reviews, 8 official comments (7 Authors, 1 Reviewer). No meta-review or decision note in the forum at retrieval.
+reviews.md built from forum_notes.json by a script that copies field values unchanged (no paraphrase).
+Total OpenReview API requests for this paper: 2 before the browser route (search 200; forum 403) and 1 cookie-based forum request (200). Browser: 1 open, 1 screenshot, 1 Turnstile attempt.
+Cleanup: agent-browser closed, Chrome and Xvfb stopped, /dev/shm/orfetch deleted.

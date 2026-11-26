@@ -1,0 +1,1603 @@
+{
+  "schema_version": "1.0",
+  "paper_id": "",
+  "identity_version": 1,
+  "status": "complete",
+  "audits": [
+    {
+      "audit_id": "AUD-ZENG-RANK-HELDOUT",
+      "claim_id": "CLM-ZENG-RANK-HELDOUT",
+      "claim_text": "The 84 by 133 score matrix is approximately rank 2: scores hidden from the matrix are best recovered using two factors.",
+      "scope": "May 2026 BenchPress matrix (84 models, 133 benchmarks, 2,604 cells). Soft-Impute hard-rank sweep in raw and logit space, held-out MedAPE on random per-model folds, plus a block holdout of the newest 17 models. Rank of the Bias ALS predictor is not swept.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "supports_exploratory_follow_up",
+      "audited_claim_effect": "strengthen",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/appendix.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "847ba68dd929635dcb63398f9ae1c60a146ca5bd3fcfbe4fecb64d945024ef1c"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "f713246e0c4ffdce650509fae89804a7c4ae901d81579a935cd3a6fbadfb3f9d"
+        },
+        {
+          "path": "runs/BENCHPRESS/rank_repro_contrasts.csv",
+          "kind": "exploratory_rank_rerun",
+          "source": "recomputation",
+          "digest": "3ae06d5594ec8ce97410eea71788967c6798039cb74a1c9a045bdaa9c1fa85f4"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Rank is chosen on held-out cells, and the appendix repeats the sweep with the newest 20 percent of models removed as a block and 95 percent cluster-bootstrap intervals over 17 models (appendix lines 497 to 508).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "Held-out MedAPE is a reasonable criterion for predictive rank. It measures which hard rank predicts best under Soft-Impute, which is narrower than the dimension of the data-generating structure.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "inconclusive",
+          "rationale": "Only Soft-Impute is swept over rank. Under nested validation NMF selects rank 1 for all seven transforms and PMF selects rank 3 or 5 (appendix lines 787 to 830). The adopted Bias ALS has its rank fixed at 2 and carries a model offset in addition, so its fitted matrix has rank up to 4 in transformed space.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "inconclusive",
+          "rationale": "The main rank figure reports no uncertainty and the text gives no numeric values for ranks 1 and 3. In raw space under block holdout, ranks 2 and 3 are within each others interval and the curve is described as flat over the first three ranks.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "Whether the rank-2 minimum in logit space is separated from rank 1 and rank 3 beyond the bootstrap interval is not stated in text; figures were not rendered for this audit.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Column standardisation and zero or mean initialisation interact with hard-rank truncation at 23.3 percent fill; an optimum at low rank can reflect regularisation need under sparsity as much as intrinsic dimension. Missingness is structured and held-out cells are drawn only from observed cells.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The claim that survives is operational: with this matrix and Soft-Impute, hard rank 2 gives the lowest held-out MedAPE, and the logit-space minimum persists under a block holdout.",
+        "The abstract phrase that a models scores are largely determined by just two numbers is stronger than this. The adopted predictor uses three numbers per model (an offset and two factor scores).",
+        "Selected rank differs by method (NMF 1, PMF 3 or 5), so rank 2 is a property of the estimator and sparsity level as well as of the data.",
+        "The authors state the rank-2 geometry is a property of the current snapshot.",
+        "An exploratory in-house rerun by a separate workstream (one hide-half split, model-bootstrap intervals, version families not collapsed) sweeps the Bias ALS rank on the May matrix: rank 2 improves on rank 1 by 0.53 MedAE points [0.27, 0.70] and rank 3 adds 0.05 with an interval of [-0.27, 0.13]. Its absolute errors are higher than the papers, so it bears on the ordering of ranks only."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "add_evidence",
+        "note": "Sweep rank 0 to 4 for the Bias ALS predictor itself with intervals, and report the rank-1 and rank-3 held-out errors numerically."
+      },
+      "minimum_corrective_action": "add_evidence: Sweep rank 0 to 4 for the Bias ALS predictor itself with intervals, and report the rank-1 and rank-3 held-out errors numerically.",
+      "narrative_anchor": "## Audit AUD-ZENG-RANK-HELDOUT",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-SOFTIMPUTE-R2-MEDAE",
+          "quantity": "Held-out MedAE of logit Soft-Impute at rank 2, score points",
+          "estimate": 5.1
+        },
+        {
+          "measurement_id": "M-ZENG-NMF-SELECTED-RANK",
+          "quantity": "Rank selected by nested validation for logit NMF",
+          "estimate": 1
+        },
+        {
+          "measurement_id": "M-ZENG-PMF-SELECTED-RANK",
+          "quantity": "Rank selected by nested validation for logit PMF",
+          "estimate": 3
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-ZENG-RANK-VARIANCE",
+      "claim_id": "CLM-ZENG-RANK-VARIANCE",
+      "claim_text": "Two factors already explain over 90% of the variation among models on the benchmarks they share.",
+      "scope": "SVD of four column-mean-centred, fully observed submatrices of the May 2026 matrix: 4 benchmarks by 42 models, 7 by 11, 10 by 7 and 13 by 6. Scale (raw or logit) not stated.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "internally_consistent_only",
+      "audited_claim_effect": "unchanged",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "f713246e0c4ffdce650509fae89804a7c4ae901d81579a935cd3a6fbadfb3f9d"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "inconclusive",
+          "rationale": "The submatrices are the largest fully observed blocks at four benchmark counts; the rule is stated but the blocks are by construction the most popular benchmarks and models. The scale of the SVD is not given.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "fail",
+          "rationale": "Cumulative variance of two components is uninformative when few components exist: a centred 4 by 42 block has at most 4 components and a centred 13 by 6 block at most 5. The first component alone explains 78.2 to 90.4 percent and stable rank is 1.11 to 1.28, which reads as one dominant factor.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "not_assessed",
+          "rationale": "No reference spectrum (for example a permutation or noise-only spectrum of the same shape) is reported.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "All four reported blocks are shown with top-1 and top-2 variance and stable rank (Table 2, body lines 396 to 399).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "No intervals; the 10 by 7 and 13 by 6 blocks have 7 and 6 models.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "fail",
+          "rationale": "Fully observed blocks are selected by popularity, so they are not a sample of the 133 benchmarks; the result cannot be transferred to the sparse remainder.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The sentence is literally true of the four blocks reported: two components explain 91.2 to 97.6 percent.",
+        "It does not discriminate rank 2 from rank 1; the same table supports a single dominant factor at least as well.",
+        "It says nothing about benchmarks outside the dense core, which is where a second or third factor would be hardest to see and most likely to matter."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "sharpen_comparator",
+        "note": "Report the spectrum against a noise reference of the same shape, on the logit scale, and give the incremental variance of the second component with an interval."
+      },
+      "minimum_corrective_action": "sharpen_comparator: Report the spectrum against a noise reference of the same shape, on the logit scale, and give the incremental variance of the second component with an interval.",
+      "narrative_anchor": "## Audit AUD-ZENG-RANK-VARIANCE",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-VAR-TOP1-MIN",
+          "quantity": "Minimum top-1 variance share across the four complete submatrices, percent",
+          "estimate": 78.2
+        },
+        {
+          "measurement_id": "M-ZENG-VAR-TOP2-MIN",
+          "quantity": "Minimum top-2 variance share across the four complete submatrices, percent",
+          "estimate": 91.2
+        },
+        {
+          "measurement_id": "M-ZENG-STABLE-RANK-MAX",
+          "quantity": "Maximum stable rank across the four complete submatrices",
+          "estimate": 1.28
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-ZENG-HELDOUT-ERROR",
+      "claim_id": "CLM-ZENG-HELDOUT-ERROR",
+      "claim_text": "BenchPress, a logit-space rank-2 matrix completion method, recovers held-out scores to within 4.6 points.",
+      "scope": "May 2026 matrix; random per-model holdout of observed cells, 10 seeds by 3 folds; median absolute error in raw score points at 100 percent coverage; default Logit Bias ALS, rank 2, lambda 0.1.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "supports_exploratory_follow_up",
+      "audited_claim_effect": "strengthen",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/appendix.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "847ba68dd929635dcb63398f9ae1c60a146ca5bd3fcfbe4fecb64d945024ef1c"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "f713246e0c4ffdce650509fae89804a7c4ae901d81579a935cd3a6fbadfb3f9d"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Held-out folds take no part in hyperparameter selection; selection uses nested validation cells, and the nested ranking also places the default first (appendix line 706).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "MedAE is defined and computed consistently. It is a median: half of held-out cells miss by more than 4.63 points. The abstract wording within 4.6 points omits the word median.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "pass",
+          "rationale": "84 transform-method pairs are tuned the same way on the same folds. Reference points on the same protocol: benchmark mean 10.04, model mean 7.22, logit Soft-Impute 5.10, identity Bias ALS 5.17.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "inconclusive",
+          "rationale": "The hide fraction is ambiguous (half, one third, or about 26 percent implied by the stated 20,000 test predictions over 30 folds). Regression methods with lower MedAPE are set aside for incomplete coverage, which is disclosed.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "No interval on 4.63. The top full-coverage configurations differ by 0.01 points. The papers own conformal intervals for this predictor are 19.56 points wide at 80 percent and 27.01 at 90 percent.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "fail",
+          "rationale": "Held-out cells are a random subset of observed cells, so the error describes cells that someone chose to run and report. The 76.7 percent of cells never observed are not represented, and the authors state missingness is structured. Vendor-reported best-configuration scores dominate the matrix.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "Supported reading: on random held-out observed cells of this matrix the median absolute error is 4.63 points, against 10.04 for the benchmark mean and 7.22 for the model mean.",
+        "Not supported: that a typical prediction is within 4.6 points in the sense of a bound. The 90 percent interval is about plus or minus 13.5 points.",
+        "Error varies about 40-fold across models by the authors account, and ranges from 3.83 to 4.92 across density filters.",
+        "A named frontier LLM with model and benchmark names visible reaches 3.50, which the authors attribute to memorised public scores without testing that."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "add_evidence",
+        "note": "Report mean and upper-quantile absolute error with intervals, and an estimate of error on cells that become observed after the snapshot (the August matrix makes this possible)."
+      },
+      "minimum_corrective_action": "add_evidence: Report mean and upper-quantile absolute error with intervals, and an estimate of error on cells that become observed after the snapshot (the August matrix makes this possible).",
+      "narrative_anchor": "## Audit AUD-ZENG-HELDOUT-ERROR",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-MEDAE",
+          "quantity": "Held-out median absolute error of default BenchPress, score points",
+          "estimate": 4.63
+        },
+        {
+          "measurement_id": "M-ZENG-MEDAPE",
+          "quantity": "Held-out median absolute percentage error of default BenchPress, percent",
+          "estimate": 7.77
+        },
+        {
+          "measurement_id": "M-ZENG-BENCHMEAN-MEDAE",
+          "quantity": "Held-out MedAE of the logit benchmark-mean baseline, score points",
+          "estimate": 10.04
+        },
+        {
+          "measurement_id": "M-ZENG-MODELMEAN-MEDAE",
+          "quantity": "Held-out MedAE of the logit model-mean baseline, score points",
+          "estimate": 7.22
+        },
+        {
+          "measurement_id": "M-ZENG-CONFORMAL90-WIDTH",
+          "quantity": "Width of the hybrid 90 percent conformal interval, score points",
+          "estimate": 27.01
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-ZENG-PROBE",
+      "claim_id": "CLM-ZENG-PROBE",
+      "claim_text": "A subset of five benchmarks (GPQA-D, HLE, Codeforces, MMLU-Pro, ARC-AGI-1) can recover the rest of a models public scorecard to within 3.93 points; a cheaper set reaches 4.55.",
+      "scope": "May 2026 matrix; greedy forward selection of probe benchmarks minimising pooled MedAE over all observed cells of all 84 models; target model row masked except probe columns; probe cells scored as zero error.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "does_not_support_claim",
+      "audited_claim_effect": "weaken",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/appendix.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "847ba68dd929635dcb63398f9ae1c60a146ca5bd3fcfbe4fecb64d945024ef1c"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "f713246e0c4ffdce650509fae89804a7c4ae901d81579a935cd3a6fbadfb3f9d"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "fail",
+          "rationale": "The probe set is selected by minimising the same pooled error on the same cells that are then reported. The paper says the curves should not be read as held-out transfer estimates for a fixed universal probe set (body lines 743 to 745).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "fail",
+          "rationale": "Observed probe cells are counted as exact predictions with zero error and stay in the denominator, so the pooled median is not an error on the rest of the scorecard, which is what the abstract states.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "pass",
+          "rationale": "A random-ordering baseline over 10 seeds is evaluated on the same cells, and exhaustive search over the 25-benchmark low-cost list (53,130 subsets) finds 4.465 against greedy 4.549.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "All four greedy prefixes and both exhaustive checks are reported.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "fail",
+          "rationale": "No out-of-sample estimate for the selected sets: no split by model, no evaluation of the May probe sets on the August matrix.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Models lacking a probe score are evaluated on whichever probes they have, so the effective probe count varies by model; selection favours widely reported benchmarks.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "What is shown: on this snapshot a greedy five-benchmark set gives an in-sample pooled MedAE of 3.926 with probe cells included at zero, clearly below random orderings.",
+        "What is not shown: that these five benchmarks would recover an unseen models remaining scores to 3.93 points. The authors body text says as much; the abstract does not carry the caveat.",
+        "The qualitative finding that which benchmarks are probed matters more than how many is supported relative to the random baseline."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "add_evidence",
+        "note": "Select probes on a subset of models and score on held-out models, excluding probe cells from the error, or score the May probe sets on models added in the August matrix."
+      },
+      "minimum_corrective_action": "add_evidence: Select probes on a subset of models and score on held-out models, excluding probe cells from the error, or score the May probe sets on models added in the August matrix.",
+      "narrative_anchor": "## Audit AUD-ZENG-PROBE",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-PROBE5-ANY",
+          "quantity": "In-sample pooled MedAE with five greedy probes from any benchmark, score points",
+          "estimate": 3.926
+        },
+        {
+          "measurement_id": "M-ZENG-PROBE5-CHEAP",
+          "quantity": "In-sample pooled MedAE with five greedy low-cost probes, score points",
+          "estimate": 4.549
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-ZENG-RANKING",
+      "claim_id": "CLM-ZENG-RANKING",
+      "claim_text": "For same-benchmark model pairs separated by at least five score points, BenchPress predicted scores yield the correct ordering 92.1% of the time.",
+      "scope": "May 2026 matrix; per-model holdout, 10 seeds by 3 folds; leaderboards completed with true scores on seen cells and predictions on held-out cells; pairs with at least one held-out cell; median across benchmarks.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "supports_exploratory_follow_up",
+      "audited_claim_effect": "strengthen",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/appendix.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "847ba68dd929635dcb63398f9ae1c60a146ca5bd3fcfbe4fecb64d945024ef1c"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Uses the same held-out folds as the method comparison.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "Margin-aware pairwise accuracy is well defined. A pair needs only one held-out cell, so many pairs compare a prediction with a true score, which is easier than comparing two predictions.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "fail",
+          "rationale": "No baseline is reported. Chance is 50 percent but a model-mean or benchmark-mean completion would also order widely separated models correctly; the increment due to BenchPress is unknown.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "Margins 0, 1, 2 and 5 are all reported with pair counts (83.8, 86.3, 88.0, 92.1 percent).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "No interval; pairs are heavily dependent across seeds and within benchmarks.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Restricting to gaps of at least five points selects pairs that any monotone predictor orders well.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The number is reported consistently; its meaning depends on a missing baseline.",
+        "At margin 0 accuracy is 83.8 percent, and top-10-percent shortlist recovery is 72.4 percent, so decisions among close models are not well served."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "sharpen_comparator",
+        "note": "Report the same pairwise accuracy for model-mean completion and for pairs where both cells are held out."
+      },
+      "minimum_corrective_action": "sharpen_comparator: Report the same pairwise accuracy for model-mean completion and for pairs where both cells are held out.",
+      "narrative_anchor": "## Audit AUD-ZENG-RANKING",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-PAIRWISE-M5",
+          "quantity": "Pairwise ordering accuracy at a five-point margin, percent",
+          "estimate": 92.1
+        },
+        {
+          "measurement_id": "M-ZENG-PAIRWISE-M0",
+          "quantity": "Pairwise ordering accuracy at margin zero, percent",
+          "estimate": 83.8
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-ZENG-TEMPORAL",
+      "claim_id": "CLM-ZENG-TEMPORAL",
+      "claim_text": "Across 27 target models in a pre-specified temporal window, five seed scores bring BenchPress predictions within 4.83 points of the true value, and ten seeds tighten this to 2.57 points.",
+      "scope": "May 2026 matrix; 27 models from DeepSeek-R1 through GPT-5.1 with more than 20 observed scores; training on models released earlier; k randomly revealed scores; median over 10 seeds then median over targets; revealed cells scored as zero error.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "inconclusive",
+      "audited_claim_effect": "inconclusive",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/appendix.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "847ba68dd929635dcb63398f9ae1c60a146ca5bd3fcfbe4fecb64d945024ef1c"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "f713246e0c4ffdce650509fae89804a7c4ae901d81579a935cd3a6fbadfb3f9d"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Training rows are restricted to models released before the target, which is a real temporal split. The window is said to be fixed before errors were inspected; that cannot be checked.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "fail",
+          "rationale": "Revealed cells contribute zero error to the pooled metric (body line 919). Targets have 21 to 79 observed scores, so at k equal to 10 between 13 and 48 percent of each targets cells are zero by construction. The fall from 4.83 to 2.57 is partly mechanical.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "not_assessed",
+          "rationale": "No baseline (benchmark mean, model mean after k seeds) is reported for this setting.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "All 27 targets are tabulated with observation counts and training-set sizes.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "Per-target medians over 10 random reveals; no interval on the cross-target median; cells without a finite prediction are dropped without a count.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "fail",
+          "rationale": "The decline with k confounds information gain with the growing share of zero-error cells; the smallest-row targets show the largest drops (Grok 3 Beta 5.7 to 0.5 with 21 observed scores).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The k equal to 1 figure (MedAE 9.20) is the least contaminated. It is of the same order as the benchmark-mean error in the random holdout (10.04), though the two protocols differ.",
+        "The direction of the effect (more seeds help) is plausible and consistent with the hide-fraction ablation, but its size cannot be read from these numbers.",
+        "The window excludes the newest models, which the authors justify; it also excludes the hardest extrapolation case."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "add_evidence",
+        "note": "Recompute the temporal errors on hidden cells only, with a matched model-mean baseline at each k."
+      },
+      "minimum_corrective_action": "add_evidence: Recompute the temporal errors on hidden cells only, with a matched model-mean baseline at each k.",
+      "narrative_anchor": "## Audit AUD-ZENG-TEMPORAL",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-TEMPORAL-K1",
+          "quantity": "Median over targets of pooled MedAE at one seed score, score points",
+          "estimate": 9.2
+        },
+        {
+          "measurement_id": "M-ZENG-TEMPORAL-K5",
+          "quantity": "Median over targets of pooled MedAE at five seed scores, score points",
+          "estimate": 4.83
+        },
+        {
+          "measurement_id": "M-ZENG-TEMPORAL-K10",
+          "quantity": "Median over targets of pooled MedAE at ten seed scores, score points",
+          "estimate": 2.57
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-ZENG-RELIABILITY",
+      "claim_id": "CLM-ZENG-RELIABILITY",
+      "claim_text": "Reliability factors combined with predictor disagreement quantify when predictions can be trusted, giving a trust probability and a conformally calibrated 90% prediction interval.",
+      "scope": "May 2026 matrix; hybrid risk model trained fold-out on held-out absolute errors of the default predictor; risk-coverage curve in MedAE; leave-fold-out conformal scaling.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "supports_exploratory_follow_up",
+      "audited_claim_effect": "strengthen",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/main_body.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "93609cc3d6c17bab3aa1923fae257775ea947fba68a2b8dbbc26a6d6116c1fe9"
+        },
+        {
+          "path": "ext/papers/2606.24020/src/arxiv/appendix.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "847ba68dd929635dcb63398f9ae1c60a146ca5bd3fcfbe4fecb64d945024ef1c"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "725778371301c0700671afca6e0ecf0a3edd7d78f4a47f66e2072e87271d2d25"
+        },
+        {
+          "path": "runs/LIT/zeng2606/zeng2606.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "f713246e0c4ffdce650509fae89804a7c4ae901d81579a935cd3a6fbadfb3f9d"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Risk models are trained on other folds only, with architecture selection inside the training folds (appendix lines 1379 to 1386).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "Selective MedAE at fixed kept fractions is an appropriate ranking metric; interval width is reported in score points.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "pass",
+          "rationale": "Three estimators (ensemble spread, matrix support, hybrid) are compared under one procedure; differences are small (90 percent widths 27.43, 29.18, 27.01).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "inconclusive",
+          "rationale": "Empirical coverage of the 90 percent interval is not reported. Coverage is reported only for an 80 percent interval in a separate controlled variant on 23 benchmarks (0.798 to 0.800).",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "No intervals on the selective MedAE values; folds across seeds reuse the same cells.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Conformal validity needs exchangeable cells; cells sharing a model or benchmark are dependent, and validity for cells outside the observed pattern is not addressed.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to a table, caption or sentence in the v2 LaTeX source, and the source names the generating script for each table in comments. Nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2606.24020/src/arxiv/main_body.tex",
+            "ext/papers/2606.24020/src/arxiv/appendix.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The risk score orders predictions usefully: selective MedAE is 1.83, 2.51 and 3.10 at the most trusted 20, 40 and 60 percent.",
+        "The intervals are wide: 27 points at 90 percent. The authors call the layer a practical add-on and say better-grounded uncertainty quantification remains open.",
+        "The hypothesis tests behind the reliability factors use Benjamini-Hochberg at 0.01 over 32 tests; associations are described by the authors as correlational."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "add_evidence",
+        "note": "Report empirical coverage of the 90 percent interval overall and by model and benchmark, with model-level and benchmark-level conformal splits."
+      },
+      "minimum_corrective_action": "add_evidence: Report empirical coverage of the 90 percent interval overall and by model and benchmark, with model-level and benchmark-level conformal splits.",
+      "narrative_anchor": "## Audit AUD-ZENG-RELIABILITY",
+      "measurements": [
+        {
+          "measurement_id": "M-ZENG-SELECTIVE-20",
+          "quantity": "Selective MedAE keeping the most trusted 20 percent, score points",
+          "estimate": 1.83
+        },
+        {
+          "measurement_id": "M-ZENG-REL-CONFORMAL90",
+          "quantity": "Hybrid 90 percent conformal interval width, score points",
+          "estimate": 27.01,
+          "multiplicity": {
+            "comparisons": 32,
+            "correction": "Benjamini-Hochberg at alpha 0.01 over the 32 reliability-factor tests"
+          }
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-HELM-QE",
+      "claim_id": "CLM-HELM-QE",
+      "claim_text": "PKPS matches the accuracy of the sample score with up to an 8 times smaller query budget.",
+      "scope": "HELM-Lite suite (18 tasks, 93 models) and EEE suite (16 tasks, 45 models), dense matrices with sparsity induced by uniform masking; unpaired per-model query pools; leave-one-family-out K-NN; MAE on a 0 to 1 scale over 16 seeds.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "supports_exploratory_follow_up",
+      "audited_claim_effect": "strengthen",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2611.03614/src/main.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "b0baaa3e0a17b85a23480dbe092200a0c94f12b132563a8528a282ebfc4628ee"
+        },
+        {
+          "path": "runs/LIT/helm2611/helm2611.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "5e871c2e44d697bb608e384a161ce158d395e2fe3b88b94d64358fa05bbeb2b2"
+        },
+        {
+          "path": "runs/LIT/helm2611/helm2611.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "a6457d8f2fe0bab9a6cd68239ec8aac6d574be88adef9e16f55d133d5323ca8b"
+        },
+        {
+          "path": "ext/papers/2611.03614/space/data/results.json",
+          "kind": "space_build_output",
+          "source": "external",
+          "digest": "d31d99e6a4550c0d8c4bd1b34d43a61933b5239673e755d06e9a034b276cf854"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Targets are full-depth task means that are never embedded; the regressor excludes the target developers models; bandwidth and ensemble weights are chosen on observed scores of other families.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "MAE against the true full-task score is the natural metric. Tasks with 42 and 1,319 items get equal weight.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "inconclusive",
+          "rationale": "IRT is fit on the largest fully observed block and is poorly identified by design under unpaired pools, as the authors note, so it is a weak baseline here. DKPS is disadvantaged by the unpaired design that the experiment constructs. The sample score is the meaningful comparator.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "Table 1 reports both suites and both budgets, including cells where PKPS alone is not best (HELM at 8 queries: sample 0.092, PKPS 0.109).",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "pass",
+          "rationale": "Wilcoxon over per-task differences, ensemble against sample score at one query: p of 8e-6 on HELM, better on all 18 tasks. SEM over 16 seeds. No multiplicity correction is stated and tasks within a dataset are not independent.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Sparsity is uniform masking of models that ran everything; the paper names non-uniform observation as an open limitation. The embedding is transductive (the target is embedded jointly). Only one embedding model is tested.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to Table 1, a caption or a sentence in the rendered LaTeX source. No experiment code ships with the tarball and nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The 8 times figure is the EEE-suite maximum (PKPS 0.070 at one query against sample 0.081 at eight). On HELM the corresponding factor is 4.",
+        "The gain is confined to small budgets: the sample score overtakes PKPS as the budget grows, and only the ensemble is best throughout.",
+        "The Space reproduces the qualitative result on live EEE data with a different embedder (sample 0.221, PKPS 0.109, ensemble 0.099 at one query)."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "add_evidence",
+        "note": "Repeat the query-efficiency sweep under a selection-driven observation pattern and with a second embedding model."
+      },
+      "minimum_corrective_action": "add_evidence: Repeat the query-efficiency sweep under a selection-driven observation pattern and with a second embedding model.",
+      "narrative_anchor": "## Audit AUD-HELM-QE",
+      "measurements": [
+        {
+          "measurement_id": "M-HELM-QE-EEE-PKPS-M1",
+          "quantity": "EEE suite MAE of PKPS at one query per cell",
+          "estimate": 0.07
+        },
+        {
+          "measurement_id": "M-HELM-QE-EEE-SAMPLE-M8",
+          "quantity": "EEE suite MAE of the sample score at eight queries per cell",
+          "estimate": 0.081
+        },
+        {
+          "measurement_id": "M-HELM-QE-HELM-PKPS-M1",
+          "quantity": "HELM suite MAE of PKPS at one query per cell",
+          "estimate": 0.137,
+          "multiplicity": {
+            "comparisons": 3,
+            "correction": "none",
+            "rationale": "The paper reports three Wilcoxon tests without correction; all three p-values are at or below 1e-3, so a Bonferroni factor of three would not change any conclusion."
+          }
+        },
+        {
+          "measurement_id": "M-HELM-QE-HELM-SAMPLE-M8",
+          "quantity": "HELM suite MAE of the sample score at eight queries per cell",
+          "estimate": 0.092
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-HELM-COMPLETION",
+      "claim_id": "CLM-HELM-COMPLETION",
+      "claim_text": "When ensembled with low-rank matrix completion, PKPS reduces score matrix completion error by up to 28%, and PKPS-based methods outperform baselines across two large benchmark suites.",
+      "scope": "Same two suites; completion of cells with no responses at task coverage and query depth 0.5 (0.2 coverage for the sparse column), cohort sizes 10 and full; LRMC baseline is rank-2 logit Bias ALS with ridge 0.1 as in BenchPress.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "supports_exploratory_follow_up",
+      "audited_claim_effect": "strengthen",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2611.03614/src/main.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "b0baaa3e0a17b85a23480dbe092200a0c94f12b132563a8528a282ebfc4628ee"
+        },
+        {
+          "path": "runs/LIT/helm2611/helm2611.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "5e871c2e44d697bb608e384a161ce158d395e2fe3b88b94d64358fa05bbeb2b2"
+        },
+        {
+          "path": "runs/LIT/helm2611/helm2611.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "a6457d8f2fe0bab9a6cd68239ec8aac6d574be88adef9e16f55d133d5323ca8b"
+        },
+        {
+          "path": "ext/papers/2611.03614/space/data/results.json",
+          "kind": "space_build_output",
+          "source": "external",
+          "digest": "d31d99e6a4550c0d8c4bd1b34d43a61933b5239673e755d06e9a034b276cf854"
+        },
+        {
+          "path": "ext/papers/2611.03614/space/README.md",
+          "kind": "space_readme",
+          "source": "external",
+          "digest": "755edacfc36e62ce5e85edc9649bc90be4840aef3100dff2af6d4c44c6af81c7"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "pass",
+          "rationale": "Missing cells have no responses; PKPS and LRMC share the same logit, standardisation and two-way bias pipeline, so the comparison isolates how the residual is modelled; leave-one-family-out for the K-NN regressor.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "MAE on missing cells against the full-depth score.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "inconclusive",
+          "rationale": "LRMC rank 2 and ridge 0.1 are inherited from an 84 by 133 matrix and not re-selected for 16 or 18 tasks and cohorts as small as 10, where a rank-2 factorisation with about 8 or 9 observed cells per model (3 or 4 in the sparse column) is weakly identified. No additive-only or task-mean baseline is tabulated on the real suites. The paper does not say whether LRMC also excludes the target developers rows; if it does not, LRMC sees more than the K-NN regressor and the comparison is conservative for PKPS.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "Table 1 reports all six completion columns; the text discloses that the HELM full-cohort difference is not significant (better on 9 of 18 tasks).",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "pass",
+          "rationale": "Wilcoxon over per-task differences: HELM cohort 10, p of 1e-3, 15 of 18 tasks; EEE full cohort, p of 3e-5, every task. HELM full cohort not significant. Uncorrected, with dependent tasks.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Uniform masking of dense matrices; cells are missing completely at random by construction, which is the regime most favourable to both methods and not the regime of the real store. Three of five EEE benchmarks are multiple-choice conversions and two are judging tasks.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to Table 1, a caption or a sentence in the rendered LaTeX source. No experiment code ships with the tarball and nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex",
+            "ext/papers/2611.03614/space/data/results.json",
+            "ext/papers/2611.03614/space/README.md"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The 28 percent figure is the EEE full-cohort cell (0.096 to 0.069). HELM full cohort is 0.105 to 0.100, about 5 percent and not significant; HELM at cohort 10 is 0.139 to 0.120, about 14 percent.",
+        "PKPS alone is not best in every column; the abstract wording PKPS-based methods is satisfied by the ensemble.",
+        "On the live EEE store the Space reports a much smaller margin under 5-fold cross-validation over model-collection pairs: LRMC 0.0587, PKPS 0.0584, ensemble 0.0577 (n of 1,374). Protocol, embedder and task mix differ, so this is context and not a refutation.",
+        "The advantage is largest where LRMC is least identified (few models, few observed tasks)."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "sharpen_comparator",
+        "note": "Re-select LRMC rank and ridge per suite and cohort, add an additive two-way baseline, and report the comparison under the stores real observation pattern."
+      },
+      "minimum_corrective_action": "sharpen_comparator: Re-select LRMC rank and ridge per suite and cohort, add an additive two-way baseline, and report the comparison under the stores real observation pattern.",
+      "narrative_anchor": "## Audit AUD-HELM-COMPLETION",
+      "measurements": [
+        {
+          "measurement_id": "M-HELM-COMP-EEE-LRMC",
+          "quantity": "EEE suite full-cohort completion MAE of LRMC",
+          "estimate": 0.096
+        },
+        {
+          "measurement_id": "M-HELM-COMP-EEE-ENS",
+          "quantity": "EEE suite full-cohort completion MAE of the ensemble",
+          "estimate": 0.069
+        },
+        {
+          "measurement_id": "M-HELM-COMP-HELM-LRMC",
+          "quantity": "HELM suite full-cohort completion MAE of LRMC",
+          "estimate": 0.105
+        },
+        {
+          "measurement_id": "M-HELM-COMP-HELM-ENS",
+          "quantity": "HELM suite full-cohort completion MAE of the ensemble",
+          "estimate": 0.1
+        },
+        {
+          "measurement_id": "M-HELM-SPACE-ENS",
+          "quantity": "Space response-level 5-fold completion MAE of the ensemble on live EEE data",
+          "estimate": 0.0577
+        },
+        {
+          "measurement_id": "M-HELM-SPACE-LRMC",
+          "quantity": "Space response-level 5-fold completion MAE of LRMC on live EEE data",
+          "estimate": 0.0587
+        }
+      ]
+    },
+    {
+      "audit_id": "AUD-HELM-THEORY",
+      "claim_id": "CLM-HELM-THEORY",
+      "claim_text": "Benchmark prediction using PKPS is query-efficient relative to methods that only use information from dense and paired portions of the evaluation data (Theorem 2), and the experiments are its empirical counterpart.",
+      "scope": "Theorems 1 and 2 and their proofs in Appendix D, read against the estimator actually run in Section 4.",
+      "source_mode": "standalone",
+      "requested_assurance_class": "exploratory",
+      "attained_assurance_class": "exploratory",
+      "audit_kind": "record_review",
+      "verdict": "internally_consistent_only",
+      "audited_claim_effect": "unchanged",
+      "source_runs": [],
+      "run_selection": {
+        "selection_rule": "No runs were executed or selected. The audit reads every table, caption and passage in the paper that bears on the claim, including appendix material that weakens it.",
+        "excluded_runs": []
+      },
+      "evidence_artifacts": [
+        {
+          "path": "ext/papers/2611.03614/src/main.tex",
+          "kind": "latex_source",
+          "source": "manuscript",
+          "digest": "b0baaa3e0a17b85a23480dbe092200a0c94f12b132563a8528a282ebfc4628ee"
+        },
+        {
+          "path": "runs/LIT/helm2611/helm2611.memory.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "5e871c2e44d697bb608e384a161ce158d395e2fe3b88b94d64358fa05bbeb2b2"
+        },
+        {
+          "path": "runs/LIT/helm2611/helm2611.open-questions.md",
+          "kind": "memory_pack",
+          "source": "audit",
+          "digest": "a6457d8f2fe0bab9a6cd68239ec8aac6d574be88adef9e16f55d133d5323ca8b"
+        }
+      ],
+      "check_results": [
+        {
+          "check_id": "protocol_integrity",
+          "status": "inconclusive",
+          "rationale": "The proofs were read and no error was found, but they were not formally checked. The estimator in Theorem 2 (three-way split, Nystrom extension, guarded bandwidth selection with a 2 tau margin, exact reference scores) is not the estimator in the experiments (joint embedding, leave-one-model-out K-NN bandwidth choice, no guard, sample scores as targets).",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "metric_validity",
+          "status": "pass",
+          "rationale": "Mean squared error dominance at a fixed budget is a clear criterion; the definition allows equality except at one n.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "baseline_fairness",
+          "status": "inconclusive",
+          "rationale": "Part (i) holds for any estimator family that contains the comparator and selects with a guard, so it does not rest on PKPS geometry. Part (ii) compares against DKPS in the case where DKPS has no shared queries and can only predict the mean.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "outcome_accounting",
+          "status": "pass",
+          "rationale": "Assumptions 1 to 7 are stated explicitly, including uniform subsampling and i.i.d. models and caches.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "inferential_support",
+          "status": "inconclusive",
+          "rationale": "The Theorem 1 bound grows linearly in the number of models and as the inverse square of the cross-model kernel mass, and is not evaluated numerically on either suite.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "confound_control",
+          "status": "inconclusive",
+          "rationale": "Uniform observation and i.i.d. models are assumed; the synthetic overlap sweep (Figure 2 panel b) is the only direct empirical counterpart.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "provenance",
+          "status": "pass",
+          "rationale": "Every number audited is traceable to Table 1, a caption or a sentence in the rendered LaTeX source. No experiment code ships with the tarball and nothing was rerun.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "snapshot_continuity",
+          "status": "not_assessed",
+          "rationale": "Standalone review of published text; no run snapshots or bindings exist to compare.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        },
+        {
+          "check_id": "independence",
+          "status": "not_assessed",
+          "rationale": "Single reviewer reading the authors own reported tables; no separate evaluation or advancement authority.",
+          "evidence_paths": [
+            "ext/papers/2611.03614/src/main.tex"
+          ]
+        }
+      ],
+      "independence": {
+        "self_review": false,
+        "dimensions": [],
+        "evidence": "The auditor is not an author of the paper but has no independent data or rerun."
+      },
+      "limitations": [
+        "The theorems are internally coherent as far as a reading can tell; they license the claim for the guarded estimator under uniform, i.i.d. sampling.",
+        "They do not by themselves explain the real-data gains, which come from a different estimator and from an embedding whose informativeness (the quantity I_m) is assumed positive, not shown.",
+        "Query efficiency relative to the sample score relies on a theorem in the predecessor paper, which was not read."
+      ],
+      "predecessor_failures": [],
+      "corrective_action": {
+        "action": "lower_assurance",
+        "note": "Present the theory as motivation for the experimental estimator, or run the guarded split estimator once to show the gap is small."
+      },
+      "minimum_corrective_action": "lower_assurance: Present the theory as motivation for the experimental estimator, or run the guarded split estimator once to show the gap is small.",
+      "narrative_anchor": "## Audit AUD-HELM-THEORY"
+    }
+  ]
+}
