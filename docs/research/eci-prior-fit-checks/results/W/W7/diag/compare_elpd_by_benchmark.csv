@@ -1,0 +1,58 @@
+,H1_ta99,H2_ta99
+OTIS Mock AIME 2024-2025,-2.275,59.692
+Mystery Game Puzzles,40.575,14.329
+DTBench,-0.618,31.379
+PIQA,0.300,26.057
+HellaSwag,0.160,25.260
+MATH level 5,-1.379,20.168
+LMCA,-0.040,16.932
+FrontierMath-Tier-4-v2-Private,13.763,-16.931
+FrontierMath-Tiers-1-3-v2-Private,6.363,-15.740
+ARC-AGI,15.480,-2.601
+LAMBADA,-0.020,11.535
+TriviaQA,-0.101,11.413
+MMLU,-0.224,11.305
+Winogrande,-0.385,10.031
+GSM8K,-0.434,9.904
+FrontierMath-Tier-4-2025-07-01-Private,9.448,0.420
+Furniture Assembly,9.399,0.835
+SimpleQA Verified,0.056,8.863
+Chess Puzzles,7.496,-0.814
+ARC-AGI-2,-6.927,1.673
+GPQA diamond,1.497,-6.341
+SimpleBench,1.245,4.443
+BBH,-0.305,4.407
+ProofBench,3.232,0.374
+Balrog,-0.287,2.900
+OSWorld,1.154,2.145
+FrontierMath-2025-02-28-Private,1.168,1.893
+ARC AI2,-0.367,-1.789
+Aider polyglot,-0.172,1.568
+Remote Labor Index,-1.547,-0.062
+DeepResearch Bench,0.111,1.518
+APEX-Agents,0.201,1.514
+WeirdML,0.309,1.362
+SpireClimb,-1.319,-0.812
+EBR-bench,-0.664,1.267
+CadEval,-0.506,1.060
+OpenBookQA,0.201,-0.992
+VPCT,-0.562,-0.940
+Cybench,-0.361,0.806
+GDPval,-0.442,0.790
+WeirdML v3,0.677,-0.756
+ExploitBench,0.440,-0.732
+OSWorld 2.0,-0.315,0.681
+ANLI,-0.160,-0.585
+The Agent Company,-0.578,0.208
+CL-bench,-0.082,0.497
+GSO-Bench,-0.487,-0.322
+FrontierCode,-0.461,0.252
+CL-bench Life,-0.405,0.113
+MirrorCode,-0.308,0.114
+GeoBench,-0.246,-0.037
+Terminal Bench,0.025,-0.208
+FrontierSWE,-0.013,0.173
+PostTrainBench,0.047,0.127
+Fiction.LiveBench,0.067,0.105
+METR Time Horizons,-0.084,-0.072
+Surface Evolver Bench,-0.070,-0.057

@@ -1,0 +1,637 @@
+{
+ "rows": 2879,
+ "interior_rows": 2798,
+ "bound_rows": 81,
+ "G3_vs_F0": {
+  "native": {
+   "delta": 379.44473244054285,
+   "se": 25.778110985383346
+  },
+  "common": {
+   "delta": 365.22864340054696,
+   "se": 26.341138009800137
+  },
+  "interior": {
+   "delta": 377.9113186700221,
+   "se": 24.983766271102443
+  },
+  "bound_rows_sum": [
+   -167.6458238338022,
+   -154.96314856432707
+  ],
+  "k_share": 0.07085793678360541
+ },
+ "candidates": {
+  "H1_ta99": {
+   "features": [
+    "dev",
+    "fam",
+    "bnd"
+   ],
+   "clusters": false,
+   "target_accept": 0.99,
+   "converged": true,
+   "started_from": "pilot",
+   "attempts": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 1000,
+     "divergences": 0,
+     "max_rhat": 1.0040494669247149,
+     "min_ess": 1361.4323939652454
+    }
+   ],
+   "wall_seconds": 5734.0,
+   "convergence": {
+    "divergences": 0,
+    "max_rhat": 1.0040494669247149,
+    "min_ess_bulk": 1361.4323939652454,
+    "min_ess_tail": 1928.4533797678387
+   },
+   "T": {
+    "T1": 3.1671905896854096,
+    "T2": 2.534637274789168,
+    "T3": 0.22400967939227626,
+    "T4": 0.009157427331795125,
+    "T5": 1.7844024646024395,
+    "T6": 5.5813370513042315,
+    "T7": 4.309057814788749
+   },
+   "bounds": {
+    "zeros": 59,
+    "exp_zeros": 79.66851032076269,
+    "ones": 22,
+    "exp_ones": 24.710480784719643
+   },
+   "loo": {
+    "elpd": 3457.3444714238744,
+    "se": 56.71459343252514,
+    "p": 704.2565942933103,
+    "k_share": 0.0725946509204585,
+    "n_k_gt_0_7": 209,
+    "n_k_gt_1": 12,
+    "elpd_interior": 3531.862610677639,
+    "elpd_common": 3457.3444714238744,
+    "elpd_common_bound_rows": -74.51813925376442
+   },
+   "pit": {
+    "ks_distance": 0.033165130838352874,
+    "var_ratio": 0.9660743489793902,
+    "share_lt_0_05": 0.055227509551927755,
+    "share_gt_0_95": 0.04307051059395624
+   },
+   "vs_G3": {
+    "native": "not comparable (mass against density on rows at a bound)",
+    "common": {
+     "delta": 91.26929366522063,
+     "se": 19.731920561063347
+    },
+    "interior": {
+     "delta": -1.858390168581617,
+     "se": 10.04521252978332
+    },
+    "bound_rows_sum": [
+     -74.51813999999999,
+     -167.6458238338022
+    ]
+   },
+   "vs_F0": {
+    "common": {
+     "delta": 456.4979370657676,
+     "se": 30.98194244005305
+    },
+    "interior": {
+     "delta": 376.0529285014405,
+     "se": 26.774884782974713
+    }
+   },
+   "k": {
+    "share_gt_0_7": 0.0725946509204585,
+    "n_gt_0_7": 209,
+    "n_gt_1": 12,
+    "share_gt_0_7_interior": 0.07433881343817011
+   },
+   "T1_top": [
+    {
+     "item": "OTIS Mock AIME 2024-2025",
+     "value": 11.715429536246258
+    },
+    {
+     "item": "Surface Evolver Bench",
+     "value": 9.981762013020369
+    },
+    {
+     "item": "DTBench",
+     "value": 8.876258299720941
+    },
+    {
+     "item": "WeirdML",
+     "value": 8.66003072303531
+    },
+    {
+     "item": "APEX-Agents",
+     "value": 6.409473007838592
+    }
+   ],
+   "T2_top": [
+    {
+     "item": "ARC-AGI-2 | ARC-AGI",
+     "value": 59.11855660328833
+    },
+    {
+     "item": "OTIS Mock AIME 2024-2025 | LMCA",
+     "value": 28.685473445041463
+    },
+    {
+     "item": "DTBench | LMCA",
+     "value": 25.674026382717734
+    },
+    {
+     "item": "OTIS Mock AIME 2024-2025 | Aider polyglot",
+     "value": 24.59864270490578
+    },
+    {
+     "item": "HellaSwag | PIQA",
+     "value": 24.074316144181534
+    },
+    {
+     "item": "FrontierMath-Tiers-1-3-v2-Private | FrontierMath-Tier-4-v2-Private",
+     "value": 23.553582389820537
+    }
+   ],
+   "T6_top": [
+    {
+     "item": "OTIS Mock AIME 2024-2025",
+     "value": 2.4826042160382396
+    },
+    {
+     "item": "ProofBench",
+     "value": 1.3104244512187941
+    },
+    {
+     "item": "Cybench",
+     "value": 0.9595284195427998
+    },
+    {
+     "item": "FrontierMath-2025-02-28-Private",
+     "value": 0.8288301599617819
+    },
+    {
+     "item": "ARC-AGI-2",
+     "value": 0.8237781155838035
+    }
+   ],
+   "T5_top": [
+    {
+     "item": "Anthropic | GPQA diamond",
+     "value": -1.7844024646024395
+    },
+    {
+     "item": "Anthropic | VPCT",
+     "value": -1.6786351866235267
+    },
+    {
+     "item": "OpenAI | MirrorCode",
+     "value": -1.4448998126100232
+    }
+   ],
+   "T2_extras": {
+    "max_abs_r": 0.7293103000274677,
+    "share_abs_r_gt_0_3": 0.25842696629213485
+   },
+   "hyper": {
+    "tau_alpha": [
+     0.7593,
+     0.0836
+    ],
+    "sigma_median": [
+     0.0736,
+     0.0048
+    ],
+    "tau_sigma": [
+     0.4585,
+     0.053
+    ],
+    "tau_delta": [
+     0.2668,
+     0.0234
+    ],
+    "tau_fam[lin:ARC-AGI]": [
+     0.2652,
+     0.03
+    ],
+    "tau_fam[lin:CL-bench]": [
+     0.1666,
+     0.0991
+    ],
+    "tau_fam[lin:FrontierMath]": [
+     0.1596,
+     0.0218
+    ],
+    "tau_fam[lin:OSWorld]": [
+     0.2452,
+     0.1172
+    ],
+    "tau_fam[lin:WeirdML]": [
+     0.0541,
+     0.0393
+    ]
+   },
+   "preferred_over_G3_common": true,
+   "item_counts": [
+    {
+     "benchmark": "GPQA diamond",
+     "epoch_items_median": 274.50424491746213,
+     "learned_n": [
+      135.47054268638502,
+      424.10006982284676,
+      2632.331325947037
+     ],
+     "zeros": 0,
+     "ones": 0
+    },
+    {
+     "benchmark": "MATH level 5",
+     "epoch_items_median": 2005.517425834285,
+     "learned_n": [
+      107.69635419403222,
+      386.4638797554127,
+      2489.116962913946
+     ],
+     "zeros": 0,
+     "ones": 0
+    },
+    {
+     "benchmark": "OTIS Mock AIME 2024-2025",
+     "epoch_items_median": 59.78403164571909,
+     "learned_n": [
+      221.8631761437796,
+      451.7727089090452,
+      1207.343627212897
+     ],
+     "zeros": 1,
+     "ones": 15
+    },
+    {
+     "benchmark": "FrontierMath-2025-02-28-Private",
+     "epoch_items_median": 289.0000000000014,
+     "learned_n": [
+      135.60722682008944,
+      320.41663594618393,
+      1280.1479264176237
+     ],
+     "zeros": 2,
+     "ones": 0
+    },
+    {
+     "benchmark": "FrontierMath-Tier-4-2025-07-01-Private",
+     "epoch_items_median": 47.00000000000007,
+     "learned_n": [
+      28.32932486380697,
+      48.34511313019243,
+      121.71567499933307
+     ],
+     "zeros": 10,
+     "ones": 0
+    },
+    {
+     "benchmark": "FrontierMath-Tiers-1-3-v2-Private",
+     "epoch_items_median": 284.00000000000136,
+     "learned_n": [
+      146.85849126474747,
+      274.4332890433849,
+      611.9730685036784
+     ],
+     "zeros": 1,
+     "ones": 1
+    },
+    {
+     "benchmark": "FrontierMath-Tier-4-v2-Private",
+     "epoch_items_median": 40.00000000000005,
+     "learned_n": [
+      41.3442553431841,
+      63.74685542496592,
+      109.74060915022586
+     ],
+     "zeros": 3,
+     "ones": 2
+    },
+    {
+     "benchmark": "EBR-bench",
+     "epoch_items_median": 134.26315789473708,
+     "learned_n": [
+      44.143590347459224,
+      182.61394578784135,
+      1639.4180207328905
+     ],
+     "zeros": 0,
+     "ones": 0
+    },
+    {
+     "benchmark": "SimpleQA Verified",
+     "epoch_items_median": 999.0000000000074,
+     "learned_n": [
+      27.922305415548113,
+      132.68359156999946,
+      1278.370325827318
+     ],
+     "zeros": 0,
+     "ones": 0
+    },
+    {
+     "benchmark": "Chess Puzzles",
+     "epoch_items_median": 99.00000000000027,
+     "learned_n": [
+      28.58711584474694,
+      52.27841284314614,
+      135.4180583699821
+     ],
+     "zeros": 4,
+     "ones": 0
+    },
+    {
+     "benchmark": "Mystery Game Puzzles",
+     "epoch_items_median": 99.00000000000028,
+     "learned_n": [
+      18.177171760474906,
+      23.797492935503293,
+      32.67592656653833
+     ],
+     "zeros": 14,
+     "ones": 0
+    },
+    {
+     "benchmark": "MirrorCode",
+     "epoch_items_median": 20.832191780821955,
+     "learned_n": [
+      41.3933378975079,
+      186.7014410127998,
+      1521.5430436770182
+     ],
+     "zeros": 0,
+     "ones": 0
+    },
+    {
+     "benchmark": "Furniture Assembly",
+     "epoch_items_median": 60.44430844553254,
+     "learned_n": [
+      16.01480946735192,
+      26.50703811642274,
+      57.00191280234868
+     ],
+     "zeros": 10,
+     "ones": 0
+    },
+    {
+     "benchmark": "SpireClimb",
+     "epoch_items_median": 138.36786856649053,
+     "learned_n": [
+      41.969529024131134,
+      189.66256777467927,
+      1500.5232024345667
+     ],
+     "zeros": 1,
+     "ones": 0
+    }
+   ],
+   "learned_n_all_median_range": [
+    23.797492935503293,
+    135.91605451844953,
+    472.95085343172906
+   ]
+  },
+  "H2_ta99": {
+   "features": [
+    "dev",
+    "fam"
+   ],
+   "clusters": true,
+   "target_accept": 0.99,
+   "converged": true,
+   "started_from": "pilot",
+   "attempts": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 1000,
+     "divergences": 0,
+     "max_rhat": 1.0037778302784812,
+     "min_ess": 693.7788404315668
+    }
+   ],
+   "wall_seconds": 7093.4,
+   "convergence": {
+    "divergences": 0,
+    "max_rhat": 1.0037778302784812,
+    "min_ess_bulk": 693.7788404315668,
+    "min_ess_tail": 1021.4366372611214
+   },
+   "T": {
+    "T1": 3.0879287592032854,
+    "T2": 1.8960781011935333,
+    "T3": 0.4237317481738457,
+    "T4": 0.018243420040052048,
+    "T5": 2.0584227804993764,
+    "T6": 42.30335525091007,
+    "T7": 1.994484887016365
+   },
+   "bounds": {
+    "zeros": 59,
+    "exp_zeros": 30.84155463934006,
+    "ones": 22,
+    "exp_ones": 8.884645017685667
+   },
+   "loo": {
+    "elpd": 4079.1157707794855,
+    "se": 56.89230712315161,
+    "p": 937.8983741703237,
+    "k_share": 0.14032650225772839,
+    "n_k_gt_0_7": 404,
+    "n_k_gt_1": 53,
+    "elpd_interior": 3773.673859246409,
+    "elpd_common": 3604.3979707803364,
+    "elpd_common_bound_rows": -169.27588846607196
+   },
+   "pit": {
+    "ks_distance": 0.027708506335372585,
+    "var_ratio": 0.959391145410547,
+    "share_lt_0_05": 0.05731156651615144,
+    "share_gt_0_95": 0.045501910385550536
+   },
+   "vs_G3": {
+    "native": {
+     "delta": 249.70807543133697,
+     "se": 26.93363717866714
+    },
+    "common": {
+     "delta": 238.32294366522063,
+     "se": 27.21145150521125
+    },
+    "interior": {
+     "delta": 239.95299983141837,
+     "se": 26.52082763162838
+    },
+    "bound_rows_sum": [
+     -169.27588000000003,
+     -167.6458238338022
+    ]
+   },
+   "vs_F0": {
+    "common": {
+     "delta": 603.5515870657675,
+     "se": 34.83252932229929
+    },
+    "interior": {
+     "delta": 617.8643185014405,
+     "se": 33.59358956060107
+    }
+   },
+   "k": {
+    "share_gt_0_7": 0.14032650225772839,
+    "n_gt_0_7": 404,
+    "n_gt_1": 53,
+    "share_gt_0_7_interior": 0.1411722659042173
+   },
+   "T1_top": [
+    {
+     "item": "Surface Evolver Bench",
+     "value": 9.499459300510626
+    },
+    {
+     "item": "WeirdML",
+     "value": 6.9790617419223
+    },
+    {
+     "item": "MMLU",
+     "value": 6.390954762074206
+    },
+    {
+     "item": "APEX-Agents",
+     "value": 6.2788998758431545
+    },
+    {
+     "item": "Fiction.LiveBench",
+     "value": 5.943875597049037
+    }
+   ],
+   "T2_top": [
+    {
+     "item": "ARC-AGI-2 | ARC-AGI",
+     "value": 73.61849650316
+    },
+    {
+     "item": "DTBench | LMCA",
+     "value": 26.8189992054949
+    },
+    {
+     "item": "OTIS Mock AIME 2024-2025 | FrontierMath-Tiers-1-3-v2-Private",
+     "value": 18.138550431660562
+    },
+    {
+     "item": "HellaSwag | PIQA",
+     "value": 16.516044179420295
+    },
+    {
+     "item": "MATH level 5 | OTIS Mock AIME 2024-2025",
+     "value": 15.090428311385491
+    },
+    {
+     "item": "OTIS Mock AIME 2024-2025 | Aider polyglot",
+     "value": 12.99773422793224
+    }
+   ],
+   "T6_top": [
+    {
+     "item": "Furniture Assembly",
+     "value": 12.794070386950734
+    },
+    {
+     "item": "Mystery Game Puzzles",
+     "value": 9.09812387553765
+    },
+    {
+     "item": "OTIS Mock AIME 2024-2025",
+     "value": 8.46130678156039
+    },
+    {
+     "item": "Chess Puzzles",
+     "value": 5.877139487090543
+    },
+    {
+     "item": "FrontierMath-Tier-4-2025-07-01-Private",
+     "value": 5.426575908561911
+    }
+   ],
+   "T5_top": [
+    {
+     "item": "Anthropic | GPQA diamond",
+     "value": -2.0584227804993764
+    },
+    {
+     "item": "Anthropic | VPCT",
+     "value": -1.9650361738028979
+    },
+    {
+     "item": "OpenAI | MirrorCode",
+     "value": -1.6891853110507093
+    }
+   ],
+   "T2_extras": {
+    "max_abs_r": 0.7334567182653345,
+    "share_abs_r_gt_0_3": 0.2292134831460674
+   },
+   "hyper": {
+    "tau_alpha": [
+     0.6919,
+     0.0742
+    ],
+    "sigma_median": [
+     0.068,
+     0.0051
+    ],
+    "tau_sigma": [
+     0.5193,
+     0.0588
+    ],
+    "tau_delta": [
+     0.2406,
+     0.0233
+    ],
+    "tau_fam[lin:ARC-AGI]": [
+     0.2898,
+     0.033
+    ],
+    "tau_fam[lin:CL-bench]": [
+     0.1883,
+     0.1057
+    ],
+    "tau_fam[lin:FrontierMath]": [
+     0.1519,
+     0.0284
+    ],
+    "tau_fam[lin:OSWorld]": [
+     0.2391,
+     0.1171
+    ],
+    "tau_fam[lin:WeirdML]": [
+     0.062,
+     0.0437
+    ],
+    "tau_fam[clu:oldLM]": [
+     1.3613,
+     0.1724
+    ],
+    "tau_fam[clu:knowQA]": [
+     0.2998,
+     0.0314
+    ],
+    "tau_fam[clu:math]": [
+     0.2336,
+     0.0271
+    ]
+   },
+   "preferred_over_G3_common": true
+  }
+ }
+}
