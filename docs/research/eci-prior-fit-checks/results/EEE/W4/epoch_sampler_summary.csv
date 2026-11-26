@@ -1,0 +1,2 @@
+,n_chains,n_draws,divergences,divergence_rate,max_r_hat,n_r_hat_above_1.01,n_parameters,min_ess_bulk,min_ess_tail,min_bfmi,mean_acceptance_rate,max_tree_depth,n_obs_clipped
+0,4,4000,0,0.0,1.0054150194937794,0,430,1679.755713733648,2032.249651453395,0.8409354330258536,0.9483652765003878,5,83

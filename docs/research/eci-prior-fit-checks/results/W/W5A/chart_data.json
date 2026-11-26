@@ -1,0 +1,335 @@
+{
+ "description": "Per anchor pair (targets = W5 P0 posterior means), for P8, P9, PR, J2 against P0 re-anchored the same way: mean shift of the models below P0 ECI 100 (original anchoring), frontier stretch (top minus 20th of the strata.json frontier), median |gap change| over frontier pairs and over all pairs (ECI points).",
+ "pairs": [
+  {
+   "id": "orig",
+   "low": "Claude 3.5 Sonnet",
+   "high": "GPT-5",
+   "tl": 130.0,
+   "th": 150.0,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 14.0,
+     "frontier_stretch": 0.81,
+     "gap_med_all": 0.7,
+     "gap_med_frontier": 0.25
+    },
+    "P9": {
+     "low_end_mean_shift": 17.23,
+     "frontier_stretch": 1.13,
+     "gap_med_all": 1.02,
+     "gap_med_frontier": 0.37
+    },
+    "PR": {
+     "low_end_mean_shift": 18.76,
+     "frontier_stretch": 1.23,
+     "gap_med_all": 1.13,
+     "gap_med_frontier": 0.4
+    },
+    "J2": {
+     "low_end_mean_shift": 8.66,
+     "frontier_stretch": 0.44,
+     "gap_med_all": 0.52,
+     "gap_med_frontier": 0.15
+    }
+   }
+  },
+  {
+   "id": "L0-S10",
+   "low": "Claude Sonnet 4",
+   "high": "Claude Opus 4.5",
+   "tl": 141.86,
+   "th": 151.91,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 14.53,
+     "frontier_stretch": 0.7,
+     "gap_med_all": 0.82,
+     "gap_med_frontier": 0.21
+    },
+    "P9": {
+     "low_end_mean_shift": 17.99,
+     "frontier_stretch": 0.95,
+     "gap_med_all": 1.18,
+     "gap_med_frontier": 0.32
+    },
+    "PR": {
+     "low_end_mean_shift": 19.35,
+     "frontier_stretch": 1.1,
+     "gap_med_all": 1.25,
+     "gap_med_frontier": 0.37
+    },
+    "J2": {
+     "low_end_mean_shift": 8.82,
+     "frontier_stretch": 0.42,
+     "gap_med_all": 0.56,
+     "gap_med_frontier": 0.15
+    }
+   }
+  },
+  {
+   "id": "L0-S15",
+   "low": "Claude Sonnet 4",
+   "high": "Claude Opus 4.7",
+   "tl": 141.86,
+   "th": 157.42,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 14.61,
+     "frontier_stretch": 0.65,
+     "gap_med_all": 0.88,
+     "gap_med_frontier": 0.2
+    },
+    "P9": {
+     "low_end_mean_shift": 18.14,
+     "frontier_stretch": 0.87,
+     "gap_med_all": 1.27,
+     "gap_med_frontier": 0.29
+    },
+    "PR": {
+     "low_end_mean_shift": 19.54,
+     "frontier_stretch": 1.0,
+     "gap_med_all": 1.37,
+     "gap_med_frontier": 0.34
+    },
+    "J2": {
+     "low_end_mean_shift": 8.75,
+     "frontier_stretch": 0.43,
+     "gap_med_all": 0.54,
+     "gap_med_frontier": 0.15
+    }
+   }
+  },
+  {
+   "id": "L0-S20",
+   "low": "Claude Sonnet 4",
+   "high": "GPT-5.6 Sol",
+   "tl": 141.86,
+   "th": 162.99,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 15.08,
+     "frontier_stretch": 0.5,
+     "gap_med_all": 1.12,
+     "gap_med_frontier": 0.17
+    },
+    "P9": {
+     "low_end_mean_shift": 18.75,
+     "frontier_stretch": 0.65,
+     "gap_med_all": 1.6,
+     "gap_med_frontier": 0.25
+    },
+    "PR": {
+     "low_end_mean_shift": 20.23,
+     "frontier_stretch": 0.74,
+     "gap_med_all": 1.75,
+     "gap_med_frontier": 0.28
+    },
+    "J2": {
+     "low_end_mean_shift": 9.12,
+     "frontier_stretch": 0.33,
+     "gap_med_all": 0.7,
+     "gap_med_frontier": 0.13
+    }
+   }
+  },
+  {
+   "id": "L6-S10",
+   "low": "Claude Opus 4.5",
+   "high": "GPT-5.6 Sol",
+   "tl": 151.91,
+   "th": 162.99,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 15.97,
+     "frontier_stretch": 0.33,
+     "gap_med_all": 1.41,
+     "gap_med_frontier": 0.13
+    },
+    "P9": {
+     "low_end_mean_shift": 19.97,
+     "frontier_stretch": 0.4,
+     "gap_med_all": 2.01,
+     "gap_med_frontier": 0.19
+    },
+    "PR": {
+     "low_end_mean_shift": 21.61,
+     "frontier_stretch": 0.45,
+     "gap_med_all": 2.21,
+     "gap_med_frontier": 0.2
+    },
+    "J2": {
+     "low_end_mean_shift": 9.56,
+     "frontier_stretch": 0.25,
+     "gap_med_all": 0.84,
+     "gap_med_frontier": 0.11
+    }
+   }
+  },
+  {
+   "id": "L6-S15",
+   "low": "Claude Opus 4.5",
+   "high": "Claude Fable 5.1",
+   "tl": 151.91,
+   "th": 167.01,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 16.17,
+     "frontier_stretch": 0.27,
+     "gap_med_all": 1.51,
+     "gap_med_frontier": 0.11
+    },
+    "P9": {
+     "low_end_mean_shift": 20.24,
+     "frontier_stretch": 0.31,
+     "gap_med_all": 2.14,
+     "gap_med_frontier": 0.16
+    },
+    "PR": {
+     "low_end_mean_shift": 21.85,
+     "frontier_stretch": 0.36,
+     "gap_med_all": 2.33,
+     "gap_med_frontier": 0.18
+    },
+    "J2": {
+     "low_end_mean_shift": 9.69,
+     "frontier_stretch": 0.22,
+     "gap_med_all": 0.9,
+     "gap_med_frontier": 0.11
+    }
+   }
+  },
+  {
+   "id": "L12-S10",
+   "low": "Claude Opus 4.6",
+   "high": "Gemini 4 Argon",
+   "tl": 156.34,
+   "th": 166.48,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 16.6,
+     "frontier_stretch": 0.21,
+     "gap_med_all": 1.62,
+     "gap_med_frontier": 0.09
+    },
+    "P9": {
+     "low_end_mean_shift": 20.46,
+     "frontier_stretch": 0.31,
+     "gap_med_all": 2.17,
+     "gap_med_frontier": 0.17
+    },
+    "PR": {
+     "low_end_mean_shift": 22.33,
+     "frontier_stretch": 0.3,
+     "gap_med_all": 2.45,
+     "gap_med_frontier": 0.17
+    },
+    "J2": {
+     "low_end_mean_shift": 9.75,
+     "frontier_stretch": 0.23,
+     "gap_med_all": 0.89,
+     "gap_med_frontier": 0.11
+    }
+   }
+  },
+  {
+   "id": "Full",
+   "low": "Claude Sonnet 4",
+   "high": "GPT-6 Astra",
+   "tl": 141.86,
+   "th": 169.02,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 15.28,
+     "frontier_stretch": 0.43,
+     "gap_med_all": 1.23,
+     "gap_med_frontier": 0.15
+    },
+    "P9": {
+     "low_end_mean_shift": 18.99,
+     "frontier_stretch": 0.57,
+     "gap_med_all": 1.74,
+     "gap_med_frontier": 0.22
+    },
+    "PR": {
+     "low_end_mean_shift": 20.51,
+     "frontier_stretch": 0.64,
+     "gap_med_all": 1.9,
+     "gap_med_frontier": 0.25
+    },
+    "J2": {
+     "low_end_mean_shift": 9.2,
+     "frontier_stretch": 0.3,
+     "gap_med_all": 0.75,
+     "gap_med_frontier": 0.12
+    }
+   }
+  },
+  {
+   "id": "X-lowGPT5",
+   "low": "GPT-4o mini",
+   "high": "GPT-5",
+   "tl": 123.88,
+   "th": 150.0,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 13.15,
+     "frontier_stretch": 1.03,
+     "gap_med_all": 0.82,
+     "gap_med_frontier": 0.32
+    },
+    "P9": {
+     "low_end_mean_shift": 16.21,
+     "frontier_stretch": 1.43,
+     "gap_med_all": 1.19,
+     "gap_med_frontier": 0.45
+    },
+    "PR": {
+     "low_end_mean_shift": 17.56,
+     "frontier_stretch": 1.59,
+     "gap_med_all": 1.3,
+     "gap_med_frontier": 0.51
+    },
+    "J2": {
+     "low_end_mean_shift": 7.61,
+     "frontier_stretch": 0.69,
+     "gap_med_all": 0.44,
+     "gap_med_frontier": 0.21
+    }
+   }
+  },
+  {
+   "id": "X-lowTop",
+   "low": "GPT-4o mini",
+   "high": "Claude Fable 5.2",
+   "tl": 123.88,
+   "th": 173.43,
+   "arms": {
+    "P8": {
+     "low_end_mean_shift": 14.01,
+     "frontier_stretch": 0.6,
+     "gap_med_all": 0.94,
+     "gap_med_frontier": 0.16
+    },
+    "P9": {
+     "low_end_mean_shift": 17.3,
+     "frontier_stretch": 0.8,
+     "gap_med_all": 1.36,
+     "gap_med_frontier": 0.25
+    },
+    "PR": {
+     "low_end_mean_shift": 18.69,
+     "frontier_stretch": 0.9,
+     "gap_med_all": 1.49,
+     "gap_med_frontier": 0.27
+    },
+    "J2": {
+     "low_end_mean_shift": 8.34,
+     "frontier_stretch": 0.39,
+     "gap_med_all": 0.6,
+     "gap_med_frontier": 0.13
+    }
+   }
+  }
+ ]
+}

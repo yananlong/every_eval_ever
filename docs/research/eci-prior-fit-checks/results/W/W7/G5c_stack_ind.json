@@ -1,0 +1,81 @@
+{
+ "input_sha256": "e10910d4fe70fa0e2f78b1cafd5bf60e6b7d1be80f38db6c30b3c5d0e835ba7b",
+ "code_sha256": "8426e9d8b7907ec2c57ff2494a5a6d0ae84a8d4183f896617d811edc0f105a5a",
+ "args": {
+  "seed": 12345,
+  "draws": null,
+  "evaluate": false,
+  "spec": [
+   [
+    "dev",
+    "fam",
+    "f1r",
+    "skew",
+    "cell"
+   ],
+   "epoch"
+  ],
+  "priors": null,
+  "chains": 4,
+  "target_accept": 0.95,
+  "clip": 0.001
+ },
+ "name": "G5c_stack_ind",
+ "started_from": "cold",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 3965,
+   "max_rhat": 2.5491396956295875,
+   "min_ess": 4.8087901264656105
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 15924,
+   "max_rhat": 2.633822186760143,
+   "min_ess": 4.710714665874217
+  }
+ ],
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 4000,
+  "divergences": 15924,
+  "max_rhat": 2.633822186760143,
+  "min_ess": 4.710714665874217
+ },
+ "warnings": [
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 3965 divergences, max r_hat 2.549, min bulk ESS 5 at 1000 draws); falling back to a cold fit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=6360) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "15924 divergent transitions; the posterior may be biased. Consider raising target_accept.",
+  "max r_hat = 2.634 > 1.01; chains have not mixed. Consider more tuning or draws."
+ ],
+ "wall_seconds": 6162.5,
+ "min_tail_ess": 5.435227024770587,
+ "min_bfmi": "n/a: TypeError"
+}

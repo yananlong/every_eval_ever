@@ -1,0 +1,283 @@
+{
+ "ganz_chart_refit": {
+  "n": 8,
+  "intercept": 305.165,
+  "slope": -172.639,
+  "r": -0.988,
+  "resid_sd": 1.542,
+  "pred_0732": 178.793,
+  "resid": {}
+ },
+ "ganz_chart_no_6.2": {
+  "n": 7,
+  "intercept": 301.892,
+  "slope": -168.901,
+  "r": -0.978,
+  "resid_sd": 1.668,
+  "pred_0732": 178.257,
+  "resid": {}
+ },
+ "ours_vs_epoch_published": {
+  "o3": {
+   "epoch_chart": 147.3,
+   "ours": 147.06,
+   "diff": -0.24
+  },
+  "GPT-5": {
+   "epoch_chart": 150.0,
+   "ours": 150.0,
+   "diff": 0.0
+  },
+  "GPT-5.2": {
+   "epoch_chart": 153.5,
+   "ours": 154.48,
+   "diff": 0.98
+  },
+  "GPT-5.4": {
+   "epoch_chart": 156.7,
+   "ours": 157.83,
+   "diff": 1.13
+  },
+  "GPT-5.5": {
+   "epoch_chart": 158.8,
+   "ours": 160.11,
+   "diff": 1.31
+  },
+  "GPT-5.6 Sol": {
+   "epoch_chart": 161.3,
+   "ours": 162.99,
+   "diff": 1.69
+  },
+  "GPT-6 Astra": {
+   "epoch_chart": 169.2,
+   "ours": 169.02,
+   "diff": -0.18
+  }
+ },
+ "ours_same7": {
+  "n": 7,
+  "intercept": 304.35,
+  "slope": -171.066,
+  "r": -0.962,
+  "resid_sd": 2.256,
+  "pred_0732": 179.129,
+  "resid": {}
+ },
+ "ours_same7_per_draw": {
+  "slope_q": [
+   -196.607,
+   -170.415,
+   -148.989
+  ],
+  "pred_q": [
+   175.084,
+   178.995,
+   183.788
+  ]
+ },
+ "select": {
+  "all_bases_max": {
+   "n": 12,
+   "intercept": 418.928,
+   "slope": -309.148,
+   "r": -0.849,
+   "resid_sd": 10.096,
+   "pred_0732": 192.632,
+   "resid": {},
+   "models": [
+    "GPT-3.5 Turbo (Jan 2024)",
+    "GPT-4 (Mar 2023)",
+    "GPT-4 Turbo (Apr 2024)",
+    "o1",
+    "GPT-4.5",
+    "o3-pro",
+    "GPT-5 Pro",
+    "GPT-5.2 Pro",
+    "GPT-5.4 Pro",
+    "GPT-5.5 Pro",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra"
+   ],
+   "eci": [
+    113.12,
+    121.77,
+    125.82,
+    141.16,
+    136.44,
+    147.46,
+    151.23,
+    157.28,
+    160.24,
+    162.71,
+    162.99,
+    169.02
+   ]
+  },
+  "all_bases_min": {
+   "n": 12,
+   "intercept": 453.85,
+   "slope": -352.839,
+   "r": -0.89,
+   "resid_sd": 9.494,
+   "pred_0732": 195.572,
+   "resid": {},
+   "models": [
+    "GPT-3.5 Turbo (Jun 2023)",
+    "GPT-4 (Jun 2023)",
+    "GPT-4 Turbo (Nov 2023)",
+    "GPT-4o (Aug 2024)",
+    "GPT-4.5",
+    "GPT-4.1",
+    "GPT-5",
+    "GPT-5.2",
+    "GPT-5.4",
+    "GPT-5.5",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra"
+   ],
+   "eci": [
+    106.05,
+    120.13,
+    124.77,
+    127.09,
+    136.44,
+    136.15,
+    150.0,
+    154.48,
+    157.83,
+    160.11,
+    162.99,
+    169.02
+   ]
+  },
+  "GPT4on_max": {
+   "n": 11,
+   "intercept": 412.989,
+   "slope": -302.252,
+   "r": -0.768,
+   "resid_sd": 10.633,
+   "pred_0732": 191.741,
+   "resid": {},
+   "models": [
+    "GPT-4 (Mar 2023)",
+    "GPT-4 Turbo (Apr 2024)",
+    "o1",
+    "GPT-4.5",
+    "o3-pro",
+    "GPT-5 Pro",
+    "GPT-5.2 Pro",
+    "GPT-5.4 Pro",
+    "GPT-5.5 Pro",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra"
+   ],
+   "eci": [
+    121.77,
+    125.82,
+    141.16,
+    136.44,
+    147.46,
+    151.23,
+    157.28,
+    160.24,
+    162.71,
+    162.99,
+    169.02
+   ]
+  },
+  "GPT4.5on_max": {
+   "n": 8,
+   "intercept": 314.145,
+   "slope": -183.686,
+   "r": -0.702,
+   "resid_sd": 8.017,
+   "pred_0732": 179.686,
+   "resid": {},
+   "models": [
+    "GPT-4.5",
+    "o3-pro",
+    "GPT-5 Pro",
+    "GPT-5.2 Pro",
+    "GPT-5.4 Pro",
+    "GPT-5.5 Pro",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra"
+   ],
+   "eci": [
+    136.44,
+    147.46,
+    151.23,
+    157.28,
+    160.24,
+    162.71,
+    162.99,
+    169.02
+   ]
+  },
+  "GPT4.5on_min": {
+   "n": 8,
+   "intercept": 355.453,
+   "slope": -234.596,
+   "r": -0.783,
+   "resid_sd": 8.018,
+   "pred_0732": 183.729,
+   "resid": {},
+   "models": [
+    "GPT-4.5",
+    "GPT-4.1",
+    "GPT-5",
+    "GPT-5.2",
+    "GPT-5.4",
+    "GPT-5.5",
+    "GPT-5.6 Sol",
+    "GPT-6 Astra"
+   ],
+   "eci": [
+    136.44,
+    136.15,
+    150.0,
+    154.48,
+    157.83,
+    160.11,
+    162.99,
+    169.02
+   ]
+  }
+ },
+ "within_base_swaps": {
+  "GPT-4.1 for o3": {
+   "n": 7,
+   "intercept": 339.564,
+   "slope": -213.86,
+   "r": -0.862,
+   "resid_sd": 5.876,
+   "pred_0732": 183.018,
+   "resid": {}
+  },
+  "GPT-5.1 for GPT-5": {
+   "n": 7,
+   "intercept": 301.975,
+   "slope": -168.146,
+   "r": -0.964,
+   "resid_sd": 2.151,
+   "pred_0732": 178.892,
+   "resid": {}
+  },
+  "Pro variants": {
+   "n": 7,
+   "intercept": 294.387,
+   "slope": -157.901,
+   "r": -0.91,
+   "resid_sd": 3.349,
+   "pred_0732": 178.803,
+   "resid": {}
+  }
+ },
+ "bsel_same7_pred": {
+  "n": 83,
+  "min": 175.071,
+  "max": 199.409,
+  "q05": 177.241,
+  "q95": 183.904
+ }
+}

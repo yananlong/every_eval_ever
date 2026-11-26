@@ -1,0 +1,540 @@
+# OpenReview forum TO4Jk7wG05: reviews, responses, meta-review and decision (verbatim)
+
+Paper: You Don't Need to Run Every Eval (ICLR 2027 Conference Submission, forum TO4Jk7wG05)
+Forum: https://openreview.net/forum?id=TO4Jk7wG05
+Source: forum_notes.json (raw API response, same directory). Field values are copied as returned; no edits.
+Times are UTC from tcdate (creation) and mdate (last modification), converted from milliseconds.
+
+## Official reviews (with threads)
+
+### Review 1: Reviewer_5ChR
+- note id: ZDMaKlrU9e
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Review
+- signature: ICLR.cc/2027/Conference/Submission22329/Reviewer_5ChR
+- created (tcdate): 2026-10-20 10:01:45 UTC
+- modified (mdate): 2026-11-17 11:36:26 UTC
+- replyto: TO4Jk7wG05
+
+**paper_summary**:
+
+```text
+This paper proposes a method to estimate the performance of a model using a small selection of benchmarks within the entire collection of benchmarks, to grade the model performance across a variety of domains. The authors compile a sparse matrix from a large collection of public results, discovering that variations can be captured by a low-dimensional representation. Their approach BENCHPRESS uses this information to define a logit space rank 2 matrix completion method that can predict missing scores based on whichever benchmark scores are provided. They also define a smaller set of low-cost benchmarks to apply their technique to. The authors provide a wide set of ablations, covering prediction reliability, agreement, examining model rankings, generalizability to new unseen models and more.
+```
+
+**presentation**:
+
+```text
+3
+```
+
+**informativeness**:
+
+```text
+3
+```
+
+**soundness**:
+
+```text
+3
+```
+
+**critical_strengths**:
+
+```text
+* The method offers a simple and elegant solution to estimating model performance based on a subset of benchmarks. The method relies on benchmark scores, making it easy to apply.
+* The paper spends ample time discussing the reliability of the predictive score, defining good uncertainty estimates to help define when the score is useful, and where it may warrant further benchmark scores.
+```
+
+**critical_weaknesses**:
+
+```text
+* Table 21 questions the significance of this method, by comparing it to simpler baselines. I did have trouble parsing this piece of information, but I believe that their method in sparse public score settings does not guarentee benefit over simpler methods such as model-mean. I still believe this is a good finding to report.
+```
+
+**questions_for_authors**:
+
+```text
+* Could the authors provide more information on how the 25-benchmark low-cost allowlist constructed? What criteria were used to classify benchmarks as inexpensive?
+```
+
+**flag_for_ethics_review**:
+
+```text
+No
+```
+
+**rating**:
+
+```text
+4
+```
+
+**confidence**:
+
+```text
+4
+```
+
+### Author response (answers ZDMaKlrU9e, depth 2)
+- note id: qFhIqdhOhl
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-15 02:25:12 UTC
+- modified (mdate): 2026-11-15 02:25:12 UTC
+- replyto: ZDMaKlrU9e
+
+**title**:
+
+```text
+Response to Reviewer 5ChR: Baseline Comparisons and Low-Cost Benchmark Selection
+```
+
+**comment**:
+
+```text
+We thank the reviewer for finding (1) the method simple and elegant, relying only on benchmark scores and easy to apply, and (2) the reliability analysis useful for deciding when a prediction warrants running more benchmarks.
+
+---
+
+> Weakness: Table 21 questions the significance of this method, by comparing it to simpler baselines. I did have trouble parsing this piece of information, but I believe that their method in sparse public score settings does not guarentee benefit over simpler methods such as model-mean. I still believe this is a good finding to report.
+
+Your reading is correct: on these new models, BenchPress is not guaranteed to beat the model mean when only one or two scores are known. The main reason is a **distribution shift** between the older, weaker models in the main matrix and the newer, stronger ones, rather than a general weakness of the method. BenchPress is fit mostly on the older models and knows only one or two scores of a new model, while the model mean is fit directly on the new model's known scores, which come from our probes, chosen as the most predictive benchmarks. BenchPress therefore needs more than two known scores to adapt to the new distribution: with three known scores, it is already more accurate.
+
+The original Table 21 made this hard to see for two reasons. First, its rows were indexed by $k$, the number of probes requested, but many new models reported only one or two of the probes, so a larger $k$ often added no known scores. Second, its rows were scored on different test cells, for two reasons: a model entered a row only if it reported at least one of the first $k$ probes, so the set of models changed with $k$; and as $k$ grew, more of a model's scores were revealed and were no longer tested. The rows therefore could not be compared directly. We have replaced Table 21 in Appendix D.3 with a comparison of the same predictions grouped by the number of revealed scores, and clarified the evaluation setup. Among the models added in the later matrix, 11 have at least 3 benchmarks in the probe set reported under the cost-unaware probes, and 8 under the cost-aware probes. The table below reports MedAE in score points (BenchPress / model mean) on these models, on the same test cells at every count. It stops at three because, within one ordering, only one or two models reveal every count up to four. These samples are small, which is why we keep this comparison in the appendix; we do not over-interpret it and present it only to clarify the part that was hard to parse.
+
+| Revealed scores | Cost-unaware probes | Cost-aware probes |
+|---|---|---|
+| 1 | 9.13 / **7.52** | 6.52 / **6.09** |
+| 2 | 7.27 / **6.93** | 6.63 / **6.20** |
+| 3 | **6.47** / 7.21 | **5.70** / 7.08 |
+
+- With one or two revealed scores, the model mean is more accurate than BenchPress in both orderings, by 0.3 to 1.6 points.
+- With three revealed scores, BenchPress is more accurate in both orderings, by 0.7 points under the cost-unaware probes and 1.4 points under the cost-aware probes.
+- From one to three revealed scores, BenchPress's error drops, while the model mean's changes little or rises.
+
+Together, these show that BenchPress is the better predictor once a few scores are known.
+
+> Question: How was the 25-benchmark low-cost allowlist constructed? What criteria were used to classify benchmarks as inexpensive?
+
+We constructed the allowlist in two steps:
+
+1. **Rough automated pipeline.** For each benchmark in our score matrix, we estimated the dollar cost of one full evaluation run from an available public record (e.g., Artificial Analysis [1], MathArena [2], or the benchmark's own paper or leaderboard), and kept the benchmarks below a cost threshold as the low-cost allowlist. These records come from different models and reasoning settings, so the estimate is rough rather than accurate; it only places most benchmarks in the right cost range.
+2. **Human refinement.** We then manually checked the list and corrected misleading estimates, using prior knowledge that some benchmarks are cheaper than estimated.
+
+Note that the cost still varies across users, depending on how many turns and how much reasoning effort they choose to spend on each benchmark. The allowlist is therefore not fixed: users can rerun the pipeline with costs from their own models and reasoning settings to obtain their own allowlist and cost-aware probes via our algorithm. Following the reviewer's comment, we have added this explanation to Appendix D.1.
+
+---
+
+**Final Note:** Thank you again for your support and constructive feedback. We have incorporated your suggestions into the revised manuscript, marked in navy blue. We would be grateful if you could champion our paper during the discussion.
+
+*References*
+- [1] Artificial Analysis, "[Independent analysis of AI](https://artificialanalysis.ai/)." Online resource, accessed November 14, 2026.
+- [2] MathArena, "[MathArena](https://matharena.ai/)." Online leaderboard, accessed November 14, 2026.
+```
+
+### Reviewer reply (answers ZDMaKlrU9e, depth 2)
+- note id: EMrD8bdnwj
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Reviewer_5ChR
+- created (tcdate): 2026-11-17 11:36:11 UTC
+- modified (mdate): 2026-11-17 11:36:11 UTC
+- replyto: ZDMaKlrU9e
+
+**comment**:
+
+```text
+I thank the authors for their detailed explanation and analysis. The explanation for Table 21 has been very helpful for me to understand the results and learnings from this ablation.
+
+In short I have decided to increase my score, as I believe this work is valuable research.
+```
+
+### Author response (answers EMrD8bdnwj, depth 3)
+- note id: eCWqyxIOJV
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-17 18:27:39 UTC
+- modified (mdate): 2026-11-17 18:27:39 UTC
+- replyto: EMrD8bdnwj
+
+**title**:
+
+```text
+Thank You for Your Thoughtful Review and Support
+```
+
+**comment**:
+
+```text
+Thank you for carefully reading our rebuttal and for your support. We are glad our responses helped address your concerns. Thank you again for your encouraging feedback and constructive suggestions!
+```
+
+### Review 2: Reviewer_sCbk
+- note id: 5IjLz8yPYM
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Review
+- signature: ICLR.cc/2027/Conference/Submission22329/Reviewer_sCbk
+- created (tcdate): 2026-10-21 02:06:49 UTC
+- modified (mdate): 2026-11-06 12:23:39 UTC
+- replyto: TO4Jk7wG05
+
+**paper_summary**:
+
+```text
+The paper is studying whether the LLM performance on missing benchmark score could be predicted from scores already available. The authors have collected scores for 84 models and 133 benchmarks and created a score matrix which contain 2604 scores. They claim this matrix is approximately rank 2.The proposed method is called BenchPress which transforms the scores and uses model and benchmark offsets with 2 shared factors to predict missing scores. They also selected small benchmark set to predict the remaining scores and separate model estimates which predictions are more reliable.It is reported that median absolute error is 4.63 on held out scores and 5 selected benchmarks give an error of 4.74 on the same matrix used to select those benchmarks. The authors also test the method on held-out models and a later data snapshot and the error is higher there with a median absolute error of 6.76 on 27 newer models when 5 of their scores are known. So here the mmain contribution of the paper is the dataset and detailed experiments.
+```
+
+**presentation**:
+
+```text
+3
+```
+
+**informativeness**:
+
+```text
+2
+```
+
+**soundness**:
+
+```text
+2
+```
+
+**critical_strengths**:
+
+```text
+- The process of collecting scores and steps use to address the conflicting values and different benchmark versions is  clearly explained along with the link of theor sources. Paper also provides experiments on affect of filtering choice on results. This dataset will be very useful for other LLM Evaluation.
+
+
+- Authors have compared 12 different methods across 7 score transformations and used nested validation to choose settings. The paper reports the prediction error and how many scores each method could predict. Separately they also did the benchmark selection again using 59 models and tested the selected sets on 25 held out models. These sets performed better than random sets which gave evidence that they also help predict scores for models not used during selection.
+
+- With model and benchmark offsets the median absolute error was 5.17 but by adding the 2 factors this reduced to 4.59 in the same experiment setting and bootstrap analysis also supported this improvement. This was on randomly held out score within the existing matrix. So such detailed experiments proves that the  interaction between model and the benchmark gives useful information beyond the offsets.
+
+- The authors gave evidence about where prediction works and where it struggles. They report large prediction errors and also test the method on a later data snapshot. The simple model mean is competitive on newly added models. On 178 newly reported scores for existing models the predictions tend to be too high. These results were helpful in understanding the limits and benefits of it.
+```
+
+**critical_weaknesses**:
+
+```text
+- For models added in the later snapshot the median absolute error was 6.88 for BenchPress and 6.95 for model mean in the 5 unrestricted probe setting. Both methods were tested on same scores but the difference is small and the bootstrap analysis also does not show clear improvment. So it is unclear how much extra benefit the method gives on these models. Authors also did a seperate check where benchmarks were selected using 59 models and tested on 25 held out models but it mainly compared selected benchmark sets with random sets. Adding model mean and offsets only baselines there would help show where the improvement comes from.
+
+- The temporal test uses a training matrix from before the target model release but it is alsosaid  that the cutoff only checks when models were released. Older models still keep scores reported after the target model release because the date when each score was reported is not recorded. So some training information may not have been available at that time. So It is unclear how much this affects the results. The separate April to August test is useful but the historical claim needs clearer wording or a cutoff based on when the scores were actually reported.
+
+- The 90% prediction intervals cover 89.9% of held out scores which is a good result in the tested setting. However this coverage is not reported on later models or newly reported scores. For eg in 178 reported scores of existing models the predictions were too high in 65% of cases which does not mean the intervals are wrong but it gives a reason to check whether the reliability model still works on later data. It should be tested weather the earlier trained reliability model there without training it again. Otherwise the claim about predictions being safe to use should be limited to the settings already tested.
+
+- The rank 2 result needs some clearer explanation because for rank 3 to 6 it give very similar errors and the authors already mention this. Choosing rank 2 because it is simpler makes sense but this does not show that model capabilities have exactly two dimensions. The method also uses model and benchmark offsets along with the 2 factors. So authors should make clear that 2 factors work well for predicting scores in this matrix and this different from establishing the exact number of capability dimensions that models have.
+```
+
+**questions_for_authors**:
+
+```text
+- Can you add model mean and offset only results for the seperate 25 held out model test using same probes and test scores? A clear improvement would strengthen the evidence for the 2 factors in this setting.
+
+- Where reporting date can be verified from the source can authors check the temporal results after removing scores reported after the target release? Similar results would increase confidence in the historical claim while a large change would weaken it.
+
+- Does the earlier trained reliability model still give coverage close to 90% on later models and newly reported scores without training it again? If coverage drops then the claim about when predictions can be trusted needs to be more limited.
+```
+
+**flag_for_ethics_review**:
+
+```text
+No
+```
+
+**rating**:
+
+```text
+3
+```
+
+**confidence**:
+
+```text
+3
+```
+
+### Author response (answers 5IjLz8yPYM, depth 2)
+- note id: 5VA0iC7OhF
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-15 02:18:51 UTC
+- modified (mdate): 2026-11-15 02:31:59 UTC
+- replyto: 5IjLz8yPYM
+
+**title**:
+
+```text
+(Part 1/3) Response to Reviewer sCbk: Additional Ablations and Validation
+```
+
+**comment**:
+
+```text
+We thank the reviewer for recognizing that (1) our dataset is built transparently and will be very useful for LLM evaluation, (2) our method comparison and held-out validation are thorough, (3) the two factors capture information beyond model and benchmark offsets, and (4) our analysis of where prediction works and where it struggles is helpful.
+
+---
+
+> W1-1: For models added in the later snapshot the median absolute error was 6.88 for BenchPress and 6.95 for model mean in the 5 unrestricted probe setting. Both methods were tested on same scores but the difference is small and the bootstrap analysis also does not show clear improvment. So it is unclear how much extra benefit the method gives on these models. 
+
+Thank you for checking the appendix this carefully. We would like to clarify two points:
+
+1. **Without distribution shift, BenchPress substantially outperforms model mean.** In our main experiment (Table 11), we randomly hold out scores within the original matrix. BenchPress achieves a MedAE of **4.63**, compared with **7.22** for model mean.
+2. **With distribution shift, BenchPress needs a few more revealed scores to make accurate predictions and outperform model mean.** In the original Table 21, BenchPress was fit on the weaker models in the April matrix and evaluated on the stronger models added in August. Model mean was fit directly to each test model's known scores.
+
+    We have replaced Table 21 in Appendix D.3 with the comparison below to address two issues in the original presentation: (i) its rows were indexed by $k$, the number of probes requested, yet many new models reported only one or two probes, so a larger $k$ often added no known scores; and (ii) its rows were scored on different test cells, because a model entered a row only if it reported at least one of the first $k$ probes (changing the model set with $k$) and, as $k$ grew, newly revealed scores left the test set. Thus, the rows of the original Table 21 could not be compared directly.
+
+    We therefore re-analyzed the same predictions by the number of revealed scores. Among the models added in the later matrix, 11 report at least 3 probes under cost-unaware selection and 8 under cost-aware selection; we evaluate these models on the same test cells at every count. The table stops at three because, within each ordering, only one or two models reveal every count up to four. These samples are small, which is why we keep this comparison in the appendix; we do not over-interpret this breakdown and present it only to clarify Table 21.
+
+    With only one or two revealed scores, model mean can be more accurate; with at least three, BenchPress adapts to the test model and outperforms model mean, as shown in the table below (MedAE in score points, BenchPress / model mean).
+
+    | Revealed scores | Cost-unaware probes | Cost-aware probes |
+    |---|---|---|
+    | 1 | 9.13 / **7.52** | 6.52 / **6.09** |
+    | 2 | 7.27 / **6.93** | 6.63 / **6.20** |
+    | 3 | **6.47** / 7.21 | **5.70** / 7.08 |
+
+
+> W1-2: Authors also did a seperate check where benchmarks were selected using 59 models and tested on 25 held out models but it mainly compared selected benchmark sets with random sets. Adding model mean and offsets only baselines there would help show where the improvement comes from. 
+
+> Q1: Can you add model mean and offset only results for the seperate 25 held out model test using same probes and test scores? A clear improvement would strengthen the evidence for the 2 factors in this setting.
+
+Thank you for this suggestion. Following the reviewer’s comment, we added a comparison of BenchPress with model mean and offsets only on the 59/25 held-out model split described in Appendix D.1 (p. 35). **Our results show that (i) model mean substantially underperforms BenchPress and offsets only, and (ii) offsets only performs well, although BenchPress achieves lower MedAE in most cases.**
+
+In transformed score space, BenchPress has the form:
+
+$$
+\text{BenchPress} = \text{offsets-only component} + \text{rank-two correction}.
+$$
+
+The offsets and rank-two factors are fitted jointly. The added term may help more when the training models are informative for the test model. In the main experiment, BenchPress has lower MedAE than offsets only at every plotted budget from two to ten probes. In the new experiment below, the gap between BenchPress and offsets only is less consistent in held-out validation, possibly because fewer training models limit the benefit of the rank-two correction. Nevertheless, BenchPress achieves lower MedAE at most held-out budgets, especially under cost-unaware greedy selection.
+
+`[NEW EXP]` Click [this link](https://hackmd.io/_uploads/HJVI3tUAzg.png) to view the plots. We reuse the Appendix D.1 split and probe orderings: each held-out model uses 59 reference rows and its available probe scores. All methods share revealed scores and test cells at each budget. Offsets only removes the latent factors; model mean uses logit space.
+```
+
+### Author response (answers 5VA0iC7OhF, depth 3)
+- note id: 0AU8mOG0kG
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-15 02:22:02 UTC
+- modified (mdate): 2026-11-15 02:22:44 UTC
+- replyto: 5VA0iC7OhF
+
+**title**:
+
+```text
+(Part 2/3) Response to Reviewer sCbk: Additional Ablations and Validation
+```
+
+**comment**:
+
+```text
+> W2: The temporal test uses a training matrix from before the target model release but it is alsosaid  that the cutoff only checks when models were released. Older models still keep scores reported after the target model release because the date when each score was reported is not recorded. So some training information may not have been available at that time. So It is unclear how much this affects the results. The separate April to August test is useful but the historical claim needs clearer wording or a cutoff based on when the scores were actually reported.
+
+> Q2: Where reporting date can be verified from the source can authors check the temporal results after removing scores reported after the target release? Similar results would increase confidence in the historical claim while a large change would weaken it.
+
+We thank the reviewer for raising this point. The main-body temporal test excludes newer models, but scores for older models may have been reported after the target's release. We have clarified this limitation in Section 4.3 and added the following experiment with a fixed data cutoff to Appendix D.3.
+
+`[NEW EXP]` We freeze the main paper's April 30, 2026 matrix (84 models and 133 benchmarks) and predict models added in the August 26 snapshot (Appendix A.2), using only April benchmarks. All reference-model scores were therefore available by April 30. We retain 23 targets with at least 15 reported scores on April benchmarks. For each target, we randomly select ten scores, reveal the first 1, 5, or 10, and evaluate each budget on scores outside this set. We repeat this over ten random seeds, keeping the targets and test scores fixed across budgets.
+
+The table reports BenchPress's MedAE in score points (lower is better), using the same aggregation in both experiments: the median over seeds for each target, followed by the median across targets.
+
+| Revealed scores | Main-body temporal test (27 targets) | Frozen April matrix to August-added models (23 targets) |
+|---|---|---|
+| 1 | 9.37 | 7.98 |
+| 5 | 6.76 | 6.35 |
+| 10 | 6.12 | 6.15 |
+
+The similar errors at five and ten revealed scores support our finding that BenchPress can predict unmeasured benchmark scores for models absent from the earlier matrix using only a few known scores.
+
+> W3: The 90% prediction intervals cover 89.9% of held out scores which is a good result in the tested setting. However this coverage is not reported on later models or newly reported scores. For eg in 178 reported scores of existing models the predictions were too high in 65% of cases which does not mean the intervals are wrong but it gives a reason to check whether the reliability model still works on later data. It should be tested weather the earlier trained reliability model there without training it again. Otherwise the claim about predictions being safe to use should be limited to the settings already tested.
+
+> Q3: Does the earlier trained reliability model still give coverage close to 90% on later models and newly reported scores without training it again? If coverage drops then the claim about when predictions can be trusted needs to be more limited.
+
+Thank you for the great question. This concerns an extension of our original evaluation: the calibration of BenchPress's prediction intervals under distribution shift.
+
+Following the reviewer's suggestion, we investigate this extension below and find that coverage falls from 89.9% to 84.3% on newly reported scores of existing models and to 86.8% on models added later, with the reference matrix and calibration frozen. We therefore restrict the near-nominal coverage claim to the original held-out setting. When predicting a new model, we recommend collecting as many available benchmark scores as possible from recent models with similar benchmark performance, updating the reference matrix and reliability estimator, and recalibrating on a separate set of recent held-out scores.
+
+`[NEW EXP]` We fit the reliability estimator and conformal calibration using the April 30, 2026 score matrix, then freeze the matrix and both fitted components. We evaluate 178 scores newly reported in the August 26, 2026 snapshot for models already present in April. We also evaluate the 23 models added by August 26 with at least 15 scores on April benchmarks, the per-model threshold of the main matrix, using the original evaluation's 3-fold split of each model's scores over ten seeds: each fold is predicted from the frozen April matrix plus the model's other two folds. This tests transfer across nearly four months without updating the reference data, retraining the reliability estimator, or recalibrating the intervals.
+
+Coverage is the fraction of true scores inside the nominal 90% intervals; interval width is measured in score points.
+```
+
+### Author response (answers 0AU8mOG0kG, depth 4)
+- note id: o5UgbYmeyg
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-15 02:22:25 UTC
+- modified (mdate): 2026-11-15 02:22:25 UTC
+- replyto: 0AU8mOG0kG
+
+**title**:
+
+```text
+(Part 3/3) Response to Reviewer sCbk: Additional Ablations and Validation
+```
+
+**comment**:
+
+```text
+| Evaluation setting | Test predictions | Coverage | Median interval width |
+|---|---|---|---|
+| Original held-out evaluation (April 30 matrix) | 26,040 | 89.9% | 28.0 |
+| Newly reported scores of existing models (August 26 snapshot) | 178 | 84.3% | 22.4 |
+| Models added in the August 26 snapshot | 4,540 | 86.8% | 27.7 |
+
+> W4: The rank 2 result needs some clearer explanation because for rank 3 to 6 it give very similar errors and the authors already mention this. Choosing rank 2 because it is simpler makes sense but this does not show that model capabilities have exactly two dimensions. The method also uses model and benchmark offsets along with the 2 factors. So authors should make clear that 2 factors work well for predicting scores in this matrix and this different from establishing the exact number of capability dimensions that models have.
+
+This is a great point. The reviewer is correct that we have not fully established the exact number of model capability dimensions and that the rank and factor interpretation may also change as new models and benchmarks are added. However, we would like to clarify that our choice of rank 2 is motivated not only by simplicity but also by empirical evidence and interpretation: (i) in the four fully observed submatrices analyzed in Section 2.2, two components explain over 90% of the variance; and (ii) the SVD of the completed matrix (Appendix B.3) shows that the first component tracks general capability, while the second contrasts long-context and coding benchmarks with agentic-search and competition-math benchmarks.
+
+---
+
+**Final Note:** Thank you again for your support and constructive feedback. We have incorporated all your feedback into the revised manuscript, including the additional experiments and clarifications discussed above, marked in navy blue. We would be grateful if you could champion our paper during the discussion.
+```
+
+### Review 3: Reviewer_ye3d
+- note id: i0gHj2lV81
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Review
+- signature: ICLR.cc/2027/Conference/Submission22329/Reviewer_ye3d
+- created (tcdate): 2026-10-25 13:54:56 UTC
+- modified (mdate): 2026-11-06 12:23:38 UTC
+- replyto: TO4Jk7wG05
+
+**paper_summary**:
+
+```text
+This paper asks whether LLM developers need to run every benchmark, given that a frontier release now reports 40+ scores and far more are run during development. The authors compile a public score matrix of frontier models on a variety of benchmarks, and show it is effectively rank-2. Building on this, they propose BenchPress to predict the full benchmark performance scores for a new model based on a subset of benchmark eval scores. Hypothesis tests identify when predictions are trustworthy.
+```
+
+**presentation**:
+
+```text
+2
+```
+
+**informativeness**:
+
+```text
+3
+```
+
+**soundness**:
+
+```text
+2
+```
+
+**critical_strengths**:
+
+```text
+Today, researchers and frontier labs sometimes spend more compute on eval than post-training. The problem studied by the paper is well-motivated, and the proposed solution is very clear and natural. Overall I think it's a very good paper.
+```
+
+**critical_weaknesses**:
+
+```text
+I wonder whether or how well this approach can be extended to sample-level? For example, instead of picking a subset of benchmarks, we pick a subset of eval questions from each benchmarks, which can potentially provide more accurate signals for full benchmark score predictions?
+```
+
+**questions_for_authors**:
+
+```text
+See above.
+```
+
+**flag_for_ethics_review**:
+
+```text
+No
+```
+
+**rating**:
+
+```text
+4
+```
+
+**confidence**:
+
+```text
+3
+```
+
+### Author response (answers i0gHj2lV81, depth 2)
+- note id: dDTi0kQAg5
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-15 02:09:08 UTC
+- modified (mdate): 2026-11-15 02:09:08 UTC
+- replyto: i0gHj2lV81
+
+**title**:
+
+```text
+Response to Reviewer ye3d: Question-Level Prediction and Selection
+```
+
+**comment**:
+
+```text
+We thank the reviewer for finding (1) the problem well motivated, given that evaluation compute now rivals post-training compute, and (2) the solution clear and natural.
+
+---
+
+> Weakness \& Question: How well can this approach be extended to the sample level, i.e., picking a subset of eval questions from each benchmark?
+
+Thank you for bringing up this interesting extension. Following the reviewer's suggestion, we conducted the experiments below and found that **BenchPress can be extended to both sample-level prediction and sample selection, although it was originally designed for benchmark-level score prediction and benchmark selection**.
+
+`[NEW EXP]` We extended BenchPress to a model-by-question matrix using the Open LLM Leaderboard v2 results released by Zhang et al. [1]: 425 models answering 21,176 questions across 37 subtasks of BBH, GPQA, IFEval, MATH Level 5, MMLU-Pro, and MuSR.
+
+1. *Rank choice*. This model-by-question matrix (425 $\times$ 21176) is much larger than the model-by-benchmark score matrix (84 $\times$ 133) used in our original experiments. We therefore increase the rank from 2 to 40, rounding the subtask count (i.e., 37) up to the nearest multiple of ten as a simple heuristic.
+2. *Sample selection*. Our benchmark-level greedy procedure evaluates each candidate addition. A naive global greedy search over 21,176 questions would require about 4.2 million candidate evaluations just to select 200 questions. We therefore use a simpler BenchPress-based selector: fit rank-40 BenchPress using only training models, cluster questions by their fitted response profiles across these models within each subtask, and select distinct questions nearest the cluster centers.
+
+For the experiments below, we randomly split the models into 298 training and 127 held-out models. Each held-out model receives a total question budget, allocated equally across subtasks, capped at half each subtask's questions, with the remainder redistributed.
+
+- **Question-level prediction under random question selection** (click [this link](https://hackmd.io/_uploads/S1rf3KU0fg.png) to view the figure). We compare BenchPress (rank 40) with two baselines: (i) AIPW’s ridge predictor [1] fits a regression to each held-out model’s revealed answers, using training models’ correctness on each question as features, and predicts the remaining question outcomes; (ii) GP-IRT’s IRT predictor [2] learns question difficulty and discrimination from training models’ responses, then estimates each held-out model’s abilities from its revealed answers to predict correctness on untested questions. BenchPress has the highest mean accuracy at 200 and 400 questions, while AIPW’s ridge predictor is more accurate at larger budgets.
+
+- **Question selection** (click [this link](https://hackmd.io/_uploads/Hk7ehKIRGx.png) to view the figure). We compare random, BenchPress, and GP-IRT selection, keeping the same rank-40 BenchPress predictor throughout. GP-IRT selection [2] clusters questions by their learned IRT difficulty and discrimination parameters using k-means, then selects questions nearest the cluster centers. After revealing the selected answers, BenchPress jointly completes the held-out rows. All three policies are evaluated on identical questions unrevealed by any policy. Both figures report binary answer-prediction accuracy (%; higher is better), averaged over five selection seeds; a prediction score strictly greater than 0.5 predicts a correct answer. BenchPress selection has the highest mean accuracy at 400 questions and is close to GP-IRT selection at 800.
+
+---
+
+**Final Note:** Thank you again for your encouraging feedbacks! We have added the discussion above to the revision, marked in navy blue. If there are any remaining questions, please do not hesitate to let us know. We would be grateful if you could champion our paper during the discussion.
+
+*References*
+- [1] Zhang et al., "[How Benchmark Prediction from Fewer Data Misses the Mark](https://proceedings.neurips.cc/paper_files/paper/2025/hash/c57bacb5ea621582235c54ce2a83136d-Abstract-Conference.html)." NeurIPS, 2025.
+- [2] Maia Polo et al., "[tinyBenchmarks: evaluating LLMs with fewer examples](https://proceedings.mlr.press/v235/maia-polo24a.html)." ICML, 2024.
+```
+
+## Other notes in the forum (not under a review)
+
+### Author response (replyto TO4Jk7wG05)
+- note id: yFYLWC4Zvx
+- invitation: ICLR.cc/2027/Conference/Submission22329/-/Official_Comment
+- signature: ICLR.cc/2027/Conference/Submission22329/Authors
+- created (tcdate): 2026-11-15 02:35:54 UTC
+- modified (mdate): 2026-11-15 02:35:54 UTC
+- replyto: TO4Jk7wG05
+
+**title**:
+
+```text
+Thank You for the Encouraging Feedback and Constructive Suggestions
+```
+
+**comment**:
+
+```text
+Dear Area Chairs and Reviewers,
+
+Thank you for your encouraging assessments and thoughtful suggestions. We appreciate the positive recommendations from all three reviewers and have addressed your concerns point by point.
+
+- **Revisions in navy blue:** We incorporated the additional experiments and clarifications from our responses into the revised manuscript, with the new ablations and extension studies included in the appendix.
+- **Additions in dark green:** Using the 10-page allowance for rebuttal revisions, we moved key methodological details and factor interpretations from the appendix into the main text to make the paper easier to follow.
+
+Thank you again for your time, careful reading, and constructive feedback.
+```
+
+## Meta-review and decision
+
+None present in the forum at retrieval time.
+

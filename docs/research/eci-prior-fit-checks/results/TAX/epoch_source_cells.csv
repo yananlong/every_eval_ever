@@ -1,0 +1,7 @@
+origin,cells,benchmarks,eee_cells,multi,indep,mean_eci,eee_share
+Benchmark creator,1086,24,239,123,26,146.4,0.22
+Benchmark creator (assumed: file has no per-row source),232,8,110,69,0,153.7,0.474
+Epoch AI,1017,14,208,116,193,148.3,0.205
+Model developer,463,13,97,21,54,95.7,0.21
+Other third party,61,4,17,10,7,132.5,0.279
+unknown (blank source),20,2,17,11,0,149.0,0.85

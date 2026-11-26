@@ -1,0 +1,16 @@
+domain,eci_benchmarks,eci_cells,eci_models,eci_benchmarks_incl_secondary,eee_benchmarks,eee_rows,eee_models,eee_sources,eci_models_any,eee_benchmarks_not_in_eci,eci_models_on_non_eci_benchmarks,eci_models_ge3_non_eci_benchmarks,non_eci_benchmarks_ge20_eci_models,reading
+Software & Computing,13,442,158,15,72,139358,1853,17,182,64,182,145,15,ECI covered; EEE adds dense non-ECI benchmarks
+Mathematics,8,590,233,8,40,84680,6049,13,201,26,160,63,9,ECI covered; EEE adds dense non-ECI benchmarks
+Natural Sciences,6,365,240,6,25,70375,6234,14,216,23,108,40,4,ECI covered; EEE adds dense non-ECI benchmarks
+Health & Medicine,0,0,0,0,23,8901,720,9,147,17,147,50,4,"gap: dense EEE data on ECI models, no ECI benchmark"
+"Law, Government & Policy",0,0,0,1,9,86945,350,6,154,9,154,76,7,"gap: dense EEE data on ECI models, no ECI benchmark"
+"Business, Finance & Professional Work",4,99,81,4,16,70005,1057,10,154,14,153,93,10,ECI covered; EEE adds dense non-ECI benchmarks
+"Computers, Web & Apps",3,41,32,3,35,16029,759,9,115,33,110,47,7,ECI covered; EEE adds dense non-ECI benchmarks
+Everyday Life & Physical World,5,287,178,8,38,9507,654,7,91,37,80,16,2,ECI covered
+Puzzles & Games,6,388,144,7,7,14106,5149,10,141,7,84,0,1,ECI covered
+"Languages, Cultures & Humanities",1,150,150,2,14,10899,379,7,73,12,70,17,1,ECI covered
+"Media, Arts & Online Content",1,50,50,2,15,6917,593,7,59,15,59,10,2,ECI covered
+General / multi-subject,5,377,223,5,82,279613,8055,23,216,70,201,166,16,ECI covered; EEE adds dense non-ECI benchmarks
+No specific subject (Axis 2 only),4,59,49,4,137,191506,7187,18,202,135,201,127,22,ECI covered; EEE adds dense non-ECI benchmarks
+Unclassified (insufficient information),1,31,31,1,0,0,0,0,0,0,0,0,0,ECI covered
+(uncoded tail),0,0,0,0,1437,54221,2384,24,129,1404,129,93,0,not coded

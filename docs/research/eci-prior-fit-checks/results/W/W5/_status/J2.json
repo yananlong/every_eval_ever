@@ -1,0 +1,18 @@
+{
+ "name": "J2",
+ "cap_s": 7200,
+ "started": "2026-11-20T15:52:44Z",
+ "timeout": false,
+ "rc": 0,
+ "wall": 1808.9,
+ "resolved": true,
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 4000,
+  "divergences": 0,
+  "max_rhat": 1.00139131833373,
+  "min_ess": 3506.834032333641
+ }
+}

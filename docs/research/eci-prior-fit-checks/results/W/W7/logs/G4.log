@@ -1,0 +1,12 @@
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_l, z2, xi2, tau_delta, zeta]
+Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 693 seconds.
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_l, z2, xi2, tau_delta, zeta]
+Sampling 4 chains for 500 tune and 1_000 draw iterations (2_000 + 4_000 draws total) took 15569 seconds.
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_l, z2, xi2, tau_delta, zeta]
+Sampling 4 chains for 1_000 tune and 4_000 draw iterations (4_000 + 16_000 draws total) took 1585 seconds.
+DONE G4 False cold {'stage': 'cold', 'tune': 1000, 'draws': 4000, 'divergences': 9, 'max_rhat': 1.6926219069350463, 'min_ess': 6.250752730567992} 17978.4

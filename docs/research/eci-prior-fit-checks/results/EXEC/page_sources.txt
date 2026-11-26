@@ -1,0 +1,105 @@
+ 
+
+ 
+ 
+   ECI prior and fit-check study · stages W2 to W5 · updated 2026-11-21 
+   Epoch's ECI model: what the prior and fit checks found 
+   Under Epoch's own model, the intervals are calibrated and each score is predicted about as well as claimed. Even so, the real data reject the model's single-factor structure on three residual checks. The misfit does not localise to a few benchmarks, so under the pre-registered rules the Model-adequacy claim (C2) is falsified. How far the misfit moves ECI scores has not been measured. Under alternative priors the frontier and the top 10 hold while the weakest models move by up to about 29 points, so the Prior-robustness claim (C1) is falsified as well. 
+ 
+
+  Contents  1 Summary  2 Labels  3 Primer  4 W3 at a glance  5 Notation  6 Checks T1 to T7  7 Generators  8 Definitions and CP3  9 Power  10 Convergence  11 Anchors  12 Calibration  13 Positive control  14 Posterior predictive checks  14.1 Marginal fit  14.2 Residual checks  14.3 Localisation  14.4 Structure  15 Sensitivity  15.4 Anchors and priors  15.5 Benchmarks  16 Status  17 Sources  
+
+ 
+   1. Summary 
+
+   1.1 What ECI is and how Epoch models it 
+   The Epoch Capabilities Index (ECI) places AI models on a single scale using their scores on many benchmarks. Epoch fits a Bayesian Beta item-response model in which each model \(m\) has one latent capability \(c_m\) and each benchmark \(b\) has a difficulty \(d_b\), a slope \(a_b\) and a noise term \(\sigma_b\). A score is drawn as 
+   $$ y_{mb}\sim\operatorname{Beta}\bigl(\mu\kappa,\ (1-\mu)\kappa\bigr),\qquad \mu=\operatorname{sigmoid}\bigl(a_b\,(c_m-d_b)\bigr),\qquad \kappa=\frac{1}{4\sigma_b^{2}}-1 . $$ 
+   The capabilities are then rescaled so that Claude 3.5 Sonnet sits at 130 and GPT-5 at 150. The fit uses 2,879 scores from 256 models on 57 benchmarks and is sampled with NUTS in PyMC. 
+   The model's central assumption is that one dimension is enough: given \(c_m\), a model's scores are independent across benchmarks. It has no developer effects and no drift over time. 
+
+   If Bayesian model checking is new to you,  the primer  below defines the methods used. 
+
+   1.2 How we checked it 
+   
+      Reproduction fit ( W2 ) Refit Epoch's model on Epoch's data and reproduce the published fit. 
+      Simulation study ( W3 ) Simulate 199 datasets from the fitted model with the Model-is-true simulation (generator  G-null ) and refit each one. These model-true replicates tell us whether the intervals are calibrated when the model is true. Five misfit generators, each planting one known flaw, tell us whether each check can detect what it targets. 
+      Posterior predictive checks ( W4 ) Compare the real data with those model-true replicates using  seven residual checks (T1 to T7) , with a max-T adjustment, together with five-fold held-out coverage and LOO-PIT. 
+      Localisation and refit ( W4d ) Localise the misfit to specific benchmarks, refit without them, and measure how far ECI moves. It ran on 2026-11-20: the set of responsible benchmarks has 16 members, above the limit of 10, so the refit step did not apply. 
+      Prior sensitivity ( W5 ) Refit the real data under ten defensible alternative priors and score each against a refit with Epoch's priors, on the ranks, shifts, interval widths and top 10 of the ECI scores. 
+   
+   The generators (G-null,  G-2D ,  G-offset ,  G-shape ,  G-disp ,  G-drift ) are simulated datasets, each but G-null with one known, planted flaw. The Model-adequacy checkpoint ( CP3 ) is the decision rule applied after the posterior predictive checks. Every code is defined in  Labels at a glance . 
+
+   1.3 What the checks found 
+   
+      
+         Question  Main numbers  Result   
+       
+          Are intervals calibrated when the model is true? (W3)  The 90% intervals cover the truth at a rate of 0.882 over all models and 0.903 at the frontier. On the real data the sampler is clean, with 0 divergences and a max R-hat of 1.004.   ✓ Calibrated   
+          Can the checks detect planted misfit? (W3)  The Noise-level check ( T3 ) detected 19 of 19. The Residual-correlation check ( T2 ) detected 7 of 7, but only 7 of 20 fits converged. In contrast, the Lab-by-benchmark ( T5 ), Time-drift ( T4 ) and Curve-shape ( T1 ) checks detected only 0 of 18, 0 of 16 and 2 of 14.   ✕ Mostly low power   
+          Do the real data look like the model-true replicates? (W4)  T1, T2 and T5 each have adjusted p = 0.0053, beyond all 187 converged model-true replicates, and T2 sits about 30 standard deviations above their mean. T3 passes with p = 0.81.   Three checks reject   
+          Are single scores predicted well? (W4)  Held-out 90% coverage is 0.898 over 2,704 rows, and LOO 90% coverage is 0.895. None of the 44 tested benchmarks is flagged.   ✓ Holds   
+          Is the model adequate for Epoch's data? ( C2 )  Localisation (W4d) finds 16 responsible benchmarks, above the limit of 10, and deleting them still leaves T1 and T2 beyond every model-true replicate (p = 0.0055).   ✕ Falsified   
+          Is ECI robust to its priors? ( C1 )  Two proper capability priors (P8, P9) move 59 and 61 of 254 models by more than a quarter of their interval width, against a limit of 12, mostly at the bottom of the scale. The top 10, the rank correlation (at least 0.9998) and every frontier model hold. The hyperprior and noise priors move nothing.   ✕ Falsified   
+       
+      
+     Sources: W3 calibration.json; W4 ppc.json, epoch_calibration.csv, localisation.json; W4G summary.md; W5 sensitivity.json. Details are in sections 9 to 15. 
+   
+   
+      Calibration under the model is fine.  When data are simulated from Epoch's model and refitted, the 90% intervals for ECI contain the true value about as often as they should. 
+      Several checks have little or no power.  Only the Noise-level check (T3) demonstrated power. The Residual-correlation check (T2) detected every planted second dimension it could be scored on, but 13 of those 20 fits were unusable, so its power is not certified. T5, T4 and T1 mostly missed their planted misfits. 
+      On the real data, T1, T2 and T5 reject.  The Curve-shape check (T1) tests the shape of the item curves, T2 the residual correlation between pairs of benchmarks, and the Lab-by-benchmark check (T5) developer-by-benchmark offsets. For each of them the observed value exceeds every one of the 187 model-true replicates. T3, the only check with demonstrated power, passes. 
+      The misfit is spread out, so C2 is falsified.  Localisation (W4d) flags 16 benchmarks whose components exceed the 99th percentile of the maxima over the model-true replicates. Even with all 16 deleted, which removes 1,398 of the 2,879 scores, T1 and T2 remain beyond every one of 180 model-true replicates. Under the Model-adequacy checkpoint (CP3), either fact alone rules out "adequate with exceptions". 
+      Marginal predictions hold.  Held-out and leave-one-out coverage are near nominal, and no benchmark is flagged. 
+      Under a two-dimensional truth the sampler often fails.  In the Second-skill simulation (G-2D), 13 of 20 datasets gave no usable fit. Three of those crashed because the two anchors came out in the wrong order, which leaves the 130/150 scale undefined. The real-data fit converged cleanly, which suggests that any second dimension in the real data differs from the planted design. 
+      The choice of anchors moves single-model intervals, not comparisons.  Re-anchoring the real-data draws on nine other anchor pairs leaves every within-draw ranking and every \(P(i>j)\) unchanged, moves no posterior-mean gap between two models by more than 1.27 points, and changes the uncertainty of gaps between leading models by a factor of 0.78 to 1.17, while single-model interval widths change by a factor of 0.45 to 2.01 (section  11 ). Changing the anchor values only rescales every gap and width. 
+      The low end of the scale depends on the capability prior, so C1 is falsified.  Replacing Epoch's flat prior on capability with a proper one (P8 or P9) raises the 42 models below ECI 100 by 14 to 17 points on average and narrows their intervals, which fails S2 and S3 in the all-models stratum. The frontier rises by at most 1.7 points, the top 10 and its order are unchanged, and no hyperprior or noise prior moves anything (section  15 ). T1, T2 and T5 reject under every prior. Re-anchoring leaves this unchanged, except that with GPT-4o mini as the low anchor P9 also fails at the frontier (section  15.4 ). 
+      The choice of benchmarks moves gaps and the low end, not the top 10.  No single-benchmark removal changes the top-10 set. Removing OTIS Mock AIME stretches the frontier by 2.5 points and shifts every frontier model by more than a quarter of its interval width, and random 20% drops move the low end by -15 to +15 points, as much as the capability priors do (section  15.5 ). 
+   
+    Interpretation.  Each score's own interval is about right. The results indicate, however, that the single-factor structure misses residual dependence within clusters of related benchmarks, namely the FrontierMath tiers, the ARC-AGI pair, OTIS Mock AIME with LMCA, and a group of older benchmarks (HellaSwag, PIQA, Winogrande, TriviaQA, GSM8K). Of the 445 benchmark pairs, 26% have \(q>3.84\), and the median \(q\) is 1.25 against about 0.45 expected under independence. The structure also misses developer-by-benchmark offsets, of which the largest are Anthropic on GPQA diamond and OpenAI on the FrontierMath tiers. 
+    Why rejections count even without power.  A check rejects when the real data are more extreme than the 187 datasets simulated from the fitted model, and that reference controls the false-rejection rate whatever the check's power is. Power matters only when reading a pass, since a pass from a check that cannot detect its target says little. The three rejections therefore stand, the T3 pass is informative, and the passes of T4,  T6  and  T7  carry little weight. 
+
+   1.4 What this means for ECI users 
+   The interval around each predicted benchmark score looks calibrated, both in simulation and on held-out real scores. Rankings and gaps between models, though, rest on a one-dimensional assumption that the data reject, and the evidence suggests that benchmarks share structure beyond a single capability. How much this misfit moves ECI scores has not yet been measured, and nothing here shows that any published score or ranking is wrong. Under Epoch's model the frontier scores and the top 10 hold up under every prior tested, while the scores of the weakest models depend on the flat capability prior, by up to 29 points under P9. 
+
+   1.5 What is pending 
+   
+     The exploratory  Model expansion ( W6 ) , posterior SBC for the prior arms, and the unresolved prior P3 (section  15 ). 
+   
+   The sections below are the detailed record, with the real-data results in section  14 , whose section  14.4  shows the misfit in charts. 
+ 
+
+ 
+   2. Labels at a glance 
+   The page uses the short codes of the study plan, and each has a plain name used in the form "Name (code)". The  generators ,  G-null  to  G-drift , are recipes for simulated datasets, and every one except G-null plants one known flaw. A  checkpoint  is a decision rule applied after a stage of the study, and the one read on this page is the Model-adequacy checkpoint ( CP3 ). The study's plan documents ( decision-gates.md ,  experiment-plan.md ) call checkpoints gates and number them G0 to G7, so CP3 here is their G3. 
+
+   2.1 Residual checks (T1 to T7) 
+  15.5 Choice of benchmarks 
+ Each refit deletes the rows of one or more benchmarks, re-applies Epoch's inclusion rule (at least four benchmarks and at least four scores between 0.1 and 0.9 per model) and refits with Epoch's function at P0's W5 settings. It is scored against P0 on the models present in both, with the S2 and S3 counts held at the registered 12, 1, 3 and 9. A4 covers the eight benchmarks on which both anchors have scores and is reported with no verdict. The other 49 leave-one-out refits, four residual clusters from the predictive checks, all 16 benchmarks of F at once and 20 random drops of 11 benchmarks each (rng 20261121) are exploratory. No drop removed an anchor. 80 of the 82 fits converged at seed 12345. The OTIS Mock AIME refit ended non-converged and the FrontierMath Tier 4 v1 refit hit the 2-hour cap, and both converged when rerun at seed 22345, which the table uses. A second seed of P0 moves no frontier model by more than 0.03 points. 
+  
+   Refit  Fits  S1-S3 all  S1-S3 frontier  S1-S3 sparse  S4  Top-10 set changed  Frontier max |D| (ECI)  Stretch change, rank 1 to 20  Low-end mean shift    
+  P0b, second seed (noise)  1   pass    pass    pass    pass   0  0.03  -0.00  -  
+  A4: DTBench  1   pass    pass    fail    pass   0  1.61  -0.95  -2.3  
+  A4: GPQA diamond  1   fail    fail    fail    pass   0  1.93  +1.23  +3.8  
+  A4: MATH level 5  1   fail    pass    fail    pass   0  1.66  +0.96  -8.5  
+  A4: METR Time Horizons  1   pass    pass    pass    pass   0  0.06  -0.01  +0.4  
+  A4: OTIS Mock AIME 2024-2025 (seed 22345)  1   fail    fail    fail    pass   0  4.08  +2.51  -11.1  
+  A4: SimpleBench  1   pass    pass    pass    pass   0  0.25  -0.17  +1.0  
+  A4: VPCT  1   pass    pass    pass    pass   0  0.13  +0.05  +0.2  
+  A4: WeirdML  1   pass    pass    pass    pass   0  0.88  -0.46  +1.3  
+  Other 49 LOBO (exploratory)  49  47 of 49 pass  48 of 49 pass  46 of 49 pass  39 of 49 pass  0  0.02 to 1.32  -0.93 to +0.62  -2.0 to +5.7  
+  FrontierMath, 4 tiers  1   fail    pass    pass    fail   0  1.02  -0.62  +1.6  
+  ARC-AGI and ARC-AGI-2  1   fail    pass    pass    pass   0  1.12  +0.63  +2.2  
+  OTIS Mock AIME and LMCA  1   fail    fail    fail    pass   0  3.10  +1.77  -13.2  
+  HellaSwag, PIQA, Winogrande, TriviaQA, GSM8K  1   pass    pass    pass    pass   0  0.28  +0.21  +3.8  
+  All 16 of F  1   fail    fail    fail    fail   0  19.35  +14.25  -23.8  
+  Random 20% drops  20  0 of 20 pass  2 of 20 pass  3 of 20 pass  3 of 20 pass  4  0.32 to 6.75  -1.74 to +4.24  -14.8 to +15.4  
+   
+ Source: runs/W/BSEL/summary.json and chart_data.json ( eci_work/tools/bsel_*.py ). For a group of refits the stratum and S4 columns count the refits that pass. Frontier max |D| is the largest posterior-mean shift of a frontier model, the stretch is the change in the gap from rank 1 to rank 20 (13.32 points under P0), and the low end is the mean shift of the models below P0 ECI 100. 
+ 
+   Frontier shift and stretch for each benchmark refit 
+   Each mark is one refit without the named benchmarks, against P0. The vertical axis is the largest shift of a frontier model and the horizontal axis the change in the frontier's spread. A second seed of P0 sits at the origin. Dropping all 16 benchmarks of F (frontier shift 19.35, stretch +14.25) is off the chart. 
+    
+      A4: one of the 8 benchmarks both anchors share    other single benchmark    residual cluster    random 20% drop  
+ 
+ Within A4, removing METR Time Horizons, SimpleBench, VPCT or WeirdML leaves every stratum and S4 passing, with frontier shifts of 0.06 to 0.88 points. Removing OTIS Mock AIME shrinks the raw capability gap between the anchors by 14%, and all 20 frontier models shift by more than 0.25 W, intervals widen by a median of 25% and the frontier stretch from rank 1 to rank 20 (13.32 in P0) grows by 2.51 points. GPQA diamond, MATH level 5 and DTBench fail S2 or S3 in at least the sparse stratum. For the other seven the anchor gap stays at 0.91 to 1.03 of P0's, against a posterior coefficient of variation of 0.074 for the scale factor in P0. Shifts grow with distance below the anchors, and without OTIS Mock AIME Cerebras-GPT-13B falls by 18.4 points with all six of its own scores kept (Spearman correlation of shift with P0 ECI 0.97). 

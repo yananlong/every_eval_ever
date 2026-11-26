@@ -1,0 +1,89 @@
+{
+ "gen": "offset",
+ "r": 10,
+ "seed": 3425625367,
+ "position": 2000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "developer": "Google DeepMind",
+  "benchmarks": [
+   26,
+   9,
+   33
+  ],
+  "n_cells": 34
+ },
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 16000,
+  "divergences": 3643,
+  "max_rhat": 1.0087895425710829,
+  "min_ess": 576.8871431310441
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 5,
+   "max_rhat": 1.0036581872014667,
+   "min_ess": 1776.3534165077185
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 0,
+   "max_rhat": 1.0235127617681186,
+   "min_ess": 182.7081657690978
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 16000,
+   "divergences": 3643,
+   "max_rhat": 1.0087895425710829,
+   "min_ess": 576.8871431310441
+  }
+ ],
+ "started_from": "cold",
+ "warnings": [
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 5 divergences, max r_hat 1.004, min bulk ESS 1776 at 1000 draws); falling back to a cold fit.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3751) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "3643 divergent transitions; the posterior may be biased. Consider raising target_accept."
+ ],
+ "wall_seconds": 2325.6,
+ "T": {
+  "T1": 2.4755361804027705,
+  "T2": 1.2183748101883591,
+  "T3": 0.06095940538902755,
+  "T4": 0.03435441824358432,
+  "T5": 3.568847732316754,
+  "T6": 1.1247564182236798,
+  "T7": 4.464951736031704
+ },
+ "maxima": {
+  "Qb": 8.072156284541537,
+  "q": 13.440905235654606,
+  "t": 3.568847732316754,
+  "cb": 2.0692733555834137
+ }
+}

@@ -1,0 +1,33 @@
+facet,value,basis,eci_benchmarks,eci_cells
+axis2_property,Knowledge,primary,7,459
+axis2_property,Long context,primary,3,80
+axis2_property,Reasoning,primary,23,1606
+axis2_property,Robustness & adversarial perturbation,primary,1,9
+axis2_property,Task skill (no Axis 2 property),primary,22,637
+axis2_property,"Truthfulness, misconceptions & hallucination",primary,1,88
+modality,3D,primary,1,14
+modality,documents,primary,2,69
+modality,image,primary,6,135
+modality,image (grids),primary,2,181
+modality,"mixed (design, video, 3D files)",primary,1,17
+modality,text,primary,44,2432
+modality,unknown,primary,1,31
+interaction_style,agentic in an environment,primary,17,457
+interaction_style,computer use,primary,2,17
+interaction_style,single-turn QA,primary,29,1897
+interaction_style,tool use,primary,8,477
+interaction_style,unknown,primary,1,31
+language,en,primary,55,2698
+language,none (non-linguistic),primary,2,181
+axis2_property,Hazardous & dual-use knowledge,primary or secondary,2,26
+axis2_property,Knowledge,primary or secondary,8,547
+axis2_property,Long context,primary or secondary,4,109
+axis2_property,Reasoning,primary or secondary,31,2058
+axis2_property,Robustness & adversarial perturbation,primary or secondary,1,9
+axis2_property,Task skill (no Axis 2 property),primary or secondary,22,637
+axis2_property,"Truthfulness, misconceptions & hallucination",primary or secondary,1,88
+axis2_property,"Safety: harmful requests, jailbreaks & over-refusal",primary or secondary,0,0
+axis2_property,"Bias, stereotypes & toxicity",primary or secondary,0,0
+axis2_property,Privacy & personal information,primary or secondary,0,0
+axis2_property,Evaluating AI systems,primary or secondary,0,0
+axis2_property,Instruction following,primary or secondary,0,0

@@ -1,0 +1,58 @@
+benchmark,primary_domain,cells,eee_same_benchmark_eci_models
+APEX-Agents,"Business, Finance & Professional Work",58,27
+Remote Labor Index,"Business, Finance & Professional Work",17,4
+The Agent Company,"Business, Finance & Professional Work",13,4
+GDPval,"Business, Finance & Professional Work",11,44
+OSWorld 2.0,"Computers, Web & Apps",9,12
+OSWorld,"Computers, Web & Apps",8,13
+DeepResearch Bench,"Computers, Web & Apps",24,0
+SimpleBench,Everyday Life & Physical World,95,0
+Winogrande,Everyday Life & Physical World,61,23
+HellaSwag,Everyday Life & Physical World,51,35
+PIQA,Everyday Life & Physical World,41,30
+Furniture Assembly,Everyday Life & Physical World,39,0
+LMCA,General / multi-subject,126,0
+BBH,General / multi-subject,39,60
+SimpleQA Verified,General / multi-subject,88,25
+TriviaQA,General / multi-subject,32,8
+MMLU,General / multi-subject,92,52
+DTBench,"Languages, Cultures & Humanities",150,0
+OTIS Mock AIME 2024-2025,Mathematics,169,0
+MATH level 5,Mathematics,75,44
+GSM8K,Mathematics,53,41
+FrontierMath-Tiers-1-3-v2-Private,Mathematics,90,7
+FrontierMath-Tier-4-v2-Private,Mathematics,72,8
+ProofBench,Mathematics,71,54
+FrontierMath-2025-02-28-Private,Mathematics,34,25
+FrontierMath-Tier-4-2025-07-01-Private,Mathematics,26,11
+Fiction.LiveBench,"Media, Arts & Online Content",50,0
+GeoBench,Natural Sciences,44,0
+GPQA diamond,Natural Sciences,176,169
+VPCT,Natural Sciences,26,3
+Surface Evolver Bench,Natural Sciences,24,0
+ARC AI2,Natural Sciences,64,22
+OpenBookQA,Natural Sciences,31,47
+LAMBADA,No specific subject (Axis 2 only),20,2
+CL-bench,No specific subject (Axis 2 only),18,11
+CL-bench Life,No specific subject (Axis 2 only),12,6
+ANLI,No specific subject (Axis 2 only),9,0
+ARC-AGI,Puzzles & Games,91,88
+ARC-AGI-2,Puzzles & Games,90,88
+Mystery Game Puzzles,Puzzles & Games,82,0
+Chess Puzzles,Puzzles & Games,87,0
+Balrog,Puzzles & Games,29,0
+SpireClimb,Puzzles & Games,9,0
+WeirdML,Software & Computing,116,0
+WeirdML v3,Software & Computing,26,0
+PostTrainBench,Software & Computing,19,0
+Cybench,Software & Computing,19,12
+ExploitBench,Software & Computing,7,23
+Aider polyglot,Software & Computing,44,32
+FrontierCode,Software & Computing,42,39
+MirrorCode,Software & Computing,39,0
+METR Time Horizons,Software & Computing,33,0
+CadEval,Software & Computing,14,0
+GSO-Bench,Software & Computing,28,0
+FrontierSWE,Software & Computing,23,9
+Terminal Bench,Software & Computing,32,69
+EBR-bench,Unclassified (insufficient information),31,0

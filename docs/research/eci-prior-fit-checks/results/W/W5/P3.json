@@ -1,0 +1,57 @@
+{
+ "name": "P3",
+ "cap_s": 7200,
+ "started": "2026-11-20T15:53:02Z",
+ "attempts": [
+  {
+   "draws": 4000,
+   "converged": false,
+   "last_attempt": {
+    "stage": "cold",
+    "tune": 1000,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0113207928934593,
+    "min_ess": 229.30144885302096
+   },
+   "started_from": "cold",
+   "wall": 7101.3,
+   "warnings": [
+    "This process (pid=90764) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=90764) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=90764) is multi-threaded, use of fork() may lead to deadlocks in the child."
+   ],
+   "ladder": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0160677033553884,
+     "min_ess": 281.39405095310576
+    },
+    {
+     "stage": "cold",
+     "tune": 1000,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0113207928934593,
+     "min_ess": 229.30144885302096
+    }
+   ],
+   "seed": 12345,
+   "kw": "{\"epoch_priors\": {\"sigma_median\": [-2.995732273553991, 0.5]}}",
+   "n_draws_total": 16000
+  },
+  {
+   "draws": 8000,
+   "timeout": true,
+   "wall": 7200.1,
+   "converged": false
+  }
+ ],
+ "resolved": false,
+ "converged": false,
+ "timeout": true,
+ "n_draws_total": null
+}

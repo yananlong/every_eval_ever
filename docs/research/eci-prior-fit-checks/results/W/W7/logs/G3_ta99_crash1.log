@@ -1,0 +1,59 @@
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_delta, zeta]
+Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 1219 seconds.
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [tau_alpha, sigma_median, tau_sigma, sigma, capability, difficulty, log_slope, tau_fam, w_fam, tau_delta, zeta]
+Sampling 4 chains for 500 tune and 1_000 draw iterations (2_000 + 4_000 draws total) took 6102 seconds.
+Traceback (most recent call last):
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/w7_fit.py", line 20, in <module>
+    spec = models.Spec(tuple(f for f in a.features.split(",") if f))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/yananlong/every_eval_ever/eci_work/v11/runs/lib/fit.py", line 95, in fit
+    pm.compute_log_likelihood(d["trace"], extend_inferencedata=True, progressbar=False)
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/stats/log_density.py", line 67, in compute_log_likelihood
+    return compute_log_density(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/stats/log_density.py", line 198, in compute_log_density
+    elemwise_logdens_fn = umodel.compile_fn(
+                          ^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/model/core.py", line 1852, in compile_fn
+    fn = compile(inputs, outs, mode=mode, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pymc/pytensorf.py", line 1007, in compile
+    pytensor_function = pytensor.function(
+                        ^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/compile/maker.py", line 261, in function
+    return m.create()
+           ^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/compile/maker.py", line 689, in create
+    _fn, _i, _o = self.linker.make_thunk(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/basic.py", line 242, in make_thunk
+    return self.make_all(
+           ^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/basic.py", line 720, in make_all
+    thunks, nodes, jit_fn = self.create_jitable_thunk(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/basic.py", line 656, in create_jitable_thunk
+    converted_fgraph = self.fgraph_convert(
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/numba/linker.py", line 23, in fgraph_convert
+    return numba_funcify_ensure_cache(fgraph, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/numba/dispatch/basic.py", line 463, in numba_funcify_ensure_cache
+    jitable_func, cache_key = numba_funcify_and_cache_key(op, *args, **kwargs)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/functools.py", line 912, in wrapper
+    return dispatch(args[0].__class__)(*args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/numba/dispatch/basic.py", line 556, in numba_funcify_FunctionGraph
+    py_func = fgraph_to_python(
+              ^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/utils.py", line 774, in fgraph_to_python
+    compiled_func = op_conversion_fn(
+                    ^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/numba/dispatch/basic.py", line 530, in op_conversion_and_key_collection
+    func, key = numba_funcify_ensure_cache(op, node=node, *args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/venvs/jax/lib/python3.12/site-packages/pytensor/link/num

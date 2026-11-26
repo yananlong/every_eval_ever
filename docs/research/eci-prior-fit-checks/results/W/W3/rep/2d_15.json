@@ -1,0 +1,100 @@
+{
+ "gen": "2d",
+ "r": 15,
+ "seed": 2947024290,
+ "position": 3000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "second_dim_benchmarks": [
+   1,
+   5,
+   9,
+   13,
+   14,
+   16,
+   17,
+   18,
+   20,
+   23,
+   27,
+   28,
+   30,
+   31,
+   32,
+   34,
+   35,
+   37,
+   39,
+   40,
+   44,
+   45,
+   47,
+   48,
+   51,
+   53,
+   54,
+   56
+  ]
+ },
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 4000,
+  "divergences": 4,
+  "max_rhat": 1.0082803656110775,
+  "min_ess": 448.07950783529486
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 1,
+   "max_rhat": 1.0087479001947808,
+   "min_ess": 672.8343233235902
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 4,
+   "max_rhat": 1.0082803656110775,
+   "min_ess": 448.07950783529486
+  }
+ ],
+ "started_from": "cold",
+ "warnings": [
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 1 divergences, max r_hat 1.009, min bulk ESS 673 at 1000 draws); falling back to a cold fit.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2877) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "4 divergent transitions; the posterior may be biased. Consider raising target_accept."
+ ],
+ "wall_seconds": 740.6,
+ "T": {
+  "T1": 2.5695523583621505,
+  "T2": 8.993944658779744,
+  "T3": 0.05259991201904704,
+  "T4": 0.057561535482626096,
+  "T5": 2.1296663937619345,
+  "T6": 29.211087497731064,
+  "T7": 3.977943577879685
+ },
+ "maxima": {
+  "Qb": 11.373027737989423,
+  "q": 177.02070517579182,
+  "t": 2.1296663937619345,
+  "cb": 17.737723484908436
+ }
+}

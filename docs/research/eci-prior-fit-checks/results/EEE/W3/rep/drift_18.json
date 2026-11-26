@@ -1,0 +1,70 @@
+{
+ "gen": "drift",
+ "r": 18,
+ "seed": 64735037,
+ "position": 3600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {},
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 4000,
+  "divergences": 1168,
+  "max_rhat": 1.2626861029496173,
+  "min_ess": 11.332146989283544
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 5,
+   "max_rhat": 1.0050281739120943,
+   "min_ess": 1143.782128088034
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 1168,
+   "max_rhat": 1.2626861029496173,
+   "min_ess": 11.332146989283544
+  }
+ ],
+ "started_from": "cold",
+ "warnings": [
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 5 divergences, max r_hat 1.005, min bulk ESS 1144 at 1000 draws); falling back to a cold fit.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=98086) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "1168 divergent transitions; the posterior may be biased. Consider raising target_accept.",
+  "max r_hat = 1.263 > 1.01; chains have not mixed. Consider more tuning or draws."
+ ],
+ "wall_seconds": 2799.7,
+ "T": {
+  "T1": 2.2509911894608856,
+  "T2": 1.0423784977739097,
+  "T3": 0.06576990271812869,
+  "T4": 0.06588009157291463,
+  "T5": 2.250973474697553,
+  "T6": 7.498286997205664,
+  "T7": 3.608042394285646
+ },
+ "maxima": {
+  "Qb": 7.903415917842526,
+  "q": 10.440091710349959,
+  "t": 2.250973474697553,
+  "cb": 6.4311168970722
+ }
+}

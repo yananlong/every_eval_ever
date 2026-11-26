@@ -1,0 +1,57 @@
+{
+ "input_sha256": "ea79065699a984bfee54c02c349027d0aed508269e4f9a25fc99649a2a6f17f6",
+ "code_sha256": "9e1252015d147d2d02932c1fa5cbdbed28e5b65fa7b49ba9cd7296798a25ac01",
+ "args": {
+  "seed": 12349,
+  "draws": null,
+  "evaluate": false,
+  "spec": [
+   [
+    "hetero"
+   ],
+   "epoch"
+  ],
+  "priors": null,
+  "chains": 4,
+  "target_accept": 0.95,
+  "clip": 0.001
+ },
+ "name": "F5_fold4",
+ "started_from": "pilot",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0057273764965744,
+   "min_ess": 1377.274819098107
+  }
+ ],
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0057273764965744,
+  "min_ess": 1377.274819098107
+ },
+ "warnings": [
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=4109) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 397.1,
+ "min_tail_ess": 1976.7733682219828,
+ "min_bfmi": "n/a: TypeError"
+}

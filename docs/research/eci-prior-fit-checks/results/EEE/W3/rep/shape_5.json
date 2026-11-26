@@ -1,0 +1,77 @@
+{
+ "gen": "shape",
+ "r": 5,
+ "seed": 898620118,
+ "position": 1000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "asymptote_benchmarks": [
+   0,
+   3,
+   8,
+   10,
+   15,
+   18,
+   19,
+   25,
+   27,
+   32,
+   33,
+   34,
+   37,
+   40,
+   46,
+   47,
+   52,
+   53,
+   55
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0044887305150387,
+  "min_ess": 1534.8123822279906
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0044887305150387,
+   "min_ess": 1534.8123822279906
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97400) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 407.5,
+ "T": {
+  "T1": 3.2383738321989486,
+  "T2": 1.0932590788734746,
+  "T3": 0.05997704100694243,
+  "T4": 0.03593611206314949,
+  "T5": 2.9723982615174633,
+  "T6": 2.810783191181221,
+  "T7": 3.1719284696362515
+ },
+ "maxima": {
+  "Qb": 55.69714780481162,
+  "q": 13.463758412191632,
+  "t": 2.9723982615174633,
+  "cb": 12.332548881076075
+ }
+}

@@ -1,0 +1,59 @@
+,section,metric,value,guide
+0,data,n_obs,2879.0,
+1,data,n_models,256.0,
+2,data,n_benchmarks,57.0,
+3,data,n_obs_clipped,83.0,rows the Beta cannot see
+4,sampling,n_chains,4.0,
+5,sampling,n_draws,4000.0,
+6,sampling,divergences,0.0,0 ideal; any is a warning
+7,sampling,divergence_rate,0.0,0 ideal
+8,sampling,max_r_hat,1.0054150194937794,lower; <= 1.01
+9,sampling,n_r_hat_above_1.01,0.0,0 ideal
+10,sampling,n_parameters,430.0,
+11,sampling,min_ess_bulk,1679.755713733648,higher; >= 400
+12,sampling,min_ess_tail,2032.249651453395,higher; >= 400
+13,sampling,min_bfmi,0.8409354330258536,higher; > 0.3
+14,accuracy,rmse,0.08329624559613334,lower is better
+15,accuracy,mae,0.06115865558708592,lower is better
+16,accuracy,bias,-0.0012636529362705907,ideal 0
+17,accuracy,rmse_ratio_median,0.8974868655287042,ideal 1; < 1 = intervals over-wide
+18,accuracy,rmse_ratio_max,1.1963023940273578,ideal <= 1; > 1 = over-confident
+19,accuracy,rmse_loo,0.09561624107721942,lower; out-of-sample
+20,accuracy,mae_loo,0.07029457482152364,lower; out-of-sample
+21,loo,elpd_loo,3389.862489393783,higher is better
+22,loo,elpd_loo_se,57.164772837581495,SE of elpd_loo
+23,loo,p_loo,446.4167979896329,effective parameters
+24,loo,max_pareto_k,1.477496540247915,lower; < 0.7
+25,loo,pareto_k_good,2658.0,k <= 0.5; higher is better
+26,loo,pareto_k_ok,175.0,0.5 < k <= 0.7; usable
+27,loo,pareto_k_bad,42.0,0.7 < k <= 1; lower is better
+28,loo,pareto_k_very_bad,4.0,k > 1; 0 ideal
+29,calibration,mean_pit,0.5084258423063563,ideal 0.5
+30,calibration,ks_statistic,0.040634942688433484,lower is better
+31,calibration,ks_pvalue,0.00014857002383146726,low p = detectably non-uniform
+32,calibration,coverage_0.5,0.5567905522750956,ideal 0.50
+33,calibration,coverage_0.8,0.8572420979506773,ideal 0.80
+34,calibration,coverage_0.9,0.942341090656478,ideal 0.90
+35,calibration,coverage_0.95,0.9704758596734977,ideal 0.95
+36,calibration,mean_pit_loo,0.5098331031692215,ideal 0.5; out-of-sample
+37,calibration,ks_statistic_loo,0.03148421482731145,lower is better; out-of-sample
+38,calibration,ks_pvalue_loo,0.006640927402158571,low p = detectably non-uniform
+39,calibration,coverage_0.5_loo,0.5067731851337269,ideal 0.50; out-of-sample
+40,calibration,coverage_0.8_loo,0.7992358457797847,ideal 0.80; out-of-sample
+41,calibration,coverage_0.9_loo,0.899965265717263,ideal 0.90; out-of-sample
+42,calibration,coverage_0.95_loo,0.9465092045849253,ideal 0.95; out-of-sample
+43,ppc_pooled,ppp_mean,0.29,ideal 0.5; pooled
+44,ppc_pooled,ppp_sd,0.6225,pooled; sigma is judged per benchmark
+45,ppc_pooled,ppp_variance,0.6225,pooled; sigma is judged per benchmark
+46,ppc_pooled,ppp_iqr,0.469,pooled; sigma is judged per benchmark
+47,ppc_pooled,ppp_min,0.0,meaningless; the clip pins it
+48,ppc_pooled,ppp_max,1.0,meaningless; the clip pins it
+49,ppc_pooled,ppp_skew,0.4855,ideal 0.5; the Beta cannot flex its skew
+50,ppc_pooled,ppp_frac_below_0.05,0.517,"ideal 0.5; pooled, so very sensitive"
+51,ppc_pooled,ppp_frac_above_0.95,0.83075,"ideal 0.5; pooled, so very sensitive"
+52,ppc_per_benchmark,ppp_variance_median,0.594,ideal 0.5; this judges sigma
+53,ppc_per_benchmark,ppp_variance_n_outside,2.0,lower is better
+54,ppc_per_benchmark,ppp_iqr_median,0.6065,ideal 0.5; this judges sigma
+55,ppc_per_benchmark,ppp_iqr_n_outside,7.0,lower is better
+56,ppc_per_benchmark,n_checks,399.0,
+57,ppc_per_benchmark,n_checks_outside,36.0,10% expected by chance

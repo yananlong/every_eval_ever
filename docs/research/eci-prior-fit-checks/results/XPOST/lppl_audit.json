@@ -1,0 +1,342 @@
+{
+ "models": {
+  "GPT-5.1": {
+   "L": 0.893,
+   "L_source": "X-post chart (approx)",
+   "eci_mean": 150.94282602977754,
+   "q05": 149.41394424438477,
+   "q95": 152.55792007446288
+  },
+  "GPT-5.2": {
+   "L": 0.888,
+   "L_source": "X-post chart (approx)",
+   "eci_mean": 154.47749938869475,
+   "q05": 152.8784523010254,
+   "q95": 156.19963684082032
+  },
+  "GPT-5.4": {
+   "L": 0.871,
+   "L_source": "OpenAI chart via dev.to/mlq.ai",
+   "eci_mean": 157.82963587284087,
+   "q05": 155.9903190612793,
+   "q95": 159.87169494628907
+  },
+  "GPT-5.5": {
+   "L": 0.848,
+   "L_source": "OpenAI chart via dev.to/mlq.ai",
+   "eci_mean": 160.10860988998414,
+   "q05": 158.1077133178711,
+   "q95": 162.34974060058593
+  },
+  "GPT-5.6 Sol": {
+   "L": 0.828,
+   "L_source": "OpenAI chart via dev.to/mlq.ai",
+   "eci_mean": 162.99219717407226,
+   "q05": 160.69921417236327,
+   "q95": 165.55758819580078
+  },
+  "GPT-6 Astra": {
+   "L": 0.783,
+   "L_source": "OpenAI chart via dev.to/mlq.ai",
+   "eci_mean": 169.01847857761382,
+   "q05": 166.14270629882813,
+   "q95": 172.27428970336913
+  }
+ },
+ "ols_on_means": {
+  "n": 6,
+  "intercept": 287.303139961601,
+  "slope": -150.35210190503267,
+  "r": -0.9814371311463508,
+  "r2": 0.9632188423927793,
+  "resid_sd": 1.369494936619251,
+  "pred_0732": 177.2454013671171,
+  "pi90": [
+   172.34351947824166,
+   182.14728325599253
+  ]
+ },
+ "ols_per_draw": {
+  "slope_q": [
+   -172.82370564852712,
+   -149.62969366730636,
+   -130.33936691028072
+  ],
+  "pred_q": [
+   173.45576062432798,
+   177.15429994460774,
+   181.56892233503734
+  ]
+ },
+ "lomo_pred": {
+  "GPT-5.1": 175.92890782792364,
+  "GPT-5.2": 177.5794596643576,
+  "GPT-5.4": 177.42841637931016,
+  "GPT-5.5": 177.16514293470317,
+  "GPT-5.6 Sol": 177.1289279627132,
+  "GPT-6 Astra": 179.4097655421408
+ },
+ "corr_L_time": -0.9706772165650828,
+ "corr_eci_time": 0.9832862599087865,
+ "time_only": {
+  "slope_per_yr": 19.863117676712616,
+  "resid_sd": 1.3001014954141794
+ },
+ "variants": {
+  "GPT-5.4 base (L 0.871)": {
+   "GPT-5.4": 157.83,
+   "GPT-5.4 Pro": 160.24,
+   "GPT-5.4 Mini": 149.34,
+   "GPT-5.4 Nano": 146.39
+  },
+  "GPT-5.5 base (L 0.848)": {
+   "GPT-5.5": 160.11,
+   "GPT-5.5 Pro": 162.71
+  },
+  "GPT-5.6 family (L 0.828 for Sol)": {
+   "GPT-5.6 Sol": 162.99,
+   "GPT-5.6 Terra": 160.74,
+   "GPT-5.6 Luna": 156.67
+  },
+  "GPT-6 family (L 0.783 for Astra)": {
+   "GPT-6 Astra": 169.02,
+   "GPT-6.1 Sol": 168.51,
+   "GPT-6.1 Terra": 167.7,
+   "GPT-6 Sol": 163.76,
+   "GPT-6 Luna": 156.41
+  },
+  "GPT-4o vs o1 (same-base pair in the X chart)": {
+   "GPT-4o (Nov 2024)": 128.83,
+   "o1": 141.16
+  }
+ },
+ "bsel": {
+  "A4": {
+   "n": 9,
+   "slope_min": -174.97664836248808,
+   "slope_max": -140.85713003286054,
+   "pred_min": 175.50466304131373,
+   "pred_max": 181.7259892881945,
+   "stretch_min": 17.00084174679276,
+   "stretch_max": 20.951514035921804
+  },
+  "C": {
+   "n": 5,
+   "slope_min": -265.16973776799654,
+   "slope_max": -147.56216889162556,
+   "pred_min": 176.3950472645128,
+   "pred_max": 196.80823899170096,
+   "stretch_min": 17.69243392161718,
+   "stretch_max": 30.628150792628276
+  },
+  "LOBO": {
+   "n": 49,
+   "slope_min": -153.26532042914235,
+   "slope_max": -143.23757342597074,
+   "pred_min": 175.92545471070036,
+   "pred_max": 177.83874253913234,
+   "stretch_min": 17.371512700780926,
+   "stretch_max": 18.46869761680273
+  },
+  "R": {
+   "n": 20,
+   "slope_min": -185.2527698042492,
+   "slope_max": -135.07699124866093,
+   "pred_min": 173.55891935232597,
+   "pred_max": 183.89648347738154,
+   "stretch_min": 16.318333751064785,
+   "stretch_max": 21.706754042512813
+  }
+ },
+ "bsel_missing": 0,
+ "bsel_extremes": [
+  {
+   "fit": "C_F16",
+   "slope": -265.16973776799654,
+   "pred_0732": 196.80823899170096,
+   "stretch_51_to_6A": 30.628150792628276
+  },
+  {
+   "fit": "R18",
+   "slope": -135.07699124866093,
+   "pred_0732": 173.55891935232597,
+   "stretch_51_to_6A": 16.318333751064785
+  }
+ ],
+ "priors": {
+  "P8": {
+   "slope": -156.47581216067906,
+   "pred_0732": 178.26139357591777
+  },
+  "P9": {
+   "slope": -159.7003762796946,
+   "pred_0732": 178.83045969047544
+  },
+  "P10": {
+   "slope": -149.48537011865668,
+   "pred_0732": 177.13325088254174
+  }
+ },
+ "saturation": {
+  "169.0": {
+   "below_0_5": 6,
+   "below_0_9": 28,
+   "below_0_9_names": [
+    "WeirdML",
+    "SimpleBench",
+    "METR Time Horizons",
+    "Balrog",
+    "GeoBench",
+    "LMCA",
+    "GSO-Bench",
+    "DeepResearch Bench",
+    "Remote Labor Index",
+    "GDPval",
+    "SimpleQA Verified",
+    "Chess Puzzles",
+    "Mystery Game Puzzles",
+    "CL-bench",
+    "EBR-bench",
+    "MirrorCode",
+    "PostTrainBench",
+    "Furniture Assembly",
+    "ExploitBench",
+    "CL-bench Life",
+    "APEX-Agents",
+    "FrontierCode",
+    "FrontierSWE",
+    "WeirdML v3",
+    "PIQA",
+    "Winogrande",
+    "SpireClimb",
+    "OSWorld 2.0"
+   ]
+  },
+  "172.5": {
+   "below_0_5": 5,
+   "below_0_9": 26,
+   "below_0_9_names": [
+    "WeirdML",
+    "SimpleBench",
+    "METR Time Horizons",
+    "Balrog",
+    "GeoBench",
+    "LMCA",
+    "DeepResearch Bench",
+    "Remote Labor Index",
+    "GDPval",
+    "SimpleQA Verified",
+    "Chess Puzzles",
+    "Mystery Game Puzzles",
+    "CL-bench",
+    "EBR-bench",
+    "MirrorCode",
+    "PostTrainBench",
+    "Furniture Assembly",
+    "ExploitBench",
+    "CL-bench Life",
+    "APEX-Agents",
+    "FrontierCode",
+    "FrontierSWE",
+    "WeirdML v3",
+    "PIQA",
+    "SpireClimb",
+    "OSWorld 2.0"
+   ]
+  },
+  "177": {
+   "below_0_5": 3,
+   "below_0_9": 19,
+   "below_0_9_names": [
+    "Balrog",
+    "GeoBench",
+    "LMCA",
+    "DeepResearch Bench",
+    "Remote Labor Index",
+    "SimpleQA Verified",
+    "Chess Puzzles",
+    "Mystery Game Puzzles",
+    "CL-bench",
+    "PostTrainBench",
+    "ExploitBench",
+    "CL-bench Life",
+    "APEX-Agents",
+    "FrontierCode",
+    "FrontierSWE",
+    "WeirdML v3",
+    "PIQA",
+    "SpireClimb",
+    "OSWorld 2.0"
+   ]
+  },
+  "190": {
+   "below_0_5": 0,
+   "below_0_9": 7,
+   "below_0_9_names": [
+    "Balrog",
+    "DeepResearch Bench",
+    "Remote Labor Index",
+    "CL-bench",
+    "PostTrainBench",
+    "CL-bench Life",
+    "PIQA"
+   ]
+  },
+  "210": {
+   "below_0_5": 0,
+   "below_0_9": 3,
+   "below_0_9_names": [
+    "DeepResearch Bench",
+    "CL-bench",
+    "PIQA"
+   ]
+  },
+  "237": {
+   "below_0_5": 0,
+   "below_0_9": 0,
+   "below_0_9_names": []
+  }
+ },
+ "edi_top": [
+  {
+   "benchmark": "CL-bench",
+   "edi_epoch": 180.258,
+   "slope_epoch": 0.0507
+  },
+  {
+   "benchmark": "SpireClimb",
+   "edi_epoch": 177.5177,
+   "slope_epoch": 0.2216
+  },
+  {
+   "benchmark": "CL-bench Life",
+   "edi_epoch": 177.1339,
+   "slope_epoch": 0.0732
+  },
+  {
+   "benchmark": "Remote Labor Index",
+   "edi_epoch": 176.6294,
+   "slope_epoch": 0.153
+  },
+  {
+   "benchmark": "PostTrainBench",
+   "edi_epoch": 173.165,
+   "slope_epoch": 0.0675
+  },
+  {
+   "benchmark": "OSWorld 2.0",
+   "edi_epoch": 169.8069,
+   "slope_epoch": 0.151
+  },
+  {
+   "benchmark": "WeirdML v3",
+   "edi_epoch": 168.0527,
+   "slope_epoch": 0.1579
+  },
+  {
+   "benchmark": "Furniture Assembly",
+   "edi_epoch": 165.8272,
+   "slope_epoch": 0.3013
+  }
+ ]
+}

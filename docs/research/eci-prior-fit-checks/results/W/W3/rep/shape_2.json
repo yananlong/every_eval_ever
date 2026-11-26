@@ -1,0 +1,92 @@
+{
+ "gen": "shape",
+ "r": 2,
+ "seed": 3363416522,
+ "position": 400,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "asymptote_benchmarks": [
+   0,
+   3,
+   7,
+   9,
+   12,
+   14,
+   15,
+   18,
+   21,
+   24,
+   25,
+   29,
+   33,
+   34,
+   35,
+   40,
+   44,
+   45,
+   50
+  ]
+ },
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 4000,
+  "divergences": 3,
+  "max_rhat": 1.0130034286049652,
+  "min_ess": 207.92734594091414
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 14,
+   "max_rhat": 1.0044632216074767,
+   "min_ess": 1399.1941542581312
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 3,
+   "max_rhat": 1.0130034286049652,
+   "min_ess": 207.92734594091414
+  }
+ ],
+ "started_from": "cold",
+ "warnings": [
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 14 divergences, max r_hat 1.004, min bulk ESS 1399 at 1000 draws); falling back to a cold fit.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3889) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "3 divergent transitions; the posterior may be biased. Consider raising target_accept.",
+  "max r_hat = 1.013 > 1.01; chains have not mixed. Consider more tuning or draws."
+ ],
+ "wall_seconds": 1261.6,
+ "T": {
+  "T1": 3.3876650756302933,
+  "T2": 1.1613957133270831,
+  "T3": 0.07572913180062688,
+  "T4": 0.029239828737887556,
+  "T5": 2.1805879857418655,
+  "T6": 1.6826009604698113,
+  "T7": 2.0043159054043604
+ },
+ "maxima": {
+  "Qb": 16.959964005216882,
+  "q": 12.049343151818874,
+  "t": 2.1805879857418655,
+  "cb": 1.932165080565606
+ }
+}

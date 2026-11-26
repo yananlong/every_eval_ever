@@ -1,0 +1,469 @@
+{
+ "id": "R19",
+ "kind": "random",
+ "drop": [
+  "ANLI",
+  "CL-bench Life",
+  "Furniture Assembly",
+  "GSO-Bench",
+  "MMLU",
+  "Mystery Game Puzzles",
+  "OSWorld",
+  "PIQA",
+  "ProofBench",
+  "Surface Evolver Bench",
+  "WeirdML v3"
+ ],
+ "dropped_models": [
+  "Beam 1.0",
+  "Cerebras-GPT-13B",
+  "Claude Instant",
+  "CodeQwen1.5-7B",
+  "DeepSeek Coder 33B",
+  "DeepSeek Coder 6.7B",
+  "DeepSeek-Coder-V2-Lite-Base",
+  "Falcon 2 11B",
+  "GPT-3.5 Turbo (Jan 2024)",
+  "GPT-3.5 Turbo (Jun 2023)",
+  "GPT-4 (Mar 2023)",
+  "Gemma 2 27B",
+  "Gemma 2 9B",
+  "Mistral Large",
+  "Mistral Large 2 (Jul 2024)",
+  "Mistral Large 4",
+  "Mistral Medium 3.5",
+  "Mixtral 8x22B",
+  "Qwen-1_8B",
+  "Qwen2.5-Coder-0.5B",
+  "Qwen2.5-Coder-32B",
+  "StarCoder 2 15B",
+  "StarCoder 2 3B",
+  "StarCoder 2 7B",
+  "Yi-9B"
+ ],
+ "cap_s": 7200,
+ "started": "2026-11-21T07:46:39Z",
+ "attempts": [
+  {
+   "draws": 4000,
+   "target_accept": 0.95,
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0012643407178463,
+    "min_ess": 4194.66215720245
+   },
+   "started_from": "pilot",
+   "wall": 316.0,
+   "warnings": [
+    "This process (pid=94108) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=94108) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=94108) is multi-threaded, use of fork() may lead to deadlocks in the child."
+   ],
+   "ladder": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0012643407178463,
+     "min_ess": 4194.66215720245
+    }
+   ],
+   "seed": 12345,
+   "n_draws_total": 16000,
+   "n_models": 231,
+   "n_rows": 2349,
+   "k": 0,
+   "child_wall": 328.0
+  }
+ ],
+ "resolved": true,
+ "converged": true,
+ "timeout": false,
+ "used_attempt": 0,
+ "finished": true,
+ "compare": {
+  "n_common": 231,
+  "scores": {
+   "S4": {
+    "top10_same": false,
+    "max_pair_change": 0.30912500000000004,
+    "pass_": false
+   },
+   "all": {
+    "n": 229,
+    "S1": 0.999388617379622,
+    "S1_pass": true,
+    "S2_count": 19,
+    "S2_limit": 11,
+    "S2_pass": false,
+    "S3_count": 6,
+    "S3_limit": 11,
+    "S3_pass": true,
+    "max_rel_shift": 0.5880435157943527,
+    "median_width_ratio": 1.02036756861021
+   },
+   "frontier": {
+    "n": 20,
+    "S1": 0.9849624060150375,
+    "S1_pass": false,
+    "S2_count": 1,
+    "S2_limit": 1,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 1,
+    "S3_pass": true,
+    "max_rel_shift": 0.28405503813482996,
+    "median_width_ratio": 1.0388166365528955
+   },
+   "sparse": {
+    "n": 50,
+    "S1": 0.9964465786314525,
+    "S1_pass": true,
+    "S2_count": 8,
+    "S2_limit": 2,
+    "S2_pass": false,
+    "S3_count": 5,
+    "S3_limit": 2,
+    "S3_pass": false,
+    "max_rel_shift": 0.5880435157943527,
+    "median_width_ratio": 1.0059972402031316
+   },
+   "dense": {
+    "n": 179,
+    "S1": 0.9994616801246634,
+    "S1_pass": true,
+    "S2_count": 11,
+    "S2_limit": 8,
+    "S2_pass": false,
+    "S3_count": 1,
+    "S3_limit": 8,
+    "S3_pass": true,
+    "max_rel_shift": 0.3898509598991667,
+    "median_width_ratio": 1.026064942680997
+   }
+  },
+  "top10": {
+   "p0": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6.1 Terra",
+    "Claude Fable 5.1",
+    "Claude Sonnet 5.5",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "refit": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "GPT-6.1 Terra",
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "Claude Fable 5.1",
+    "Gemini 4 Argon",
+    "Claude Sonnet 5.5",
+    "Claude Fable 5"
+   ],
+   "set_same": false,
+   "order_same": false,
+   "entered": [
+    "Claude Fable 5"
+   ],
+   "left": [
+    "Claude Opus 5"
+   ],
+   "p0_full_top10_dropped": [],
+   "rank_changes": {
+    "Claude Fable 5.2": 0,
+    "Gemini 4 Carbon": 0,
+    "GPT-6 Astra": 0,
+    "Claude Opus 5.5": 1,
+    "GPT-6.1 Sol": 1,
+    "GPT-6.1 Terra": -2,
+    "Claude Fable 5.1": 0,
+    "Claude Sonnet 5.5": 1,
+    "Gemini 4 Argon": -1,
+    "Claude Opus 5": null
+   }
+  },
+  "frontier": {
+   "stretch_rank1_minus_rank20_k": 12.72859467160228,
+   "stretch_rank1_minus_rank20_p0": 13.318379692077627,
+   "stratum_max_minus_min_k": 13.269091605593132,
+   "stratum_max_minus_min_p0": 13.318379692077627,
+   "stretch_change": -0.5897850204753468,
+   "stratum_range_change": -0.0492880864844949,
+   "max_abs_shift": 1.3895445055380833,
+   "max_rel_shift": 0.28405503813482996,
+   "mean_signed_shift": -0.6779477566117222,
+   "median_width_ratio": 1.0388166365528955
+  },
+  "gaps": {
+   "frontier": {
+    "n_pairs": 190,
+    "median_abs_gap_change": 0.5590194931346559,
+    "max_abs_gap_change": 1.6215313973459615
+   },
+   "all": {
+    "n_pairs": 26565,
+    "median_abs_gap_change": 0.5751638313294336,
+    "max_abs_gap_change": 30.677682360279462
+   }
+  },
+  "shift": {
+   "median_abs_all": 0.21174634706349593,
+   "max_abs_all": 22.80006248628608,
+   "mean_signed_all": 0.6113834541966098,
+   "spearman_shift_vs_p0eci": -0.2218860232030618,
+   "median_width_ratio_all": 1.02036756861021,
+   "by_p0_quintile": [
+    {
+     "q": 1,
+     "n": 46,
+     "p0_eci_range": [
+      55.9793171338886,
+      113.95880560159684
+     ],
+     "median_abs_shift": 3.1954105621782176,
+     "median_rel_shift": 0.16461519610198422,
+     "mean_signed_shift": 3.3949363243332447,
+     "median_width_ratio": 0.9653377688031193
+    },
+    {
+     "q": 2,
+     "n": 46,
+     "p0_eci_range": [
+      114.06576256036759,
+      135.13601500320434
+     ],
+     "median_abs_shift": 0.09868001466124099,
+     "median_rel_shift": 0.015782398756544472,
+     "mean_signed_shift": -0.2136598573642917,
+     "median_width_ratio": 1.0146084677723335
+    },
+    {
+     "q": 3,
+     "n": 45,
+     "p0_eci_range": [
+      135.2184787607193,
+      144.85785522460938
+     ],
+     "median_abs_shift": 0.08352688058226931,
+     "median_rel_shift": 0.019601154836125043,
+     "mean_signed_shift": -0.07700640350283203,
+     "median_width_ratio": 1.0150490118018323
+    },
+    {
+     "q": 4,
+     "n": 46,
+     "p0_eci_range": [
+      145.01363072013854,
+      154.82965982246398
+     ],
+     "median_abs_shift": 0.18021139585557933,
+     "median_rel_shift": 0.054342649803947346,
+     "mean_signed_shift": 0.1579131705317373,
+     "median_width_ratio": 1.0457772297123236
+    },
+    {
+     "q": 5,
+     "n": 46,
+     "p0_eci_range": [
+      154.9820716972351,
+      173.42698958206176
+     ],
+     "median_abs_shift": 0.36006193892150407,
+     "median_rel_shift": 0.08142812251805925,
+     "mean_signed_shift": -0.22023095992131936,
+     "median_width_ratio": 1.0585013873454376
+    }
+   ]
+  },
+  "movers": [
+   {
+    "model": "Dolly 2.0-12b",
+    "p0_eci": 55.9793171338886,
+    "eci": 78.77937962017468,
+    "shift": 22.80006248628608,
+    "rel_shift": 0.5880435157943527,
+    "width_ratio": 0.7130031313437156,
+    "rows_full": 6,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "RedPajama-INCITE-7B-Base",
+    "p0_eci": 57.985500606458636,
+    "eci": 79.29159945317372,
+    "shift": 21.30609884671508,
+    "rel_shift": 0.5689917991886176,
+    "width_ratio": 0.7411553743225541,
+    "rows_full": 6,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "open_llama_7b",
+    "p0_eci": 64.58126647850871,
+    "eci": 79.53231329045099,
+    "shift": 14.951046811942277,
+    "rel_shift": 0.43768102911535156,
+    "width_ratio": 0.8031139754192782,
+    "rows_full": 6,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "chatglm2-6b",
+    "p0_eci": 74.06046253371238,
+    "eci": 85.44867950049522,
+    "shift": 11.388216966782835,
+    "rel_shift": 0.3898509598991667,
+    "width_ratio": 0.8736605466108407,
+    "rows_full": 7,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "MPT-7B",
+    "p0_eci": 73.72666125369072,
+    "eci": 84.52064222147918,
+    "shift": 10.793980967788457,
+    "rel_shift": 0.38736513760185964,
+    "width_ratio": 0.8500881580931011,
+    "rows_full": 10,
+    "rows_sub": 8,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Falcon-7B",
+    "p0_eci": 73.4045676344633,
+    "eci": 83.85418888726132,
+    "shift": 10.44962125279801,
+    "rel_shift": 0.3730191569174624,
+    "width_ratio": 0.8823747155547035,
+    "rows_full": 10,
+    "rows_sub": 8,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "XGen-7B",
+    "p0_eci": 70.61348403784633,
+    "eci": 80.98319095288959,
+    "shift": 10.369706915043253,
+    "rel_shift": 0.33447661630743813,
+    "width_ratio": 0.8624639805072153,
+    "rows_full": 6,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "LLaMA-7B",
+    "p0_eci": 77.54448984670638,
+    "eci": 87.16873022384337,
+    "shift": 9.624240377136985,
+    "rel_shift": 0.3718760498040126,
+    "width_ratio": 0.8656745873518636,
+    "rows_full": 10,
+    "rows_sub": 8,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Qwen-7B",
+    "p0_eci": 89.37074832892418,
+    "eci": 98.69252768780169,
+    "shift": 9.321779358877507,
+    "rel_shift": 0.44234679543590005,
+    "width_ratio": 0.8813050624427091,
+    "rows_full": 6,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "Phi-1.5",
+    "p0_eci": 68.75159072831273,
+    "eci": 77.5779648925064,
+    "shift": 8.826374164193666,
+    "rel_shift": 0.26621625634380197,
+    "width_ratio": 0.8969020657607315,
+    "rows_full": 5,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   }
+  ],
+  "p_top10_changes": [
+   {
+    "model": "Claude Opus 5",
+    "p0": 0.6445625,
+    "refit": 0.3545
+   },
+   {
+    "model": "Claude Fable 5",
+    "p0": 0.2063125,
+    "refit": 0.4711875
+   },
+   {
+    "model": "GPT-6 Sol",
+    "p0": 0.10325,
+    "refit": 0.2566875
+   },
+   {
+    "model": "Claude Sonnet 5.5",
+    "p0": 0.997375,
+    "refit": 0.895
+   }
+  ]
+ },
+ "anchors": {
+  "refit": {
+   "cap_low_mean": -1.1134636038689778,
+   "cap_low_sd": 0.17109727744425388,
+   "cap_high_mean": 0.9269729618248166,
+   "cap_high_sd": 0.10619217838485068,
+   "spread_mean": 2.040436565693794,
+   "spread_sd": 0.1540514214081358,
+   "b_mean": 9.858308778577534,
+   "b_sd_over_mean": 0.07631298332682028
+  },
+  "p0": {
+   "cap_low_mean": -1.0391068851054301,
+   "cap_low_sd": 0.16409590538392446,
+   "cap_high_mean": 0.9176831258229756,
+   "cap_high_sd": 0.1019786250498718,
+   "spread_mean": 1.9567900109284058,
+   "spread_sd": 0.14353173038842415,
+   "b_mean": 10.276040868048316,
+   "b_sd_over_mean": 0.07366671618767971
+  }
+ },
+ "n_models": 231,
+ "n_rows": 2349
+}

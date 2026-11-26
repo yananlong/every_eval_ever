@@ -1,0 +1,204 @@
+{
+ "n_null": 192,
+ "thresholds_99": {
+  "Qb": 14.599003859184203,
+  "q": 22.336866906675013,
+  "t": 3.414269800834766,
+  "cb": 5.414362345922364
+ },
+ "T_obs": {
+  "T1": 4.471308505451415,
+  "T2": 3.2100245775453287,
+  "T3": 0.08973683037091543,
+  "T4": 0.020651439720188326,
+  "T5": 3.860533157456802,
+  "T6": 13.355856236655484,
+  "T7": 3.032185480663637
+ },
+ "obs_maxima": {
+  "Qb": 24.58945830499773,
+  "q": 76.45775183734011,
+  "t": 3.860533157456802,
+  "cb": 11.247915702486814
+ },
+ "extreme_components": {
+  "Qb": [
+   [
+    "OTIS Mock AIME 2024-2025",
+    24.58945830499773
+   ],
+   [
+    "DTBench",
+    17.59845117950641
+   ]
+  ],
+  "q": [
+   [
+    "GSM8K",
+    "Winogrande",
+    23.724496445251255
+   ],
+   [
+    "HellaSwag",
+    "Winogrande",
+    25.795949640032276
+   ],
+   [
+    "LAMBADA",
+    "PIQA",
+    24.78548410331918
+   ],
+   [
+    "MATH level 5",
+    "OTIS Mock AIME 2024-2025",
+    44.489313369515024
+   ],
+   [
+    "OTIS Mock AIME 2024-2025",
+    "LMCA",
+    48.28479506557079
+   ],
+   [
+    "DTBench",
+    "LMCA",
+    28.5060732713189
+   ],
+   [
+    "ARC-AGI-2",
+    "ARC-AGI",
+    41.330894098054316
+   ],
+   [
+    "FrontierMath-Tiers-1-3-v2-Private",
+    "FrontierMath-Tier-4-v2-Private",
+    76.45775183734011
+   ]
+  ],
+  "t": [
+   [
+    "Anthropic",
+    "GPQA diamond",
+    -3.4845947378562
+   ],
+   [
+    "Alibaba",
+    "OTIS Mock AIME 2024-2025",
+    3.579098015082881
+   ],
+   [
+    "OpenAI",
+    "FrontierMath-Tiers-1-3-v2-Private",
+    3.860533157456802
+   ],
+   [
+    "OpenAI",
+    "FrontierMath-Tier-4-v2-Private",
+    3.567698048724391
+   ]
+  ],
+  "cb": [
+   [
+    "FrontierMath-Tier-4-2025-07-01-Private",
+    6.955337106273579
+   ],
+   [
+    "Mystery Game Puzzles",
+    8.190753829602517
+   ],
+   [
+    "Furniture Assembly",
+    11.247915702486814
+   ]
+  ]
+ },
+ "F": {
+  "OTIS Mock AIME 2024-2025": [
+   "T1 Qb=24.59>14.60",
+   "T2 pair with MATH level 5 q=44.49>22.34",
+   "T2 pair with LMCA q=48.28>22.34",
+   "T5 cell (Alibaba) t=3.58, |t|>3.41"
+  ],
+  "DTBench": [
+   "T1 Qb=17.60>14.60",
+   "T2 pair with LMCA q=28.51>22.34"
+  ],
+  "GSM8K": [
+   "T2 pair with Winogrande q=23.72>22.34"
+  ],
+  "Winogrande": [
+   "T2 pair with GSM8K q=23.72>22.34",
+   "T2 pair with HellaSwag q=25.80>22.34"
+  ],
+  "HellaSwag": [
+   "T2 pair with Winogrande q=25.80>22.34"
+  ],
+  "LAMBADA": [
+   "T2 pair with PIQA q=24.79>22.34"
+  ],
+  "PIQA": [
+   "T2 pair with LAMBADA q=24.79>22.34"
+  ],
+  "MATH level 5": [
+   "T2 pair with OTIS Mock AIME 2024-2025 q=44.49>22.34"
+  ],
+  "LMCA": [
+   "T2 pair with OTIS Mock AIME 2024-2025 q=48.28>22.34",
+   "T2 pair with DTBench q=28.51>22.34"
+  ],
+  "ARC-AGI-2": [
+   "T2 pair with ARC-AGI q=41.33>22.34"
+  ],
+  "ARC-AGI": [
+   "T2 pair with ARC-AGI-2 q=41.33>22.34"
+  ],
+  "FrontierMath-Tiers-1-3-v2-Private": [
+   "T2 pair with FrontierMath-Tier-4-v2-Private q=76.46>22.34",
+   "T5 cell (OpenAI) t=3.86, |t|>3.41"
+  ],
+  "FrontierMath-Tier-4-v2-Private": [
+   "T2 pair with FrontierMath-Tiers-1-3-v2-Private q=76.46>22.34",
+   "T5 cell (OpenAI) t=3.57, |t|>3.41"
+  ],
+  "GPQA diamond": [
+   "T5 cell (Anthropic) t=-3.48, |t|>3.41"
+  ],
+  "FrontierMath-Tier-4-2025-07-01-Private": [
+   "T6 cb=6.96>5.41"
+  ],
+  "Mystery Game Puzzles": [
+   "T6 cb=8.19>5.41"
+  ],
+  "Furniture Assembly": [
+   "T6 cb=11.25>5.41"
+  ]
+ },
+ "n_F": 17,
+ "n_components": {
+  "Qb": 44,
+  "q": 445,
+  "t": 185,
+  "cb": 57
+ },
+ "top3": {
+  "Qb": [
+   13.969045574926483,
+   17.59845117950641,
+   24.58945830499773
+  ],
+  "q": [
+   44.489313369515024,
+   48.28479506557079,
+   76.45775183734011
+  ],
+  "t": [
+   3.567698048724391,
+   3.579098015082881,
+   3.860533157456802
+  ],
+  "cb": [
+   6.955337106273579,
+   8.190753829602517,
+   11.247915702486814
+  ]
+ }
+}

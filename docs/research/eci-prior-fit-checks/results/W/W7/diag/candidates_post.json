@@ -1,0 +1,95 @@
+{
+ "G3_ta99": {
+  "T": {
+   "T1": 3.403406093531645,
+   "T2": 2.5241633166402977,
+   "T3": 0.2304306117878372,
+   "T4": 0.021824768881380626,
+   "T5": 1.884422830245282,
+   "T6": 27.18928643363217,
+   "T7": 3.8809156578532646
+  },
+  "clusters": {
+   "clu:oldLM": 0.6155617494806591,
+   "clu:knowQA": 0.3287155383291031,
+   "clu:math": 0.47958181982726494,
+   "all_pairs_share_abs_r_gt_0_3": 0.2449438202247191,
+   "arc_pair_r": -0.7201940946863056,
+   "fm_v2_pair_r": -0.4751907496774325
+  },
+  "zeros_expected": {
+   "Mystery Game Puzzles": 6.256,
+   "FrontierMath-Tier-4-2025-07-01-Private": 4.382,
+   "Furniture Assembly": 3.031,
+   "ARC-AGI-2": 6.764,
+   "Chess Puzzles": 0.849,
+   "FrontierMath-Tier-4-v2-Private": 0.494,
+   "OTIS Mock AIME 2024-2025": 3.008
+  }
+ },
+ "H1_ta99": {
+  "T": {
+   "T1": 3.1671905896854096,
+   "T2": 2.534637274789168,
+   "T3": 0.22400967939227626,
+   "T4": 0.009157427331795125,
+   "T5": 1.7844024646024395,
+   "T6": 5.5813370513042315,
+   "T7": 4.309057814788749
+  },
+  "clusters": {
+   "clu:oldLM": 0.6080942477364943,
+   "clu:knowQA": 0.3249599450742371,
+   "clu:math": 0.4747377283514534,
+   "all_pairs_share_abs_r_gt_0_3": 0.25842696629213485,
+   "arc_pair_r": -0.6852376516051736,
+   "fm_v2_pair_r": -0.5257508458831186
+  },
+  "zeros_expected": {
+   "Mystery Game Puzzles": 15.49755,
+   "FrontierMath-Tier-4-2025-07-01-Private": 10.906229999999999,
+   "Furniture Assembly": 8.66778,
+   "ARC-AGI-2": 10.00482,
+   "Chess Puzzles": 2.8495,
+   "FrontierMath-Tier-4-v2-Private": 2.5975200000000003,
+   "OTIS Mock AIME 2024-2025": 4.73338
+  }
+ },
+ "H2_ta99": {
+  "T": {
+   "T1": 3.0879287592032854,
+   "T2": 1.8960781011935333,
+   "T3": 0.4237317481738457,
+   "T4": 0.018243420040052048,
+   "T5": 2.0584227804993764,
+   "T6": 42.30335525091007,
+   "T7": 1.994484887016365
+  },
+  "clusters": {
+   "clu:oldLM": -0.37592720379777933,
+   "clu:knowQA": -0.059784547618039245,
+   "clu:math": -0.22253265464289518,
+   "all_pairs_share_abs_r_gt_0_3": 0.2292134831460674,
+   "arc_pair_r": -0.7334567746728208,
+   "fm_v2_pair_r": -0.04088923507488662
+  },
+  "zeros_expected": {
+   "Mystery Game Puzzles": 6.01246,
+   "FrontierMath-Tier-4-2025-07-01-Private": 4.52461,
+   "Furniture Assembly": 2.91902,
+   "ARC-AGI-2": 6.42863,
+   "Chess Puzzles": 0.7724500000000001,
+   "FrontierMath-Tier-4-v2-Private": 0.8239599999999999,
+   "OTIS Mock AIME 2024-2025": 1.5986
+  }
+ },
+ "zeros_observed": {
+  "Mystery Game Puzzles": 14,
+  "FrontierMath-Tier-4-2025-07-01-Private": 10,
+  "Furniture Assembly": 10,
+  "ARC-AGI-2": 7,
+  "Chess Puzzles": 4,
+  "FrontierMath-Tier-4-v2-Private": 3,
+  "OTIS Mock AIME 2024-2025": 1
+ }
+}

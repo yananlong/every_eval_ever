@@ -1,0 +1,63 @@
+{
+ "gen": "offset",
+ "r": 15,
+ "seed": 3332601170,
+ "position": 3000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "developer": "Google DeepMind",
+  "benchmarks": [
+   5,
+   30,
+   23
+  ],
+  "n_cells": 25
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0044623297114836,
+  "min_ess": 1584.3435492198873
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0044623297114836,
+   "min_ess": 1584.3435492198873
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3832) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 552.2,
+ "T": {
+  "T1": 2.4058443953370867,
+  "T2": 1.1286035861627801,
+  "T3": 0.07042449150790352,
+  "T4": 0.03996313936517522,
+  "T5": 1.9868644845199905,
+  "T6": 3.627018100177027,
+  "T7": 3.4985533050132234
+ },
+ "maxima": {
+  "Qb": 11.224432745767974,
+  "q": 11.360777760913038,
+  "t": 1.9868644845199905,
+  "cb": 4.153488610907858
+ }
+}

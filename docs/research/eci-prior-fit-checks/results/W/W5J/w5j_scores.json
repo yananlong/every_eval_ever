@@ -1,0 +1,314 @@
+{
+ "scores": {
+  "J2": {
+   "S4": {
+    "top10_same": true,
+    "max_pair_change": 0.05193750000000008,
+    "pass_": true
+   },
+   "all": {
+    "n": 254,
+    "S1": 0.9999499313344012,
+    "S1_pass": true,
+    "S2_count": 40,
+    "S2_limit": 12,
+    "S2_pass": false,
+    "S3_count": 21,
+    "S3_limit": 12,
+    "S3_pass": false,
+    "max_rel_shift": 0.37158897645534245,
+    "median_width_ratio": 0.9801203594481389
+   },
+   "frontier": {
+    "n": 20,
+    "S1": 0.9984962406015038,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 1,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 1,
+    "S3_pass": true,
+    "max_rel_shift": 0.0869073548363261,
+    "median_width_ratio": 1.0096220099317015
+   },
+   "sparse": {
+    "n": 72,
+    "S1": 0.9996784359122776,
+    "S1_pass": true,
+    "S2_count": 21,
+    "S2_limit": 3,
+    "S2_pass": false,
+    "S3_count": 16,
+    "S3_limit": 3,
+    "S3_pass": false,
+    "max_rel_shift": 0.36994555133561313,
+    "median_width_ratio": 0.9306411984269567
+   },
+   "dense": {
+    "n": 182,
+    "S1": 0.9999479879023713,
+    "S1_pass": true,
+    "S2_count": 19,
+    "S2_limit": 9,
+    "S2_pass": false,
+    "S3_count": 5,
+    "S3_limit": 9,
+    "S3_pass": true,
+    "max_rel_shift": 0.37158897645534245,
+    "median_width_ratio": 0.9903810907673831
+   }
+  },
+  "PR": {
+   "S4": {
+    "top10_same": true,
+    "max_pair_change": 0.0566875,
+    "pass_": true
+   },
+   "all": {
+    "n": 254,
+    "S1": 0.9997231918059051,
+    "S1_pass": true,
+    "S2_count": 62,
+    "S2_limit": 12,
+    "S2_pass": false,
+    "S3_count": 60,
+    "S3_limit": 12,
+    "S3_pass": false,
+    "max_rel_shift": 0.7804365439141451,
+    "median_width_ratio": 1.0048920435794084
+   },
+   "frontier": {
+    "n": 20,
+    "S1": 0.9954887218045112,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 1,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 1,
+    "S3_pass": true,
+    "max_rel_shift": 0.24155115460392582,
+    "median_width_ratio": 1.0634280156303393
+   },
+   "sparse": {
+    "n": 72,
+    "S1": 0.9986172744227926,
+    "S1_pass": true,
+    "S2_count": 32,
+    "S2_limit": 3,
+    "S2_pass": false,
+    "S3_count": 34,
+    "S3_limit": 3,
+    "S3_pass": false,
+    "max_rel_shift": 0.7743485269229609,
+    "median_width_ratio": 0.8768902403664662
+   },
+   "dense": {
+    "n": 182,
+    "S1": 0.9997919516094854,
+    "S1_pass": true,
+    "S2_count": 30,
+    "S2_limit": 9,
+    "S2_pass": false,
+    "S3_count": 26,
+    "S3_limit": 9,
+    "S3_pass": false,
+    "max_rel_shift": 0.7804365439141451,
+    "median_width_ratio": 1.0290156569747886
+   }
+  }
+ },
+ "compare": {
+  "J2": {
+   "all": {
+    "n": 254,
+    "mean_abs_diff": 1.776889556470731,
+    "max_abs_diff": 15.469648838727664,
+    "mean_diff": 1.7418792852090952,
+    "median_width_P0": 5.240650367736826,
+    "median_width": 5.132616642591643,
+    "median_width_ratio": 0.9801203594481389
+   },
+   "frontier": {
+    "n": 20,
+    "mean_abs_diff": 0.17396981925143962,
+    "max_abs_diff": 0.6427883375540375,
+    "mean_diff": 0.1449348081955378,
+    "median_width_P0": 5.4188144683838,
+    "median_width": 5.4688110638553695,
+    "median_width_ratio": 1.0096220099317015
+   },
+   "sparse": {
+    "n": 72,
+    "mean_abs_diff": 3.7172925614478984,
+    "max_abs_diff": 15.469648838727664,
+    "mean_diff": 3.7117035712463906,
+    "median_width_P0": 8.543151283264166,
+    "median_width": 7.837534695814512,
+    "median_width_ratio": 0.9306411984269567
+   },
+   "dense": {
+    "n": 182,
+    "mean_abs_diff": 1.0092575984577856,
+    "max_abs_diff": 10.8547530251887,
+    "mean_diff": 0.9626081390844508,
+    "median_width_P0": 4.388462829589841,
+    "median_width": 4.3805323074646765,
+    "median_width_ratio": 0.9903810907673831
+   },
+   "top10": {
+    "same_set": true,
+    "same_order": true,
+    "entered": [],
+    "left": [],
+    "order_k": [
+     "Claude Fable 5.2",
+     "Gemini 4 Carbon",
+     "GPT-6 Astra",
+     "Claude Opus 5.5",
+     "GPT-6.1 Sol",
+     "GPT-6.1 Terra",
+     "Claude Fable 5.1",
+     "Claude Sonnet 5.5",
+     "Gemini 4 Argon",
+     "Claude Opus 5"
+    ],
+    "order_P0": [
+     "Claude Fable 5.2",
+     "Gemini 4 Carbon",
+     "GPT-6 Astra",
+     "Claude Opus 5.5",
+     "GPT-6.1 Sol",
+     "GPT-6.1 Terra",
+     "Claude Fable 5.1",
+     "Claude Sonnet 5.5",
+     "Gemini 4 Argon",
+     "Claude Opus 5"
+    ],
+    "rank_change_of_P0_top10": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "PR": {
+   "all": {
+    "n": 254,
+    "mean_abs_diff": 3.933132934109079,
+    "max_abs_diff": 31.749584870593907,
+    "mean_diff": 3.8655713078581933,
+    "median_width_P0": 5.240650367736826,
+    "median_width": 5.283973929629283,
+    "median_width_ratio": 1.0048920435794084
+   },
+   "frontier": {
+    "n": 20,
+    "mean_abs_diff": 0.765227815258909,
+    "max_abs_diff": 1.7865722112303501,
+    "mean_diff": 0.765227815258909,
+    "median_width_P0": 5.4188144683838,
+    "median_width": 5.689711578463232,
+    "median_width_ratio": 1.0634280156303393
+   },
+   "sparse": {
+    "n": 72,
+    "mean_abs_diff": 8.089074279014138,
+    "max_abs_diff": 31.749584870593907,
+    "mean_diff": 8.055520881024266,
+    "median_width_P0": 8.543151283264166,
+    "median_width": 7.551968682955504,
+    "median_width_ratio": 0.8768902403664662
+   },
+   "dense": {
+    "n": 182,
+    "mean_abs_diff": 2.289024270190593,
+    "max_abs_diff": 21.956071533182026,
+    "mean_diff": 2.2080088393529334,
+    "median_width_P0": 4.388462829589841,
+    "median_width": 4.545349060798884,
+    "median_width_ratio": 1.0290156569747886
+   },
+   "top10": {
+    "same_set": true,
+    "same_order": true,
+    "entered": [],
+    "left": [],
+    "order_k": [
+     "Claude Fable 5.2",
+     "Gemini 4 Carbon",
+     "GPT-6 Astra",
+     "Claude Opus 5.5",
+     "GPT-6.1 Sol",
+     "GPT-6.1 Terra",
+     "Claude Fable 5.1",
+     "Claude Sonnet 5.5",
+     "Gemini 4 Argon",
+     "Claude Opus 5"
+    ],
+    "order_P0": [
+     "Claude Fable 5.2",
+     "Gemini 4 Carbon",
+     "GPT-6 Astra",
+     "Claude Opus 5.5",
+     "GPT-6.1 Sol",
+     "GPT-6.1 Terra",
+     "Claude Fable 5.1",
+     "Claude Sonnet 5.5",
+     "Gemini 4 Argon",
+     "Claude Opus 5"
+    ],
+    "rank_change_of_P0_top10": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ]
+   }
+  }
+ },
+ "side": {
+  "J2": {
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.00139131833373,
+    "min_ess": 3506.834032333641
+   },
+   "wall_seconds": 1796.3,
+   "min_bfmi": "n/a: TypeError",
+   "min_tail_ess": 3102.478204383468
+  },
+  "PR": {
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0010125213188805,
+    "min_ess": 7361.7398228973425
+   },
+   "wall_seconds": 342.3,
+   "min_bfmi": "n/a: TypeError",
+   "min_tail_ess": 6229.654911839732
+  }
+ }
+}

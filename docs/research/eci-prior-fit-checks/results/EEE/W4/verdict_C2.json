@@ -1,0 +1,207 @@
+{
+ "stage": "W4d",
+ "date": "2026-11-21",
+ "component": "C2",
+ "gate": "G3",
+ "data": "EEE substitution matrix (runs/EEE/input)",
+ "held_out_coverage": {
+  "overall": 0.9001479289940828,
+  "in_rule": true,
+  "flagged_benchmarks": []
+ },
+ "rejected_checks": [
+  "T1",
+  "T2"
+ ],
+ "rejected_adjusted_p": {
+  "T1": 0.0051813471502590676,
+  "T2": 0.0051813471502590676
+ },
+ "n_null": 192,
+ "T2_or_T5_power_ok": false,
+ "F": {
+  "OTIS Mock AIME 2024-2025": [
+   "T1 Qb=24.59>14.60",
+   "T2 pair with MATH level 5 q=44.49>22.34",
+   "T2 pair with LMCA q=48.28>22.34",
+   "T5 cell (Alibaba) t=3.58, |t|>3.41"
+  ],
+  "DTBench": [
+   "T1 Qb=17.60>14.60",
+   "T2 pair with LMCA q=28.51>22.34"
+  ],
+  "GSM8K": [
+   "T2 pair with Winogrande q=23.72>22.34"
+  ],
+  "Winogrande": [
+   "T2 pair with GSM8K q=23.72>22.34",
+   "T2 pair with HellaSwag q=25.80>22.34"
+  ],
+  "HellaSwag": [
+   "T2 pair with Winogrande q=25.80>22.34"
+  ],
+  "LAMBADA": [
+   "T2 pair with PIQA q=24.79>22.34"
+  ],
+  "PIQA": [
+   "T2 pair with LAMBADA q=24.79>22.34"
+  ],
+  "MATH level 5": [
+   "T2 pair with OTIS Mock AIME 2024-2025 q=44.49>22.34"
+  ],
+  "LMCA": [
+   "T2 pair with OTIS Mock AIME 2024-2025 q=48.28>22.34",
+   "T2 pair with DTBench q=28.51>22.34"
+  ],
+  "ARC-AGI-2": [
+   "T2 pair with ARC-AGI q=41.33>22.34"
+  ],
+  "ARC-AGI": [
+   "T2 pair with ARC-AGI-2 q=41.33>22.34"
+  ],
+  "FrontierMath-Tiers-1-3-v2-Private": [
+   "T2 pair with FrontierMath-Tier-4-v2-Private q=76.46>22.34",
+   "T5 cell (OpenAI) t=3.86, |t|>3.41"
+  ],
+  "FrontierMath-Tier-4-v2-Private": [
+   "T2 pair with FrontierMath-Tiers-1-3-v2-Private q=76.46>22.34",
+   "T5 cell (OpenAI) t=3.57, |t|>3.41"
+  ],
+  "GPQA diamond": [
+   "T5 cell (Anthropic) t=-3.48, |t|>3.41"
+  ],
+  "FrontierMath-Tier-4-2025-07-01-Private": [
+   "T6 cb=6.96>5.41"
+  ],
+  "Mystery Game Puzzles": [
+   "T6 cb=8.19>5.41"
+  ],
+  "Furniture Assembly": [
+   "T6 cb=11.25>5.41"
+  ]
+ },
+ "n_F": 17,
+ "F_limit": 10,
+ "F_exceeds_limit": true,
+ "null_thresholds_99th_pct_of_per_replicate_max": {
+  "Qb": 14.599003859184203,
+  "q": 22.336866906675013,
+  "t": 3.414269800834766,
+  "cb": 5.414362345922364
+ },
+ "extreme_components": {
+  "Qb": [
+   [
+    "OTIS Mock AIME 2024-2025",
+    24.58945830499773
+   ],
+   [
+    "DTBench",
+    17.59845117950641
+   ]
+  ],
+  "q": [
+   [
+    "GSM8K",
+    "Winogrande",
+    23.724496445251255
+   ],
+   [
+    "HellaSwag",
+    "Winogrande",
+    25.795949640032276
+   ],
+   [
+    "LAMBADA",
+    "PIQA",
+    24.78548410331918
+   ],
+   [
+    "MATH level 5",
+    "OTIS Mock AIME 2024-2025",
+    44.489313369515024
+   ],
+   [
+    "OTIS Mock AIME 2024-2025",
+    "LMCA",
+    48.28479506557079
+   ],
+   [
+    "DTBench",
+    "LMCA",
+    28.5060732713189
+   ],
+   [
+    "ARC-AGI-2",
+    "ARC-AGI",
+    41.330894098054316
+   ],
+   [
+    "FrontierMath-Tiers-1-3-v2-Private",
+    "FrontierMath-Tier-4-v2-Private",
+    76.45775183734011
+   ]
+  ],
+  "t": [
+   [
+    "Anthropic",
+    "GPQA diamond",
+    -3.4845947378562
+   ],
+   [
+    "Alibaba",
+    "OTIS Mock AIME 2024-2025",
+    3.579098015082881
+   ],
+   [
+    "OpenAI",
+    "FrontierMath-Tiers-1-3-v2-Private",
+    3.860533157456802
+   ],
+   [
+    "OpenAI",
+    "FrontierMath-Tier-4-v2-Private",
+    3.567698048724391
+   ]
+  ],
+  "cb": [
+   [
+    "FrontierMath-Tier-4-2025-07-01-Private",
+    6.955337106273579
+   ],
+   [
+    "Mystery Game Puzzles",
+    8.190753829602517
+   ],
+   [
+    "Furniture Assembly",
+    11.247915702486814
+   ]
+  ]
+ },
+ "deletion_test": {
+  "rows_kept": 1467,
+  "rows_deleted": 1412,
+  "n_null_used": 192,
+  "T1": {
+   "statistic_observed": 4.471308505451415,
+   "p_unadjusted_before": 0.0051813471502590676,
+   "statistic_after_deleting_F": 3.5460780357489963,
+   "p_unadjusted_after_deleting_F": 0.0051813471502590676,
+   "localised_to_F": false
+  },
+  "T2": {
+   "statistic_observed": 3.2100245775453287,
+   "p_unadjusted_before": 0.0051813471502590676,
+   "statistic_after_deleting_F": 2.2749071261988623,
+   "p_unadjusted_after_deleting_F": 0.0051813471502590676,
+   "localised_to_F": false
+  }
+ },
+ "verdict": "falsified",
+ "verdict_text": "Under Epoch's model, C2 is falsified per G3: 2 check(s) (T1, T2) are rejected at max-T adjusted p = 0.0052 and the localisation set F has 17 benchmarks (> 10), so the `reframe` branch (adequate with exceptions) is not available. 'Adequate' is impossible (T2 and T5 had no demonstrated power in W3). The W4d refit without F was not run (rule applies only for |F| <= 10).",
+ "w4d_refit": {
+  "run": false,
+  "reason": "|F| = 17 > 10"
+ }
+}

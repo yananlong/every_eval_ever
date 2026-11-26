@@ -1,0 +1,51 @@
+audit,seed,pos,model_version_ok,benchmark_version_split_ok,metric_scale_recompute_ok,source_class_ok,error,note
+first,20261113,1,True,True,True,True,False,
+first,20261113,2,True,True,True,False,True,BenchPress row cites arXiv 2504.13914; classed same-upstream because the benchmark home URL (arcprize.org) was read as the score reference
+first,20261113,3,True,True,True,True,False,
+first,20261113,4,True,True,True,True,False,
+first,20261113,5,True,True,True,True,False,
+first,20261113,6,True,True,True,True,False,
+first,20261113,7,True,True,True,False,True,"reference is llm-stats, not the Aider leaderboard; benchmark home URL read as score reference"
+first,20261113,8,True,True,True,False,True,developer-reported (openai.com); Epoch cites the Aider leaderboard; should be upstream-unknown
+first,20261113,9,True,True,True,False,True,developer model card; Epoch cites the Aider leaderboard; should be upstream-unknown
+first,20261113,10,True,True,True,False,True,developer model card (pwc); Epoch cites the Aider leaderboard; should be upstream-unknown
+first,20261113,11,True,True,True,True,False,
+first,20261113,12,True,True,True,True,False,
+first,20261113,13,True,True,True,True,False,
+first,20261113,14,True,True,True,False,True,"reference is a third-party evaluation PDF, not cognition.com/frontiercode; should be upstream-unknown"
+first,20261113,15,True,True,True,True,False,
+first,20261113,16,True,True,True,False,True,classed same-upstream through the dataset URL (epoch.ai); reference is the developer's own post; rule 5 gives independent
+first,20261113,17,True,True,True,False,True,classed same-upstream through the dataset URL (epoch.ai) rather than through the score reference
+first,20261113,18,True,True,True,True,False,
+first,20261113,19,True,True,True,True,False,
+first,20261113,20,True,True,True,True,False,
+first,20261113,21,True,True,True,True,False,
+first,20261113,22,True,True,True,True,False,
+first,20261113,23,True,True,True,True,False,
+first,20261113,24,True,True,True,True,False,
+first,20261113,25,True,True,True,True,False,
+first,20261113,26,True,True,True,True,False,
+first,20261113,27,True,True,True,True,False,
+first,20261113,28,True,True,True,True,False,
+first,20261113,29,True,True,True,True,False,
+first,20261113,30,True,True,True,True,False,
+first,20261113,31,True,True,True,True,False,
+first,20261113,32,True,True,True,True,False,
+first,20261113,33,True,True,True,True,False,
+first,20261113,34,True,True,True,True,False,
+first,20261113,35,True,True,True,True,False,
+first,20261113,36,True,True,True,True,False,
+first,20261113,37,True,True,True,True,False,
+first,20261113,38,True,True,True,True,False,
+first,20261113,39,True,True,True,True,False,
+first,20261113,40,True,True,True,True,False,
+first,20261113,41,True,True,True,True,False,
+first,20261113,42,True,True,True,True,False,
+first,20261113,43,True,True,True,True,False,
+first,20261113,44,True,True,True,True,False,
+first,20261113,45,True,True,True,True,False,
+first,20261113,46,True,True,True,True,False,
+first,20261113,47,True,True,True,True,False,
+first,20261113,48,True,True,True,True,False,
+first,20261113,49,True,True,True,True,False,
+first,20261113,50,True,True,True,True,False,

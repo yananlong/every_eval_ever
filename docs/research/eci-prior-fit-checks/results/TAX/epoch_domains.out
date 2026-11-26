@@ -1,0 +1,266 @@
+/opt/venvs/jax/lib/python3.12/site-packages/arviz/__init__.py:110: MigrationWarning: arviz.InferenceData is no longer available on the arviz package; ArviZ now uses xarray's DataTree for the same role. See the migration guide: https://python.arviz.org/en/latest/user_guide/migration_guide.html#datatree
+  warnings.warn(
+developer by fallback: ['Anthropic annoucement', 'Gemini 1.5 Report', 'Gemini 1.5 report', 'Releasing Claude Instant 1.2', 'The Claude 3 Model Family: Opus, Sonnet, Haiku', 'The Llama 3 Herd of Models', 'Training Compute-Optimal Large Language Models']
+doc benchmarks 51 doc-only ['Earthborne Rangers'] doc sizes {'Agent': 19, 'Computer use': 2, 'Conceptual reasoning': 6, 'Games': 5, 'Language understanding': 5, 'Long context': 4, 'Mathematics': 6, 'Multimodal': 4, 'Science': 5, 'Software engineering': 12, 'World knowledge': 5, 'Writing & creativity': 1}
+tags per benchmark (ours, doc+inherited): {0: 5, 1: 31, 2: 18, 3: 3} mean 1.46
+                                 benchmark                      doc_name                                   tags             primary_tag  tag_basis
+0                                     ANLI               Adversarial NLI                 Language understanding  Language understanding        doc
+1                              APEX-Agents                   APEX-Agents                                  Agent                   Agent        doc
+2                                  ARC AI2                       ARC AI2                Science;World knowledge                 Science        doc
+3                                  ARC-AGI                     ARC-AGI-1                   Conceptual reasoning    Conceptual reasoning        doc
+4                                ARC-AGI-2                     ARC-AGI-2                   Conceptual reasoning    Conceptual reasoning        doc
+5                           Aider polyglot                Aider Polyglot                   Software engineering    Software engineering        doc
+6                                      BBH                           BBH                   Conceptual reasoning    Conceptual reasoning        doc
+7                                   Balrog                        BALROG                     Games;Long context            Long context        doc
+8                                 CL-bench                      CL-bench                           Long context            Long context        doc
+9                            CL-bench Life                 CL-bench Life                           Long context            Long context        doc
+10                                 CadEval                       CadEval                             Multimodal              Multimodal        doc
+11                           Chess Puzzles                 Chess Puzzles                                  Games                   Games        doc
+12                                 Cybench                       Cybench                   Software engineering    Software engineering        doc
+13                                 DTBench                       DTBench                   Conceptual reasoning    Conceptual reasoning        doc
+14                      DeepResearch Bench                                                                                     Untagged   untagged
+15                               EBR-bench                                                                                     Untagged   untagged
+16                            ExploitBench             ExploitBench v0.1             Agent;Software engineering    Software engineering        doc
+17                       Fiction.LiveBench             Fiction.liveBench      Long context;Writing & creativity    Writing & creativity        doc
+18                            FrontierCode                  FrontierCode             Agent;Software engineering    Software engineering        doc
+19         FrontierMath-2025-02-28-Private                                                    Agent;Mathematics             Mathematics  inherited
+20  FrontierMath-Tier-4-2025-07-01-Private                                                    Agent;Mathematics             Mathematics  inherited
+21          FrontierMath-Tier-4-v2-Private      FrontierMath Tier 4 (v2)                      Agent;Mathematics             Mathematics        doc
+22       FrontierMath-Tiers-1-3-v2-Private   FrontierMath Tiers 1-3 (v2)                      Agent;Mathematics             Mathematics        doc
+23                             FrontierSWE              FrontierSWE (v2)             Agent;Software engineering    Software engineering        doc
+24                      Furniture Assembly  Furniture Assembly Benchmark  Agent;Conceptual reasoning;Multimodal              Multimodal        doc
+25                                  GDPval                        GDPval                                  Agent                   Agent        doc
+26                            GPQA diamond                  GPQA Diamond                                Science                 Science        doc
+27                                   GSM8K                         GSM8K                            Mathematics             Mathematics        doc
+28                               GSO-Bench                           GSO                   Software engineering    Software engineering        doc
+29                                GeoBench                                                                                     Untagged   untagged
+30                               HellaSwag                     HellaSwag                 Language understanding  Language understanding        doc
+31                                 LAMBADA                       LAMBADA                 Language understanding  Language understanding        doc
+32                                    LMCA                                                                                     Untagged   untagged
+33                            MATH level 5                  MATH Level 5                            Mathematics             Mathematics        doc
+34                      METR Time Horizons                                                                                     Untagged   untagged
+35                                    MMLU                          MMLU                        World knowledge         World knowledge        doc
+36                              MirrorCode                    MirrorCode             Agent;Software engineering    Software engineering        doc
+37                    Mystery Game Puzzles          Mystery Game Puzzles                                  Games                   Games        doc
+38                                 OSWorld                      OS World                     Agent;Computer use            Computer use        doc
+39                             OSWorld 2.0                   OSWorld 2.0                     Agent;Computer use            Computer use        doc
+40                OTIS Mock AIME 2024-2025      OTIS Mock AIME 2024-2025                            Mathematics             Mathematics        doc
+41                              OpenBookQA                    OpenBookQA                Science;World knowledge                 Science        doc
+42                                    PIQA                          PIQA                 Language understanding  Language understanding        doc
+43                          PostTrainBench           PostTrainBench v1.1             Agent;Software engineering    Software engineering        doc
+44                              ProofBench                    ProofBench                      Agent;Mathematics             Mathematics        doc
+45                      Remote Labor Index            Remote Labor Index                                  Agent                   Agent        doc
+46                             SimpleBench                   SimpleBench                   Conceptual reasoning    Conceptual reasoning        doc
+47                       SimpleQA Verified             SimpleQA Verified                        World knowledge         World knowledge        doc
+48                              SpireClimb                    SpireClimb                 Agent;Games;Multimodal              Multimodal        doc
+49                   Surface Evolver Bench         Surface Evolver Bench     Agent;Science;Software engineering                 Science        doc
+50                          Terminal Bench            Terminal-Bench 2.0                   Software engineering    Software engineering        doc
+51                       The Agent Company             The Agent Company                                  Agent                   Agent        doc
+52                                TriviaQA                      TriviaQA                        World knowledge         World knowledge        doc
+53                                    VPCT                          VPCT                     Multimodal;Science              Multimodal        doc
+54                                 WeirdML                  WeirdML (v2)                   Software engineering    Software engineering        doc
+55                              WeirdML v3                  WeirdML (v3)             Agent;Software engineering    Software engineering        doc
+56                              Winogrande                    WinoGrande                 Language understanding  Language understanding        doc
+
+== coverage, multi-tag
+                     domain  benchmarks  cells  models  median_scores_per_model  eee_cells  eee_share  eee_benchmarks  cells_2plus_src  independent_cells  first_party_cells  median_between_src_range  share_of_all_multi  share_of_all_indep  n_eee_sources  mean_eci_models                                                                                                                                                                                                                                                                                                      uncovered_benchmarks
+0                    Agent          20    637     142                      3.0        159      0.250              12               34                 11                 36                    0.0001               0.097               0.039              5            148.3                                                                                                                                                                                                        Furniture Assembly;GDPval;MirrorCode;PostTrainBench;Remote Labor Index;SpireClimb;Surface Evolver Bench;WeirdML v3
+1             Computer use           2     17      16                      1.0         13      0.765               2                5                  0                  4                    0.0000               0.014               0.000              3            150.6                                                                                                                                                                                                                                                                                                                          
+2     Conceptual reasoning           6    504     219                      2.0        191      0.379               3              140                 20                 20                    0.0000               0.400               0.071              5            136.1                                                                                                                                                                                                                                                                                    DTBench;Furniture Assembly;SimpleBench
+3                    Games           4    207     120                      2.0          0      0.000               0                0                  0                  0                       NaN               0.000               0.000              0            148.8                                                                                                                                                                                                                                                                      Balrog;Chess Puzzles;Mystery Game Puzzles;SpireClimb
+4   Language understanding           5    182      75                      2.0         32      0.176               4                4                 12                  3                    0.0867               0.011               0.043              4             96.3                                                                                                                                                                                                                                                                                                                      ANLI
+5             Long context           4    109      86                      1.0          6      0.055               2                0                  0                  0                       NaN               0.000               0.000              1            140.8                                                                                                                                                                                                                                                                                                  Balrog;Fiction.LiveBench
+6              Mathematics           8    590     233                      3.0        101      0.171               7                6                 30                 11                    0.0086               0.017               0.107              7            133.0                                                                                                                                                                                                                                                                                                  OTIS Mock AIME 2024-2025
+7               Multimodal           4     88      71                      1.0          3      0.034               1                0                  0                  0                       NaN               0.000               0.000              1            150.8                                                                                                                                                                                                                                                                                     CadEval;Furniture Assembly;SpireClimb
+8                  Science           5    321     237                      1.0        172      0.536               4              118                163                 42                    0.0322               0.337               0.582              9            129.8                                                                                                                                                                                                                                                                                                     Surface Evolver Bench
+9     Software engineering          12    419     157                      2.0        103      0.246               6               62                 26                 51                    0.0063               0.177               0.093              6            145.3                                                                                                                                                                                                                                              GSO-Bench;MirrorCode;PostTrainBench;Surface Evolver Bench;WeirdML;WeirdML v3
+10         World knowledge           5    307     183                      1.0         73      0.238               5               19                 43                  9                    0.0600               0.054               0.154              5            126.6                                                                                                                                                                                                                                                                                                                          
+11    Writing & creativity           1     50      50                      1.0          0      0.000               0                0                  0                  0                       NaN               0.000               0.000              0            138.9                                                                                                                                                                                                                                                                                                         Fiction.LiveBench
+12                Untagged           5    258     153                      1.0          0      0.000               0                0                  0                  0                       NaN               0.000               0.000              0            145.3                                                                                                                                                                                                                                                             DeepResearch Bench;EBR-bench;GeoBench;LMCA;METR Time Horizons
+13                  All 57          57   2879     256                     10.0        688      0.239              33              350                280                141                    0.0046               1.000               1.000             13            130.8  ANLI;Balrog;CadEval;Chess Puzzles;DTBench;DeepResearch Bench;EBR-bench;Fiction.LiveBench;Furniture Assembly;GDPval;GSO-Bench;GeoBench;LMCA;METR Time Horizons;MirrorCode;Mystery Game Puzzles;OTIS Mock AIME 2024-2025;PostTrainBench;Remote Labor Index;SimpleBench;SpireClimb;Surface Evolver Bench;WeirdML;WeirdML v3
+
+== coverage, primary tag
+                     domain  benchmarks  cells  models  median_scores_per_model  eee_cells  eee_share  eee_benchmarks  cells_2plus_src  independent_cells  first_party_cells  median_between_src_range  share_of_all_multi  share_of_all_indep  n_eee_sources  mean_eci_models
+0                    Agent           4     99      81                      1.0         17      0.172               2                1                  0                  2                    0.0000               0.003               0.000              2            152.6
+1             Computer use           2     17      16                      1.0         13      0.765               2                5                  0                  4                    0.0000               0.014               0.000              3            150.6
+2     Conceptual reasoning           5    465     217                      2.0        191      0.411               3              140                 20                 20                    0.0000               0.400               0.071              5            135.9
+3                    Games           2    169     102                      2.0          0      0.000               0                0                  0                  0                       NaN               0.000               0.000              0            151.9
+4   Language understanding           5    182      75                      2.0         32      0.176               4                4                 12                  3                    0.0867               0.011               0.043              4             96.3
+5             Long context           3     59      46                      1.0          6      0.102               2                0                  0                  0                       NaN               0.000               0.000              1            143.3
+6              Mathematics           8    590     233                      3.0        101      0.171               7                6                 30                 11                    0.0086               0.017               0.107              7            133.0
+7               Multimodal           4     88      71                      1.0          3      0.034               1                0                  0                  0                       NaN               0.000               0.000              1            150.8
+8                  Science           4    295     235                      1.0        169      0.573               3              118                163                 42                    0.0322               0.337               0.582              9            129.7
+9     Software engineering          11    395     155                      2.0        103      0.261               6               62                 26                 51                    0.0063               0.177               0.093              6            145.1
+10         World knowledge           3    212     180                      1.0         53      0.250               3               14                 29                  8                    0.0534               0.040               0.104              4            127.1
+11    Writing & creativity           1     50      50                      1.0          0      0.000               0                0                  0                  0                       NaN               0.000               0.000              0            138.9
+12                Untagged           5    258     153                      1.0          0      0.000               0                0                  0                  0                       NaN               0.000               0.000              0            145.3
+13                  All 57          57   2879     256                     10.0        688      0.239              33              350                280                141                    0.0046               1.000               1.000             13            130.8
+
+== bands
+          group  models  median_cells  median_domains  models_1_2_domains  models_1_2_domains_primary
+0         <100      42           6.0             5.0                   0                           0
+1      100-130      57           8.0             5.0                   0                           0
+2      130-150      87          10.0             6.0                   1                           1
+3        >=150      70          18.0             8.0                   0                           1
+4  frontier 20      20          20.0             8.0                   0                           0
+5          all     256          10.0             6.0                   1                           2
+             Agent  Computer u  Conceptual  Games  Language u  Long conte  Mathematic  Multimodal  Science  Software e  World know  Writing &   Untagged
+group                                                                                                                                                   
+<100           0.0         0.0        55.0    0.0       100.0         0.0        79.0         0.0     98.0         0.0       100.0         0.0       0.0
+100-130       25.0         2.0        79.0   28.0        56.0        25.0        91.0         9.0     98.0        39.0        93.0         7.0      39.0
+130-150       67.0         8.0        94.0   44.0         1.0        63.0        90.0        26.0     89.0        84.0        32.0        52.0      84.0
+>=150        100.0        11.0        99.0   94.0         0.0        24.0       100.0        61.0     90.0        89.0        86.0         1.0      83.0
+frontier 20  100.0        15.0       100.0  100.0         0.0        25.0       100.0        90.0     90.0        95.0        90.0         0.0      95.0
+all           55.0         6.0        86.0   47.0        29.0        34.0        91.0        28.0     93.0        61.0        71.0        20.0      60.0
+             Agent  Computer u  Conceptual  Games  Language u  Long conte  Mathematic  Multimodal  Science  Software e  World know  Writing &   Untagged
+group                                                                                                                                                   
+<100           0.0         0.0         8.7    0.0        38.5         0.0        12.0         0.0     22.2         0.0        18.5         0.0       0.0
+100-130        1.3         0.2        12.9    1.5        15.2         2.3        21.7         1.0     15.4         6.5        15.0         0.8       6.1
+130-150        2.5         0.8        19.1    5.0         0.3         2.5        21.9         3.2      8.7        15.8         3.2         4.9      12.1
+>=150          5.8         0.7        16.9    9.6         0.0         2.1        20.9         4.5      6.6        18.1         5.0         0.1       9.8
+frontier 20    6.4         0.8        17.3    9.2         0.0         1.3        19.1         6.6      5.6        19.9         4.6         0.0       9.2
+all            3.4         0.6        16.2    5.9         6.3         2.0        20.5         3.1     10.2        13.7         7.4         1.7       9.0
+
+1-2 domain models: band x n n_domains  2
+band        
+130-150    1
+Conceptual reasoning+Software engineering    1
+n_domains dist {2: 1, 3: 16, 4: 43, 5: 52, 6: 31, 7: 36, 8: 40, 9: 22, 10: 14, 11: 1}
+frontier20 n_domains {'count': 20.0, 'mean': 8.05, 'std': 1.234376040972246, 'min': 5.0, '25%': 8.0, '50%': 8.0, '75%': 8.25, 'max': 10.0}
+
+== BSEL clusters
+        cluster  n_bench Agent Computer use Conceptual reasoning Games Language understanding Long context Mathematics Multimodal Science Software engineering World knowledge Writing & creativity Untagged  frontier_max_abs_shift  stretch_change  low_end_mean_shift  scale_slope  models_dropped
+0         C_FM        4  4/20                                                                                     4/8                                                                                                         1.020          -0.620               1.559       0.9878               3
+1        C_ARC        2                                     2/6                                                                                                                                                               1.122           0.626               2.151       0.9601               2
+2  C_OTIS_LMCA        2                                                                                           1/8                                                                                   1/5                   3.095           1.772             -13.161       1.1841              15
+3        C_OLD        5                                                                  3/5                      1/8                                                     1/5                                                 0.282           0.215               3.818       0.9625              37
+4        C_F16       16  3/20                               4/6   1/4                    3/5                      5/8        1/4     1/5                                  1/5                           1/5                  19.354          14.248             -23.751       1.3868             103
+
+== domain vs BSEL
+                     domain  benchmarks  lobo_max_frontier_shift            lobo_max_frontier_bench  lobo_sum_stretch  lobo_min_low_end  lobo_max_low_end              lobo_low_end_extreme_bench        bsel_exact_refit bsel_superset_refits  bsel_best_coverage         bsel_best_refit rand_k_range  rand_spearman_k_stretch  rand_spearman_k_low_end  rand_spearman_k_frontier_max  rand_spearman_k_slope  rand_spearman_cells_low_end
+0                    Agent          20                     0.86  FrontierMath-Tiers-1-3-v2-Private             -0.07              -1.2               1.8  FrontierMath-Tier-4-2025-07-01-Private                                                             0.40                     R15          1-8                     0.24                    -0.45                         -0.04                   0.45                        -0.61
+1             Computer use           2                     0.26                        OSWorld 2.0             -0.19               0.6               0.6                             OSWorld 2.0                              R01;R04;R11;R20                1.00                     R01          0-2                     0.11                    -0.11                          0.05                   0.09                        -0.09
+2     Conceptual reasoning           6                     1.61                            DTBench              0.02              -2.3               1.6                                 DTBench                                                             0.67                   C_F16          0-3                    -0.05                     0.09                         -0.09                  -0.13                         0.05
+3                    Games           4                     0.51                      Chess Puzzles              0.39              -0.2               1.0                                  Balrog                                                             0.50                     R07          0-2                    -0.22                     0.24                         -0.24                  -0.26                         0.36
+4   Language understanding           5                     0.12                         Winogrande              0.10              -2.0               2.5                              Winogrande                                                             0.60                   C_OLD          0-2                     0.05                    -0.00                          0.10                   0.01                         0.23
+5             Long context           4                     0.37                             Balrog             -0.27              -0.0               1.1                                CL-bench                                                             0.75                     R04          0-3                    -0.32                    -0.06                          0.23                   0.08                        -0.00
+6              Mathematics           8                     4.08           OTIS Mock AIME 2024-2025              3.10             -11.1               4.9                OTIS Mock AIME 2024-2025                                                             0.62                   C_F16          0-3                     0.40                    -0.65                          0.34                   0.67                        -0.87
+7               Multimodal           4                     0.56                 Furniture Assembly              0.77               0.2               0.8                                 CadEval                                                             0.50                     R12          0-2                     0.26                    -0.41                          0.17                   0.42                        -0.36
+8                  Science           5                     1.93                       GPQA diamond              1.26              -1.4               3.8                            GPQA diamond                                                             0.60                     R07          0-3                     0.20                     0.20                         -0.32                  -0.19                         0.33
+9     Software engineering          12                     0.98                          GSO-Bench             -1.03               0.3               2.1                          Aider polyglot                                                             0.33                     R02          0-4                    -0.38                     0.36                         -0.14                  -0.34                         0.08
+10         World knowledge           5                     0.31                  SimpleQA Verified             -0.17              -1.5               5.7                                    MMLU                                                             0.40                     R02          0-2                     0.10                     0.28                         -0.23                  -0.26                         0.28
+11    Writing & creativity           1                     0.12                  Fiction.LiveBench              0.03              -0.0              -0.0                       Fiction.LiveBench  LOBO_Fiction_LiveBench                                     1.00  LOBO_Fiction_LiveBench          0-1                     0.05                    -0.29                          0.11                   0.27                        -0.29
+12                Untagged           5                     1.32                               LMCA             -0.90              -0.3               1.4                      DeepResearch Bench                                                             0.40                     R03          0-2                    -0.23                     0.20                         -0.19                  -0.20                         0.30
+
+== LODO feasibility
+                     domain  benchmarks_dropped  cells_dropped  models_dropped  dropped_below100  dropped_frontier20 anchor_dropped  models_left  new_vs_bsel
+0                    Agent                  20            637              12                 0                   2                         244         True
+1             Computer use                   2             17               0                 0                   0                         256        False
+2     Conceptual reasoning                   6            504              23                 0                   1                         233         True
+3                    Games                   4            207               1                 0                   0                         255         True
+4   Language understanding                   5            182              29                21                   0                         227         True
+5             Long context                   4            109               2                 0                   0                         254         True
+6              Mathematics                   8            590              34                11                   0                         222         True
+7               Multimodal                   4             88               1                 0                   0                         255         True
+8                  Science                   5            321              35                17                   0                         221         True
+9     Software engineering                  12            419               8                 0                   0                         248         True
+10         World knowledge                   5            307              39                21                   0                         217         True
+11    Writing & creativity                   1             50               2                 0                   0                         254        False
+12                Untagged                   5            258              11                 0                   0                         245         True
+                    domain  mean_eci_models  median_eci_models  n_eee_sources
+0                    Agent            148.3              149.9              5
+1             Computer use            150.6              150.1              3
+2     Conceptual reasoning            136.1              141.9              5
+3                    Games            148.8              151.2              0
+4   Language understanding             96.3               98.5              4
+5             Long context            140.8              140.8              1
+6              Mathematics            133.0              140.6              7
+7               Multimodal            150.8              154.4              1
+8                  Science            129.8              136.5              9
+9     Software engineering            145.3              145.6              6
+10         World knowledge            126.6              127.9              5
+11    Writing & creativity            138.9              140.0              0
+12                Untagged            145.3              146.0              0
+13                  All 57            130.8              138.8             13
+
+== origin
+                                                     origin  cells  benchmarks  eee_cells  multi  indep  mean_eci  eee_share
+0                                        Benchmark creator   1086          24        239    123     26     146.4      0.220
+1  Benchmark creator (assumed: file has no per-row source)    232           8        110     69      0     153.7      0.474
+2                                                 Epoch AI   1017          14        208    116    193     148.3      0.205
+3                                          Model developer    463          13         97     21     54      95.7      0.210
+4                                        Other third party     61           4         17     10      7     132.5      0.279
+5                                   unknown (blank source)     20           2         17     11      0     149.0      0.850
+origin                  Benchmark creator  Benchmark creator (assumed: file has no per-row source)  Epoch AI  Model developer  Other third party  unknown (blank source)
+domain                                                                                                                                                                  
+Agent                                 215                                                      112       309                1                  0                       0
+Computer use                           16                                                        0         0                1                  0                       0
+Conceptual reasoning                  294                                                       90        39               39                 25                      17
+Games                                  29                                                        0       178                0                  0                       0
+Language understanding                  0                                                        0         0              182                  0                       0
+Long context                           79                                                       30         0                0                  0                       0
+Mathematics                            71                                                        0       466               51                  2                       0
+Multimodal                             40                                                        0        48                0                  0                       0
+Science                                50                                                        0       176               95                  0                       0
+Software engineering                  349                                                       26        39                5                  0                       0
+World knowledge                         0                                                        0        88              185                 34                       0
+Writing & creativity                   50                                                        0         0                0                  0                       0
+Untagged                              224                                                        0        31                0                  0                       3
+                                 benchmark                                          origin_majority                                               origin_counts
+0                                     ANLI                                          Model developer                                           Model developer=9
+1                              APEX-Agents  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=58
+2                                  ARC AI2                                          Model developer                                          Model developer=64
+3                                  ARC-AGI                                        Benchmark creator             Benchmark creator=74; unknown (blank source)=17
+4                                ARC-AGI-2  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=90
+5                           Aider polyglot                                        Benchmark creator                                        Benchmark creator=44
+6                                      BBH                                          Model developer                                          Model developer=39
+7                                   Balrog                                        Benchmark creator                                        Benchmark creator=29
+8                                 CL-bench  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=18
+9                            CL-bench Life  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=12
+10                                 CadEval                                        Benchmark creator                                        Benchmark creator=14
+11                           Chess Puzzles                                                 Epoch AI                                                 Epoch AI=87
+12                                 Cybench                                        Benchmark creator                     Benchmark creator=14; Model developer=5
+13                                 DTBench                                        Benchmark creator                                       Benchmark creator=150
+14                      DeepResearch Bench                                        Benchmark creator                                        Benchmark creator=24
+15                               EBR-bench                                                 Epoch AI                                                 Epoch AI=31
+16                            ExploitBench  Benchmark creator (assumed: file has no per-row source)   Benchmark creator (assumed: file has no per-row source)=7
+17                       Fiction.LiveBench                                        Benchmark creator                                        Benchmark creator=50
+18                            FrontierCode                                        Benchmark creator                                        Benchmark creator=42
+19         FrontierMath-2025-02-28-Private                                                 Epoch AI                                                 Epoch AI=34
+20  FrontierMath-Tier-4-2025-07-01-Private                                                 Epoch AI                                                 Epoch AI=26
+21          FrontierMath-Tier-4-v2-Private                                                 Epoch AI                                                 Epoch AI=72
+22       FrontierMath-Tiers-1-3-v2-Private                                                 Epoch AI                                                 Epoch AI=90
+23                             FrontierSWE                                        Benchmark creator                                        Benchmark creator=23
+24                      Furniture Assembly                                                 Epoch AI                                                 Epoch AI=39
+25                                  GDPval  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=11
+26                            GPQA diamond                                                 Epoch AI                                                Epoch AI=176
+27                                   GSM8K                                          Model developer                     Model developer=51; Other third party=2
+28                               GSO-Bench                                        Benchmark creator                                        Benchmark creator=28
+29                                GeoBench                                        Benchmark creator                                        Benchmark creator=44
+30                               HellaSwag                                          Model developer                                          Model developer=51
+31                                 LAMBADA                                          Model developer                                          Model developer=20
+32                                    LMCA                                        Benchmark creator                                       Benchmark creator=126
+33                            MATH level 5                                                 Epoch AI                                                 Epoch AI=75
+34                      METR Time Horizons                                        Benchmark creator              Benchmark creator=30; unknown (blank source)=3
+35                                    MMLU                                          Model developer                    Model developer=59; Other third party=33
+36                              MirrorCode                                                 Epoch AI                                                 Epoch AI=39
+37                    Mystery Game Puzzles                                                 Epoch AI                                                 Epoch AI=82
+38                                 OSWorld                                        Benchmark creator                      Benchmark creator=7; Model developer=1
+39                             OSWorld 2.0                                        Benchmark creator                                         Benchmark creator=9
+40                OTIS Mock AIME 2024-2025                                                 Epoch AI                                                Epoch AI=169
+41                              OpenBookQA                                          Model developer                                          Model developer=31
+42                                    PIQA                                          Model developer                                          Model developer=41
+43                          PostTrainBench  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=19
+44                              ProofBench                                        Benchmark creator                                        Benchmark creator=71
+45                      Remote Labor Index  Benchmark creator (assumed: file has no per-row source)  Benchmark creator (assumed: file has no per-row source)=17
+46                             SimpleBench                                        Benchmark creator                  Benchmark creator=70; Other third party=25
+47                       SimpleQA Verified                                                 Epoch AI                                                 Epoch AI=88
+48                              SpireClimb                                                 Epoch AI                                                  Epoch AI=9
+49                   Surface Evolver Bench                                        Benchmark creator                                        Benchmark creator=24
+50                          Terminal Bench                                        Benchmark creator                                        Benchmark creator=32
+51                       The Agent Company                                        Benchmark creator                                        Benchmark creator=13
+52                                TriviaQA                                          Model developer                     Model developer=31; Other third party=1
+53                                    VPCT                                        Benchmark creator                                        Benchmark creator=26
+54                                 WeirdML                                        Benchmark creator                                       Benchmark creator=116
+55                              WeirdML v3                                        Benchmark creator                                        Benchmark creator=26
+56                              Winogrande                                          Model developer                                          Model developer=61

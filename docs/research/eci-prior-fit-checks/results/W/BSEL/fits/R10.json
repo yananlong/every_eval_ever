@@ -1,0 +1,437 @@
+{
+ "id": "R10",
+ "kind": "random",
+ "drop": [
+  "APEX-Agents",
+  "ARC-AGI",
+  "ARC-AGI-2",
+  "Chess Puzzles",
+  "FrontierCode",
+  "FrontierMath-2025-02-28-Private",
+  "LAMBADA",
+  "MATH level 5",
+  "METR Time Horizons",
+  "Surface Evolver Bench",
+  "Terminal Bench"
+ ],
+ "dropped_models": [
+  "Beam 1.0",
+  "GPT-3.5 Turbo (Jan 2024)",
+  "GPT-4 (Mar 2023)",
+  "GPT-5.2 Pro",
+  "GPT-5.5 Pro",
+  "Gemini 2.5 Flash (Sep 2025)",
+  "Gemma 2 27B",
+  "Gemma 2 9B",
+  "Grok 4 Fast",
+  "Mistral Large",
+  "Mistral Large 2 (Jul 2024)",
+  "Mistral Large 4",
+  "Mistral Medium 3",
+  "Mistral Medium 3.5",
+  "Mixtral 8x22B",
+  "Muse Spark 1.1",
+  "Qwen-1_8B",
+  "Qwen2-72B"
+ ],
+ "cap_s": 7200,
+ "started": "2026-11-21T07:41:08Z",
+ "attempts": [
+  {
+   "draws": 4000,
+   "target_accept": 0.95,
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0010828891849837,
+    "min_ess": 5156.623116737432
+   },
+   "started_from": "pilot",
+   "wall": 343.2,
+   "warnings": [
+    "This process (pid=93818) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=93818) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=93818) is multi-threaded, use of fork() may lead to deadlocks in the child."
+   ],
+   "ladder": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0010828891849837,
+     "min_ess": 5156.623116737432
+    }
+   ],
+   "seed": 12345,
+   "n_draws_total": 16000,
+   "n_models": 238,
+   "n_rows": 2211,
+   "k": 0,
+   "child_wall": 355.4
+  }
+ ],
+ "resolved": true,
+ "converged": true,
+ "timeout": false,
+ "used_attempt": 0,
+ "finished": true,
+ "compare": {
+  "n_common": 238,
+  "scores": {
+   "S4": {
+    "top10_same": true,
+    "max_pair_change": 0.11968750000000006,
+    "pass_": false
+   },
+   "all": {
+    "n": 236,
+    "S1": 0.9987911906460588,
+    "S1_pass": true,
+    "S2_count": 96,
+    "S2_limit": 11,
+    "S2_pass": false,
+    "S3_count": 105,
+    "S3_limit": 11,
+    "S3_pass": false,
+    "max_rel_shift": 0.9200827585587995,
+    "median_width_ratio": 1.2380787454915285
+   },
+   "frontier": {
+    "n": 19,
+    "S1": 0.9947368421052631,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 0,
+    "S2_pass": true,
+    "S3_count": 15,
+    "S3_limit": 0,
+    "S3_pass": false,
+    "max_rel_shift": 0.2182193035895496,
+    "median_width_ratio": 1.2915533007292406
+   },
+   "sparse": {
+    "n": 59,
+    "S1": 0.9988895382817068,
+    "S1_pass": true,
+    "S2_count": 18,
+    "S2_limit": 2,
+    "S2_pass": false,
+    "S3_count": 11,
+    "S3_limit": 2,
+    "S3_pass": false,
+    "max_rel_shift": 0.48355992417426696,
+    "median_width_ratio": 1.1747311764866808
+   },
+   "dense": {
+    "n": 177,
+    "S1": 0.9980854936915448,
+    "S1_pass": true,
+    "S2_count": 78,
+    "S2_limit": 8,
+    "S2_pass": false,
+    "S3_count": 94,
+    "S3_limit": 8,
+    "S3_pass": false,
+    "max_rel_shift": 0.9200827585587995,
+    "median_width_ratio": 1.254915657699215
+   }
+  },
+  "top10": {
+   "p0": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6.1 Terra",
+    "Claude Fable 5.1",
+    "Claude Sonnet 5.5",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "refit": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "GPT-6.1 Sol",
+    "Claude Opus 5.5",
+    "GPT-6.1 Terra",
+    "Claude Fable 5.1",
+    "Claude Sonnet 5.5",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "set_same": true,
+   "order_same": false,
+   "entered": [],
+   "left": [],
+   "p0_full_top10_dropped": [],
+   "rank_changes": {
+    "Claude Fable 5.2": 0,
+    "Gemini 4 Carbon": 0,
+    "GPT-6 Astra": 0,
+    "Claude Opus 5.5": 1,
+    "GPT-6.1 Sol": -1,
+    "GPT-6.1 Terra": 0,
+    "Claude Fable 5.1": 0,
+    "Claude Sonnet 5.5": 0,
+    "Gemini 4 Argon": 0,
+    "Claude Opus 5": 0
+   }
+  },
+  "frontier": {
+   "stretch_rank1_minus_rank20_k": 15.870703417970162,
+   "stretch_rank1_minus_rank20_p0": 13.489145588874806,
+   "stratum_max_minus_min_k": 15.870703417970162,
+   "stratum_max_minus_min_p0": 13.318379692077627,
+   "stretch_change": 2.3815578290953567,
+   "stratum_range_change": 2.552323725892535,
+   "max_abs_shift": 1.614004058007481,
+   "max_rel_shift": 0.2182193035895496,
+   "mean_signed_shift": 0.3495224219621117,
+   "median_width_ratio": 1.2915533007292406
+  },
+  "gaps": {
+   "frontier": {
+    "n_pairs": 171,
+    "median_abs_gap_change": 0.7607501770572753,
+    "max_abs_gap_change": 2.681320686532473
+   },
+   "all": {
+    "n_pairs": 28203,
+    "median_abs_gap_change": 1.5261987635289813,
+    "max_abs_gap_change": 11.994175402006853
+   }
+  },
+  "shift": {
+   "median_abs_all": 1.5033038998899855,
+   "max_abs_all": 10.143668243400533,
+   "mean_signed_all": -1.892853057380011,
+   "spearman_shift_vs_p0eci": 0.7209237356607795,
+   "median_width_ratio_all": 1.2380787454915285,
+   "by_p0_quintile": [
+    {
+     "q": 1,
+     "n": 47,
+     "p0_eci_range": [
+      49.35664705360122,
+      105.87603884124756
+     ],
+     "median_abs_shift": 4.002573043500789,
+     "median_rel_shift": 0.18853411850241802,
+     "mean_signed_shift": -4.760934286326363,
+     "median_width_ratio": 1.1924309087671134
+    },
+    {
+     "q": 2,
+     "n": 47,
+     "p0_eci_range": [
+      106.0460197505951,
+      132.07137845897674
+     ],
+     "median_abs_shift": 1.894069858135282,
+     "median_rel_shift": 0.21591995787223717,
+     "mean_signed_shift": -1.926787005750015,
+     "median_width_ratio": 1.2910018487050292
+    },
+    {
+     "q": 3,
+     "n": 47,
+     "p0_eci_range": [
+      132.09098284673692,
+      143.95731311893462
+     ],
+     "median_abs_shift": 1.251181844996296,
+     "median_rel_shift": 0.29436571466777334,
+     "mean_signed_shift": -1.2214339849272757,
+     "median_width_ratio": 1.290686739569287
+    },
+    {
+     "q": 4,
+     "n": 47,
+     "p0_eci_range": [
+      143.9721124238968,
+      153.14284100341797
+     ],
+     "median_abs_shift": 0.9798738940091312,
+     "median_rel_shift": 0.24181893104856772,
+     "mean_signed_shift": -1.0394151523210753,
+     "median_width_ratio": 1.2703110602463474
+    },
+    {
+     "q": 5,
+     "n": 48,
+     "p0_eci_range": [
+      153.80679029941558,
+      173.42698958206176
+     ],
+     "median_abs_shift": 0.9305747642050903,
+     "median_rel_shift": 0.19654294346571988,
+     "mean_signed_shift": -0.5443856534045904,
+     "median_width_ratio": 1.2381995253595
+    }
+   ]
+  },
+  "movers": [
+   {
+    "model": "Cerebras-GPT-13B",
+    "p0_eci": 49.35664705360122,
+    "eci": 39.21297881020069,
+    "shift": -10.143668243400533,
+    "rel_shift": 0.24114228838320403,
+    "width_ratio": 1.209341835646851,
+    "rows_full": 6,
+    "rows_sub": 6,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "Dolly 2.0-12b",
+    "p0_eci": 55.9793171338886,
+    "eci": 46.09701660584705,
+    "shift": -9.882300528041547,
+    "rel_shift": 0.25487749211833555,
+    "width_ratio": 1.2290055784472247,
+    "rows_full": 6,
+    "rows_sub": 6,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "RedPajama-INCITE-7B-Base",
+    "p0_eci": 57.985500606458636,
+    "eci": 48.137634526778506,
+    "shift": -9.84786607968013,
+    "rel_shift": 0.26299300867599545,
+    "width_ratio": 1.2375837533744256,
+    "rows_full": 6,
+    "rows_sub": 6,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "Falcon-7B",
+    "p0_eci": 73.4045676344633,
+    "eci": 65.2356502352589,
+    "shift": -8.168917399204403,
+    "rel_shift": 0.2916050838075784,
+    "width_ratio": 1.254915657699215,
+    "rows_full": 10,
+    "rows_sub": 9,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "open_llama_7b",
+    "p0_eci": 64.58126647850871,
+    "eci": 56.50717545288592,
+    "shift": -8.074091025622792,
+    "rel_shift": 0.23636314658869864,
+    "width_ratio": 1.1984975510285227,
+    "rows_full": 6,
+    "rows_sub": 6,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "MPT-7B",
+    "p0_eci": 73.72666125369072,
+    "eci": 65.84473902898672,
+    "shift": -7.881922224703999,
+    "rel_shift": 0.28285966931486783,
+    "width_ratio": 1.2620883694816516,
+    "rows_full": 10,
+    "rows_sub": 9,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "LLaMA-7B",
+    "p0_eci": 77.54448984670638,
+    "eci": 70.29863799954093,
+    "shift": -7.245851847165454,
+    "rel_shift": 0.27997625337684817,
+    "width_ratio": 1.2391885338884532,
+    "rows_full": 10,
+    "rows_sub": 9,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "XGen-7B",
+    "p0_eci": 70.61348403784633,
+    "eci": 64.14020018992781,
+    "shift": -6.473283847918523,
+    "rel_shift": 0.2087968440755444,
+    "width_ratio": 1.18848809193463,
+    "rows_full": 6,
+    "rows_sub": 6,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "Phi-1.5",
+    "p0_eci": 68.75159072831273,
+    "eci": 62.609126919335665,
+    "shift": -6.14246380897707,
+    "rel_shift": 0.18526562431341836,
+    "width_ratio": 1.1899621408344525,
+    "rows_full": 5,
+    "rows_sub": 5,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "Llama 2-7B",
+    "p0_eci": 83.43036904001237,
+    "eci": 77.71237247740126,
+    "shift": -5.717996562611106,
+    "rel_shift": 0.25081378372320506,
+    "width_ratio": 1.2391350510560535,
+    "rows_full": 10,
+    "rows_sub": 9,
+    "strata": [
+     "dense"
+    ]
+   }
+  ],
+  "p_top10_changes": []
+ },
+ "anchors": {
+  "refit": {
+   "cap_low_mean": -0.8285413737955852,
+   "cap_low_sd": 0.1765199434261334,
+   "cap_high_mean": 0.9532276249869438,
+   "cap_high_sd": 0.11281159810864412,
+   "spread_mean": 1.781768998782529,
+   "spread_sd": 0.16276954418180736,
+   "b_mean": 11.320163304929043,
+   "b_sd_over_mean": 0.09305668523567137
+  },
+  "p0": {
+   "cap_low_mean": -1.0391068851054301,
+   "cap_low_sd": 0.16409590538392446,
+   "cap_high_mean": 0.9176831258229756,
+   "cap_high_sd": 0.1019786250498718,
+   "spread_mean": 1.9567900109284058,
+   "spread_sd": 0.14353173038842415,
+   "b_mean": 10.276040868048316,
+   "b_sd_over_mean": 0.07366671618767971
+  }
+ },
+ "n_models": 238,
+ "n_rows": 2211
+}

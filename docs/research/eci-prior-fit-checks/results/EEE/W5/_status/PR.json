@@ -1,0 +1,18 @@
+{
+ "name": "PR",
+ "cap_s": 7200,
+ "started": "2026-11-21T08:48:04Z",
+ "timeout": false,
+ "rc": 0,
+ "wall": 360.0,
+ "resolved": true,
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 4000,
+  "divergences": 0,
+  "max_rhat": 1.0011571217612083,
+  "min_ess": 7625.03470967864
+ }
+}

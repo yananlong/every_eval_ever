@@ -1,0 +1,77 @@
+{
+ "gen": "shape",
+ "r": 0,
+ "seed": 2396499623,
+ "position": 0,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {
+  "asymptote_benchmarks": [
+   6,
+   9,
+   10,
+   14,
+   16,
+   17,
+   20,
+   21,
+   23,
+   24,
+   25,
+   29,
+   31,
+   35,
+   36,
+   45,
+   46,
+   49,
+   53
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.004286784847548,
+  "min_ess": 2268.430408130382
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.004286784847548,
+   "min_ess": 2268.430408130382
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97334) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 561.5,
+ "T": {
+  "T1": 3.478672021619811,
+  "T2": 1.1386836108385743,
+  "T3": 0.06507370846219765,
+  "T4": 0.03390839380745542,
+  "T5": 2.9332844920528687,
+  "T6": 4.248311576719619,
+  "T7": 3.3613161215942653
+ },
+ "maxima": {
+  "Qb": 25.13313892896543,
+  "q": 10.084304218234793,
+  "t": 2.9332844920528687,
+  "cb": 5.517951586117314
+ }
+}

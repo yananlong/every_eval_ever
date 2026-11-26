@@ -1,0 +1,385 @@
+{
+ "name": "H2_ta99",
+ "features": [
+  "dev",
+  "fam"
+ ],
+ "clusters": {
+  "clu:oldLM": [
+   "HellaSwag",
+   "LAMBADA",
+   "PIQA",
+   "Winogrande",
+   "TriviaQA"
+  ],
+  "clu:knowQA": [
+   "DTBench",
+   "LMCA",
+   "Balrog",
+   "SimpleQA Verified",
+   "SimpleBench",
+   "Mystery Game Puzzles",
+   "DeepResearch Bench"
+  ],
+  "clu:math": [
+   "MATH level 5",
+   "OTIS Mock AIME 2024-2025",
+   "FrontierMath-Tiers-1-3-v2-Private"
+  ]
+ },
+ "target_accept": 0.99,
+ "seed": 12345,
+ "converged": true,
+ "started_from": "pilot",
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0037778302784812,
+   "min_ess": 693.7788404315668
+  }
+ ],
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0037778302784812,
+  "min_ess": 693.7788404315668
+ },
+ "wall_seconds": 7093.4,
+ "total_seconds": 7127.0,
+ "convergence": {
+  "divergences": 0,
+  "max_rhat": 1.0037778302784812,
+  "min_ess_bulk": 693.7788404315668,
+  "min_ess_tail": 1021.4366372611214,
+  "max_rhat_by_var": {
+   "capability": 1.002650080278108,
+   "difficulty": 1.002134332410875,
+   "slope": 1.0024002053576406,
+   "sigma": 1.0037778302784812,
+   "tau_alpha": 0.9999750866755721,
+   "sigma_median": 1.000271261531091,
+   "tau_sigma": 1.0002895036642168,
+   "zeta": 1.002370267164612,
+   "tau_delta": 1.000999338667966,
+   "w_fam": 1.003417876417628,
+   "tau_fam": 1.0032390828213062
+  }
+ },
+ "hyper_summary": {
+  "tau_alpha": {
+   "mean": 0.6919153234,
+   "sd": 0.0741742632,
+   "eti90_lb": 0.5777092305,
+   "eti90_ub": 0.8168747128,
+   "ess_bulk": 4302.5077970359,
+   "ess_tail": 3700.49434411,
+   "r_hat": 0.9999750867,
+   "mcse_mean": 0.0011313867,
+   "mcse_sd": 0.0010063542
+  },
+  "sigma_median": {
+   "mean": 0.0680119464,
+   "sd": 0.0051048053,
+   "eti90_lb": 0.0597864753,
+   "eti90_ub": 0.0765938154,
+   "ess_bulk": 4452.5822444089,
+   "ess_tail": 3478.1391076892,
+   "r_hat": 1.0002712615,
+   "mcse_mean": 7.62036e-05,
+   "mcse_sd": 6.26738e-05
+  },
+  "tau_sigma": {
+   "mean": 0.5192644678,
+   "sd": 0.0587706826,
+   "eti90_lb": 0.432719961,
+   "eti90_ub": 0.6260974676,
+   "ess_bulk": 2997.1122940031,
+   "ess_tail": 3318.5367039375,
+   "r_hat": 1.0002895037,
+   "mcse_mean": 0.0010529293,
+   "mcse_sd": 0.0008211494
+  },
+  "tau_delta": {
+   "mean": 0.2406098044,
+   "sd": 0.0232776504,
+   "eti90_lb": 0.2036398149,
+   "eti90_ub": 0.280409996,
+   "ess_bulk": 1440.4407874344,
+   "ess_tail": 2046.5676839006,
+   "r_hat": 1.0009993387,
+   "mcse_mean": 0.0006122658,
+   "mcse_sd": 0.0003240798
+  },
+  "tau_fam[lin:ARC-AGI]": {
+   "mean": 0.2898426817,
+   "sd": 0.0329991181,
+   "eti90_lb": 0.2388157946,
+   "eti90_ub": 0.3459142987,
+   "ess_bulk": 1372.092275484,
+   "ess_tail": 2213.9177801802,
+   "r_hat": 0.9999032002,
+   "mcse_mean": 0.0008851452,
+   "mcse_sd": 0.0004594479
+  },
+  "tau_fam[lin:CL-bench]": {
+   "mean": 0.1882506255,
+   "sd": 0.1056829775,
+   "eti90_lb": 0.0232637317,
+   "eti90_ub": 0.3660369908,
+   "ess_bulk": 1391.5387554847,
+   "ess_tail": 1906.0486605678,
+   "r_hat": 1.0001139655,
+   "mcse_mean": 0.002764643,
+   "mcse_sd": 0.0012692011
+  },
+  "tau_fam[lin:FrontierMath]": {
+   "mean": 0.1518726546,
+   "sd": 0.0284231021,
+   "eti90_lb": 0.106130186,
+   "eti90_ub": 0.1981068125,
+   "ess_bulk": 693.7788404316,
+   "ess_tail": 1081.6244950486,
+   "r_hat": 1.0032390828,
+   "mcse_mean": 0.0011236769,
+   "mcse_sd": 0.0008577879
+  },
+  "tau_fam[lin:OSWorld]": {
+   "mean": 0.2390555689,
+   "sd": 0.1170722303,
+   "eti90_lb": 0.0460046384,
+   "eti90_ub": 0.4358906638,
+   "ess_bulk": 1180.3265633081,
+   "ess_tail": 1606.3633781392,
+   "r_hat": 1.0031689359,
+   "mcse_mean": 0.0033545265,
+   "mcse_sd": 0.0017374254
+  },
+  "tau_fam[lin:WeirdML]": {
+   "mean": 0.0620139647,
+   "sd": 0.0436868999,
+   "eti90_lb": 0.0047698865,
+   "eti90_ub": 0.1450838077,
+   "ess_bulk": 1486.9873947841,
+   "ess_tail": 1963.5906471395,
+   "r_hat": 1.0010377276,
+   "mcse_mean": 0.0011672108,
+   "mcse_sd": 0.000693226
+  },
+  "tau_fam[clu:oldLM]": {
+   "mean": 1.3612882102,
+   "sd": 0.1724028796,
+   "eti90_lb": 1.0944594181,
+   "eti90_ub": 1.661071541,
+   "ess_bulk": 2295.2993410783,
+   "ess_tail": 2852.6362150826,
+   "r_hat": 1.0002519168,
+   "mcse_mean": 0.0036087075,
+   "mcse_sd": 0.00203359
+  },
+  "tau_fam[clu:knowQA]": {
+   "mean": 0.2998432756,
+   "sd": 0.0314262781,
+   "eti90_lb": 0.2505479423,
+   "eti90_ub": 0.352896125,
+   "ess_bulk": 2095.7435037793,
+   "ess_tail": 2697.0445119095,
+   "r_hat": 1.0010139544,
+   "mcse_mean": 0.0006860646,
+   "mcse_sd": 0.0004045304
+  },
+  "tau_fam[clu:math]": {
+   "mean": 0.233632846,
+   "sd": 0.0270817976,
+   "eti90_lb": 0.1905346059,
+   "eti90_ub": 0.2785167589,
+   "ess_bulk": 1255.620223389,
+   "ess_tail": 1962.3120759815,
+   "r_hat": 1.0018146916,
+   "mcse_mean": 0.0007636404,
+   "mcse_sd": 0.0004171205
+  }
+ },
+ "T": {
+  "T1": 3.0879287592032854,
+  "T2": 1.8960781011935333,
+  "T3": 0.4237317481738457,
+  "T4": 0.018243420040052048,
+  "T5": 2.0584227804993764,
+  "T6": 42.30335525091007,
+  "T7": 1.994484887016365
+ },
+ "maxima": {
+  "Qb": 9.499459300510626,
+  "q": 73.61849650316,
+  "t": 2.0584227804993764,
+  "cb": 12.794070386950734
+ },
+ "T2_extras": {
+  "max_abs_r": 0.7334567182653345,
+  "share_abs_r_gt_0_3": 0.2292134831460674
+ },
+ "T1_top": [
+  {
+   "item": "Surface Evolver Bench",
+   "value": 9.499459300510626
+  },
+  {
+   "item": "WeirdML",
+   "value": 6.9790617419223
+  },
+  {
+   "item": "MMLU",
+   "value": 6.390954762074206
+  },
+  {
+   "item": "APEX-Agents",
+   "value": 6.2788998758431545
+  },
+  {
+   "item": "Fiction.LiveBench",
+   "value": 5.943875597049037
+  },
+  {
+   "item": "ProofBench",
+   "value": 5.780280606917809
+  },
+  {
+   "item": "GSM8K",
+   "value": 5.565488584047241
+  },
+  {
+   "item": "Mystery Game Puzzles",
+   "value": 5.562598269560175
+  }
+ ],
+ "T2_top": [
+  {
+   "item": "ARC-AGI-2 | ARC-AGI",
+   "value": 73.61849650316
+  },
+  {
+   "item": "DTBench | LMCA",
+   "value": 26.8189992054949
+  },
+  {
+   "item": "OTIS Mock AIME 2024-2025 | FrontierMath-Tiers-1-3-v2-Private",
+   "value": 18.138550431660562
+  },
+  {
+   "item": "HellaSwag | PIQA",
+   "value": 16.516044179420295
+  },
+  {
+   "item": "MATH level 5 | OTIS Mock AIME 2024-2025",
+   "value": 15.090428311385491
+  },
+  {
+   "item": "OTIS Mock AIME 2024-2025 | Aider polyglot",
+   "value": 12.99773422793224
+  },
+  {
+   "item": "SimpleBench | LMCA",
+   "value": 12.571768283028032
+  },
+  {
+   "item": "ARC AI2 | HellaSwag",
+   "value": 12.564784831430782
+  }
+ ],
+ "T5_top": [
+  {
+   "item": "Anthropic | GPQA diamond",
+   "value": -2.0584227804993764
+  },
+  {
+   "item": "Anthropic | VPCT",
+   "value": -1.9650361738028979
+  },
+  {
+   "item": "OpenAI | MirrorCode",
+   "value": -1.6891853110507093
+  },
+  {
+   "item": "Anthropic | ProofBench",
+   "value": 1.4445614116743128
+  },
+  {
+   "item": "Z.ai (Zhipu AI) | OTIS Mock AIME 2024-2025",
+   "value": -1.433280451476276
+  },
+  {
+   "item": "Google DeepMind | GeoBench",
+   "value": 1.4111142678036
+  },
+  {
+   "item": "Microsoft | ARC AI2",
+   "value": 1.314481822185259
+  },
+  {
+   "item": "OpenAI | Furniture Assembly",
+   "value": 1.290916109441785
+  }
+ ],
+ "T6_top": [
+  {
+   "item": "Furniture Assembly",
+   "value": 12.794070386950734
+  },
+  {
+   "item": "Mystery Game Puzzles",
+   "value": 9.09812387553765
+  },
+  {
+   "item": "OTIS Mock AIME 2024-2025",
+   "value": 8.46130678156039
+  },
+  {
+   "item": "Chess Puzzles",
+   "value": 5.877139487090543
+  },
+  {
+   "item": "FrontierMath-Tier-4-2025-07-01-Private",
+   "value": 5.426575908561911
+  },
+  {
+   "item": "FrontierMath-Tier-4-v2-Private",
+   "value": 5.228395590106004
+  },
+  {
+   "item": "ProofBench",
+   "value": 3.217230421004798
+  },
+  {
+   "item": "FrontierMath-Tiers-1-3-v2-Private",
+   "value": 0.936435049729356
+  }
+ ],
+ "bounds": {
+  "zeros": 59,
+  "exp_zeros": 30.84155463934006,
+  "ones": 22,
+  "exp_ones": 8.884645017685667
+ },
+ "loo": {
+  "elpd": 4079.1157707794855,
+  "se": 56.89230712315161,
+  "p": 937.8983741703237,
+  "k_share": 0.14032650225772839,
+  "n_k_gt_0_7": 404,
+  "n_k_gt_1": 53,
+  "elpd_interior": 3773.673859246409,
+  "elpd_common": 3604.3979707803364,
+  "elpd_common_bound_rows": -169.27588846607196
+ },
+ "pit": {
+  "ks_distance": 0.027708506335372585,
+  "var_ratio": 0.959391145410547,
+  "share_lt_0_05": 0.05731156651615144,
+  "share_gt_0_95": 0.045501910385550536
+ }
+}

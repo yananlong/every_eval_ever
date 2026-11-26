@@ -1,0 +1,589 @@
+{
+ "seed": 12345,
+ "n_draws": 4000,
+ "added_low_anchor": {
+  "name": "GPT-4o mini",
+  "obs": 19,
+  "mean_eci": 123.8740232390867,
+  "cap_sd": 0.17157923672196984
+ },
+ "pairs": [
+  {
+   "id": "orig",
+   "low": "Claude 3.5 Sonnet",
+   "high": "GPT-5",
+   "tl": 130.0,
+   "th": 150.0,
+   "source": "WA (M11a rule)",
+   "low_obs": 12,
+   "high_obs": 28,
+   "n_bad_draws": 0,
+   "scale_cv": 0.07440685298973669,
+   "width_ratio_median": 1.0,
+   "n_pairs": 32131,
+   "max_abs_gap_change": 8.526512829121202e-14,
+   "median_abs_gap_change": 0.0,
+   "p95_abs_gap_change": 2.842170943040401e-14,
+   "n_pairs_gap_ge1": 31327,
+   "rel_change_median": 0.0,
+   "rel_change_p95": 2.886579864025407e-15,
+   "rel_change_max": 6.128431095930864e-14,
+   "common_scale_lambda": 0.9999999999999999,
+   "rel_change_after_lambda_p95": 2.886579864025407e-15,
+   "rel_change_after_lambda_max": 6.150635556423367e-14,
+   "gap_width_ratio_frontier": {
+    "median": 1.0,
+    "min": 0.9999999999999841,
+    "max": 1.000000000000019,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 1.0,
+    "min": 0.9999999999999846,
+    "max": 1.0000000000000169,
+    "n": 3160
+   }
+  },
+  {
+   "id": "L0-S10",
+   "low": "Claude Sonnet 4",
+   "high": "Claude Opus 4.5",
+   "tl": 141.86519477494087,
+   "th": 151.90605171308252,
+   "source": "WA (M11a rule)",
+   "low_obs": 21,
+   "high_obs": 29,
+   "n_bad_draws": 0,
+   "scale_cv": 0.10052239943834687,
+   "width_ratio_median": 1.1217667398360733,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 1.0990719781516134,
+   "median_abs_gap_change": 0.20706649247417985,
+   "p95_abs_gap_change": 0.7035295370304304,
+   "n_pairs_gap_ge1": 30840,
+   "rel_change_median": 0.008924563252020512,
+   "rel_change_p95": 0.009957875366931433,
+   "rel_change_max": 0.03861430388423992,
+   "common_scale_lambda": 1.0089335617385387,
+   "rel_change_after_lambda_p95": 0.001720560735518626,
+   "rel_change_after_lambda_max": 0.032282652931358125,
+   "gap_width_ratio_frontier": {
+    "median": 1.0326070544676162,
+    "min": 0.9928674118153982,
+    "max": 1.1649449704449841,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 1.1415941901759594,
+    "min": 0.9883658466463592,
+    "max": 1.4347428023155024,
+    "n": 3160
+   }
+  },
+  {
+   "id": "L0-S15",
+   "low": "Claude Sonnet 4",
+   "high": "Claude Opus 4.7",
+   "tl": 141.86519477494087,
+   "th": 157.39926070094444,
+   "source": "WA (M11a rule)",
+   "low_obs": 21,
+   "high_obs": 24,
+   "n_bad_draws": 0,
+   "scale_cv": 0.06817779923827222,
+   "width_ratio_median": 1.0079740709152991,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 0.574338843821792,
+   "median_abs_gap_change": 0.10679538280869139,
+   "p95_abs_gap_change": 0.36716919319961505,
+   "n_pairs_gap_ge1": 30841,
+   "rel_change_median": 0.00462389864857049,
+   "rel_change_p95": 0.00545448404862614,
+   "rel_change_max": 0.03646861139341517,
+   "common_scale_lambda": 1.0046571058916287,
+   "rel_change_after_lambda_p95": 0.0013874168135571407,
+   "rel_change_after_lambda_max": 0.03166404270196632,
+   "gap_width_ratio_frontier": {
+    "median": 0.9933951599735704,
+    "min": 0.922134300888855,
+    "max": 1.0190567934798174,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 0.9918268743534999,
+    "min": 0.8688864929201026,
+    "max": 1.0767269756766693,
+    "n": 3160
+   }
+  },
+  {
+   "id": "L0-S20",
+   "low": "Claude Sonnet 4",
+   "high": "GPT-5.6 Sol",
+   "tl": 141.86519477494087,
+   "th": 162.95919704278776,
+   "source": "WA (M11a rule)",
+   "low_obs": 21,
+   "high_obs": 27,
+   "n_bad_draws": 0,
+   "scale_cv": 0.053335262457944684,
+   "width_ratio_median": 0.9631095701803452,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 0.46614519902406926,
+   "median_abs_gap_change": 0.08727824166283682,
+   "p95_abs_gap_change": 0.3026938020712855,
+   "n_pairs_gap_ge1": 30833,
+   "rel_change_median": 0.0038038559296873498,
+   "rel_change_p95": 0.004595360676532722,
+   "rel_change_max": 0.02418189274142213,
+   "common_scale_lambda": 1.0038314337544587,
+   "rel_change_after_lambda_p95": 0.0013142407955146526,
+   "rel_change_after_lambda_max": 0.02211229517380031,
+   "gap_width_ratio_frontier": {
+    "median": 0.9699198613208819,
+    "min": 0.8211341018367615,
+    "max": 1.0152412190191042,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 0.9389897273034609,
+    "min": 0.707094896589909,
+    "max": 1.0254190994955168,
+    "n": 3160
+   }
+  },
+  {
+   "id": "L6-S10",
+   "low": "Claude Opus 4.5",
+   "high": "GPT-5.6 Sol",
+   "tl": 151.90605171308252,
+   "th": 162.95919704278776,
+   "source": "WA (M11a rule)",
+   "low_obs": 29,
+   "high_obs": 27,
+   "n_bad_draws": 0,
+   "scale_cv": 0.08802926482122302,
+   "width_ratio_median": 1.2296842442316105,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 1.2719640449461025,
+   "median_abs_gap_change": 0.2357966269305436,
+   "p95_abs_gap_change": 0.8153058920083183,
+   "n_pairs_gap_ge1": 30833,
+   "rel_change_median": 0.010299250675346983,
+   "rel_change_p95": 0.011207948080713593,
+   "rel_change_max": 0.03733433377726425,
+   "common_scale_lambda": 1.0103432812204476,
+   "rel_change_after_lambda_p95": 0.001692473756319933,
+   "rel_change_after_lambda_max": 0.0267147345446912,
+   "gap_width_ratio_frontier": {
+    "median": 1.0107557682950081,
+    "min": 0.9651614306051379,
+    "max": 1.0800075404476688,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 1.0812462309303148,
+    "min": 0.971677172268228,
+    "max": 1.27030338569845,
+    "n": 3160
+   }
+  },
+  {
+   "id": "L6-S15",
+   "low": "Claude Opus 4.5",
+   "high": "Claude Fable 5.1",
+   "tl": 151.90605171308252,
+   "th": 166.96984063425347,
+   "source": "WA (M11a rule)",
+   "low_obs": 29,
+   "high_obs": 25,
+   "n_bad_draws": 0,
+   "scale_cv": 0.06842768783174784,
+   "width_ratio_median": 1.105086598937144,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 0.7789917332601419,
+   "median_abs_gap_change": 0.1450759872180427,
+   "p95_abs_gap_change": 0.5052763080807452,
+   "n_pairs_gap_ge1": 30834,
+   "rel_change_median": 0.006361767731166701,
+   "rel_change_p95": 0.007166570146090112,
+   "rel_change_max": 0.03035078061581764,
+   "common_scale_lambda": 1.0063968315066505,
+   "rel_change_after_lambda_p95": 0.0015056445853531275,
+   "rel_change_after_lambda_max": 0.023801693685090664,
+   "gap_width_ratio_frontier": {
+    "median": 0.9833905219767383,
+    "min": 0.8609803531242016,
+    "max": 1.0220888164665165,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 0.9988119724709797,
+    "min": 0.8273499380952222,
+    "max": 1.0711860959549955,
+    "n": 3160
+   }
+  },
+  {
+   "id": "L12-S10",
+   "low": "Claude Opus 4.6",
+   "high": "Gemini 4 Argon",
+   "tl": 156.3215167022668,
+   "th": 166.4419722095869,
+   "source": "WA (M11a rule)",
+   "low_obs": 27,
+   "high_obs": 22,
+   "n_bad_draws": 0,
+   "scale_cv": 0.09291631445981031,
+   "width_ratio_median": 1.3336749389914897,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 1.1095912950686966,
+   "median_abs_gap_change": 0.20915823424472535,
+   "p95_abs_gap_change": 0.717282731572304,
+   "n_pairs_gap_ge1": 30835,
+   "rel_change_median": 0.009133781123473739,
+   "rel_change_p95": 0.010051827789150281,
+   "rel_change_max": 0.047706944045096566,
+   "common_scale_lambda": 1.0091261658238766,
+   "rel_change_after_lambda_p95": 0.0016681614178059353,
+   "rel_change_after_lambda_max": 0.03823186785541499,
+   "gap_width_ratio_frontier": {
+    "median": 1.0106010637992215,
+    "min": 0.9609001637645387,
+    "max": 1.0507723992422155,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 1.0996641240155558,
+    "min": 0.9715943246519237,
+    "max": 1.3116168121349068,
+    "n": 3160
+   }
+  },
+  {
+   "id": "Full",
+   "low": "Claude Sonnet 4",
+   "high": "GPT-6 Astra",
+   "tl": 141.86519477494087,
+   "th": 168.971106151721,
+   "source": "WA (M11a rule)",
+   "low_obs": 21,
+   "high_obs": 26,
+   "n_bad_draws": 0,
+   "scale_cv": 0.04697913192998656,
+   "width_ratio_median": 0.9351294958895557,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 0.309934664742741,
+   "median_abs_gap_change": 0.05914164017919177,
+   "p95_abs_gap_change": 0.20614555319560424,
+   "n_pairs_gap_ge1": 30834,
+   "rel_change_median": 0.0025839579769626475,
+   "rel_change_p95": 0.003331238250931634,
+   "rel_change_max": 0.01944624688269414,
+   "common_scale_lambda": 1.002605214888618,
+   "rel_change_after_lambda_p95": 0.001226789531380284,
+   "rel_change_after_lambda_max": 0.018635382250816956,
+   "gap_width_ratio_frontier": {
+    "median": 0.9640533639707636,
+    "min": 0.7815891960667234,
+    "max": 1.0147407039912006,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 0.918483360467175,
+    "min": 0.627600023371922,
+    "max": 1.0247891585448634,
+    "n": 3160
+   }
+  },
+  {
+   "id": "X-lowGPT5",
+   "low": "GPT-4o mini",
+   "high": "GPT-5",
+   "tl": 123.8740232390867,
+   "th": 150.0,
+   "source": "added here (exploratory)",
+   "low_obs": 19,
+   "high_obs": 28,
+   "n_bad_draws": 0,
+   "scale_cv": 0.05983623367486656,
+   "width_ratio_median": 0.9427622222215499,
+   "n_pairs": 31878,
+   "max_abs_gap_change": 0.22061006790426063,
+   "median_abs_gap_change": 0.041472476847260964,
+   "p95_abs_gap_change": 0.13210290991256599,
+   "n_pairs_gap_ge1": 31077,
+   "rel_change_median": 0.0017548195251737564,
+   "rel_change_p95": 0.0025773472527248482,
+   "rel_change_max": 0.03605478657409411,
+   "common_scale_lambda": 1.0016916611569262,
+   "rel_change_after_lambda_p95": 0.0012520715357886342,
+   "rel_change_after_lambda_max": 0.034305092824152617,
+   "gap_width_ratio_frontier": {
+    "median": 0.9843242295409442,
+    "min": 0.9058267526580162,
+    "max": 1.017328420469973,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 0.94182863864732,
+    "min": 0.8201261095720751,
+    "max": 1.0261865778225985,
+    "n": 3160
+   }
+  },
+  {
+   "id": "X-lowTop",
+   "low": "GPT-4o mini",
+   "high": "Claude Fable 5.2",
+   "tl": 123.8740232390867,
+   "th": 173.3329042000611,
+   "source": "added here (exploratory)",
+   "low_obs": 19,
+   "high_obs": 19,
+   "n_bad_draws": 0,
+   "scale_cv": 0.04142270050709336,
+   "width_ratio_median": 0.9336710491238996,
+   "n_pairs": 31626,
+   "max_abs_gap_change": 0.1206120213115014,
+   "median_abs_gap_change": 0.025472011408012918,
+   "p95_abs_gap_change": 0.08376835275907268,
+   "n_pairs_gap_ge1": 30825,
+   "rel_change_median": 0.0010631282075381776,
+   "rel_change_p95": 0.0019358562317378421,
+   "rel_change_max": 0.02382882267830655,
+   "common_scale_lambda": 1.001057320267395,
+   "rel_change_after_lambda_p95": 0.0012493281464970969,
+   "rel_change_after_lambda_max": 0.022747451069863978,
+   "gap_width_ratio_frontier": {
+    "median": 0.9674062873930973,
+    "min": 0.8328035361856357,
+    "max": 1.011986110948039,
+    "n": 190
+   },
+   "gap_width_ratio_sample80": {
+    "median": 0.8905453158125674,
+    "min": 0.5636073125452128,
+    "max": 1.024646012664863,
+    "n": 3160
+   }
+  }
+ ],
+ "values": [
+  {
+   "t_low": 100.0,
+   "t_high": 150.0,
+   "factor": 2.5,
+   "max_dev_gap_vs_factor": 2.4158453015843406e-13,
+   "max_dev_width_vs_factor": 1.2789769243681803e-13,
+   "max_dev_mean_affine": 1.4210854715202004e-13
+  },
+  {
+   "t_low": 130.0,
+   "t_high": 170.0,
+   "factor": 2.0,
+   "max_dev_gap_vs_factor": 1.9895196601282805e-13,
+   "max_dev_width_vs_factor": 1.1368683772161603e-13,
+   "max_dev_mean_affine": 1.1368683772161603e-13
+  },
+  {
+   "t_low": 0.0,
+   "t_high": 100.0,
+   "factor": 5.0,
+   "max_dev_gap_vs_factor": 4.405364961712621e-13,
+   "max_dev_width_vs_factor": 2.6290081223123707e-13,
+   "max_dev_mean_affine": 2.4158453015843406e-13
+  },
+  {
+   "t_low": 130.0,
+   "t_high": 140.0,
+   "factor": 0.5,
+   "max_dev_gap_vs_factor": 8.526512829121202e-14,
+   "max_dev_width_vs_factor": 5.684341886080802e-14,
+   "max_dev_mean_affine": 5.684341886080802e-14
+  }
+ ],
+ "regeneration_check": {
+  "0": {
+   "cap_match": 0.0,
+   "bench_match": true
+  },
+  "1": {
+   "cap_match": 0.0,
+   "bench_match": true
+  }
+ },
+ "same_model_order": true,
+ "crashed_2d": [
+  {
+   "r": 4,
+   "position": 800,
+   "c1_low": -1.0743432499638956,
+   "c1_high": 0.8664439829831849,
+   "c2_low": -1.0624766807440635,
+   "c2_high": -2.148176994910237,
+   "second_dim_reversed": true,
+   "low_bench_total": 12,
+   "low_bench_on_c2": 6,
+   "high_bench_total": 28,
+   "high_bench_on_c2": 16,
+   "c1_gap": 1.9407872329470806,
+   "c2_gap": -1.0857003141661736,
+   "c2_sd_noise": 1.8437633084530833
+  },
+  {
+   "r": 6,
+   "position": 1200,
+   "c1_low": -0.9387439152138839,
+   "c1_high": 0.7857217892244606,
+   "c2_low": -1.3674050555013377,
+   "c2_high": -2.811906425365842,
+   "second_dim_reversed": true,
+   "low_bench_total": 12,
+   "low_bench_on_c2": 3,
+   "high_bench_total": 28,
+   "high_bench_on_c2": 16,
+   "c1_gap": 1.7244657044383445,
+   "c2_gap": -1.4445013698645044,
+   "c2_sd_noise": 1.7992162974969004
+  },
+  {
+   "r": 18,
+   "position": 3600,
+   "c1_low": -0.9481296149342597,
+   "c1_high": 1.0038476007894275,
+   "c2_low": 1.0758653523826733,
+   "c2_high": -0.654112271338336,
+   "second_dim_reversed": true,
+   "low_bench_total": 12,
+   "low_bench_on_c2": 9,
+   "high_bench_total": 28,
+   "high_bench_on_c2": 14,
+   "c1_gap": 1.9519772157236872,
+   "c2_gap": -1.7299776237210094,
+   "c2_sd_noise": 2.003803527206097
+  }
+ ],
+ "all_2d": [
+  {
+   "r": 0,
+   "c2_gap": 4.381661125244351,
+   "c1_gap": 1.8211025335071795,
+   "reversed": false
+  },
+  {
+   "r": 1,
+   "c2_gap": 3.185295467745463,
+   "c1_gap": 2.3316527973600856,
+   "reversed": false
+  },
+  {
+   "r": 2,
+   "c2_gap": 4.850606907453734,
+   "c1_gap": 2.133484765540693,
+   "reversed": false
+  },
+  {
+   "r": 3,
+   "c2_gap": 5.275739881650639,
+   "c1_gap": 2.0397757278244626,
+   "reversed": false
+  },
+  {
+   "r": 4,
+   "c2_gap": -1.0857003141661736,
+   "c1_gap": 1.9407872329470806,
+   "reversed": true
+  },
+  {
+   "r": 5,
+   "c2_gap": 1.759114571599317,
+   "c1_gap": 2.143934055270506,
+   "reversed": false
+  },
+  {
+   "r": 6,
+   "c2_gap": -1.4445013698645044,
+   "c1_gap": 1.7244657044383445,
+   "reversed": true
+  },
+  {
+   "r": 7,
+   "c2_gap": 0.685457134131429,
+   "c1_gap": 2.0016578250263493,
+   "reversed": false
+  },
+  {
+   "r": 8,
+   "c2_gap": 0.3312841009304617,
+   "c1_gap": 2.111283376195935,
+   "reversed": false
+  },
+  {
+   "r": 9,
+   "c2_gap": 1.9981529275857095,
+   "c1_gap": 2.093455479634571,
+   "reversed": false
+  },
+  {
+   "r": 10,
+   "c2_gap": 7.056215090329809,
+   "c1_gap": 2.0233214294984094,
+   "reversed": false
+  },
+  {
+   "r": 11,
+   "c2_gap": 3.444888167028933,
+   "c1_gap": 1.9504631052657473,
+   "reversed": false
+  },
+  {
+   "r": 12,
+   "c2_gap": 1.766906016837042,
+   "c1_gap": 1.970834252246199,
+   "reversed": false
+  },
+  {
+   "r": 13,
+   "c2_gap": -2.135398611120508,
+   "c1_gap": 1.6676328436790655,
+   "reversed": true
+  },
+  {
+   "r": 14,
+   "c2_gap": 3.746662329382827,
+   "c1_gap": 1.774970216537703,
+   "reversed": false
+  },
+  {
+   "r": 15,
+   "c2_gap": 0.6087052801716881,
+   "c1_gap": 2.0317927607963213,
+   "reversed": false
+  },
+  {
+   "r": 16,
+   "c2_gap": -2.584898497615143,
+   "c1_gap": 1.9985607446997875,
+   "reversed": true
+  },
+  {
+   "r": 17,
+   "c2_gap": -0.9447569566574028,
+   "c1_gap": 2.0461206823731075,
+   "reversed": true
+  },
+  {
+   "r": 18,
+   "c2_gap": -1.7299776237210094,
+   "c1_gap": 1.9519772157236872,
+   "reversed": true
+  },
+  {
+   "r": 19,
+   "c2_gap": -0.8628890541910895,
+   "c1_gap": 1.8994444802625807,
+   "reversed": true
+  }
+ ]
+}

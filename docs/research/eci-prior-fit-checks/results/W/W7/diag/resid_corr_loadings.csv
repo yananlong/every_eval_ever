@@ -1,0 +1,48 @@
+benchmark,pc1,pc2,pc3,year,style,tags,epoch_run,n_sources
+ARC AI2,0.001,-0.117,0.057,2018,single-turn QA,Science;World knowledge,False,14
+BBH,-0.011,-0.268,0.035,2022,single-turn QA,Conceptual reasoning,False,10
+GSM8K,-0.018,-0.358,0.021,2021,single-turn QA,Mathematics,False,14
+HellaSwag,0.024,0.471,-0.042,2019,single-turn QA,Language understanding,False,15
+LAMBADA,0.017,0.373,-0.041,2016,single-turn QA,Language understanding,False,2
+MMLU,-0.055,-0.214,-0.126,2020,single-turn QA,World knowledge,False,21
+GPQA diamond,0.035,-0.021,-0.086,2023,single-turn QA,Science,True,0
+MATH level 5,0.220,0.043,0.308,2021,single-turn QA,Mathematics,True,0
+OTIS Mock AIME 2024-2025,0.211,0.041,0.416,2024,single-turn QA,Mathematics,True,0
+DTBench,-0.318,0.019,-0.066,2026,single-turn QA,Conceptual reasoning,False,1
+WeirdML,-0.055,0.001,-0.122,2025,tool use,Software engineering,False,2
+Cybench,-0.011,-0.005,-0.068,2024,agentic in an environment,Software engineering,False,5
+SimpleBench,-0.299,0.027,0.118,2024,single-turn QA,Conceptual reasoning,False,3
+METR Time Horizons,-0.013,-0.001,0.024,2025,agentic in an environment,,False,2
+FrontierMath-2025-02-28-Private,-0.014,-0.003,-0.053,2025,tool use,Agent;Mathematics,True,0
+FrontierMath-Tier-4-2025-07-01-Private,-0.009,0.000,0.003,2025,tool use,Agent;Mathematics,True,0
+VPCT,-0.035,-0.014,-0.171,2025,single-turn QA,Multimodal;Science,False,2
+ARC-AGI-2,0.130,-0.024,-0.205,2025,single-turn QA,Conceptual reasoning,False,0
+Balrog,-0.118,-0.011,-0.243,2024,agentic in an environment,Games;Long context,False,2
+GeoBench,-0.059,-0.000,-0.086,2025,single-turn QA,,False,2
+Fiction.LiveBench,-0.141,0.006,-0.045,2025,single-turn QA,Long context;Writing & creativity,False,1
+Aider polyglot,-0.130,-0.013,-0.261,2024,tool use,Software engineering,False,2
+ARC-AGI,-0.193,0.029,0.235,2019,single-turn QA,Conceptual reasoning,False,2
+LMCA,-0.232,-0.007,-0.333,2026,single-turn QA,,False,1
+Terminal Bench,0.089,0.000,0.088,2025,agentic in an environment,Software engineering,False,2
+GSO-Bench,0.005,-0.005,-0.099,2025,agentic in an environment,Software engineering,False,2
+DeepResearch Bench,-0.172,0.019,0.167,2025,tool use,,False,2
+FrontierMath-Tiers-1-3-v2-Private,0.129,0.004,0.031,2026,tool use,Agent;Mathematics,True,0
+FrontierMath-Tier-4-v2-Private,-0.122,0.019,0.170,2026,tool use,Agent;Mathematics,True,0
+Remote Labor Index,0.000,0.012,0.185,2025,agentic in an environment,Agent,False,0
+ProofBench,0.127,-0.007,0.023,2026,tool use,Agent;Mathematics,False,1
+SimpleQA Verified,-0.386,0.028,0.080,2025,single-turn QA,World knowledge,True,0
+Chess Puzzles,-0.050,0.006,0.096,2025,single-turn QA,Games,True,0
+Mystery Game Puzzles,-0.287,0.028,0.123,2026,single-turn QA,Games,True,0
+EBR-bench,0.110,-0.014,-0.039,2026,unknown,,True,0
+MirrorCode,0.219,-0.023,-0.092,2026,agentic in an environment,Agent;Software engineering,True,0
+PostTrainBench,0.163,-0.027,-0.204,2026,agentic in an environment,Agent;Software engineering,False,0
+Furniture Assembly,0.236,-0.025,-0.122,2026,agentic in an environment,Agent;Conceptual reasoning;Multimodal,True,0
+APEX-Agents,0.155,-0.022,-0.107,2026,agentic in an environment,Agent,False,0
+Surface Evolver Bench,-0.076,0.000,-0.093,2026,agentic in an environment,Agent;Science;Software engineering,False,1
+FrontierCode,0.148,-0.012,-0.002,2026,agentic in an environment,Agent;Software engineering,False,1
+FrontierSWE,0.172,-0.027,-0.190,2026,agentic in an environment,Agent;Software engineering,False,1
+WeirdML v3,0.010,0.004,0.090,2026,agentic in an environment,Agent;Software engineering,False,1
+PIQA,0.019,0.447,-0.061,2019,single-turn QA,Language understanding,False,10
+Winogrande,0.012,0.301,-0.047,2019,single-turn QA,Language understanding,False,19
+TriviaQA,0.006,0.273,-0.074,2017,single-turn QA,World knowledge,False,7
+OpenBookQA,0.009,0.042,0.048,2018,single-turn QA,Science;World knowledge,False,6

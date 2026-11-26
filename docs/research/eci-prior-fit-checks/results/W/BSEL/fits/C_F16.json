@@ -1,0 +1,533 @@
+{
+ "id": "C_F16",
+ "kind": "cluster",
+ "drop": [
+  "ARC-AGI",
+  "ARC-AGI-2",
+  "DTBench",
+  "FrontierMath-Tier-4-v2-Private",
+  "FrontierMath-Tiers-1-3-v2-Private",
+  "Furniture Assembly",
+  "GPQA diamond",
+  "GSM8K",
+  "HellaSwag",
+  "LMCA",
+  "MATH level 5",
+  "Mystery Game Puzzles",
+  "OTIS Mock AIME 2024-2025",
+  "PIQA",
+  "TriviaQA",
+  "Winogrande"
+ ],
+ "dropped_models": [
+  "Beam 1.0",
+  "Cerebras-GPT-13B",
+  "Claude 2",
+  "Claude 3 Haiku",
+  "Claude 3 Sonnet",
+  "Claude Instant",
+  "CodeQwen1.5-7B",
+  "DeepSeek Coder 33B",
+  "DeepSeek Coder 6.7B",
+  "DeepSeek-Coder-V2-Lite-Base",
+  "DeepSeek-V2 (MoE-236B, May 2024)",
+  "DeepSeek-V3.1",
+  "DeepSeek-V4-Flash",
+  "Dolly 2.0-12b",
+  "Falcon 2 11B",
+  "GPT-3.5 Turbo (Jan 2024)",
+  "GPT-3.5 Turbo (Jun 2023)",
+  "GPT-4 (Jun 2023)",
+  "GPT-4 (Mar 2023)",
+  "GPT-4 Turbo (Nov 2023)",
+  "GPT-4.1 nano",
+  "GPT-4o (May 2024)",
+  "GPT-5 Pro",
+  "GPT-5.2 Pro",
+  "GPT-5.4 Nano",
+  "GPT-5.5 Pro",
+  "Gemini 1.5 Flash (May 2024)",
+  "Gemini 1.5 Pro (May 2024)",
+  "Gemini 2.0 Pro",
+  "Gemini 2.5 Flash (Jun 2025)",
+  "Gemini 2.5 Flash-Lite (Jun 2025)",
+  "Gemini 3.1 Flash-Lite",
+  "Gemma 2 27B",
+  "Gemma 2 9B",
+  "Gemma 2B",
+  "Gemma 3 27B",
+  "Gemma 4 26B A4B",
+  "Gemma 4 31B IT",
+  "Grok 4 Fast",
+  "Grok-2 (Dec 2024)",
+  "INTELLECT-1",
+  "Inkling-Small",
+  "Llama 3-70B",
+  "Llama 3.1-405B",
+  "Llama 3.1-70B",
+  "Llama 3.1-8B",
+  "Llama 3.2 90B",
+  "Llama 4 Scout",
+  "Mistral Large",
+  "Mistral Large 2 (Jul 2024)",
+  "Mistral Large 4",
+  "Mistral Medium 3",
+  "Mistral Medium 3.5",
+  "Mistral NeMo",
+  "Mixtral 8x22B",
+  "Muse Spark",
+  "Muse Spark Open",
+  "Nemotron-4 15B",
+  "PaLM 2-L",
+  "PaLM 2-M",
+  "PaLM 2-S",
+  "Phi-1.5",
+  "Phi-4",
+  "QwQ-32B",
+  "Qwen 3.5 Flash (hosted 35B-A3B)",
+  "Qwen 3.6 35B-A3B",
+  "Qwen 3.6 Flash",
+  "Qwen 3.6 Max (Preview)",
+  "Qwen-1_8B",
+  "Qwen2-72B",
+  "Qwen2.5-Coder (1.5B)",
+  "Qwen2.5-Coder (7B)",
+  "Qwen2.5-Coder-0.5B",
+  "Qwen2.5-Coder-14B",
+  "Qwen2.5-Coder-32B",
+  "Qwen2.5-Coder-3B",
+  "Qwen2.5-Max",
+  "Qwen3-14B",
+  "Qwen3-235B-A22B-Instruct (Jul 2025)",
+  "Qwen3-30B-A3B",
+  "Qwen3-32B",
+  "Qwen3-8B",
+  "Qwen3-Max",
+  "Qwen3.5 397B-A17B",
+  "Qwen3.5-9B",
+  "Qwen3.7-Plus",
+  "RedPajama-INCITE-7B-Base",
+  "StarCoder 2 15B",
+  "StarCoder 2 3B",
+  "StarCoder 2 7B",
+  "XGen-7B",
+  "Yi 6B",
+  "Yi-9B",
+  "gpt-oss-20b",
+  "internlm-20b",
+  "o1-mini",
+  "o3-pro",
+  "open_llama_7b",
+  "vicuna-13b-v1.1",
+  "Qwen3-30B-A3B-Instruct (Jul 2025)",
+  "Qwen3-30B-A3B-Thinking (Jul 2025)",
+  "Qwen3.5-35B-A3B",
+  "Qwen3.6 27B"
+ ],
+ "cap_s": 7200,
+ "started": "2026-11-21T07:34:02Z",
+ "attempts": [
+  {
+   "draws": 4000,
+   "target_accept": 0.95,
+   "converged": true,
+   "last_attempt": {
+    "stage": "pilot",
+    "tune": 500,
+    "draws": 4000,
+    "divergences": 0,
+    "max_rhat": 1.0032241537987592,
+    "min_ess": 1361.3832466211275
+   },
+   "started_from": "pilot",
+   "wall": 214.8,
+   "warnings": [
+    "This process (pid=93288) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=93288) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+    "This process (pid=93288) is multi-threaded, use of fork() may lead to deadlocks in the child."
+   ],
+   "ladder": [
+    {
+     "stage": "pilot",
+     "tune": 500,
+     "draws": 4000,
+     "divergences": 0,
+     "max_rhat": 1.0032241537987592,
+     "min_ess": 1361.3832466211275
+    }
+   ],
+   "seed": 12345,
+   "n_draws_total": 16000,
+   "n_models": 153,
+   "n_rows": 1234,
+   "k": 0,
+   "child_wall": 232.1
+  }
+ ],
+ "resolved": true,
+ "converged": true,
+ "timeout": false,
+ "used_attempt": 0,
+ "finished": true,
+ "compare": {
+  "n_common": 153,
+  "scores": {
+   "S4": {
+    "top10_same": true,
+    "max_pair_change": 0.42631250000000004,
+    "pass_": false
+   },
+   "all": {
+    "n": 151,
+    "S1": 0.9933088067762991,
+    "S1_pass": true,
+    "S2_count": 132,
+    "S2_limit": 7,
+    "S2_pass": false,
+    "S3_count": 150,
+    "S3_limit": 7,
+    "S3_pass": false,
+    "max_rel_shift": 3.0963415212021452,
+    "median_width_ratio": 2.523084851529876
+   },
+   "frontier": {
+    "n": 19,
+    "S1": 0.9596491228070174,
+    "S1_pass": false,
+    "S2_count": 18,
+    "S2_limit": 0,
+    "S2_pass": false,
+    "S3_count": 19,
+    "S3_limit": 0,
+    "S3_pass": false,
+    "max_rel_shift": 2.670922599653651,
+    "median_width_ratio": 2.837135132374855
+   },
+   "sparse": {
+    "n": 6,
+    "S1": 1.0,
+    "S1_pass": true,
+    "S2_count": 6,
+    "S2_limit": 0,
+    "S2_pass": false,
+    "S3_count": 5,
+    "S3_limit": 0,
+    "S3_pass": false,
+    "max_rel_shift": 1.7274707465241188,
+    "median_width_ratio": 2.37464242995396
+   },
+   "dense": {
+    "n": 145,
+    "S1": 0.9931091281384823,
+    "S1_pass": true,
+    "S2_count": 126,
+    "S2_limit": 7,
+    "S2_pass": false,
+    "S3_count": 145,
+    "S3_limit": 7,
+    "S3_pass": false,
+    "max_rel_shift": 3.0963415212021452,
+    "median_width_ratio": 2.523084851529876
+   }
+  },
+  "top10": {
+   "p0": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6.1 Terra",
+    "Claude Fable 5.1",
+    "Claude Sonnet 5.5",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "refit": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "Claude Opus 5.5",
+    "GPT-6 Astra",
+    "GPT-6.1 Terra",
+    "Claude Sonnet 5.5",
+    "Claude Fable 5.1",
+    "GPT-6.1 Sol",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "set_same": true,
+   "order_same": false,
+   "entered": [],
+   "left": [],
+   "p0_full_top10_dropped": [],
+   "rank_changes": {
+    "Claude Fable 5.2": 0,
+    "Gemini 4 Carbon": 0,
+    "GPT-6 Astra": 1,
+    "Claude Opus 5.5": -1,
+    "GPT-6.1 Sol": 3,
+    "GPT-6.1 Terra": -1,
+    "Claude Fable 5.1": 0,
+    "Claude Sonnet 5.5": -2,
+    "Gemini 4 Argon": 0,
+    "Claude Opus 5": 0
+   }
+  },
+  "frontier": {
+   "stretch_rank1_minus_rank20_k": 27.737095631052,
+   "stretch_rank1_minus_rank20_p0": 13.489145588874806,
+   "stratum_max_minus_min_k": 33.711902882807095,
+   "stratum_max_minus_min_p0": 13.318379692077627,
+   "stretch_change": 14.247950042177195,
+   "stratum_range_change": 20.393523190729468,
+   "max_abs_shift": 19.353850961616217,
+   "max_rel_shift": 2.670922599653651,
+   "mean_signed_shift": 11.014729070647894,
+   "median_width_ratio": 2.837135132374855
+  },
+  "gaps": {
+   "frontier": {
+    "n_pairs": 171,
+    "median_abs_gap_change": 4.856872226279535,
+    "max_abs_gap_change": 20.522520151369406
+   },
+   "all": {
+    "n_pairs": 11628,
+    "median_abs_gap_change": 7.9224433690533616,
+    "max_abs_gap_change": 49.03656360488503
+   }
+  },
+  "shift": {
+   "median_abs_all": 4.487144531595135,
+   "max_abs_all": 29.682712643268815,
+   "mean_signed_all": -2.5635357471368576,
+   "spearman_shift_vs_p0eci": 0.9074485883583128,
+   "median_width_ratio_all": 2.523084851529876,
+   "by_p0_quintile": [
+    {
+     "q": 1,
+     "n": 30,
+     "p0_eci_range": [
+      73.4045676344633,
+      123.87626901435853
+     ],
+     "median_abs_shift": 19.375439810251564,
+     "median_rel_shift": 1.034198681847456,
+     "mean_signed_shift": -17.78948017020721,
+     "median_width_ratio": 3.080433420741933
+    },
+    {
+     "q": 2,
+     "n": 30,
+     "p0_eci_range": [
+      124.93687618637085,
+      141.0165940361023
+     ],
+     "median_abs_shift": 3.748725333491052,
+     "median_rel_shift": 0.7763504862019954,
+     "mean_signed_shift": -3.7243875517045093,
+     "median_width_ratio": 1.986561890064067
+    },
+    {
+     "q": 3,
+     "n": 30,
+     "p0_eci_range": [
+      141.15597925186157,
+      149.89550411319732
+     ],
+     "median_abs_shift": 2.213388509853047,
+     "median_rel_shift": 0.6084864445801017,
+     "mean_signed_shift": -2.332573038350003,
+     "median_width_ratio": 1.8265022088932619
+    },
+    {
+     "q": 4,
+     "n": 30,
+     "p0_eci_range": [
+      150.15684870815278,
+      156.68928998565673
+     ],
+     "median_abs_shift": 1.9798323848997796,
+     "median_rel_shift": 0.5610173982358442,
+     "mean_signed_shift": 1.4440282031166467,
+     "median_width_ratio": 2.385772863121881
+    },
+    {
+     "q": 5,
+     "n": 31,
+     "p0_eci_range": [
+      156.93943463993074,
+      173.42698958206176
+     ],
+     "median_abs_shift": 8.417795178357778,
+     "median_rel_shift": 1.7510099135438415,
+     "mean_signed_shift": 9.192854157957639,
+     "median_width_ratio": 2.7201337467651134
+    }
+   ]
+  },
+  "movers": [
+   {
+    "model": "Baichuan 2-7B",
+    "p0_eci": 83.79560289478302,
+    "eci": 54.1128902515142,
+    "shift": -29.682712643268815,
+    "rel_shift": 1.2318931855565691,
+    "width_ratio": 3.3308510551385013,
+    "rows_full": 6,
+    "rows_sub": 4,
+    "strata": [
+     "sparse"
+    ]
+   },
+   {
+    "model": "MPT-7B",
+    "p0_eci": 73.72666125369072,
+    "eci": 44.162223656280695,
+    "shift": -29.564437597410027,
+    "rel_shift": 1.0609831972298482,
+    "width_ratio": 3.139317987984844,
+    "rows_full": 10,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Falcon-7B",
+    "p0_eci": 73.4045676344633,
+    "eci": 44.39308789554239,
+    "shift": -29.01147973892091,
+    "rel_shift": 1.035620091038481,
+    "width_ratio": 3.111120752523327,
+    "rows_full": 10,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "MPT-30B",
+    "p0_eci": 85.50326216459274,
+    "eci": 57.72114857976216,
+    "shift": -27.782113584830583,
+    "rel_shift": 1.247584245359628,
+    "width_ratio": 3.2771697980110193,
+    "rows_full": 8,
+    "rows_sub": 4,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Baichuan2-13B",
+    "p0_eci": 92.02734762215614,
+    "eci": 65.01824893135131,
+    "shift": -27.009098690804834,
+    "rel_shift": 1.3503785409788305,
+    "width_ratio": 3.5056141710523208,
+    "rows_full": 7,
+    "rows_sub": 4,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "LLaMA-7B",
+    "p0_eci": 77.54448984670638,
+    "eci": 50.815969057782524,
+    "shift": -26.72852078892386,
+    "rel_shift": 1.032777272656431,
+    "width_ratio": 3.118008577686549,
+    "rows_full": 10,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Falcon-40B",
+    "p0_eci": 90.90227221775055,
+    "eci": 65.7798019576724,
+    "shift": -25.122470260078146,
+    "rel_shift": 1.2497880178097889,
+    "width_ratio": 3.223823859628847,
+    "rows_full": 10,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "LLaMA-13B",
+    "p0_eci": 85.52497425818443,
+    "eci": 60.566152234192565,
+    "shift": -24.958822023991864,
+    "rel_shift": 1.1331703619731088,
+    "width_ratio": 3.179899117041067,
+    "rows_full": 10,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Llama 2-34B",
+    "p0_eci": 94.14435321068764,
+    "eci": 69.5574745408183,
+    "shift": -24.586878669869336,
+    "rel_shift": 1.283194778770236,
+    "width_ratio": 3.2688042853987533,
+    "rows_full": 8,
+    "rows_sub": 4,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Llama 2-7B",
+    "p0_eci": 83.43036904001237,
+    "eci": 59.03738680329146,
+    "shift": -24.392982236720904,
+    "rel_shift": 1.069971991779423,
+    "width_ratio": 3.154135410926213,
+    "rows_full": 10,
+    "rows_sub": 5,
+    "strata": [
+     "dense"
+    ]
+   }
+  ],
+  "p_top10_changes": [
+   {
+    "model": "Claude Fable 5",
+    "p0": 0.21775,
+    "refit": 0.41075
+   }
+  ]
+ },
+ "anchors": {
+  "refit": {
+   "cap_low_mean": -1.2533050553539709,
+   "cap_low_sd": 0.24907673369892452,
+   "cap_high_mean": 0.08158754747567186,
+   "cap_high_sd": 0.16966666855493193,
+   "spread_mean": 1.3348926028296428,
+   "spread_sd": 0.18147080484549455,
+   "b_mean": 15.267298356242714,
+   "b_sd_over_mean": 0.1398428368810227
+  },
+  "p0": {
+   "cap_low_mean": -1.0391068851054301,
+   "cap_low_sd": 0.16409590538392446,
+   "cap_high_mean": 0.9176831258229756,
+   "cap_high_sd": 0.1019786250498718,
+   "spread_mean": 1.9567900109284058,
+   "spread_sd": 0.14353173038842415,
+   "b_mean": 10.276040868048316,
+   "b_sd_over_mean": 0.07366671618767971
+  }
+ },
+ "n_models": 153,
+ "n_rows": 1234
+}

@@ -1,0 +1,40 @@
+id_regex,name_regex,group,reason
+^anthropic/claude-35-sonnet$,Oct '24,Claude 3.5 Sonnet (October 2024),name carries the October 2024 date
+^anthropic/claude-35-sonnet-june-24$,,Claude 3.5 Sonnet,id carries the June 2024 date
+^deepseek/deepseek-r1-0120$,,DeepSeek-R1,id date 0120 is the January 2025 release
+^deepseek/r1-0528-openrouter$,,DeepSeek-R1 (May 2025),id date 0528
+^deepseek/deepseek-v2-0506$,,"DeepSeek-V2 (MoE-236B, May 2024)",id date 0506
+^deepseek/deepseek-v4-flash$,0731,DeepSeek V4 Flash 0731,name carries 0731
+^deepseek/deepseek-v4-pro$,0813,DeepSeek V4 Pro 0813,name carries 0813
+^deepseek/deepseek-v4-flash-0420,,DeepSeek-V4-Flash,0420 build is the April 2026 release (Epoch group dated 2026-04-24)
+^deepseek/deepseek-v4-pro-0424,,DeepSeek-V4-Pro,0424 build is the April 2026 release (Epoch group dated 2026-04-24)
+^google/gemini-1-5-flash$,Sep '24,Gemini 1.5 Flash (Sep 2024),name carries the date
+^google/gemini-1-5-pro$,Sep '24,Gemini 1.5 Pro (Sept 2024),name carries the date
+^google/gemini-2-0-flash$,Feb '25,Gemini 2.0 Flash (Feb 2025),name carries the date
+^google/gemini-2-0-flash-thinking-exp-0121$,,Gemini 2.0 Flash Thinking (Jan 2025),id date 0121
+^google/gemini-2-5-flash(-reasoning)?-04-2025$,,Gemini 2.5 Flash (Apr 2025),id date 04-2025
+^google/gemini-2-5-pro-03-25$,,Gemini 2.5 Pro (Mar 2025),id date 03-25
+^google/gemini-2-5-pro-05-06$,,Gemini 2.5 Pro (May 2025),id date 05-06
+^google/gemini-2-5-pro-2025-06-17,,Gemini 2.5 Pro (Jun 2025),id date 2025-06-17
+^openai/gpt-4o$,Nov '24,GPT-4o (Nov 2024),name carries the date
+^mistral/mistral-large-2-2407$,,Mistral Large 2 (Jul 2024),id date 2407
+^alibaba/qwen3-8-max$,0902,Qwen3.8 Max (0902),name carries 0902
+^anthropic/claude-sonnet-3\.7$,,Claude 3.7 Sonnet,word order only
+^deepseek/deepseek-3\.1$,,DeepSeek-V3.1,missing v prefix only
+^fireworks/deepseek-v3p1$,,DeepSeek-V3.1,p for the decimal point (Fireworks id)
+^google/gemma-4-31b(-non-reasoning)?$,,Gemma 4 31B IT,the 31B instruction-tuned release is the only Gemma 4 31B
+^xai/grok-4\.20-beta-0309b-reasoning$,,Grok 4.20,Epoch lists grok-4.20-0309-reasoning under this group
+^mistral/mistral-8x22b-instruct$,,Mixtral 8x22B,single Mixtral 8x22B instruct release
+^mistral/mixtral-8x7b-instruct$,,Mixtral 8x7B,Mixtral 8x7B instruct
+^mistralai/mistral-3\.5-medium$,,Mistral Medium 3.5,word order only
+^qwen/qwen-3\.7-plus$,,Qwen3.7-Plus,spacing only
+^alibaba/qwen3-30b-a3b-2507$,,Qwen3-30B-A3B-Instruct (Jul 2025),2507 instruct build
+^alibaba/qwen3-30b-a3b-2507-reasoning$,,Qwen3-30B-A3B-Thinking (Jul 2025),2507 thinking build
+^alibaba/qwen3-max-preview$,,AMBIGUOUS,preview build may differ from the Qwen3-Max release Epoch scored
+^alibaba/qwen3-8-max-0803$,,Qwen 3.8 Max,0803 build (Epoch group dated 2026-08-02); the 0902 build is a separate group
+^anthropic/claude-3\.5-sonnet$,\(1022\),Claude 3.5 Sonnet (October 2024),name carries 1022
+^deepseek/deepseek-r1$,0528,DeepSeek-R1 (May 2025),name carries 0528
+^deepseek/deepseek-v3$,Dec '24,DeepSeek-V3,name carries the December 2024 date
+^mistral/mistral-large$,Feb '24,Mistral Large,name carries the February 2024 date
+^google/gemini-2\.5-pro$,\(GA\),Gemini 2.5 Pro (Jun 2025),name states the GA release of June 2025
+(deepseek-chat|deepseek-reasoner|-latest)$,,AMBIGUOUS,rolling alias: the model behind the id changes over time

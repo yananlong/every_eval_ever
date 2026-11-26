@@ -1,0 +1,55 @@
+{
+ "gen": "disp",
+ "r": 5,
+ "seed": 1163398375,
+ "position": 1000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "23666d5c3def41e8449f7d3f903dc52d1f810727ea74a7e53f1c5750001616ef",
+ "info": {},
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0051303930211368,
+  "min_ess": 1796.3299326172337
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0051303930211368,
+   "min_ess": 1796.3299326172337
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=97662) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 326.8,
+ "T": {
+  "T1": 3.1100868870700564,
+  "T2": 1.127888239460447,
+  "T3": 0.27945212576710016,
+  "T4": 0.010289382005181485,
+  "T5": 2.440535084539489,
+  "T6": 177.07350815370327,
+  "T7": 18.634080412296914
+ },
+ "maxima": {
+  "Qb": 24.254067630203792,
+  "q": 10.128474717039719,
+  "t": 2.440535084539489,
+  "cb": 18.15902713604793
+ }
+}

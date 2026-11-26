@@ -1,0 +1,684 @@
+{
+ "post": "runs/W/W2/seed12345.nc",
+ "n_draws_ppc": 400,
+ "n_draws_loo": 4000,
+ "n_null_replicates": 192,
+ "calibrated_p_interim": false,
+ "elpd_loo": 3386.4507959482794,
+ "p_loo": 449.8664792218301,
+ "pareto_k_gt_0_7": 42,
+ "global_checks": {
+  "T1": {
+   "observed": 4.471308505451415,
+   "rep_mean": 5.381825218997767,
+   "rep_sd": 0.6791574196955276,
+   "effect_size": -1.3406563591023493,
+   "raw_p": 0.93,
+   "null_R": 192,
+   "effect_size_vs_null": 9.287716062421323,
+   "p_calibrated_unadjusted": 0.0051813471502590676,
+   "p_calibrated_maxT": 0.0051813471502590676,
+   "z_log_obs": 5.728197357916434
+  },
+  "T2": {
+   "observed": 3.2100245775453287,
+   "rep_mean": 1.1213271789455928,
+   "rep_sd": 0.08739888560460687,
+   "effect_size": 23.89844428965624,
+   "raw_p": 0.0,
+   "null_R": 192,
+   "effect_size_vs_null": 26.743574595449743,
+   "p_calibrated_unadjusted": 0.0051813471502590676,
+   "p_calibrated_maxT": 0.0051813471502590676,
+   "z_log_obs": 10.359930467648788
+  },
+  "T3": {
+   "observed": 0.08973683037091543,
+   "rep_mean": 0.011824483050959107,
+   "rep_sd": 0.014147805687246206,
+   "effect_size": 5.507026958264758,
+   "raw_p": 0.005,
+   "null_R": 192,
+   "effect_size_vs_null": 2.3803773651329596,
+   "p_calibrated_unadjusted": 0.031088082901554404,
+   "p_calibrated_maxT": 0.09326424870466321,
+   "z_log_obs": 2.205233489039189
+  },
+  "T4": {
+   "observed": 0.020651439720188326,
+   "rep_mean": 0.030571026061147387,
+   "rep_sd": 0.019798602255451575,
+   "effect_size": -0.5010245780470531,
+   "raw_p": 0.635,
+   "null_R": 192,
+   "effect_size_vs_null": -2.406595793715651,
+   "p_calibrated_unadjusted": 0.9896373056994818,
+   "p_calibrated_maxT": 1.0,
+   "z_log_obs": -2.8211698939350804
+  },
+  "T5": {
+   "observed": 3.860533157456802,
+   "rep_mean": 3.387260199241248,
+   "rep_sd": 0.6102839621254207,
+   "effect_size": 0.775496305961078,
+   "raw_p": 0.18,
+   "null_R": 192,
+   "effect_size_vs_null": 4.356765078779243,
+   "p_calibrated_unadjusted": 0.0051813471502590676,
+   "p_calibrated_maxT": 0.015544041450777202,
+   "z_log_obs": 3.49672359517174
+  },
+  "T6": {
+   "observed": 13.355856236655484,
+   "rep_mean": 1.3159544176887623,
+   "rep_sd": 1.3639174104447882,
+   "effect_size": 8.827441989350646,
+   "raw_p": 0.0,
+   "null_R": 192,
+   "effect_size_vs_null": 6.4878201093260826,
+   "p_calibrated_unadjusted": 0.0051813471502590676,
+   "p_calibrated_maxT": 0.20207253886010362,
+   "z_log_obs": 1.726530059079995
+  },
+  "T7": {
+   "observed": 3.032185480663637,
+   "rep_mean": 4.79657167341661,
+   "rep_sd": 5.036243742962647,
+   "effect_size": -0.35033772843469363,
+   "raw_p": 0.8225,
+   "null_R": 192,
+   "effect_size_vs_null": -0.0883584924799843,
+   "p_calibrated_unadjusted": 0.38860103626943004,
+   "p_calibrated_maxT": 0.9896373056994818,
+   "z_log_obs": 0.07918142683963501
+  },
+  "boundary_count": {
+   "observed": 83.0,
+   "rep_mean": 56.81,
+   "rep_sd": 6.459738427473549,
+   "effect_size": 4.054343731413765,
+   "raw_p_upper": 0.0,
+   "raw_p_lower": 1.0
+  },
+  "mid_range_share": {
+   "observed": 0.7974991316429316,
+   "rep_mean": 0.7989084751649878,
+   "rep_sd": 0.005237194447061925,
+   "effect_size": -0.2691027679613408,
+   "raw_p_upper": 0.61,
+   "raw_p_lower": 0.415
+  }
+ },
+ "benchmark_effects_top10": {
+  "mean_score": [
+   {
+    "benchmark": "OTIS Mock AIME 2024-2025",
+    "n_rows": 169,
+    "observed": 0.6592241985575318,
+    "rep_mean": 0.6517075228433691,
+    "rep_sd": 0.007224223403919431,
+    "effect_size": 1.0404821797293722
+   },
+   {
+    "benchmark": "Furniture Assembly",
+    "n_rows": 39,
+    "observed": 0.2618559218559219,
+    "rep_mean": 0.24978078480667004,
+    "rep_sd": 0.022345535372400804,
+    "effect_size": 0.5403825349454852
+   },
+   {
+    "benchmark": "MMLU",
+    "n_rows": 92,
+    "observed": 0.5189899855299526,
+    "rep_mean": 0.5141110464143007,
+    "rep_sd": 0.011144158798097863,
+    "effect_size": 0.43780236840171655
+   },
+   {
+    "benchmark": "Mystery Game Puzzles",
+    "n_rows": 82,
+    "observed": 0.2329822997436848,
+    "rep_mean": 0.22587259425398615,
+    "rep_sd": 0.01627696881007768,
+    "effect_size": 0.43679542380743447
+   },
+   {
+    "benchmark": "GPQA diamond",
+    "n_rows": 176,
+    "observed": 0.6825814085342968,
+    "rep_mean": 0.6805190505350893,
+    "rep_sd": 0.004733130674035946,
+    "effect_size": 0.4357280923006087
+   },
+   {
+    "benchmark": "ARC-AGI",
+    "n_rows": 91,
+    "observed": 0.6642776923076923,
+    "rep_mean": 0.6608310316789361,
+    "rep_sd": 0.008000943116853418,
+    "effect_size": 0.4307817938982512
+   },
+   {
+    "benchmark": "OpenBookQA",
+    "n_rows": 31,
+    "observed": 0.4884301075268817,
+    "rep_mean": 0.47849268126993794,
+    "rep_sd": 0.03173673249813936,
+    "effect_size": 0.31312064836938946
+   },
+   {
+    "benchmark": "Fiction.LiveBench",
+    "n_rows": 50,
+    "observed": 0.6372,
+    "rep_mean": 0.6442822790461826,
+    "rep_sd": 0.02654761738961891,
+    "effect_size": -0.2667764471003992
+   },
+   {
+    "benchmark": "LMCA",
+    "n_rows": 126,
+    "observed": 0.4288235294117647,
+    "rep_mean": 0.4271503372976058,
+    "rep_sd": 0.006313566832493559,
+    "effect_size": 0.26501534846308933
+   },
+   {
+    "benchmark": "MirrorCode",
+    "n_rows": 39,
+    "observed": 0.47977207977207964,
+    "rep_mean": 0.48919813447932825,
+    "rep_sd": 0.03740764227316158,
+    "effect_size": -0.25198205859692646
+   }
+  ],
+  "boundary_count": [
+   {
+    "benchmark": "Mystery Game Puzzles",
+    "n_rows": 82,
+    "observed": 14.0,
+    "rep_mean": 6.235,
+    "rep_sd": 1.8352644192927088,
+    "effect_size": 4.230997952323702
+   },
+   {
+    "benchmark": "Furniture Assembly",
+    "n_rows": 39,
+    "observed": 10.0,
+    "rep_mean": 3.1425,
+    "rep_sd": 1.7071848024964043,
+    "effect_size": 4.016846910757604
+   },
+   {
+    "benchmark": "FrontierMath-Tier-4-2025-07-01-Private",
+    "n_rows": 26,
+    "observed": 10.0,
+    "rep_mean": 4.0575,
+    "rep_sd": 1.7397587912205166,
+    "effect_size": 3.415703389451521
+   },
+   {
+    "benchmark": "SimpleBench",
+    "n_rows": 95,
+    "observed": 1.0,
+    "rep_mean": 0.07,
+    "rep_sd": 0.2743869904922215,
+    "effect_size": 3.3893735207040265
+   },
+   {
+    "benchmark": "Chess Puzzles",
+    "n_rows": 87,
+    "observed": 4.0,
+    "rep_mean": 1.265,
+    "rep_sd": 0.9680484463528752,
+    "effect_size": 2.8252718242605726
+   },
+   {
+    "benchmark": "FrontierMath-Tier-4-v2-Private",
+    "n_rows": 72,
+    "observed": 5.0,
+    "rep_mean": 1.8525,
+    "rep_sd": 1.1506754037137403,
+    "effect_size": 2.735350029940344
+   },
+   {
+    "benchmark": "ARC-AGI",
+    "n_rows": 91,
+    "observed": 1.0,
+    "rep_mean": 3.4075,
+    "rep_sd": 1.5788209013680086,
+    "effect_size": -1.5248721358540156
+   },
+   {
+    "benchmark": "ProofBench",
+    "n_rows": 71,
+    "observed": 5.0,
+    "rep_mean": 3.14,
+    "rep_sd": 1.5119905053341278,
+    "effect_size": 1.2301664550393223
+   },
+   {
+    "benchmark": "FrontierMath-2025-02-28-Private",
+    "n_rows": 34,
+    "observed": 2.0,
+    "rep_mean": 3.3925,
+    "rep_sd": 1.7481658845486459,
+    "effect_size": -0.7965491217439723
+   },
+   {
+    "benchmark": "VPCT",
+    "n_rows": 26,
+    "observed": 3.0,
+    "rep_mean": 1.95,
+    "rep_sd": 1.395481429848721,
+    "effect_size": 0.7524285006887014
+   }
+  ],
+  "Q_b": [
+   {
+    "benchmark": "OTIS Mock AIME 2024-2025",
+    "n_rows": 169,
+    "observed": 24.58945830499773,
+    "rep_mean": 5.5808933141040775,
+    "rep_sd": 4.690919814465431,
+    "effect_size": 4.052204203592817
+   },
+   {
+    "benchmark": "DTBench",
+    "n_rows": 150,
+    "observed": 17.59845117950641,
+    "rep_mean": 5.74665931245473,
+    "rep_sd": 4.258672253900387,
+    "effect_size": 2.782978158555637
+   },
+   {
+    "benchmark": "ARC-AGI-2",
+    "n_rows": 90,
+    "observed": 13.969045574926483,
+    "rep_mean": 6.000248550485702,
+    "rep_sd": 5.464865689531384,
+    "effect_size": 1.4581871682054308
+   },
+   {
+    "benchmark": "PIQA",
+    "n_rows": 41,
+    "observed": 0.601377174801954,
+    "rep_mean": 5.152394321467111,
+    "rep_sd": 3.8531793895583144,
+    "effect_size": -1.1811069993257786
+   },
+   {
+    "benchmark": "BBH",
+    "n_rows": 39,
+    "observed": 0.5501940319814899,
+    "rep_mean": 4.954977638382811,
+    "rep_sd": 3.902546837310625,
+    "effect_size": -1.1286946166254868
+   },
+   {
+    "benchmark": "LMCA",
+    "n_rows": 126,
+    "observed": 0.7116170382848881,
+    "rep_mean": 5.555350124073215,
+    "rep_sd": 4.376055306210248,
+    "effect_size": -1.1068719992899476
+   },
+   {
+    "benchmark": "OpenBookQA",
+    "n_rows": 31,
+    "observed": 0.8319466103600744,
+    "rep_mean": 5.440162195189041,
+    "rep_sd": 4.2770668465087,
+    "effect_size": -1.0774242606450206
+   },
+   {
+    "benchmark": "Winogrande",
+    "n_rows": 61,
+    "observed": 1.1618259431534206,
+    "rep_mean": 5.702577133993501,
+    "rep_sd": 4.317711146483107,
+    "effect_size": -1.0516570091861395
+   },
+   {
+    "benchmark": "WeirdML",
+    "n_rows": 116,
+    "observed": 9.669362158011312,
+    "rep_mean": 5.609288249240504,
+    "rep_sd": 4.0309948818744274,
+    "effect_size": 1.007213858550686
+   },
+   {
+    "benchmark": "Chess Puzzles",
+    "n_rows": 87,
+    "observed": 1.7326764014022296,
+    "rep_mean": 5.543146192449085,
+    "rep_sd": 3.8127198319515667,
+    "effect_size": -0.999409859364474
+   }
+  ],
+  "dispersion": [
+   {
+    "benchmark": "MMLU",
+    "n_rows": 92,
+    "observed": 0.5910026194410457,
+    "rep_mean": 1.0123507527696065,
+    "rep_sd": 0.24528767520043868,
+    "effect_size": -1.7177713188575516
+   },
+   {
+    "benchmark": "BBH",
+    "n_rows": 39,
+    "observed": 0.4677789050163081,
+    "rep_mean": 1.0063852292663833,
+    "rep_sd": 0.3703265498064198,
+    "effect_size": -1.4544091546545066
+   },
+   {
+    "benchmark": "FrontierMath-Tiers-1-3-v2-Private",
+    "n_rows": 90,
+    "observed": 0.6505233476278133,
+    "rep_mean": 0.9740379386867432,
+    "rep_sd": 0.2240080696834444,
+    "effect_size": -1.4442095390407224
+   },
+   {
+    "benchmark": "LMCA",
+    "n_rows": 126,
+    "observed": 0.7516908254326395,
+    "rep_mean": 1.0075637386249285,
+    "rep_sd": 0.17887003520114417,
+    "effect_size": -1.430496242171319
+   },
+   {
+    "benchmark": "ARC-AGI",
+    "n_rows": 91,
+    "observed": 0.6147729919240339,
+    "rep_mean": 1.0108675562990024,
+    "rep_sd": 0.29945677680712474,
+    "effect_size": -1.322710304299062
+   },
+   {
+    "benchmark": "GPQA diamond",
+    "n_rows": 176,
+    "observed": 0.7632316225753155,
+    "rep_mean": 0.9995685267777304,
+    "rep_sd": 0.19048570387272215,
+    "effect_size": -1.2407067795509101
+   },
+   {
+    "benchmark": "METR Time Horizons",
+    "n_rows": 33,
+    "observed": 0.5807070435439987,
+    "rep_mean": 1.030237816741106,
+    "rep_sd": 0.39632796595754,
+    "effect_size": -1.1342393467264622
+   },
+   {
+    "benchmark": "GSM8K",
+    "n_rows": 53,
+    "observed": 0.6832067144404145,
+    "rep_mean": 1.011879130909467,
+    "rep_sd": 0.2950699550982932,
+    "effect_size": -1.113879643759615
+   },
+   {
+    "benchmark": "WeirdML v3",
+    "n_rows": 26,
+    "observed": 0.5375513367956845,
+    "rep_mean": 1.032049698023508,
+    "rep_sd": 0.4453676733334252,
+    "effect_size": -1.1103148944930639
+   },
+   {
+    "benchmark": "FrontierMath-Tier-4-v2-Private",
+    "n_rows": 72,
+    "observed": 0.6690581652687426,
+    "rep_mean": 1.005380631401006,
+    "rep_sd": 0.3153349350382083,
+    "effect_size": -1.0665563144518488
+   }
+  ]
+ },
+ "loo_pit": {
+  "summary": {
+   "all_rows": {
+    "n": 2879,
+    "mean": 0.5085866452693454,
+    "sd": 0.2895420582618258,
+    "uniform_sd": 0.28867513459481287,
+    "share_below05": 0.05592219520666898,
+    "share_above95": 0.048975338659256684,
+    "share_central90": 0.8951024661340743,
+    "gamma": 4.0104211264585e-09,
+    "gamma_p": 4.999750012499375e-05
+   },
+   "pareto_k_le_0_7": {
+    "n": 2837,
+    "mean": 0.5102338941192271,
+    "sd": 0.28656214679233577,
+    "uniform_sd": 0.28867513459481287,
+    "share_below05": 0.05111032781106803,
+    "share_above95": 0.04617553753965457,
+    "share_central90": 0.9027141346492774,
+    "gamma": 0.0013853603641422606,
+    "gamma_p": 0.03879806009699515
+   },
+   "pareto_k_gt_0_7_rows": 42
+  },
+  "per_benchmark_n": 35,
+  "per_benchmark_bonferroni_level": 0.00028571428571428574,
+  "per_benchmark_flagged": [],
+  "per_benchmark": {
+   "ARC AI2": {
+    "n": 64,
+    "gamma_p": 0.6429178541072946,
+    "share_central90": 0.9375,
+    "mean": 0.5119601673858107
+   },
+   "BBH": {
+    "n": 39,
+    "gamma_p": 0.791710414479276,
+    "share_central90": 0.9230769230769231,
+    "mean": 0.5062166358728651
+   },
+   "GSM8K": {
+    "n": 53,
+    "gamma_p": 0.45417729113544325,
+    "share_central90": 0.8679245283018868,
+    "mean": 0.5196482621266788
+   },
+   "HellaSwag": {
+    "n": 51,
+    "gamma_p": 0.5142742862856857,
+    "share_central90": 0.9019607843137255,
+    "mean": 0.523173985972569
+   },
+   "MMLU": {
+    "n": 92,
+    "gamma_p": 0.24433778311084445,
+    "share_central90": 0.8913043478260869,
+    "mean": 0.5242130807573222
+   },
+   "GPQA diamond": {
+    "n": 176,
+    "gamma_p": 0.5370731463426829,
+    "share_central90": 0.8977272727272727,
+    "mean": 0.48183471944483003
+   },
+   "MATH level 5": {
+    "n": 75,
+    "gamma_p": 0.9081045947702615,
+    "share_central90": 0.9333333333333333,
+    "mean": 0.512715487653414
+   },
+   "OTIS Mock AIME 2024-2025": {
+    "n": 169,
+    "gamma_p": 0.10144492775361232,
+    "share_central90": 0.863905325443787,
+    "mean": 0.5190124344192752
+   },
+   "DTBench": {
+    "n": 150,
+    "gamma_p": 0.7731613419329033,
+    "share_central90": 0.9333333333333333,
+    "mean": 0.5193928432359691
+   },
+   "WeirdML": {
+    "n": 116,
+    "gamma_p": 0.8287085645717714,
+    "share_central90": 0.896551724137931,
+    "mean": 0.5081241141434636
+   },
+   "SimpleBench": {
+    "n": 95,
+    "gamma_p": 0.2569371531423429,
+    "share_central90": 0.8842105263157894,
+    "mean": 0.5144382512019022
+   },
+   "METR Time Horizons": {
+    "n": 33,
+    "gamma_p": 0.7347632618369081,
+    "share_central90": 0.9090909090909091,
+    "mean": 0.5143702813447119
+   },
+   "FrontierMath-2025-02-28-Private": {
+    "n": 34,
+    "gamma_p": 0.9472026398680066,
+    "share_central90": 0.9117647058823529,
+    "mean": 0.5230817895543266
+   },
+   "ARC-AGI-2": {
+    "n": 90,
+    "gamma_p": 0.4040797960101995,
+    "share_central90": 0.8444444444444444,
+    "mean": 0.4573266508774794
+   },
+   "GeoBench": {
+    "n": 44,
+    "gamma_p": 0.36273186340682967,
+    "share_central90": 0.9318181818181818,
+    "mean": 0.5249203847194903
+   },
+   "Fiction.LiveBench": {
+    "n": 50,
+    "gamma_p": 0.8990550472476376,
+    "share_central90": 0.86,
+    "mean": 0.4954330799789469
+   },
+   "Aider polyglot": {
+    "n": 44,
+    "gamma_p": 0.9586520673966301,
+    "share_central90": 0.8863636363636364,
+    "mean": 0.5187197830552276
+   },
+   "ARC-AGI": {
+    "n": 91,
+    "gamma_p": 0.2383880805959702,
+    "share_central90": 0.8791208791208791,
+    "mean": 0.46025746039883203
+   },
+   "LMCA": {
+    "n": 126,
+    "gamma_p": 0.23508824558772062,
+    "share_central90": 0.9047619047619048,
+    "mean": 0.5235428955756758
+   },
+   "Terminal Bench": {
+    "n": 32,
+    "gamma_p": 0.9881505924703765,
+    "share_central90": 0.875,
+    "mean": 0.5034107116279578
+   },
+   "FrontierMath-Tiers-1-3-v2-Private": {
+    "n": 90,
+    "gamma_p": 0.391930403479826,
+    "share_central90": 0.8888888888888888,
+    "mean": 0.507447084293126
+   },
+   "FrontierMath-Tier-4-v2-Private": {
+    "n": 72,
+    "gamma_p": 0.9646017699115044,
+    "share_central90": 0.9166666666666666,
+    "mean": 0.5114136550334332
+   },
+   "ProofBench": {
+    "n": 71,
+    "gamma_p": 0.32593370331483423,
+    "share_central90": 0.8591549295774648,
+    "mean": 0.530199787996408
+   },
+   "SimpleQA Verified": {
+    "n": 88,
+    "gamma_p": 0.9860006999650017,
+    "share_central90": 0.875,
+    "mean": 0.5054865202196773
+   },
+   "Chess Puzzles": {
+    "n": 87,
+    "gamma_p": 0.4006299685015749,
+    "share_central90": 0.8275862068965517,
+    "mean": 0.4890461309608551
+   },
+   "Mystery Game Puzzles": {
+    "n": 82,
+    "gamma_p": 0.01294935253237338,
+    "share_central90": 0.8780487804878049,
+    "mean": 0.528952599620224
+   },
+   "EBR-bench": {
+    "n": 31,
+    "gamma_p": 0.9395030248487576,
+    "share_central90": 0.9032258064516129,
+    "mean": 0.5222316632575984
+   },
+   "MirrorCode": {
+    "n": 39,
+    "gamma_p": 0.912054397280136,
+    "share_central90": 0.9230769230769231,
+    "mean": 0.4972245744029398
+   },
+   "Furniture Assembly": {
+    "n": 39,
+    "gamma_p": 0.09869506524673766,
+    "share_central90": 0.8717948717948718,
+    "mean": 0.49855019645523285
+   },
+   "APEX-Agents": {
+    "n": 58,
+    "gamma_p": 0.6660166991650418,
+    "share_central90": 0.9137931034482759,
+    "mean": 0.5019077769492768
+   },
+   "FrontierCode": {
+    "n": 42,
+    "gamma_p": 0.7550622468876557,
+    "share_central90": 0.9047619047619048,
+    "mean": 0.49492473615014015
+   },
+   "PIQA": {
+    "n": 41,
+    "gamma_p": 0.9493525323733814,
+    "share_central90": 0.9512195121951219,
+    "mean": 0.49725738001960634
+   },
+   "Winogrande": {
+    "n": 61,
+    "gamma_p": 0.16224188790560473,
+    "share_central90": 0.9016393442622951,
+    "mean": 0.5337871098413162
+   },
+   "TriviaQA": {
+    "n": 32,
+    "gamma_p": 0.3546322683865807,
+    "share_central90": 0.90625,
+    "mean": 0.511184434673313
+   },
+   "OpenBookQA": {
+    "n": 31,
+    "gamma_p": 0.752162391880406,
+    "share_central90": 0.8709677419354839,
+    "mean": 0.539583151615625
+   }
+  }
+ }
+}

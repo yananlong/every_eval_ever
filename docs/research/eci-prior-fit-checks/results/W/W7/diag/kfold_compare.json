@@ -1,0 +1,49 @@
+{
+ "G3_folds_converged": {
+  "0": true,
+  "1": false,
+  "2": true,
+  "3": true,
+  "4": true
+ },
+ "n_eligible": 2704,
+ "G3_vs_F0_all_present_folds": {
+  "n": 2704,
+  "delta": 264.6030474116127,
+  "se": 24.396980479053923
+ },
+ "G3_vs_F0_converged_folds": {
+  "n": 2129,
+  "delta": 216.1572046814431,
+  "se": 20.84468932552665
+ },
+ "G3_vs_F0_converged_folds_interior": {
+  "n": 2059,
+  "delta": 210.68521577308672,
+  "se": 20.247033774255375
+ },
+ "G3_psis_loo_gain_same_rows_converged_folds": 278.15999999999997,
+ "H2_ta99": {
+  "folds_converged": {
+   "3": true,
+   "4": true
+  },
+  "vs_G3_all_rows": {
+   "n": 958,
+   "delta": 75.2015571754497,
+   "se": 14.634765173451802
+  },
+  "vs_G3_interior": {
+   "n": 926,
+   "delta": 71.66394365146817,
+   "se": 14.415407015544375
+  },
+  "vs_F0_interior": {
+   "n": 926,
+   "delta": 173.63498273562112,
+   "se": 17.80547711926762
+  },
+  "note": "rows at a bound are comparable only between models without the boundary mass"
+ },
+ "H3_ta99": "no fold finished"
+}

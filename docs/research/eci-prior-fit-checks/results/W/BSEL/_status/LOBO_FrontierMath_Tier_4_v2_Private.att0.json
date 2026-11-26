@@ -1,0 +1,394 @@
+{
+ "draws": 4000,
+ "target_accept": 0.95,
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 4000,
+  "divergences": 0,
+  "max_rhat": 1.0010118140987978,
+  "min_ess": 5748.637573584672
+ },
+ "started_from": "pilot",
+ "wall": 366.9,
+ "warnings": [
+  "This process (pid=92283) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=92283) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=92283) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "ladder": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 4000,
+   "divergences": 0,
+   "max_rhat": 1.0010118140987978,
+   "min_ess": 5748.637573584672
+  }
+ ],
+ "seed": 12345,
+ "n_draws_total": 16000,
+ "n_models": 256,
+ "n_rows": 2807,
+ "anchors": {
+  "refit": {
+   "cap_low_mean": -0.9988830133029971,
+   "cap_low_sd": 0.1610816023743999,
+   "cap_high_mean": 0.9065571282400228,
+   "cap_high_sd": 0.10086435019884771,
+   "spread_mean": 1.90544014154302,
+   "spread_sd": 0.14034051064952371,
+   "b_mean": 10.553635803917542,
+   "b_sd_over_mean": 0.07423855136262521
+  },
+  "p0": {
+   "cap_low_mean": -1.0391068851054301,
+   "cap_low_sd": 0.16409590538392446,
+   "cap_high_mean": 0.9176831258229756,
+   "cap_high_sd": 0.1019786250498718,
+   "spread_mean": 1.9567900109284058,
+   "spread_sd": 0.14353173038842415,
+   "b_mean": 10.276040868048316,
+   "b_sd_over_mean": 0.07366671618767971
+  }
+ },
+ "compare": {
+  "n_common": 256,
+  "scores": {
+   "S4": {
+    "top10_same": true,
+    "max_pair_change": 0.30156250000000007,
+    "pass_": false
+   },
+   "all": {
+    "n": 254,
+    "S1": 0.9999234664682991,
+    "S1_pass": true,
+    "S2_count": 1,
+    "S2_limit": 12,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 12,
+    "S3_pass": true,
+    "max_rel_shift": 0.27145580424466187,
+    "median_width_ratio": 1.0138323010275876
+   },
+   "frontier": {
+    "n": 20,
+    "S1": 0.9969924812030074,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 1,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 1,
+    "S3_pass": true,
+    "max_rel_shift": 0.1724575814643549,
+    "median_width_ratio": 1.0293280109713234
+   },
+   "sparse": {
+    "n": 72,
+    "S1": 0.9999678435912278,
+    "S1_pass": true,
+    "S2_count": 0,
+    "S2_limit": 3,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 3,
+    "S3_pass": true,
+    "max_rel_shift": 0.08123299773901718,
+    "median_width_ratio": 1.0029081097816
+   },
+   "dense": {
+    "n": 182,
+    "S1": 0.9998381845851553,
+    "S1_pass": true,
+    "S2_count": 1,
+    "S2_limit": 9,
+    "S2_pass": true,
+    "S3_count": 0,
+    "S3_limit": 9,
+    "S3_pass": true,
+    "max_rel_shift": 0.27145580424466187,
+    "median_width_ratio": 1.0195563436971493
+   }
+  },
+  "top10": {
+   "p0": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "Claude Opus 5.5",
+    "GPT-6.1 Sol",
+    "GPT-6.1 Terra",
+    "Claude Fable 5.1",
+    "Claude Sonnet 5.5",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "refit": [
+    "Claude Fable 5.2",
+    "Gemini 4 Carbon",
+    "GPT-6 Astra",
+    "Claude Opus 5.5",
+    "GPT-6.1 Terra",
+    "GPT-6.1 Sol",
+    "Claude Fable 5.1",
+    "Claude Sonnet 5.5",
+    "Gemini 4 Argon",
+    "Claude Opus 5"
+   ],
+   "set_same": true,
+   "order_same": false,
+   "entered": [],
+   "left": [],
+   "p0_full_top10_dropped": [],
+   "rank_changes": {
+    "Claude Fable 5.2": 0,
+    "Gemini 4 Carbon": 0,
+    "GPT-6 Astra": 0,
+    "Claude Opus 5.5": 0,
+    "GPT-6.1 Sol": 1,
+    "GPT-6.1 Terra": -1,
+    "Claude Fable 5.1": 0,
+    "Claude Sonnet 5.5": 0,
+    "Gemini 4 Argon": 0,
+    "Claude Opus 5": 0
+   }
+  },
+  "frontier": {
+   "stretch_rank1_minus_rank20_k": 13.334891424270495,
+   "stretch_rank1_minus_rank20_p0": 13.318379692077627,
+   "stratum_max_minus_min_k": 13.444788614774865,
+   "stratum_max_minus_min_p0": 13.318379692077627,
+   "stretch_change": 0.016511732192867612,
+   "stratum_range_change": 0.12640892269723736,
+   "max_abs_shift": 0.7884451634541563,
+   "max_rel_shift": 0.1724575814643549,
+   "mean_signed_shift": 0.3108548376122357,
+   "median_width_ratio": 1.0293280109713234
+  },
+  "gaps": {
+   "frontier": {
+    "n_pairs": 190,
+    "median_abs_gap_change": 0.23252927351893504,
+    "max_abs_gap_change": 1.306574626938783
+   },
+   "all": {
+    "n_pairs": 32640,
+    "median_abs_gap_change": 0.2922078694635033,
+    "max_abs_gap_change": 1.5958031245725977
+   }
+  },
+  "shift": {
+   "median_abs_all": 0.23298060196182746,
+   "max_abs_all": 1.077673661087971,
+   "mean_signed_all": 0.04071581944804902,
+   "spearman_shift_vs_p0eci": 0.8834506532998184,
+   "median_width_ratio_all": 1.0138323010275876,
+   "by_p0_quintile": [
+    {
+     "q": 1,
+     "n": 51,
+     "p0_eci_range": [
+      49.35664705360122,
+      107.6826710729599
+     ],
+     "median_abs_shift": 0.30037608718780007,
+     "median_rel_shift": 0.013428925864731359,
+     "mean_signed_shift": -0.3142315209984272,
+     "median_width_ratio": 0.9977156047094919
+    },
+    {
+     "q": 2,
+     "n": 51,
+     "p0_eci_range": [
+      109.38584235239028,
+      131.7028485956192
+     ],
+     "median_abs_shift": 0.16303632515477773,
+     "median_rel_shift": 0.01885062316761325,
+     "mean_signed_shift": -0.1598326160583489,
+     "median_width_ratio": 1.0060555186385656
+    },
+    {
+     "q": 3,
+     "n": 50,
+     "p0_eci_range": [
+      132.07137845897674,
+      143.80574471378327
+     ],
+     "median_abs_shift": 0.07784359455047252,
+     "median_rel_shift": 0.014483592953492786,
+     "mean_signed_shift": 0.0405060136944013,
+     "median_width_ratio": 1.0119981359671457
+    },
+    {
+     "q": 4,
+     "n": 51,
+     "p0_eci_range": [
+      143.95731311893462,
+      153.80679029941558
+     ],
+     "median_abs_shift": 0.22167644821354315,
+     "median_rel_shift": 0.05831570254319988,
+     "mean_signed_shift": 0.2254944859184844,
+     "median_width_ratio": 1.0296162904199226
+    },
+    {
+     "q": 5,
+     "n": 51,
+     "p0_eci_range": [
+      154.39176096248627,
+      173.42698958206176
+     ],
+     "median_abs_shift": 0.43504477097170025,
+     "median_rel_shift": 0.09131128078293962,
+     "mean_signed_shift": 0.41163862084582875,
+     "median_width_ratio": 1.0481449009517623
+    }
+   ]
+  },
+  "movers": [
+   {
+    "model": "Grok 4.7",
+    "p0_eci": 156.18430886363984,
+    "eci": 157.2619825247278,
+    "shift": 1.077673661087971,
+    "rel_shift": 0.27145580424466187,
+    "width_ratio": 1.0709773510820304,
+    "rows_full": 19,
+    "rows_sub": 18,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Gemini 3.8 Flash",
+    "p0_eci": 158.79416109466553,
+    "eci": 159.80195192575508,
+    "shift": 1.007790831089551,
+    "rel_shift": 0.24300096122355436,
+    "width_ratio": 1.0585083273184317,
+    "rows_full": 23,
+    "rows_sub": 22,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "GLM-5.3",
+    "p0_eci": 157.11175177764892,
+    "eci": 158.08221872412065,
+    "shift": 0.9704669464717313,
+    "rel_shift": 0.22135009154620602,
+    "width_ratio": 1.0953472094630559,
+    "rows_full": 16,
+    "rows_sub": 15,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "DeepSeek V4.1 Flash 1017",
+    "p0_eci": 159.41449982738496,
+    "eci": 160.26015504003234,
+    "shift": 0.8456552126473866,
+    "rel_shift": 0.17762575237315656,
+    "width_ratio": 1.0831393325284953,
+    "rows_full": 11,
+    "rows_sub": 10,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Grok 4.6",
+    "p0_eci": 157.80920293521882,
+    "eci": 158.64061668112132,
+    "shift": 0.8314137459024948,
+    "rel_shift": 0.20128962434627107,
+    "width_ratio": 1.069536420593907,
+    "rows_full": 20,
+    "rows_sub": 19,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Claude Haiku 5.5",
+    "p0_eci": 160.43716453456878,
+    "eci": 161.22560969802294,
+    "shift": 0.7884451634541563,
+    "rel_shift": 0.1724575814643549,
+    "width_ratio": 1.03995945983405,
+    "rows_full": 19,
+    "rows_sub": 18,
+    "strata": [
+     "frontier",
+     "dense"
+    ]
+   },
+   {
+    "model": "Claude Sonnet 5",
+    "p0_eci": 156.93943463993074,
+    "eci": 157.698055085596,
+    "shift": 0.7586204456652581,
+    "rel_shift": 0.18040602019429777,
+    "width_ratio": 1.0674424000980818,
+    "rows_full": 18,
+    "rows_sub": 17,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "DeepSeek-V4-Pro",
+    "p0_eci": 150.15684870815278,
+    "eci": 150.91196178765398,
+    "shift": 0.7551130795012,
+    "rel_shift": 0.2099917244995709,
+    "width_ratio": 1.09128037275002,
+    "rows_full": 14,
+    "rows_sub": 13,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Claude Opus 4.5",
+    "p0_eci": 151.91262323379516,
+    "eci": 152.6302146206474,
+    "shift": 0.7175913868522343,
+    "rel_shift": 0.22541563344728258,
+    "width_ratio": 1.049101560949883,
+    "rows_full": 29,
+    "rows_sub": 28,
+    "strata": [
+     "dense"
+    ]
+   },
+   {
+    "model": "Gemini 3.7 Flash",
+    "p0_eci": 158.3686101064682,
+    "eci": 159.08483708095474,
+    "shift": 0.7162269744865455,
+    "rel_shift": 0.17338193510715802,
+    "width_ratio": 1.043005216254762,
+    "rows_full": 18,
+    "rows_sub": 17,
+    "strata": [
+     "dense"
+    ]
+   }
+  ],
+  "p_top10_changes": [
+   {
+    "model": "Claude Opus 5",
+    "p0": 0.6445625,
+    "refit": 0.7631875
+   }
+  ]
+ }
+}

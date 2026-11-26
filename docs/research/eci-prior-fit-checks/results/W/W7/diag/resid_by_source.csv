@@ -1,0 +1,35 @@
+source,n,mean_z,mean_z2
+https://geobench.org/,27,0.063,1.163
+SimpleBench Leaderboard,46,0.091,1.099
+The Falcon Series of Open Language Models,18,0.378,1.053
+Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone,63,0.095,0.927
+https://www.vals.ai/benchmarks/proof_bench,71,0.108,0.831
+Fiction.live leaderboard,50,-0.039,0.824
+https://yhenon.github.io/surface-evolver-llm-eval/,24,0.025,0.810
+https://gso-bench.github.io/index.html,23,-0.048,0.793
+Qwen Technical Report,88,-0.058,0.781
+https://conceptualreasoning.ai/dtbench,150,0.073,0.753
+Qwen2.5-Coder Technical Report,57,-0.156,0.752
+https://cognition.com/frontiercode,42,0.006,0.746
+GeoBench leaderboard,17,-0.047,0.745
+https://balrogai.com/,26,0.061,0.720
+VPCT leaderboard,25,-0.016,0.715
+https://htihle.github.io/weirdml.html,127,-0.032,0.715
+https://conceptualreasoning.ai/lmca,126,0.045,0.696
+https://evals.futuresearch.ai/#drb,20,-0.015,0.686
+Llama 2: Open Foundation and Fine-Tuned Chat Models,36,0.215,0.592
+(Epoch run),1269,0.016,0.574
+https://www.frontierswe.com/,23,-0.018,0.570
+https://aider.chat/docs/leaderboards/,38,0.012,0.560
+XGen-7B Technical Report,33,0.187,0.522
+https://simple-bench.com/,24,-0.124,0.509
+Stanford CRFM Leaderboard,33,-0.153,0.481
+Yi: Open Foundation Models by 01.AI,17,-0.295,0.466
+https://lmcouncil.ai/benchmarks,25,0.088,0.461
+DeepSeek-V3 Technical Report,25,-0.178,0.456
+METR - Measuring AI Ability to Complete Long Tasks,23,0.200,0.426
+https://www.tbench.ai/leaderboard/terminal-bench/2.0,25,0.121,0.402
+ARC Prize Leaderboard,22,-0.169,0.391
+https://arcprize.org/leaderboard,52,-0.004,0.319
+WeirdML Leaderboard,15,0.287,0.277
+Gemma: Open Models Based on Gemini Research and Technology,18,-0.152,0.275

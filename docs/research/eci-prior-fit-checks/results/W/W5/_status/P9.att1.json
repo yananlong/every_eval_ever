@@ -1,0 +1,40 @@
+{
+ "draws": 8000,
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 8000,
+  "divergences": 0,
+  "max_rhat": 1.0288943368054588,
+  "min_ess": 201.28042875285274
+ },
+ "started_from": "cold",
+ "wall": 1357.1,
+ "warnings": [
+  "Loop fusion failed because the resulting node would exceed the kernel argument limit.",
+  "This process (pid=90963) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=90963) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "ladder": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 8000,
+   "divergences": 1,
+   "max_rhat": 1.0007836213377717,
+   "min_ess": 12157.529791009234
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 8000,
+   "divergences": 0,
+   "max_rhat": 1.0288943368054588,
+   "min_ess": 201.28042875285274
+  }
+ ],
+ "seed": 12345,
+ "kw": "{\"s0\": 2.6181553028126494, \"variant\": \"P9\"}",
+ "n_draws_total": 32000
+}

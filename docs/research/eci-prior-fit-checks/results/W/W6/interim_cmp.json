@@ -1,0 +1,62 @@
+{
+ "F2": {
+  "converged": true,
+  "wall": 422.7,
+  "elpd": 3659.662395342645,
+  "p": 560.0184991300652,
+  "k_share": 0.022924626606460576,
+  "loo_delta": 209.69938321452486,
+  "loo_se": 20.37940997621441,
+  "kfold_trig": true,
+  "kfold_delta": 167.08459158790743,
+  "kfold_se": 20.071625380947566,
+  "kfold_conv": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "preferred": true
+ },
+ "F5": {
+  "converged": true,
+  "wall": 584.5,
+  "elpd": 3493.960684265933,
+  "p": 527.7248677648791,
+  "k_share": 0.023619312261201807,
+  "loo_delta": 43.9976721378126,
+  "loo_se": 11.565810651992104,
+  "kfold_trig": true,
+  "kfold_delta": 33.40165852346831,
+  "kfold_se": 10.428675366555218,
+  "kfold_conv": [
+   false,
+   true,
+   true,
+   true,
+   true
+  ],
+  "preferred": true
+ },
+ "FX_lin_ta99": {
+  "converged": true,
+  "wall": 2509.6,
+  "elpd": 3692.3702359209,
+  "p": 601.4648345637277,
+  "k_share": 0.06530045154567558,
+  "loo_delta": 242.4072237927798,
+  "loo_se": 20.133339321887664,
+  "kfold_trig": true,
+  "kfold_delta": 149.46948886493232,
+  "kfold_se": 17.44171020778569,
+  "kfold_conv": [
+   false,
+   false,
+   true,
+   true,
+   true
+  ],
+  "preferred": true
+ }
+}

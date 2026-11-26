@@ -1,0 +1,63 @@
+{
+ "gen": "offset",
+ "r": 2,
+ "seed": 4049228317,
+ "position": 400,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "developer": "Meta AI",
+  "benchmarks": [
+   4,
+   5,
+   51
+  ],
+  "n_cells": 33
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0036327201037591,
+  "min_ess": 1179.0056058042032
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0036327201037591,
+   "min_ess": 1179.0056058042032
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3539) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 369.9,
+ "T": {
+  "T1": 2.0860637942557183,
+  "T2": 1.1323820844253212,
+  "T3": 0.08111779840520414,
+  "T4": 0.03627679552912167,
+  "T5": 2.4194859798482513,
+  "T6": 0.6674212021457326,
+  "T7": 1.8079056537446012
+ },
+ "maxima": {
+  "Qb": 7.183543322182119,
+  "q": 11.102854639094591,
+  "t": 2.4194859798482513,
+  "cb": 3.473938319994506
+ }
+}

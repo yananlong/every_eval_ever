@@ -1,0 +1,150 @@
+{
+ "s2_shift": 0.25,
+ "s0_raw_capability_sd": 2.5325083759394027,
+ "P8_guard_triggered": false,
+ "G1": {
+  "recovery_in_band": true,
+  "n_null_converged_ge_150": true,
+  "T2_power_on_2d": false,
+  "T5_power_on_offset": false,
+  "positive_control_fails_all_3_seeds": true,
+  "proceed": false,
+  "stop_recovery_below_0_75": false,
+  "recovery": 0.8751845472440944
+ },
+ "S5": {
+  "lp_joint": {
+   "by_stratum": {
+    "all": {
+     "n": 254,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.012634899602277915
+    },
+    "frontier": {
+     "n": 20,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0021983814601249574
+    },
+    "sparse": {
+     "n": 72,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.012634899602277915
+    },
+    "dense": {
+     "n": 182,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.012435034554976854
+    }
+   },
+   "flagged_strata": []
+  },
+  "lp_tau_alpha": {
+   "by_stratum": {
+    "all": {
+     "n": 254,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.01228126584284914
+    },
+    "frontier": {
+     "n": 20,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.00204228592682332
+    },
+    "sparse": {
+     "n": 72,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.01228126584284914
+    },
+    "dense": {
+     "n": 182,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.011915946336386868
+    }
+   },
+   "flagged_strata": []
+  },
+  "lp_sigma_median": {
+   "by_stratum": {
+    "all": {
+     "n": 254,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0005859658805608592
+    },
+    "frontier": {
+     "n": 20,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.00034806681090989225
+    },
+    "sparse": {
+     "n": 72,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0004879396563006264
+    },
+    "dense": {
+     "n": 182,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0005859658805608592
+    }
+   },
+   "flagged_strata": []
+  },
+  "lp_tau_sigma": {
+   "by_stratum": {
+    "all": {
+     "n": 254,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0008561757026686954
+    },
+    "frontier": {
+     "n": 20,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0003585618133877632
+    },
+    "sparse": {
+     "n": 72,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0006786498785623039
+    },
+    "dense": {
+     "n": 182,
+     "share_le_0_05": 1.0,
+     "passes": true,
+     "max_psens": 0.0008561757026686954
+    }
+   },
+   "flagged_strata": []
+  }
+ },
+ "S5_hyper_psens": {
+  "tau_alpha": 0.040869968169711376,
+  "sigma_median": 0.005611935932242769,
+  "tau_sigma": 0.007731378392168547
+ },
+ "S5_reweighted": {
+  "0.8": {
+   "pareto_k": -0.06167666492741678,
+   "max_abs_mean_change": 0.1306659076882184
+  },
+  "1.25": {
+   "pareto_k": -0.048497096527635564,
+   "max_abs_mean_change": 0.16955406694880537
+  }
+ },
+ "S5_joint_flagged_strata": [],
+ "flagged_hyperpriors": []
+}

@@ -1,0 +1,300 @@
+[ 1] ARC-AGI | group=Claude Fable 5 | EEE id=anthropic/claude-fable-5-max name=Claude Fable 5 (max) how=exact
+     epoch versions(8): claude-fable-5, claude-fable-5-fallback_max, claude-fable-5_high, claude-fable-5_low, claude-fable-5_max, claude-fable-5_medium, claude-fable-5_unknown, claude-fable-5_xhigh
+     coll=paperswithcode eval=paperswithcode.reasoning.arc_agi ds=ARC-AGI metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'arc-agi'} gen={}
+     raw=0.985 scale_hand=1.0 norm_hand=0.9850 stored=0.9850 match=True | epoch_norm=0.9850 (ver claude-fable-5_xhigh)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://arcprize.org/leaderboard https://arcprize.org/results/anthropic-claude-fable-5 https://www.anthropic.com/news/claude-fable-5-mythos-5 title=Claude Fable 5 and Claude Mythos 5 | epoch_source=https://arcprize.org/leaderboard | epoch-run=False
+[ 2] ARC-AGI | group=GPT-5 Pro | EEE id=openai/gpt-5-pro name=GPT-5 Pro how=exact
+     epoch versions(3): gpt-5-pro-2025-10-06_high, gpt-5-pro-2025-10-06_medium, gpt-5-pro-2025-10-06_unknown
+     coll=paperswithcode eval=paperswithcode.reasoning.arc_agi ds=ARC-AGI metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'arc-agi'} gen={}
+     raw=0.7017 scale_hand=1.0 norm_hand=0.7017 stored=0.7017 match=True | epoch_norm=0.7020 (ver gpt-5-pro-2025-10-06_high)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://arcprize.org/leaderboard https://arxiv.org/abs/2601.03267 title=OpenAI GPT-5 System Card | epoch_source=ARC Prize Leaderboard | epoch-run=False
+[ 3] ARC-AGI | group=GPT-5.1 | EEE id=openai/gpt-5-1-2025-11-13-thinking-high name=GPT-5.1 (Thinking, High) how=exact
+     epoch versions(5): gpt-5.1-2025-11-13_high, gpt-5.1-2025-11-13_low, gpt-5.1-2025-11-13_medium, gpt-5.1-2025-11-13_none, gpt-5.1-2025-11-13_unknown
+     coll=arc-agi eval=v1_Semi_Private ds=ARC Prize evaluations leaderboard JSON metric=score unit=proportion max=1.0 {} gen={}
+     raw=0.7283 scale_hand=1.0 norm_hand=0.7283 stored=0.7283 match=True | epoch_norm=0.7283 (ver gpt-5.1-2025-11-13_high)
+     src=ARC Prize Foundation kind=leaderboard rel=third_party stype=documentation class=same-upstream (EEE source is the one Epoch cites)
+     refs=https://arcprize.org/media/data/evaluations.json https://arcprize.org/leaderboard title=nan | epoch_source=https://arcprize.org/leaderboard | epoch-run=False
+[ 4] ARC-AGI | group=Grok 3 | EEE id=xai/grok-3-openrouter name=grok-3-openrouter how=exact
+     epoch versions(2): grok-3, grok-3-beta
+     coll=arc-agi eval=v1_Semi_Private ds=ARC Prize evaluations leaderboard JSON metric=score unit=proportion max=1.0 {} gen={}
+     raw=0.055 scale_hand=1.0 norm_hand=0.0550 stored=0.0550 match=True | epoch_norm=0.0550 (ver grok-3)
+     src=ARC Prize Foundation kind=leaderboard rel=third_party stype=documentation class=same-upstream (EEE source is the one Epoch cites)
+     refs=https://arcprize.org/media/data/leaderboard/evaluations.json title=nan | epoch_source=ARC Prize Leaderboard | epoch-run=False
+[ 5] ARC-AGI | group=Kimi K3 | EEE id=moonshotai/Kimi-K3 name=Kimi K3 Max how=exact
+     epoch versions(4): kimi-k3_high, kimi-k3_low, kimi-k3_max, kimi-k3_unknown
+     coll=paperswithcode eval=paperswithcode.reasoning.arc_agi ds=ARC-AGI metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'arc-agi'} gen={}
+     raw=0.9450000000000001 scale_hand=1.0 norm_hand=0.9450 stored=0.9450 match=True | epoch_norm=0.9450 (ver kimi-k3_max)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://arcprize.org/leaderboard https://arcprize.org/results/moonshot-kimi-k3 https://arxiv.org/abs/2607.24653 title=Kimi K3: Open Frontier Intelligence | epoch_source=https://arcprize.org/leaderboard | epoch-run=False
+[ 6] FrontierCode | group=GLM-5.3-Flash | EEE id=zai-org/GLM-5.3-Flash name=GLM-5.3-Flash how=exact
+     epoch versions(4): glm-5.3-flash_high, glm-5.3-flash_low, glm-5.3-flash_max, glm-5.3-flash_unknown
+     coll=paperswithcode eval=paperswithcode.coding_agents.frontiercode_main ds=FrontierCode 1.1 Main metric=score unit=None max=inf {'pwc_dataset_slug': 'frontiercode-main'} gen={}
+     raw=31.83 scale_hand=0.01 norm_hand=0.3183 stored=0.3183 match=True | epoch_norm=0.3183 (ver glm-5.3-flash_max)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://cognition.com/frontiercode https://z.ai/blog/glm-5.3-flash title=GLM-5.3-Flash: Frontier Intelligence, Flash Cost | epoch_source=https://cognition.com/frontiercode | epoch-run=False
+[ 7] FrontierCode | group=GPT-5.5 | EEE id=openai/gpt-5.5 name=gpt-5.5 how=exact
+     epoch versions(7): gpt-5.5-pre-release_xhigh, gpt-5.5_high, gpt-5.5_low, gpt-5.5_medium, gpt-5.5_none, gpt-5.5_unknown, gpt-5.5_xhigh
+     coll=llm-stats eval=llm_stats.frontiercode-1.1 ds=FrontierCode 1.1 metric=llm_stats.frontiercode-1.1.score unit=proportion max=1.0 {'raw_benchmark_id': 'frontiercode-1.1'} gen={}
+     raw=0.43 scale_hand=1.0 norm_hand=0.4300 stored=0.4300 match=True | epoch_norm=0.4296 (ver gpt-5.5_unknown)
+     src=LLM Stats kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://cognition.com/frontiercode title=nan | epoch_source=https://cognition.com/frontiercode | epoch-run=False
+[ 8] FrontierCode | group=Grok 4.6 | EEE id=xai/grok-4.6 name=Grok 4.6 how=exact
+     epoch versions(5): grok-4.6_high, grok-4.6_low, grok-4.6_medium, grok-4.6_unknown, grok-4.6_xhigh
+     coll=paperswithcode eval=paperswithcode.coding_agents.frontiercode_main ds=FrontierCode 1.1 Main metric=score unit=None max=inf {'pwc_dataset_slug': 'frontiercode-main'} gen={}
+     raw=48.01 scale_hand=0.01 norm_hand=0.4801 stored=0.4801 match=True | epoch_norm=0.4801 (ver grok-4.6_unknown)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://cognition.com/frontiercode https://x.ai/news/grok-4-6 title=Introducing Grok 4.6 | epoch_source=https://cognition.com/frontiercode | epoch-run=False
+[ 9] FrontierSWE | group=GPT-5.6 Sol | EEE id=openai/gpt-5.6-sol-max-effort name=GPT-5.6 Sol (max effort) how=exact
+     epoch versions(10): gpt-5.6-sol_high, gpt-5.6-sol_low, gpt-5.6-sol_max, gpt-5.6-sol_medium, gpt-5.6-sol_none, gpt-5.6-sol_promax, gpt-5.6-sol_prounknown, gpt-5.6-sol_proxhigh, gpt-5.6-sol_unknown, gpt-5.6-sol_xhigh
+     coll=paperswithcode eval=paperswithcode.coding_agents.frontierswe_v2 ds=FrontierSWE v2 metric=score unit=None max=inf {'pwc_dataset_slug': 'frontierswe-v2'} gen={}
+     raw=32.2 scale_hand=0.01 norm_hand=0.3220 stored=0.3220 match=True | epoch_norm=0.3220 (ver gpt-5.6-sol_max)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator reference is the source Epoch cites)
+     refs=https://www.frontierswe.com/blog/v2 https://openai.com/index/gpt-5-6/ title=GPT-5.6: Frontier intelligence that scales with your ambition | epoch_source=https://www.frontierswe.com/ | epoch-run=False
+[10] GPQA diamond | group=Claude 3 Sonnet | EEE id=anthropic/claude-3-sonnet name=Claude 3 Sonnet how=exact
+     epoch versions(1): claude-3-sonnet-20240229
+     coll=paperswithcode eval=paperswithcode.world_knowledge.gpqa_diamond ds=GPQA Diamond metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'gpqa-diamond'} gen={}
+     raw=0.40399999999999997 scale_hand=1.0 norm_hand=0.2139 stored=0.2139 match=True | epoch_norm=0.2166 (ver claude-3-sonnet-20240229)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.anthropic.com/news/claude-3-family title=Introducing the next generation of Claude | epoch_source=nan | epoch-run=True
+[11] GPQA diamond | group=Claude 3.5 Haiku | EEE id=anthropic/claude-3.5-haiku name=Claude 3.5 Haiku how=exact
+     epoch versions(1): claude-3-5-haiku-20241022
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "n/a", "context": "unknown", "prompt_style": "unknown", "mode": "unkn
+     raw=41.6 scale_hand=0.01 norm_hand=0.2306 stored=0.2306 match=True | epoch_norm=0.1824 (ver claude-3-5-haiku-20241022)
+     src=BenchPress kind=aggregator rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://huggingface.co/datasets/Idavidrein/gpqa/tree/633f5ee89ab8ad4522a9f850766b73f62147ffdd title=nan | epoch_source=nan | epoch-run=True
+[12] GPQA diamond | group=Claude 3.5 Sonnet (October 2024) | EEE id=anthropic/claude-3.5-sonnet name=Claude 3.5 Sonnet (1022) how=manual
+     epoch versions(1): claude-3-5-sonnet-20241022
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "n/a", "prompt_style": "default", "mode": "non-thinking", "temperatur
+     raw=65.0 scale_hand=0.01 norm_hand=0.5556 stored=0.5556 match=True | epoch_norm=0.4209 (ver claude-3-5-sonnet-20241022)
+     src=BenchPress kind=aggregator rel=other stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://arxiv.org/abs/2412.19437 title=nan | epoch_source=nan | epoch-run=True
+[13] GPQA diamond | group=Claude 3.7 Sonnet | EEE id=anthropic/claude-3-7-sonnet-20250219 name=anthropic/claude-3-7-sonnet-20250219 how=exact
+     epoch versions(10): claude-3-7-sonnet-20250219, claude-3-7-sonnet-20250219_12K, claude-3-7-sonnet-20250219_15K, claude-3-7-sonnet-20250219_16K, claude-3-7-sonnet-20250219_1K, claude-3-7-sonnet-20250219_2K, claude-3-7-sonnet-20250219_32K, claude-3-7-s
+     coll=gpqa_diamond eval=gpqa_diamond ds=gpqa_diamond metric=accuracy unit=proportion max=1.0 {} gen={}
+     raw=0.6691919191919192 scale_hand=1.0 norm_hand=0.5822 stored=0.5822 match=True | epoch_norm=0.7602 (ver claude-3-7-sonnet-20250219_64K)
+     src=Arcadia Impact kind=own-run rel=third_party stype=evaluation_run class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=nan title=nan | epoch_source=nan | epoch-run=True
+[14] GPQA diamond | group=Claude 3.7 Sonnet | EEE id=anthropic/claude-3-7-sonnet-20250219-thinking name=claude-3-7-sonnet-20250219-thinking how=exact
+     epoch versions(10): claude-3-7-sonnet-20250219, claude-3-7-sonnet-20250219_12K, claude-3-7-sonnet-20250219_15K, claude-3-7-sonnet-20250219_16K, claude-3-7-sonnet-20250219_1K, claude-3-7-sonnet-20250219_2K, claude-3-7-sonnet-20250219_32K, claude-3-7-s
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={}
+     raw=75.253 scale_hand=0.01 norm_hand=0.6980 stored=0.6980 match=True | epoch_norm=0.7602 (ver claude-3-7-sonnet-20250219_64K)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[15] GPQA diamond | group=Claude Opus 4.6 | EEE id=anthropic/claude-opus-4-6-adaptive name=Claude Opus 4.6 (Max) how=exact
+     epoch versions(9): claude-opus-4-6, claude-opus-4-6_120K, claude-opus-4-6_32K, claude-opus-4-6_64K, claude-opus-4-6_high, claude-opus-4-6_low, claude-opus-4-6_max, claude-opus-4-6_medium, claude-opus-4-6_unknown
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.896 scale_hand=1.0 norm_hand=0.8972 stored=0.8972 match=True | epoch_norm=0.9101 (ver claude-opus-4-6_32K)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[16] GPQA diamond | group=Claude Opus 4.6 | EEE id=anthropic/claude-opus-4.6 name=anthropic/claude-opus-4.6 how=exact
+     epoch versions(9): claude-opus-4-6, claude-opus-4-6_120K, claude-opus-4-6_32K, claude-opus-4-6_64K, claude-opus-4-6_high, claude-opus-4-6_low, claude-opus-4-6_max, claude-opus-4-6_medium, claude-opus-4-6_unknown
+     coll=gpqa-diamond eval=GPQA Diamond ds=GPQA Diamond metric=accuracy unit=proportion max=1.0 {} gen={}
+     raw=0.8484848484848485 scale_hand=1.0 norm_hand=0.8312 stored=0.8312 match=True | epoch_norm=0.9101 (ver claude-opus-4-6_32K)
+     src=Writer, Inc. kind=own-run rel=third_party stype=evaluation_run class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=nan title=nan | epoch_source=nan | epoch-run=True
+[17] GPQA diamond | group=DeepSeek V4 Pro 0813 | EEE id=deepseek/deepseek-v4-pro-0813 name=deepseek-v4-pro-0813 how=exact
+     epoch versions(5): deepseek-v4-pro-0813_high, deepseek-v4-pro-0813_low, deepseek-v4-pro-0813_max, deepseek-v4-pro-0813_none, deepseek-v4-pro-0813_unknown
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={"reasoning_effort": "max"}
+     raw=92.929 scale_hand=0.01 norm_hand=0.9435 stored=0.9435 match=True | epoch_norm=0.9259 (ver deepseek-v4-pro-0813_max)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[18] GPQA diamond | group=GLM-5 | EEE id=zai/glm-5-thinking name=glm-5-thinking how=exact
+     epoch versions(2): glm-5, zai-org/glm-5
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={}
+     raw=83.838 scale_hand=0.01 norm_hand=0.8172 stored=0.8172 match=True | epoch_norm=0.8725 (ver glm-5)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[19] GPQA diamond | group=GLM-5.2 | EEE id=zai-org/GLM-5.2 name=GLM-5.2 (Max) how=exact
+     epoch versions(7): glm-5.2_high, glm-5.2_low, glm-5.2_max, glm-5.2_medium, glm-5.2_minimal, glm-5.2_none, glm-5.2_unknown
+     coll=paperswithcode eval=paperswithcode.language_modeling.gpqa_diamond ds=GPQA Diamond metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'gpqa-diamond'} gen={}
+     raw=0.912 scale_hand=1.0 norm_hand=0.9194 stored=0.9194 match=True | epoch_norm=0.9286 (ver glm-5.2_max)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://z.ai/blog/glm-5.2 title=GLM-5.2: Built for Long-Horizon Tasks | epoch_source=nan | epoch-run=True
+[20] GPQA diamond | group=GPT-4.1 | EEE id=openai/gpt-4.1 name=GPT-4.1 how=exact
+     epoch versions(1): gpt-4.1-2025-04-14
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "high", "prompt_style": "default", "mode": "thinking", "temperature_r
+     raw=66.3 scale_hand=0.01 norm_hand=0.5736 stored=0.5736 match=True | epoch_norm=0.5822 (ver gpt-4.1-2025-04-14)
+     src=BenchPress kind=aggregator rel=first_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://openai.com/index/introducing-gpt-5-for-developers/ title=nan | epoch_source=nan | epoch-run=True
+[21] GPQA diamond | group=GPT-4.1 mini | EEE id=openai/gpt-4.1-mini-2025-04-14 name=gpt-4.1-mini-2025-04-14 how=exact
+     epoch versions(1): gpt-4.1-mini-2025-04-14
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={"reasoning_effort": "high"}
+     raw=71.212 scale_hand=0.01 norm_hand=0.6418 stored=0.6418 match=True | epoch_norm=0.5673 (ver gpt-4.1-mini-2025-04-14)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[22] GPQA diamond | group=GPT-5.2 | EEE id=openai/gpt-5.2-2025-12-11 name=gpt-5.2-2025-12-11 how=exact
+     epoch versions(8): gpt-5.2-2025-12-11_high, gpt-5.2-2025-12-11_low, gpt-5.2-2025-12-11_medium, gpt-5.2-2025-12-11_none, gpt-5.2-2025-12-11_unknown, gpt-5.2-2025-12-11_xhigh, robin-alpha-next-2025-11-24_high, robin-alpha-next-2025-11-24_xhigh
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={"reasoning_effort": "xhigh"}
+     raw=91.414 scale_hand=0.01 norm_hand=0.9224 stored=0.9224 match=True | epoch_norm=0.9222 (ver gpt-5.2-2025-12-11_xhigh)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[23] GPQA diamond | group=GPT-5.4 Nano | EEE id=openai/gpt-5-4-nano name=GPT-5.4 nano (xhigh) how=exact
+     epoch versions(6): gpt-5.4-nano-2026-03-17_high, gpt-5.4-nano-2026-03-17_low, gpt-5.4-nano-2026-03-17_medium, gpt-5.4-nano-2026-03-17_none, gpt-5.4-nano-2026-03-17_unknown, gpt-5.4-nano-2026-03-17_xhigh
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.817 scale_hand=1.0 norm_hand=0.7875 stored=0.7875 match=True | epoch_norm=0.7426 (ver gpt-5.4-nano-2026-03-17_high)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[24] GPQA diamond | group=Gemini 1.5 Pro (Sept 2024) | EEE id=google/gemini-1.5-pro-002 name=gemini-1.5-pro-002 how=exact
+     epoch versions(1): gemini-1.5-pro-002
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={}
+     raw=60.606 scale_hand=0.01 norm_hand=0.4945 stored=0.4945 match=True | epoch_norm=0.4476 (ver gemini-1.5-pro-002)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[25] GPQA diamond | group=Gemini 3.5 Flash | EEE id=google/gemini-3-5-flash name=Gemini 3.5 Flash (High) how=exact
+     epoch versions(5): gemini-3.5-flash_high, gemini-3.5-flash_low, gemini-3.5-flash_medium, gemini-3.5-flash_minimal, gemini-3.5-flash_unknown
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.922 scale_hand=1.0 norm_hand=0.9333 stored=0.9333 match=True | epoch_norm=0.9417 (ver gemini-3.5-flash_high)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[26] GPQA diamond | group=Gemma 2 9B | EEE id=google/gemma-2-9b name=Gemma 2 9B how=exact
+     epoch versions(2): gemma-2-9b, gemma-2-9b-it
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "n/a", "prompt_style": "default", "mode": "non-thinking", "temperatur
+     raw=28.8 scale_hand=0.01 norm_hand=0.0528 stored=0.0528 match=True | epoch_norm=0.0342 (ver gemma-2-9b-it)
+     src=BenchPress kind=aggregator rel=other stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://arxiv.org/abs/2503.19786 title=nan | epoch_source=nan | epoch-run=True
+[27] GPQA diamond | group=Gemma 4 31B IT | EEE id=google/gemma-4-31b name=Gemma 4 31B (Reasoning) how=manual
+     epoch versions(2): gemma-4-31b-it, gemma-4-31b-it_minimal
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.857 scale_hand=1.0 norm_hand=0.8431 stored=0.8431 match=True | epoch_norm=0.7050 (ver gemma-4-31b-it_minimal)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[28] GPQA diamond | group=Grok 3 | EEE id=xai/grok-3 name=grok-3 how=exact
+     epoch versions(2): grok-3, grok-3-beta
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={}
+     raw=76.768 scale_hand=0.01 norm_hand=0.7190 stored=0.7190 match=True | epoch_norm=0.7050 (ver grok-3-beta)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[29] GPQA diamond | group=Inkling | EEE id=thinking-machines/inkling name=Inkling (xhigh) how=exact
+     epoch versions(3): Inkling, Inkling_high, Inkling_xhigh
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.872 scale_hand=1.0 norm_hand=0.8639 stored=0.8639 match=True | epoch_norm=0.8786 (ver Inkling_xhigh)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[30] GPQA diamond | group=Inkling | EEE id=thinkingmachines/inkling name=inkling how=exact
+     epoch versions(3): Inkling, Inkling_high, Inkling_xhigh
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={"reasoning_effort": "0.99"}
+     raw=86.364 scale_hand=0.01 norm_hand=0.8523 stored=0.8523 match=True | epoch_norm=0.8786 (ver Inkling_xhigh)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[31] GPQA diamond | group=Kimi K2.5 | EEE id=moonshot-ai/kimi-k2.5 name=Kimi K2.5 how=exact
+     epoch versions(3): fireworks/kimi-k2p5, kimi-k2.5, kimi-k2.5_none
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "default (96k for reasoning, 64k for vision)", "prompt_style": "defau
+     raw=87.6 scale_hand=0.01 norm_hand=0.8694 stored=0.8694 match=True | epoch_norm=0.8694 (ver fireworks/kimi-k2p5)
+     src=BenchPress kind=aggregator rel=other stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://huggingface.co/moonshotai/Kimi-K2.5 title=nan | epoch_source=nan | epoch-run=True
+[32] GPQA diamond | group=Nemotron 3 Ultra | EEE id=nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16 name=Nemotron 3 Ultra how=exact
+     epoch versions(1): nemotron-3-ultra
+     coll=paperswithcode eval=paperswithcode.language_modeling.gpqa_diamond ds=GPQA Diamond metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'gpqa-diamond'} gen={}
+     raw=0.87 scale_hand=1.0 norm_hand=0.8611 stored=0.8611 match=True | epoch_norm=0.8382 (ver nemotron-3-ultra)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://arxiv.org/abs/2606.15007 title=Nemotron 3 Ultra: Open, Efficient Mixture-of-Experts Hybrid Mamba-Tran | epoch_source=nan | epoch-run=True
+[33] GPQA diamond | group=Qwen 3.6 35B-A3B | EEE id=alibaba/qwen3-6-35b-a3b name=Qwen3.6 35B A3B (Reasoning) how=exact
+     epoch versions(2): qwen3.6-35b-a3b, qwen3.6-35b-a3b_none
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.841 scale_hand=1.0 norm_hand=0.8208 stored=0.8208 match=True | epoch_norm=0.8312 (ver qwen3.6-35b-a3b_none)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[34] GPQA diamond | group=Qwen 3.6 Plus | EEE id=alibaba/qwen3.6-plus name=Qwen3.6-Plus how=exact
+     epoch versions(2): qwen3.6-plus, qwen3.6-plus_none
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "default", "prompt_style": "default", "mode": "thinking", "temperatur
+     raw=90.4 scale_hand=0.01 norm_hand=0.9083 stored=0.9083 match=True | epoch_norm=0.8803 (ver qwen3.6-plus)
+     src=BenchPress kind=aggregator rel=other stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://z.ai/blog/glm-5.1 title=nan | epoch_source=nan | epoch-run=True
+[35] GPQA diamond | group=Qwen3-14B | EEE id=alibaba/qwen3-14b name=Qwen3-14B how=exact
+     epoch versions(3): chutes/Qwen3-14B, qwen3-14b, qwen3-14b_none
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "default", "prompt_style": "default", "mode": "thinking", "temperatur
+     raw=64.0 scale_hand=0.01 norm_hand=0.5417 stored=0.5417 match=True | epoch_norm=0.5384 (ver qwen3-14b)
+     src=BenchPress kind=aggregator rel=other stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://arxiv.org/abs/2505.09388 title=nan | epoch_source=nan | epoch-run=True
+[36] GPQA diamond | group=o1 | EEE id=openai/o1-2024-12-17 name=o1-2024-12-17 how=exact
+     epoch versions(4): o1-2024-12-17_high, o1-2024-12-17_low, o1-2024-12-17_medium, o1-2024-12-17_unknown
+     coll=vals-ai eval=vals_ai.gpqa.diamond_zero_shot_cot ds=GPQA Diamond - Zero-Shot CoT metric=vals_ai.gpqa.diamond_zero_shot_cot.accuracy unit=percent max=100.0 {'task_key': 'diamond_zero_shot_cot'} gen={"reasoning_effort": "high"}
+     raw=73.737 scale_hand=0.01 norm_hand=0.6769 stored=0.6769 match=True | epoch_norm=0.7190 (ver o1-2024-12-17_high)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://www.vals.ai/benchmarks/gpqa title=nan | epoch_source=nan | epoch-run=True
+[37] GPQA diamond | group=o1-mini | EEE id=openai/o1-mini name=o1-mini how=exact
+     epoch versions(4): o1-mini-2024-09-12_high, o1-mini-2024-09-12_low, o1-mini-2024-09-12_medium, o1-mini-2024-09-12_unknown
+     coll=artificial-analysis-llms eval=artificial_analysis.gpqa ds=Artificial Analysis LLM API metric=artificial_analysis.gpqa unit=proportion max=1.0 {} gen={}
+     raw=0.603 scale_hand=1.0 norm_hand=0.4903 stored=0.4903 match=True | epoch_norm=0.5191 (ver o1-mini-2024-09-12_high)
+     src=Artificial Analysis kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://artificialanalysis.ai/api/v2/data/llms/models title=nan | epoch_source=nan | epoch-run=True
+[38] GPQA diamond | group=o3-mini | EEE id=openai/o3-mini-high name=o3-mini (high) how=exact
+     epoch versions(4): o3-mini-2025-01-31_high, o3-mini-2025-01-31_low, o3-mini-2025-01-31_medium, o3-mini-2025-01-31_unknown
+     coll=benchpress eval=benchpress.gpqa-diamond ds=GPQA Diamond metric=benchpress.gpqa-diamond.score unit=percent max=100.0 {'benchmark_version': 'GPQA Diamond official 198-item split'} gen={"effort": "high", "prompt_style": "default", "mode": "thinking", "temperature_r
+     raw=77.2 scale_hand=0.01 norm_hand=0.7250 stored=0.7250 match=True | epoch_norm=0.7225 (ver o3-mini-2025-01-31_high)
+     src=BenchPress kind=aggregator rel=first_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://openai.com/index/gpt-4-1/ title=nan | epoch_source=nan | epoch-run=True
+[39] HellaSwag | group=Gemma 7B | EEE id=google/gemma-7b name=Gemma 7B how=exact
+     epoch versions(1): gemma-7b
+     coll=paperswithcode eval=paperswithcode.reasoning.hellaswag ds=HellaSwag metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'hellaswag'} gen={}
+     raw=0.812 scale_hand=1.0 norm_hand=0.7493 stored=0.7493 match=True | epoch_norm=0.7627 (ver gemma-7b)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator cites the paper Epoch cites)
+     refs=https://arxiv.org/abs/2403.08295 title=Gemma: Open Models Based on Gemini Research and Technology | epoch_source=Gemma: Open Models Based on Gemini Research and Technology | epoch-run=False
+[40] MATH level 5 | group=Mistral NeMo | EEE id=mistralai/Mistral-Nemo-Instruct-2407 name=Mistral-Nemo-Instruct-2407 how=exact
+     epoch versions(3): Mistral-Nemo-Base-2407, Mistral-Nemo-Instruct-2407, open-mistral-nemo-2407
+     coll=hfopenllm_v2 eval=MATH Level 5 ds=MATH Level 5 metric=exact_match unit=proportion max=1.0 {} gen={}
+     raw=0.1269 scale_hand=1.0 norm_hand=0.1269 stored=0.1269 match=True | epoch_norm=0.1083 (ver open-mistral-nemo-2407)
+     src=Hugging Face kind=own-run rel=third_party stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=nan title=nan | epoch_source=nan | epoch-run=True
+[41] MMLU | group=Falcon-180B | EEE id=tiiuae/falcon-180b-5-shot name=Falcon-180B (5-shot) how=dateless-unique
+     epoch versions(1): falcon-180B
+     coll=paperswithcode eval=paperswithcode.world_knowledge.mmlu ds=MMLU metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'mmlu'} gen={}
+     raw=0.706 scale_hand=1.0 norm_hand=0.6080 stored=0.6080 match=True | epoch_norm=0.6080 (ver falcon-180B)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator cites the paper Epoch cites)
+     refs=https://arxiv.org/abs/2311.16867 title=The Falcon Series of Open Language Models | epoch_source=The Falcon Series of Open Language Models | epoch-run=False
+[42] MMLU | group=LLaMA-65B | EEE id=meta-llama/llama-65b-5-shot name=LLaMA-65B (5-shot) how=dateless-unique
+     epoch versions(1): LLaMA-65B
+     coll=paperswithcode eval=paperswithcode.world_knowledge.mmlu ds=MMLU metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'mmlu'} gen={}
+     raw=0.634 scale_hand=1.0 norm_hand=0.5120 stored=0.5120 match=True | epoch_norm=0.5120 (ver LLaMA-65B)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (developer-reported score relayed; Epoch cites the developer's report)
+     refs=https://arxiv.org/abs/2302.13971 title=LLaMA: Open and Efficient Foundation Language Models | epoch_source=Llama 2: Open Foundation and Fine-Tuned Chat Models | epoch-run=False
+[43] ProofBench | group=Claude Opus 5.5 | EEE id=anthropic/claude-opus-5-5 name=claude-opus-5-5 how=exact
+     epoch versions(7): claude-opus-5-5-fallback_max, claude-opus-5-5_high, claude-opus-5-5_low, claude-opus-5-5_max, claude-opus-5-5_medium, claude-opus-5-5_unknown, claude-opus-5-5_xhigh
+     coll=vals-ai eval=vals_ai.proof_bench.overall ds=ProofBench v1.1 - Overall metric=vals_ai.proof_bench.overall.accuracy unit=percent max=100.0 {'task_key': 'overall'} gen={"compute_effort": "max"}
+     raw=100.0 scale_hand=0.01 norm_hand=1.0000 stored=1.0000 match=True | epoch_norm=1.0000 (ver claude-opus-5-5_max)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=same-upstream (EEE source is the one Epoch cites)
+     refs=nan title=nan | epoch_source=https://www.vals.ai/benchmarks/proof_bench | epoch-run=False
+[44] SimpleQA Verified | group=Claude Opus 4.8 | EEE id=anthropic/claude-opus-4.8 name=Claude Opus 4.8 how=exact
+     epoch versions(8): claude-opus-4-8_24K, claude-opus-4-8_high, claude-opus-4-8_low, claude-opus-4-8_max, claude-opus-4-8_medium, claude-opus-4-8_none, claude-opus-4-8_unknown, claude-opus-4-8_xhigh
+     coll=benchpress eval=benchpress.simpleqa-verified ds=SimpleQA-Verified metric=benchpress.simpleqa-verified.score unit=percent max=100.0 {'benchmark_version': 'SimpleQA-Verified'} gen={"effort": "source does not state", "context": "source does not state", "prompt_
+     raw=43.3 scale_hand=0.01 norm_hand=0.4330 stored=0.4330 match=True | epoch_norm=0.5300 (ver claude-opus-4-8_max)
+     src=BenchPress kind=aggregator rel=other stype=documentation class=independent (Epoch-run benchmark, non-Epoch source)
+     refs=https://huggingface.co/internlm/Intern-S2-Preview-397B title=nan | epoch_source=nan | epoch-run=True
+[45] Terminal Bench | group=Claude Opus 4.7 | EEE id=anthropic/claude-opus-4.7 name=Claude Opus 4.7 how=exact
+     epoch versions(7): claude-opus-4-7, claude-opus-4-7_high, claude-opus-4-7_low, claude-opus-4-7_max, claude-opus-4-7_medium, claude-opus-4-7_unknown, claude-opus-4-7_xhigh
+     coll=terminal-bench-2.0 eval=terminal-bench-2.0 ds=terminal-bench-2.0 metric=terminal-bench-2.0.accuracy unit=percent max=100.0 {} gen={}
+     raw=80.2247191011 scale_hand=0.01 norm_hand=0.8022 stored=0.8022 match=True | epoch_norm=0.8022 (ver claude-opus-4-7_unknown)
+     src=Terminal-Bench kind=leaderboard rel=third_party stype=documentation class=same-upstream (EEE source is the one Epoch cites)
+     refs=https://www.tbench.ai/leaderboard/terminal-bench/2.0 title=nan | epoch_source=https://www.tbench.ai/leaderboard/terminal-bench/2.0 | epoch-run=False
+[46] Terminal Bench | group=Claude Sonnet 4.6 | EEE id=anthropic/claude-sonnet-4-6 name=claude-sonnet-4-6 how=exact
+     epoch versions(9): claude-sonnet-4-6, claude-sonnet-4-6_16K, claude-sonnet-4-6_32K, claude-sonnet-4-6_60K, claude-sonnet-4-6_high, claude-sonnet-4-6_low, claude-sonnet-4-6_max, claude-sonnet-4-6_medium, claude-sonnet-4-6_unknown
+     coll=vals-ai eval=vals_ai.terminal-bench-2.overall ds=Terminal-Bench 2.0 - Overall metric=vals_ai.terminal-bench-2.overall.accuracy unit=percent max=100.0 {'task_key': 'overall'} gen={"reasoning": "false", "compute_effort": "max"}
+     raw=59.551 scale_hand=0.01 norm_hand=0.5955 stored=0.5955 match=True | epoch_norm=0.5343 (ver claude-sonnet-4-6_unknown)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (own evaluation, not the source Epoch cites)
+     refs=https://www.vals.ai/benchmarks/terminal-bench-2 title=nan | epoch_source=https://www.tbench.ai/leaderboard/terminal-bench/2.0 | epoch-run=False
+[47] Terminal Bench | group=GLM-4.7 | EEE id=zhipu-ai/glm-4.7 name=GLM 4.7 how=exact
+     epoch versions(4): fireworks/glm-4p7, glm-4.7, zai-org/GLM-4.7, zai-org/glm-4.7
+     coll=terminal-bench-2.0 eval=terminal-bench-2.0 ds=terminal-bench-2.0 metric=terminal-bench-2.0.accuracy unit=percent max=100.0 {} gen={}
+     raw=33.4 scale_hand=0.01 norm_hand=0.3340 stored=0.3340 match=True | epoch_norm=0.3339 (ver glm-4.7)
+     src=Terminal-Bench kind=leaderboard rel=third_party stype=documentation class=same-upstream (EEE source is the one Epoch cites)
+     refs=https://www.tbench.ai/leaderboard/terminal-bench/2.0 title=nan | epoch_source=https://www.tbench.ai/leaderboard/terminal-bench/2.0 | epoch-run=False
+[48] Terminal Bench | group=GPT-5 mini | EEE id=openai/gpt-5-mini-2025-08-07 name=gpt-5-mini-2025-08-07 how=exact
+     epoch versions(5): gpt-5-mini-2025-08-07_high, gpt-5-mini-2025-08-07_low, gpt-5-mini-2025-08-07_medium, gpt-5-mini-2025-08-07_minimal, gpt-5-mini-2025-08-07_unknown
+     coll=vals-ai eval=vals_ai.terminal-bench-2.overall ds=Terminal-Bench 2.0 - Overall metric=vals_ai.terminal-bench-2.overall.accuracy unit=percent max=100.0 {'task_key': 'overall'} gen={"reasoning_effort": "high"}
+     raw=26.966 scale_hand=0.01 norm_hand=0.2697 stored=0.2697 match=True | epoch_norm=0.3483 (ver gpt-5-mini-2025-08-07_unknown)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (own evaluation, not the source Epoch cites)
+     refs=https://www.vals.ai/benchmarks/terminal-bench-2 title=nan | epoch_source=https://www.tbench.ai/leaderboard/terminal-bench/2.0 | epoch-run=False
+[49] Terminal Bench | group=gpt-oss-120b | EEE id=fireworks/gpt-oss-120b name=gpt-oss-120b how=exact
+     epoch versions(9): chutes/gpt-oss-120b, chutes/gpt-oss-120b_high, gpt-oss-120b, gpt-oss-120b_high, gpt-oss-120b_low, gpt-oss-120b_medium, gpt-oss-120b_unknown, openai/gpt-oss-120b_high, openai/gpt-oss-120b_low
+     coll=vals-ai eval=vals_ai.terminal-bench-2.overall ds=Terminal-Bench 2.0 - Overall metric=vals_ai.terminal-bench-2.overall.accuracy unit=percent max=100.0 {'task_key': 'overall'} gen={}
+     raw=19.101 scale_hand=0.01 norm_hand=0.1910 stored=0.1910 match=True | epoch_norm=0.1870 (ver gpt-oss-120b)
+     src=Vals.ai kind=own-run rel=third_party stype=documentation class=independent (own evaluation, not the source Epoch cites)
+     refs=https://www.vals.ai/benchmarks/terminal-bench-2 title=nan | epoch_source=Terminal-Bench v2 Leaderboard | epoch-run=False
+[50] Winogrande | group=Falcon-180B | EEE id=tiiuae/falcon-180b-5-shot name=Falcon-180B (5-shot) how=dateless-unique
+     epoch versions(1): falcon-180B
+     coll=paperswithcode eval=paperswithcode.reasoning.winogrande ds=Winogrande metric=accuracy unit=proportion max=1.0 {'pwc_dataset_slug': 'winogrande'} gen={}
+     raw=0.871 scale_hand=1.0 norm_hand=0.7420 stored=0.7420 match=True | epoch_norm=0.7420 (ver falcon-180B)
+     src=Papers with Code kind=aggregator rel=third_party stype=documentation class=same-upstream (aggregator cites the paper Epoch cites)
+     refs=https://arxiv.org/abs/2311.16867 title=The Falcon Series of Open Language Models | epoch_source=The Falcon Series of Open Language Models | epoch-run=False

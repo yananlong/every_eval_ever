@@ -1,0 +1,40 @@
+{
+ "draws": 4000,
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 4000,
+  "divergences": 2,
+  "max_rhat": 1.0198765027348276,
+  "min_ess": 156.83410504759362
+ },
+ "started_from": "cold",
+ "wall": 853.1,
+ "warnings": [
+  "This process (pid=90827) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=90827) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=90827) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "ladder": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 4000,
+   "divergences": 3,
+   "max_rhat": 1.0014456045999924,
+   "min_ess": 5610.68185192201
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 2,
+   "max_rhat": 1.0198765027348276,
+   "min_ess": 156.83410504759362
+  }
+ ],
+ "seed": 12345,
+ "kw": "{\"s0\": 2.6181553028126494, \"variant\": \"P10\"}",
+ "n_draws_total": 16000
+}

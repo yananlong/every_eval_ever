@@ -1,0 +1,86 @@
+{
+ "gen": "2d",
+ "r": 10,
+ "seed": 2570635878,
+ "position": 2000,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "second_dim_benchmarks": [
+   2,
+   5,
+   8,
+   10,
+   12,
+   13,
+   14,
+   18,
+   21,
+   25,
+   26,
+   27,
+   29,
+   30,
+   31,
+   32,
+   33,
+   36,
+   38,
+   39,
+   41,
+   42,
+   44,
+   45,
+   46,
+   51,
+   52,
+   53
+  ]
+ },
+ "converged": true,
+ "last_attempt": {
+  "stage": "pilot",
+  "tune": 500,
+  "draws": 1000,
+  "divergences": 0,
+  "max_rhat": 1.0046384706427667,
+  "min_ess": 795.5598970340947
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 0,
+   "max_rhat": 1.0046384706427667,
+   "min_ess": 795.5598970340947
+  }
+ ],
+ "started_from": "pilot",
+ "warnings": [
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=2752) is multi-threaded, use of fork() may lead to deadlocks in the child."
+ ],
+ "wall_seconds": 481.8,
+ "T": {
+  "T1": 4.5553982843905665,
+  "T2": 6.707295418125664,
+  "T3": 0.048921074324711725,
+  "T4": 0.14243774958543573,
+  "T5": 3.1796673922869534,
+  "T6": 48.55621924649068,
+  "T7": 5.469065111939947
+ },
+ "maxima": {
+  "Qb": 19.907523831007424,
+  "q": 439.4202449411763,
+  "t": 3.1796673922869534,
+  "cb": 24.320187892161655
+ }
+}

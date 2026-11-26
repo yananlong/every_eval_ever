@@ -1,0 +1,446 @@
+a,b,n_shared,r,q,pp_lo,pp_hi,outside_pp99,above_rep_max95
+ARC-AGI-2,ARC-AGI,87,-0.720,69.262,-0.085,0.520,True,True
+OTIS Mock AIME 2024-2025,LMCA,113,-0.486,31.046,-0.145,0.302,True,False
+DTBench,LMCA,126,0.442,27.701,-0.137,0.313,True,False
+HellaSwag,PIQA,31,0.741,25.448,-0.430,0.486,True,False
+OTIS Mock AIME 2024-2025,Aider polyglot,36,-0.673,21.993,-0.262,0.463,True,False
+GSM8K,HellaSwag,33,-0.686,21.166,-0.287,0.494,True,False
+GSM8K,Winogrande,37,-0.649,20.351,-0.295,0.469,True,False
+DTBench,ProofBench,64,-0.519,20.135,-0.226,0.379,True,False
+FrontierMath-Tiers-1-3-v2-Private,FrontierMath-Tier-4-v2-Private,72,-0.475,18.426,-0.055,0.536,True,False
+MATH level 5,OTIS Mock AIME 2024-2025,64,0.498,18.256,-0.171,0.412,True,False
+DTBench,SimpleQA Verified,75,0.456,17.432,-0.281,0.297,True,False
+HellaSwag,MMLU,45,-0.565,17.225,-0.279,0.491,True,False
+SimpleBench,SimpleQA Verified,54,0.518,16.767,-0.386,0.386,True,False
+HellaSwag,TriviaQA,25,0.695,16.211,-0.422,0.404,True,False
+HellaSwag,Winogrande,45,0.547,15.804,-0.340,0.419,True,False
+LAMBADA,PIQA,19,0.733,13.965,-0.494,0.602,True,False
+SimpleQA Verified,MirrorCode,37,-0.549,12.947,-0.402,0.375,True,False
+LMCA,Mystery Game Puzzles,76,0.387,12.176,-0.237,0.328,True,False
+PIQA,TriviaQA,20,0.685,11.946,-0.562,0.637,True,False
+DTBench,Mystery Game Puzzles,76,0.369,10.926,-0.249,0.309,True,False
+LMCA,ProofBench,64,-0.394,10.588,-0.252,0.380,True,False
+GSM8K,LAMBADA,20,-0.654,10.410,-0.481,0.651,True,False
+MMLU,MATH level 5,39,-0.482,9.924,-0.345,0.451,True,False
+GSM8K,PIQA,31,-0.528,9.667,-0.346,0.554,True,False
+ARC-AGI,Furniture Assembly,32,-0.520,9.636,-0.426,0.394,True,False
+OTIS Mock AIME 2024-2025,Fiction.LiveBench,39,-0.468,9.256,-0.390,0.462,True,False
+MATH level 5,FrontierMath-Tiers-1-3-v2-Private,15,0.694,8.805,-0.612,0.669,True,False
+SimpleBench,Furniture Assembly,27,-0.538,8.685,-0.501,0.494,True,False
+SimpleQA Verified,APEX-Agents,47,-0.404,8.092,-0.343,0.457,True,False
+ARC AI2,LAMBADA,20,-0.597,8.061,-0.485,0.608,True,False
+ARC AI2,PIQA,36,-0.456,7.977,-0.354,0.438,True,False
+MATH level 5,DTBench,53,-0.375,7.778,-0.246,0.383,True,False
+GSM8K,OpenBookQA,17,-0.626,7.547,-0.491,0.688,True,False
+PIQA,Winogrande,28,0.499,7.491,-0.429,0.519,False,False
+ARC AI2,OpenBookQA,31,0.472,7.376,-0.360,0.453,True,False
+Winogrande,OpenBookQA,31,-0.472,7.374,-0.328,0.434,True,False
+ARC-AGI-2,Fiction.LiveBench,27,-0.504,7.367,-0.438,0.476,True,False
+BBH,HellaSwag,31,-0.467,7.167,-0.407,0.505,True,False
+Mystery Game Puzzles,PostTrainBench,18,-0.598,7.147,-0.624,0.565,False,False
+SimpleQA Verified,FrontierSWE,21,-0.548,6.822,-0.452,0.556,True,False
+OTIS Mock AIME 2024-2025,DTBench,131,-0.226,6.774,-0.150,0.264,True,False
+SimpleQA Verified,Mystery Game Puzzles,68,0.312,6.772,-0.288,0.309,True,False
+HellaSwag,LAMBADA,17,0.599,6.684,-0.520,0.654,False,False
+MATH level 5,SimpleQA Verified,16,-0.615,6.681,-0.664,0.584,False,False
+SimpleBench,DeepResearch Bench,19,0.565,6.554,-0.598,0.545,True,False
+BBH,TriviaQA,24,-0.502,6.414,-0.494,0.541,True,False
+ARC AI2,TriviaQA,30,-0.452,6.413,-0.452,0.452,False,False
+DTBench,Furniture Assembly,35,-0.416,6.268,-0.397,0.390,True,False
+MATH level 5,LMCA,32,-0.431,6.174,-0.315,0.552,True,False
+SimpleBench,Fiction.LiveBench,25,0.480,6.006,-0.503,0.506,False,False
+TriviaQA,OpenBookQA,23,-0.497,5.954,-0.544,0.615,False,False
+SimpleQA Verified,Furniture Assembly,38,-0.383,5.688,-0.406,0.392,False,False
+WeirdML,DeepResearch Bench,23,-0.487,5.661,-0.603,0.547,False,False
+Winogrande,TriviaQA,29,0.427,5.402,-0.461,0.535,False,False
+MATH level 5,Aider polyglot,31,-0.410,5.320,-0.393,0.460,True,False
+OTIS Mock AIME 2024-2025,FrontierMath-Tiers-1-3-v2-Private,87,0.246,5.295,-0.236,0.327,False,False
+Balrog,LMCA,17,0.546,5.266,-0.653,0.627,False,False
+SimpleQA Verified,PostTrainBench,17,-0.546,5.254,-0.563,0.618,False,False
+MMLU,OpenBookQA,28,-0.427,5.198,-0.410,0.559,True,False
+OTIS Mock AIME 2024-2025,SimpleQA Verified,85,-0.243,5.045,-0.271,0.305,False,False
+SimpleBench,Mystery Game Puzzles,47,0.323,4.923,-0.380,0.328,False,False
+MMLU,OTIS Mock AIME 2024-2025,34,-0.378,4.915,-0.350,0.514,True,False
+GPQA diamond,FrontierMath-Tier-4-v2-Private,67,-0.268,4.820,-0.254,0.377,True,False
+WeirdML,VPCT,23,0.448,4.660,-0.441,0.567,False,False
+GPQA diamond,ARC-AGI,81,-0.238,4.601,-0.284,0.325,False,False
+METR Time Horizons,GeoBench,15,-0.542,4.412,-0.568,0.639,False,False
+EBR-bench,APEX-Agents,23,0.436,4.377,-0.528,0.587,False,False
+ARC AI2,MMLU,58,-0.274,4.351,-0.188,0.449,True,False
+Chess Puzzles,FrontierCode,39,0.332,4.278,-0.426,0.421,False,False
+WeirdML,Aider polyglot,32,0.363,4.195,-0.343,0.479,False,False
+DeepResearch Bench,SimpleQA Verified,15,0.527,4.117,-0.632,0.603,False,False
+Fiction.LiveBench,ARC-AGI,29,0.372,3.970,-0.418,0.469,False,False
+LMCA,WeirdML v3,24,-0.409,3.958,-0.527,0.563,False,False
+GPQA diamond,WeirdML,101,-0.197,3.914,-0.161,0.286,True,False
+GPQA diamond,OTIS Mock AIME 2024-2025,164,-0.153,3.838,-0.071,0.291,True,False
+BBH,LAMBADA,19,-0.451,3.775,-0.424,0.599,True,False
+OTIS Mock AIME 2024-2025,PostTrainBench,19,-0.444,3.634,-0.584,0.571,False,False
+ARC-AGI-2,FrontierMath-Tier-4-v2-Private,57,-0.252,3.585,-0.342,0.327,False,False
+Mystery Game Puzzles,APEX-Agents,48,-0.273,3.520,-0.307,0.431,False,False
+DTBench,Balrog,22,0.403,3.465,-0.418,0.554,False,False
+LMCA,FrontierCode,40,-0.296,3.455,-0.304,0.488,False,False
+LMCA,Remote Labor Index,16,-0.469,3.367,-0.651,0.662,False,False
+Mystery Game Puzzles,FrontierSWE,20,-0.411,3.246,-0.520,0.533,False,False
+WeirdML,Surface Evolver Bench,18,0.432,3.214,-0.517,0.611,False,False
+OTIS Mock AIME 2024-2025,Cybench,17,-0.442,3.147,-0.485,0.728,False,False
+DTBench,SimpleBench,69,0.215,3.146,-0.278,0.336,False,False
+OTIS Mock AIME 2024-2025,Balrog,26,-0.353,3.129,-0.438,0.533,False,False
+GSO-Bench,Chess Puzzles,20,-0.404,3.126,-0.511,0.564,False,False
+MMLU,PIQA,38,-0.288,3.079,-0.381,0.480,False,False
+ProofBench,Furniture Assembly,35,0.299,3.052,-0.406,0.452,False,False
+SimpleBench,MirrorCode,28,-0.336,3.052,-0.492,0.505,False,False
+GPQA diamond,ARC-AGI-2,81,0.195,3.032,-0.268,0.276,False,False
+LMCA,SimpleQA Verified,75,0.201,2.998,-0.260,0.313,False,False
+Mystery Game Puzzles,FrontierCode,38,-0.283,2.957,-0.370,0.476,False,False
+MirrorCode,PostTrainBench,17,0.430,2.954,-0.522,0.680,False,False
+OTIS Mock AIME 2024-2025,VPCT,23,-0.366,2.952,-0.394,0.564,False,False
+Mystery Game Puzzles,Furniture Assembly,37,-0.283,2.888,-0.351,0.476,False,False
+DeepResearch Bench,FrontierMath-Tiers-1-3-v2-Private,15,-0.455,2.886,-0.631,0.620,False,False
+ProofBench,FrontierCode,40,-0.270,2.847,-0.353,0.423,False,False
+SimpleBench,FrontierMath-Tier-4-v2-Private,47,0.249,2.845,-0.348,0.360,False,False
+Mystery Game Puzzles,MirrorCode,37,-0.281,2.827,-0.384,0.410,False,False
+ARC-AGI,Remote Labor Index,17,0.421,2.824,-0.541,0.576,False,False
+OTIS Mock AIME 2024-2025,Mystery Game Puzzles,82,-0.185,2.766,-0.279,0.331,False,False
+Aider polyglot,LMCA,22,0.364,2.762,-0.430,0.527,False,False
+GeoBench,SimpleQA Verified,20,0.381,2.742,-0.483,0.648,False,False
+ARC-AGI,APEX-Agents,42,-0.257,2.685,-0.386,0.438,False,False
+GPQA diamond,LMCA,112,-0.156,2.681,-0.140,0.320,True,False
+WeirdML,EBR-bench,20,-0.376,2.651,-0.448,0.519,False,False
+DeepResearch Bench,Mystery Game Puzzles,15,0.435,2.610,-0.592,0.664,False,False
+ARC-AGI,SimpleQA Verified,60,0.209,2.560,-0.324,0.344,False,False
+SimpleBench,FrontierSWE,17,-0.401,2.531,-0.652,0.633,False,False
+FrontierMath-2025-02-28-Private,FrontierMath-Tier-4-2025-07-01-Private,20,-0.367,2.527,-0.397,0.680,False,False
+ProofBench,WeirdML v3,24,-0.332,2.498,-0.471,0.517,False,False
+SimpleQA Verified,EBR-bench,29,-0.299,2.479,-0.447,0.460,False,False
+ARC-AGI-2,Furniture Assembly,32,0.283,2.452,-0.406,0.411,False,False
+OTIS Mock AIME 2024-2025,SimpleBench,84,-0.171,2.403,-0.253,0.320,False,False
+FrontierMath-Tiers-1-3-v2-Private,EBR-bench,30,-0.288,2.378,-0.485,0.441,False,False
+GPQA diamond,Cybench,18,-0.377,2.362,-0.485,0.621,False,False
+DTBench,PostTrainBench,18,-0.377,2.357,-0.532,0.642,False,False
+MATH level 5,Balrog,18,-0.375,2.327,-0.587,0.575,False,False
+ARC-AGI-2,APEX-Agents,42,0.237,2.281,-0.341,0.399,False,False
+Surface Evolver Bench,FrontierCode,18,-0.370,2.265,-0.589,0.639,False,False
+DTBench,FrontierSWE,20,-0.349,2.251,-0.484,0.577,False,False
+GPQA diamond,DTBench,133,-0.130,2.209,-0.147,0.269,False,False
+MirrorCode,FrontierCode,30,0.278,2.203,-0.420,0.510,False,False
+GPQA diamond,MATH level 5,75,-0.172,2.161,-0.147,0.423,True,False
+BBH,GSM8K,30,0.275,2.147,-0.232,0.638,False,False
+ProofBench,SimpleQA Verified,59,-0.192,2.126,-0.305,0.356,False,False
+Terminal Bench,DeepResearch Bench,16,-0.382,2.108,-0.569,0.600,False,False
+GPQA diamond,GSO-Bench,26,-0.293,2.099,-0.393,0.507,False,False
+DTBench,MirrorCode,37,-0.240,2.032,-0.322,0.419,False,False
+WeirdML,GSO-Bench,27,0.280,1.990,-0.377,0.471,False,False
+ARC-AGI,EBR-bench,25,-0.292,1.988,-0.553,0.500,False,False
+GPQA diamond,GeoBench,39,-0.231,1.984,-0.375,0.370,False,False
+ARC-AGI-2,Balrog,16,0.371,1.977,-0.602,0.665,False,False
+Fiction.LiveBench,LMCA,31,0.259,1.969,-0.347,0.463,False,False
+ProofBench,Mystery Game Puzzles,57,-0.188,1.959,-0.285,0.382,False,False
+EBR-bench,FrontierCode,16,0.369,1.948,-0.526,0.610,False,False
+ARC-AGI,FrontierMath-Tiers-1-3-v2-Private,61,-0.181,1.934,-0.384,0.347,False,False
+OTIS Mock AIME 2024-2025,Furniture Assembly,39,0.228,1.932,-0.416,0.362,False,False
+WeirdML,APEX-Agents,31,-0.257,1.927,-0.385,0.479,False,False
+FrontierMath-Tier-4-v2-Private,MirrorCode,39,-0.227,1.914,-0.371,0.415,False,False
+FrontierMath-Tier-4-v2-Private,APEX-Agents,47,-0.205,1.895,-0.323,0.412,False,False
+GeoBench,Fiction.LiveBench,19,0.329,1.865,-0.528,0.530,False,False
+GSM8K,MMLU,49,0.198,1.858,-0.193,0.474,False,False
+GeoBench,DeepResearch Bench,15,-0.374,1.856,-0.714,0.583,False,False
+MATH level 5,VPCT,17,-0.348,1.842,-0.589,0.559,False,False
+MirrorCode,FrontierSWE,17,0.347,1.840,-0.631,0.634,False,False
+GPQA diamond,APEX-Agents,51,0.192,1.818,-0.287,0.367,False,False
+ARC-AGI-2,LMCA,65,-0.169,1.816,-0.332,0.287,False,False
+GPQA diamond,CL-bench,17,-0.345,1.811,-0.493,0.573,False,False
+LAMBADA,MMLU,19,-0.323,1.799,-0.513,0.623,False,False
+ARC-AGI-2,GSO-Bench,25,0.278,1.793,-0.444,0.528,False,False
+Chess Puzzles,EBR-bench,28,0.261,1.788,-0.407,0.450,False,False
+GPQA diamond,Chess Puzzles,81,-0.149,1.757,-0.281,0.278,False,False
+ARC-AGI-2,Remote Labor Index,17,-0.337,1.727,-0.532,0.640,False,False
+WeirdML,ARC-AGI,67,0.163,1.722,-0.314,0.326,False,False
+EBR-bench,MirrorCode,22,0.287,1.659,-0.512,0.573,False,False
+ARC-AGI,FrontierMath-Tier-4-v2-Private,57,0.172,1.633,-0.333,0.288,False,False
+EBR-bench,Furniture Assembly,25,0.266,1.631,-0.433,0.564,False,False
+SimpleQA Verified,FrontierCode,37,-0.214,1.600,-0.371,0.441,False,False
+GeoBench,ProofBench,18,0.314,1.585,-0.542,0.597,False,False
+FrontierMath-Tiers-1-3-v2-Private,APEX-Agents,49,-0.183,1.585,-0.323,0.392,False,False
+ProofBench,Surface Evolver Bench,20,0.296,1.583,-0.474,0.532,False,False
+LMCA,APEX-Agents,50,-0.181,1.566,-0.261,0.401,False,False
+LMCA,FrontierMath-Tier-4-v2-Private,61,-0.161,1.538,-0.268,0.331,False,False
+FrontierMath-Tier-4-v2-Private,Chess Puzzles,66,0.155,1.530,-0.336,0.305,False,False
+OTIS Mock AIME 2024-2025,GeoBench,40,-0.199,1.502,-0.321,0.403,False,False
+Chess Puzzles,PostTrainBench,18,-0.306,1.499,-0.583,0.596,False,False
+GPQA diamond,FrontierCode,40,-0.198,1.490,-0.407,0.490,False,False
+LMCA,Terminal Bench,24,-0.260,1.487,-0.381,0.606,False,False
+ARC-AGI,DeepResearch Bench,22,0.272,1.483,-0.481,0.521,False,False
+APEX-Agents,FrontierCode,37,0.205,1.463,-0.339,0.503,False,False
+GPQA diamond,VPCT,24,0.255,1.433,-0.463,0.563,False,False
+FrontierMath-Tiers-1-3-v2-Private,FrontierSWE,22,-0.268,1.432,-0.505,0.546,False,False
+ProofBench,Chess Puzzles,62,-0.154,1.416,-0.257,0.411,False,False
+LMCA,MirrorCode,37,-0.200,1.392,-0.380,0.344,False,False
+SimpleBench,WeirdML v3,19,0.285,1.375,-0.508,0.531,False,False
+ARC-AGI,Chess Puzzles,62,0.151,1.372,-0.316,0.313,False,False
+SimpleBench,FrontierMath-Tiers-1-3-v2-Private,55,-0.161,1.372,-0.235,0.366,False,False
+ARC-AGI-2,DeepResearch Bench,22,-0.262,1.369,-0.547,0.582,False,False
+Terminal Bench,ProofBench,17,0.302,1.360,-0.586,0.624,False,False
+FrontierMath-Tier-4-v2-Private,FrontierSWE,22,-0.261,1.354,-0.486,0.563,False,False
+DTBench,Terminal Bench,24,-0.248,1.350,-0.508,0.597,False,False
+SimpleQA Verified,Surface Evolver Bench,18,0.291,1.347,-0.634,0.602,False,False
+LMCA,Surface Evolver Bench,22,0.259,1.339,-0.441,0.552,False,False
+OTIS Mock AIME 2024-2025,GSO-Bench,27,-0.232,1.335,-0.462,0.490,False,False
+OTIS Mock AIME 2024-2025,FrontierSWE,22,-0.257,1.314,-0.425,0.492,False,False
+ARC-AGI,LMCA,65,0.143,1.282,-0.242,0.321,False,False
+SimpleBench,FrontierMath-2025-02-28-Private,19,-0.276,1.281,-0.547,0.560,False,False
+SimpleBench,Balrog,19,0.275,1.277,-0.493,0.645,False,False
+GPQA diamond,Remote Labor Index,16,-0.303,1.276,-0.685,0.654,False,False
+ARC-AGI-2,FrontierCode,33,0.203,1.275,-0.427,0.454,False,False
+Chess Puzzles,FrontierSWE,23,-0.245,1.254,-0.561,0.579,False,False
+ARC-AGI,Mystery Game Puzzles,52,0.158,1.251,-0.332,0.327,False,False
+FrontierMath-Tiers-1-3-v2-Private,Mystery Game Puzzles,72,-0.132,1.221,-0.283,0.285,False,False
+LMCA,Chess Puzzles,75,-0.129,1.218,-0.330,0.386,False,False
+ProofBench,MirrorCode,37,0.186,1.205,-0.336,0.426,False,False
+BBH,PIQA,29,-0.212,1.202,-0.372,0.552,False,False
+WeirdML,GeoBench,34,0.194,1.193,-0.398,0.464,False,False
+Remote Labor Index,Chess Puzzles,15,-0.305,1.192,-0.494,0.683,False,False
+Remote Labor Index,ProofBench,16,0.293,1.187,-0.591,0.588,False,False
+BBH,Winogrande,28,-0.214,1.186,-0.476,0.499,False,False
+SimpleBench,PostTrainBench,16,-0.292,1.179,-0.639,0.618,False,False
+WeirdML,ARC-AGI-2,67,-0.135,1.177,-0.304,0.275,False,False
+MMLU,Winogrande,56,-0.147,1.167,-0.271,0.458,False,False
+MATH level 5,Chess Puzzles,15,-0.302,1.162,-0.617,0.560,False,False
+Chess Puzzles,Mystery Game Puzzles,67,0.134,1.160,-0.313,0.358,False,False
+FrontierMath-Tier-4-v2-Private,WeirdML v3,26,0.220,1.147,-0.459,0.550,False,False
+WeirdML,Chess Puzzles,56,-0.146,1.140,-0.299,0.346,False,False
+GPQA diamond,Aider polyglot,38,-0.178,1.139,-0.362,0.479,False,False
+GPQA diamond,MirrorCode,36,-0.184,1.138,-0.395,0.452,False,False
+GPQA diamond,ProofBench,63,-0.136,1.126,-0.305,0.354,False,False
+VPCT,GSO-Bench,15,-0.294,1.104,-0.634,0.710,False,False
+DTBench,WeirdML,93,-0.108,1.068,-0.192,0.336,False,False
+OTIS Mock AIME 2024-2025,Terminal Bench,29,0.199,1.059,-0.388,0.498,False,False
+Remote Labor Index,SimpleQA Verified,15,0.287,1.046,-0.600,0.665,False,False
+METR Time Horizons,DeepResearch Bench,16,0.274,1.029,-0.609,0.658,False,False
+Chess Puzzles,Furniture Assembly,37,-0.172,1.027,-0.365,0.448,False,False
+GSM8K,TriviaQA,18,0.254,1.015,-0.575,0.614,False,False
+MATH level 5,ARC-AGI-2,26,-0.207,1.011,-0.461,0.412,False,False
+OTIS Mock AIME 2024-2025,FrontierCode,41,0.161,1.008,-0.365,0.424,False,False
+MirrorCode,Furniture Assembly,33,0.181,1.005,-0.398,0.455,False,False
+LMCA,FrontierSWE,20,0.238,1.003,-0.549,0.567,False,False
+Fiction.LiveBench,Aider polyglot,36,0.171,0.986,-0.345,0.478,False,False
+SimpleBench,FrontierCode,29,-0.192,0.979,-0.456,0.489,False,False
+FrontierMath-Tiers-1-3-v2-Private,Remote Labor Index,16,-0.264,0.953,-0.706,0.635,False,False
+ProofBench,EBR-bench,27,-0.195,0.938,-0.389,0.535,False,False
+FrontierMath-Tier-4-v2-Private,FrontierCode,37,-0.164,0.933,-0.379,0.423,False,False
+METR Time Horizons,ARC-AGI,19,0.235,0.920,-0.471,0.535,False,False
+Chess Puzzles,MirrorCode,37,0.163,0.914,-0.325,0.465,False,False
+OTIS Mock AIME 2024-2025,APEX-Agents,54,-0.132,0.903,-0.319,0.367,False,False
+Furniture Assembly,APEX-Agents,34,0.168,0.894,-0.395,0.459,False,False
+BBH,OpenBookQA,19,-0.228,0.859,-0.471,0.656,False,False
+ARC-AGI,Terminal Bench,22,0.209,0.858,-0.525,0.600,False,False
+SimpleBench,Aider polyglot,27,0.186,0.848,-0.424,0.469,False,False
+OTIS Mock AIME 2024-2025,Surface Evolver Bench,21,-0.214,0.848,-0.466,0.664,False,False
+WeirdML,Mystery Game Puzzles,49,-0.135,0.846,-0.286,0.361,False,False
+Furniture Assembly,FrontierSWE,17,0.238,0.824,-0.508,0.714,False,False
+GPQA diamond,FrontierMath-Tiers-1-3-v2-Private,85,-0.099,0.801,-0.210,0.258,False,False
+PostTrainBench,Furniture Assembly,16,-0.243,0.801,-0.609,0.663,False,False
+WeirdML,Furniture Assembly,21,-0.207,0.794,-0.512,0.578,False,False
+GeoBench,FrontierMath-Tier-4-v2-Private,17,0.230,0.766,-0.547,0.579,False,False
+GPQA diamond,Mystery Game Puzzles,79,-0.099,0.749,-0.239,0.279,False,False
+SimpleBench,VPCT,20,-0.202,0.710,-0.449,0.515,False,False
+WeirdML,METR Time Horizons,28,-0.163,0.679,-0.413,0.516,False,False
+FrontierMath-Tiers-1-3-v2-Private,SimpleQA Verified,74,-0.097,0.679,-0.291,0.302,False,False
+MMLU,GPQA diamond,40,0.134,0.673,-0.359,0.498,False,False
+LMCA,DeepResearch Bench,20,-0.194,0.657,-0.533,0.538,False,False
+MATH level 5,WeirdML,46,-0.123,0.654,-0.319,0.418,False,False
+OTIS Mock AIME 2024-2025,Remote Labor Index,17,0.211,0.645,-0.554,0.622,False,False
+FrontierMath-2025-02-28-Private,Aider polyglot,15,0.227,0.640,-0.634,0.608,False,False
+DTBench,APEX-Agents,50,-0.116,0.635,-0.351,0.348,False,False
+DTBench,ARC-AGI,66,0.100,0.632,-0.304,0.288,False,False
+FrontierCode,FrontierSWE,17,0.205,0.607,-0.581,0.598,False,False
+WeirdML,FrontierMath-Tiers-1-3-v2-Private,56,0.106,0.597,-0.353,0.354,False,False
+VPCT,GeoBench,18,0.195,0.588,-0.574,0.580,False,False
+DTBench,FrontierMath-Tier-4-v2-Private,61,0.100,0.581,-0.276,0.312,False,False
+ARC-AGI,FrontierCode,33,-0.137,0.570,-0.459,0.433,False,False
+SimpleBench,Terminal Bench,21,-0.176,0.569,-0.488,0.581,False,False
+GPQA diamond,FrontierMath-2025-02-28-Private,33,-0.136,0.562,-0.382,0.491,False,False
+ARC-AGI,GSO-Bench,25,-0.159,0.562,-0.489,0.475,False,False
+GSO-Bench,ProofBench,17,0.196,0.553,-0.567,0.621,False,False
+DTBench,Aider polyglot,24,0.160,0.548,-0.463,0.557,False,False
+DTBench,FrontierMath-Tiers-1-3-v2-Private,76,-0.086,0.546,-0.281,0.313,False,False
+MATH level 5,METR Time Horizons,21,-0.172,0.542,-0.446,0.637,False,False
+VPCT,ARC-AGI,20,-0.176,0.536,-0.541,0.503,False,False
+SimpleBench,GSO-Bench,26,0.151,0.532,-0.501,0.587,False,False
+ARC-AGI-2,EBR-bench,25,-0.152,0.515,-0.468,0.515,False,False
+GeoBench,Aider polyglot,22,0.163,0.511,-0.479,0.521,False,False
+Chess Puzzles,Surface Evolver Bench,19,-0.177,0.511,-0.521,0.581,False,False
+ARC-AGI-2,SimpleQA Verified,60,-0.094,0.505,-0.304,0.325,False,False
+ARC-AGI,PostTrainBench,17,-0.188,0.504,-0.621,0.513,False,False
+DTBench,ARC-AGI-2,68,-0.088,0.502,-0.295,0.313,False,False
+Terminal Bench,FrontierMath-Tier-4-v2-Private,15,0.201,0.496,-0.603,0.701,False,False
+Furniture Assembly,WeirdML v3,23,-0.156,0.494,-0.455,0.586,False,False
+LMCA,GSO-Bench,23,0.155,0.488,-0.481,0.660,False,False
+MMLU,TriviaQA,29,0.135,0.482,-0.411,0.481,False,False
+GPQA diamond,Furniture Assembly,37,0.118,0.479,-0.363,0.401,False,False
+Cybench,SimpleBench,15,-0.193,0.459,-0.554,0.698,False,False
+DTBench,EBR-bench,28,-0.134,0.454,-0.394,0.483,False,False
+GPQA diamond,SimpleBench,85,-0.074,0.452,-0.234,0.293,False,False
+GSO-Bench,FrontierMath-Tier-4-v2-Private,19,-0.166,0.448,-0.507,0.486,False,False
+GeoBench,GSO-Bench,19,-0.165,0.441,-0.556,0.534,False,False
+ARC-AGI-2,MirrorCode,32,-0.123,0.441,-0.473,0.409,False,False
+ARC AI2,GSM8K,44,-0.102,0.431,-0.286,0.472,False,False
+SimpleQA Verified,WeirdML v3,24,-0.141,0.426,-0.456,0.495,False,False
+GPQA diamond,Terminal Bench,29,-0.126,0.418,-0.385,0.500,False,False
+SimpleBench,GeoBench,29,-0.123,0.398,-0.428,0.489,False,False
+OTIS Mock AIME 2024-2025,FrontierMath-2025-02-28-Private,33,-0.113,0.388,-0.419,0.422,False,False
+FrontierMath-Tiers-1-3-v2-Private,PostTrainBench,19,0.154,0.388,-0.586,0.501,False,False
+OTIS Mock AIME 2024-2025,CL-bench,17,-0.165,0.387,-0.585,0.554,False,False
+FrontierMath-Tier-4-v2-Private,EBR-bench,30,-0.119,0.385,-0.447,0.460,False,False
+ARC-AGI-2,FrontierMath-Tiers-1-3-v2-Private,61,0.081,0.381,-0.310,0.317,False,False
+DTBench,VPCT,18,0.157,0.377,-0.516,0.641,False,False
+Chess Puzzles,WeirdML v3,24,0.132,0.371,-0.492,0.561,False,False
+LMCA,PostTrainBench,18,0.155,0.367,-0.466,0.543,False,False
+OTIS Mock AIME 2024-2025,WeirdML,100,-0.061,0.366,-0.191,0.337,False,False
+FrontierMath-Tier-4-v2-Private,Mystery Game Puzzles,60,0.080,0.365,-0.318,0.311,False,False
+DTBench,FrontierMath-2025-02-28-Private,20,0.145,0.361,-0.500,0.633,False,False
+MirrorCode,WeirdML v3,22,0.137,0.360,-0.465,0.595,False,False
+SimpleBench,LMCA,63,0.077,0.359,-0.227,0.375,False,False
+ARC-AGI-2,Mystery Game Puzzles,53,-0.084,0.357,-0.290,0.354,False,False
+ARC AI2,HellaSwag,49,0.085,0.336,-0.303,0.434,False,False
+ARC-AGI-2,Chess Puzzles,62,-0.075,0.334,-0.340,0.303,False,False
+ARC AI2,BBH,36,-0.100,0.331,-0.277,0.542,False,False
+SimpleBench,APEX-Agents,38,-0.097,0.331,-0.364,0.447,False,False
+FrontierMath-Tier-4-v2-Private,PostTrainBench,19,-0.143,0.330,-0.577,0.549,False,False
+WeirdML,Cybench,17,-0.152,0.327,-0.531,0.557,False,False
+GPQA diamond,METR Time Horizons,33,-0.103,0.318,-0.340,0.466,False,False
+FrontierMath-Tier-4-v2-Private,Furniture Assembly,38,-0.095,0.316,-0.414,0.424,False,False
+GPQA diamond,SimpleQA Verified,85,0.062,0.311,-0.232,0.326,False,False
+SimpleBench,ProofBench,43,-0.087,0.305,-0.299,0.425,False,False
+DTBench,Fiction.LiveBench,33,0.100,0.304,-0.389,0.464,False,False
+Furniture Assembly,FrontierCode,27,-0.111,0.299,-0.425,0.510,False,False
+METR Time Horizons,ARC-AGI-2,17,0.142,0.287,-0.551,0.585,False,False
+Terminal Bench,SimpleQA Verified,18,-0.136,0.283,-0.508,0.660,False,False
+GPQA diamond,DeepResearch Bench,24,-0.113,0.272,-0.504,0.515,False,False
+FrontierMath-2025-02-28-Private,ARC-AGI-2,19,-0.129,0.271,-0.556,0.539,False,False
+Balrog,ARC-AGI,15,-0.149,0.270,-0.676,0.613,False,False
+ARC-AGI,WeirdML v3,21,-0.121,0.267,-0.583,0.586,False,False
+SimpleBench,METR Time Horizons,27,-0.104,0.260,-0.420,0.510,False,False
+ARC AI2,Winogrande,54,0.071,0.259,-0.216,0.409,False,False
+Chess Puzzles,APEX-Agents,49,-0.074,0.255,-0.346,0.387,False,False
+FrontierMath-Tiers-1-3-v2-Private,Chess Puzzles,76,-0.058,0.243,-0.274,0.301,False,False
+SimpleBench,FrontierMath-Tier-4-2025-07-01-Private,18,0.127,0.243,-0.549,0.553,False,False
+OTIS Mock AIME 2024-2025,ARC-AGI-2,82,0.055,0.238,-0.273,0.312,False,False
+DTBench,GeoBench,33,0.088,0.234,-0.444,0.450,False,False
+LMCA,Furniture Assembly,35,0.085,0.234,-0.427,0.479,False,False
+FrontierMath-Tiers-1-3-v2-Private,MirrorCode,39,-0.080,0.232,-0.370,0.425,False,False
+WeirdML,FrontierCode,28,-0.094,0.223,-0.413,0.459,False,False
+GSO-Bench,Mystery Game Puzzles,20,-0.112,0.217,-0.498,0.572,False,False
+OTIS Mock AIME 2024-2025,ARC-AGI,82,-0.052,0.216,-0.223,0.332,False,False
+GPQA diamond,PostTrainBench,17,-0.122,0.211,-0.644,0.566,False,False
+LMCA,EBR-bench,28,-0.091,0.209,-0.416,0.441,False,False
+ProofBench,APEX-Agents,51,-0.066,0.207,-0.252,0.401,False,False
+WeirdML,Balrog,23,0.101,0.207,-0.469,0.557,False,False
+FrontierMath-Tiers-1-3-v2-Private,ProofBench,59,0.060,0.202,-0.272,0.352,False,False
+APEX-Agents,WeirdML v3,24,0.094,0.186,-0.526,0.532,False,False
+Mystery Game Puzzles,Surface Evolver Bench,18,0.109,0.179,-0.584,0.621,False,False
+OTIS Mock AIME 2024-2025,Chess Puzzles,82,0.047,0.178,-0.299,0.321,False,False
+HellaSwag,OpenBookQA,27,0.086,0.177,-0.458,0.526,False,False
+SimpleBench,ARC-AGI,60,0.055,0.170,-0.307,0.300,False,False
+DTBench,Chess Puzzles,75,0.048,0.164,-0.250,0.353,False,False
+MATH level 5,SimpleBench,32,-0.073,0.156,-0.387,0.436,False,False
+ARC-AGI-2,GeoBench,28,-0.078,0.153,-0.448,0.483,False,False
+FrontierMath-Tiers-1-3-v2-Private,Furniture Assembly,38,0.066,0.151,-0.379,0.404,False,False
+PIQA,OpenBookQA,22,0.089,0.151,-0.471,0.606,False,False
+GeoBench,FrontierMath-Tiers-1-3-v2-Private,22,-0.087,0.146,-0.551,0.560,False,False
+SimpleBench,Surface Evolver Bench,17,-0.100,0.140,-0.524,0.611,False,False
+ARC-AGI,ProofBench,52,-0.053,0.137,-0.314,0.345,False,False
+GeoBench,Chess Puzzles,21,-0.085,0.129,-0.504,0.512,False,False
+SimpleBench,ARC-AGI-2,59,-0.048,0.129,-0.321,0.309,False,False
+GeoBench,ARC-AGI,29,-0.069,0.126,-0.448,0.484,False,False
+DTBench,FrontierCode,40,-0.058,0.123,-0.357,0.428,False,False
+WeirdML,SimpleQA Verified,57,0.047,0.119,-0.257,0.385,False,False
+DTBench,Remote Labor Index,16,-0.095,0.117,-0.624,0.588,False,False
+SimpleBench,EBR-bench,26,0.071,0.115,-0.448,0.487,False,False
+ARC-AGI-2,ProofBench,52,0.048,0.111,-0.331,0.343,False,False
+EBR-bench,PostTrainBench,15,-0.096,0.111,-0.580,0.677,False,False
+GPQA diamond,Balrog,28,-0.066,0.109,-0.388,0.517,False,False
+MirrorCode,APEX-Agents,36,0.057,0.107,-0.409,0.461,False,False
+BBH,MMLU,37,0.056,0.105,-0.277,0.572,False,False
+Aider polyglot,ARC-AGI,27,-0.066,0.103,-0.395,0.471,False,False
+DTBench,GSO-Bench,24,-0.070,0.103,-0.430,0.551,False,False
+SimpleBench,Remote Labor Index,16,-0.088,0.101,-0.571,0.627,False,False
+PostTrainBench,APEX-Agents,19,0.079,0.100,-0.482,0.583,False,False
+Mystery Game Puzzles,EBR-bench,31,-0.060,0.100,-0.382,0.623,False,False
+GeoBench,LMCA,29,0.062,0.099,-0.454,0.436,False,False
+APEX-Agents,Surface Evolver Bench,20,-0.075,0.097,-0.496,0.557,False,False
+Remote Labor Index,Mystery Game Puzzles,15,-0.085,0.088,-0.566,0.635,False,False
+FrontierMath-Tier-4-v2-Private,ProofBench,58,0.038,0.079,-0.337,0.375,False,False
+MATH level 5,FrontierMath-2025-02-28-Private,20,-0.068,0.078,-0.546,0.550,False,False
+Terminal Bench,FrontierMath-Tiers-1-3-v2-Private,16,0.077,0.077,-0.577,0.660,False,False
+METR Time Horizons,LMCA,20,0.066,0.075,-0.506,0.631,False,False
+OTIS Mock AIME 2024-2025,WeirdML v3,26,0.057,0.075,-0.560,0.457,False,False
+ARC-AGI-2,WeirdML v3,21,-0.064,0.075,-0.557,0.511,False,False
+FrontierMath-Tiers-1-3-v2-Private,Surface Evolver Bench,18,-0.067,0.068,-0.542,0.596,False,False
+WeirdML,FrontierMath-2025-02-28-Private,23,-0.056,0.063,-0.524,0.580,False,False
+WeirdML,FrontierMath-Tier-4-v2-Private,46,-0.038,0.062,-0.370,0.350,False,False
+DTBench,DeepResearch Bench,20,0.060,0.062,-0.612,0.493,False,False
+MMLU,DTBench,31,-0.044,0.055,-0.343,0.460,False,False
+OTIS Mock AIME 2024-2025,EBR-bench,31,-0.043,0.052,-0.407,0.475,False,False
+WeirdML,ProofBench,45,-0.034,0.050,-0.277,0.417,False,False
+GPQA diamond,FrontierSWE,20,-0.054,0.050,-0.579,0.558,False,False
+OTIS Mock AIME 2024-2025,METR Time Horizons,31,-0.042,0.049,-0.411,0.496,False,False
+GSO-Bench,SimpleQA Verified,20,0.053,0.048,-0.561,0.528,False,False
+DTBench,METR Time Horizons,22,-0.050,0.047,-0.435,0.476,False,False
+GSO-Bench,DeepResearch Bench,17,0.057,0.046,-0.572,0.635,False,False
+GPQA diamond,WeirdML v3,23,0.046,0.042,-0.495,0.539,False,False
+ARC-AGI,MirrorCode,32,-0.037,0.040,-0.419,0.432,False,False
+FrontierMath-Tiers-1-3-v2-Private,FrontierCode,38,-0.033,0.039,-0.349,0.447,False,False
+ARC-AGI-2,FrontierSWE,18,-0.050,0.037,-0.482,0.599,False,False
+GPQA diamond,FrontierMath-Tier-4-2025-07-01-Private,25,0.040,0.036,-0.505,0.536,False,False
+DTBench,FrontierMath-Tier-4-2025-07-01-Private,17,-0.050,0.035,-0.541,0.537,False,False
+FrontierCode,WeirdML v3,19,0.046,0.035,-0.461,0.562,False,False
+ARC-AGI-2,Aider polyglot,25,0.036,0.028,-0.428,0.483,False,False
+MATH level 5,ARC-AGI,26,0.035,0.028,-0.445,0.416,False,False
+MATH level 5,GeoBench,22,0.038,0.027,-0.490,0.537,False,False
+MATH level 5,Fiction.LiveBench,30,0.031,0.027,-0.443,0.464,False,False
+APEX-Agents,FrontierSWE,22,-0.037,0.026,-0.386,0.544,False,False
+ARC-AGI,FrontierSWE,18,-0.040,0.024,-0.494,0.558,False,False
+FrontierMath-Tier-4-2025-07-01-Private,LMCA,15,0.044,0.023,-0.600,0.631,False,False
+OTIS Mock AIME 2024-2025,FrontierMath-Tier-4-2025-07-01-Private,25,-0.032,0.023,-0.530,0.490,False,False
+FrontierMath-Tier-4-v2-Private,Remote Labor Index,16,0.041,0.022,-0.609,0.619,False,False
+OTIS Mock AIME 2024-2025,DeepResearch Bench,24,-0.032,0.022,-0.466,0.516,False,False
+LMCA,FrontierMath-Tiers-1-3-v2-Private,76,0.017,0.022,-0.232,0.358,False,False
+VPCT,ARC-AGI-2,18,0.037,0.020,-0.604,0.547,False,False
+ARC-AGI-2,Terminal Bench,22,-0.033,0.020,-0.493,0.523,False,False
+FrontierMath-Tier-4-v2-Private,SimpleQA Verified,63,0.018,0.019,-0.303,0.354,False,False
+MMLU,WeirdML,20,-0.032,0.018,-0.499,0.587,False,False
+VPCT,Aider polyglot,15,-0.038,0.018,-0.531,0.659,False,False
+SimpleBench,Chess Puzzles,56,0.018,0.017,-0.332,0.330,False,False
+GPQA diamond,Surface Evolver Bench,21,0.030,0.016,-0.483,0.598,False,False
+GeoBench,Mystery Game Puzzles,18,0.032,0.016,-0.584,0.585,False,False
+DTBench,WeirdML v3,24,-0.027,0.016,-0.460,0.571,False,False
+ARC-AGI-2,PostTrainBench,17,0.032,0.015,-0.600,0.569,False,False
+WeirdML,MirrorCode,23,-0.026,0.014,-0.570,0.571,False,False
+METR Time Horizons,Aider polyglot,15,-0.028,0.009,-0.620,0.655,False,False
+OTIS Mock AIME 2024-2025,MirrorCode,39,-0.015,0.008,-0.325,0.421,False,False
+Mystery Game Puzzles,WeirdML v3,25,0.020,0.008,-0.457,0.519,False,False
+OTIS Mock AIME 2024-2025,ProofBench,66,0.011,0.007,-0.252,0.372,False,False
+ProofBench,PostTrainBench,19,-0.020,0.006,-0.524,0.571,False,False
+GSO-Bench,FrontierMath-Tiers-1-3-v2-Private,20,-0.019,0.006,-0.472,0.592,False,False
+FrontierMath-2025-02-28-Private,ARC-AGI,18,0.020,0.006,-0.566,0.652,False,False
+METR Time Horizons,GSO-Bench,15,0.021,0.005,-0.564,0.679,False,False
+WeirdML,Terminal Bench,28,0.015,0.005,-0.367,0.485,False,False
+WeirdML,LMCA,82,-0.008,0.005,-0.256,0.298,False,False
+Terminal Bench,Mystery Game Puzzles,17,0.019,0.005,-0.516,0.627,False,False
+METR Time Horizons,VPCT,15,-0.019,0.004,-0.571,0.646,False,False
+DTBench,Surface Evolver Bench,22,0.015,0.004,-0.490,0.582,False,False
+WeirdML,Fiction.LiveBench,37,0.011,0.004,-0.356,0.465,False,False
+VPCT,LMCA,16,-0.018,0.004,-0.707,0.636,False,False
+SimpleQA Verified,Chess Puzzles,80,-0.007,0.004,-0.288,0.343,False,False
+WeirdML,SimpleBench,70,0.007,0.004,-0.247,0.301,False,False
+GPQA diamond,Fiction.LiveBench,41,-0.010,0.004,-0.314,0.423,False,False
+FrontierMath-Tier-4-v2-Private,Surface Evolver Bench,17,-0.011,0.002,-0.584,0.582,False,False
+PostTrainBench,FrontierCode,16,0.010,0.001,-0.662,0.620,False,False
+ProofBench,FrontierSWE,21,-0.006,0.001,-0.481,0.594,False,False
+DeepResearch Bench,Chess Puzzles,15,0.007,0.001,-0.566,0.587,False,False
+FrontierMath-Tiers-1-3-v2-Private,WeirdML v3,26,0.004,0.000,-0.490,0.532,False,False
+GPQA diamond,EBR-bench,29,0.003,0.000,-0.444,0.494,False,False
+Terminal Bench,Chess Puzzles,17,-0.003,0.000,-0.566,0.693,False,False
+OTIS Mock AIME 2024-2025,FrontierMath-Tier-4-v2-Private,69,-0.001,0.000,-0.263,0.319,False,False
+WeirdML,FrontierMath-Tier-4-2025-07-01-Private,17,0.001,0.000,-0.520,0.565,False,False

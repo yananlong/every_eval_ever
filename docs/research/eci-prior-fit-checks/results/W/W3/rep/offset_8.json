@@ -1,0 +1,89 @@
+{
+ "gen": "offset",
+ "r": 8,
+ "seed": 2420074107,
+ "position": 1600,
+ "code_sha256": "13ca1c9e3d96f0d8d78760c9c379b636096f71c1b695e95d94de79ff89617444",
+ "input_sha256": "721b8e13148bf2ca9de8e5dd9b2c4c44091b5bea199bd06887633b5d55132e13",
+ "info": {
+  "developer": "Anthropic",
+  "benchmarks": [
+   26,
+   10,
+   11
+  ],
+  "n_cells": 36
+ },
+ "converged": false,
+ "last_attempt": {
+  "stage": "cold",
+  "tune": 1000,
+  "draws": 8000,
+  "divergences": 31,
+  "max_rhat": 1.0040044155395023,
+  "min_ess": 652.9274287400798
+ },
+ "attempts": [
+  {
+   "stage": "pilot",
+   "tune": 500,
+   "draws": 1000,
+   "divergences": 2,
+   "max_rhat": 1.0034349165694487,
+   "min_ess": 1554.6207084963098
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 4000,
+   "divergences": 0,
+   "max_rhat": 1.008231870197241,
+   "min_ess": 290.460960506433
+  },
+  {
+   "stage": "cold",
+   "tune": 1000,
+   "draws": 8000,
+   "divergences": 31,
+   "max_rhat": 1.0040044155395023,
+   "min_ess": 652.9274287400798
+  }
+ ],
+ "started_from": "cold",
+ "warnings": [
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "The dense fit did not converge (last: 2 divergences, max r_hat 1.003, min bulk ESS 1555 at 1000 draws); falling back to a cold fit.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "This process (pid=3734) is multi-threaded, use of fork() may lead to deadlocks in the child.",
+  "31 divergent transitions; the posterior may be biased. Consider raising target_accept."
+ ],
+ "wall_seconds": 2894.7,
+ "T": {
+  "T1": 1.9993945554997992,
+  "T2": 1.2184991259384177,
+  "T3": 0.07481757110450134,
+  "T4": 0.03534255751760526,
+  "T5": 4.114043471286434,
+  "T6": 0.4452767550668647,
+  "T7": 2.030240350631355
+ },
+ "maxima": {
+  "Qb": 5.273111009797475,
+  "q": 12.418914365300436,
+  "t": 4.114043471286434,
+  "cb": 1.3139316255151903
+ }
+}
